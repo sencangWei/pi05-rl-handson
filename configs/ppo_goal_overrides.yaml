@@ -1,0 +1,66 @@
+# A bounded experimental recipe, NOT evidence that PPO fits or has run on 32GB.
+runner:
+  logger:
+    log_path: ${oc.env:PI05_RL_ROOT}/logs/ppo_goal_smoke
+    project_name: pi05-rl-handson
+    experiment_name: ppo_goal_smoke
+  max_epochs: 2
+  save_interval: 1
+  val_check_interval: 1
+
+algorithm:
+  update_epoch: 1
+  gamma: 0.99
+  reward_coef: 1.0
+
+env:
+  train:
+    task_suite_name: libero_goal
+    task_id_filter: [0, 7, 8, 9]
+    rollout_epoch: 1
+    total_num_envs: 1
+    max_episode_steps: 300
+    max_steps_per_rollout_epoch: 300
+    use_rel_reward: False
+    reward_coef: 1.0
+    use_step_penalty: True
+    step_penalty_coef: 0.001
+    auto_reset: True
+    ignore_terminations: False
+    seed: 42
+    video_cfg:
+      save_video: True
+  eval:
+    task_suite_name: libero_goal
+    task_id_filter: [0, 7, 8, 9]
+    total_num_envs: 1
+    max_episode_steps: 300
+    max_steps_per_rollout_epoch: 300
+    use_rel_reward: False
+    reward_coef: 1.0
+    use_step_penalty: True
+    step_penalty_coef: 0.001
+    ignore_terminations: False
+    seed: 43
+
+rollout:
+  unnorm_key: libero_goal
+  enable_offload: True
+  model:
+    model_path: ${oc.env:PI05_RL_ROOT}/models/RLinf-Pi05-LIBERO-SFT
+
+actor:
+  micro_batch_size: 1
+  # 300 controls / 10 controls per chunk = 30 rollout samples; 2 divides 30.
+  global_batch_size: 2
+  enable_offload: True
+  model:
+    model_path: ${oc.env:PI05_RL_ROOT}/models/RLinf-Pi05-LIBERO-SFT
+    precision: bf16
+    is_lora: True
+    lora_rank: 8
+    openpi:
+      value_after_vlm: True
+      torch_compile: False
+  optim:
+    total_training_steps: 30

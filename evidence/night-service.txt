@@ -1,0 +1,12 @@
+# /run/user/1000/systemd/transient/pi05-multitask-night-20261026.service
+# This is a transient unit file, created programmatically via the systemd API. Do not edit.
+[Unit]
+Description=Independent LIBERO download and guarded Pi05 LoRA queue
+
+[Service]
+Nice=10
+StandardOutput=append:/home/robot/pi05-rl-handson/logs/night-queue.log
+StandardError=append:/home/robot/pi05-rl-handson/logs/night-queue.log
+WorkingDirectory=/home/robot/pi05-rl-handson
+ExecStart=
+ExecStart="/usr/bin/python3" "-u" "/home/robot/pi05-rl-handson/scripts/night_queue.py"

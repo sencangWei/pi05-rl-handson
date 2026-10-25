@@ -1,0 +1,17 @@
+{"call": 0, "step": 0, "seconds": 0.11359481999534182, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 1, "step": 5, "seconds": 0.10732381000707392, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 2, "step": 10, "seconds": 0.10367149401281495, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 3, "step": 15, "seconds": 0.1040736410068348, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 4, "step": 20, "seconds": 0.10956219500803854, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 5, "step": 25, "seconds": 0.11148447399318684, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 6, "step": 30, "seconds": 0.10181554900191259, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 7, "step": 35, "seconds": 0.10073565698985476, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 8, "step": 40, "seconds": 0.10033804801059887, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 9, "step": 45, "seconds": 0.10365017199364956, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 10, "step": 50, "seconds": 0.10486221799510531, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 11, "step": 55, "seconds": 0.11270727499504574, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 12, "step": 60, "seconds": 0.10091758100315928, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 13, "step": 65, "seconds": 0.09735501500836108, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 14, "step": 70, "seconds": 0.09702028200263157, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 15, "step": 75, "seconds": 0.09644036401004996, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 16, "step": 80, "seconds": 0.09695857099723071, "shape": [10, 7], "queued_prefix": 5, "guidance_noise_seed": null}

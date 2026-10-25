@@ -1,0 +1,13 @@
+diff --git a/rlinf/envs/sim/libero/libero_env.py b/rlinf/envs/sim/libero/libero_env.py
+index 6741638..5f17741 100644
+--- a/rlinf/envs/sim/libero/libero_env.py
++++ b/rlinf/envs/sim/libero/libero_env.py
+@@ -1097,7 +1097,7 @@ class LiberoEnv(gym.Env):
+         return obs, infos
+ 
+     def _calc_step_reward(self, terminations):
+-        step_penalty = -1 if self.use_step_penalty else 0
++        step_penalty = -float(self.cfg.get("step_penalty_coef", 1.0)) if self.use_step_penalty else 0
+         termination_bonus = self.cfg.reward_coef * terminations
+         reward = step_penalty + termination_bonus
+ 

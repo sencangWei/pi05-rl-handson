@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "scope": "Full pinned source inventory and parent content validation plus config construction on CPU; not a model update",
+  "source_files": 141,
+  "parent_files": 16,
+  "seconds": 52.52249553000729,
+  "actual_updates": 0,
+  "checkpoint_dir": "/home/robot/pi05-rl-handson/checkpoints/pi05_multitask40_lora/multitask40_lora_v1"
+}

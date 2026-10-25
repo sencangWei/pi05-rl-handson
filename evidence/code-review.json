@@ -1,0 +1,19 @@
+{
+  "review": "Independent read-only native agent review",
+  "agent": "/root/night_queue_review",
+  "findings": [
+    {
+      "issue": "Weight inventory size checks did not prove parent contents",
+      "resolution": "Pinned parent manifest identity and complete file SHA-256 verification before config construction",
+      "status": "addressed"
+    },
+    {
+      "issue": "Static revision marker did not prove executed source identity",
+      "resolution": "Complete pinned source file inventory verified before training imports",
+      "status": "addressed"
+    }
+  ],
+  "followup": "Reviewer confirmed both addressed; no concrete regression found",
+  "scope": "Source/data/reward/queue review; not an end-to-end PPO run",
+  "updated_utc": "2026-10-25T18:22:28.275026+00:00"
+}

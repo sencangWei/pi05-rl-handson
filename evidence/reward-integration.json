@@ -1,0 +1,10 @@
+{
+  "revision": "30e0236981c6a1dc19202de64116834c12673828",
+  "file": "rlinf/envs/sim/libero/libero_env.py",
+  "original_sha256": "15e78dd2be1cd8225683cf392a1ffc0c4958d715236fe2c41f9faa5df3631679",
+  "patched_sha256": "502975582b0225507617464d36b187621496f0048eb74053a04e9e9cd45cb1c1",
+  "reward": "success*1 - 0.001 per control step",
+  "use_rel_reward": false,
+  "training_updates": 0,
+  "semantics": "LIBERO original success predicate; no grasp bonus; no learned completion model"
+}

@@ -1,0 +1,12 @@
+{
+  "status": "BLOCKED_GPU",
+  "actual_updates": 0,
+  "seed": 42,
+  "experiment": "multitask40_lora_v1",
+  "steps": 10000,
+  "batch_size": 1,
+  "learning_rate": 2e-05,
+  "dry_run": false,
+  "free_gpu_mib": 978,
+  "required_free_mib": 24576
+}

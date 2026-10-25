@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "scope": "One downloaded training frame through official normalization/tokenization; not full data readiness or a model update",
+  "action_shape": [
+    10,
+    32
+  ],
+  "state_shape": [
+    32
+  ],
+  "checkpoint_dir": "/home/robot/pi05-rl-handson/checkpoints/pi05_multitask40_lora/multitask40_lora_v1",
+  "image_keys": [
+    "base_0_rgb",
+    "left_wrist_0_rgb",
+    "right_wrist_0_rgb"
+  ],
+  "actual_updates": 0
+}
