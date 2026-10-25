@@ -9,3 +9,7 @@
 后台用户服务pi05-multitask-night-20261026.service已启动下载，数据完整通过后等待显存。当前GPU空闲978MiB，门槛24576MiB，新SFT更新0，不停止其他任务。后续以evidence/night-status.json及各阶段日志为准。
 
 独立只读审查发现源码与父权重身份只核对标记/大小的缺口；已补逐文件SHA-256和父manifest身份比对，防止同大小内容改变漏检。增加同大小损坏和路径越界回归，6项测试、lint及编译检查通过。父模型16个文件全量哈希已通过。实际模型构建前再次检查显存，避免哈希期间资源变化导致误启动。
+
+代码备份：公开仓库 https://github.com/sencangWei/pi05-rl-handson ，分支experiment/pi05-ppo，算法提交5aa88b3c29fcba64d85678bfac90ce3bd0a86a90。从网络独立克隆，176个跟踪文件逐字节核对、141个OpenPI源码哈希核对、奖励补丁在干净固定RLinf上游重放并核对内容哈希；恢复目录6项测试通过。证据evidence/remote-restore-verification.json。大型数据、环境和权重未上传。
+
+最终状态快照：后台下载本轮445/1693，暂无下载错误；GPU空闲978MiB，SFT/PPO实际更新均0。下载服务仍运行，后续不能把配置或基线录像当作新训练结果。

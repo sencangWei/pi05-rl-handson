@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "remote": "https://github.com/sencangWei/pi05-rl-handson.git",
+  "branch": "experiment/pi05-ppo",
+  "verified_commit": "5aa88b3c29fcba64d85678bfac90ce3bd0a86a90",
+  "tracked_files_checked": 176,
+  "tracked_content_sha256": "5988c88dcd32bb9c9c5a5370c0a2c665f0d474bd472e3ca53d4f77d16a6a8245",
+  "openpi_source_files_verified": 141,
+  "rlinf_patched_file_sha256": "502975582b0225507617464d36b187621496f0048eb74053a04e9e9cd45cb1c1",
+  "restored_at_utc": "2026-10-25T18:23:40.628963+00:00",
+  "scope": "Fresh network clone; all committed files compared with git blobs; fetched source archive extracted and hashed; fetched patch replayed on clean pinned upstream. Does not include large dataset, environments, checkpoints or an actual training run.",
+  "restored_contract_tests": {
+    "passed": true,
+    "tests_run": 6,
+    "command": ".venv-train/bin/python -m unittest discover -s tests -v",
+    "environment_note": "Executed restored source/tests with the existing independent training Python; not a fresh dependency installation."
+  }
+}
