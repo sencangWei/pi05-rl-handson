@@ -1,0 +1,26 @@
+{
+  "status": "FAIL",
+  "check": "one_step_full_network_float32_cpu",
+  "checkpoint": "/home/robot/pi05-rl-handson/checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999",
+  "export": "/home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged",
+  "weights_sha256": "4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f",
+  "fixture_sha256": "e989bc47f1fb50e2dd67ec635365376218d51b17df3170c0ceba81c49de9072a",
+  "jax_output_sha256": "a68c499ffd8dfce05f23b7fff48064555fe8b4976acdfe898efdd807f84d1aff",
+  "torch_output_sha256": "f7e555a03eb6fc2b04c5773d05c434f82029b08ff76a20ff1320fb1c306cdd47",
+  "atol": 0.001,
+  "rtol": 0.001,
+  "finite": true,
+  "shape": [
+    1,
+    10,
+    32
+  ],
+  "max_abs": 0.0012481510639190674,
+  "rms": 0.0003066221706685447,
+  "first7_max_abs": 0.0012481510639190674,
+  "num_steps": 1,
+  "precision": "float32",
+  "synthetic_observation": true,
+  "scope": "Original trained JAX LoRA versus merged RLinf dense; fixed noise, t=1 velocity via Euler step.",
+  "limitation": "Does not validate tokenizer, normalization, BF16, ten-step sampling, or simulation success."
+}

@@ -56,15 +56,51 @@ actor:
   enable_offload: True
   fsdp_config:
     use_orig_params: True
+    # Upstream Pi05 FSDP recipe: retain FP32 numerical islands around BF16 blocks.
+    mixed_precision:
+      param_dtype: bf16
+      reduce_dtype: fp32
+      buffer_dtype: fp32
+      cast_forward_inputs: False
+      cast_root_forward_inputs: False
+    wrappers:
+      projections:
+        wrap_names: [action_in_proj, action_out_proj, time_mlp_in, time_mlp_out, value_head]
+      norms:
+        module_classes: [RMSNorm]
+      vision_embedding:
+        module_names: [img, img.stem]
+      vision_mlps:
+        module_names: ["img.encoder.layers.*.mlp"]
+        wrap_mode: subtree
+    mixed_precision_policies:
+      fp32:
+        param_dtype: fp32
+        reduce_dtype: fp32
+        buffer_dtype: fp32
+        cast_forward_inputs: True
+      fp32_preserve_inputs:
+        param_dtype: fp32
+        reduce_dtype: fp32
+        buffer_dtype: fp32
+        cast_forward_inputs: False
+    mixed_precision_rules:
+      projections: fp32
+      norms: fp32_preserve_inputs
+      vision_embedding: fp32_preserve_inputs
+      vision_mlps: fp32
+    amp_autocast:
+      enabled: False
   model:
     model_path: ${oc.env:PI05_RL_ROOT}/models/pi05-multitask40-sft-merged
-    precision: bf16
+    precision: fp32
     is_lora: True
     lora_rank: 8
     # Native Gemma q_proj/k_proj are ModuleList containers: use actual Linear leaves.
     # VLM adapters get no gradients while train_expert_only is enabled.
     lora_target_scope: all_linear
     openpi:
+      embed_dtype: bf16
       value_after_vlm: True
       torch_compile: False
       action_horizon: 10

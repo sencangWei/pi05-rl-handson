@@ -1,0 +1,24 @@
+diff --git a/rlinf/models/embodiment/openpi/modules/siglip.py b/rlinf/models/embodiment/openpi/modules/siglip.py
+--- a/rlinf/models/embodiment/openpi/modules/siglip.py
++++ b/rlinf/models/embodiment/openpi/modules/siglip.py
+@@ -73,7 +73,7 @@ class MlpBlock(nn.Module):
+ 
+     def forward(self, x: torch.Tensor) -> torch.Tensor:
+         x = self.fc1(x)
+-        x = F.gelu(x)
++        x = F.gelu(x, approximate="tanh")
+         x = self.dropout(x)
+         x = self.fc2(x)
+         return x
+diff --git a/rlinf/models/embodiment/openpi/modules/utils.py b/rlinf/models/embodiment/openpi/modules/utils.py
+--- a/rlinf/models/embodiment/openpi/modules/utils.py
++++ b/rlinf/models/embodiment/openpi/modules/utils.py
+@@ -35,7 +35,7 @@ def torch_compile_enabled() -> bool:
+ def _gelu_glu_eager(
+     gate_input: torch.Tensor, value_input: torch.Tensor
+ ) -> torch.Tensor:
+-    return F.gelu(gate_input) * value_input
++    return F.gelu(gate_input, approximate="tanh") * value_input
+ 
+ 
+ _gelu_glu_compiled = torch.compile(_gelu_glu_eager)

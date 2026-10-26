@@ -7,7 +7,7 @@
 - 40类1693条数据已全部下载，273465帧数值与每条首尾图像校验通过；训练1525条、留出168条。
 - 40任务 GPU SFT 已完成10000次迭代，17:43启动、18:14保存最后的9999 checkpoint，服务正常退出0。见 evidence/multitask40_lora_v1-status.json。四任务各两个初态仿真已完成，新SFT与官方父模型均8/8触发成功；另测新SFT放碗并松爪2/2通过。18段实际录像、同初态对照及限制见 [本轮仿真记录](artifacts/20261026-sft-simulation/README.md)。
 - 为避开显存阻塞，独立 CPU 测速实验 `cpu_throughput_probe_v1` 已执行3次优化迭代并保存checkpoint；首步预热学习率为0，后两次才更新参数。每步约23秒，10000步粗估65小时，因此不自动改成数天CPU训练，也不称为40任务训练完成。
-- PPO **实际更新 0 步**。奖励函数及配置检查通过；独立依赖已安装；实际GPU检查发现Torch2.7.1+cu126没有本机sm_120内核，独立cu128修复正在执行。真实SFT导出811张量，RLinf667张量严格加载通过；整网对照误差最大0.001248，未通过既定阈值，正在定位实现差异。实际PPO更新尚未启动。
+- PPO **实际更新 0 步（21:49 启动阶段快照）**。独立 Torch2.7.1+cu128 已通过5090D实际BF16前后向检查。真实SFT导出811张量，RLinf667张量严格加载通过；统一两处GELU近似后，整网float32对照最大误差由0.001248降至0.000001669，通过原有阈值。首启发现缺少FSDP精度规则，现已采用上游Pi05规则并通过配置验证，第二次有界训练正在加载模型；尚未出现真实PPO更新证据。
 - 现役 LoRA 四任务各测一个初态，4/4成功；另做碗放盘无手指接触5步检查，94步成功。这是既有模型推理，不是本次训练结果。
 
 ## 数据、奖励和机器人互动的关系
@@ -61,9 +61,9 @@ use_rel_reward = false
 
 普通步-0.001，成功步0.999。关闭相对奖励避免重复时间惩罚被差分抵消。修正上游评测倍率与训练不同的问题。没有额外抓取奖励、碰撞惩罚或学好的恢复策略；额外松爪检查目前仅用于评测，未加入PPO奖励。
 
-配置限定goal中抽屉、灶炉、碗放盘、酒瓶放架四类，单环境，300控制步/rollout，10步动作块，micro batch1/global batch2，CPU卸载，2个rollout epoch。30动作块可被global batch整除。尚未完成Ray/FSDP运行验证，不能认定32GB显存可运行。
+配置限定goal中抽屉、灶炉、碗放盘、酒瓶放架四类，单环境，300控制步/rollout，10步动作块，micro batch1/global batch2，CPU卸载，2个rollout epoch。30动作块可被global batch整除。原始参数FP32、主干激活BF16，投影/归一化/视觉精度敏感模块与价值头保留FP32。尚未完成Ray/FSDP实际更新验证，不能认定32GB显存可完成PPO。
 
-需要的 RLinf PyTorch 权重 `RLinf/RLinf-Pi05-LIBERO-SFT` 已由独立服务下载并完整校验通过，固定版本 `45ccfcc4e28634f1576ebf78cab0fbe2fd82432d`；以 evidence/rlinf-model-validation.json 的ready字段为准。这是另一份官方PPO父模型。新增 scripts/export_sft_for_ppo.py 合并JAX LoRA并导出PyTorch权重。真实上游Flax层数值检查通过，特别修正输出注意力投影的跨头求和。scripts/check_export_load.py 将验证完整哈希、资产、配置和严格骨干加载；严格加载不证明整网输出一致。**严格加载已通过，但整网验证尚未通过，不能称为已连通的SFT→PPO链路**。直接使用上游密集转换器会漏掉LoRA。评测seed43不保证初态与训练不重合，此PPO小实验不是最终泛化评测。
+另一份官方 PyTorch 权重 `RLinf/RLinf-Pi05-LIBERO-SFT` 已下载校验，但本轮PPO选择本次JAX训练的9999权重血缘。scripts/export_sft_for_ppo.py 实际合并LoRA并转换，修正输出注意力投影的跨头求和；scripts/check_export_load.py 完整哈希、资产、配置和严格加载通过。scripts/check_export_parity.py 用固定输入、固定噪声、一次Euler步比较原JAX LoRA与RLinf密集网；实际补丁修复两处GELU后，原阈值下通过，证据 evidence/ppo-export-parity-v2/parity.json。失败的v1证据保留。该检查不涵盖BF16、完整采样或仿真完成率，不能代替PPO运行及能力测试。评测seed43不保证初态与训练不重合，此PPO小实验不是最终泛化评测。
 
 恢复训练还需加入夹偏、抓空、物体移动后的状态，考察恢复后是否完成任务，并回放常规任务检查遗忘。仅扣时间分不能代替这些实验。
 
@@ -105,7 +105,7 @@ CPU 测速独立于GPU队列，命令如下（新实验名；拒绝覆盖已有�
 CPU入口强制隐藏CUDA，仅允许1至10次更新。已实测的服务另设12个逻辑CPU、Nice=10、内存上限36GiB、禁用swap及30分钟总时限；普通终端执行以上命令不会自行获得这些systemd资源限制。完整调用保存在 evidence/cpu-probe-unit.txt。原始日志与状态保存在 evidence/cpu-probe-training.log 和 evidence/cpu_throughput_probe_v1-status.json。权重已独立恢复读取，训练状态step=3，51个冻结张量与父模型转换为bf16后逐字节相同；LoRA张量有限且B矩阵非零，详见 evidence/cpu-probe-checkpoint-validation.json。该实验不是部署模型，不替换现有面板模型。
 
 ```bash
-.venv-train/bin/python -m unittest discover -s tests -v
+JAX_PLATFORMS=cpu .venv-train/bin/python -m unittest discover -s tests -v
 .venv-train/bin/ruff check scripts tests
 .venv-train/bin/python -m compileall -q scripts tests
 .venv-sim/bin/python scripts/check_ppo.py
@@ -121,6 +121,7 @@ tar -xzf vendor/openpi-source.tar.gz -C third_party
 git clone https://github.com/RLinf/RLinf.git third_party/RLinf
 git -C third_party/RLinf checkout 30e0236981c6a1dc19202de64116834c12673828
 git -C third_party/RLinf apply ../../configs/rlinf-step-cost.patch
+git -C third_party/RLinf apply ../../configs/rlinf-gelu-parity.patch
 cp evidence/dataset-meta/* data/libero/meta/
 uv venv --python 3.11.15 .venv-train
 uv pip install --python .venv-train/bin/python -r configs/training-requirements.txt

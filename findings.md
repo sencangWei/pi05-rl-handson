@@ -30,3 +30,8 @@
 - 新SFT服务端口8775被已有进程占用；未停止该进程，改9875继续。PPO训练更新仍0。
 
 21:35 仿真更新：新SFT四任务×双初态8/8，碗放盘松爪额外2/2；官方父模型同哈希初态8/8，酒瓶初态0由299降至131步，其余有快有慢。18段真实视频保存artifacts/20261026-sft-simulation。PPO严格加载811→667张量通过；float32整网对照最大误差0.001248未达既定阈值，正定位GELU等数值差异。Torchcu126在5090D实测no kernel image，独立cu128修复进行中。PPO更新仍0。配置已改为本次合并SFT血缘、horizon10/discreteFalse、正确归一化、all_linear适配器与orig_params，真实运行仍待门槛通过。
+# 2026-10-26 21:49：PPO启动前实际修复
+
+- 5090D需要sm_120内核，Torch2.7.1+cu126实测不兼容；同版本cu128实际BF16矩阵与SDPA反传通过。
+- JAX→RLinf合并权重strict加载通过后，整网固定噪声检查仍失败。RLinf SigLIP和Gemma的GELU默认erf，与Flax tanh近似不同；configs/rlinf-gelu-parity.patch实际修复后，未经放宽的1e-3阈值检查通过（最大误差1.66893e-6）。
+- 上游PPO示例默认BF16但未包含当前校验所要求的FP32模块规则；按固定源码docs/source-zh/rst_source/extending/new_model_fsdp.rst的Pi05配方设置FP32参数存储、BF16嵌入及分组规则，包含新增value_head。validate_fsdp_cfg已通过，实际更新尚未验证。

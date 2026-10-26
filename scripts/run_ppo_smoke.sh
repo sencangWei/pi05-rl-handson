@@ -15,17 +15,34 @@ export MUJOCO_GL=egl PYOPENGL_PLATFORM=egl
 export PYTHONNOUSERSITE=1 JAX_PLATFORMS=cpu
 export OMP_NUM_THREADS=4 MKL_NUM_THREADS=4
 export TOKENIZERS_PARALLELISM=false
-unset VIRTUAL_ENV
+# A short, isolated path also keeps Ray Unix sockets below the path length limit.
+export RAY_TMPDIR="/tmp/pi05-ppo-$UID"
+unset VIRTUAL_ENV RAY_ADDRESS
 .venv-ppo/bin/python - <<'PY'
+import hashlib
 import json
 from pathlib import Path
-for name in ('ppo-gpu-check.json', 'ppo-export-load.json', 'ppo-export-parity-v1/parity.json'):
+for name in ('ppo-gpu-check.json', 'ppo-export-load.json', 'ppo-export-parity-v2/parity.json'):
     record = json.loads((Path('evidence') / name).read_text())
     if record['status'] != 'PASS':
         raise SystemExit(f'Required check has not passed: {name}')
+parity = record
+for name, expected in parity['runtime_source_sha256'].items():
+    if hashlib.sha256(Path(name).read_bytes()).hexdigest() != expected:
+        raise SystemExit(f'Runtime changed since parity check: {name}')
+manifest = json.loads(Path(parity['export'], 'export_manifest.json').read_text())
+if parity['weights_sha256'] != manifest['output_sha256']:
+    raise SystemExit('Parity evidence belongs to different exported weights')
 print('GPU, strict load and network conversion gates PASS; PPO updates not yet run.')
 PY
+.venv-ppo/bin/python scripts/check_ppo_gpu.py
 .venv-ppo/bin/python scripts/check_ppo.py
+.venv-ppo/bin/python - <<'PY'
+from omegaconf import OmegaConf
+from rlinf.config import validate_fsdp_cfg
+validate_fsdp_cfg(OmegaConf.load('evidence/ppo-composed.json').actor)
+print('Actor FSDP configuration validated before starting Ray.')
+PY
 exec .venv-ppo/bin/python -u \
   third_party/RLinf/examples/embodiment/train_embodied_agent.py \
   --config-path "$project_root/configs" --config-name ppo_goal_smoke

@@ -1,0 +1,53 @@
+GPU, strict load and network conversion gates PASS; PPO updates not yet run.
+{"status": "PASS", "torch": "2.7.1+cu128", "cuda": "12.8", "compiled_arches": ["sm_75", "sm_80", "sm_86", "sm_90", "sm_100", "sm_120", "compute_120"], "device": "NVIDIA GeForce RTX 5090 D", "capability": [12, 0], "bf16_matmul_backward": true, "sdpa_backward": true, "peak_memory_bytes": 18227200}
+CONFIG_COMPOSED; not a full RLinf runtime check or training run: /home/robot/pi05-rl-handson/evidence/ppo-composed.json
+/home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/hydra/_internal/hydra.py:164: UserWarning: Future Hydra versions will no longer change working directory at job runtime by default.
+See https://hydra.cc/docs/1.2/upgrades/1.1_to_1.2/changes_to_job_working_dir/ for more information.
+  ret = run_job(
+2026-10-26 21:45:14,316	WARNING authentication_token_setup.py:85 -- Token authentication is enabled for this Ray cluster. Set RAY_AUTH_MODE=disabled to opt out. For more information, see https://docs.ray.io/en/latest/ray-security/token-auth.html
+2026-10-26 21:45:14,316	INFO authentication_token_setup.py:50 -- Generated new authentication token and saved to /home/robot/.ray/auth_token
+2026-10-26 21:45:19,289	INFO worker.py:2024 -- Started a local Ray instance. View the dashboard at http://127.0.0.1:8265 
+[INFO 21:45:24 RLinf] RLinf is running on a cluster with 1 node and 1 accelerator. The nodes' details are: 
+node_labels: []
+node_rank: 0
+ray_id: a4e940baafc2ee445d9f87559f3ddd862e5acf51cfeffb3b38fd06d3
+node_ip: 192.168.0.25
+num_cpus: 24
+python_interpreter_path: /home/robot/pi05-rl-handson/.venv-ppo/bin/python
+hardware_resources:
+- type: Accelerator
+  infos:
+  - type: Accelerator
+    model: NV_GPU:RTX 5090 D
+profiler_backends: []
+
+Node groups' details are: 
+label: cluster
+nodes: '0'
+hardware_type: Accelerator
+ignore_hardware: false
+env_configs: null
+
+label: node
+nodes: '0'
+hardware_type: null
+ignore_hardware: true
+env_configs: null
+
+[INFO 21:45:24 FlexiblePlacementStrategy] 
+[INFO 21:45:24 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
+[INFO 21:45:24 FlexiblePlacementStrategy] 
+[INFO 21:45:24 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/home/robot/pi05-rl-handson/third_party/RLinf/examples/embodiment/train_embodied_agent.py", line 39, in main
+    cfg = validate_cfg(cfg)
+          ^^^^^^^^^^^^^^^^^
+  File "/home/robot/pi05-rl-handson/third_party/RLinf/rlinf/config.py", line 1824, in validate_cfg
+    cfg.actor = validate_fsdp_cfg(cfg.actor)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/robot/pi05-rl-handson/third_party/RLinf/rlinf/config.py", line 615, in validate_fsdp_cfg
+    raise ValueError(
+ValueError: OpenPI low-precision FSDP policies require mixed_precision_rules for its FP32 modules.
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

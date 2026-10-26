@@ -1,0 +1,110 @@
+[
+  {
+    "file": "parent-goal-00-init-00.mp4",
+    "frames": 121,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "parent-goal-00-init-10.mp4",
+    "frames": 127,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "parent-goal-07-init-00.mp4",
+    "frames": 89,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "parent-goal-07-init-10.mp4",
+    "frames": 79,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "parent-goal-08-init-00.mp4",
+    "frames": 83,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "parent-goal-08-init-10.mp4",
+    "frames": 83,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "parent-goal-09-init-00.mp4",
+    "frames": 300,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "parent-goal-09-init-10.mp4",
+    "frames": 145,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "sft-goal-00-init-00.mp4",
+    "frames": 121,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "sft-goal-00-init-10.mp4",
+    "frames": 158,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "sft-goal-07-init-00.mp4",
+    "frames": 86,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "sft-goal-07-init-10.mp4",
+    "frames": 81,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "sft-goal-08-init-00.mp4",
+    "frames": 81,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "sft-goal-08-init-10.mp4",
+    "frames": 85,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "sft-goal-09-init-00.mp4",
+    "frames": 132,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "sft-goal-09-init-10.mp4",
+    "frames": 156,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "sft-release-goal-08-init-00.mp4",
+    "frames": 93,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  },
+  {
+    "file": "sft-release-goal-08-init-10.mp4",
+    "frames": 99,
+    "fps": 10.0,
+    "first_middle_last_decode": true
+  }
+]

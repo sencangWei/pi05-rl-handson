@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "check": "one_step_full_network_float32_cpu",
+  "checkpoint": "/home/robot/pi05-rl-handson/checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999",
+  "export": "/home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged",
+  "weights_sha256": "4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f",
+  "fixture_sha256": "e989bc47f1fb50e2dd67ec635365376218d51b17df3170c0ceba81c49de9072a",
+  "jax_output_sha256": "a68c499ffd8dfce05f23b7fff48064555fe8b4976acdfe898efdd807f84d1aff",
+  "torch_output_sha256": "4273f9816f4431c756fa1c1526225783aaa3538b05314cb7ea5fc1e502f85817",
+  "atol": 0.001,
+  "rtol": 0.001,
+  "finite": true,
+  "shape": [
+    1,
+    10,
+    32
+  ],
+  "max_abs": 1.6689300537109375e-06,
+  "rms": 3.7364420563352173e-07,
+  "first7_max_abs": 1.6689300537109375e-06,
+  "runtime_source_sha256": {
+    "third_party/openpi/src/openpi/models/gemma.py": "7e42ada4ae7e9995f0ef3e33a0c224758323c2015e2d9d72ec15726a8a001d2a",
+    "third_party/openpi/src/openpi/models/siglip.py": "14b4df0be280d5769fb0dc31a40cde27525dbb1980cc998c28475d62fa3cad32",
+    "third_party/RLinf/rlinf/models/embodiment/openpi/modules/gemma.py": "552625553b40efb52e0880cdf663d0097fe008e1943ab205d9cfe00cc9c5ae78",
+    "third_party/RLinf/rlinf/models/embodiment/openpi/modules/siglip.py": "3ba4963832e698194ab76a9567c6365eee6059fbc92b54ac83156db59652b39b",
+    "third_party/RLinf/rlinf/models/embodiment/openpi/modules/utils.py": "fce5756c7e2b09065fcfb4e2923e33e53d771a77128137e9d7f276228da6eeeb"
+  },
+  "num_steps": 1,
+  "precision": "float32",
+  "synthetic_observation": true,
+  "scope": "Original trained JAX LoRA versus merged RLinf dense; fixed noise, t=1 velocity via Euler step.",
+  "limitation": "Does not validate tokenizer, normalization, BF16, ten-step sampling, or simulation success."
+}
