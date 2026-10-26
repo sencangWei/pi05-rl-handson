@@ -1,0 +1,62 @@
+{
+  "checkpoint": "logs/ppo_goal_smoke/ppo_goal_smoke/checkpoints/global_step_1/actor/adapter_checkpoint.pt",
+  "sha256": "dd5982b489c9d986419b358b84ce5db1ee2a55688f32070013d49e895e78fb6e",
+  "bytes": 121226429,
+  "format": "rlinf-fsdp1-single-rank-adapter-v1",
+  "base_sha256": "4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f",
+  "saved_optimizer_updates": 15,
+  "observed_optimizer_updates": 30,
+  "second_epoch_saved": false,
+  "trainable_tensors": 550,
+  "persistent_buffers": 0,
+  "lora_b_tensors": 271,
+  "nonzero_lora_b_tensors": 117,
+  "all_tensors_finite": true,
+  "epochs": [
+    {
+      "finite_optimizer_steps": 15,
+      "metrics": {
+        "actor/approx_kl": 0.006312306504696608,
+        "actor/clip_fraction": 0.03333333507180214,
+        "actor/clipped_ratio": 1.0004775524139404,
+        "actor/dual_cliped_ratio": 0.0,
+        "actor/entropy_loss": 0.0,
+        "actor/grad_norm": 34.780879974365234,
+        "actor/lr": 4.999999873689376e-06,
+        "actor/policy_loss": -0.0021296178456395864,
+        "actor/policy_loss_abs": 0.7797365188598633,
+        "actor/ratio": 0.9970038533210754,
+        "actor/ratio_abs": 0.03922831267118454,
+        "actor/total_loss": 3.728151321411133,
+        "critic/explained_variance": -0.29606854915618896,
+        "critic/lr": 9.999999747378752e-05,
+        "critic/value_clip_ratio": 0.9333333373069763,
+        "critic/value_loss": 7.458432197570801
+      },
+      "optimizer_step_attempts": 15
+    },
+    {
+      "finite_optimizer_steps": 15,
+      "metrics": {
+        "actor/approx_kl": -0.00023846229305490851,
+        "actor/clip_fraction": 0.0,
+        "actor/clipped_ratio": 1.0012539625167847,
+        "actor/dual_cliped_ratio": 0.0,
+        "actor/entropy_loss": 0.0,
+        "actor/grad_norm": 60.768310546875,
+        "actor/lr": 4.987674401490949e-06,
+        "actor/policy_loss": 0.007978837937116623,
+        "actor/policy_loss_abs": 0.8133208751678467,
+        "actor/ratio": 1.0012539625167847,
+        "actor/ratio_abs": 0.030799997970461845,
+        "actor/total_loss": 5.186275005340576,
+        "critic/explained_variance": -0.061408281326293945,
+        "critic/lr": 9.975348802981898e-05,
+        "critic/value_clip_ratio": 0.8666666746139526,
+        "critic/value_loss": 10.364571571350098
+      },
+      "optimizer_step_attempts": 15
+    }
+  ],
+  "service_exit": "oom-kill after second update during sync_model_to_rollout"
+}

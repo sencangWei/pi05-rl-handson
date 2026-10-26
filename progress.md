@@ -47,3 +47,11 @@ CPU/PPO准备代码备份：d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d已推送公
 - 原生Torch SFT独立仿真8/8成功，控制步119/121/84/80/87/83/129/137；身份、相机录像见artifacts/20261026-ppo-simulation/native-sft-summary.json。与PPO使用同一运行时、初态哈希、噪声及10次流推理/5步重规划协议。
 - v6已启动：pi05-ppo-smoke-20261026-v6.service，48GiB RAM上限、禁用swap、45分钟时限；运行中，需等待完整权重保存和独立评测。
 - 全部18项单元测试在训练环境和PPO环境均通过（JAX_PLATFORMS=cpu）。未指定CPU时JAX先初始化GPU导致Flax LoRA测试TF32误差，重跑固定CPU后通过，未放宽阈值。
+
+## 2026-10-26 22:40 CST adapter 保存路线
+- 更正22:26保存内存假设：v6即使关闭CPU offload仍于22:30触发48GiB上限；此前15次有限梯度更新已记录，但未保存可用PPO权重。不能把小模型DCP验证当成大模型容量验证。
+- 新增显式单卡FSDP1/NO_SHARD adapter格式，只保存可训练LoRA、价值头、持久buffer、优化器/调度器和RNG，绑定完整冻结基座SHA。绕开全模型state_dict和全量优化器gather；原DCP默认行为保留。
+- 小模型实际CUDA恢复及错误拒绝检查通过。v7已22:37启动；完整模型保存与独立八场景评测仍待完成。
+- all_linear注入发生在原生freeze_vlm之后，因此本轮实际训练所有注入的LoRA及价值头；冻结基座不更新，不能按train_expert_only字面声称只训练动作专家LoRA。
+
+22:45更正：v7首轮adapter保存成功，但第二轮更新后权重同步再次触发48GiB上限。共观察30次更新，只有首轮15次持久化。已另启独立八场景评测，不能称2epoch完整退出成功。18项本项目测试通过；未限定tests目录时会误收集上游硬件/重复OpenPI测试，最终入口明确为pytest -q tests。

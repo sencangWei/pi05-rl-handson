@@ -5,15 +5,17 @@
     "rlinf/models/embodiment/openpi/modules/siglip.py": "3ba4963832e698194ab76a9567c6365eee6059fbc92b54ac83156db59652b39b",
     "rlinf/models/embodiment/openpi/modules/utils.py": "fce5756c7e2b09065fcfb4e2923e33e53d771a77128137e9d7f276228da6eeeb",
     "rlinf/hybrid_engines/fsdp/strategy/fsdp.py": "823ca4597133c6e22948e3a2b32d6463e645bcbc94958d1a71a40649f087ad71",
-    "rlinf/hybrid_engines/fsdp/strategy/base.py": "607d69e8a559e8c90729f9cb60248b19ce9bc09b5f396cdc5477f0d10f7866e0",
-    "rlinf/hybrid_engines/fsdp/fsdp_model_manager.py": "0f25ed0f7db73a6219e28064fb11dd573db604ec336790291e6cafcd34d6d9ac",
-    "rlinf/workers/actor/embodied_fsdp_actor_worker.py": "5fc732df70d0ed3c327a25630b12f9bc39545cc7055c82e7d9f7000c38e27f59"
+    "rlinf/hybrid_engines/fsdp/strategy/base.py": "a5482ab2b6260df63ab676ed6c45cf9b8e01912b0cb7a00b3f5d3b8149de0a8c",
+    "rlinf/hybrid_engines/fsdp/fsdp_model_manager.py": "0c833472bd1eb9dad8e10fe5007005cdfa65a2b6523b594d3d7892f63e9a0215",
+    "rlinf/workers/actor/embodied_fsdp_actor_worker.py": "5fc732df70d0ed3c327a25630b12f9bc39545cc7055c82e7d9f7000c38e27f59",
+    "rlinf/hybrid_engines/fsdp/strategy/adapter_checkpoint.py": "d7b6e7f5db280676e730ec45391576efa4d67735a5eb2e5d6e1804ed2e60beca"
   },
   "patches": [
     "configs/rlinf-step-cost.patch",
     "configs/rlinf-gelu-parity.patch",
     "configs/rlinf-fsdp-root-input.patch",
     "configs/rlinf-checkpoint-memory.patch",
-    "configs/rlinf-update-evidence.patch"
+    "configs/rlinf-update-evidence.patch",
+    "configs/rlinf-adapter-checkpoint.patch"
   ]
 }

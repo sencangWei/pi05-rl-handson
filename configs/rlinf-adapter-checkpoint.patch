@@ -1,0 +1,219 @@
+--- a/rlinf/hybrid_engines/fsdp/strategy/base.py
++++ b/rlinf/hybrid_engines/fsdp/strategy/base.py
+@@ -189,6 +189,7 @@
+         save_full_model_weights: bool = True,
+         checkpoint_format: str = "dcp",
+         checkpoint_cpu_offload: bool = True,
++        checkpoint_base_sha256: str | None = None,
+     ) -> None:
+         """
+         Save the training state checkpoint.
+@@ -208,6 +209,13 @@
+             checkpoint_cpu_offload (bool): Materialize state dictionaries on CPU before saving.
+             checkpoint_format (str): "dcp" or "local_shard".
+         """
++        if checkpoint_format == "adapter":
++            from .adapter_checkpoint import save_adapter_checkpoint
++
++            save_adapter_checkpoint(
++                model, optimizers, lr_schedulers, save_path, checkpoint_base_sha256
++            )
++            return
+         clear_memory()
+         torch.distributed.barrier()
+         opts = StateDictOptions(
+@@ -279,6 +287,7 @@
+         lr_schedulers: Union[LRScheduler, Iterable[LRScheduler]],
+         load_path: str,
+         checkpoint_format: str = "dcp",
++        checkpoint_base_sha256: str | None = None,
+     ) -> None:
+         """
+         Load the training state checkpoint.
+@@ -296,6 +305,13 @@
+             load_path (str): The path to load the checkpoint from.
+             checkpoint_format (str): "dcp" or "local_shard".
+         """
++        if checkpoint_format == "adapter":
++            from .adapter_checkpoint import load_adapter_checkpoint
++
++            load_adapter_checkpoint(
++                model, optimizers, lr_schedulers, load_path, checkpoint_base_sha256
++            )
++            return
+         opts = StateDictOptions(full_state_dict=False, cpu_offload=True)
+         training_state = Checkpoint(
+             model=model,
+--- a/rlinf/hybrid_engines/fsdp/fsdp_model_manager.py
++++ b/rlinf/hybrid_engines/fsdp/fsdp_model_manager.py
+@@ -384,7 +384,9 @@
+             self.is_optimizer_offloaded = False
+ 
+         self._strategy.load_checkpoint(
+-            self.model, self.optimizer, self.lr_scheduler, load_path
++            self.model, self.optimizer, self.lr_scheduler, load_path,
++            checkpoint_format=self._cfg.fsdp_config.get("checkpoint_format", "dcp"),
++            checkpoint_base_sha256=self._cfg.fsdp_config.get("checkpoint_base_sha256"),
+         )
+ 
+     def save_checkpoint(self, save_path: str, step: int = 0) -> None:
+@@ -414,6 +416,8 @@
+             checkpoint_cpu_offload=self._cfg.fsdp_config.get(
+                 "checkpoint_cpu_offload", True
+             ),
++            checkpoint_format=self._cfg.fsdp_config.get("checkpoint_format", "dcp"),
++            checkpoint_base_sha256=self._cfg.fsdp_config.get("checkpoint_base_sha256"),
+         )
+ 
+         if restore_weight_offload:
+--- /dev/null
++++ b/rlinf/hybrid_engines/fsdp/strategy/adapter_checkpoint.py
+@@ -0,0 +1,148 @@
++# Copyright 2025 The RLinf Authors.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     https://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++"""Explicit single-rank FSDP1 adapter checkpoints tied to immutable base weights."""
++import os
++import re
++
++import torch
++import torch.distributed as dist
++from torch.distributed.fsdp import FullyShardedDataParallel as FSDP
++from torch.distributed.fsdp import ShardingStrategy
++from torch.distributed.fsdp._common_utils import clean_tensor_name
++from torch.optim import Optimizer
++from torch.optim.lr_scheduler import LRScheduler
++
++from rlinf.utils.utils import get_rng_state, set_rng_state
++
++FORMAT = "rlinf-fsdp1-single-rank-adapter-v1"
++
++
++def _guard(model, base_sha256):
++    if not isinstance(base_sha256, str) or not re.fullmatch(r"[0-9a-f]{64}", base_sha256):
++        raise ValueError("Adapter checkpoints require the immutable base weights SHA256")
++    if not isinstance(model, FSDP) or not dist.is_initialized() or dist.get_world_size() != 1:
++        raise ValueError("Adapter checkpoints require initialized single-rank FSDP1")
++    for module in FSDP.fsdp_modules(model):
++        if not module._use_orig_params or module.sharding_strategy != ShardingStrategy.NO_SHARD:
++            raise ValueError("Adapter checkpoints require use_orig_params and NO_SHARD everywhere")
++
++
++def _selected(model):
++    parameters = {clean_tensor_name(name): value for name, value in model.named_parameters() if value.requires_grad}
++    buffers = {}
++    for prefix, module in model.named_modules():
++        for name, value in module.named_buffers(recurse=False):
++            if name not in module._non_persistent_buffers_set:
++                buffers[clean_tensor_name(f"{prefix}.{name}" if prefix else name)] = value
++    if not parameters:
++        raise ValueError("Adapter checkpoints require trainable parameters")
++    if parameters.keys() & buffers.keys():
++        raise ValueError("Parameter and buffer checkpoint names overlap")
++    return parameters, buffers
++
++
++def _finite(tensor, name):
++    if (tensor.is_floating_point() or tensor.is_complex()) and not torch.isfinite(tensor).all().item():
++        raise ValueError(f"Nonfinite adapter tensor: {name}")
++
++
++def read_adapter_model(model, payload, expected_base_sha256, allow_dtype_cast=False):
++    """Validate the complete adapter contract before copying into a plain or summoned model.
++
++    Floating-point casts are permitted only when explicitly requested for inference.
++    The caller must independently verify the identity of the loaded immutable base.
++    """
++    if payload.get("format") != FORMAT or payload.get("world_size") != 1:
++        raise ValueError("Unsupported adapter checkpoint format or world size")
++    if payload.get("base_weights_sha256") != expected_base_sha256:
++        raise ValueError("Adapter base weights SHA256 mismatch")
++    parameters, buffers = _selected(model)
++    if payload.get("trainable_names") != list(parameters):
++        raise ValueError("Adapter trainable parameter names mismatch")
++    if payload.get("buffer_names") != list(buffers):
++        raise ValueError("Adapter persistent buffer names mismatch")
++    selected = {**parameters, **buffers}
++    if set(payload["model"]) != set(selected):
++        raise ValueError("Adapter model keys mismatch")
++    for name, target in selected.items():
++        value = payload["model"][name]
++        if not isinstance(value, torch.Tensor) or value.shape != target.shape:
++            raise ValueError(f"Adapter shape mismatch: {name}")
++        if value.dtype != target.dtype and not (
++            allow_dtype_cast and value.is_floating_point() and target.is_floating_point()
++        ):
++            raise ValueError(f"Adapter dtype mismatch: {name}")
++        _finite(value, name)
++    with torch.no_grad():
++        for name, target in selected.items():
++            target.copy_(payload["model"][name])
++
++
++def _optimizers(optimizers):
++    return [optimizers] if isinstance(optimizers, Optimizer) else list(optimizers)
++
++
++def _schedulers(schedulers):
++    return [schedulers] if isinstance(schedulers, LRScheduler) else list(schedulers)
++
++
++def _optimizer_names(model, optimizers):
++    names = {id(value): clean_tensor_name(name) for name, value in model.named_parameters()}
++    return [[[names[id(value)] for value in group["params"]]
++             for group in optimizer.param_groups] for optimizer in optimizers]
++
++
++def save_adapter_checkpoint(model, optimizers, schedulers, save_path, base_sha256):
++    _guard(model, base_sha256)
++    optimizers, schedulers = _optimizers(optimizers), _schedulers(schedulers)
++    with FSDP.summon_full_params(model, writeback=False):
++        parameters, buffers = _selected(model)
++        selected = {**parameters, **buffers}
++        values = {}
++        for name, value in selected.items():
++            _finite(value, name)
++            values[name] = value.detach().to(device="cpu", copy=True)
++        payload = {"format": FORMAT, "world_size": 1,
++                   "base_weights_sha256": base_sha256,
++                   "trainable_names": list(parameters), "buffer_names": list(buffers),
++                   "model": values,
++                   "optimizer_param_names": _optimizer_names(model, optimizers)}
++    # Native local optimizer state avoids FSDP's full-flat optimizer state gathers.
++    payload.update(optimizers=[optimizer.state_dict() for optimizer in optimizers],
++                   lr_schedulers=[scheduler.state_dict() for scheduler in schedulers],
++                   rng=get_rng_state())
++    os.makedirs(save_path, exist_ok=True)
++    destination = os.path.join(save_path, "adapter_checkpoint.pt")
++    temporary = destination + ".tmp"
++    torch.save(payload, temporary)
++    os.replace(temporary, destination)
++
++
++def load_adapter_checkpoint(model, optimizers, schedulers, load_path, base_sha256):
++    _guard(model, base_sha256)
++    payload = torch.load(os.path.join(load_path, "adapter_checkpoint.pt"),
++                         map_location="cpu", weights_only=False)
++    optimizers, schedulers = _optimizers(optimizers), _schedulers(schedulers)
++    if len(payload["optimizers"]) != len(optimizers) or len(payload["lr_schedulers"]) != len(schedulers):
++        raise ValueError("Adapter optimizer or scheduler count mismatch")
++    with FSDP.summon_full_params(model, writeback=True):
++        if payload.get("optimizer_param_names") != _optimizer_names(model, optimizers):
++            raise ValueError("Adapter optimizer parameter order mismatch")
++        read_adapter_model(model, payload, base_sha256)
++    for optimizer, state in zip(optimizers, payload["optimizers"]):
++        optimizer.load_state_dict(state)
++    for scheduler, state in zip(schedulers, payload["lr_schedulers"]):
++        scheduler.load_state_dict(state)
++    set_rng_state(payload["rng"])

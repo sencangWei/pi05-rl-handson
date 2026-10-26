@@ -117,11 +117,31 @@ def main():
     model_cfg.openpi.num_steps = 10
     torch.manual_seed(42)
     model = get_model(model_cfg)  # Factory injects PEFT and critic before strict native load.
+    base_sha256 = sha256(Path(model_cfg.model_path) / 'model.safetensors')
     load_result = None
+    adapter_update = None
+    checkpoint_format = None
     if args.checkpoint:
-        weights = torch.load(args.checkpoint, map_location='cpu', weights_only=True)
-        load_result = model.load_state_dict(weights, strict=True)
-        del weights
+        # Local training artifacts include Python/NumPy RNG for exact resume.
+        saved = torch.load(args.checkpoint, map_location='cpu', weights_only=False, mmap=True)
+        if saved.get('format') == 'rlinf-fsdp1-single-rank-adapter-v1':
+            from rlinf.hybrid_engines.fsdp.strategy.adapter_checkpoint import read_adapter_model
+            read_adapter_model(model, saved, base_sha256, allow_dtype_cast=True)
+            checkpoint_format = saved['format']
+            weights = saved['model']
+        else:
+            weights = saved
+            load_result = model.load_state_dict(weights, strict=True)
+            checkpoint_format = 'full-state-dict'
+        adapter_names = [name for name, _ in model.named_parameters() if '.lora_B.' in name]
+        if not adapter_names or not all(torch.isfinite(weights[name]).all() for name in adapter_names):
+            raise ValueError('Missing or nonfinite native LoRA B tensors')
+        adapter_update = {
+            'lora_b_tensors': len(adapter_names),
+            'nonzero_lora_b_tensors': sum(bool(weights[name].count_nonzero()) for name in adapter_names),
+            'all_lora_b_finite': True,
+        }
+        del weights, saved
     model = model.to('cuda').eval()
     if model.num_steps != 10 or model.action_horizon != 10 or model.action_chunk != 5:
         raise ValueError('Unexpected native sampler configuration')
@@ -132,11 +152,14 @@ def main():
         'backend': 'local-pi05-libero-lora', 'runtime': 'native-rlinf-pytorch',
         'checkpoint': str(args.checkpoint.resolve()) if args.checkpoint else None,
         'checkpoint_sha256': sha256(args.checkpoint) if args.checkpoint else None,
-        'base_weights_sha256': sha256(Path(model_cfg.model_path) / 'model.safetensors'),
+        'checkpoint_format': checkpoint_format,
+        'base_weights_sha256': base_sha256,
         'norm_stats_sha256': sha256(model_cfg.openpi_data.norm_stats_path),
         'image_size': 224, 'action_horizon': 10, 'action_chunk': 5,
         'num_steps': 10, 'discrete_state_input': False, 'precision': 'bf16',
         'seed_protocol': 'numpy.default_rng(42+call).standard_normal((10,32))',
+        'adapter_update': adapter_update,
+        'adapter_contract_validated': checkpoint_format == 'rlinf-fsdp1-single-rank-adapter-v1',
         'strict_load': None if load_result is None else {
             'missing_keys': load_result.missing_keys, 'unexpected_keys': load_result.unexpected_keys},
     }

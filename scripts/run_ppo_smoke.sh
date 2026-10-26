@@ -40,20 +40,34 @@ if (precision['status'] != 'PASS'
         or precision.get('actual_strategy_root_chains_dtype') != 'torch.float32'
         or hashlib.sha256(strategy.read_bytes()).hexdigest() != precision.get('strategy_source_sha256')):
     raise SystemExit('FSDP/PEFT precision regression gate has not passed for this strategy')
-checkpoint = json.loads(Path('evidence/ppo-fsdp-checkpoint.json').read_text())
-if checkpoint['status'] != 'PASS' or len(checkpoint['cases']) != 2:
+checkpoint = json.loads(Path('evidence/ppo-fsdp-adapter-checkpoint.json').read_text())
+if checkpoint['status'] != 'PASS':
     raise SystemExit('Actual checkpoint roundtrip regression gate has not passed')
 for name, expected in checkpoint['sha256'].items():
     if hashlib.sha256(Path(name).read_bytes()).hexdigest() != expected:
         raise SystemExit(f'Checkpoint runtime changed since roundtrip check: {name}')
-print('Checkpoint model/optimizer/scheduler/RNG roundtrip gate PASS.')
+print('Adapter model/optimizer/scheduler/RNG roundtrip gate PASS.')
+base = Path('models/pi05-multitask40-sft-merged/model.safetensors')
+digest = hashlib.sha256()
+with base.open('rb') as stream:
+    for block in iter(lambda: stream.read(8 * 1024 * 1024), b''):
+        digest.update(block)
+if digest.hexdigest() != manifest['output_sha256']:
+    raise SystemExit('Frozen base no longer matches conversion evidence')
+print('Actual frozen base SHA256 verified.')
 PY
 .venv-ppo/bin/python scripts/check_ppo_gpu.py
 .venv-ppo/bin/python scripts/check_ppo.py
 .venv-ppo/bin/python - <<'PY'
 from omegaconf import OmegaConf
 from rlinf.config import validate_fsdp_cfg
-validate_fsdp_cfg(OmegaConf.load('evidence/ppo-composed.json').actor)
+cfg = OmegaConf.load('evidence/ppo-composed.json').actor
+validate_fsdp_cfg(cfg)
+if (cfg.fsdp_config.checkpoint_format != 'adapter'
+        or cfg.fsdp_config.save_full_model_weights
+        or cfg.fsdp_config.checkpoint_base_sha256 !=
+           '4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f'):
+    raise SystemExit('Unexpected adapter/base checkpoint contract')
 print('Actor FSDP configuration validated before starting Ray.')
 PY
 exec .venv-ppo/bin/python -u \

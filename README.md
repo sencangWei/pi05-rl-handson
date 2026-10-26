@@ -7,7 +7,7 @@
 - 40类1693条数据已全部下载，273465帧数值与每条首尾图像校验通过；训练1525条、留出168条。
 - 40任务 GPU SFT 已完成10000次迭代，17:43启动、18:14保存最后的9999 checkpoint，服务正常退出0。见 evidence/multitask40_lora_v1-status.json。四任务各两个初态仿真已完成，新SFT与官方父模型均8/8触发成功；另测新SFT放碗并松爪2/2通过。18段实际录像、同初态对照及限制见 [本轮仿真记录](artifacts/20261026-sft-simulation/README.md)。
 - 为避开显存阻塞，独立 CPU 测速实验 `cpu_throughput_probe_v1` 已执行3次优化迭代并保存checkpoint；首步预热学习率为0，后两次才更新参数。每步约23秒，10000步粗估65小时，因此不自动改成数天CPU训练，也不称为40任务训练完成。
-- PPO **实际更新 0 步（22:13 启动阶段快照）**。独立 Torch2.7.1+cu128 已通过5090D实际BF16前后向检查。真实SFT导出811张量，RLinf667张量严格加载通过；统一两处GELU近似后，整网float32对照最大误差0.000001669，通过原有阈值。v3完成仿真采样但首次训练前向在PEFT/FSDP边界精度冲突。子包装输入转换与根输入FP32保护经实际小模型CUDA反传验证通过，v5正在重试；尚无PPO更新证据。失败日志及处理记录保留在evidence与progress.md。
+- PPO共观察到30次有限梯度更新，首轮15次更新于22:41成功保存；第二轮同步时内存超限，最终交付权重仅含首轮15次更新。已保存权重的独立评测运行中。v5/v6完整模型保存均内存超限，保留失败证据；现采用绑定冻结基座SHA的单卡FSDP1 adapter格式，保存LoRA、价值头、优化器、调度器和RNG。不能把此有界试跑当作已证明能力提升。
 - 现役 LoRA 四任务各测一个初态，4/4成功；另做碗放盘无手指接触5步检查，94步成功。这是既有模型推理，不是本次训练结果。
 
 ## 数据、奖励和机器人互动的关系
@@ -48,7 +48,7 @@ OpenPI 记录版本 `15a9616a00943ada6c20a0f158e3adb39df2ccac`；准确源码快
 
 10000次采样分散到40类，不足遍历全部训练帧；这是链路与趋势实验，不能用训练时间或训练loss断言能力达标。
 
-## PPO 奖励及尚未完成的部分
+## PPO 奖励与验证范围
 
 [RLinf π0/π0.5 PPO](https://github.com/RLinf/RLinf/blob/main/docs/source-en/rst_source/examples/embodied/pi0.rst)，固定 `30e0236981c6a1dc19202de64116834c12673828`。
 
@@ -61,7 +61,7 @@ use_rel_reward = false
 
 普通步-0.001，成功步0.999。关闭相对奖励避免重复时间惩罚被差分抵消。修正上游评测倍率与训练不同的问题。没有额外抓取奖励、碰撞惩罚或学好的恢复策略；额外松爪检查目前仅用于评测，未加入PPO奖励。
 
-配置限定goal中抽屉、灶炉、碗放盘、酒瓶放架四类，单环境，300控制步/rollout，10步动作块，micro batch1/global batch2，CPU卸载，2个rollout epoch。30动作块可被global batch整除。原始参数FP32、主干激活BF16，投影/归一化/视觉精度敏感模块与价值头保留FP32。尚未完成Ray/FSDP实际更新验证，不能认定32GB显存可完成PPO。
+配置限定goal中抽屉、灶炉、碗放盘、酒瓶放架四类，单环境，300控制步/rollout，10步动作块，micro batch1/global batch2，CPU卸载，2个rollout epoch。30动作块可被global batch整除。原始参数FP32、主干激活BF16，投影/归一化/视觉精度敏感模块与价值头保留FP32。Ray/FSDP已实际完成30次有限梯度更新；其中15次已保存，第二轮同步OOM未保存，独立评测只使用已保存部分。all_linear适配器注入在freeze_vlm之后，实际训练全部注入LoRA及价值头，基座冻结。
 
 另一份官方 PyTorch 权重 `RLinf/RLinf-Pi05-LIBERO-SFT` 已下载校验，但本轮PPO选择本次JAX训练的9999权重血缘。scripts/export_sft_for_ppo.py 实际合并LoRA并转换，修正输出注意力投影的跨头求和；scripts/check_export_load.py 完整哈希、资产、配置和严格加载通过。scripts/check_export_parity.py 用固定输入、固定噪声、一次Euler步比较原JAX LoRA与RLinf密集网；实际补丁修复两处GELU后，原阈值下通过，证据 evidence/ppo-export-parity-v2/parity.json。失败的v1证据保留。该检查不涵盖BF16、完整采样或仿真完成率，不能代替PPO运行及能力测试。评测seed43不保证初态与训练不重合，此PPO小实验不是最终泛化评测。
 

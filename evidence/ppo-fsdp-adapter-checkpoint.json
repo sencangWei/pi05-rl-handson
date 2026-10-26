@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "torch": "2.7.1+cu128",
+  "world_size": 1,
+  "model_optimizer_scheduler_rng_exact": true,
+  "full_state_dict_forbidden": true,
+  "frozen_weights_unchanged": true,
+  "inference_bf16_cast_verified": true,
+  "rejected": [
+    "base",
+    "key",
+    "shape",
+    "nonfinite",
+    "dtype"
+  ],
+  "model_keys": [
+    "adapter.weight",
+    "adapter.bias",
+    "running"
+  ],
+  "scope": "tiny actual CUDA FSDP strategy; full PPO save not yet verified",
+  "sha256": {
+    "third_party/RLinf/rlinf/hybrid_engines/fsdp/strategy/base.py": "a5482ab2b6260df63ab676ed6c45cf9b8e01912b0cb7a00b3f5d3b8149de0a8c",
+    "third_party/RLinf/rlinf/hybrid_engines/fsdp/fsdp_model_manager.py": "0c833472bd1eb9dad8e10fe5007005cdfa65a2b6523b594d3d7892f63e9a0215",
+    "third_party/RLinf/rlinf/hybrid_engines/fsdp/strategy/adapter_checkpoint.py": "d7b6e7f5db280676e730ec45391576efa4d67735a5eb2e5d6e1804ed2e60beca",
+    "scripts/check_fsdp_adapter_checkpoint.py": "2cbca1e0969aa4a571bd4ecdc0357334c9bc2e70ba52844af7703aa767d2021a",
+    "scripts/check_fsdp_checkpoint.py": "c7b33efdc5b24096d52090ded6cf9fa31657f75c947bdc8d6745701747685985",
+    "configs/rlinf-adapter-checkpoint.patch": "ed12bb4f6bb4fbcf3286eea82355422331cca1e5dfaab6e2aa6711d08585c03b"
+  }
+}
