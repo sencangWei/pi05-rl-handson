@@ -3,9 +3,9 @@ import argparse
 import hashlib
 import json
 import os
-from pathlib import Path
 import subprocess
 import sys
+from pathlib import Path
 
 import numpy as np
 
@@ -125,7 +125,9 @@ def main():
         # Local training artifacts include Python/NumPy RNG for exact resume.
         saved = torch.load(args.checkpoint, map_location='cpu', weights_only=False, mmap=True)
         if saved.get('format') == 'rlinf-fsdp1-single-rank-adapter-v1':
-            from rlinf.hybrid_engines.fsdp.strategy.adapter_checkpoint import read_adapter_model
+            from rlinf.hybrid_engines.fsdp.strategy.adapter_checkpoint import (
+                read_adapter_model,
+            )
             read_adapter_model(model, saved, base_sha256, allow_dtype_cast=True)
             checkpoint_format = saved['format']
             weights = saved['model']
@@ -176,9 +178,9 @@ def main():
                 str(args.output / f'goal-{task:02d}-init-{initial:02d}'),
                 '--seed', '42', '--max-steps', '300', '--replan-steps', '5'])
             report = run.rollout(options, policy_factory=lambda port: NativePolicy(model, metadata))
-            if 'initial_state_sha256' in report:
-                if report['initial_state_sha256'] != state_hashes[f'{task}:{initial}']:
-                    raise ValueError('Rollout initial-state hash changed after preflight')
+            if ('initial_state_sha256' in report
+                    and report['initial_state_sha256'] != state_hashes[f'{task}:{initial}']):
+                raise ValueError('Rollout initial-state hash changed after preflight')
             report['reward_return'] = float(report['result'] == 'success') - .001 * report['steps']
             reports.append(report)
             (args.output / 'summary.json').write_text(json.dumps(reports, indent=2) + '\n')

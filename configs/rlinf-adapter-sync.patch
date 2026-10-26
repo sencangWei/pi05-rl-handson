@@ -1,0 +1,82 @@
+--- a/rlinf/workers/actor/embodied_fsdp_actor_worker.py
++++ b/rlinf/workers/actor/embodied_fsdp_actor_worker.py
+@@ -18,6 +18,7 @@
+ import torch
+ from omegaconf import DictConfig, OmegaConf
+ from torch import nn
++from torch.distributed.fsdp import FullyShardedDataParallel as FSDP
+ 
+ import rlinf.algorithms  # noqa: F401
+ from rlinf.algorithms.expert import build_expert_model_config
+@@ -27,6 +28,7 @@
+ from rlinf.data.schema.embodied_types import Trajectory
+ from rlinf.data.storage.lerobot import resolve_lerobot_repo_id
+ from rlinf.hybrid_engines.fsdp.fsdp_model_manager import FSDPModelManager
++from rlinf.hybrid_engines.fsdp.strategy.adapter_checkpoint import _guard, _selected
+ from rlinf.hybrid_engines.weight_syncer import WeightSyncer
+ from rlinf.models import get_model
+ from rlinf.models.embodiment.base_policy import ForwardType
+@@ -134,6 +136,17 @@
+         return model
+ 
+     def get_rollout_state_dict(self) -> dict:
++        if (
++            self.cfg.actor.get("checkpoint_format") == "adapter"
++            and self.weight_syncer.sender_initialized()
++        ):
++            _guard(self.model, self.cfg.actor.get("checkpoint_base_sha256"))
++            with FSDP.summon_full_params(self.model, writeback=False):
++                parameters, buffers = _selected(self.model)
++                selected = {**parameters, **buffers}
++                if set(selected) != set(self.param_names_need_sync):
++                    raise ValueError("Adapter sync selected keys differ from sync contract")
++                return {name: value.detach().clone() for name, value in selected.items()}
+         return self.get_model_state_dict(cpu_offload=False, full_state_dict=False)
+ 
+     @Worker.timer("actor/sync_model_to_rollout")
+--- a/rlinf/hybrid_engines/weight_syncer/patch_syncer.py
++++ b/rlinf/hybrid_engines/weight_syncer/patch_syncer.py
+@@ -450,7 +450,9 @@
+         # empty patch for it, because this rank does not really
+         # send.
+         if self.snapshot is None:
+-            if set(state_dict.keys()) != set(self.ordered_keys):
++            if set(state_dict.keys()) not in (
++                set(self.ordered_keys), set(self.param_names_need_sync)
++            ):
+                 raise ValueError("State dict keys do not match snapshot keys")
+             for key in self.param_names_need_sync:
+                 _ = materialize_tensor(state_dict[key])
+@@ -462,7 +464,9 @@
+                 )
+             )
+ 
+-        if set(state_dict.keys()) != set(self.ordered_keys):
++        if set(state_dict.keys()) not in (
++            set(self.ordered_keys), set(self.param_names_need_sync)
++        ):
+             raise ValueError("State dict keys do not match snapshot keys")
+ 
+         ordinals: list[torch.Tensor] = []
+@@ -658,7 +662,9 @@
+         # empty patch for it, because this rank does not really
+         # send.
+         if self.snapshot is None:
+-            if set(state_dict.keys()) != set(self.ordered_keys):
++            if set(state_dict.keys()) not in (
++                set(self.ordered_keys), set(self.param_names_need_sync)
++            ):
+                 raise ValueError("State dict keys do not match snapshot keys")
+             for param_name in self.param_names_need_sync:
+                 _ = materialize_tensor(state_dict[param_name])
+@@ -670,7 +676,9 @@
+                 )
+             )
+ 
+-        if set(state_dict.keys()) != set(self.ordered_keys):
++        if set(state_dict.keys()) not in (
++            set(self.ordered_keys), set(self.param_names_need_sync)
++        ):
+             raise ValueError("State dict keys do not match snapshot keys")
+ 
+         ordinals: list[torch.Tensor] = []

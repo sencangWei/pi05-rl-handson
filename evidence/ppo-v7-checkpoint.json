@@ -1,5 +1,5 @@
 {
-  "checkpoint": "logs/ppo_goal_smoke/ppo_goal_smoke/checkpoints/global_step_1/actor/adapter_checkpoint.pt",
+  "checkpoint": "logs/ppo_goal_smoke_v7_second_sync_oom/ppo_goal_smoke/checkpoints/global_step_1/actor/adapter_checkpoint.pt",
   "sha256": "dd5982b489c9d986419b358b84ce5db1ee2a55688f32070013d49e895e78fb6e",
   "bytes": 121226429,
   "format": "rlinf-fsdp1-single-rank-adapter-v1",

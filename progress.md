@@ -55,3 +55,8 @@ CPU/PPO准备代码备份：d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d已推送公
 - all_linear注入发生在原生freeze_vlm之后，因此本轮实际训练所有注入的LoRA及价值头；冻结基座不更新，不能按train_expert_only字面声称只训练动作专家LoRA。
 
 22:45更正：v7首轮adapter保存成功，但第二轮更新后权重同步再次触发48GiB上限。共观察30次更新，只有首轮15次持久化。已另启独立八场景评测，不能称2epoch完整退出成功。18项本项目测试通过；未限定tests目录时会误收集上游硬件/重复OpenPI测试，最终入口明确为pytest -q tests。
+
+## 2026-10-26 22:55 CST 首轮独立仿真与第二轮同步修复
+- v7已保存15次更新权重的独立8场景仿真全部成功；SFT对照同样8/8，步数差异小，不声称PPO明显改善能力。成对录像和完整结果见artifacts/20261026-ppo-simulation/first-saved-15-updates/。
+- 第二轮同步仍调用全模型state_dict，引入不必要的大模型副本。显式adapter单卡路径改为首次全量、后续仅同步可训练参数及持久buffer；CPU/CUDA snapshot均以真实actor+PatchWeightSyncer验证，两次重复同步一致、冻结参数不变、缺键/多键/形状错误拒绝；禁止初始化后再调用完整state_dict。
+- 七个增量补丁在固定上游干净源码重放后与运行时逐字节一致。启动器加入实际回归证据与源码哈希门禁。v7目录保留为logs/ppo_goal_smoke_v7_second_sync_oom；v8从同一SFT父权重重跑两轮，不与v7累加步数。

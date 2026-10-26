@@ -47,6 +47,13 @@ for name, expected in checkpoint['sha256'].items():
     if hashlib.sha256(Path(name).read_bytes()).hexdigest() != expected:
         raise SystemExit(f'Checkpoint runtime changed since roundtrip check: {name}')
 print('Adapter model/optimizer/scheduler/RNG roundtrip gate PASS.')
+sync = json.loads(Path('evidence/ppo-fsdp-adapter-sync.json').read_text())
+if sync['status'] != 'PASS':
+    raise SystemExit('Actual repeated adapter sync regression gate has not passed')
+for name, expected in sync['sha256'].items():
+    if hashlib.sha256(Path(name).read_bytes()).hexdigest() != expected:
+        raise SystemExit(f'Adapter sync runtime changed since regression check: {name}')
+print('Repeated adapter-only actor/rollout sync gate PASS.')
 base = Path('models/pi05-multitask40-sft-merged/model.safetensors')
 digest = hashlib.sha256()
 with base.open('rb') as stream:
