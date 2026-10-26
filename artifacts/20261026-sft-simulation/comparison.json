@@ -1,0 +1,74 @@
+[
+  {
+    "task_id": 0,
+    "initial_state": 0,
+    "initial_state_sha256": "5a8f40221c0b59dfaa1061b36a49d4b10b0b47ffb82a1ac0b10080a2aa466ec4",
+    "parent_result": "success",
+    "parent_steps": 120,
+    "sft_result": "success",
+    "sft_steps": 120
+  },
+  {
+    "task_id": 0,
+    "initial_state": 10,
+    "initial_state_sha256": "358f09a6861cce71b38fe5c338f6325a1c86b3e6fc334644a6d4c1b2d7b3469b",
+    "parent_result": "success",
+    "parent_steps": 126,
+    "sft_result": "success",
+    "sft_steps": 157
+  },
+  {
+    "task_id": 7,
+    "initial_state": 0,
+    "initial_state_sha256": "7c961c34d695eb9099bdabaf55dfe7c856665830c84ca2555affd2788d70a8a3",
+    "parent_result": "success",
+    "parent_steps": 88,
+    "sft_result": "success",
+    "sft_steps": 85
+  },
+  {
+    "task_id": 7,
+    "initial_state": 10,
+    "initial_state_sha256": "c310a53a84f33311ff088c0ed6198a9c6a5cd8860212d22e4e9225e6ba05cc0a",
+    "parent_result": "success",
+    "parent_steps": 78,
+    "sft_result": "success",
+    "sft_steps": 80
+  },
+  {
+    "task_id": 8,
+    "initial_state": 0,
+    "initial_state_sha256": "66b1883f351c4c374c742516714921b55bd5eca7fd6f0fa8e2e0a86abff19ccd",
+    "parent_result": "success",
+    "parent_steps": 82,
+    "sft_result": "success",
+    "sft_steps": 80
+  },
+  {
+    "task_id": 8,
+    "initial_state": 10,
+    "initial_state_sha256": "a26cb5d4dff6064642d5b4eef1ecfa5e44882500e12f5b00f3d81b06622a99f2",
+    "parent_result": "success",
+    "parent_steps": 82,
+    "sft_result": "success",
+    "sft_steps": 84
+  },
+  {
+    "task_id": 9,
+    "initial_state": 0,
+    "initial_state_sha256": "c12cdf642eb5c7b4fd04e4d3b55870f592770742ee5434ad8f80eda6168c9654",
+    "parent_result": "success",
+    "parent_steps": 299,
+    "sft_result": "success",
+    "sft_steps": 131
+  },
+  {
+    "task_id": 9,
+    "initial_state": 10,
+    "initial_state_sha256": "2874eeef938cd922b1606c0ed9436b5a5fee7970b44a9603c0297cc750f7376c",
+    "parent_result": "success",
+    "parent_steps": 144,
+    "sft_result": "success",
+    "sft_steps": 155
+  }
+]

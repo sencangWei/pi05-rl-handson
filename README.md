@@ -5,9 +5,9 @@
 ## 当前状态（2026-10-26）
 
 - 40类1693条数据已全部下载，273465帧数值与每条首尾图像校验通过；训练1525条、留出168条。
-- 40任务 GPU SFT 已完成10000次迭代，17:43启动、18:14保存最后的9999 checkpoint，服务正常退出0。见 evidence/multitask40_lora_v1-status.json。训练完成不等于能力达标；四个任务各两个初态的仿真正在执行。
+- 40任务 GPU SFT 已完成10000次迭代，17:43启动、18:14保存最后的9999 checkpoint，服务正常退出0。见 evidence/multitask40_lora_v1-status.json。四任务各两个初态仿真已完成，新SFT与官方父模型均8/8触发成功；另测新SFT放碗并松爪2/2通过。18段实际录像、同初态对照及限制见 [本轮仿真记录](artifacts/20261026-sft-simulation/README.md)。
 - 为避开显存阻塞，独立 CPU 测速实验 `cpu_throughput_probe_v1` 已执行3次优化迭代并保存checkpoint；首步预热学习率为0，后两次才更新参数。每步约23秒，10000步粗估65小时，因此不自动改成数天CPU训练，也不称为40任务训练完成。
-- PPO **实际更新 0 步**。奖励函数及配置检查通过；依赖安装卡点已定位为本地代理TLS超时，镜像直连已实测成功，独立安装服务 pi05-ppo-env-direct-20261026 正在安装。真实SFT checkpoint合并导出正在进行；LoRA层数值测试已通过，整网数值一致性、RLinf严格加载与实际更新仍须验证。
+- PPO **实际更新 0 步**。奖励函数及配置检查通过；独立依赖已安装；实际GPU检查发现Torch2.7.1+cu126没有本机sm_120内核，独立cu128修复正在执行。真实SFT导出811张量，RLinf667张量严格加载通过；整网对照误差最大0.001248，未通过既定阈值，正在定位实现差异。实际PPO更新尚未启动。
 - 现役 LoRA 四任务各测一个初态，4/4成功；另做碗放盘无手指接触5步检查，94步成功。这是既有模型推理，不是本次训练结果。
 
 ## 数据、奖励和机器人互动的关系
@@ -63,11 +63,11 @@ use_rel_reward = false
 
 配置限定goal中抽屉、灶炉、碗放盘、酒瓶放架四类，单环境，300控制步/rollout，10步动作块，micro batch1/global batch2，CPU卸载，2个rollout epoch。30动作块可被global batch整除。尚未完成Ray/FSDP运行验证，不能认定32GB显存可运行。
 
-需要的 RLinf PyTorch 权重 `RLinf/RLinf-Pi05-LIBERO-SFT` 已由独立服务下载并完整校验通过，固定版本 `45ccfcc4e28634f1576ebf78cab0fbe2fd82432d`；以 evidence/rlinf-model-validation.json 的ready字段为准。这是另一份官方PPO父模型。新增 scripts/export_sft_for_ppo.py 合并JAX LoRA并导出PyTorch权重。真实上游Flax层数值检查通过，特别修正输出注意力投影的跨头求和。scripts/check_export_load.py 将验证完整哈希、资产、配置和严格骨干加载；严格加载不证明整网输出一致。**转换与整网验证尚未全部完成，不能称为已连通的SFT→PPO链路**。直接使用上游密集转换器会漏掉LoRA。评测seed43不保证初态与训练不重合，此PPO小实验不是最终泛化评测。
+需要的 RLinf PyTorch 权重 `RLinf/RLinf-Pi05-LIBERO-SFT` 已由独立服务下载并完整校验通过，固定版本 `45ccfcc4e28634f1576ebf78cab0fbe2fd82432d`；以 evidence/rlinf-model-validation.json 的ready字段为准。这是另一份官方PPO父模型。新增 scripts/export_sft_for_ppo.py 合并JAX LoRA并导出PyTorch权重。真实上游Flax层数值检查通过，特别修正输出注意力投影的跨头求和。scripts/check_export_load.py 将验证完整哈希、资产、配置和严格骨干加载；严格加载不证明整网输出一致。**严格加载已通过，但整网验证尚未通过，不能称为已连通的SFT→PPO链路**。直接使用上游密集转换器会漏掉LoRA。评测seed43不保证初态与训练不重合，此PPO小实验不是最终泛化评测。
 
 恢复训练还需加入夹偏、抓空、物体移动后的状态，考察恢复后是否完成任务，并回放常规任务检查遗忘。仅扣时间分不能代替这些实验。
 
-独立环境安装脚本为 `scripts/prepare_ppo_env.sh`。它使用上游支持的 Torch 2.7.1 配套版本、禁用可选 FlashAttention 与 root 操作，隔离虚拟环境、缓存、LIBERO 配置及 Git 全局配置；不会安装到旧训练环境。安装完仍须核对包版本、运行导入/仿真检查，不能把安装成功称为 PPO 训练成功。当前后台安装日志为 `logs/ppo-env-direct-20261026.log`；权重校验入口为 `scripts/prepare_rlinf_model.py`。
+独立环境安装脚本为 `scripts/prepare_ppo_env.sh`。它使用上游支持的 Torch 2.7.1 配套版本、禁用可选 FlashAttention 与 root 操作，隔离虚拟环境、缓存、LIBERO 配置及 Git 全局配置；不会安装到旧训练环境。安装完仍须核对包版本、运行导入/仿真检查，不能把安装成功称为 PPO 训练成功。上游安装日志为 `logs/ppo-env-direct-20261026.log`，独立Blackwell修复入口为 `scripts/prepare_ppo_blackwell.sh`，日志 `logs/ppo-blackwell-20261026.log`；权重校验入口为 `scripts/prepare_rlinf_model.py`。
 
 ## 实际基线
 
@@ -81,7 +81,7 @@ use_rel_reward = false
 | 酒瓶放架 | 0 | 原始判据成功 | 159 |
 | 碗放盘，另测 | 0 | 原始判据且连续5步无手指接触 | 94 |
 
-视频、动作、推理记录和模型身份在 [demo/](demo/)。视频按控制帧播放，不等于真实耗时。每项只有一个初态，不代表稳定成功率。此基线与新SFT父模型不同，判断训练改善还必须补测同一官方父模型、同初态对照。
+视频、动作、推理记录和模型身份在 [demo/](demo/)。视频按控制帧播放，不等于真实耗时。每项只有一个初态，不代表稳定成功率。此基线与新SFT父模型不同，本轮已补测同一官方父模型、同初态对照，双方8/8；只有个别场景步数明显改善，不能宣称整体能力提升。
 
 ## 状态与验证命令
 

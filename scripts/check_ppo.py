@@ -27,6 +27,14 @@ def main():
         assert value["env"][split]["reward_coef"] == 1.0
         assert value["env"][split]["max_steps_per_rollout_epoch"] % value["actor"]["model"]["num_action_chunks"] == 0
     assert value["actor"]["micro_batch_size"] == 1
+    model = value["actor"]["model"]
+    assert model["openpi"]["action_horizon"] == 10
+    assert model["openpi"]["discrete_state_input"] is False
+    assert model["lora_target_scope"] == "all_linear"
+    assert value["actor"]["fsdp_config"]["use_orig_params"] is True
+    assert value["rollout"]["model"]["model_path"] == model["model_path"]
+    assert model["model_path"] == str(ROOT / "models/pi05-multitask40-sft-merged")
+    assert Path(model["openpi_data"]["norm_stats_path"]).is_file()
     train = value["env"]["train"]
     rollout_samples = (train["max_steps_per_rollout_epoch"] // value["actor"]["model"]["num_action_chunks"]
                        * train["total_num_envs"] * train["rollout_epoch"])

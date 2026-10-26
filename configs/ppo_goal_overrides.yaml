@@ -47,20 +47,30 @@ rollout:
   unnorm_key: libero_goal
   enable_offload: True
   model:
-    model_path: ${oc.env:PI05_RL_ROOT}/models/RLinf-Pi05-LIBERO-SFT
+    model_path: ${actor.model.model_path}
 
 actor:
   micro_batch_size: 1
   # 300 controls / 10 controls per chunk = 30 rollout samples; 2 divides 30.
   global_batch_size: 2
   enable_offload: True
+  fsdp_config:
+    use_orig_params: True
   model:
-    model_path: ${oc.env:PI05_RL_ROOT}/models/RLinf-Pi05-LIBERO-SFT
+    model_path: ${oc.env:PI05_RL_ROOT}/models/pi05-multitask40-sft-merged
     precision: bf16
     is_lora: True
     lora_rank: 8
+    # Native Gemma q_proj/k_proj are ModuleList containers: use actual Linear leaves.
+    # VLM adapters get no gradients while train_expert_only is enabled.
+    lora_target_scope: all_linear
     openpi:
       value_after_vlm: True
       torch_compile: False
+      action_horizon: 10
+      discrete_state_input: False
+      train_expert_only: True
+    openpi_data:
+      norm_stats_path: ${actor.model.model_path}/assets/physical-intelligence/libero/norm_stats.json
   optim:
     total_training_steps: 30

@@ -110,7 +110,7 @@ rollout:
   enable_offload: true
   pipeline_stage_num: 1
   model:
-    model_path: ${oc.env:PI05_RL_ROOT}/models/RLinf-Pi05-LIBERO-SFT
+    model_path: ${actor.model.model_path}
     precision: ${actor.model.precision}
 actor:
   group_name: ActorGroup
@@ -120,16 +120,22 @@ actor:
   seed: 42
   enable_offload: true
   model:
-    model_path: ${oc.env:PI05_RL_ROOT}/models/RLinf-Pi05-LIBERO-SFT
+    model_path: ${oc.env:PI05_RL_ROOT}/models/pi05-multitask40-sft-merged
     model_type: openpi
     add_value_head: true
     openpi:
       task: rl
       value_after_vlm: true
       torch_compile: false
+      action_horizon: 10
+      discrete_state_input: false
+      train_expert_only: true
     precision: bf16
     is_lora: true
     lora_rank: 8
+    lora_target_scope: all_linear
+    openpi_data:
+      norm_stats_path: ${actor.model.model_path}/assets/physical-intelligence/libero/norm_stats.json
   optim:
     lr: 5.0e-06
     value_lr: 0.0001
@@ -150,6 +156,7 @@ actor:
       param_dtype: ${actor.model.precision}
       reduce_dtype: ${actor.model.precision}
       buffer_dtype: ${actor.model.precision}
+    use_orig_params: true
 reward:
   use_reward_model: false
 critic:

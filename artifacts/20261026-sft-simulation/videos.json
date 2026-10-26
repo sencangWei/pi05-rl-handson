@@ -1,0 +1,92 @@
+[
+  {
+    "file": "sft-goal-00-init-00.mp4",
+    "source": "evaluations/multitask40_sft_init0and10_20261026/goal-00-init-00/paired_cameras.mp4",
+    "sha256": "4e9483e9c81fc419ea0a85b1bcd233c5f41bb1eb8f4daf36c913bd5f2ba71f64"
+  },
+  {
+    "file": "sft-goal-00-init-10.mp4",
+    "source": "evaluations/multitask40_sft_init0and10_20261026/goal-00-init-10/paired_cameras.mp4",
+    "sha256": "f155dd1ea8e143488c34235f24f0584c6ef8df4b1f42034d092a0f75c7ef1ac3"
+  },
+  {
+    "file": "sft-goal-07-init-00.mp4",
+    "source": "evaluations/multitask40_sft_init0and10_20261026/goal-07-init-00/paired_cameras.mp4",
+    "sha256": "aa09aa65c62fe10254e8f0edd104fba4010f47be1209c9eae949c79ba6e7e8dd"
+  },
+  {
+    "file": "sft-goal-07-init-10.mp4",
+    "source": "evaluations/multitask40_sft_init0and10_20261026/goal-07-init-10/paired_cameras.mp4",
+    "sha256": "5491f59640c6d4d37dbe5af2f89003773d48657734aece68cf2b10e380dddace"
+  },
+  {
+    "file": "sft-goal-08-init-00.mp4",
+    "source": "evaluations/multitask40_sft_init0and10_20261026/goal-08-init-00/paired_cameras.mp4",
+    "sha256": "5901bad3d1a79415c6e0b26d818e08418d46052bdd17363fb037ace77bd5915c"
+  },
+  {
+    "file": "sft-goal-08-init-10.mp4",
+    "source": "evaluations/multitask40_sft_init0and10_20261026/goal-08-init-10/paired_cameras.mp4",
+    "sha256": "7fb7a35147ccb151b74730dce855425b1b6ad766a206e176b6bedd472adf41e5"
+  },
+  {
+    "file": "sft-goal-09-init-00.mp4",
+    "source": "evaluations/multitask40_sft_init0and10_20261026/goal-09-init-00/paired_cameras.mp4",
+    "sha256": "55ad6a7d8bdc7c456d7d54f33eb8b7b78aa77bf7d49d4887bb46897c3908e1f8"
+  },
+  {
+    "file": "sft-goal-09-init-10.mp4",
+    "source": "evaluations/multitask40_sft_init0and10_20261026/goal-09-init-10/paired_cameras.mp4",
+    "sha256": "8fbf06db87207cf3360fe21c954465be7e26d7923cd1b53d672124427a79d199"
+  },
+  {
+    "file": "sft-release-goal-08-init-00.mp4",
+    "source": "evaluations/multitask40_sft_release_init0and10_20261026/goal-08-init-00/paired_cameras.mp4",
+    "sha256": "9ab540b760109c149d8c2cfd45e8bc0a4b6c6e1148aaee6df21af120e1759e98"
+  },
+  {
+    "file": "sft-release-goal-08-init-10.mp4",
+    "source": "evaluations/multitask40_sft_release_init0and10_20261026/goal-08-init-10/paired_cameras.mp4",
+    "sha256": "8580099f9c24f5865529675c57832ee4d9583da0d211b38e5e19abc6cba93f69"
+  },
+  {
+    "file": "parent-goal-00-init-00.mp4",
+    "source": "evaluations/multitask40_parent_init0and10_20261026/goal-00-init-00/paired_cameras.mp4",
+    "sha256": "d8f7fddd57bf17bd36da495cc53d6c22b9e53357cdd486e577c8f2223fc4637e"
+  },
+  {
+    "file": "parent-goal-00-init-10.mp4",
+    "source": "evaluations/multitask40_parent_init0and10_20261026/goal-00-init-10/paired_cameras.mp4",
+    "sha256": "96bca9e47f95cb8bd292d65f0c213eb762f50f425138209d06330be81ce05e20"
+  },
+  {
+    "file": "parent-goal-07-init-00.mp4",
+    "source": "evaluations/multitask40_parent_init0and10_20261026/goal-07-init-00/paired_cameras.mp4",
+    "sha256": "4de0567bd9225d59b71dd60ec18e01f71aeaaeccdb37d982dd1c1598d46ae5b9"
+  },
+  {
+    "file": "parent-goal-07-init-10.mp4",
+    "source": "evaluations/multitask40_parent_init0and10_20261026/goal-07-init-10/paired_cameras.mp4",
+    "sha256": "bbbc9d838a0072bc6be551fe3a1c12f195dfc4ea37c0bfbf6dae9b5a62eed054"
+  },
+  {
+    "file": "parent-goal-08-init-00.mp4",
+    "source": "evaluations/multitask40_parent_init0and10_20261026/goal-08-init-00/paired_cameras.mp4",
+    "sha256": "7278b1586a3a58efb1ca98e2f79a4bec9c840eef4d6307292a8671a9aa961486"
+  },
+  {
+    "file": "parent-goal-08-init-10.mp4",
+    "source": "evaluations/multitask40_parent_init0and10_20261026/goal-08-init-10/paired_cameras.mp4",
+    "sha256": "49673f03d08a8f3951780d8b90f7ec5621100320990e223b8af22ccb01c42ee7"
+  },
+  {
+    "file": "parent-goal-09-init-00.mp4",
+    "source": "evaluations/multitask40_parent_init0and10_20261026/goal-09-init-00/paired_cameras.mp4",
+    "sha256": "4425ad81b454180f1e05c23fd20eef644965984b5d64bc02d167146be8ed6578"
+  },
+  {
+    "file": "parent-goal-09-init-10.mp4",
+    "source": "evaluations/multitask40_parent_init0and10_20261026/goal-09-init-10/paired_cameras.mp4",
+    "sha256": "eb45740bdb425de74a5bc1f3990e9394786ff47d2ea56bb23e4b8d6bfdb657d5"
+  }
+]

@@ -28,3 +28,5 @@
 - 注意力输出LoRA实际方程BTNH,NHL->BTL; BTL,NLD->BTD在两阶段都约掉head，dense增量应为A@sum_heads(B)，普通逐头A@B不能保真。真实固定Flax模块测试已捕获并验证修复。
 - RLinf读官方权重的tied embedding别名lm_head.weight，直接mapping只产出embed_tokens.weight；导出器需显式重命名，严格加载门可捕获此类遗漏。
 - 新SFT服务端口8775被已有进程占用；未停止该进程，改9875继续。PPO训练更新仍0。
+
+21:35 仿真更新：新SFT四任务×双初态8/8，碗放盘松爪额外2/2；官方父模型同哈希初态8/8，酒瓶初态0由299降至131步，其余有快有慢。18段真实视频保存artifacts/20261026-sft-simulation。PPO严格加载811→667张量通过；float32整网对照最大误差0.001248未达既定阈值，正定位GELU等数值差异。Torchcu126在5090D实测no kernel image，独立cu128修复进行中。PPO更新仍0。配置已改为本次合并SFT血缘、horizon10/discreteFalse、正确归一化、all_linear适配器与orig_params，真实运行仍待门槛通过。

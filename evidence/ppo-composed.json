@@ -103,9 +103,15 @@
         "paligemma_variant": "gemma_2b",
         "action_expert_variant": "gemma_300m",
         "max_token_len": 200,
-        "torch_compile": false
+        "torch_compile": false,
+        "action_horizon": 10,
+        "discrete_state_input": false
       },
-      "model_path": "/home/robot/pi05-rl-handson/models/RLinf-Pi05-LIBERO-SFT"
+      "model_path": "/home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged",
+      "lora_target_scope": "all_linear",
+      "openpi_data": {
+        "norm_stats_path": "/home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged/assets/physical-intelligence/libero/norm_stats.json"
+      }
     },
     "fsdp_config": {
       "strategy": "fsdp",
@@ -118,7 +124,7 @@
       "forward_prefetch": false,
       "limit_all_gathers": false,
       "backward_prefetch": null,
-      "use_orig_params": false,
+      "use_orig_params": true,
       "use_liger_kernel": false,
       "mixed_precision": {
         "param_dtype": "bf16",
@@ -226,7 +232,7 @@
     "enable_offload": true,
     "pipeline_stage_num": 1,
     "model": {
-      "model_path": "/home/robot/pi05-rl-handson/models/RLinf-Pi05-LIBERO-SFT",
+      "model_path": "/home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged",
       "precision": "bf16"
     }
   },

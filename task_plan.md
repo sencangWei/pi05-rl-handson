@@ -32,3 +32,5 @@
 - 导出服务正在写出真实9999 checkpoint；RLinf tied embedding别名及严格骨干加载检查仍待实际运行。
 - 新增本地SFT推理服务，端口8775冲突已改9875；四任务×两个初态仿真已排队等待模型就绪，视频写入evaluations/multitask40_sft_init0and10_20261026。
 - PPO实际更新仍0；未将安装、转换或SFT训练冒充PPO完成。
+
+21:35 仿真更新：新SFT四任务×双初态8/8，碗放盘松爪额外2/2；官方父模型同哈希初态8/8，酒瓶初态0由299降至131步，其余有快有慢。18段真实视频保存artifacts/20261026-sft-simulation。PPO严格加载811→667张量通过；float32整网对照最大误差0.001248未达既定阈值，正定位GELU等数值差异。Torchcu126在5090D实测no kernel image，独立cu128修复进行中。PPO更新仍0。配置已改为本次合并SFT血缘、horizon10/discreteFalse、正确归一化、all_linear适配器与orig_params，真实运行仍待门槛通过。
