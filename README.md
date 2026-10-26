@@ -5,9 +5,9 @@
 ## 当前状态（2026-10-26）
 
 - 40类1693条数据已全部下载，273465帧数值与每条首尾图像校验通过；训练1525条、留出168条。
-- 计划的10000步 GPU SFT **实际更新 0 步**。GPU 空闲约978 MiB；队列要求至少24576 MiB，绝不停止其他任务。队列在预检后等显存最多8小时，约11:06到期；不会无限等待。
+- 用户关闭旧推理服务后，17:43启动40任务 GPU SFT，目标10000步。启动前空闲31574 MiB；已观测 Step 900（零起始循环编号），正在实际更新，尚未完成。启动记录与原始日志节选见 evidence/multitask40-gpu-launch-20261026.json 和 evidence/multitask40-gpu-progress-20261026.log。原凌晨队列11:06等待超时，已被独立新服务替代。
 - 为避开显存阻塞，独立 CPU 测速实验 `cpu_throughput_probe_v1` 已执行3次优化迭代并保存checkpoint；首步预热学习率为0，后两次才更新参数。每步约23秒，10000步粗估65小时，因此不自动改成数天CPU训练，也不称为40任务训练完成。
-- PPO **实际更新 0 步**。已修改实际 RLinf 奖励函数并执行单元测试，配置可由上游 Hydra 组合；独立运行环境正在安装；固定 PyTorch 权重已下载且逐文件完整校验通过，显存与权重衔接尚未解决。队列不会自动启动未准备好的 PPO。
+- PPO **实际更新 0 步**。已修改实际 RLinf 奖励函数并执行单元测试，配置可由上游 Hydra 组合；独立运行环境正在安装；固定 PyTorch 权重已下载且逐文件完整校验通过，SFT到PPO权重衔接尚未解决。原依赖安装服务09:17超时，现由 pi05-ppo-env-retry-20261026.service 独立重试；不能把安装或SFT完成称为PPO更新。
 - 现役 LoRA 四任务各测一个初态，4/4成功；另做碗放盘无手指接触5步检查，94步成功。这是既有模型推理，不是本次训练结果。
 
 ## 数据、奖励和机器人互动的关系
@@ -87,13 +87,14 @@ use_rel_reward = false
 
 ```bash
 cd /home/robot/pi05-rl-handson
-systemctl --user status pi05-multitask-night-20261026.service --no-pager
-cat evidence/night-status.json
-cat evidence/download-status.json
-tail -n 20 logs/night-queue.log
+systemctl --user status pi05-multitask-sft-20261026.service --no-pager
+tail -n 20 logs/train-multitask40-gpu-20261026.log
+cat evidence/multitask40_lora_v1-status.json
+systemctl --user status pi05-ppo-env-retry-20261026.service --no-pager
+tail -n 10 logs/ppo-env-retry-20261026.log
 ```
 
-后台顺序：完整下载→行/图像校验→CPU预检→显存等待→有界SFT。阶段失败记录后退出，不覆盖旧实验。机器重启或用户服务管理器退出后，此临时服务不会自动恢复。有服务活动时，不要同时另启任务写同一个实验。
+当前SFT直接使用已通过验证的数据及固定配置，仍在构建模型前检查显存；使用与旧队列相同的文件锁，避免并发写入。新服务限制6小时、48 GiB内存、禁用swap。机器重启或用户服务管理器退出后，此临时服务不会自动恢复。有服务活动时，不要同时另启任务写同一个实验。状态文件的 actual_updates 仅在结束时结算，运行中进度以 Step 日志为准；night-status.json 是已超时旧队列的历史记录。
 
 CPU 测速独立于GPU队列，命令如下（新实验名；拒绝覆盖已有目录）：
 

@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-10-26T09:44:06.089931+00:00",
+  "service": "pi05-multitask-sft-20261026.service",
+  "status": "RUNNING_UPDATES",
+  "training_code_commit": "9ae07b58d1b437eeac022ba17dd53b0dad16faff",
+  "experiment": "multitask40_lora_v1",
+  "device": "gpu",
+  "planned_updates": 10000,
+  "batch_size": 1,
+  "learning_rate": 2e-05,
+  "seed": 42,
+  "log": "logs/train-multitask40-gpu-20261026.log",
+  "status_file": "evidence/multitask40_lora_v1-status.json",
+  "unit_spec": "evidence/multitask40-gpu-unit-20261026.txt",
+  "environment": "evidence/multitask40-gpu-environment-20261026.json",
+  "ppo_updates": 0,
+  "note": "Direct SFT service after user manually closed old inference services. Earlier night queue is expired and is not the active launcher.",
+  "observed_utc": "2026-10-26T09:47:19.147877+00:00",
+  "last_logged_iteration": 900,
+  "last_logged_metrics": {
+    "grad_norm": 0.0122,
+    "loss": 0.0113,
+    "param_norm": 1833.3182
+  },
+  "iteration_note": "Upstream iteration labels are zero-based. This is a log snapshot, not the final checkpoint step."
+}

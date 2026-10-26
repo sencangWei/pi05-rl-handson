@@ -1,0 +1,11 @@
+RuntimeMaxUSec=6h
+ExecMainStartTimestamp=Mon 2026-10-26 17:43:36 CST
+ExecStart={ path=/usr/bin/flock ; argv[]=/usr/bin/flock --nonblock /home/robot/pi05-rl-handson/.local/night.lock /home/robot/pi05-rl-handson/.venv-train/bin/python -u scripts/train_multitask.py --device gpu --experiment multitask40_lora_v1 --steps 10000 --batch-size 1 --learning-rate 0.00002 ; ignore_errors=no ; start_time=[Mon 2026-10-26 17:43:36 CST] ; stop_time=[n/a] ; pid=2565106 ; code=(null) ; status=0/0 }
+MemoryMax=51539607552
+MemorySwapMax=0
+Environment=CUDA_VISIBLE_DEVICES=0 JAX_PLATFORMS=cuda XLA_PYTHON_CLIENT_PREALLOCATE=false XLA_PYTHON_CLIENT_MEM_FRACTION=0.85 OMP_NUM_THREADS=8 OPENBLAS_NUM_THREADS=8 HF_HUB_OFFLINE=1 WANDB_MODE=disabled
+WorkingDirectory=/home/robot/pi05-rl-handson
+Nice=5
+StandardOutput=append
+StandardError=append
+Id=pi05-multitask-sft-20261026.service

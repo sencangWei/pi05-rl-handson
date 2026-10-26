@@ -1,7 +1,6 @@
 {
-  "phase": "WAITING_GPU",
-  "updated_utc": "2026-10-26T00:20:54.501466+00:00",
+  "phase": "WAIT_EXPIRED",
+  "updated_utc": "2026-10-26T03:06:13.102374+00:00",
   "actual_updates": 0,
-  "free_gpu_mib": 978,
-  "required_free_mib": 24576
+  "free_gpu_mib": 978
 }

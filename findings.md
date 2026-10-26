@@ -19,3 +19,5 @@
 - RLinf安装器应显式选择Torch2.7.1（匹配rlinf-openpi0.1.1）；默认uv sync会选择2.11。可跳过flash-attn源码编译，但需要独立LIBERO配置目录以免重写旧路径。旧JAX LoRA不能直接由只映射密集权重的转换器接到PPO。
 
 08:26 更新：PPO独立父权重下载服务正常退出0；固定版本45ccfcc4e28634f1576ebf78cab0fbe2fd82432d的3个文件全部通过大小和完整哈希校验，model.safetensors为7473091464字节，SHA-256为4616e4c1966a5fb063b442ea5d69857f45e873222d839b794634d87d252ab9e7。见evidence/rlinf-model-validation.json。独立PPO依赖仍在下载，GPU主训练/PPO更新仍为0，SFT到PPO的LoRA衔接仍未实现。
+
+17:47 更新：用户已自行关闭旧GPU推理服务，启动前空闲31574MiB，JAX GPU矩阵运算通过。独立服务pi05-multitask-sft-20261026.service于17:43启动，真实日志已观测Step 900、loss=0.0113；40任务10000步SFT正在更新，未完成。服务使用原night.lock，限制6小时/48GiB/禁swap。源码、父权重和数据前置核验通过。原夜间队列11:06等待超时，已另存历史；PPO依赖原安装09:17超时，已启动4小时独立重试。PPO更新仍0，JAX LoRA到PPO权重衔接仍未实现。启动环境、服务参数和真实日志节选均已落盘。
