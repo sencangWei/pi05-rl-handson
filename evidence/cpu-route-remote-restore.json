@@ -1,0 +1,20 @@
+{
+  "verified_commit": "d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson.git",
+  "branch": "experiment/pi05-ppo",
+  "tracked_files_checked": 189,
+  "tracked_content_sha256": "16eccf318fb6da9a2b318afa4af57330d7f71a7c6fab6e7b434792d1bfdb67ce",
+  "openpi_source_files_verified": 141,
+  "scope": "Fetched new commit into independent remote clone, restored clean detached worktree, compared all tracked bytes against both fetched and local committed blobs; no large weights/environment backup.",
+  "passed": true,
+  "rlinf_upstream_revision": "30e0236981c6a1dc19202de64116834c12673828",
+  "rlinf_clean_upstream_patch_replay_sha256": "502975582b0225507617464d36b187621496f0048eb74053a04e9e9cd45cb1c1",
+  "restored_contract_tests": {
+    "passed": true,
+    "tests_run": 7,
+    "environment_note": "Restored code/tests with existing independent training venv; not a fresh dependency installation"
+  },
+  "restored_lint_passed": true,
+  "restored_shell_syntax_passed": true,
+  "verified_at_utc": "2026-10-26T00:22:52.244595+00:00"
+}
