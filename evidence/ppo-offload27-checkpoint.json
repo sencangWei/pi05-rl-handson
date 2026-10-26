@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "unit": "pi05-ppo-offload27.service",
+  "systemd": {
+    "Result": "success",
+    "ExecMainStatus": "0",
+    "ActiveState": "inactive"
+  },
+  "rounds": 3,
+  "optimizer_updates": 45,
+  "finite_optimizer_updates": 45,
+  "peak_memory_bytes": 40945025024,
+  "memory_limit_gib": 48,
+  "oom_events": 0,
+  "checkpoint": "logs/ppo_offload27/ppo_goal_smoke/checkpoints/global_step_3/actor/adapter_checkpoint.pt",
+  "checkpoint_bytes": 121226557,
+  "checkpoint_sha256": "f14bea25e3412cf0938c568c4198aa24b08fbc90e6f070809aee03629581e83a",
+  "format": "rlinf-fsdp1-single-rank-adapter-v1",
+  "base_weights_sha256": "4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f",
+  "finite_saved_model_tensors": 550,
+  "optimizer_state_step_counts": {
+    "0": 308,
+    "45": 242
+  },
+  "scheduler_epochs": [
+    3
+  ],
+  "train_initial_ids": [],
+  "heldout_initial_ids": [],
+  "reset_counts": {},
+  "note": "Zero-step optimizer states are reported; not all injected LoRA tensors are active."
+}

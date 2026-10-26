@@ -9,8 +9,8 @@ Actor FSDP configuration validated before starting Ray.
 See https://hydra.cc/docs/1.2/upgrades/1.1_to_1.2/changes_to_job_working_dir/ for more information.
   ret = run_job(
 2026-10-27 00:13:18,941	WARNING authentication_token_setup.py:85 -- Token authentication is enabled for this Ray cluster. Set RAY_AUTH_MODE=disabled to opt out. For more information, see https://docs.ray.io/en/latest/ray-security/token-auth.html
-2026-10-27 00:13:21,773	INFO worker.py:2024 -- Started a local Ray instance. View the dashboard at http://127.0.0.1:8265 
-[INFO 00:13:23 RLinf] RLinf is running on a cluster with 1 node and 1 accelerator. The nodes' details are: 
+2026-10-27 00:13:21,773	INFO worker.py:2024 -- Started a local Ray instance. View the dashboard at http://127.0.0.1:8265
+[INFO 00:13:23 RLinf] RLinf is running on a cluster with 1 node and 1 accelerator. The nodes' details are:
 node_labels: []
 node_rank: 0
 ray_id: 7325ace960075ffae1c81629dfb26a614aaa50ef8d3af43a4ee1afb9
@@ -24,7 +24,7 @@ hardware_resources:
     model: NV_GPU:RTX 5090 D
 profiler_backends: []
 
-Node groups' details are: 
+Node groups' details are:
 label: cluster
 nodes: '0'
 hardware_type: Accelerator
@@ -37,9 +37,9 @@ hardware_type: null
 ignore_hardware: true
 env_configs: null
 
-[INFO 00:13:23 FlexiblePlacementStrategy] 
+[INFO 00:13:23 FlexiblePlacementStrategy]
 [INFO 00:13:23 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
-[INFO 00:13:23 FlexiblePlacementStrategy] 
+[INFO 00:13:23 FlexiblePlacementStrategy]
 [INFO 00:13:23 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
 {
   "env": {
@@ -346,23 +346,23 @@ env_configs: null
     "use_critic_model": false
   }
 }
-[INFO 00:13:23 FlexiblePlacementStrategy] 
+[INFO 00:13:23 FlexiblePlacementStrategy]
 [INFO 00:13:23 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
 [INFO 00:13:23 FlexiblePlacementStrategy] Generated 1 placements: [Placement(rank=0, cluster_node_rank=0, placement_node_rank=0, local_accelerator_rank=0, accelerator_type='NV_GPU', local_rank=0, local_world_size=1, visible_accelerators=['0'], isolate_accelerator=True, local_hardware_ranks=[0], node_group_label='cluster')].
 [INFO 00:13:23 FlexiblePlacementStrategy] Generated 1 placements: [Placement(rank=0, cluster_node_rank=0, placement_node_rank=0, local_accelerator_rank=0, accelerator_type='NV_GPU', local_rank=0, local_world_size=1, visible_accelerators=['0'], isolate_accelerator=True, local_hardware_ranks=[0], node_group_label='cluster')].
 [INFO 00:13:23 FlexiblePlacementStrategy] Generated 1 placements: [Placement(rank=0, cluster_node_rank=0, placement_node_rank=0, local_accelerator_rank=0, accelerator_type='NV_GPU', local_rank=0, local_world_size=1, visible_accelerators=['0'], isolate_accelerator=True, local_hardware_ranks=[0], node_group_label='cluster')].
-[INFO 00:13:23 NodePlacementStrategy] 
+[INFO 00:13:23 NodePlacementStrategy]
 [INFO 00:13:23 NodePlacementStrategy] Using node placement with node ranks: [0], node groups: ['node'].
 [INFO 00:13:23 NodePlacementStrategy] Generated 1 placements: [Placement(rank=0, cluster_node_rank=0, placement_node_rank=0, local_accelerator_rank='0', accelerator_type='NV_GPU', local_rank=0, local_world_size=1, visible_accelerators=['0'], isolate_accelerator=True, local_hardware_ranks=[], node_group_label='cluster')].
-[INFO 00:13:23 NodePlacementStrategy] 
+[INFO 00:13:23 NodePlacementStrategy]
 [INFO 00:13:23 NodePlacementStrategy] Using node placement with node ranks: [0], node groups: ['node'].
 [INFO 00:13:23 NodePlacementStrategy] Generated 1 placements: [Placement(rank=0, cluster_node_rank=0, placement_node_rank=0, local_accelerator_rank='0', accelerator_type='NV_GPU', local_rank=0, local_world_size=1, visible_accelerators=['0'], isolate_accelerator=True, local_hardware_ranks=[], node_group_label='cluster')].
-[INFO 00:13:24 NodePlacementStrategy] 
+[INFO 00:13:24 NodePlacementStrategy]
 [INFO 00:13:24 NodePlacementStrategy] Using node placement with node ranks: [0], node groups: ['node'].
 [INFO 00:13:24 NodePlacementStrategy] Generated 1 placements: [Placement(rank=0, cluster_node_rank=0, placement_node_rank=0, local_accelerator_rank='0', accelerator_type='NV_GPU', local_rank=0, local_world_size=1, visible_accelerators=['0'], isolate_accelerator=True, local_hardware_ranks=[], node_group_label='cluster')].
-(MultiStepRolloutWorker pid=3550899) [INFO 00:13:25 FlexiblePlacementStrategy] 
+(MultiStepRolloutWorker pid=3550899) [INFO 00:13:25 FlexiblePlacementStrategy]
 (MultiStepRolloutWorker pid=3550899) [INFO 00:13:25 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
-(EnvWorker pid=3550900) [INFO 00:13:25 FlexiblePlacementStrategy] 
+(EnvWorker pid=3550900) [INFO 00:13:25 FlexiblePlacementStrategy]
 (EnvWorker pid=3550900) [INFO 00:13:25 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
 (EnvGroup(rank=0) pid=3550900) Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
 (EnvGroup(rank=0) pid=3550900) Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
@@ -377,13 +377,13 @@ env_configs: null
 (EnvGroup(rank=0) pid=3550900) [robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
 (EnvGroup(rank=0) pid=3550900) WARNING:robosuite_logs:To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py
 (EnvGroup(rank=0) pid=3550900) INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
-(ChannelWorker pid=3551287) [INFO 00:13:26 FlexiblePlacementStrategy] 
+(ChannelWorker pid=3551287) [INFO 00:13:26 FlexiblePlacementStrategy]
 (ChannelWorker pid=3551287) [INFO 00:13:26 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
 (EnvGroup(rank=0) pid=3550900) [INFO 00:13:26 EnvGroup-Rank-0][libero_env.py:197] Evaluation Mode: Standard LIBERO
 (EnvGroup(rank=0) pid=3550900) [info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 (EnvGroup(rank=0) pid=3550900) [INFO 00:13:26 EnvGroup-Rank-0][libero_env.py:197] Evaluation Mode: Standard LIBERO
 (EnvGroup(rank=0) pid=3550900) [info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-(EmbodiedFSDPActor pid=3550892) [INFO 00:13:26 FlexiblePlacementStrategy] 
+(EmbodiedFSDPActor pid=3550892) [INFO 00:13:26 FlexiblePlacementStrategy]
 (EmbodiedFSDPActor pid=3550892) [INFO 00:13:26 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
 (EmbodiedFSDPActor pid=3550892) [INFO 00:13:26 ActorGroup-Rank-0][fsdp_model_manager.py:140] [FSDP] AMP is disabled.
 (EnvGroup(rank=0) pid=3550900) Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
@@ -689,19 +689,19 @@ env_configs: null
 (ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.9.mlp, wrap_mode=subtree, policy=fp32
 (EnvGroup(rank=0) pid=3550900) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/gymnasium/core.py:311: UserWarning: WARN: env.wait_delay to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.wait_delay` for environment variables or `env.get_wrapper_attr('wait_delay')` that will search the reminding wrappers.
 (EnvGroup(rank=0) pid=3550900)   logger.warn(
-(RolloutGroup(rank=0) pid=3550899) 
+(RolloutGroup(rank=0) pid=3550899)
 Generating Rollout Epochs:   0%|          | 0/1 [00:00<?, ?it/s]
 (EnvGroup(rank=0) pid=3550900) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/gymnasium/core.py:311: UserWarning: WARN: env.insert_delay_metrics to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.insert_delay_metrics` for environment variables or `env.get_wrapper_attr('insert_delay_metrics')` that will search the reminding wrappers.
 (EnvGroup(rank=0) pid=3550900)   logger.warn(
-(RolloutGroup(rank=0) pid=3550899) 
+(RolloutGroup(rank=0) pid=3550899)
 Generating Rollout Epochs: 100%|██████████| 1/1 [00:10<00:00, 10.00s/it]
 Generating Rollout Epochs: 100%|██████████| 1/1 [00:10<00:00, 10.00s/it]
 (ActorGroup(rank=0) pid=3550892) [INFO 00:14:37 ActorGroup-Rank-0][embodied_fsdp_actor_worker.py:705] PPO_UPDATE {"finite_optimizer_steps": 15, "metrics": {"actor/approx_kl": 0.014062197878956795, "actor/clip_fraction": 0.06666667014360428, "actor/clipped_ratio": 0.9877030849456787, "actor/dual_cliped_ratio": 0.0, "actor/entropy_loss": 0.0, "actor/grad_norm": 26.975873947143555, "actor/lr": 4.999999873689376e-06, "actor/policy_loss": -0.026840390637516975, "actor/policy_loss_abs": 0.738007128238678, "actor/ratio": 0.9887884855270386, "actor/ratio_abs": 0.041786689311265945, "actor/total_loss": 0.6337022185325623, "critic/explained_variance": -0.5856643915176392, "critic/lr": 9.999999747378752e-05, "critic/value_clip_ratio": 0.9333333373069763, "critic/value_loss": 1.2942448854446411}, "optimizer_step_attempts": 15}
-(RolloutGroup(rank=0) pid=3550899) 
+(RolloutGroup(rank=0) pid=3550899)
 Evaluating Rollout Epochs:   0%|          | 0/1 [00:00<?, ?it/s]
 (EnvGroup(rank=0) pid=3550900) [INFO 00:14:42 EnvGroup-Rank-0][utils.py:264] [libero eval] task_id=0, trial_id=0, success=True
 (EnvGroup(rank=0) pid=3550900) [INFO 00:14:45 EnvGroup-Rank-0][utils.py:264] [libero eval] task_id=0, trial_id=1, success=True
-(RolloutGroup(rank=0) pid=3550899) 
+(RolloutGroup(rank=0) pid=3550899)
 Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:08<00:00,  8.62s/it]
 Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:08<00:00,  8.62s/it]
 [INFO 00:14:49 RLinf] Saving checkpoint at step 1.
@@ -750,17 +750,17 @@ Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:08<00:00
 │                                                                                                                      │
 ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-(RolloutGroup(rank=0) pid=3550899) 
+(RolloutGroup(rank=0) pid=3550899)
 Generating Rollout Epochs:   0%|          | 0/1 [00:00<?, ?it/s]
-(RolloutGroup(rank=0) pid=3550899) 
+(RolloutGroup(rank=0) pid=3550899)
 Generating Rollout Epochs: 100%|██████████| 1/1 [00:10<00:00, 10.44s/it]
 Generating Rollout Epochs: 100%|██████████| 1/1 [00:10<00:00, 10.44s/it]
 (ActorGroup(rank=0) pid=3550892) [INFO 00:15:15 ActorGroup-Rank-0][embodied_fsdp_actor_worker.py:705] PPO_UPDATE {"finite_optimizer_steps": 15, "metrics": {"actor/approx_kl": 0.005766518879681826, "actor/clip_fraction": 0.0, "actor/clipped_ratio": 0.9955834150314331, "actor/dual_cliped_ratio": 0.0, "actor/entropy_loss": 0.0, "actor/grad_norm": 32.88075637817383, "actor/lr": 4.994519258616492e-06, "actor/policy_loss": 0.008496809750795364, "actor/policy_loss_abs": 0.8671785593032837, "actor/ratio": 0.9955834150314331, "actor/ratio_abs": 0.03161095082759857, "actor/total_loss": 1.04413902759552, "critic/explained_variance": -0.045825839042663574, "critic/lr": 9.989038517232984e-05, "critic/value_clip_ratio": 0.800000011920929, "critic/value_loss": 2.0797812938690186}, "optimizer_step_attempts": 15}
-(RolloutGroup(rank=0) pid=3550899) 
+(RolloutGroup(rank=0) pid=3550899)
 Evaluating Rollout Epochs:   0%|          | 0/1 [00:00<?, ?it/s]
 (EnvGroup(rank=0) pid=3550900) [INFO 00:15:20 EnvGroup-Rank-0][utils.py:264] [libero eval] task_id=0, trial_id=0, success=True
 (EnvGroup(rank=0) pid=3550900) [INFO 00:15:23 EnvGroup-Rank-0][utils.py:264] [libero eval] task_id=0, trial_id=1, success=True
-(RolloutGroup(rank=0) pid=3550899) 
+(RolloutGroup(rank=0) pid=3550899)
 Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:08<00:00,  8.64s/it]
 Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:08<00:00,  8.64s/it]
 [INFO 00:15:27 RLinf] Saving checkpoint at step 2.
@@ -809,17 +809,17 @@ Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:08<00:00
 │                                                                                                                      │
 ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-(RolloutGroup(rank=0) pid=3550899) 
+(RolloutGroup(rank=0) pid=3550899)
 Generating Rollout Epochs:   0%|          | 0/1 [00:00<?, ?it/s]
-(RolloutGroup(rank=0) pid=3550899) 
+(RolloutGroup(rank=0) pid=3550899)
 Generating Rollout Epochs: 100%|██████████| 1/1 [00:09<00:00,  9.76s/it]
 Generating Rollout Epochs: 100%|██████████| 1/1 [00:09<00:00,  9.76s/it]
 (ActorGroup(rank=0) pid=3550892) [INFO 00:15:55 ActorGroup-Rank-0][embodied_fsdp_actor_worker.py:705] PPO_UPDATE {"finite_optimizer_steps": 15, "metrics": {"actor/approx_kl": 0.007203086279332638, "actor/clip_fraction": 0.0, "actor/clipped_ratio": 0.9937132596969604, "actor/dual_cliped_ratio": 0.0, "actor/entropy_loss": 0.0, "actor/grad_norm": 39.77680206298828, "actor/lr": 4.978103333996842e-06, "actor/policy_loss": 0.0009910467779263854, "actor/policy_loss_abs": 0.7741472125053406, "actor/ratio": 0.9937132596969604, "actor/ratio_abs": 0.021420413628220558, "actor/total_loss": 0.3998311758041382, "critic/explained_variance": -0.22919714450836182, "critic/lr": 9.956206486094743e-05, "critic/value_clip_ratio": 0.800000011920929, "critic/value_loss": 0.798671305179596}, "optimizer_step_attempts": 15}
-(RolloutGroup(rank=0) pid=3550899) 
+(RolloutGroup(rank=0) pid=3550899)
 Evaluating Rollout Epochs:   0%|          | 0/1 [00:00<?, ?it/s]
 (EnvGroup(rank=0) pid=3550900) [INFO 00:16:00 EnvGroup-Rank-0][utils.py:264] [libero eval] task_id=0, trial_id=0, success=True
 (EnvGroup(rank=0) pid=3550900) [INFO 00:16:05 EnvGroup-Rank-0][utils.py:264] [libero eval] task_id=0, trial_id=1, success=True
-(RolloutGroup(rank=0) pid=3550899) 
+(RolloutGroup(rank=0) pid=3550899)
 Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:09<00:00,  9.53s/it]
 Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:09<00:00,  9.53s/it]
 [INFO 00:16:08 RLinf] Saving checkpoint at step 3.
@@ -867,4 +867,3 @@ Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:09<00:00
 │critic/value_loss=0.799                │                                       │                                      │
 │                                                                                                                      │
 ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-

@@ -86,3 +86,6 @@ CPU/PPO准备代码备份：d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d已推送公
 - 30个合成失败初态已生成：18训练/12留出，三类抓空/偏移/放置失败；严格无接触目标连续5步，真实子进程reset/step通过。
 - 26 tests及2个subtests通过（JAX_PLATFORMS=cpu），精度/adapter保存恢复/同步回归通过。20轮300次恢复训练执行中，尚无能力提升结论。
 - 8补丁在干净固定RLinf上游重放，12个运行文件SHA逐一匹配。
+
+- 00:42：300次有限优化器更新完成，20轮正常退出0；48GiB上限内峰值40.68GiB、OOM0。最终adapter SHA c1cadff1e4a87b5f448fa9dacbaccc885ef5e58ca4ddea92e51cdc110c77f63f，242状态step300/308状态step0。18训练初态全部实际访问，独立12场景三模型评测开始。
+- 3bd42eb远端新克隆452个跟踪文件git blob逐一一致；8补丁重放12运行文件哈希通过。

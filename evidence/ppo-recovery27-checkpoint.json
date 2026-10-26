@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "unit": "pi05-ppo-recovery27.service",
+  "systemd": {
+    "Result": "success",
+    "ExecMainStatus": "0",
+    "ActiveState": "inactive"
+  },
+  "rounds": 20,
+  "optimizer_updates": 300,
+  "finite_optimizer_updates": 300,
+  "peak_memory_bytes": 43674345472,
+  "memory_limit_gib": 48,
+  "oom_events": 0,
+  "checkpoint": "logs/ppo_recovery27/ppo_recovery27/checkpoints/global_step_20/actor/adapter_checkpoint.pt",
+  "checkpoint_bytes": 121226493,
+  "checkpoint_sha256": "c1cadff1e4a87b5f448fa9dacbaccc885ef5e58ca4ddea92e51cdc110c77f63f",
+  "format": "rlinf-fsdp1-single-rank-adapter-v1",
+  "base_weights_sha256": "4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f",
+  "finite_saved_model_tensors": 550,
+  "optimizer_state_step_counts": {
+    "0": 308,
+    "300": 242
+  },
+  "scheduler_epochs": [
+    20
+  ],
+  "train_initial_ids": [
+    "train-empty_grasp-init01",
+    "train-empty_grasp-init02",
+    "train-empty_grasp-init03",
+    "train-empty_grasp-init04",
+    "train-empty_grasp-init05",
+    "train-empty_grasp-init06",
+    "train-object_offset-init01",
+    "train-object_offset-init02",
+    "train-object_offset-init03",
+    "train-object_offset-init04",
+    "train-object_offset-init05",
+    "train-object_offset-init06",
+    "train-placement_failure-init01",
+    "train-placement_failure-init02",
+    "train-placement_failure-init03",
+    "train-placement_failure-init04",
+    "train-placement_failure-init05",
+    "train-placement_failure-init06"
+  ],
+  "heldout_initial_ids": [
+    "heldout-empty_grasp-init10",
+    "heldout-empty_grasp-init11",
+    "heldout-empty_grasp-init12",
+    "heldout-object_offset-init10",
+    "heldout-object_offset-init11",
+    "heldout-object_offset-init12",
+    "heldout-placement_failure-init10",
+    "heldout-placement_failure-init11"
+  ],
+  "reset_counts": {
+    "train/empty_grasp": 15,
+    "train/object_offset": 15,
+    "train/placement_failure": 14,
+    "heldout/empty_grasp": 3,
+    "heldout/object_offset": 3,
+    "heldout/placement_failure": 2
+  },
+  "note": "Zero-step optimizer states are reported; not all injected LoRA tensors are active."
+}

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson.git",
+  "commit": "3bd42ebe51ec19a8a9612b509fb6727ba82f19b9",
+  "restored_tracked_files": 452,
+  "method": "fresh remote clone tree equals local committed tree; hash every restored worktree blob; separately replay 8 patches and check 12 runtime hashes"
+}

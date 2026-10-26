@@ -73,13 +73,15 @@ def main():
                             task.problem_folder / task.bddl_file),
                             camera_heights=256, camera_widths=256)
     env = RecoveryEnv(raw, {"manifest": str(args.manifest), "split": "heldout"})
+    control_hz = raw.env.control_freq
     identity = {"base_sha256": base_hash,
                 "checkpoint_sha256": sha256(args.checkpoint) if args.checkpoint else None,
                 "checkpoint": str(args.checkpoint) if args.checkpoint else None,
                 "manifest_sha256": sha256(args.manifest), "config_sha256": sha256(args.config),
                 "model_config": OmegaConf.to_container(model_cfg, resolve=True),
                 "success": "native goal AND no finger contact for 5 consecutive controls",
-                "action_execution": "learned model only; observe every 5 controls; max 300 controls",
+                "action_execution": f"learned model only; observe every 5 controls; max {args.max_steps} controls",
+                "control_hz": control_hz, "video_fps": control_hz,
                 "noise": "numpy.default_rng(42+call), reset per episode; 10 flow steps",
                 "sources": {str(p.relative_to(ROOT)): sha256(p) for p in
                             [Path(__file__), ROOT / "scripts/evaluate_native_ppo.py",
@@ -99,7 +101,7 @@ def main():
             exception = None
             step = 0
             video_name = entry["id"] + ".mp4"
-            with imageio.get_writer(args.output / video_name, fps=20, codec="libx264") as video, \
+            with imageio.get_writer(args.output / video_name, fps=control_hz, codec="libx264") as video, \
                     (args.output / (entry["id"] + ".jsonl")).open("x") as trace:
                 def frame(current_obs):
                     video.append_data(np.concatenate([current_obs[key][::-1, ::-1] for key in
