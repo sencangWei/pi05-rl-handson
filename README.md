@@ -7,7 +7,7 @@
 - 40类1693条数据已全部下载，273465帧数值与每条首尾图像校验通过；训练1525条、留出168条。
 - 计划的10000步 GPU SFT **实际更新 0 步**。GPU 空闲约978 MiB；队列要求至少24576 MiB，绝不停止其他任务。队列在预检后等显存最多8小时，约11:06到期；不会无限等待。
 - 为避开显存阻塞，独立 CPU 测速实验 `cpu_throughput_probe_v1` 已执行3次优化迭代并保存checkpoint；首步预热学习率为0，后两次才更新参数。每步约23秒，10000步粗估65小时，因此不自动改成数天CPU训练，也不称为40任务训练完成。
-- PPO **实际更新 0 步**。已修改实际 RLinf 奖励函数并执行单元测试，配置可由上游 Hydra 组合；独立运行环境正在安装、固定 PyTorch 权重正在下载，显存与权重衔接尚未解决。队列不会自动启动未准备好的 PPO。
+- PPO **实际更新 0 步**。已修改实际 RLinf 奖励函数并执行单元测试，配置可由上游 Hydra 组合；独立运行环境正在安装；固定 PyTorch 权重已下载且逐文件完整校验通过，显存与权重衔接尚未解决。队列不会自动启动未准备好的 PPO。
 - 现役 LoRA 四任务各测一个初态，4/4成功；另做碗放盘无手指接触5步检查，94步成功。这是既有模型推理，不是本次训练结果。
 
 ## 数据、奖励和机器人互动的关系
@@ -63,7 +63,7 @@ use_rel_reward = false
 
 配置限定goal中抽屉、灶炉、碗放盘、酒瓶放架四类，单环境，300控制步/rollout，10步动作块，micro batch1/global batch2，CPU卸载，2个rollout epoch。30动作块可被global batch整除。尚未完成Ray/FSDP运行验证，不能认定32GB显存可运行。
 
-需要的 RLinf PyTorch 权重 `RLinf/RLinf-Pi05-LIBERO-SFT` 正在由独立服务下载，固定版本 `45ccfcc4e28634f1576ebf78cab0fbe2fd82432d`；以 evidence/rlinf-model-validation.json 的ready字段为准。这是另一份官方PPO父模型。JAX SFT 到 RLinf PyTorch 的LoRA权重衔接未实现，**两段配置不是已连通的SFT→PPO链路**；直接使用上游的密集参数转换器会漏掉LoRA，不能这样冒充衔接完成。评测seed43不保证初态与训练不重合，此PPO小实验不是最终泛化评测。
+需要的 RLinf PyTorch 权重 `RLinf/RLinf-Pi05-LIBERO-SFT` 已由独立服务下载并完整校验通过，固定版本 `45ccfcc4e28634f1576ebf78cab0fbe2fd82432d`；以 evidence/rlinf-model-validation.json 的ready字段为准。这是另一份官方PPO父模型。JAX SFT 到 RLinf PyTorch 的LoRA权重衔接未实现，**两段配置不是已连通的SFT→PPO链路**；直接使用上游的密集参数转换器会漏掉LoRA，不能这样冒充衔接完成。评测seed43不保证初态与训练不重合，此PPO小实验不是最终泛化评测。
 
 恢复训练还需加入夹偏、抓空、物体移动后的状态，考察恢复后是否完成任务，并回放常规任务检查遗忘。仅扣时间分不能代替这些实验。
 

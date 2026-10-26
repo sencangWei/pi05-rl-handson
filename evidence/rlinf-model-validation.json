@@ -1,8 +1,24 @@
 {
-  "ready": false,
+  "ready": true,
   "repo": "RLinf/RLinf-Pi05-LIBERO-SFT",
   "revision": "45ccfcc4e28634f1576ebf78cab0fbe2fd82432d",
   "root": "/home/robot/pi05-rl-handson/models/RLinf-Pi05-LIBERO-SFT",
   "lineage": "Separate official PPO parent; not the new JAX LoRA checkpoint",
-  "files": {}
+  "files": {
+    "README.md": {
+      "bytes": 3844,
+      "algorithm": "git-blob-sha1",
+      "digest": "fe9019519807e287e56589f0571c2cd58c697aee"
+    },
+    "model.safetensors": {
+      "bytes": 7473091464,
+      "algorithm": "sha256",
+      "digest": "4616e4c1966a5fb063b442ea5d69857f45e873222d839b794634d87d252ab9e7"
+    },
+    "physical-intelligence/libero/norm_stats.json": {
+      "bytes": 4507,
+      "algorithm": "git-blob-sha1",
+      "digest": "7e9c1cd512cfe9925a0b97e61d7839fc873fb0b3"
+    }
+  }
 }

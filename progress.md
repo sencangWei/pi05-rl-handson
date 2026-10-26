@@ -25,3 +25,5 @@ PPO所需固定上游权重下载及完整哈希校验入口已补，独立pi05-
 独立PPO环境安装服务pi05-ppo-env-20261026.service正在运行。固定上游安装器采用Torch2.7.1而非默认2.11，禁用root/可选FlashAttention，使用本项目独立虚拟环境、缓存、LIBERO配置和Git配置。尚未宣称运行验证或PPO更新。权重下载同时进行；两者均不使用GPU。
 
 CPU/PPO准备代码备份：d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d已推送公开仓库experiment/pi05-ppo。从远端获取后，在新分离工作区逐字节核对189个文件，141个OpenPI源码哈希及压缩包哈希一致，干净固定RLinf上游奖励补丁重放一致，恢复后7项测试、lint及bash语法通过。权重和环境本体没有上传，PPO下载/安装仍在运行，不能称为训练完成。
+
+08:26 更新：PPO独立父权重下载服务正常退出0；固定版本45ccfcc4e28634f1576ebf78cab0fbe2fd82432d的3个文件全部通过大小和完整哈希校验，model.safetensors为7473091464字节，SHA-256为4616e4c1966a5fb063b442ea5d69857f45e873222d839b794634d87d252ab9e7。见evidence/rlinf-model-validation.json。独立PPO依赖仍在下载，GPU主训练/PPO更新仍为0，SFT到PPO的LoRA衔接仍未实现。

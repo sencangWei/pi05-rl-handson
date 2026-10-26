@@ -17,3 +17,5 @@
 08:15：数据全部1693条273465帧校验通过；GPU仍空闲978MiB，现役JAX/Molmo/Qwen无释放接口。CPU24核，内存可用约45GiB。准备独立有界CPU SFT基准；未终止其他进程，未改旧项目。
 - CPU真实测速完成：3迭代循环约72秒，后两步各约23.3秒，连同初始化与checkpoint保存150.42秒。CPU参数能真更新，但10000步约65小时，不满足一晚完成。独立服务正常退出，没有停止其他GPU任务。需要区分优化迭代3与非零学习率更新2。
 - RLinf安装器应显式选择Torch2.7.1（匹配rlinf-openpi0.1.1）；默认uv sync会选择2.11。可跳过flash-attn源码编译，但需要独立LIBERO配置目录以免重写旧路径。旧JAX LoRA不能直接由只映射密集权重的转换器接到PPO。
+
+08:26 更新：PPO独立父权重下载服务正常退出0；固定版本45ccfcc4e28634f1576ebf78cab0fbe2fd82432d的3个文件全部通过大小和完整哈希校验，model.safetensors为7473091464字节，SHA-256为4616e4c1966a5fb063b442ea5d69857f45e873222d839b794634d87d252ab9e7。见evidence/rlinf-model-validation.json。独立PPO依赖仍在下载，GPU主训练/PPO更新仍为0，SFT到PPO的LoRA衔接仍未实现。
