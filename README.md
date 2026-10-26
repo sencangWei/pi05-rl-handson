@@ -5,9 +5,9 @@
 ## 当前状态（2026-10-26）
 
 - 40类1693条数据已全部下载，273465帧数值与每条首尾图像校验通过；训练1525条、留出168条。
-- 用户关闭旧推理服务后，17:43启动40任务 GPU SFT，目标10000步。启动前空闲31574 MiB；已观测 Step 900（零起始循环编号），正在实际更新，尚未完成。启动记录与原始日志节选见 evidence/multitask40-gpu-launch-20261026.json 和 evidence/multitask40-gpu-progress-20261026.log。原凌晨队列11:06等待超时，已被独立新服务替代。
+- 40任务 GPU SFT 已完成10000次迭代，17:43启动、18:14保存最后的9999 checkpoint，服务正常退出0。见 evidence/multitask40_lora_v1-status.json。训练完成不等于能力达标；四个任务各两个初态的仿真正在执行。
 - 为避开显存阻塞，独立 CPU 测速实验 `cpu_throughput_probe_v1` 已执行3次优化迭代并保存checkpoint；首步预热学习率为0，后两次才更新参数。每步约23秒，10000步粗估65小时，因此不自动改成数天CPU训练，也不称为40任务训练完成。
-- PPO **实际更新 0 步**。已修改实际 RLinf 奖励函数并执行单元测试，配置可由上游 Hydra 组合；独立运行环境正在安装；固定 PyTorch 权重已下载且逐文件完整校验通过，SFT到PPO权重衔接尚未解决。原依赖安装服务09:17超时，现由 pi05-ppo-env-retry-20261026.service 独立重试；不能把安装或SFT完成称为PPO更新。
+- PPO **实际更新 0 步**。奖励函数及配置检查通过；依赖安装卡点已定位为本地代理TLS超时，镜像直连已实测成功，独立安装服务 pi05-ppo-env-direct-20261026 正在安装。真实SFT checkpoint合并导出正在进行；LoRA层数值测试已通过，整网数值一致性、RLinf严格加载与实际更新仍须验证。
 - 现役 LoRA 四任务各测一个初态，4/4成功；另做碗放盘无手指接触5步检查，94步成功。这是既有模型推理，不是本次训练结果。
 
 ## 数据、奖励和机器人互动的关系
@@ -63,11 +63,11 @@ use_rel_reward = false
 
 配置限定goal中抽屉、灶炉、碗放盘、酒瓶放架四类，单环境，300控制步/rollout，10步动作块，micro batch1/global batch2，CPU卸载，2个rollout epoch。30动作块可被global batch整除。尚未完成Ray/FSDP运行验证，不能认定32GB显存可运行。
 
-需要的 RLinf PyTorch 权重 `RLinf/RLinf-Pi05-LIBERO-SFT` 已由独立服务下载并完整校验通过，固定版本 `45ccfcc4e28634f1576ebf78cab0fbe2fd82432d`；以 evidence/rlinf-model-validation.json 的ready字段为准。这是另一份官方PPO父模型。JAX SFT 到 RLinf PyTorch 的LoRA权重衔接未实现，**两段配置不是已连通的SFT→PPO链路**；直接使用上游的密集参数转换器会漏掉LoRA，不能这样冒充衔接完成。评测seed43不保证初态与训练不重合，此PPO小实验不是最终泛化评测。
+需要的 RLinf PyTorch 权重 `RLinf/RLinf-Pi05-LIBERO-SFT` 已由独立服务下载并完整校验通过，固定版本 `45ccfcc4e28634f1576ebf78cab0fbe2fd82432d`；以 evidence/rlinf-model-validation.json 的ready字段为准。这是另一份官方PPO父模型。新增 scripts/export_sft_for_ppo.py 合并JAX LoRA并导出PyTorch权重。真实上游Flax层数值检查通过，特别修正输出注意力投影的跨头求和。scripts/check_export_load.py 将验证完整哈希、资产、配置和严格骨干加载；严格加载不证明整网输出一致。**转换与整网验证尚未全部完成，不能称为已连通的SFT→PPO链路**。直接使用上游密集转换器会漏掉LoRA。评测seed43不保证初态与训练不重合，此PPO小实验不是最终泛化评测。
 
 恢复训练还需加入夹偏、抓空、物体移动后的状态，考察恢复后是否完成任务，并回放常规任务检查遗忘。仅扣时间分不能代替这些实验。
 
-独立环境安装脚本为 `scripts/prepare_ppo_env.sh`。它使用上游支持的 Torch 2.7.1 配套版本、禁用可选 FlashAttention 与 root 操作，隔离虚拟环境、缓存、LIBERO 配置及 Git 全局配置；不会安装到旧训练环境。安装完仍须核对包版本、运行导入/仿真检查，不能把安装成功称为 PPO 训练成功。后台安装日志为 `logs/ppo-env-install.log`；权重校验入口为 `scripts/prepare_rlinf_model.py`。
+独立环境安装脚本为 `scripts/prepare_ppo_env.sh`。它使用上游支持的 Torch 2.7.1 配套版本、禁用可选 FlashAttention 与 root 操作，隔离虚拟环境、缓存、LIBERO 配置及 Git 全局配置；不会安装到旧训练环境。安装完仍须核对包版本、运行导入/仿真检查，不能把安装成功称为 PPO 训练成功。当前后台安装日志为 `logs/ppo-env-direct-20261026.log`；权重校验入口为 `scripts/prepare_rlinf_model.py`。
 
 ## 实际基线
 
@@ -90,8 +90,8 @@ cd /home/robot/pi05-rl-handson
 systemctl --user status pi05-multitask-sft-20261026.service --no-pager
 tail -n 20 logs/train-multitask40-gpu-20261026.log
 cat evidence/multitask40_lora_v1-status.json
-systemctl --user status pi05-ppo-env-retry-20261026.service --no-pager
-tail -n 10 logs/ppo-env-retry-20261026.log
+systemctl --user status pi05-ppo-env-direct-20261026.service --no-pager
+tail -n 10 logs/ppo-env-direct-20261026.log
 ```
 
 当前SFT直接使用已通过验证的数据及固定配置，仍在构建模型前检查显存；使用与旧队列相同的文件锁，避免并发写入。新服务限制6小时、48 GiB内存、禁用swap。机器重启或用户服务管理器退出后，此临时服务不会自动恢复。有服务活动时，不要同时另启任务写同一个实验。状态文件的 actual_updates 仅在结束时结算，运行中进度以 Step 日志为准；night-status.json 是已超时旧队列的历史记录。
@@ -129,3 +129,9 @@ uv pip install --python .venv-train/bin/python -r configs/training-requirements.
 这些命令恢复训练源码环境，不提供父模型缓存、完整数据或RLinf PPO运行环境。父模型路径固定在 scripts/training_config.py；换机器需先取得相同身份权重并校验，再明确修改该位置。基线另依赖固定版本旧工程及服务，不能仅凭恢复源码声称完整训练已复现。
 
 上游OpenPI许可证随源码快照保留；LIBERO遵循CC BY 4.0，来源与固定版本见上文；RLinf许可证随固定版本源码提供。
+
+## 新SFT的独立仿真验证
+
+本地推理服务：`.venv-train/bin/python scripts/serve_sft.py --port 9875`；另一个终端执行 `.venv-sim/bin/python scripts/baseline.py --output evaluations/新名字 --tasks 0 7 8 9 --initial-states 0 10 --port 9875`。服务默认恢复本轮9999，使用固定噪声协议；增加 `--parent` 才是同一官方训练父模型。端口应先确认空闲，输出目录须全新，避免覆盖证据。
+
+每次评测保留视频、动作、初态与模型元数据。四任务八次评测仅是本轮预先声明的小样本检查，失败应保留；不能据此声称通用家庭指令或稳定恢复能力。

@@ -1,6 +1,6 @@
 {
-  "status": "RUNNING",
-  "actual_updates": 0,
+  "status": "COMPLETE",
+  "actual_updates": 10000,
   "seed": 42,
   "experiment": "multitask40_lora_v1",
   "steps": 10000,
@@ -21,5 +21,6 @@
   "holdout_episodes": 168,
   "optimizer_resumed": false,
   "parameter_filter": "LoRA only; official pi05_libero parent",
-  "learning_rate_schedule": "20-step warmup then constant"
+  "learning_rate_schedule": "20-step warmup then constant",
+  "train_wall_seconds": 1860.0900130459922
 }

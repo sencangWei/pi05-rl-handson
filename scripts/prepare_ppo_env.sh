@@ -13,6 +13,13 @@ export GIT_CONFIG_GLOBAL="$project_root/.local/ppo-gitconfig"
 export PYTHONNOUSERSITE=1
 export UV_LINK_MODE=copy
 export UV_TORCH_BACKEND=cu126
+# Scope the measured mirror/proxy workaround to this installer. Keep the proxy
+# available for other hosts (notably GitHub and Hugging Face asset downloads).
+export UV_DEFAULT_INDEX=https://mirrors.aliyun.com/pypi/simple
+export NO_PROXY="${NO_PROXY:+$NO_PROXY,}mirrors.aliyun.com,download.pytorch.org"
+export no_proxy="${no_proxy:+$no_proxy,}mirrors.aliyun.com,download.pytorch.org"
+export UV_HTTP_TIMEOUT=120
+export UV_CONCURRENT_DOWNLOADS=4
 unset VIRTUAL_ENV PYTHONPATH
 mkdir -p "$LIBERO_CONFIG_PATH" "$DOWNLOAD_DIR" "$HF_HOME" "$UV_CACHE_DIR" "$XDG_CACHE_HOME"
 touch "$GIT_CONFIG_GLOBAL"
