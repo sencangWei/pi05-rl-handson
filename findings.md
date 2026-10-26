@@ -47,3 +47,5 @@
 - 原生Torch SFT独立仿真8/8成功，控制步119/121/84/80/87/83/129/137；身份、相机录像见artifacts/20261026-ppo-simulation/native-sft-summary.json。与PPO使用同一运行时、初态哈希、噪声及10次流推理/5步重规划协议。
 - v6已启动：pi05-ppo-smoke-20261026-v6.service，48GiB RAM上限、禁用swap、45分钟时限；运行中，需等待完整权重保存和独立评测。
 - 全部18项单元测试在训练环境和PPO环境均通过（JAX_PLATFORMS=cpu）。未指定CPU时JAX先初始化GPU导致Flax LoRA测试TF32误差，重跑固定CPU后通过，未放宽阈值。
+
+2026-10-27：v10 cgroup OOM：anon约22.35GiB，shmem约25.18GiB；actor共享RSS约25.16GiB。FSDP offload/onload先移动_local_shard再独立移动flat_param.data（两者常共享同一存储），随后又丢弃第一次移动的shard，是可静态确认的重复复制。需实际回归和大模型验证；Ray默认暴露96 CPU引入大量闲置worker，拟在本项目显式限制4 CPU。未把这两个发现当作已解决OOM。

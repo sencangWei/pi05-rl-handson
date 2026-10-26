@@ -1,0 +1,195 @@
+diff --git a/rlinf/envs/sim/libero/libero_env.py b/rlinf/envs/sim/libero/libero_env.py
+index 5f17741..3aa01a2 100644
+--- a/rlinf/envs/sim/libero/libero_env.py
++++ b/rlinf/envs/sim/libero/libero_env.py
+@@ -136,6 +136,7 @@ class LiberoEnv(gym.Env):
+         self.cfg = cfg
+         self.total_num_processes = total_num_processes
+         self.worker_info = worker_info
++        self._recovery_next = seed_offset
+ 
+         if seed_offset == 0:
+             self._log_evaluation_mode()
+@@ -248,7 +249,12 @@ class LiberoEnv(gym.Env):
+                 else:
+                     from libero.libero.envs import OffScreenRenderEnv as WorkerEnv
+ 
++                param = dict(param)
++                recovery = param.pop("recovery", None)
+                 env = WorkerEnv(**param)
++                if recovery:
++                    from rlinf.envs.sim.libero.recovery import wrap_recovery
++                    env = wrap_recovery(env, recovery)
+                 env.seed(seed)
+                 return env
+ 
+@@ -444,6 +450,8 @@ class LiberoEnv(gym.Env):
+                     **base_env_args,
+                     "bddl_file_name": final_path,
+                     "seed": self.seed,
++                    **({"recovery": OmegaConf.to_container(self.cfg.recovery, resolve=True)}
++                       if self.cfg.get("recovery") else {}),
+                 }
+             )
+             # LIBERO-PRO: use selected BDDL language (not original suite task.language)
+@@ -856,6 +864,12 @@ class LiberoEnv(gym.Env):
+             raw_obs, _reward, terminations, info_lists = self.env.step(
+                 zero_actions, env_idx
+             )
++        if self.cfg.get("recovery"):
++            if list(self.task_id_filter or []) != [8]:
++                raise ValueError("Failure-start bank only supports LIBERO goal 8")
++            indices = list(range(self._recovery_next, self._recovery_next + len(env_idx)))
++            self._recovery_next += len(env_idx)
++            raw_obs = self.env.restore_recovery(indices, id=env_idx)
+         if self.current_raw_obs is None:
+             self.current_raw_obs = [None] * self.num_envs
+         for i, idx in enumerate(env_idx):
+diff --git a/rlinf/envs/sim/libero/recovery.py b/rlinf/envs/sim/libero/recovery.py
+new file mode 100644
+index 0000000..1ba0249
+--- /dev/null
++++ b/rlinf/envs/sim/libero/recovery.py
+@@ -0,0 +1,63 @@
++"""Opt-in reproducible failure starts and released-bowl success for LIBERO goal 8."""
++import hashlib
++import json
++from pathlib import Path
++
++import numpy as np
++
++
++class RecoveryEnv:
++    def __init__(self, wrapped, config):
++        self.wrapped = wrapped
++        self.manifest_path = Path(config["manifest"])
++        manifest = json.loads(self.manifest_path.read_text())
++        if manifest["task_suite"] != "libero_goal" or manifest["task_id"] != 8:
++            raise ValueError("Recovery bank must describe LIBERO goal 8")
++        split = config["split"]
++        if split not in ("train", "heldout"):
++            raise ValueError("Unknown recovery split")
++        self.entries = [item for item in manifest["entries"] if item["split"] == split]
++        if not self.entries:
++            raise ValueError("Empty recovery split")
++        self.streak = 0
++        self.active_entry = None
++
++    def __getattr__(self, name):
++        return getattr(self.wrapped, name)
++
++    def set_init_state(self, state):
++        self.streak = 0
++        return self.wrapped.set_init_state(state)
++
++    def restore_recovery(self, index):
++        entry = self.entries[int(index) % len(self.entries)]
++        path = self.manifest_path.parent / entry["file"]
++        if hashlib.sha256(path.read_bytes()).hexdigest() != entry["sha256"]:
++            raise ValueError("Recovery state file hash differs from manifest")
++        with np.load(path, allow_pickle=False) as data:
++            state = data["state"]
++        if hashlib.sha256(state.tobytes()).hexdigest() != entry["state_sha256"]:
++            raise ValueError("Recovery state content hash differs from manifest")
++        obs = self.set_init_state(state)
++        self.active_entry = entry
++        if self.wrapped.check_success():
++            raise ValueError("Recovery initial state already satisfies native goal")
++        print("RECOVERY_INITIAL " + json.dumps({key: entry[key] for key in
++              ("id", "category", "split", "state_sha256")}), flush=True)
++        return obs
++
++    def step(self, action):
++        obs, _, _, info = self.wrapped.step(action)
++        native = bool(self.wrapped.check_success())
++        env = self.wrapped.env
++        contact = bool(env.check_contact(env.robots[0].gripper.contact_geoms,
++                                         env.get_object("akita_black_bowl_1")))
++        self.streak = self.streak + 1 if native and not contact else 0
++        success = self.streak >= 5
++        info = dict(info, native_success=native, released_success=success,
++                    release_streak=self.streak, finger_contact=contact)
++        return obs, float(success), success, info
++
++
++def wrap_recovery(env, config):
++    return RecoveryEnv(env, config) if config else env
+diff --git a/rlinf/envs/sim/libero/venv.py b/rlinf/envs/sim/libero/venv.py
+index 3d17d51..40bb7ed 100644
+--- a/rlinf/envs/sim/libero/venv.py
++++ b/rlinf/envs/sim/libero/venv.py
+@@ -168,10 +168,16 @@ def _worker(
+             elif cmd == "set_init_state":
+                 obs = env.set_init_state(data)
+                 p.send(obs)
++            elif cmd == "restore_recovery":
++                p.send(env.restore_recovery(data))
+             elif cmd == "reconfigure":
+                 env.close()
+                 seed = data.pop("seed")
++                recovery = data.pop("recovery", None)
+                 env = OffScreenRenderEnv(**data)
++                if recovery:
++                    from rlinf.envs.sim.libero.recovery import wrap_recovery
++                    env = wrap_recovery(env, recovery)
+                 env.seed(seed)
+                 p.send(None)
+             elif cmd == "get_camera_meta":
+@@ -284,3 +290,10 @@ class ReconfigureSubprocEnv(SubprocVectorEnv):
+             self.workers[i].parent_remote.send(["set_camera_rendering", enabled])
+         for i in id:
+             self.workers[i].parent_remote.recv()
++
++    def restore_recovery(self, indices, id=None):
++        self._assert_is_not_closed()
++        env_ids = self._wrap_id(id)
++        for env_id, index in zip(env_ids, indices, strict=True):
++            self.workers[env_id].parent_remote.send(["restore_recovery", int(index)])
++        return [self.workers[env_id].parent_remote.recv() for env_id in env_ids]
+diff --git a/rlinf/hybrid_engines/fsdp/strategy/fsdp.py b/rlinf/hybrid_engines/fsdp/strategy/fsdp.py
+index d70c310..d1bbdde 100644
+--- a/rlinf/hybrid_engines/fsdp/strategy/fsdp.py
++++ b/rlinf/hybrid_engines/fsdp/strategy/fsdp.py
+@@ -237,10 +237,8 @@ class FSDPStrategy(FSDPStrategyBase):
+         for handle in self._iter_fsdp_handles(model):
+             flat_param = handle.flat_param
+ 
+-            if hasattr(flat_param, "_local_shard"):
+-                flat_param._local_shard = self._move_tensor(
+-                    flat_param._local_shard, "cpu"
+-                )
++            # _local_shard aliases data at this boundary; copy once and rebind.
++            # Moving both creates an unused full-model host/device allocation.
+             flat_param.data = self._move_tensor(flat_param.data, "cpu")
+             if hasattr(flat_param, "_local_shard") and flat_param.data is not None:
+                 flat_param._local_shard = flat_param.data
+@@ -287,10 +285,8 @@ class FSDPStrategy(FSDPStrategyBase):
+         for handle in self._iter_fsdp_handles(model):
+             flat_param = handle.flat_param
+ 
+-            if hasattr(flat_param, "_local_shard"):
+-                flat_param._local_shard = self._move_tensor(
+-                    flat_param._local_shard, device
+-                )
++            # _local_shard aliases data at this boundary; copy once and rebind.
++            # Moving both creates an unused full-model host/device allocation.
+             flat_param.data = self._move_tensor(flat_param.data, device)
+             if hasattr(flat_param, "_local_shard") and flat_param.data is not None:
+                 flat_param._local_shard = flat_param.data
+diff --git a/rlinf/scheduler/cluster/cluster.py b/rlinf/scheduler/cluster/cluster.py
+index b3f3898..c10a8bf 100644
+--- a/rlinf/scheduler/cluster/cluster.py
++++ b/rlinf/scheduler/cluster/cluster.py
+@@ -487,6 +487,12 @@ class Cluster:
+         Ray kills the raylet when a starting node misses its fixed 15s dashboard
+         agent deadline, which a loaded machine can hit.
+         """
++        cpu_limit = os.environ.get("RLINF_LOCAL_RAY_CPUS")
++        if cpu_limit is not None:
++            cpu_limit = int(cpu_limit)
++            if cpu_limit < 1:
++                raise ValueError("RLINF_LOCAL_RAY_CPUS must be positive")
++            ray_init_kwargs = {**ray_init_kwargs, "num_cpus": cpu_limit}
+         try:
+             ray.init(**ray_init_kwargs)
+         except Exception as first_failure:

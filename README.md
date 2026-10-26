@@ -2,7 +2,13 @@
 
 独立目录 `/home/robot/pi05-rl-handson`；不改旧训练项目、中文面板或真机。
 
-## 当前状态（2026-10-26）
+## 恢复专项（2026-10-27，执行中）
+
+已修复FSDP卸载/装载对同一参数存储重复复制的问题。完整模型连续3轮、45次有限梯度PPO更新后正常退出0，峰值内存38.13GiB，48GiB上限下OOM事件为0，见 [容量验证](evidence/ppo-offload27-summary.json)。这只证明该次容量验证通过，不等于恢复能力已提升。
+
+新增抓空、物体偏移、放置失败三类合成物理初态：18个训练、12个留出，原始状态及截图见 [初态包](artifacts/20261027-recovery/initial-bank/manifest.json)。训练启动20轮、计划300次优化器更新；最终结论须等正常退出及独立对照评测。严格成功要求原生放碗目标成立且无夹爪接触连续保持5个控制步。详见 [专项记录](artifacts/20261027-recovery/README.md)。
+
+## 上一轮状态（2026-10-26，历史）
 
 - 40类1693条数据已全部下载，273465帧数值与每条首尾图像校验通过；训练1525条、留出168条。
 - 40任务 GPU SFT 已完成10000次迭代，17:43启动、18:14保存最后的9999 checkpoint，服务正常退出0。见 evidence/multitask40_lora_v1-status.json。四任务各两个初态仿真已完成，新SFT与官方父模型均8/8触发成功；另测新SFT放碗并松爪2/2通过。18段实际录像、同初态对照及限制见 [本轮仿真记录](artifacts/20261026-sft-simulation/README.md)。
@@ -128,6 +134,7 @@ git -C third_party/RLinf apply ../../configs/rlinf-checkpoint-memory.patch
 git -C third_party/RLinf apply ../../configs/rlinf-update-evidence.patch
 git -C third_party/RLinf apply ../../configs/rlinf-adapter-checkpoint.patch
 git -C third_party/RLinf apply ../../configs/rlinf-adapter-sync.patch
+git -C third_party/RLinf apply ../../configs/rlinf-offload-recovery.patch
 cp evidence/dataset-meta/* data/libero/meta/
 uv venv --python 3.11.15 .venv-train
 uv pip install --python .venv-train/bin/python -r configs/training-requirements.txt
@@ -136,6 +143,16 @@ uv pip install --python .venv-train/bin/python -r configs/training-requirements.
 这些命令恢复训练源码环境，不提供父模型缓存、完整数据或RLinf PPO运行环境。父模型路径固定在 scripts/training_config.py；换机器需先取得相同身份权重并校验，再明确修改该位置。基线另依赖固定版本旧工程及服务，不能仅凭恢复源码声称完整训练已复现。
 
 上游OpenPI许可证随源码快照保留；LIBERO遵循CC BY 4.0，来源与固定版本见上文；RLinf许可证随固定版本源码提供。
+
+恢复专项初态并校验补丁恢复内容：
+
+```bash
+cp -a artifacts/20261027-recovery/initial-bank data/recovery-bowl-v3
+.venv-ppo/bin/python scripts/verify_runtime_backup.py --upstream-repo third_party/RLinf --output .local/restored-runtime.json
+PPO_CONFIG=ppo_recovery bash scripts/run_ppo_smoke.sh
+```
+
+训练最后一条命令仅在空闲GPU及全新实验目录执行；本机现有专项运行时不要再次启动。配置依赖本机匹配SHA的冻结基座及独立PPO环境，不包含这些大型依赖的自动下载。
 
 ## 新SFT的独立仿真验证
 

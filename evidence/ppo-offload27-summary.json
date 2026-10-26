@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "unit": "pi05-ppo-offload27.service",
+  "exit_code": 0,
+  "rounds": 3,
+  "optimizer_updates": 45,
+  "finite_optimizer_updates": 45,
+  "memory_limit_gib": 48,
+  "peak_memory_bytes": 40945025024,
+  "oom_events": 0,
+  "systemd": "Result=success\nExecMainStatus=0\nActiveState=inactive\n"
+}

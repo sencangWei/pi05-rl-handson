@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Two bounded rollout epochs; requires actual conversion and CUDA checks first.
+# Bounded PPO configurations; requires conversion, CUDA, and checkpoint checks first.
 set -euo pipefail
 project_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$project_root"
@@ -15,6 +15,7 @@ export MUJOCO_GL=egl PYOPENGL_PLATFORM=egl
 export PYTHONNOUSERSITE=1 JAX_PLATFORMS=cpu
 export OMP_NUM_THREADS=4 MKL_NUM_THREADS=4
 export TOKENIZERS_PARALLELISM=false
+export RLINF_LOCAL_RAY_CPUS="${RLINF_LOCAL_RAY_CPUS:-4}"
 # A short, isolated path also keeps Ray Unix sockets below the path length limit.
 export RAY_TMPDIR="/tmp/pi05-ppo-$UID"
 unset VIRTUAL_ENV RAY_ADDRESS
@@ -61,7 +62,11 @@ with base.open('rb') as stream:
         digest.update(block)
 if digest.hexdigest() != manifest['output_sha256']:
     raise SystemExit('Frozen base no longer matches conversion evidence')
-print('Actual frozen base SHA256 verified.')
+alias = json.loads(Path('evidence/ppo-fsdp-offload-alias.json').read_text())
+if (alias['status'] != 'PASS' or alias['source_sha256'] !=
+        hashlib.sha256(strategy.read_bytes()).hexdigest()):
+    raise SystemExit('Repeated offload storage-alias regression gate has not passed')
+print('Actual frozen base SHA256 and offload alias gate verified.')
 PY
 .venv-ppo/bin/python scripts/check_ppo_gpu.py
 .venv-ppo/bin/python scripts/check_ppo.py
@@ -77,6 +82,9 @@ if (cfg.fsdp_config.checkpoint_format != 'adapter'
     raise SystemExit('Unexpected adapter/base checkpoint contract')
 print('Actor FSDP configuration validated before starting Ray.')
 PY
+if [[ "${PPO_CONFIG:-ppo_goal_smoke}" == "ppo_recovery" ]]; then
+  .venv-ppo/bin/python scripts/check_recovery.py --config-only
+fi
 exec .venv-ppo/bin/python -u \
   third_party/RLinf/examples/embodiment/train_embodied_agent.py \
-  --config-path "$project_root/configs" --config-name ppo_goal_smoke
+  --config-path "$project_root/configs" --config-name "${PPO_CONFIG:-ppo_goal_smoke}" "$@"

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "cycles": 3,
+  "transfers_per_phase": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+  ],
+  "parameters_gradients_outputs_exact": true,
+  "source_sha256": "47ce54744de35d8974894849f12bd961e986cc972ae155e98f14809c4476cd97",
+  "scope": "tiny real CUDA FSDP; full-model capacity requires separate test"
+}

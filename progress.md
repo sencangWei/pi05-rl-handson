@@ -80,3 +80,9 @@ CPU/PPO准备代码备份：d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d已推送公
 - fd1c22f已推送用户公开仓库sencangWei/pi05-rl-handson，experiment/pi05-ppo分支；新克隆370个跟踪文件SHA逐一一致，干净固定上游重放7补丁后9个实际运行文件完全一致，见evidence/ppo-final-remote-restore.json。
 - 最终121226493字节adapter发布为ppo-smoke-20261026 Release；从GitHub独立分32段下载，验证每段Content-Range与长度，拼接SHA256为0595e247536bc48d5498f5085823a51c595b36cfd14b965f642f81256daaf7f1，与本机一致。见evidence/ppo-release-verification.json。13GB冻结基座、完整数据和虚拟环境未上传。
 - 最终仿真八场景8/8，对照8/8，无PPO提升证据；训练保存后OOM的问题仍未解决，不以备份完成改变此结论。
+
+## 2026-10-27 内存修复与恢复专项
+- FSDP重复别名复制根因修复；CUDA三次往返回归通过，完整模型3轮45次有限PPO更新正常退出0、峰值38.13GiB、OOM事件0。
+- 30个合成失败初态已生成：18训练/12留出，三类抓空/偏移/放置失败；严格无接触目标连续5步，真实子进程reset/step通过。
+- 26 tests及2个subtests通过（JAX_PLATFORMS=cpu），精度/adapter保存恢复/同步回归通过。20轮300次恢复训练执行中，尚无能力提升结论。
+- 8补丁在干净固定RLinf上游重放，12个运行文件SHA逐一匹配。

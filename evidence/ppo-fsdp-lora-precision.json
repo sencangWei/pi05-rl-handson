@@ -6,6 +6,6 @@
     "finite_gradients": true
   },
   "actual_strategy_root_chains_dtype": "torch.float32",
-  "strategy_source_sha256": "823ca4597133c6e22948e3a2b32d6463e645bcbc94958d1a71a40649f087ad71",
+  "strategy_source_sha256": "47ce54744de35d8974894849f12bd961e986cc972ae155e98f14809c4476cd97",
   "scope": "actual nested FSDP + PEFT CUDA forward/backward and real RLinf strategy; tiny models"
 }

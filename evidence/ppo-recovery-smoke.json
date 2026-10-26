@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "subprocess_resets": 3,
+  "train_states": 18,
+  "heldout_states": 12,
+  "planned_optimizer_updates": 300,
+  "scheduler_rounds": 20
+}

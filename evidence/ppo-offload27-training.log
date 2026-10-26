@@ -1,0 +1,870 @@
+GPU, strict load and network conversion gates PASS; PPO updates not yet run.
+Adapter model/optimizer/scheduler/RNG roundtrip gate PASS.
+Repeated adapter-only actor/rollout sync gate PASS.
+Actual frozen base SHA256 verified.
+{"status": "PASS", "torch": "2.7.1+cu128", "cuda": "12.8", "compiled_arches": ["sm_75", "sm_80", "sm_86", "sm_90", "sm_100", "sm_120", "compute_120"], "device": "NVIDIA GeForce RTX 5090 D", "capability": [12, 0], "bf16_matmul_backward": true, "sdpa_backward": true, "peak_memory_bytes": 18227200}
+CONFIG_COMPOSED; not a full RLinf runtime check or training run: /home/robot/pi05-rl-handson/evidence/ppo-composed.json
+Actor FSDP configuration validated before starting Ray.
+/home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/hydra/_internal/hydra.py:164: UserWarning: Future Hydra versions will no longer change working directory at job runtime by default.
+See https://hydra.cc/docs/1.2/upgrades/1.1_to_1.2/changes_to_job_working_dir/ for more information.
+  ret = run_job(
+2026-10-27 00:13:18,941	WARNING authentication_token_setup.py:85 -- Token authentication is enabled for this Ray cluster. Set RAY_AUTH_MODE=disabled to opt out. For more information, see https://docs.ray.io/en/latest/ray-security/token-auth.html
+2026-10-27 00:13:21,773	INFO worker.py:2024 -- Started a local Ray instance. View the dashboard at http://127.0.0.1:8265 
+[INFO 00:13:23 RLinf] RLinf is running on a cluster with 1 node and 1 accelerator. The nodes' details are: 
+node_labels: []
+node_rank: 0
+ray_id: 7325ace960075ffae1c81629dfb26a614aaa50ef8d3af43a4ee1afb9
+node_ip: 192.168.0.25
+num_cpus: 4
+python_interpreter_path: /home/robot/pi05-rl-handson/.venv-ppo/bin/python
+hardware_resources:
+- type: Accelerator
+  infos:
+  - type: Accelerator
+    model: NV_GPU:RTX 5090 D
+profiler_backends: []
+
+Node groups' details are: 
+label: cluster
+nodes: '0'
+hardware_type: Accelerator
+ignore_hardware: false
+env_configs: null
+
+label: node
+nodes: '0'
+hardware_type: null
+ignore_hardware: true
+env_configs: null
+
+[INFO 00:13:23 FlexiblePlacementStrategy] 
+[INFO 00:13:23 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
+[INFO 00:13:23 FlexiblePlacementStrategy] 
+[INFO 00:13:23 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
+{
+  "env": {
+    "train": {
+      "env_type": "libero",
+      "task_suite_name": "libero_goal",
+      "total_num_envs": 1,
+      "auto_reset": true,
+      "ignore_terminations": false,
+      "max_steps_per_rollout_epoch": 300,
+      "max_episode_steps": 300,
+      "use_fixed_reset_state_ids": true,
+      "use_ordered_reset_state_ids": false,
+      "use_rel_reward": false,
+      "reward_coef": 1.0,
+      "reset_gripper_open": true,
+      "is_eval": false,
+      "seed": 42,
+      "group_size": 1,
+      "video_cfg": {
+        "save_video": true,
+        "info_on_video": true,
+        "video_base_dir": "/home/robot/pi05-rl-handson/logs/ppo_offload27/video/train"
+      },
+      "init_params": {
+        "camera_heights": 256,
+        "camera_widths": 256
+      },
+      "rollout_epoch": 1,
+      "skip_intermediate_renders": true,
+      "task_id_filter": [
+        0,
+        7,
+        8,
+        9
+      ],
+      "use_step_penalty": true,
+      "step_penalty_coef": 0.001
+    },
+    "eval": {
+      "env_type": "libero",
+      "task_suite_name": "libero_goal",
+      "total_num_envs": 1,
+      "auto_reset": true,
+      "ignore_terminations": false,
+      "max_steps_per_rollout_epoch": 300,
+      "max_episode_steps": 300,
+      "use_fixed_reset_state_ids": true,
+      "use_ordered_reset_state_ids": false,
+      "use_rel_reward": false,
+      "reward_coef": 1.0,
+      "reset_gripper_open": true,
+      "is_eval": true,
+      "seed": 43,
+      "group_size": 1,
+      "video_cfg": {
+        "save_video": true,
+        "info_on_video": true,
+        "video_base_dir": "/home/robot/pi05-rl-handson/logs/ppo_offload27/video/eval"
+      },
+      "init_params": {
+        "camera_heights": 256,
+        "camera_widths": 256
+      },
+      "rollout_epoch": 1,
+      "task_id_filter": [
+        0,
+        7,
+        8,
+        9
+      ],
+      "use_step_penalty": true,
+      "step_penalty_coef": 0.001
+    },
+    "group_name": "EnvGroup"
+  },
+  "actor": {
+    "model": {
+      "model_type": "openpi",
+      "precision": "fp32",
+      "pi05": true,
+      "is_lora": true,
+      "lora_rank": 8,
+      "num_action_chunks": 10,
+      "action_dim": 7,
+      "use_proprio": true,
+      "num_steps": 5,
+      "add_value_head": true,
+      "openpi": {
+        "task": "rl",
+        "config_name": "pi05_libero",
+        "num_images_in_input": 2,
+        "noise_level": 0.5,
+        "action_chunk": 10,
+        "num_steps": 5,
+        "train_expert_only": true,
+        "action_env_dim": 7,
+        "noise_method": "flow_sde",
+        "add_value_head": true,
+        "value_after_vlm": true,
+        "value_vlm_mode": "mean_token",
+        "detach_critic_input": false,
+        "model_action_dim": 32,
+        "paligemma_variant": "gemma_2b",
+        "action_expert_variant": "gemma_300m",
+        "max_token_len": 200,
+        "torch_compile": false,
+        "embed_dtype": "bf16",
+        "action_horizon": 10,
+        "discrete_state_input": false
+      },
+      "model_path": "/home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged",
+      "lora_target_scope": "all_linear",
+      "openpi_data": {
+        "norm_stats_path": "/home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged/assets/physical-intelligence/libero/norm_stats.json"
+      }
+    },
+    "fsdp_config": {
+      "strategy": "fsdp",
+      "sharding_strategy": "no_shard",
+      "gradient_checkpointing": false,
+      "cpu_offload": false,
+      "offload_pin_memory": false,
+      "reshard_after_forward": true,
+      "enable_gradient_accumulation": true,
+      "forward_prefetch": false,
+      "limit_all_gathers": false,
+      "backward_prefetch": null,
+      "use_orig_params": true,
+      "use_liger_kernel": false,
+      "mixed_precision": {
+        "param_dtype": "bf16",
+        "reduce_dtype": "fp32",
+        "buffer_dtype": "fp32",
+        "cast_forward_inputs": true,
+        "cast_root_forward_inputs": false
+      },
+      "wrappers": {
+        "projections": {
+          "wrap_names": [
+            "action_in_proj",
+            "action_out_proj",
+            "time_mlp_in",
+            "time_mlp_out",
+            "value_head"
+          ]
+        },
+        "norms": {
+          "module_classes": [
+            "RMSNorm"
+          ]
+        },
+        "vision_embedding": {
+          "module_names": [
+            "img",
+            "img.stem"
+          ]
+        },
+        "vision_mlps": {
+          "module_names": [
+            "img.encoder.layers.*.mlp"
+          ],
+          "wrap_mode": "subtree"
+        }
+      },
+      "mixed_precision_policies": {
+        "fp32": {
+          "param_dtype": "fp32",
+          "reduce_dtype": "fp32",
+          "buffer_dtype": "fp32",
+          "cast_forward_inputs": true
+        },
+        "fp32_preserve_inputs": {
+          "param_dtype": "fp32",
+          "reduce_dtype": "fp32",
+          "buffer_dtype": "fp32",
+          "cast_forward_inputs": false
+        }
+      },
+      "mixed_precision_rules": {
+        "projections": "fp32",
+        "norms": "fp32_preserve_inputs",
+        "vision_embedding": "fp32_preserve_inputs",
+        "vision_mlps": "fp32"
+      },
+      "amp_autocast": {
+        "enabled": false,
+        "precision": "bf16"
+      },
+      "grad_scaler": {
+        "enabled": false,
+        "init_scale": null,
+        "growth_interval": null
+      },
+      "checkpoint_format": "adapter",
+      "checkpoint_base_sha256": "4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f",
+      "save_full_model_weights": false
+    },
+    "group_name": "ActorGroup",
+    "training_backend": "fsdp",
+    "micro_batch_size": 1,
+    "global_batch_size": 2,
+    "seed": 42,
+    "enable_offload": true,
+    "optim": {
+      "lr": 5e-06,
+      "value_lr": 0.0001,
+      "adam_beta1": 0.9,
+      "adam_beta2": 0.95,
+      "adam_eps": 1e-08,
+      "weight_decay": 0.01,
+      "clip_grad": 1.0,
+      "critic_warmup_steps": 0,
+      "total_training_steps": 45,
+      "min_lr_rate": 0.1,
+      "lr_scheduler": "cosine"
+    }
+  },
+  "weight_syncer": {
+    "type": "patch",
+    "patch": {
+      "snapshot_device": "cpu",
+      "delta_encoding": true,
+      "compression": "none",
+      "init_sync": {
+        "enabled": true,
+        "prefixes": null,
+        "bucket_size": 134217728
+      }
+    }
+  },
+  "cluster": {
+    "num_nodes": 1,
+    "component_placement": {
+      "actor,env,rollout": "all"
+    },
+    "tracer": {
+      "enable": false
+    }
+  },
+  "runner": {
+    "task_type": "embodied",
+    "logger": {
+      "log_path": "/home/robot/pi05-rl-handson/logs/ppo_offload27",
+      "project_name": "pi05-rl-handson",
+      "experiment_name": "ppo_goal_smoke",
+      "logger_backends": [
+        "tensorboard"
+      ]
+    },
+    "max_epochs": 3,
+    "max_steps": -1,
+    "only_eval": false,
+    "val_check_interval": 1,
+    "save_interval": 1,
+    "resume_dir": null,
+    "ckpt_path": null,
+    "weight_sync_interval": 2,
+    "per_worker_log": false,
+    "per_worker_log_path": null,
+    "overlap_env_bootstrap": false
+  },
+  "algorithm": {
+    "normalize_advantages": true,
+    "kl_penalty": "kl",
+    "group_size": 1,
+    "reward_coef": 1.0,
+    "reward_type": "chunk_level",
+    "logprob_type": "chunk_level",
+    "entropy_type": "token_level",
+    "update_epoch": 1,
+    "adv_type": "gae",
+    "loss_type": "actor_critic",
+    "loss_agg_func": "token-mean",
+    "kl_beta": 0.0,
+    "entropy_bonus": 0,
+    "clip_ratio_high": 0.2,
+    "clip_ratio_low": 0.2,
+    "clip_ratio_c": 3.0,
+    "value_clip": 0.2,
+    "huber_delta": 10.0,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "filter_rewards": false,
+    "rewards_lower_bound": 0.1,
+    "rewards_upper_bound": 0.9
+  },
+  "rollout": {
+    "group_name": "RolloutGroup",
+    "generation_backend": "huggingface",
+    "recompute_logprobs": false,
+    "unnorm_key": "libero_goal",
+    "enable_offload": true,
+    "pipeline_stage_num": 1,
+    "model": {
+      "model_path": "/home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged",
+      "precision": "bf16"
+    }
+  },
+  "reward": {
+    "use_reward_model": false
+  },
+  "critic": {
+    "use_critic_model": false
+  }
+}
+[INFO 00:13:23 FlexiblePlacementStrategy] 
+[INFO 00:13:23 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
+[INFO 00:13:23 FlexiblePlacementStrategy] Generated 1 placements: [Placement(rank=0, cluster_node_rank=0, placement_node_rank=0, local_accelerator_rank=0, accelerator_type='NV_GPU', local_rank=0, local_world_size=1, visible_accelerators=['0'], isolate_accelerator=True, local_hardware_ranks=[0], node_group_label='cluster')].
+[INFO 00:13:23 FlexiblePlacementStrategy] Generated 1 placements: [Placement(rank=0, cluster_node_rank=0, placement_node_rank=0, local_accelerator_rank=0, accelerator_type='NV_GPU', local_rank=0, local_world_size=1, visible_accelerators=['0'], isolate_accelerator=True, local_hardware_ranks=[0], node_group_label='cluster')].
+[INFO 00:13:23 FlexiblePlacementStrategy] Generated 1 placements: [Placement(rank=0, cluster_node_rank=0, placement_node_rank=0, local_accelerator_rank=0, accelerator_type='NV_GPU', local_rank=0, local_world_size=1, visible_accelerators=['0'], isolate_accelerator=True, local_hardware_ranks=[0], node_group_label='cluster')].
+[INFO 00:13:23 NodePlacementStrategy] 
+[INFO 00:13:23 NodePlacementStrategy] Using node placement with node ranks: [0], node groups: ['node'].
+[INFO 00:13:23 NodePlacementStrategy] Generated 1 placements: [Placement(rank=0, cluster_node_rank=0, placement_node_rank=0, local_accelerator_rank='0', accelerator_type='NV_GPU', local_rank=0, local_world_size=1, visible_accelerators=['0'], isolate_accelerator=True, local_hardware_ranks=[], node_group_label='cluster')].
+[INFO 00:13:23 NodePlacementStrategy] 
+[INFO 00:13:23 NodePlacementStrategy] Using node placement with node ranks: [0], node groups: ['node'].
+[INFO 00:13:23 NodePlacementStrategy] Generated 1 placements: [Placement(rank=0, cluster_node_rank=0, placement_node_rank=0, local_accelerator_rank='0', accelerator_type='NV_GPU', local_rank=0, local_world_size=1, visible_accelerators=['0'], isolate_accelerator=True, local_hardware_ranks=[], node_group_label='cluster')].
+[INFO 00:13:24 NodePlacementStrategy] 
+[INFO 00:13:24 NodePlacementStrategy] Using node placement with node ranks: [0], node groups: ['node'].
+[INFO 00:13:24 NodePlacementStrategy] Generated 1 placements: [Placement(rank=0, cluster_node_rank=0, placement_node_rank=0, local_accelerator_rank='0', accelerator_type='NV_GPU', local_rank=0, local_world_size=1, visible_accelerators=['0'], isolate_accelerator=True, local_hardware_ranks=[], node_group_label='cluster')].
+(MultiStepRolloutWorker pid=3550899) [INFO 00:13:25 FlexiblePlacementStrategy] 
+(MultiStepRolloutWorker pid=3550899) [INFO 00:13:25 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
+(EnvWorker pid=3550900) [INFO 00:13:25 FlexiblePlacementStrategy] 
+(EnvWorker pid=3550900) [INFO 00:13:25 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
+(EnvGroup(rank=0) pid=3550900) Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+(EnvGroup(rank=0) pid=3550900) Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+(EnvGroup(rank=0) pid=3550900) Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+(EnvGroup(rank=0) pid=3550900) See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+(EnvGroup(rank=0) pid=3550900) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/macros.py:53: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+(EnvGroup(rank=0) pid=3550900)   ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+(EnvGroup(rank=0) pid=3550900) [robosuite WARNING] No private macro file found! (macros.py:53)
+(EnvGroup(rank=0) pid=3550900) WARNING:robosuite_logs:No private macro file found!
+(EnvGroup(rank=0) pid=3550900) [robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+(EnvGroup(rank=0) pid=3550900) WARNING:robosuite_logs:It is recommended to use a private macro file
+(EnvGroup(rank=0) pid=3550900) [robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+(EnvGroup(rank=0) pid=3550900) WARNING:robosuite_logs:To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py
+(EnvGroup(rank=0) pid=3550900) INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+(ChannelWorker pid=3551287) [INFO 00:13:26 FlexiblePlacementStrategy] 
+(ChannelWorker pid=3551287) [INFO 00:13:26 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
+(EnvGroup(rank=0) pid=3550900) [INFO 00:13:26 EnvGroup-Rank-0][libero_env.py:197] Evaluation Mode: Standard LIBERO
+(EnvGroup(rank=0) pid=3550900) [info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+(EnvGroup(rank=0) pid=3550900) [INFO 00:13:26 EnvGroup-Rank-0][libero_env.py:197] Evaluation Mode: Standard LIBERO
+(EnvGroup(rank=0) pid=3550900) [info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+(EmbodiedFSDPActor pid=3550892) [INFO 00:13:26 FlexiblePlacementStrategy] 
+(EmbodiedFSDPActor pid=3550892) [INFO 00:13:26 FlexiblePlacementStrategy] Using flexible placement with hardware ranks: [[0]], node groups: ['cluster'].
+(EmbodiedFSDPActor pid=3550892) [INFO 00:13:26 ActorGroup-Rank-0][fsdp_model_manager.py:140] [FSDP] AMP is disabled.
+(EnvGroup(rank=0) pid=3550900) Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+(EnvGroup(rank=0) pid=3550900) Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+(EnvGroup(rank=0) pid=3550900) Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+(EnvGroup(rank=0) pid=3550900) See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+(EnvGroup(rank=0) pid=3550900) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/macros.py:53: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+(EnvGroup(rank=0) pid=3550900)   ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+(EnvGroup(rank=0) pid=3550900) [robosuite WARNING] No private macro file found! (macros.py:53)
+(EnvGroup(rank=0) pid=3550900) [robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+(EnvGroup(rank=0) pid=3550900) [robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+(EnvGroup(rank=0) pid=3550900) Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+(EnvGroup(rank=0) pid=3550900) Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+(EnvGroup(rank=0) pid=3550900) Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+(EnvGroup(rank=0) pid=3550900) See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+(EnvGroup(rank=0) pid=3550900) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/macros.py:53: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+(EnvGroup(rank=0) pid=3550900)   ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+(EnvGroup(rank=0) pid=3550900) [robosuite WARNING] No private macro file found! (macros.py:53)
+(EnvGroup(rank=0) pid=3550900) [robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+(EnvGroup(rank=0) pid=3550900) [robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+(RolloutGroup(rank=0) pid=3550899) INFO:root:Loaded norm stats from /home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged/assets/physical-intelligence/libero
+(RolloutGroup(rank=0) pid=3550899) [INFO 00:13:41 RolloutGroup-Rank-0][checkpoint.py:140] openpi: converted OpenPI PyTorch checkpoint keys from /home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged/model.safetensors in memory
+(RolloutGroup(rank=0) pid=3550899) [INFO 00:13:42 RolloutGroup-Rank-0][checkpoint.py:275] openpi: loaded base safetensors /home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged/model.safetensors; leaving 8 extra module tensors randomly initialized (['value_head.mlp.0.weight', 'value_head.mlp.0.bias', 'value_head.mlp.2.weight', 'value_head.mlp.2.bias']...)
+(RolloutGroup(rank=0) pid=3550899) [INFO 00:13:42 RolloutGroup-Rank-0][__init__.py:291] openpi[rl]: train_expert_only=True; froze 477 parameter tensors (SigLIP + gemma expert-0) after weight load
+(RolloutGroup(rank=0) pid=3550899) [INFO 00:13:43 RolloutGroup-Rank-0][__init__.py:336] openpi param dtypes: img.stem.weight=torch.float32, img.pos_embedding=torch.float32, llm.layers.0.pre_attention_norms.0.scale=torch.float32, llm.layers.0.attn.q_proj.0.weight=torch.bfloat16, action_out_proj.weight=torch.float32, value_head.mlp.0.weight=torch.float32
+(RolloutGroup(rank=0) pid=3550899) [INFO 00:13:43 RolloutGroup-Rank-0][__init__.py:271] openpi[rl]: loaded Pi0Config(dtype='bfloat16', paligemma_variant='gemma_2b', action_expert_variant='gemma_300m', pointnet_variant='pcd', action_dim=32, action_horizon=10, max_token_len=200, pi05=True, discrete_state_input=False, pcd=False) (3.36B params) from /home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged/model.safetensors precision=bf16 num_steps=5 action_horizon=10 action_chunk=10
+(ActorGroup(rank=0) pid=3550892) INFO:root:Loaded norm stats from /home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged/assets/physical-intelligence/libero
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:01 ActorGroup-Rank-0][checkpoint.py:140] openpi: converted OpenPI PyTorch checkpoint keys from /home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged/model.safetensors in memory
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:02 ActorGroup-Rank-0][checkpoint.py:275] openpi: loaded base safetensors /home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged/model.safetensors; leaving 8 extra module tensors randomly initialized (['value_head.mlp.0.weight', 'value_head.mlp.0.bias', 'value_head.mlp.2.weight', 'value_head.mlp.2.bias']...)
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:02 ActorGroup-Rank-0][__init__.py:291] openpi[rl]: train_expert_only=True; froze 477 parameter tensors (SigLIP + gemma expert-0) after weight load
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:02 ActorGroup-Rank-0][__init__.py:336] openpi param dtypes: img.stem.weight=torch.float32, img.pos_embedding=torch.float32, llm.layers.0.pre_attention_norms.0.scale=torch.float32, llm.layers.0.attn.q_proj.0.weight=torch.float32, action_out_proj.weight=torch.float32, value_head.mlp.0.weight=torch.float32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:02 ActorGroup-Rank-0][__init__.py:271] openpi[rl]: loaded Pi0Config(dtype='bfloat16', paligemma_variant='gemma_2b', action_expert_variant='gemma_300m', pointnet_variant='pcd', action_dim=32, action_horizon=10, max_token_len=200, pi05=True, discrete_state_input=False, pcd=False) (3.36B params) from /home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged/model.safetensors precision=fp32 num_steps=5 action_horizon=10 action_chunk=10
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][fsdp_model_manager.py:310] [FSDP] Gradient checkpointing is disabled
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.0.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.0.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.0.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.0.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.0.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.0.mlp.fc1.base_layer.weight', 'img.encoder.layers.0.mlp.fc1.base_layer.bias', 'img.encoder.layers.0.mlp.fc2.base_layer.weight', 'img.encoder.layers.0.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.1.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.1.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.1.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.1.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.1.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.1.mlp.fc1.base_layer.weight', 'img.encoder.layers.1.mlp.fc1.base_layer.bias', 'img.encoder.layers.1.mlp.fc2.base_layer.weight', 'img.encoder.layers.1.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.2.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.2.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.2.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.2.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.2.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.2.mlp.fc1.base_layer.weight', 'img.encoder.layers.2.mlp.fc1.base_layer.bias', 'img.encoder.layers.2.mlp.fc2.base_layer.weight', 'img.encoder.layers.2.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.3.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.3.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.3.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.3.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.3.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.3.mlp.fc1.base_layer.weight', 'img.encoder.layers.3.mlp.fc1.base_layer.bias', 'img.encoder.layers.3.mlp.fc2.base_layer.weight', 'img.encoder.layers.3.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.4.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.4.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.4.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.4.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.4.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.4.mlp.fc1.base_layer.weight', 'img.encoder.layers.4.mlp.fc1.base_layer.bias', 'img.encoder.layers.4.mlp.fc2.base_layer.weight', 'img.encoder.layers.4.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.5.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.5.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.5.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.5.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.5.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.5.mlp.fc1.base_layer.weight', 'img.encoder.layers.5.mlp.fc1.base_layer.bias', 'img.encoder.layers.5.mlp.fc2.base_layer.weight', 'img.encoder.layers.5.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.6.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.6.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.6.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.6.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.6.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.6.mlp.fc1.base_layer.weight', 'img.encoder.layers.6.mlp.fc1.base_layer.bias', 'img.encoder.layers.6.mlp.fc2.base_layer.weight', 'img.encoder.layers.6.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.7.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.7.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.7.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.7.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.7.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.7.mlp.fc1.base_layer.weight', 'img.encoder.layers.7.mlp.fc1.base_layer.bias', 'img.encoder.layers.7.mlp.fc2.base_layer.weight', 'img.encoder.layers.7.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.8.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.8.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.8.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.8.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.8.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.8.mlp.fc1.base_layer.weight', 'img.encoder.layers.8.mlp.fc1.base_layer.bias', 'img.encoder.layers.8.mlp.fc2.base_layer.weight', 'img.encoder.layers.8.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.9.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.9.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.9.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.9.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.9.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.9.mlp.fc1.base_layer.weight', 'img.encoder.layers.9.mlp.fc1.base_layer.bias', 'img.encoder.layers.9.mlp.fc2.base_layer.weight', 'img.encoder.layers.9.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.10.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.10.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.10.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.10.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.10.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.10.mlp.fc1.base_layer.weight', 'img.encoder.layers.10.mlp.fc1.base_layer.bias', 'img.encoder.layers.10.mlp.fc2.base_layer.weight', 'img.encoder.layers.10.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.11.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.11.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.11.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.11.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.11.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.11.mlp.fc1.base_layer.weight', 'img.encoder.layers.11.mlp.fc1.base_layer.bias', 'img.encoder.layers.11.mlp.fc2.base_layer.weight', 'img.encoder.layers.11.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.12.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.12.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.12.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.12.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.12.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.12.mlp.fc1.base_layer.weight', 'img.encoder.layers.12.mlp.fc1.base_layer.bias', 'img.encoder.layers.12.mlp.fc2.base_layer.weight', 'img.encoder.layers.12.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.13.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.13.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.13.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.13.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.13.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.13.mlp.fc1.base_layer.weight', 'img.encoder.layers.13.mlp.fc1.base_layer.bias', 'img.encoder.layers.13.mlp.fc2.base_layer.weight', 'img.encoder.layers.13.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.14.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.14.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.14.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.14.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.14.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.14.mlp.fc1.base_layer.weight', 'img.encoder.layers.14.mlp.fc1.base_layer.bias', 'img.encoder.layers.14.mlp.fc2.base_layer.weight', 'img.encoder.layers.14.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.15.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.15.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.15.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.15.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.15.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.15.mlp.fc1.base_layer.weight', 'img.encoder.layers.15.mlp.fc1.base_layer.bias', 'img.encoder.layers.15.mlp.fc2.base_layer.weight', 'img.encoder.layers.15.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.16.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.16.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.16.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.16.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.16.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.16.mlp.fc1.base_layer.weight', 'img.encoder.layers.16.mlp.fc1.base_layer.bias', 'img.encoder.layers.16.mlp.fc2.base_layer.weight', 'img.encoder.layers.16.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.17.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.17.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.17.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.17.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.17.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.17.mlp.fc1.base_layer.weight', 'img.encoder.layers.17.mlp.fc1.base_layer.bias', 'img.encoder.layers.17.mlp.fc2.base_layer.weight', 'img.encoder.layers.17.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.18.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.18.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.18.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.18.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.18.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.18.mlp.fc1.base_layer.weight', 'img.encoder.layers.18.mlp.fc1.base_layer.bias', 'img.encoder.layers.18.mlp.fc2.base_layer.weight', 'img.encoder.layers.18.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.19.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.19.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.19.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.19.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.19.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.19.mlp.fc1.base_layer.weight', 'img.encoder.layers.19.mlp.fc1.base_layer.bias', 'img.encoder.layers.19.mlp.fc2.base_layer.weight', 'img.encoder.layers.19.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.20.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.20.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.20.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.20.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.20.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.20.mlp.fc1.base_layer.weight', 'img.encoder.layers.20.mlp.fc1.base_layer.bias', 'img.encoder.layers.20.mlp.fc2.base_layer.weight', 'img.encoder.layers.20.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.21.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.21.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.21.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.21.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.21.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.21.mlp.fc1.base_layer.weight', 'img.encoder.layers.21.mlp.fc1.base_layer.bias', 'img.encoder.layers.21.mlp.fc2.base_layer.weight', 'img.encoder.layers.21.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.22.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.22.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.22.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.22.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.22.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.22.mlp.fc1.base_layer.weight', 'img.encoder.layers.22.mlp.fc1.base_layer.bias', 'img.encoder.layers.22.mlp.fc2.base_layer.weight', 'img.encoder.layers.22.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.23.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.23.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.23.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.23.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.23.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.23.mlp.fc1.base_layer.weight', 'img.encoder.layers.23.mlp.fc1.base_layer.bias', 'img.encoder.layers.23.mlp.fc2.base_layer.weight', 'img.encoder.layers.23.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.24.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.24.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.24.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.24.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.24.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.24.mlp.fc1.base_layer.weight', 'img.encoder.layers.24.mlp.fc1.base_layer.bias', 'img.encoder.layers.24.mlp.fc2.base_layer.weight', 'img.encoder.layers.24.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.25.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.25.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.25.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.25.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.25.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.25.mlp.fc1.base_layer.weight', 'img.encoder.layers.25.mlp.fc1.base_layer.bias', 'img.encoder.layers.25.mlp.fc2.base_layer.weight', 'img.encoder.layers.25.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/torch/distributed/fsdp/_wrap_utils.py:174: UserWarning: img.encoder.layers.26.mlp has both parameters with requires_grad=True and False. We do not recommend wrapping such modules since the gradient memory usage will be higher than expected (10009168 numel instead of 87296 numel before sharding via reduce-scatter). If possible, wrap the frozen parameters with FSDP separately.
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=True:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.26.mlp.fc1.lora_A.default.weight', 'img.encoder.layers.26.mlp.fc1.lora_B.default.weight', 'img.encoder.layers.26.mlp.fc2.lora_A.default.weight', 'img.encoder.layers.26.mlp.fc2.lora_B.default.weight']
+(ActorGroup(rank=0) pid=3550892) The following parameters have requires_grad=False:
+(ActorGroup(rank=0) pid=3550892) ['img.encoder.layers.26.mlp.fc1.base_layer.weight', 'img.encoder.layers.26.mlp.fc1.base_layer.bias', 'img.encoder.layers.26.mlp.fc2.base_layer.weight', 'img.encoder.layers.26.mlp.fc2.base_layer.bias']
+(ActorGroup(rank=0) pid=3550892)   warnings.warn(msg)
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper projections: scope=action_in_proj.base_layer, wrap_mode=individual, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper projections: scope=action_out_proj.base_layer, wrap_mode=individual, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper projections: scope=time_mlp_in.base_layer, wrap_mode=individual, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper projections: scope=time_mlp_out.base_layer, wrap_mode=individual, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper projections: scope=value_head, wrap_mode=individual, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.final_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.final_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.0.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.0.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.0.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.0.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.1.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.1.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.1.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.1.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.10.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.10.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.10.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.10.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.11.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.11.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.11.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.11.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.12.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.12.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.12.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.12.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.13.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.13.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.13.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.13.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.14.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.14.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.14.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.14.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.15.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.15.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.15.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.15.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.16.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.16.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.16.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.16.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.17.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.17.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.17.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.17.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.2.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.2.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.2.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.2.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.3.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.3.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.3.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.3.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.4.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.4.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.4.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.4.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.5.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.5.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.5.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.5.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.6.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.6.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.6.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.6.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.7.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.7.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.7.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.7.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.8.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.8.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.8.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.8.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.9.pre_attention_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.9.pre_attention_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.9.pre_ffw_norms.0, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper norms: scope=llm.layers.9.pre_ffw_norms.1, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_embedding: scope=img, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_embedding: scope=img.stem, wrap_mode=individual, policy=fp32_preserve_inputs
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.0.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.1.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.10.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.11.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.12.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.13.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.14.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.15.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.16.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.17.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.18.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.19.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.2.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.20.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.21.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.22.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.23.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.24.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.25.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.26.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.3.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.4.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.5.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.6.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.7.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.8.mlp, wrap_mode=subtree, policy=fp32
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:04 ActorGroup-Rank-0][mixed_precision.py:301] [FSDP] Wrapper vision_mlps: scope=img.encoder.layers.9.mlp, wrap_mode=subtree, policy=fp32
+(EnvGroup(rank=0) pid=3550900) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/gymnasium/core.py:311: UserWarning: WARN: env.wait_delay to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.wait_delay` for environment variables or `env.get_wrapper_attr('wait_delay')` that will search the reminding wrappers.
+(EnvGroup(rank=0) pid=3550900)   logger.warn(
+(RolloutGroup(rank=0) pid=3550899) 
+Generating Rollout Epochs:   0%|          | 0/1 [00:00<?, ?it/s]
+(EnvGroup(rank=0) pid=3550900) /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/gymnasium/core.py:311: UserWarning: WARN: env.insert_delay_metrics to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.insert_delay_metrics` for environment variables or `env.get_wrapper_attr('insert_delay_metrics')` that will search the reminding wrappers.
+(EnvGroup(rank=0) pid=3550900)   logger.warn(
+(RolloutGroup(rank=0) pid=3550899) 
+Generating Rollout Epochs: 100%|██████████| 1/1 [00:10<00:00, 10.00s/it]
+Generating Rollout Epochs: 100%|██████████| 1/1 [00:10<00:00, 10.00s/it]
+(ActorGroup(rank=0) pid=3550892) [INFO 00:14:37 ActorGroup-Rank-0][embodied_fsdp_actor_worker.py:705] PPO_UPDATE {"finite_optimizer_steps": 15, "metrics": {"actor/approx_kl": 0.014062197878956795, "actor/clip_fraction": 0.06666667014360428, "actor/clipped_ratio": 0.9877030849456787, "actor/dual_cliped_ratio": 0.0, "actor/entropy_loss": 0.0, "actor/grad_norm": 26.975873947143555, "actor/lr": 4.999999873689376e-06, "actor/policy_loss": -0.026840390637516975, "actor/policy_loss_abs": 0.738007128238678, "actor/ratio": 0.9887884855270386, "actor/ratio_abs": 0.041786689311265945, "actor/total_loss": 0.6337022185325623, "critic/explained_variance": -0.5856643915176392, "critic/lr": 9.999999747378752e-05, "critic/value_clip_ratio": 0.9333333373069763, "critic/value_loss": 1.2942448854446411}, "optimizer_step_attempts": 15}
+(RolloutGroup(rank=0) pid=3550899) 
+Evaluating Rollout Epochs:   0%|          | 0/1 [00:00<?, ?it/s]
+(EnvGroup(rank=0) pid=3550900) [INFO 00:14:42 EnvGroup-Rank-0][utils.py:264] [libero eval] task_id=0, trial_id=0, success=True
+(EnvGroup(rank=0) pid=3550900) [INFO 00:14:45 EnvGroup-Rank-0][utils.py:264] [libero eval] task_id=0, trial_id=1, success=True
+(RolloutGroup(rank=0) pid=3550899) 
+Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:08<00:00,  8.62s/it]
+Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:08<00:00,  8.62s/it]
+[INFO 00:14:49 RLinf] Saving checkpoint at step 1.
+
+╭──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+├──────────────────────────────────────────────────── Metric Table ────────────────────────────────────────────────────┤
+│ Global Step:    1/3 │ Progress: █████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░ │  33.3%                                    │
+│ Elapsed: 00:41 │ ETA: 01:23 │ Step Time: 41.779s                                                                     │
+├──────────────────────────────────────────────────────── Time ────────────────────────────────────────────────────────┤
+│                                                                                                                      │
+│actor/actor/compute_adv=0.108          │actor/actor/recv_traj=10.760           │actor/actor/sync_model_to_rollout=3.3…│
+│actor/run_training=13.153              │actor_training=13.155                  │cal_adv_and_returns=0.110             │
+│env/env/bootstrap_step=0.013           │env/env_interact_step=4.491            │env/evaluate=9.547                    │
+│env/interact=10.713                    │env/run_interact_once=10.713           │eval=11.909                           │
+│generate_rollouts=12.614               │rollout/evaluate=10.958                │rollout/generate_one_epoch=10.003     │
+│rollout/predict=9.266                  │rollout/rollout/generate=12.585        │rollout/sync_model_from_actor=3.005   │
+│step=41.760                            │sync_weights=2.449                     │                                      │
+│                                                                                                                      │
+├──────────────────────────────────────────────────── Environment ─────────────────────────────────────────────────────┤
+│                                                                                                                      │
+│episode_len=135.0                      │num_trajectories=2                     │return=0.8675                         │
+│reward=0.006638649                     │success_once=1.0                       │                                      │
+│                                                                                                                      │
+├────────────────────────────────────────────────────── Rollout ───────────────────────────────────────────────────────┤
+│                                                                                                                      │
+│advantages_max=2.032                   │advantages_mean=-5.56e-08              │advantages_min=-2.043                 │
+│returns_max=3.990                      │returns_mean=2.493                     │returns_min=0.921                     │
+│rewards=0.022                          │                                       │                                      │
+│                                                                                                                      │
+├───────────────────────────────────────────────────── Evaluation ─────────────────────────────────────────────────────┤
+│                                                                                                                      │
+│episode_len=125.0                      │num_trajectories=2                     │return=0.8785                         │
+│reward=0.007231707                     │success_once=1.0                       │                                      │
+│                                                                                                                      │
+├─────────────────────────────────────────────────── Training/Actor ───────────────────────────────────────────────────┤
+│                                                                                                                      │
+│actor/approx_kl=0.014                  │actor/clip_fraction=0.067              │actor/clipped_ratio=0.988             │
+│actor/dual_cliped_ratio=0.0000         │actor/entropy_loss=0.0000              │actor/grad_norm=26.976                │
+│actor/lr=5.00e-06                      │actor/policy_loss=-0.027               │actor/policy_loss_abs=0.738           │
+│actor/ratio=0.989                      │actor/ratio_abs=0.042                  │actor/total_loss=0.634                │
+│                                                                                                                      │
+├────────────────────────────────────────────────── Training/Critic ───────────────────────────────────────────────────┤
+│                                                                                                                      │
+│critic/explained_variance=-0.586       │critic/lr=1.00e-04                     │critic/value_clip_ratio=0.933         │
+│critic/value_loss=1.294                │                                       │                                      │
+│                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+(RolloutGroup(rank=0) pid=3550899) 
+Generating Rollout Epochs:   0%|          | 0/1 [00:00<?, ?it/s]
+(RolloutGroup(rank=0) pid=3550899) 
+Generating Rollout Epochs: 100%|██████████| 1/1 [00:10<00:00, 10.44s/it]
+Generating Rollout Epochs: 100%|██████████| 1/1 [00:10<00:00, 10.44s/it]
+(ActorGroup(rank=0) pid=3550892) [INFO 00:15:15 ActorGroup-Rank-0][embodied_fsdp_actor_worker.py:705] PPO_UPDATE {"finite_optimizer_steps": 15, "metrics": {"actor/approx_kl": 0.005766518879681826, "actor/clip_fraction": 0.0, "actor/clipped_ratio": 0.9955834150314331, "actor/dual_cliped_ratio": 0.0, "actor/entropy_loss": 0.0, "actor/grad_norm": 32.88075637817383, "actor/lr": 4.994519258616492e-06, "actor/policy_loss": 0.008496809750795364, "actor/policy_loss_abs": 0.8671785593032837, "actor/ratio": 0.9955834150314331, "actor/ratio_abs": 0.03161095082759857, "actor/total_loss": 1.04413902759552, "critic/explained_variance": -0.045825839042663574, "critic/lr": 9.989038517232984e-05, "critic/value_clip_ratio": 0.800000011920929, "critic/value_loss": 2.0797812938690186}, "optimizer_step_attempts": 15}
+(RolloutGroup(rank=0) pid=3550899) 
+Evaluating Rollout Epochs:   0%|          | 0/1 [00:00<?, ?it/s]
+(EnvGroup(rank=0) pid=3550900) [INFO 00:15:20 EnvGroup-Rank-0][utils.py:264] [libero eval] task_id=0, trial_id=0, success=True
+(EnvGroup(rank=0) pid=3550900) [INFO 00:15:23 EnvGroup-Rank-0][utils.py:264] [libero eval] task_id=0, trial_id=1, success=True
+(RolloutGroup(rank=0) pid=3550899) 
+Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:08<00:00,  8.64s/it]
+Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:08<00:00,  8.64s/it]
+[INFO 00:15:27 RLinf] Saving checkpoint at step 2.
+
+╭──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+├──────────────────────────────────────────────────── Metric Table ────────────────────────────────────────────────────┤
+│ Global Step:    2/3 │ Progress: ██████████████████████████░░░░░░░░░░░░░░ │  66.7%                                    │
+│ Elapsed: 01:20 │ ETA: 00:40 │ Step Time: 40.145s                                                                     │
+├──────────────────────────────────────────────────────── Time ────────────────────────────────────────────────────────┤
+│                                                                                                                      │
+│actor/actor/compute_adv=0.0022         │actor/actor/recv_traj=11.082           │actor/actor/sync_model_to_rollout=0.9…│
+│actor/run_training=12.179              │actor_training=12.181                  │cal_adv_and_returns=0.0052            │
+│env/env/bootstrap_step=2.28e-04        │env/env_interact_step=5.439            │env/evaluate=9.631                    │
+│env/interact=10.899                    │env/run_interact_once=10.899           │eval=11.986                           │
+│generate_rollouts=12.715               │rollout/evaluate=11.036                │rollout/generate_one_epoch=10.436     │
+│rollout/predict=8.928                  │rollout/rollout/generate=12.703        │rollout/sync_model_from_actor=0.934   │
+│step=38.495                            │sync_weights=2.15e-06                  │                                      │
+│                                                                                                                      │
+├──────────────────────────────────────────────────── Environment ─────────────────────────────────────────────────────┤
+│                                                                                                                      │
+│episode_len=106.666664                 │num_trajectories=3                     │return=0.8963334                      │
+│reward=0.009742127                     │success_once=1.0                       │                                      │
+│                                                                                                                      │
+├────────────────────────────────────────────────────── Rollout ───────────────────────────────────────────────────────┤
+│                                                                                                                      │
+│advantages_max=1.621                   │advantages_mean=3.97e-08               │advantages_min=-1.571                 │
+│returns_max=4.990                      │returns_mean=3.208                     │returns_min=1.298                     │
+│rewards=0.039                          │                                       │                                      │
+│                                                                                                                      │
+├───────────────────────────────────────────────────── Evaluation ─────────────────────────────────────────────────────┤
+│                                                                                                                      │
+│episode_len=115.0                      │num_trajectories=2                     │return=0.88600004                     │
+│reward=0.007796296                     │success_once=1.0                       │                                      │
+│                                                                                                                      │
+├─────────────────────────────────────────────────── Training/Actor ───────────────────────────────────────────────────┤
+│                                                                                                                      │
+│actor/approx_kl=0.0058                 │actor/clip_fraction=0.0000             │actor/clipped_ratio=0.996             │
+│actor/dual_cliped_ratio=0.0000         │actor/entropy_loss=0.0000              │actor/grad_norm=32.881                │
+│actor/lr=4.99e-06                      │actor/policy_loss=0.0085               │actor/policy_loss_abs=0.867           │
+│actor/ratio=0.996                      │actor/ratio_abs=0.032                  │actor/total_loss=1.044                │
+│                                                                                                                      │
+├────────────────────────────────────────────────── Training/Critic ───────────────────────────────────────────────────┤
+│                                                                                                                      │
+│critic/explained_variance=-0.046       │critic/lr=9.99e-05                     │critic/value_clip_ratio=0.800         │
+│critic/value_loss=2.080                │                                       │                                      │
+│                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+(RolloutGroup(rank=0) pid=3550899) 
+Generating Rollout Epochs:   0%|          | 0/1 [00:00<?, ?it/s]
+(RolloutGroup(rank=0) pid=3550899) 
+Generating Rollout Epochs: 100%|██████████| 1/1 [00:09<00:00,  9.76s/it]
+Generating Rollout Epochs: 100%|██████████| 1/1 [00:09<00:00,  9.76s/it]
+(ActorGroup(rank=0) pid=3550892) [INFO 00:15:55 ActorGroup-Rank-0][embodied_fsdp_actor_worker.py:705] PPO_UPDATE {"finite_optimizer_steps": 15, "metrics": {"actor/approx_kl": 0.007203086279332638, "actor/clip_fraction": 0.0, "actor/clipped_ratio": 0.9937132596969604, "actor/dual_cliped_ratio": 0.0, "actor/entropy_loss": 0.0, "actor/grad_norm": 39.77680206298828, "actor/lr": 4.978103333996842e-06, "actor/policy_loss": 0.0009910467779263854, "actor/policy_loss_abs": 0.7741472125053406, "actor/ratio": 0.9937132596969604, "actor/ratio_abs": 0.021420413628220558, "actor/total_loss": 0.3998311758041382, "critic/explained_variance": -0.22919714450836182, "critic/lr": 9.956206486094743e-05, "critic/value_clip_ratio": 0.800000011920929, "critic/value_loss": 0.798671305179596}, "optimizer_step_attempts": 15}
+(RolloutGroup(rank=0) pid=3550899) 
+Evaluating Rollout Epochs:   0%|          | 0/1 [00:00<?, ?it/s]
+(EnvGroup(rank=0) pid=3550900) [INFO 00:16:00 EnvGroup-Rank-0][utils.py:264] [libero eval] task_id=0, trial_id=0, success=True
+(EnvGroup(rank=0) pid=3550900) [INFO 00:16:05 EnvGroup-Rank-0][utils.py:264] [libero eval] task_id=0, trial_id=1, success=True
+(RolloutGroup(rank=0) pid=3550899) 
+Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:09<00:00,  9.53s/it]
+Evaluating Rollout Epochs: 100%|██████████| 1/1 [00:09<00:00,  9.53s/it]
+[INFO 00:16:08 RLinf] Saving checkpoint at step 3.
+
+╭──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+├──────────────────────────────────────────────────── Metric Table ────────────────────────────────────────────────────┤
+│ Global Step:    3/3 │ Progress: ████████████████████████████████████████ │ 100.0%                                    │
+│ Elapsed: 02:00 │ ETA: 00:00 │ Step Time: 40.326s                                                                     │
+├──────────────────────────────────────────────────────── Time ────────────────────────────────────────────────────────┤
+│                                                                                                                      │
+│actor/actor/compute_adv=0.0027         │actor/actor/recv_traj=10.400           │actor/actor/sync_model_to_rollout=2.0…│
+│actor/run_training=12.981              │actor_training=12.983                  │cal_adv_and_returns=0.0055            │
+│env/env/bootstrap_step=2.41e-04        │env/env_interact_step=4.418            │env/evaluate=10.569                   │
+│env/interact=10.317                    │env/run_interact_once=10.316           │eval=12.940                           │
+│generate_rollouts=12.087               │rollout/evaluate=11.940                │rollout/generate_one_epoch=9.756      │
+│rollout/predict=9.209                  │rollout/rollout/generate=12.075        │rollout/sync_model_from_actor=1.735   │
+│step=40.677                            │sync_weights=1.087                     │                                      │
+│                                                                                                                      │
+├──────────────────────────────────────────────────── Environment ─────────────────────────────────────────────────────┤
+│                                                                                                                      │
+│episode_len=120.0                      │num_trajectories=2                     │return=0.883                          │
+│reward=0.0075470083                    │success_once=1.0                       │                                      │
+│                                                                                                                      │
+├────────────────────────────────────────────────────── Rollout ───────────────────────────────────────────────────────┤
+│                                                                                                                      │
+│advantages_max=1.404                   │advantages_mean=1.91e-07               │advantages_min=-2.067                 │
+│returns_max=3.990                      │returns_mean=2.993                     │returns_min=1.792                     │
+│rewards=0.026                          │                                       │                                      │
+│                                                                                                                      │
+├───────────────────────────────────────────────────── Evaluation ─────────────────────────────────────────────────────┤
+│                                                                                                                      │
+│episode_len=130.0                      │num_trajectories=2                     │return=0.879                          │
+│reward=0.0072644628                    │success_once=1.0                       │                                      │
+│                                                                                                                      │
+├─────────────────────────────────────────────────── Training/Actor ───────────────────────────────────────────────────┤
+│                                                                                                                      │
+│actor/approx_kl=0.0072                 │actor/clip_fraction=0.0000             │actor/clipped_ratio=0.994             │
+│actor/dual_cliped_ratio=0.0000         │actor/entropy_loss=0.0000              │actor/grad_norm=39.777                │
+│actor/lr=4.98e-06                      │actor/policy_loss=9.91e-04             │actor/policy_loss_abs=0.774           │
+│actor/ratio=0.994                      │actor/ratio_abs=0.021                  │actor/total_loss=0.400                │
+│                                                                                                                      │
+├────────────────────────────────────────────────── Training/Critic ───────────────────────────────────────────────────┤
+│                                                                                                                      │
+│critic/explained_variance=-0.229       │critic/lr=9.96e-05                     │critic/value_clip_ratio=0.800         │
+│critic/value_loss=0.799                │                                       │                                      │
+│                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+

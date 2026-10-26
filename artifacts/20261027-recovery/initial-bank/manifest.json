@@ -1,0 +1,1061 @@
+{
+  "format": "libero-recovery-bank-v1",
+  "task_suite": "libero_goal",
+  "task_id": 8,
+  "seed": 42,
+  "construction": "Synthetic physical states using OSC initialization and object pose perturbations; no recovery actions scripted into training/evaluation",
+  "split_protocol": "source initial IDs 1..6 train; 10..13 heldout, larger heldout offsets",
+  "success": "native bowl-on-plate and no finger contact for 5 consecutive controls",
+  "entries": [
+    {
+      "id": "train-empty_grasp-init01",
+      "split": "train",
+      "category": "empty_grasp",
+      "source_initial_id": 1,
+      "file": "train-empty_grasp-init01.npz",
+      "requested_offset_xy_m": [
+        -0.04,
+        0.04
+      ],
+      "offset_xy_m": [
+        -0.039999999999999994,
+        0.04
+      ],
+      "source_state_sha256": "458b021de5c47d7b23306d6e7f714ef3c2c55174aa4b2281816d6c3792f408cb",
+      "state_sha256": "ec311db3b576d3169c3d5e848e5b6b02a74815dcf5bf22e0ebe3f53d78c2521a",
+      "sha256": "2e84eb59f1d0033a31549a2eee1eac27f022f0d8b23059de10a621946a8ef7d4",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.09836922329686591,
+        0.013261716285400191,
+        1.0028539547866653
+      ],
+      "bowl_pos": [
+        -0.13642826542989062,
+        0.05374865763403042,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.05872732726933982,
+        -0.03431250907543777,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-object_offset-init01",
+      "split": "train",
+      "category": "object_offset",
+      "source_initial_id": 1,
+      "file": "train-object_offset-init01.npz",
+      "requested_offset_xy_m": [
+        -0.04,
+        0.04
+      ],
+      "offset_xy_m": [
+        -0.039999999999999994,
+        0.04
+      ],
+      "source_state_sha256": "458b021de5c47d7b23306d6e7f714ef3c2c55174aa4b2281816d6c3792f408cb",
+      "state_sha256": "f2311ae37eed37f4565c49fa412169d92353f45812683cfb4a4d3fbbdbed7a3e",
+      "sha256": "5e542b866fd6939aa2899859fe05c2b1a130b381df9490816f270eed1685538d",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.19014867566853705,
+        0.003329464539073426,
+        1.189234510124621
+      ],
+      "bowl_pos": [
+        -0.13642826542989062,
+        0.05374865763403042,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.05872732726933982,
+        -0.03431250907543777,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-placement_failure-init01",
+      "split": "train",
+      "category": "placement_failure",
+      "source_initial_id": 1,
+      "file": "train-placement_failure-init01.npz",
+      "requested_offset_xy_m": [
+        -0.04,
+        0.04
+      ],
+      "offset_xy_m": [
+        -0.09208161165754317,
+        0.08058695571298755
+      ],
+      "source_state_sha256": "458b021de5c47d7b23306d6e7f714ef3c2c55174aa4b2281816d6c3792f408cb",
+      "state_sha256": "c503e3ccb9ee863c90b70698e71955b9a8d777c0a94dbd661a54988774f3d47c",
+      "sha256": "d7918cb4471d5297ee3464776f5baf0660c616af16432557059fa8794057c773",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        0.06651213682886256,
+        -0.03532740683993269,
+        1.1617642274451734
+      ],
+      "bowl_pos": [
+        -0.033354284388203356,
+        0.04627444663754977,
+        0.8984070750980833
+      ],
+      "plate_pos": [
+        0.05872732726933982,
+        -0.03431250907543777,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-empty_grasp-init02",
+      "split": "train",
+      "category": "empty_grasp",
+      "source_initial_id": 2,
+      "file": "train-empty_grasp-init02.npz",
+      "requested_offset_xy_m": [
+        0.04,
+        -0.04
+      ],
+      "offset_xy_m": [
+        0.039999999999999994,
+        -0.04
+      ],
+      "source_state_sha256": "e92c3b68aa6af756d9ae0fbee9eefd5c04fb9d5739453b832e9707c8fe290096",
+      "state_sha256": "68f00711e68e07b552b12df65857ab57556cfcacec0a7ce3af57e82d5f2e8e0d",
+      "sha256": "76aee5d0dde175313440bb4b425ad1f625a98a60123de7543d72c8dc9a12cd85",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.10325028491518855,
+        0.0023405935787086563,
+        1.0013729520021968
+      ],
+      "bowl_pos": [
+        -0.06328235427500667,
+        -0.03774699676837808,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.05245630628649128,
+        -0.012704933674087739,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-object_offset-init02",
+      "split": "train",
+      "category": "object_offset",
+      "source_initial_id": 2,
+      "file": "train-object_offset-init02.npz",
+      "requested_offset_xy_m": [
+        0.04,
+        -0.04
+      ],
+      "offset_xy_m": [
+        0.039999999999999994,
+        -0.04
+      ],
+      "source_state_sha256": "e92c3b68aa6af756d9ae0fbee9eefd5c04fb9d5739453b832e9707c8fe290096",
+      "state_sha256": "005c17c39f3549b8dec69ea01c06e2ec947a88acebc9dbb827d9f24ca5fa76db",
+      "sha256": "820997d87c0a99f857e82fd8f8137d4e3cc47ab6a4c936717fb9d1269955d581",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.2090774566345743,
+        0.0027571904957864293,
+        1.1745265199363921
+      ],
+      "bowl_pos": [
+        -0.06328235427500667,
+        -0.03774699676837808,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.05245630628649128,
+        -0.012704933674087739,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-placement_failure-init02",
+      "split": "train",
+      "category": "placement_failure",
+      "source_initial_id": 2,
+      "file": "train-placement_failure-init02.npz",
+      "requested_offset_xy_m": [
+        0.04,
+        -0.04
+      ],
+      "offset_xy_m": [
+        0.09192388155425119,
+        -0.09192388155425119
+      ],
+      "source_state_sha256": "e92c3b68aa6af756d9ae0fbee9eefd5c04fb9d5739453b832e9707c8fe290096",
+      "state_sha256": "0a9ac60b37b9f4c3579be1a2323a996944ee6f0c764412516bb96794ae8322f8",
+      "sha256": "3cbd539a2328ee6bd63468f3f7104553113589ae550b884b0871afd009d1cc2c",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        0.05956306579319369,
+        -0.013326496070562535,
+        1.161441822226757
+      ],
+      "bowl_pos": [
+        0.14438018784074247,
+        -0.10462881522833892,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.05245630628649128,
+        -0.012704933674087739,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-empty_grasp-init03",
+      "split": "train",
+      "category": "empty_grasp",
+      "source_initial_id": 3,
+      "file": "train-empty_grasp-init03.npz",
+      "requested_offset_xy_m": [
+        -0.04,
+        -0.04
+      ],
+      "offset_xy_m": [
+        -0.039943900386525955,
+        -0.03999724375109035
+      ],
+      "source_state_sha256": "3e49f03083abbbd947b9cf8d36193a508c65e7ea2da641cf1dc7682a72328a5c",
+      "state_sha256": "094f3e78c84b595abd5bde475d0706f2ca4243d32f1dfed089777c85f37e9fa7",
+      "sha256": "4d9ac77708b83ba9d5655e8ce7187057a00e1993cb7d410e303de5a2b5834da8",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.08753782100778879,
+        -0.002234032632035245,
+        1.0027313629750514
+      ],
+      "bowl_pos": [
+        -0.13072139827439372,
+        -0.04222958557153462,
+        0.8984134031640166
+      ],
+      "plate_pos": [
+        0.04052078573272849,
+        -0.022221656841679253,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-object_offset-init03",
+      "split": "train",
+      "category": "object_offset",
+      "source_initial_id": 3,
+      "file": "train-object_offset-init03.npz",
+      "requested_offset_xy_m": [
+        -0.04,
+        -0.04
+      ],
+      "offset_xy_m": [
+        -0.039943900386525955,
+        -0.03999724375109035
+      ],
+      "source_state_sha256": "3e49f03083abbbd947b9cf8d36193a508c65e7ea2da641cf1dc7682a72328a5c",
+      "state_sha256": "129a36bb117fef2b547d0b29b2828e806bc01eb3f61f368543ab7cd32581b72a",
+      "sha256": "98f8bce13335ba0932aaf57ec8766d9c1f295580f7a6ec4d830724d3910d1aba",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.20384466991500216,
+        -0.005960802106852141,
+        1.1641220444028835
+      ],
+      "bowl_pos": [
+        -0.13072139827439372,
+        -0.04222958557153462,
+        0.8984134031640166
+      ],
+      "plate_pos": [
+        0.04052078573272849,
+        -0.022221656841679253,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-placement_failure-init03",
+      "split": "train",
+      "category": "placement_failure",
+      "source_initial_id": 3,
+      "file": "train-placement_failure-init03.npz",
+      "requested_offset_xy_m": [
+        -0.04,
+        -0.04
+      ],
+      "offset_xy_m": [
+        0.13,
+        0.0
+      ],
+      "source_state_sha256": "3e49f03083abbbd947b9cf8d36193a508c65e7ea2da641cf1dc7682a72328a5c",
+      "state_sha256": "b923773c7d9c18311bae720225b173fa3d5b5eab19318b5255156cbc71153878",
+      "sha256": "d055e2f6f5aa26088f0bc4853ef59ae6d55ecebfe702976eb53bb104be7c9cda",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        0.04826335958899666,
+        -0.02302625355012957,
+        1.1612560513663666
+      ],
+      "bowl_pos": [
+        0.1705207857327285,
+        -0.022221656841679253,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.04052078573272849,
+        -0.022221656841679253,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-empty_grasp-init04",
+      "split": "train",
+      "category": "empty_grasp",
+      "source_initial_id": 4,
+      "file": "train-empty_grasp-init04.npz",
+      "requested_offset_xy_m": [
+        0.04,
+        0.04
+      ],
+      "offset_xy_m": [
+        0.039999999999999994,
+        0.039999999999999994
+      ],
+      "source_state_sha256": "37a6335a9df3d3d5a8fa5a41f6ddfb9097309c755a561166b5d4557ada91bf1f",
+      "state_sha256": "b6212b0f9e3b5c1980427f2cb026476541cd52e46925ed1e5979bb95aae91a36",
+      "sha256": "3e4e3ff3a488bc9a0c2b01174c609df6bdb091db9f5c0c314820ebd6b4fd1ede",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.10362730285034771,
+        0.013401854553128792,
+        1.0024672198902962
+      ],
+      "bowl_pos": [
+        -0.06422521843131501,
+        0.053797493316708675,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.03823994452875654,
+        -0.010652084566305026,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-object_offset-init04",
+      "split": "train",
+      "category": "object_offset",
+      "source_initial_id": 4,
+      "file": "train-object_offset-init04.npz",
+      "requested_offset_xy_m": [
+        0.04,
+        0.04
+      ],
+      "offset_xy_m": [
+        0.039999999999999994,
+        0.039999999999999994
+      ],
+      "source_state_sha256": "37a6335a9df3d3d5a8fa5a41f6ddfb9097309c755a561166b5d4557ada91bf1f",
+      "state_sha256": "29d9ae5f19183dcfbecd2560aa7f8056a9a53a74aea75d3eb9ac0a156dfdae79",
+      "sha256": "c0edc9683d6ba907a2590ef77e25672b4e2ce69d7d3e08539912858f969b5801",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.20907757004155297,
+        0.0027782500891631538,
+        1.1719758664251083
+      ],
+      "bowl_pos": [
+        -0.06422521843131501,
+        0.053797493316708675,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.03823994452875654,
+        -0.010652084566305026,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-placement_failure-init04",
+      "split": "train",
+      "category": "placement_failure",
+      "source_initial_id": 4,
+      "file": "train-placement_failure-init04.npz",
+      "requested_offset_xy_m": [
+        0.04,
+        0.04
+      ],
+      "offset_xy_m": [
+        0.09192388155425119,
+        0.09192388155425119
+      ],
+      "source_state_sha256": "37a6335a9df3d3d5a8fa5a41f6ddfb9097309c755a561166b5d4557ada91bf1f",
+      "state_sha256": "5618662c94d46d3fc1e371146c174017bcde364d25c0f1af0c19154738b1b35b",
+      "sha256": "81eda50dc1fa67d900fb56295f03b9029c261e4ee2bb87e8b937b3987dca5d6b",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        0.044772513715174114,
+        -0.011255162392985848,
+        1.1609586042457332
+      ],
+      "bowl_pos": [
+        0.13016382608300772,
+        0.08127179698794616,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.03823994452875654,
+        -0.010652084566305026,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-empty_grasp-init05",
+      "split": "train",
+      "category": "empty_grasp",
+      "source_initial_id": 5,
+      "file": "train-empty_grasp-init05.npz",
+      "requested_offset_xy_m": [
+        -0.04,
+        0.04
+      ],
+      "offset_xy_m": [
+        -0.04000000000000001,
+        0.04
+      ],
+      "source_state_sha256": "6600fb90ac0ceaf178c64291eef075068efa4daaa075cc9004b763b2076f7b41",
+      "state_sha256": "ccf1fa73ec30733f5c313fcbae711719c862d121f3eef91141c2e3501b293790",
+      "sha256": "a12eaa1d85e9b568d3964212b06ac52c6e3e8daf387bff37d36ab5e1e304d660",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.07854275585399258,
+        0.002885431153267377,
+        1.0047151883267555
+      ],
+      "bowl_pos": [
+        -0.12333962226857481,
+        0.04291090528832665,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.06446503650836596,
+        -0.02859363943257207,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-object_offset-init05",
+      "split": "train",
+      "category": "object_offset",
+      "source_initial_id": 5,
+      "file": "train-object_offset-init05.npz",
+      "requested_offset_xy_m": [
+        -0.04,
+        0.04
+      ],
+      "offset_xy_m": [
+        -0.04000000000000001,
+        0.04
+      ],
+      "source_state_sha256": "6600fb90ac0ceaf178c64291eef075068efa4daaa075cc9004b763b2076f7b41",
+      "state_sha256": "cdd03b4e480cc80dbc0e76f33917041fcce869e72605b4dba37f8203b0f36801",
+      "sha256": "32552d9d43db0324ff42525db9746e4bdb72e6636b03f16a23a27745898c371d",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.20959212782081726,
+        0.005217453006914833,
+        1.174032537404959
+      ],
+      "bowl_pos": [
+        -0.12333962226857481,
+        0.04291090528832665,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.06446503650836596,
+        -0.02859363943257207,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-placement_failure-init05",
+      "split": "train",
+      "category": "placement_failure",
+      "source_initial_id": 5,
+      "file": "train-placement_failure-init05.npz",
+      "requested_offset_xy_m": [
+        -0.04,
+        0.04
+      ],
+      "offset_xy_m": [
+        0.13,
+        0.0
+      ],
+      "source_state_sha256": "6600fb90ac0ceaf178c64291eef075068efa4daaa075cc9004b763b2076f7b41",
+      "state_sha256": "00345d7d1eef84e40a40ff354c3c4e6182f8d92fed1be97b228941573cec35ff",
+      "sha256": "567c8e53afa89146f27af79017c6a4b323352b4392ecb5c50fd7f586474903e7",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        0.07255743708667355,
+        -0.029498760092358422,
+        1.1619431290933724
+      ],
+      "bowl_pos": [
+        0.19446503650836597,
+        -0.02859363943257207,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.06446503650836596,
+        -0.02859363943257207,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "train-empty_grasp-init06",
+      "split": "train",
+      "category": "empty_grasp",
+      "source_initial_id": 6,
+      "file": "train-empty_grasp-init06.npz",
+      "requested_offset_xy_m": [
+        0.04,
+        -0.04
+      ],
+      "offset_xy_m": [
+        -0.040000781555084394,
+        -0.03999995112797422
+      ],
+      "source_state_sha256": "1e80c5a11d420bddc4e28295404eb575e178fbb4285e9703d7fcea5226604d07",
+      "state_sha256": "08319f8866593ad6bd33dd8cfb28252527df8346cdfa0d22f5c8a634df24a160",
+      "sha256": "50ac43c80eeaacb68674a8ceb72f130b1bef30b2c6e1bccb6ea09ae0e84475ac",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.07189731771729567,
+        -0.00777066182258074,
+        1.0049679656949968
+      ],
+      "bowl_pos": [
+        -0.11649788092128226,
+        -0.047859891976857305,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.03695410183144269,
+        -0.03168622350677177,
+        0.9025057052762591
+      ]
+    },
+    {
+      "id": "train-object_offset-init06",
+      "split": "train",
+      "category": "object_offset",
+      "source_initial_id": 6,
+      "file": "train-object_offset-init06.npz",
+      "requested_offset_xy_m": [
+        0.04,
+        -0.04
+      ],
+      "offset_xy_m": [
+        -0.040000781555084394,
+        -0.03999995112797422
+      ],
+      "source_state_sha256": "1e80c5a11d420bddc4e28295404eb575e178fbb4285e9703d7fcea5226604d07",
+      "state_sha256": "590643e55927acba2e045a4eb361482fc41cc2833b283e95333b4e4b5b032f44",
+      "sha256": "6d4c67440b0fddc22cad033a2f096f3cc284e035d542def2facd883727e33784",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.21827538340899033,
+        -0.00907698563815675,
+        1.1601025781507506
+      ],
+      "bowl_pos": [
+        -0.11649788092128226,
+        -0.047859891976857305,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.03695410183144269,
+        -0.03168622350677177,
+        0.9025057052762591
+      ]
+    },
+    {
+      "id": "train-placement_failure-init06",
+      "split": "train",
+      "category": "placement_failure",
+      "source_initial_id": 6,
+      "file": "train-placement_failure-init06.npz",
+      "requested_offset_xy_m": [
+        0.04,
+        -0.04
+      ],
+      "offset_xy_m": [
+        0.09644267193665795,
+        -0.09508498313304128
+      ],
+      "source_state_sha256": "1e80c5a11d420bddc4e28295404eb575e178fbb4285e9703d7fcea5226604d07",
+      "state_sha256": "81d2acbdef72c9bff30a09598d9dd67b81710624ce4afc07bc5b206306907b43",
+      "sha256": "8873b015f58dd51bdfa7a05b1a7be08e38bbfd06703c17986c726a68cbc4db9b",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        0.044425305759564084,
+        -0.03264966611828998,
+        1.1611276140086133
+      ],
+      "bowl_pos": [
+        0.13339677376810063,
+        -0.12677120663981306,
+        0.8926781922739493
+      ],
+      "plate_pos": [
+        0.03695410183144269,
+        -0.03168622350677177,
+        0.9025057052762591
+      ]
+    },
+    {
+      "id": "heldout-empty_grasp-init10",
+      "split": "heldout",
+      "category": "empty_grasp",
+      "source_initial_id": 10,
+      "file": "heldout-empty_grasp-init10.npz",
+      "requested_offset_xy_m": [
+        0.055,
+        -0.055
+      ],
+      "offset_xy_m": [
+        0.055,
+        0.055
+      ],
+      "source_state_sha256": "a26cb5d4dff6064642d5b4eef1ecfa5e44882500e12f5b00f3d81b06622a99f2",
+      "state_sha256": "83552600653a03c3c7b3f2e53068c9f789c5b20040c6fcb3777e8b319cc81873",
+      "sha256": "a34064883ac57d0d07d4eb493684cfa6a6629571707c73a9a895175bf351209b",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.10068204413426958,
+        -0.012519573751744463,
+        1.0023718646623805
+      ],
+      "bowl_pos": [
+        -0.047628697109723915,
+        0.042127881962718966,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.054566973220400675,
+        -0.01710466502525,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "heldout-object_offset-init10",
+      "split": "heldout",
+      "category": "object_offset",
+      "source_initial_id": 10,
+      "file": "heldout-object_offset-init10.npz",
+      "requested_offset_xy_m": [
+        0.055,
+        -0.055
+      ],
+      "offset_xy_m": [
+        0.055,
+        0.055
+      ],
+      "source_state_sha256": "a26cb5d4dff6064642d5b4eef1ecfa5e44882500e12f5b00f3d81b06622a99f2",
+      "state_sha256": "254b03c47e50214f9e71c308040e0218d8b7c07d738cff9e04ed2156a3fd9cfd",
+      "sha256": "c44fa05567bf37e04d2aabd872d1a8da43ddf2b240fbbe9f551fd18dbf9ca3b0",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.2149238464582007,
+        0.015883292613606666,
+        1.1705633236454678
+      ],
+      "bowl_pos": [
+        -0.047628697109723915,
+        0.042127881962718966,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.054566973220400675,
+        -0.01710466502525,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "heldout-placement_failure-init10",
+      "split": "heldout",
+      "category": "placement_failure",
+      "source_initial_id": 10,
+      "file": "heldout-placement_failure-init10.npz",
+      "requested_offset_xy_m": [
+        0.055,
+        -0.055
+      ],
+      "offset_xy_m": [
+        0.15000000000000002,
+        0.0
+      ],
+      "source_state_sha256": "a26cb5d4dff6064642d5b4eef1ecfa5e44882500e12f5b00f3d81b06622a99f2",
+      "state_sha256": "3988ebce0b41f118a02853529d2e51496658fe32acf51950c06efe33b12254e9",
+      "sha256": "152fdd67b5bc76dd3fe5eae6b1f4c2c674376590cc2abd2eb4e81103ccbe93f7",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        0.06255181924469402,
+        -0.01780213982734893,
+        1.1616815015315705
+      ],
+      "bowl_pos": [
+        0.20456697322040068,
+        -0.01710466502525,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.054566973220400675,
+        -0.01710466502525,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "heldout-empty_grasp-init11",
+      "split": "heldout",
+      "category": "empty_grasp",
+      "source_initial_id": 11,
+      "file": "heldout-empty_grasp-init11.npz",
+      "requested_offset_xy_m": [
+        -0.055,
+        -0.055
+      ],
+      "offset_xy_m": [
+        -0.05500000000000001,
+        0.055
+      ],
+      "source_state_sha256": "fd93f9a6c46870ebdc220001df42a4ced931aeab9c374e46dfcfe89149cb7506",
+      "state_sha256": "5a3afc71f58c9ea0017645654d269a9ff19ff5278999863abad632d49e8f1fe0",
+      "sha256": "e1b6d654108627f5e512cede186014c083a706d5fce8c05a0a06d24ed208c5d8",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.07850043672747123,
+        -0.0149438955033938,
+        1.0064089914144865
+      ],
+      "bowl_pos": [
+        -0.13819880864368073,
+        0.04002131791240185,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.0535853749898585,
+        -0.024671890537503956,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "heldout-object_offset-init11",
+      "split": "heldout",
+      "category": "object_offset",
+      "source_initial_id": 11,
+      "file": "heldout-object_offset-init11.npz",
+      "requested_offset_xy_m": [
+        -0.055,
+        -0.055
+      ],
+      "offset_xy_m": [
+        -0.05500000000000001,
+        0.055
+      ],
+      "source_state_sha256": "fd93f9a6c46870ebdc220001df42a4ced931aeab9c374e46dfcfe89149cb7506",
+      "state_sha256": "cdb504f74fb7dd1d9c6fd2957aaf1c6ad2cae71dde09169dc8e2998558a751d2",
+      "sha256": "c7ddda23321c9956d0c589a745969cf6598e551b1f759da8a81fad7ef7afda72",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.21834212035619424,
+        -0.019473856436461028,
+        1.1604242072209652
+      ],
+      "bowl_pos": [
+        -0.13819880864368073,
+        0.04002131791240185,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.0535853749898585,
+        -0.024671890537503956,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "heldout-placement_failure-init11",
+      "split": "heldout",
+      "category": "placement_failure",
+      "source_initial_id": 11,
+      "file": "heldout-placement_failure-init11.npz",
+      "requested_offset_xy_m": [
+        -0.055,
+        -0.055
+      ],
+      "offset_xy_m": [
+        -0.10541887712572684,
+        -0.10683559737045914
+      ],
+      "source_state_sha256": "fd93f9a6c46870ebdc220001df42a4ced931aeab9c374e46dfcfe89149cb7506",
+      "state_sha256": "c8211df2971f6dc5b3760a79a034e0bf992d30141abf527594e27f6e7198fd2c",
+      "sha256": "778a5e9aafdaae64620bc298e0d8540cbd31b7808ed00e601a042e036c299db1",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        0.06073800427372407,
+        -0.025505323023169952,
+        1.1614872809040953
+      ],
+      "bowl_pos": [
+        -0.05183350213586835,
+        -0.1315074879079631,
+        0.8901378766206969
+      ],
+      "plate_pos": [
+        0.0535853749898585,
+        -0.024671890537503956,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "heldout-empty_grasp-init12",
+      "split": "heldout",
+      "category": "empty_grasp",
+      "source_initial_id": 12,
+      "file": "heldout-empty_grasp-init12.npz",
+      "requested_offset_xy_m": [
+        0.055,
+        0.055
+      ],
+      "offset_xy_m": [
+        -0.05499999999999999,
+        0.055
+      ],
+      "source_state_sha256": "5c3fd9156c52b081e2345fdea45ab876c5fcd72998b28fa7313f0af615476e96",
+      "state_sha256": "358d080fa1bd4bb0823123ef400bad9054bbd8978a476f97a0be008b3eb67921",
+      "sha256": "847df171ab2b85209fc5923ffbf13a2cddfab1cbeb5e491420e05ef59bceba7a",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.08943579171143681,
+        -0.011167180394706816,
+        1.003404329049338
+      ],
+      "bowl_pos": [
+        -0.14685185838138606,
+        0.04358042549144296,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.04094311924582698,
+        -0.014216176640320077,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "heldout-object_offset-init12",
+      "split": "heldout",
+      "category": "object_offset",
+      "source_initial_id": 12,
+      "file": "heldout-object_offset-init12.npz",
+      "requested_offset_xy_m": [
+        0.055,
+        0.055
+      ],
+      "offset_xy_m": [
+        -0.05499999999999999,
+        0.055
+      ],
+      "source_state_sha256": "5c3fd9156c52b081e2345fdea45ab876c5fcd72998b28fa7313f0af615476e96",
+      "state_sha256": "70edd4899087f7e5e0203274a54a2d3a909b6c99b2ecb3c6a269bc330c88f8f0",
+      "sha256": "98f4606e9e59357df145b6464cd29294b5d74ec3eb9b6162df2cda89eee3bea1",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.2110652523948477,
+        0.013839622231713514,
+        1.1785591401232127
+      ],
+      "bowl_pos": [
+        -0.14685185838138606,
+        0.04358042549144296,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.04094311924582698,
+        -0.014216176640320077,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "heldout-placement_failure-init12",
+      "split": "heldout",
+      "category": "placement_failure",
+      "source_initial_id": 12,
+      "file": "heldout-placement_failure-init12.npz",
+      "requested_offset_xy_m": [
+        0.055,
+        0.055
+      ],
+      "offset_xy_m": [
+        0.10606601717798211,
+        0.10606601717798211
+      ],
+      "source_state_sha256": "5c3fd9156c52b081e2345fdea45ab876c5fcd72998b28fa7313f0af615476e96",
+      "state_sha256": "851986cd9381d23279f176272ad94ae48145075dab98b688c74bd928d9d692ea",
+      "sha256": "223d1cb7753d95533296ecb86f08b2dde407a12cbf4f5f65790adb4ebfcdc106",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        0.047555962096058856,
+        -0.0148755151876661,
+        1.1610462324470636
+      ],
+      "bowl_pos": [
+        0.14700913642380908,
+        0.09184984053766204,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.04094311924582698,
+        -0.014216176640320077,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "heldout-empty_grasp-init13",
+      "split": "heldout",
+      "category": "empty_grasp",
+      "source_initial_id": 13,
+      "file": "heldout-empty_grasp-init13.npz",
+      "requested_offset_xy_m": [
+        -0.055,
+        0.055
+      ],
+      "offset_xy_m": [
+        -0.05499999999999999,
+        0.055
+      ],
+      "source_state_sha256": "e626a27d7896a4ab675ec18b3fca302804a8f5ee669da53d7198f7400e9833ce",
+      "state_sha256": "da2093d92a6dd4249840658f00b41b499d7e25cb13ea53c1557e501d49609c96",
+      "sha256": "1c923f57698a002135529cc69aaf0f6763d72611459f9890a42cf20b9e57cb4e",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.10101357678434317,
+        -0.006964939121135788,
+        1.002443153117169
+      ],
+      "bowl_pos": [
+        -0.15866686987596282,
+        0.047778107991319506,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.060705092440644294,
+        -0.02202563966525468,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "heldout-object_offset-init13",
+      "split": "heldout",
+      "category": "object_offset",
+      "source_initial_id": 13,
+      "file": "heldout-object_offset-init13.npz",
+      "requested_offset_xy_m": [
+        -0.055,
+        0.055
+      ],
+      "offset_xy_m": [
+        -0.05499999999999999,
+        0.055
+      ],
+      "source_state_sha256": "e626a27d7896a4ab675ec18b3fca302804a8f5ee669da53d7198f7400e9833ce",
+      "state_sha256": "0bda0176bf333ee286393758ea72e115bd041efd5ee4b28b74bc9d8349feaf2a",
+      "sha256": "a7693558c5716e99dc9de69cc03187a0dbc1950467ba6819dee495d202afbb63",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.21499986791971373,
+        -0.015140080012083387,
+        1.164401385097253
+      ],
+      "bowl_pos": [
+        -0.15866686987596282,
+        0.047778107991319506,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.060705092440644294,
+        -0.02202563966525468,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "heldout-placement_failure-init13",
+      "split": "heldout",
+      "category": "placement_failure",
+      "source_initial_id": 13,
+      "file": "heldout-placement_failure-init13.npz",
+      "requested_offset_xy_m": [
+        -0.055,
+        0.055
+      ],
+      "offset_xy_m": [
+        -0.10603135799400752,
+        0.10612087000228332
+      ],
+      "source_state_sha256": "e626a27d7896a4ab675ec18b3fca302804a8f5ee669da53d7198f7400e9833ce",
+      "state_sha256": "5133af924c8abd12beb166db309e4fe3f535c78f4f9aa981ffaa25e3af981c09",
+      "sha256": "12cd1a6f1f8b9b7781ffe1d0a509fe44b66f3a936b7d383e7f91a51bdcdba3ba",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        0.06835846187300114,
+        -0.022804175821555188,
+        1.161767216512611
+      ],
+      "bowl_pos": [
+        -0.04532626555336323,
+        0.08409523033702863,
+        0.8986291097360636
+      ],
+      "plate_pos": [
+        0.060705092440644294,
+        -0.02202563966525468,
+        0.902506338529415
+      ]
+    }
+  ]
+}
