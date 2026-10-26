@@ -73,3 +73,7 @@ PPO_CONFIG=ppo_recovery bash scripts/run_ppo_smoke.sh
 新adapter：[公开Release](https://github.com/sencangWei/pi05-rl-handson/releases/tag/ppo-recovery-20261027)，SHA256 `c1cadff1e4a87b5f448fa9dacbaccc885ef5e58ca4ddea92e51cdc110c77f63f`；它需要匹配SHA为 `4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f` 的冻结合并基座。约13GB基座、完整公开数据及虚拟环境未上传；本次不是可脱离基座的完整模型。
 
 源码实际位于忽略的RLinf克隆中；8个有序补丁及12个运行文件哈希存入 [运行时清单](../../evidence/ppo-runtime-patch-manifest.json)，干净上游恢复检查已通过。大型冻结权重不纳入git。
+
+## 远端恢复核验
+
+公开仓库 `experiment/pi05-ppo` 分支的 `b3407ff` 已在独立克隆恢复，556个跟踪文件字节及git tree全部一致；从远端保存的8个补丁在固定干净RLinf上游重放，12个实际运行文件SHA逐一匹配。Release权重独立分32段回读、核验范围及长度后拼接，121226493字节及上述SHA与本机一致。核验记录：[代码](../../evidence/ppo-recovery27-remote-files.json)、[实际运行时](../../evidence/ppo-recovery27-remote-runtime.json)、[权重](../../evidence/ppo-recovery27-release-verification.json)。

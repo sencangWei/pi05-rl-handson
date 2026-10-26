@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "verified_at": "2026-10-26T16:57:57.391083+00:00",
+  "release": "https://github.com/sencangWei/pi05-rl-handson/releases/tag/ppo-recovery-20261027",
+  "asset_url": "https://github.com/sencangWei/pi05-rl-handson/releases/download/ppo-recovery-20261027/pi05-ppo-20261027-300updates-adapter.pt",
+  "bytes": 121226493,
+  "downloaded_sha256": "c1cadff1e4a87b5f448fa9dacbaccc885ef5e58ca4ddea92e51cdc110c77f63f",
+  "original_sha256": "c1cadff1e4a87b5f448fa9dacbaccc885ef5e58ca4ddea92e51cdc110c77f63f",
+  "method": "Independent HTTP range download; all 32 Content-Range headers and lengths verified, then concatenated in byte order and SHA-256 compared.",
+  "base_weights_sha256": "4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f",
+  "scope": "Adapter, optimizer, scheduler and RNG only. Approximately 13GB frozen merged base, full dataset and virtual environments are not uploaded."
+}
