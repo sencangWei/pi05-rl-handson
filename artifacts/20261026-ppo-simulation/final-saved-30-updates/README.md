@@ -21,7 +21,7 @@
 
 - 血缘：官方π0.5 LIBERO → 40任务、10000次LoRA SFT → 合并冻结基座 → 新LoRA/价值头30次PPO优化；没有用手写抓放轨迹替代模型动作。
 - 最终adapter格式rlinf-fsdp1-single-rank-adapter-v1，121226493字节；SHA256 `0595e247536bc48d5498f5085823a51c595b36cfd14b965f642f81256daaf7f1`。550个可训练张量均有限；242个优化器状态step30，308个step0，不能称全部注入LoRA都被更新。
-- 冻结合并基座SHA256 `4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f`；必须匹配，约13GB基座未上传。adapter通过GitHub Release提供。
+- 冻结合并基座SHA256 `4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f`；必须匹配，约13GB基座未上传。adapter通过[GitHub Release](https://github.com/sencangWei/pi05-rl-handson/releases/tag/ppo-smoke-20261026)提供。
 - 两策略使用同一原生Torch/BF16运行时、初态字节哈希、归一化、seed42、逐调用固定噪声。62个动作/模拟运行时源码哈希匹配，见identity-validation.json。
 - 独立评测10次流采样，预测10步、每次执行5步后重新观测，最多300控制步；训练采样5次流采样、每10步重规划。评测协议两侧一致，但不同于训练采样。
 - 原始结果见ppo-summary.json与native-sft-summary.json；身份见ppo-identity.json。该八场景不是40任务留出集评测，不能称未见任务泛化。
@@ -52,3 +52,5 @@ JAX_PLATFORMS=cpu MUJOCO_GL=egl PYOPENGL_PLATFORM=egl OMP_NUM_THREADS=4 HF_HUB_O
 输出目录必须全新；依赖只读复用的固定版本/home/robot/voice-arm-sim，不能仅克隆本仓库就称已完整复现运行环境。可用配置与身份哈希随仓库；13GB基座、完整数据与虚拟环境不在Git备份中。
 
 实际帧抽查：[八场景过程截图](ppo-timelines.png)、[四任务终帧对照](comparison-endpoints.png)。24段MP4均完整解码，帧率与哈希见video-validation.json。
+
+备份核验：[代码与补丁远端恢复](../../../evidence/ppo-final-remote-restore.json)、[Release权重独立下载SHA核验](../../../evidence/ppo-release-verification.json)。

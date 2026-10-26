@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "verified_at": "2026-10-26T15:31:56.684445+00:00",
+  "release": "https://github.com/sencangWei/pi05-rl-handson/releases/tag/ppo-smoke-20261026",
+  "asset_url": "https://github.com/sencangWei/pi05-rl-handson/releases/download/ppo-smoke-20261026/pi05-ppo-20261026-30updates-adapter.pt",
+  "bytes": 121226493,
+  "downloaded_sha256": "0595e247536bc48d5498f5085823a51c595b36cfd14b965f642f81256daaf7f1",
+  "original_sha256": "0595e247536bc48d5498f5085823a51c595b36cfd14b965f642f81256daaf7f1",
+  "method": "Independent HTTP range download; all 32 Content-Range headers and lengths verified, then concatenated in byte order and SHA-256 compared.",
+  "base_weights_sha256": "4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f",
+  "scope": "Adapter, optimizer, scheduler and RNG only. Approximately 13GB frozen merged base, full dataset and virtual environments are not uploaded."
+}

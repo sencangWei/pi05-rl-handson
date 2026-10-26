@@ -74,3 +74,9 @@ CPU/PPO准备代码备份：d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d已推送公
 - 最新25测试和2子测试通过，80条Flax警告；Ruff通过。原始记录evidence/ppo-v10-*.json及ppo-launch-v10-oom.log；仿真结果待实际生成。
 
 最终独立评测完成：服务Result=success、ExecMainStatus=0，8/8触发LIBERO原始成功判据。PPO步骤118/123/86/80/87/83/131/140，均值106；匹配SFT均值105，未见效率或成功率提升。最终对照目录final-saved-30-updates；不把原始任务成功等同额外松爪或恢复。
+
+
+## 最终公开备份核验（2026-10-26）
+- fd1c22f已推送用户公开仓库sencangWei/pi05-rl-handson，experiment/pi05-ppo分支；新克隆370个跟踪文件SHA逐一一致，干净固定上游重放7补丁后9个实际运行文件完全一致，见evidence/ppo-final-remote-restore.json。
+- 最终121226493字节adapter发布为ppo-smoke-20261026 Release；从GitHub独立分32段下载，验证每段Content-Range与长度，拼接SHA256为0595e247536bc48d5498f5085823a51c595b36cfd14b965f642f81256daaf7f1，与本机一致。见evidence/ppo-release-verification.json。13GB冻结基座、完整数据和虚拟环境未上传。
+- 最终仿真八场景8/8，对照8/8，无PPO提升证据；训练保存后OOM的问题仍未解决，不以备份完成改变此结论。

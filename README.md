@@ -8,6 +8,7 @@
 - 40任务 GPU SFT 已完成10000次迭代，17:43启动、18:14保存最后的9999 checkpoint，服务正常退出0。见 evidence/multitask40_lora_v1-status.json。四任务各两个初态仿真已完成，新SFT与官方父模型均8/8触发成功；另测新SFT放碗并松爪2/2通过。18段实际录像、同初态对照及限制见 [本轮仿真记录](artifacts/20261026-sft-simulation/README.md)。
 - 为避开显存阻塞，独立 CPU 测速实验 `cpu_throughput_probe_v1` 已执行3次优化迭代并保存checkpoint；首步预热学习率为0，后两次才更新参数。每步约23秒，10000步粗估65小时，因此不自动改成数天CPU训练，也不称为40任务训练完成。
 - PPO v10 已执行并持久化30次有限梯度更新，最终adapter为121226493字节、550个可训练张量，242个优化器状态记录step=30，另308个仍为0；不能声称全部注入LoRA都得到更新。最终原子保存后进程触发48GiB CPU内存上限，训练未正常退出，内存问题尚未解决。v7首轮15次更新权重的独立评测8/8，对照SFT同样8/8；v10最终权重独立评测已正常退出，8/8成功；SFT/PPO平均控制步105/106，未见提升。见 [最终30更新对照录像与报告](artifacts/20261026-ppo-simulation/final-saved-30-updates/README.md)。见 [检查点证据](evidence/ppo-v10-checkpoint.json) 与 [首轮15次更新录像](artifacts/20261026-ppo-simulation/first-saved-15-updates/README.md)。
+- [最终30更新adapter下载](https://github.com/sencangWei/pi05-rl-handson/releases/tag/ppo-smoke-20261026)（约121MB）；约13GB冻结基座未上传，恢复需匹配基座SHA。代码、配置、报告及录像的远端恢复记录见 [备份核验](evidence/ppo-final-remote-restore.json)。
 - 现役 LoRA 四任务各测一个初态，4/4成功；另做碗放盘无手指接触5步检查，94步成功。这是既有模型推理，不是本次训练结果。
 
 ## 数据、奖励和机器人互动的关系
