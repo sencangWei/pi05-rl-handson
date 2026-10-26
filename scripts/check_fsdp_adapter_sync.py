@@ -16,7 +16,7 @@ from torch.distributed.fsdp import FullyShardedDataParallel as FSDP
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "third_party/RLinf"))
-from check_fsdp_adapter_checkpoint import BASE, Tiny
+from check_fsdp_adapter_checkpoint import Tiny
 from rlinf.hybrid_engines.fsdp.strategy.adapter_checkpoint import _selected
 from rlinf.hybrid_engines.fsdp.strategy.fsdp import FSDPStrategy
 from rlinf.hybrid_engines.weight_syncer.patch_syncer import PatchWeightSyncer
@@ -38,11 +38,13 @@ async def verify(model, module, strategy, cfg, snapshot_device):
     with FSDP.summon_full_params(model, writeback=False):
         parameters, buffers = _selected(model)
         selected_names = list(parameters) + list(buffers)
+    assert cfg.fsdp_config.checkpoint_format == "adapter"
+    assert cfg.get("checkpoint_format") is None
     calls = []
     def full_state(**kwargs):
         calls.append(kwargs)
         return strategy.get_model_state_dict(model, **kwargs)
-    actor = SimpleNamespace(cfg=OmegaConf.create({"actor": {"checkpoint_format": "adapter", "checkpoint_base_sha256": BASE}}),
+    actor = SimpleNamespace(cfg=OmegaConf.create({"actor": cfg}),
                             model=model, weight_syncer=sender, param_names_need_sync=selected_names,
                             get_model_state_dict=full_state)
     initial = EmbodiedFSDPActor.get_rollout_state_dict(actor)
@@ -126,6 +128,8 @@ def main():
                "scripts/check_fsdp_adapter_sync.py", "configs/rlinf-adapter-sync.patch"]
     record = {"status": "PASS", "torch": torch.__version__, "world_size": 1, "results": results,
               "scope": "tiny actual CUDA FSDP and actual actor extraction / patch sync; full PPO not verified",
+              "configuration_source": "evidence/ppo-composed.json",
+              "checkpoint_format_path": "actor.fsdp_config.checkpoint_format",
               "sha256": {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in sources}}
     (ROOT / "evidence/ppo-fsdp-adapter-sync.json").write_text(json.dumps(record, indent=2) + "\n")
     print(json.dumps(record))

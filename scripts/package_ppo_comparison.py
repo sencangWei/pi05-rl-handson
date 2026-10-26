@@ -6,12 +6,37 @@ import subprocess
 from pathlib import Path
 
 
+def validate_identities(before, after):
+    fields = ['runtime', 'base_weights_sha256', 'norm_stats_sha256', 'image_size',
+              'action_horizon', 'action_chunk', 'num_steps', 'discrete_state_input',
+              'precision', 'seed_protocol']
+    for field in fields:
+        if before['metadata'][field] != after['metadata'][field]:
+            raise ValueError(f'Policy comparison differs in {field}')
+    for field in ['model_config', 'simulator_revision', 'initial_state_sha256']:
+        if before[field] != after[field]:
+            raise ValueError(f'Policy comparison differs in {field}')
+    def runtime_sources(identity):
+        return {name: digest for name, digest in identity['source_sha256'].items()
+                if '/rlinf/models/' in name or name.endswith('/voice-arm-sim/vla/run.py')}
+    left, right = runtime_sources(before), runtime_sources(after)
+    if len(left) < 2 or left != right:
+        raise ValueError('Policy/simulator runtime source hashes differ or are missing')
+    return {'status': 'PASS', 'metadata_fields': fields,
+            'model_config_exact': True, 'initial_states_exact': True,
+            'runtime_source_files': len(left),
+            'note': 'Evaluator bookkeeping and adapter loading differ; action runtime matches.'}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--sft', type=Path, required=True)
     parser.add_argument('--ppo', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
+    identity_check = validate_identities(
+        json.loads((args.sft / 'identity.json').read_text()),
+        json.loads((args.ppo / 'identity.json').read_text()))
     before = json.loads((args.sft / 'summary.json').read_text())
     after = json.loads((args.ppo / 'summary.json').read_text())
     def key(row):
@@ -20,6 +45,8 @@ def main():
     if len(left) != 8 or left.keys() != right.keys() or len(after) != 8:
         raise ValueError('Expected eight matched unique scenes')
     args.output.mkdir(parents=True, exist_ok=True)
+    (args.output / 'identity-validation.json').write_text(
+        json.dumps(identity_check, indent=2) + '\n')
     rows = []
     for task, initial in sorted(left):
         a, b = left[task, initial], right[task, initial]

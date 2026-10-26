@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "metadata_fields": [
+    "runtime",
+    "base_weights_sha256",
+    "norm_stats_sha256",
+    "image_size",
+    "action_horizon",
+    "action_chunk",
+    "num_steps",
+    "discrete_state_input",
+    "precision",
+    "seed_protocol"
+  ],
+  "model_config_exact": true,
+  "initial_states_exact": true,
+  "runtime_source_files": 62,
+  "note": "Evaluator bookkeeping and adapter loading differ; action runtime matches."
+}

@@ -150,6 +150,7 @@ def main():
     source_files = [Path(__file__).resolve(), APP / 'vla/run.py']
     source_files += sorted((ROOT / 'third_party/RLinf/rlinf/models/embodiment/openpi').rglob('*.py'))
     source_files.append(ROOT / 'third_party/RLinf/rlinf/models/__init__.py')
+    source_files.append(ROOT / 'third_party/RLinf/rlinf/hybrid_engines/fsdp/strategy/adapter_checkpoint.py')
     metadata = {
         'backend': 'local-pi05-libero-lora', 'runtime': 'native-rlinf-pytorch',
         'checkpoint': str(args.checkpoint.resolve()) if args.checkpoint else None,

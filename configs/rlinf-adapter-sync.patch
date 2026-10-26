@@ -21,10 +21,10 @@
  
      def get_rollout_state_dict(self) -> dict:
 +        if (
-+            self.cfg.actor.get("checkpoint_format") == "adapter"
++            self.cfg.actor.fsdp_config.get("checkpoint_format") == "adapter"
 +            and self.weight_syncer.sender_initialized()
 +        ):
-+            _guard(self.model, self.cfg.actor.get("checkpoint_base_sha256"))
++            _guard(self.model, self.cfg.actor.fsdp_config.get("checkpoint_base_sha256"))
 +            with FSDP.summon_full_params(self.model, writeback=False):
 +                parameters, buffers = _selected(self.model)
 +                selected = {**parameters, **buffers}
