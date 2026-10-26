@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "torch": "2.7.1+cu128",
+  "world_size": 1,
+  "scope": "tiny actual CUDA RLinf FSDP strategy; no full-model memory-fit claim",
+  "cases": [
+    {
+      "checkpoint_cpu_offload": true,
+      "save_model_devices": [
+        "cpu"
+      ],
+      "model_tensors": 4,
+      "model_optimizer_scheduler_rng_exact": true,
+      "strict_full_weights_load": true,
+      "full_weights_sha256": "5b49132eef88a624dc984997476b0425fa934ec05eb0df7e38271bc0cacf47bd"
+    },
+    {
+      "checkpoint_cpu_offload": false,
+      "save_model_devices": [
+        "cuda"
+      ],
+      "model_tensors": 4,
+      "model_optimizer_scheduler_rng_exact": true,
+      "strict_full_weights_load": true,
+      "full_weights_sha256": "547e2304a4657cd8dc3698e2b6129cb5d87b245ac6e47e3b5e1b090950c5b741"
+    }
+  ],
+  "sha256": {
+    "third_party/RLinf/rlinf/hybrid_engines/fsdp/strategy/base.py": "607d69e8a559e8c90729f9cb60248b19ce9bc09b5f396cdc5477f0d10f7866e0",
+    "third_party/RLinf/rlinf/hybrid_engines/fsdp/fsdp_model_manager.py": "0f25ed0f7db73a6219e28064fb11dd573db604ec336790291e6cafcd34d6d9ac",
+    "third_party/RLinf/rlinf/hybrid_engines/fsdp/strategy/checkpoint.py": "d754a4ea03e07a436e3782d2aaab521b982320bac828b02c7794deafb10c0faa",
+    "third_party/RLinf/rlinf/hybrid_engines/fsdp/strategy/fsdp.py": "823ca4597133c6e22948e3a2b32d6463e645bcbc94958d1a71a40649f087ad71",
+    "configs/rlinf-checkpoint-memory.patch": "a2b8376513b04c26b27f233b64cebec9c3515f0f355acaf409ec916a8d918ea1",
+    "configs/ppo_goal_overrides.yaml": "9d8a852a54d7b03464bd059ef2d543ea592b43aa3b3f068ef3cc071e9a5ce735",
+    "scripts/check_fsdp_checkpoint.py": "c7b33efdc5b24096d52090ded6cf9fa31657f75c947bdc8d6745701747685985"
+  }
+}

@@ -40,6 +40,13 @@ if (precision['status'] != 'PASS'
         or precision.get('actual_strategy_root_chains_dtype') != 'torch.float32'
         or hashlib.sha256(strategy.read_bytes()).hexdigest() != precision.get('strategy_source_sha256')):
     raise SystemExit('FSDP/PEFT precision regression gate has not passed for this strategy')
+checkpoint = json.loads(Path('evidence/ppo-fsdp-checkpoint.json').read_text())
+if checkpoint['status'] != 'PASS' or len(checkpoint['cases']) != 2:
+    raise SystemExit('Actual checkpoint roundtrip regression gate has not passed')
+for name, expected in checkpoint['sha256'].items():
+    if hashlib.sha256(Path(name).read_bytes()).hexdigest() != expected:
+        raise SystemExit(f'Checkpoint runtime changed since roundtrip check: {name}')
+print('Checkpoint model/optimizer/scheduler/RNG roundtrip gate PASS.')
 PY
 .venv-ppo/bin/python scripts/check_ppo_gpu.py
 .venv-ppo/bin/python scripts/check_ppo.py

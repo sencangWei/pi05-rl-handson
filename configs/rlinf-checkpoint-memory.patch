@@ -1,0 +1,53 @@
+diff --git a/rlinf/hybrid_engines/fsdp/fsdp_model_manager.py b/rlinf/hybrid_engines/fsdp/fsdp_model_manager.py
+index 72326c5..c94fd55 100644
+--- a/rlinf/hybrid_engines/fsdp/fsdp_model_manager.py
++++ b/rlinf/hybrid_engines/fsdp/fsdp_model_manager.py
+@@ -411,6 +411,9 @@ class FSDPModelManager:
+             save_full_model_weights=self._cfg.fsdp_config.get(
+                 "save_full_model_weights", True
+             ),
++            checkpoint_cpu_offload=self._cfg.fsdp_config.get(
++                "checkpoint_cpu_offload", True
++            ),
+         )
+ 
+         if restore_weight_offload:
+diff --git a/rlinf/hybrid_engines/fsdp/strategy/base.py b/rlinf/hybrid_engines/fsdp/strategy/base.py
+index ef8411f..7995cd8 100644
+--- a/rlinf/hybrid_engines/fsdp/strategy/base.py
++++ b/rlinf/hybrid_engines/fsdp/strategy/base.py
+@@ -188,6 +188,7 @@ class FSDPStrategyBase(ABC):
+         save_path: str,
+         save_full_model_weights: bool = True,
+         checkpoint_format: str = "dcp",
++        checkpoint_cpu_offload: bool = True,
+     ) -> None:
+         """
+         Save the training state checkpoint.
+@@ -204,11 +205,14 @@ class FSDPStrategyBase(ABC):
+             lr_schedulers (LRScheduler): The learning rate scheduler to be saved.
+             save_path (str): The path to save the checkpoint.
+             save_full_model_weights (bool): Whether to save full model weights.
++            checkpoint_cpu_offload (bool): Materialize state dictionaries on CPU before saving.
+             checkpoint_format (str): "dcp" or "local_shard".
+         """
+         clear_memory()
+         torch.distributed.barrier()
+-        opts = StateDictOptions(full_state_dict=False, cpu_offload=True)
++        opts = StateDictOptions(
++            full_state_dict=False, cpu_offload=checkpoint_cpu_offload
++        )
+         try:
+             training_state = Checkpoint(
+                 model,
+@@ -247,7 +251,9 @@ class FSDPStrategyBase(ABC):
+         torch.distributed.barrier()
+ 
+         if save_full_model_weights:
+-            opts = StateDictOptions(full_state_dict=True, cpu_offload=True)
++            opts = StateDictOptions(
++                full_state_dict=True, cpu_offload=checkpoint_cpu_offload
++            )
+             sd_save_path = os.path.join(save_path, "model_state_dict")
+             model_state_dict = get_model_state_dict(model=model, options=opts)
+             if torch.distributed.get_rank() == 0:

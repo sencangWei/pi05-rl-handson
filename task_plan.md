@@ -34,3 +34,11 @@
 - PPO实际更新仍0；未将安装、转换或SFT训练冒充PPO完成。
 
 21:35 仿真更新：新SFT四任务×双初态8/8，碗放盘松爪额外2/2；官方父模型同哈希初态8/8，酒瓶初态0由299降至131步，其余有快有慢。18段真实视频保存artifacts/20261026-sft-simulation。PPO严格加载811→667张量通过；float32整网对照最大误差0.001248未达既定阈值，正定位GELU等数值差异。Torchcu126在5090D实测no kernel image，独立cu128修复进行中。PPO更新仍0。配置已改为本次合并SFT血缘、horizon10/discreteFalse、正确归一化、all_linear适配器与orig_params，真实运行仍待门槛通过。
+
+## 2026-10-26 22:26 CST 保存内存故障与重跑
+- v5 完成首轮采样、训练调用和内置评测（任务0两次成功），保存 step1 时触发48GiB CPU cgroup上限，退出oom-kill；没有持久化PPO权重，不声称可交付。证据：evidence/ppo-launch-v5-oom.log、ppo-v5-kernel-oom.log。
+- NO_SHARD的DCP仍生成完整state_dict；保存时CPU副本导致额外内存压力。新增checkpoint_cpu_offload=False，仅本配方启用，保留DCP恢复和标准full_weights.pt。小模型实际CUDA保存/恢复的model、optimizer、scheduler及四类RNG逐项一致，原选项为CPU张量，新选项为CUDA张量；不能代替完整模型容量实测。
+- 增加PPO_UPDATE日志，在checkpoint前记录有限梯度优化次数和训练均值，避免checkpoint失败掩盖实际训练状态。
+- 原生Torch SFT独立仿真8/8成功，控制步119/121/84/80/87/83/129/137；身份、相机录像见artifacts/20261026-ppo-simulation/native-sft-summary.json。与PPO使用同一运行时、初态哈希、噪声及10次流推理/5步重规划协议。
+- v6已启动：pi05-ppo-smoke-20261026-v6.service，48GiB RAM上限、禁用swap、45分钟时限；运行中，需等待完整权重保存和独立评测。
+- 全部18项单元测试在训练环境和PPO环境均通过（JAX_PLATFORMS=cpu）。未指定CPU时JAX先初始化GPU导致Flax LoRA测试TF32误差，重跑固定CPU后通过，未放宽阈值。

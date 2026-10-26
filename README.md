@@ -123,6 +123,8 @@ git -C third_party/RLinf checkout 30e0236981c6a1dc19202de64116834c12673828
 git -C third_party/RLinf apply ../../configs/rlinf-step-cost.patch
 git -C third_party/RLinf apply ../../configs/rlinf-gelu-parity.patch
 git -C third_party/RLinf apply ../../configs/rlinf-fsdp-root-input.patch
+git -C third_party/RLinf apply ../../configs/rlinf-checkpoint-memory.patch
+git -C third_party/RLinf apply ../../configs/rlinf-update-evidence.patch
 cp evidence/dataset-meta/* data/libero/meta/
 uv venv --python 3.11.15 .venv-train
 uv pip install --python .venv-train/bin/python -r configs/training-requirements.txt
@@ -137,3 +139,11 @@ uv pip install --python .venv-train/bin/python -r configs/training-requirements.
 本地推理服务：`.venv-train/bin/python scripts/serve_sft.py --port 9875`；另一个终端执行 `.venv-sim/bin/python scripts/baseline.py --output evaluations/新名字 --tasks 0 7 8 9 --initial-states 0 10 --port 9875`。服务默认恢复本轮9999，使用固定噪声协议；增加 `--parent` 才是同一官方训练父模型。端口应先确认空闲，输出目录须全新，避免覆盖证据。
 
 每次评测保留视频、动作、初态与模型元数据。四任务八次评测仅是本轮预先声明的小样本检查，失败应保留；不能据此声称通用家庭指令或稳定恢复能力。
+
+## 2026-10-26 22:26 CST 保存内存故障与重跑
+- v5 完成首轮采样、训练调用和内置评测（任务0两次成功），保存 step1 时触发48GiB CPU cgroup上限，退出oom-kill；没有持久化PPO权重，不声称可交付。证据：evidence/ppo-launch-v5-oom.log、ppo-v5-kernel-oom.log。
+- NO_SHARD的DCP仍生成完整state_dict；保存时CPU副本导致额外内存压力。新增checkpoint_cpu_offload=False，仅本配方启用，保留DCP恢复和标准full_weights.pt。小模型实际CUDA保存/恢复的model、optimizer、scheduler及四类RNG逐项一致，原选项为CPU张量，新选项为CUDA张量；不能代替完整模型容量实测。
+- 增加PPO_UPDATE日志，在checkpoint前记录有限梯度优化次数和训练均值，避免checkpoint失败掩盖实际训练状态。
+- 原生Torch SFT独立仿真8/8成功，控制步119/121/84/80/87/83/129/137；身份、相机录像见artifacts/20261026-ppo-simulation/native-sft-summary.json。与PPO使用同一运行时、初态哈希、噪声及10次流推理/5步重规划协议。
+- v6已启动：pi05-ppo-smoke-20261026-v6.service，48GiB RAM上限、禁用swap、45分钟时限；运行中，需等待完整权重保存和独立评测。
+- 全部18项单元测试在训练环境和PPO环境均通过（JAX_PLATFORMS=cpu）。未指定CPU时JAX先初始化GPU导致Flax LoRA测试TF32误差，重跑固定CPU后通过，未放宽阈值。

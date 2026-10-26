@@ -1,0 +1,19 @@
+{
+  "upstream": "30e0236981c6a1dc19202de64116834c12673828",
+  "files": {
+    "rlinf/envs/sim/libero/libero_env.py": "502975582b0225507617464d36b187621496f0048eb74053a04e9e9cd45cb1c1",
+    "rlinf/models/embodiment/openpi/modules/siglip.py": "3ba4963832e698194ab76a9567c6365eee6059fbc92b54ac83156db59652b39b",
+    "rlinf/models/embodiment/openpi/modules/utils.py": "fce5756c7e2b09065fcfb4e2923e33e53d771a77128137e9d7f276228da6eeeb",
+    "rlinf/hybrid_engines/fsdp/strategy/fsdp.py": "823ca4597133c6e22948e3a2b32d6463e645bcbc94958d1a71a40649f087ad71",
+    "rlinf/hybrid_engines/fsdp/strategy/base.py": "607d69e8a559e8c90729f9cb60248b19ce9bc09b5f396cdc5477f0d10f7866e0",
+    "rlinf/hybrid_engines/fsdp/fsdp_model_manager.py": "0f25ed0f7db73a6219e28064fb11dd573db604ec336790291e6cafcd34d6d9ac",
+    "rlinf/workers/actor/embodied_fsdp_actor_worker.py": "5fc732df70d0ed3c327a25630b12f9bc39545cc7055c82e7d9f7000c38e27f59"
+  },
+  "patches": [
+    "configs/rlinf-step-cost.patch",
+    "configs/rlinf-gelu-parity.patch",
+    "configs/rlinf-fsdp-root-input.patch",
+    "configs/rlinf-checkpoint-memory.patch",
+    "configs/rlinf-update-evidence.patch"
+  ]
+}

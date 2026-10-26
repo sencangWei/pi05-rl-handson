@@ -188,7 +188,8 @@
       },
       "grad_scaler": {
         "enabled": false
-      }
+      },
+      "checkpoint_cpu_offload": false
     },
     "group_name": "ActorGroup",
     "training_backend": "fsdp",

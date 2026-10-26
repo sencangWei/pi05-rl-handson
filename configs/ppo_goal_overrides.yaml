@@ -57,6 +57,8 @@ actor:
   global_batch_size: 2
   enable_offload: True
   fsdp_config:
+    # Stream GPU checkpoint tensors to disk; avoid a whole-model CPU copy.
+    checkpoint_cpu_offload: False
     use_orig_params: True
     # Upstream Pi05 FSDP recipe: retain FP32 numerical islands around BF16 blocks.
     mixed_precision:

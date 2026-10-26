@@ -39,3 +39,11 @@ CPU/PPO准备代码备份：d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d已推送公
 21:57 更新：v2由本项目主动停止，实际更新0，原日志保留；定位到rollout继承actor FP32存储，但无FSDP转换且Gemma输入强制BF16。真实原生Attention最小测试复现dtype冲突，采样权重BF16后通过。仅覆盖rollout.model.precision，actor仍按官方FP32存储/BF16计算规则。v3服务已启动；不能以启动成功替代实际训练。算法提交ae1a721已从GitHub独立获取，27个文件逐字节一致，干净RLinf奖励/GELU补丁重放和5个数值对照源码哈希均通过，证据.local/gelu-remote-verification-20261026.json。
 
 22:13 更新：v3完成300控制步采样，首个训练前向在SigLIP head的PEFT/FSDP边界报FP32/BF16不匹配，实际PPO更新0。PEFT读取未展开权重的FP32 dtype后转换输入，子FSDP随后展开BF16权重，故启用子边界输入转换。Torch2.7也在根_pre_forward执行此转换，另补根策略副本禁用转换，避免PPO chains精度损失；没有原地修改与子节点共享的策略。真实小模型CUDA前后向与真实RLinf包装器的根chains FP32检查PASS。v4在采样/更新前主动停止，保留日志；v5服务22:12启动。独立原生评测入口和5项实际API契约测试通过，待PPO成功后与原生SFT对照。
+
+## 2026-10-26 22:26 CST 保存内存故障与重跑
+- v5 完成首轮采样、训练调用和内置评测（任务0两次成功），保存 step1 时触发48GiB CPU cgroup上限，退出oom-kill；没有持久化PPO权重，不声称可交付。证据：evidence/ppo-launch-v5-oom.log、ppo-v5-kernel-oom.log。
+- NO_SHARD的DCP仍生成完整state_dict；保存时CPU副本导致额外内存压力。新增checkpoint_cpu_offload=False，仅本配方启用，保留DCP恢复和标准full_weights.pt。小模型实际CUDA保存/恢复的model、optimizer、scheduler及四类RNG逐项一致，原选项为CPU张量，新选项为CUDA张量；不能代替完整模型容量实测。
+- 增加PPO_UPDATE日志，在checkpoint前记录有限梯度优化次数和训练均值，避免checkpoint失败掩盖实际训练状态。
+- 原生Torch SFT独立仿真8/8成功，控制步119/121/84/80/87/83/129/137；身份、相机录像见artifacts/20261026-ppo-simulation/native-sft-summary.json。与PPO使用同一运行时、初态哈希、噪声及10次流推理/5步重规划协议。
+- v6已启动：pi05-ppo-smoke-20261026-v6.service，48GiB RAM上限、禁用swap、45分钟时限；运行中，需等待完整权重保存和独立评测。
+- 全部18项单元测试在训练环境和PPO环境均通过（JAX_PLATFORMS=cpu）。未指定CPU时JAX先初始化GPU导致Flax LoRA测试TF32误差，重跑固定CPU后通过，未放宽阈值。

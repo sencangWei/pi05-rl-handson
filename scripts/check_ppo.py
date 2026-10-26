@@ -32,6 +32,7 @@ def main():
     assert model["openpi"]["discrete_state_input"] is False
     assert model["lora_target_scope"] == "all_linear"
     assert value["actor"]["fsdp_config"]["use_orig_params"] is True
+    assert value["actor"]["fsdp_config"]["checkpoint_cpu_offload"] is False
     assert value["actor"]["fsdp_config"]["mixed_precision"]["cast_forward_inputs"] is True
     assert value["actor"]["fsdp_config"]["mixed_precision"]["cast_root_forward_inputs"] is False
     assert value["rollout"]["model"]["model_path"] == model["model_path"]

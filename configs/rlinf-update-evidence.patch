@@ -1,0 +1,42 @@
+diff --git a/rlinf/workers/actor/embodied_fsdp_actor_worker.py b/rlinf/workers/actor/embodied_fsdp_actor_worker.py
+index 097f832..9c92944 100644
+--- a/rlinf/workers/actor/embodied_fsdp_actor_worker.py
++++ b/rlinf/workers/actor/embodied_fsdp_actor_worker.py
+@@ -12,6 +12,8 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
++import json
++
+ import numpy as np
+ import torch
+ from omegaconf import DictConfig, OmegaConf
+@@ -600,6 +602,8 @@ class EmbodiedFSDPActor(FSDPModelManager, Worker):
+                 )
+ 
+         self.model.train()
++        optimizer_steps_before = self.optimizer_steps
++        finite_optimizer_steps = 0
+         rollout_size = (
+             self.rollout_batch["prev_logprobs"].shape[0]
+             * self.rollout_batch["prev_logprobs"].shape[1]
+@@ -660,6 +664,7 @@ class EmbodiedFSDPActor(FSDPModelManager, Worker):
+                 self.torch_platform.empty_cache()
+ 
+                 grad_norm, lr_list = self.optimizer_step()
++                finite_optimizer_steps += int(torch.isfinite(torch.as_tensor(grad_norm)))
+                 data = {
+                     "actor/grad_norm": grad_norm,
+                     "actor/lr": lr_list[0],
+@@ -684,6 +689,11 @@ class EmbodiedFSDPActor(FSDPModelManager, Worker):
+                 compute_critic_explained_variance_from_stats(reduced_stats).item()
+             )
+ 
++        self.logger.info("PPO_UPDATE " + json.dumps({
++            "optimizer_step_attempts": self.optimizer_steps - optimizer_steps_before,
++            "finite_optimizer_steps": finite_optimizer_steps,
++            "metrics": {key: float(value) for key, value in mean_metric_dict.items()},
++        }, sort_keys=True))
+         return mean_metric_dict
+ 
+     def train_micro_batch(

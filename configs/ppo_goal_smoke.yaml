@@ -159,6 +159,7 @@ actor:
       buffer_dtype: fp32
       cast_forward_inputs: true
       cast_root_forward_inputs: false
+    checkpoint_cpu_offload: false
     use_orig_params: true
     wrappers:
       projections:
