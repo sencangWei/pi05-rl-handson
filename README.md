@@ -2,11 +2,11 @@
 
 独立目录 `/home/robot/pi05-rl-handson`；不改旧训练项目、中文面板或真机。
 
-## 恢复专项（2026-10-27，执行中）
+## 恢复专项（2026-10-27）
 
 已修复FSDP卸载/装载对同一参数存储重复复制的问题。完整模型连续3轮、45次有限梯度PPO更新后正常退出0，峰值内存38.13GiB，48GiB上限下OOM事件为0，见 [容量验证](evidence/ppo-offload27-summary.json)。这只证明该次容量验证通过，不等于恢复能力已提升。
 
-新增抓空、物体偏移、放置失败三类合成物理初态：18个训练、12个留出，原始状态及截图见 [初态包](artifacts/20261027-recovery/initial-bank/manifest.json)。已完成20轮、300次有限优化器更新，正常退出0，峰值40.68GiB、OOM事件0；检查点优化器step=300。独立恢复对照评测进行中，尚无提升结论。严格成功要求原生放碗目标成立且无夹爪接触连续保持5个控制步。详见 [专项记录](artifacts/20261027-recovery/README.md)。
+新增抓空、物体偏移、放置失败三类合成物理初态：18个训练、12个留出，原始状态及截图见 [初态包](artifacts/20261027-recovery/initial-bank/manifest.json)。已完成20轮、300次有限优化器更新，正常退出0，峰值40.68GiB、OOM事件0；检查点优化器step=300。独立12场景对照已完成：SFT、旧30更新、新300更新均9/12；抓空4/4、物体偏移4/4、放置失败1/4。新模型还有一场从98步变208步，未证明收益，不替换现用模型。严格成功要求原生放碗目标成立且无夹爪接触连续保持5个控制步。详见 [专项记录及并列录像](artifacts/20261027-recovery/README.md)。[新300更新adapter下载](https://github.com/sencangWei/pi05-rl-handson/releases/tag/ppo-recovery-20261027)。
 
 ## 上一轮状态（2026-10-26，历史）
 
@@ -55,7 +55,7 @@ OpenPI 记录版本 `15a9616a00943ada6c20a0f158e3adb39df2ccac`；准确源码快
 
 10000次采样分散到40类，不足遍历全部训练帧；这是链路与趋势实验，不能用训练时间或训练loss断言能力达标。
 
-## PPO 奖励与验证范围
+## 历史普通初态 PPO 奖励与验证范围（2026-10-26）
 
 [RLinf π0/π0.5 PPO](https://github.com/RLinf/RLinf/blob/main/docs/source-en/rst_source/examples/embodied/pi0.rst)，固定 `30e0236981c6a1dc19202de64116834c12673828`。
 

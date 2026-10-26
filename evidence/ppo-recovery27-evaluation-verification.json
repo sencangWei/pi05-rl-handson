@@ -1,0 +1,697 @@
+{
+  "status": "PASS",
+  "verified_at": "2026-10-26T16:49:17.496320+00:00",
+  "trials": 36,
+  "videos_decoded": 48,
+  "strict_success_last_5_controls_verified": true,
+  "timeouts_hit_300_controls_without_exception": true,
+  "same_state_identity_gate": "comparison/comparison.json",
+  "records": [
+    {
+      "model": "sft",
+      "id": "heldout-empty_grasp-init10",
+      "steps": 77,
+      "success": true,
+      "reward": 0.923
+    },
+    {
+      "model": "sft",
+      "id": "heldout-object_offset-init10",
+      "steps": 90,
+      "success": true,
+      "reward": 0.91
+    },
+    {
+      "model": "sft",
+      "id": "heldout-placement_failure-init10",
+      "steps": 300,
+      "success": false,
+      "reward": -0.3
+    },
+    {
+      "model": "sft",
+      "id": "heldout-empty_grasp-init11",
+      "steps": 90,
+      "success": true,
+      "reward": 0.91
+    },
+    {
+      "model": "sft",
+      "id": "heldout-object_offset-init11",
+      "steps": 88,
+      "success": true,
+      "reward": 0.912
+    },
+    {
+      "model": "sft",
+      "id": "heldout-placement_failure-init11",
+      "steps": 300,
+      "success": false,
+      "reward": -0.3
+    },
+    {
+      "model": "sft",
+      "id": "heldout-empty_grasp-init12",
+      "steps": 79,
+      "success": true,
+      "reward": 0.921
+    },
+    {
+      "model": "sft",
+      "id": "heldout-object_offset-init12",
+      "steps": 86,
+      "success": true,
+      "reward": 0.914
+    },
+    {
+      "model": "sft",
+      "id": "heldout-placement_failure-init12",
+      "steps": 300,
+      "success": false,
+      "reward": -0.3
+    },
+    {
+      "model": "sft",
+      "id": "heldout-empty_grasp-init13",
+      "steps": 90,
+      "success": true,
+      "reward": 0.91
+    },
+    {
+      "model": "sft",
+      "id": "heldout-object_offset-init13",
+      "steps": 98,
+      "success": true,
+      "reward": 0.902
+    },
+    {
+      "model": "sft",
+      "id": "heldout-placement_failure-init13",
+      "steps": 112,
+      "success": true,
+      "reward": 0.888
+    },
+    {
+      "model": "old30",
+      "id": "heldout-empty_grasp-init10",
+      "steps": 77,
+      "success": true,
+      "reward": 0.923
+    },
+    {
+      "model": "old30",
+      "id": "heldout-object_offset-init10",
+      "steps": 90,
+      "success": true,
+      "reward": 0.91
+    },
+    {
+      "model": "old30",
+      "id": "heldout-placement_failure-init10",
+      "steps": 300,
+      "success": false,
+      "reward": -0.3
+    },
+    {
+      "model": "old30",
+      "id": "heldout-empty_grasp-init11",
+      "steps": 88,
+      "success": true,
+      "reward": 0.912
+    },
+    {
+      "model": "old30",
+      "id": "heldout-object_offset-init11",
+      "steps": 88,
+      "success": true,
+      "reward": 0.912
+    },
+    {
+      "model": "old30",
+      "id": "heldout-placement_failure-init11",
+      "steps": 300,
+      "success": false,
+      "reward": -0.3
+    },
+    {
+      "model": "old30",
+      "id": "heldout-empty_grasp-init12",
+      "steps": 77,
+      "success": true,
+      "reward": 0.923
+    },
+    {
+      "model": "old30",
+      "id": "heldout-object_offset-init12",
+      "steps": 84,
+      "success": true,
+      "reward": 0.916
+    },
+    {
+      "model": "old30",
+      "id": "heldout-placement_failure-init12",
+      "steps": 300,
+      "success": false,
+      "reward": -0.3
+    },
+    {
+      "model": "old30",
+      "id": "heldout-empty_grasp-init13",
+      "steps": 90,
+      "success": true,
+      "reward": 0.91
+    },
+    {
+      "model": "old30",
+      "id": "heldout-object_offset-init13",
+      "steps": 109,
+      "success": true,
+      "reward": 0.891
+    },
+    {
+      "model": "old30",
+      "id": "heldout-placement_failure-init13",
+      "steps": 99,
+      "success": true,
+      "reward": 0.901
+    },
+    {
+      "model": "new300",
+      "id": "heldout-empty_grasp-init10",
+      "steps": 79,
+      "success": true,
+      "reward": 0.921
+    },
+    {
+      "model": "new300",
+      "id": "heldout-object_offset-init10",
+      "steps": 93,
+      "success": true,
+      "reward": 0.907
+    },
+    {
+      "model": "new300",
+      "id": "heldout-placement_failure-init10",
+      "steps": 300,
+      "success": false,
+      "reward": -0.3
+    },
+    {
+      "model": "new300",
+      "id": "heldout-empty_grasp-init11",
+      "steps": 85,
+      "success": true,
+      "reward": 0.915
+    },
+    {
+      "model": "new300",
+      "id": "heldout-object_offset-init11",
+      "steps": 88,
+      "success": true,
+      "reward": 0.912
+    },
+    {
+      "model": "new300",
+      "id": "heldout-placement_failure-init11",
+      "steps": 300,
+      "success": false,
+      "reward": -0.3
+    },
+    {
+      "model": "new300",
+      "id": "heldout-empty_grasp-init12",
+      "steps": 77,
+      "success": true,
+      "reward": 0.923
+    },
+    {
+      "model": "new300",
+      "id": "heldout-object_offset-init12",
+      "steps": 84,
+      "success": true,
+      "reward": 0.916
+    },
+    {
+      "model": "new300",
+      "id": "heldout-placement_failure-init12",
+      "steps": 300,
+      "success": false,
+      "reward": -0.3
+    },
+    {
+      "model": "new300",
+      "id": "heldout-empty_grasp-init13",
+      "steps": 90,
+      "success": true,
+      "reward": 0.91
+    },
+    {
+      "model": "new300",
+      "id": "heldout-object_offset-init13",
+      "steps": 208,
+      "success": true,
+      "reward": 0.792
+    },
+    {
+      "model": "new300",
+      "id": "heldout-placement_failure-init13",
+      "steps": 110,
+      "success": true,
+      "reward": 0.89
+    }
+  ],
+  "videos": [
+    {
+      "file": "artifacts/20261027-recovery/comparison/comparison-heldout-empty_grasp-init10.mp4",
+      "bytes": 141674,
+      "sha256": "7ea0093a94396b53175dcf2bd46b94395788b36d528d9af32c5a0919651c44a2",
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "80"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/comparison-heldout-empty_grasp-init11.mp4",
+      "bytes": 161575,
+      "sha256": "8814b7cb5196bdec4db2402f5a6519d94ce931877c7c5d7724e9cfffa62b64da",
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "91"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/comparison-heldout-empty_grasp-init12.mp4",
+      "bytes": 142409,
+      "sha256": "b3d1edbff354fde85940f8ab9c497637432c64b58f99df53ec5b1e2e6f57c3d8",
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "80"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/comparison-heldout-empty_grasp-init13.mp4",
+      "bytes": 160940,
+      "sha256": "fe0343003badd2ff2377cad184b1f051bed183d4353487c0fd2cd5a03294681c",
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "91"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/comparison-heldout-object_offset-init10.mp4",
+      "bytes": 170119,
+      "sha256": "8579c2b0d35b9cad855dc49fd4fe0692c80cfdab0958ad67442885a352fe77d9",
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "94"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/comparison-heldout-object_offset-init11.mp4",
+      "bytes": 166894,
+      "sha256": "add2839ea596467fe6e9773bcd5057f9462b9e434cfd7f39f68b42b9f5849be6",
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "89"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/comparison-heldout-object_offset-init12.mp4",
+      "bytes": 160405,
+      "sha256": "98e0a5069581b462e783a0fe60bfa754f421e5610735b742b315366d6f7701f1",
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "87"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/comparison-heldout-object_offset-init13.mp4",
+      "bytes": 245391,
+      "sha256": "e5247e09ac3554c59b935f1cd7b4ece3779381ffb351f3abbfb01ebf2a2a3e3f",
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "209"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/comparison-heldout-placement_failure-init10.mp4",
+      "bytes": 573892,
+      "sha256": "fca83baf68df2d4e8bc3974ba5c485fb199305a924984c39e975951d64754ad7",
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/comparison-heldout-placement_failure-init11.mp4",
+      "bytes": 460166,
+      "sha256": "6550e531c5c7b0d64c1afc682a9f3491816c227d78678590a6a7507cddc613b0",
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/comparison-heldout-placement_failure-init12.mp4",
+      "bytes": 594775,
+      "sha256": "80f7f5340a35f13d6710882e1bfc7a91217b95e52a3deaba26cd026db2acf618",
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/comparison-heldout-placement_failure-init13.mp4",
+      "bytes": 201149,
+      "sha256": "bd199b99d84fd03110c68196a2cea95dc8b4297cdd1e72ce0c27caf730be009a",
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "113"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/new300/heldout-empty_grasp-init10.mp4",
+      "bytes": 171336,
+      "sha256": "16a7784d8db386808222c8a11432ae6a0f358dd5a3ee3dbe3dbf67582161e36d",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "80"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/new300/heldout-empty_grasp-init11.mp4",
+      "bytes": 164341,
+      "sha256": "7a862d44129d7069d75c98a797f8fd6e0c174abb905751ac9f2c4c95660f54ad",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "86"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/new300/heldout-empty_grasp-init12.mp4",
+      "bytes": 156494,
+      "sha256": "b4588db6abf34aae533b9b841fa03754ea9dd97599bb53bc9e5c1c57dda91ece",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "78"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/new300/heldout-empty_grasp-init13.mp4",
+      "bytes": 165349,
+      "sha256": "871f09fcde16fe9e391a4374126dc93f8ba905bd7fcc33dad4bc26cb9eb188df",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "91"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/new300/heldout-object_offset-init10.mp4",
+      "bytes": 197763,
+      "sha256": "462b18d1f541d44f019b431443bcb17fb941e7c2904801cfdd1489153809c9a0",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "94"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/new300/heldout-object_offset-init11.mp4",
+      "bytes": 171981,
+      "sha256": "b7d1be6592829a5750be405935fbaf87ee214f65a5b5ae4ab42cc220718a0a97",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "89"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/new300/heldout-object_offset-init12.mp4",
+      "bytes": 163097,
+      "sha256": "0eb23fc8e570900cbd08141155c0d1f3063cc2e7ea38213e3abe6d2d06bef16c",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "85"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/new300/heldout-object_offset-init13.mp4",
+      "bytes": 394248,
+      "sha256": "c0ce4a4ef4a159a156dbccecc3db1a2a11c8c6245befdcd9dd80a7781a0f5ab3",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "209"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/new300/heldout-placement_failure-init10.mp4",
+      "bytes": 555231,
+      "sha256": "dff2044d3f5de8d75358bcde8603b22558cc55c08e22d63a1c6e57b2f8a81311",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/new300/heldout-placement_failure-init11.mp4",
+      "bytes": 480500,
+      "sha256": "630a71074d2138c2c7ee978b99b0e3ed008486d7a275973753da93f0f086567d",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/new300/heldout-placement_failure-init12.mp4",
+      "bytes": 681243,
+      "sha256": "f5281bc7ea889bb0278bee1ceb6ec1c3e21c90137448cccb469c2afda3427678",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/new300/heldout-placement_failure-init13.mp4",
+      "bytes": 221182,
+      "sha256": "d591b0e1f1b65af2dfaccffbf299626158de4ab0fda685aa5c1bce0a2e903d11",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "111"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/old30/heldout-empty_grasp-init10.mp4",
+      "bytes": 171207,
+      "sha256": "4ad48681416d88e1da8558ce85951dd32603807e32f8818f23f7c155760757c1",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "78"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/old30/heldout-empty_grasp-init11.mp4",
+      "bytes": 172721,
+      "sha256": "d12ea26caac26fe0990b4370807c77cc293c8939383118edecaae21ca532f44a",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "89"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/old30/heldout-empty_grasp-init12.mp4",
+      "bytes": 156076,
+      "sha256": "d49038306ecaaf455bad843a4ecbf63bb1096ec07ea9481b3dc6f85511f8a631",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "78"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/old30/heldout-empty_grasp-init13.mp4",
+      "bytes": 167348,
+      "sha256": "c06ef5a14cf4004279d230867ce9dd640576069223c3d6b15bda428f1edd3248",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "91"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/old30/heldout-object_offset-init10.mp4",
+      "bytes": 192567,
+      "sha256": "7cdcbb09d40583aff261d12ae27ef33a989c2c206cd027858e79b49181ecf309",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "91"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/old30/heldout-object_offset-init11.mp4",
+      "bytes": 173190,
+      "sha256": "a192aa2455764917eccb3e78c8933595f0d596befd652461e7ff5fb58b3c5205",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "89"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/old30/heldout-object_offset-init12.mp4",
+      "bytes": 161370,
+      "sha256": "a6e2179a4e5426ed4eb20944e95bcfa98d9ca5fea0b5837429de0c53f1f44355",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "85"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/old30/heldout-object_offset-init13.mp4",
+      "bytes": 206686,
+      "sha256": "c3345e9cc72dd46b7063fe0ca2711459d7b5979c92bf9c33accade7efcf5caff",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "110"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/old30/heldout-placement_failure-init10.mp4",
+      "bytes": 561207,
+      "sha256": "441745ceb02d8a00bece5c6bed94b18fb45bc8f9c64f63dfd64a43893e0a1477",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/old30/heldout-placement_failure-init11.mp4",
+      "bytes": 478842,
+      "sha256": "6fe1804a05ea053ee6ddb703c9c5dac1c93d095f549e92fd21bc0c0dc8b225f9",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/old30/heldout-placement_failure-init12.mp4",
+      "bytes": 639526,
+      "sha256": "9e231212ecc3c4987ce4946a8071ca4ee4c7befa59d4f2d45cc1012b552cfabf",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/old30/heldout-placement_failure-init13.mp4",
+      "bytes": 201287,
+      "sha256": "023bdb9455269572304972d56e5e244b124c0a4c20c54d795b3c8f3dcebfebb9",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "100"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/sft/heldout-empty_grasp-init10.mp4",
+      "bytes": 170733,
+      "sha256": "422f0ad8153a9c1f34140c6165af0bddaab97aa5670f079613a47bbd3a8c5728",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "78"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/sft/heldout-empty_grasp-init11.mp4",
+      "bytes": 173959,
+      "sha256": "a9ab50fbb0cba8a6be7a9e9c367d4761d313e56ae4160f825b84a39bee87e164",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "91"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/sft/heldout-empty_grasp-init12.mp4",
+      "bytes": 158972,
+      "sha256": "7bccf5ef4a02d111ccf6e350cdfc6de4682958af26c6e9089432d027ebabf0ce",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "80"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/sft/heldout-empty_grasp-init13.mp4",
+      "bytes": 169650,
+      "sha256": "dc5d4a2d0673b91f91c4921d7ccc53241c091c8c3e670c39c002940b53a82d05",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "91"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/sft/heldout-object_offset-init10.mp4",
+      "bytes": 193903,
+      "sha256": "cbff0bb65e51dcbd07afab66c34c5bfe2767693217eb957472a971f1dfef6ee4",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "91"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/sft/heldout-object_offset-init11.mp4",
+      "bytes": 173839,
+      "sha256": "b7e16ba55e65d457b5b1211373f4612e948fe25622c70456aae15a93760a8cfb",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "89"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/sft/heldout-object_offset-init12.mp4",
+      "bytes": 168186,
+      "sha256": "f40ca17973125d12144d06dcffdc089477faeb9dcc2b99197075421bbddc641c",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "87"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/sft/heldout-object_offset-init13.mp4",
+      "bytes": 183441,
+      "sha256": "f633f77a79650b8edb1210fb6dae8886ec366b0b070507d5fd11a91d2b9919a2",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "99"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/sft/heldout-placement_failure-init10.mp4",
+      "bytes": 579830,
+      "sha256": "508c836764c8305e1a6b73216add3f46a9f50f363e8e79761cec7c3cf3ca2bd0",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/sft/heldout-placement_failure-init11.mp4",
+      "bytes": 472707,
+      "sha256": "ef5b8c4d399ea85d8454e19b7d9b65d67e206ef2e4e5fa9016a337cbe4a55ab3",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/sft/heldout-placement_failure-init12.mp4",
+      "bytes": 596977,
+      "sha256": "f8ba3a5a582f8ba88276ae4edbab2077ceec0cefab67a33f1939f3820ee0dc47",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "file": "artifacts/20261027-recovery/comparison/sft/heldout-placement_failure-init13.mp4",
+      "bytes": 221271,
+      "sha256": "1dd9ea775c5a5d2f81b7ec62441ef5b03b44b463645cd8cea2e22fd61b5646e5",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "113"
+    }
+  ]
+}

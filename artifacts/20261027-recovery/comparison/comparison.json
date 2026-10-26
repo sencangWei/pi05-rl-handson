@@ -1,0 +1,733 @@
+{
+  "identity_validation": {
+    "status": "PASS",
+    "equal_fields": [
+      "base_sha256",
+      "manifest_sha256",
+      "config_sha256",
+      "model_config",
+      "success",
+      "action_execution",
+      "control_hz",
+      "video_fps",
+      "noise",
+      "sources"
+    ],
+    "matched_states": 12
+  },
+  "categories": {
+    "sft": {
+      "empty_grasp/success": 4,
+      "empty_grasp/trials": 4,
+      "object_offset/success": 4,
+      "object_offset/trials": 4,
+      "placement_failure/success": 1,
+      "placement_failure/trials": 4
+    },
+    "old30": {
+      "empty_grasp/success": 4,
+      "empty_grasp/trials": 4,
+      "object_offset/success": 4,
+      "object_offset/trials": 4,
+      "placement_failure/success": 1,
+      "placement_failure/trials": 4
+    },
+    "new300": {
+      "empty_grasp/success": 4,
+      "empty_grasp/trials": 4,
+      "object_offset/success": 4,
+      "object_offset/trials": 4,
+      "placement_failure/success": 1,
+      "placement_failure/trials": 4
+    }
+  },
+  "totals": {
+    "sft": {
+      "success": 9,
+      "trials": 12
+    },
+    "old30": {
+      "success": 9,
+      "trials": 12
+    },
+    "new300": {
+      "success": 9,
+      "trials": 12
+    }
+  },
+  "video": "left SFT / middle old30 / right new300; simulation time, shorter result freezes",
+  "rows": [
+    {
+      "id": "heldout-empty_grasp-init10",
+      "category": "empty_grasp",
+      "state_sha256": "83552600653a03c3c7b3f2e53068c9f789c5b20040c6fcb3777e8b319cc81873",
+      "models": {
+        "sft": {
+          "id": "heldout-empty_grasp-init10",
+          "category": "empty_grasp",
+          "state_sha256": "83552600653a03c3c7b3f2e53068c9f789c5b20040c6fcb3777e8b319cc81873",
+          "source_initial_id": 10,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 77,
+          "inference_calls": 16,
+          "native_first_step": 61,
+          "video": "heldout-empty_grasp-init10.mp4",
+          "wall_seconds": 4.307595316000516,
+          "reward_return": 0.923,
+          "longest_low_motion_controls": 0
+        },
+        "old30": {
+          "id": "heldout-empty_grasp-init10",
+          "category": "empty_grasp",
+          "state_sha256": "83552600653a03c3c7b3f2e53068c9f789c5b20040c6fcb3777e8b319cc81873",
+          "source_initial_id": 10,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 77,
+          "inference_calls": 16,
+          "native_first_step": 63,
+          "video": "heldout-empty_grasp-init10.mp4",
+          "wall_seconds": 4.1596630300045945,
+          "reward_return": 0.923,
+          "longest_low_motion_controls": 0
+        },
+        "new300": {
+          "id": "heldout-empty_grasp-init10",
+          "category": "empty_grasp",
+          "state_sha256": "83552600653a03c3c7b3f2e53068c9f789c5b20040c6fcb3777e8b319cc81873",
+          "source_initial_id": 10,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 79,
+          "inference_calls": 16,
+          "native_first_step": 62,
+          "video": "heldout-empty_grasp-init10.mp4",
+          "wall_seconds": 4.2094835099997,
+          "reward_return": 0.921,
+          "longest_low_motion_controls": 0
+        }
+      },
+      "comparison_video": "comparison-heldout-empty_grasp-init10.mp4"
+    },
+    {
+      "id": "heldout-object_offset-init10",
+      "category": "object_offset",
+      "state_sha256": "254b03c47e50214f9e71c308040e0218d8b7c07d738cff9e04ed2156a3fd9cfd",
+      "models": {
+        "sft": {
+          "id": "heldout-object_offset-init10",
+          "category": "object_offset",
+          "state_sha256": "254b03c47e50214f9e71c308040e0218d8b7c07d738cff9e04ed2156a3fd9cfd",
+          "source_initial_id": 10,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 90,
+          "inference_calls": 18,
+          "native_first_step": 80,
+          "video": "heldout-object_offset-init10.mp4",
+          "wall_seconds": 4.341724019002868,
+          "reward_return": 0.91,
+          "longest_low_motion_controls": 0
+        },
+        "old30": {
+          "id": "heldout-object_offset-init10",
+          "category": "object_offset",
+          "state_sha256": "254b03c47e50214f9e71c308040e0218d8b7c07d738cff9e04ed2156a3fd9cfd",
+          "source_initial_id": 10,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 90,
+          "inference_calls": 18,
+          "native_first_step": 79,
+          "video": "heldout-object_offset-init10.mp4",
+          "wall_seconds": 4.431421562010655,
+          "reward_return": 0.91,
+          "longest_low_motion_controls": 0
+        },
+        "new300": {
+          "id": "heldout-object_offset-init10",
+          "category": "object_offset",
+          "state_sha256": "254b03c47e50214f9e71c308040e0218d8b7c07d738cff9e04ed2156a3fd9cfd",
+          "source_initial_id": 10,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 93,
+          "inference_calls": 19,
+          "native_first_step": 81,
+          "video": "heldout-object_offset-init10.mp4",
+          "wall_seconds": 4.555282317014644,
+          "reward_return": 0.907,
+          "longest_low_motion_controls": 0
+        }
+      },
+      "comparison_video": "comparison-heldout-object_offset-init10.mp4"
+    },
+    {
+      "id": "heldout-placement_failure-init10",
+      "category": "placement_failure",
+      "state_sha256": "3988ebce0b41f118a02853529d2e51496658fe32acf51950c06efe33b12254e9",
+      "models": {
+        "sft": {
+          "id": "heldout-placement_failure-init10",
+          "category": "placement_failure",
+          "state_sha256": "3988ebce0b41f118a02853529d2e51496658fe32acf51950c06efe33b12254e9",
+          "source_initial_id": 10,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "heldout-placement_failure-init10.mp4",
+          "wall_seconds": 14.104201829992235,
+          "reward_return": -0.3,
+          "longest_low_motion_controls": 1
+        },
+        "old30": {
+          "id": "heldout-placement_failure-init10",
+          "category": "placement_failure",
+          "state_sha256": "3988ebce0b41f118a02853529d2e51496658fe32acf51950c06efe33b12254e9",
+          "source_initial_id": 10,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "heldout-placement_failure-init10.mp4",
+          "wall_seconds": 14.155735186010133,
+          "reward_return": -0.3,
+          "longest_low_motion_controls": 0
+        },
+        "new300": {
+          "id": "heldout-placement_failure-init10",
+          "category": "placement_failure",
+          "state_sha256": "3988ebce0b41f118a02853529d2e51496658fe32acf51950c06efe33b12254e9",
+          "source_initial_id": 10,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "heldout-placement_failure-init10.mp4",
+          "wall_seconds": 14.176173203013605,
+          "reward_return": -0.3,
+          "longest_low_motion_controls": 1
+        }
+      },
+      "comparison_video": "comparison-heldout-placement_failure-init10.mp4"
+    },
+    {
+      "id": "heldout-empty_grasp-init11",
+      "category": "empty_grasp",
+      "state_sha256": "5a3afc71f58c9ea0017645654d269a9ff19ff5278999863abad632d49e8f1fe0",
+      "models": {
+        "sft": {
+          "id": "heldout-empty_grasp-init11",
+          "category": "empty_grasp",
+          "state_sha256": "5a3afc71f58c9ea0017645654d269a9ff19ff5278999863abad632d49e8f1fe0",
+          "source_initial_id": 11,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 90,
+          "inference_calls": 18,
+          "native_first_step": 69,
+          "video": "heldout-empty_grasp-init11.mp4",
+          "wall_seconds": 4.327636513975449,
+          "reward_return": 0.91,
+          "longest_low_motion_controls": 0
+        },
+        "old30": {
+          "id": "heldout-empty_grasp-init11",
+          "category": "empty_grasp",
+          "state_sha256": "5a3afc71f58c9ea0017645654d269a9ff19ff5278999863abad632d49e8f1fe0",
+          "source_initial_id": 11,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 88,
+          "inference_calls": 18,
+          "native_first_step": 68,
+          "video": "heldout-empty_grasp-init11.mp4",
+          "wall_seconds": 4.300125114998082,
+          "reward_return": 0.912,
+          "longest_low_motion_controls": 0
+        },
+        "new300": {
+          "id": "heldout-empty_grasp-init11",
+          "category": "empty_grasp",
+          "state_sha256": "5a3afc71f58c9ea0017645654d269a9ff19ff5278999863abad632d49e8f1fe0",
+          "source_initial_id": 11,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 85,
+          "inference_calls": 17,
+          "native_first_step": 66,
+          "video": "heldout-empty_grasp-init11.mp4",
+          "wall_seconds": 4.107874374982202,
+          "reward_return": 0.915,
+          "longest_low_motion_controls": 0
+        }
+      },
+      "comparison_video": "comparison-heldout-empty_grasp-init11.mp4"
+    },
+    {
+      "id": "heldout-object_offset-init11",
+      "category": "object_offset",
+      "state_sha256": "cdb504f74fb7dd1d9c6fd2957aaf1c6ad2cae71dde09169dc8e2998558a751d2",
+      "models": {
+        "sft": {
+          "id": "heldout-object_offset-init11",
+          "category": "object_offset",
+          "state_sha256": "cdb504f74fb7dd1d9c6fd2957aaf1c6ad2cae71dde09169dc8e2998558a751d2",
+          "source_initial_id": 11,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 88,
+          "inference_calls": 18,
+          "native_first_step": 77,
+          "video": "heldout-object_offset-init11.mp4",
+          "wall_seconds": 4.330821288982406,
+          "reward_return": 0.912,
+          "longest_low_motion_controls": 0
+        },
+        "old30": {
+          "id": "heldout-object_offset-init11",
+          "category": "object_offset",
+          "state_sha256": "cdb504f74fb7dd1d9c6fd2957aaf1c6ad2cae71dde09169dc8e2998558a751d2",
+          "source_initial_id": 11,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 88,
+          "inference_calls": 18,
+          "native_first_step": 76,
+          "video": "heldout-object_offset-init11.mp4",
+          "wall_seconds": 4.236706477997359,
+          "reward_return": 0.912,
+          "longest_low_motion_controls": 0
+        },
+        "new300": {
+          "id": "heldout-object_offset-init11",
+          "category": "object_offset",
+          "state_sha256": "cdb504f74fb7dd1d9c6fd2957aaf1c6ad2cae71dde09169dc8e2998558a751d2",
+          "source_initial_id": 11,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 88,
+          "inference_calls": 18,
+          "native_first_step": 76,
+          "video": "heldout-object_offset-init11.mp4",
+          "wall_seconds": 4.381684752006549,
+          "reward_return": 0.912,
+          "longest_low_motion_controls": 0
+        }
+      },
+      "comparison_video": "comparison-heldout-object_offset-init11.mp4"
+    },
+    {
+      "id": "heldout-placement_failure-init11",
+      "category": "placement_failure",
+      "state_sha256": "c8211df2971f6dc5b3760a79a034e0bf992d30141abf527594e27f6e7198fd2c",
+      "models": {
+        "sft": {
+          "id": "heldout-placement_failure-init11",
+          "category": "placement_failure",
+          "state_sha256": "c8211df2971f6dc5b3760a79a034e0bf992d30141abf527594e27f6e7198fd2c",
+          "source_initial_id": 11,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "heldout-placement_failure-init11.mp4",
+          "wall_seconds": 14.743229262006935,
+          "reward_return": -0.3,
+          "longest_low_motion_controls": 1
+        },
+        "old30": {
+          "id": "heldout-placement_failure-init11",
+          "category": "placement_failure",
+          "state_sha256": "c8211df2971f6dc5b3760a79a034e0bf992d30141abf527594e27f6e7198fd2c",
+          "source_initial_id": 11,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "heldout-placement_failure-init11.mp4",
+          "wall_seconds": 14.640655797993531,
+          "reward_return": -0.3,
+          "longest_low_motion_controls": 1
+        },
+        "new300": {
+          "id": "heldout-placement_failure-init11",
+          "category": "placement_failure",
+          "state_sha256": "c8211df2971f6dc5b3760a79a034e0bf992d30141abf527594e27f6e7198fd2c",
+          "source_initial_id": 11,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "heldout-placement_failure-init11.mp4",
+          "wall_seconds": 14.672324061015388,
+          "reward_return": -0.3,
+          "longest_low_motion_controls": 1
+        }
+      },
+      "comparison_video": "comparison-heldout-placement_failure-init11.mp4"
+    },
+    {
+      "id": "heldout-empty_grasp-init12",
+      "category": "empty_grasp",
+      "state_sha256": "358d080fa1bd4bb0823123ef400bad9054bbd8978a476f97a0be008b3eb67921",
+      "models": {
+        "sft": {
+          "id": "heldout-empty_grasp-init12",
+          "category": "empty_grasp",
+          "state_sha256": "358d080fa1bd4bb0823123ef400bad9054bbd8978a476f97a0be008b3eb67921",
+          "source_initial_id": 12,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 79,
+          "inference_calls": 16,
+          "native_first_step": 64,
+          "video": "heldout-empty_grasp-init12.mp4",
+          "wall_seconds": 3.8290545330091845,
+          "reward_return": 0.921,
+          "longest_low_motion_controls": 0
+        },
+        "old30": {
+          "id": "heldout-empty_grasp-init12",
+          "category": "empty_grasp",
+          "state_sha256": "358d080fa1bd4bb0823123ef400bad9054bbd8978a476f97a0be008b3eb67921",
+          "source_initial_id": 12,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 77,
+          "inference_calls": 16,
+          "native_first_step": 63,
+          "video": "heldout-empty_grasp-init12.mp4",
+          "wall_seconds": 3.815953729994362,
+          "reward_return": 0.923,
+          "longest_low_motion_controls": 0
+        },
+        "new300": {
+          "id": "heldout-empty_grasp-init12",
+          "category": "empty_grasp",
+          "state_sha256": "358d080fa1bd4bb0823123ef400bad9054bbd8978a476f97a0be008b3eb67921",
+          "source_initial_id": 12,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 77,
+          "inference_calls": 16,
+          "native_first_step": 63,
+          "video": "heldout-empty_grasp-init12.mp4",
+          "wall_seconds": 3.8185442560061347,
+          "reward_return": 0.923,
+          "longest_low_motion_controls": 0
+        }
+      },
+      "comparison_video": "comparison-heldout-empty_grasp-init12.mp4"
+    },
+    {
+      "id": "heldout-object_offset-init12",
+      "category": "object_offset",
+      "state_sha256": "70edd4899087f7e5e0203274a54a2d3a909b6c99b2ecb3c6a269bc330c88f8f0",
+      "models": {
+        "sft": {
+          "id": "heldout-object_offset-init12",
+          "category": "object_offset",
+          "state_sha256": "70edd4899087f7e5e0203274a54a2d3a909b6c99b2ecb3c6a269bc330c88f8f0",
+          "source_initial_id": 12,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 86,
+          "inference_calls": 18,
+          "native_first_step": 73,
+          "video": "heldout-object_offset-init12.mp4",
+          "wall_seconds": 4.286144383018836,
+          "reward_return": 0.914,
+          "longest_low_motion_controls": 0
+        },
+        "old30": {
+          "id": "heldout-object_offset-init12",
+          "category": "object_offset",
+          "state_sha256": "70edd4899087f7e5e0203274a54a2d3a909b6c99b2ecb3c6a269bc330c88f8f0",
+          "source_initial_id": 12,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 84,
+          "inference_calls": 17,
+          "native_first_step": 74,
+          "video": "heldout-object_offset-init12.mp4",
+          "wall_seconds": 4.073903479002183,
+          "reward_return": 0.916,
+          "longest_low_motion_controls": 0
+        },
+        "new300": {
+          "id": "heldout-object_offset-init12",
+          "category": "object_offset",
+          "state_sha256": "70edd4899087f7e5e0203274a54a2d3a909b6c99b2ecb3c6a269bc330c88f8f0",
+          "source_initial_id": 12,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 84,
+          "inference_calls": 17,
+          "native_first_step": 74,
+          "video": "heldout-object_offset-init12.mp4",
+          "wall_seconds": 4.093549606011948,
+          "reward_return": 0.916,
+          "longest_low_motion_controls": 0
+        }
+      },
+      "comparison_video": "comparison-heldout-object_offset-init12.mp4"
+    },
+    {
+      "id": "heldout-placement_failure-init12",
+      "category": "placement_failure",
+      "state_sha256": "851986cd9381d23279f176272ad94ae48145075dab98b688c74bd928d9d692ea",
+      "models": {
+        "sft": {
+          "id": "heldout-placement_failure-init12",
+          "category": "placement_failure",
+          "state_sha256": "851986cd9381d23279f176272ad94ae48145075dab98b688c74bd928d9d692ea",
+          "source_initial_id": 12,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "heldout-placement_failure-init12.mp4",
+          "wall_seconds": 14.09996015598881,
+          "reward_return": -0.3,
+          "longest_low_motion_controls": 1
+        },
+        "old30": {
+          "id": "heldout-placement_failure-init12",
+          "category": "placement_failure",
+          "state_sha256": "851986cd9381d23279f176272ad94ae48145075dab98b688c74bd928d9d692ea",
+          "source_initial_id": 12,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "heldout-placement_failure-init12.mp4",
+          "wall_seconds": 14.151144063012907,
+          "reward_return": -0.3,
+          "longest_low_motion_controls": 1
+        },
+        "new300": {
+          "id": "heldout-placement_failure-init12",
+          "category": "placement_failure",
+          "state_sha256": "851986cd9381d23279f176272ad94ae48145075dab98b688c74bd928d9d692ea",
+          "source_initial_id": 12,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "heldout-placement_failure-init12.mp4",
+          "wall_seconds": 14.207783969002776,
+          "reward_return": -0.3,
+          "longest_low_motion_controls": 4
+        }
+      },
+      "comparison_video": "comparison-heldout-placement_failure-init12.mp4"
+    },
+    {
+      "id": "heldout-empty_grasp-init13",
+      "category": "empty_grasp",
+      "state_sha256": "da2093d92a6dd4249840658f00b41b499d7e25cb13ea53c1557e501d49609c96",
+      "models": {
+        "sft": {
+          "id": "heldout-empty_grasp-init13",
+          "category": "empty_grasp",
+          "state_sha256": "da2093d92a6dd4249840658f00b41b499d7e25cb13ea53c1557e501d49609c96",
+          "source_initial_id": 13,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 90,
+          "inference_calls": 18,
+          "native_first_step": 75,
+          "video": "heldout-empty_grasp-init13.mp4",
+          "wall_seconds": 4.393429514020681,
+          "reward_return": 0.91,
+          "longest_low_motion_controls": 0
+        },
+        "old30": {
+          "id": "heldout-empty_grasp-init13",
+          "category": "empty_grasp",
+          "state_sha256": "da2093d92a6dd4249840658f00b41b499d7e25cb13ea53c1557e501d49609c96",
+          "source_initial_id": 13,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 90,
+          "inference_calls": 18,
+          "native_first_step": 76,
+          "video": "heldout-empty_grasp-init13.mp4",
+          "wall_seconds": 4.3307442409859505,
+          "reward_return": 0.91,
+          "longest_low_motion_controls": 0
+        },
+        "new300": {
+          "id": "heldout-empty_grasp-init13",
+          "category": "empty_grasp",
+          "state_sha256": "da2093d92a6dd4249840658f00b41b499d7e25cb13ea53c1557e501d49609c96",
+          "source_initial_id": 13,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 90,
+          "inference_calls": 18,
+          "native_first_step": 73,
+          "video": "heldout-empty_grasp-init13.mp4",
+          "wall_seconds": 4.322372844995698,
+          "reward_return": 0.91,
+          "longest_low_motion_controls": 0
+        }
+      },
+      "comparison_video": "comparison-heldout-empty_grasp-init13.mp4"
+    },
+    {
+      "id": "heldout-object_offset-init13",
+      "category": "object_offset",
+      "state_sha256": "0bda0176bf333ee286393758ea72e115bd041efd5ee4b28b74bc9d8349feaf2a",
+      "models": {
+        "sft": {
+          "id": "heldout-object_offset-init13",
+          "category": "object_offset",
+          "state_sha256": "0bda0176bf333ee286393758ea72e115bd041efd5ee4b28b74bc9d8349feaf2a",
+          "source_initial_id": 13,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 98,
+          "inference_calls": 20,
+          "native_first_step": 83,
+          "video": "heldout-object_offset-init13.mp4",
+          "wall_seconds": 4.883556183020119,
+          "reward_return": 0.902,
+          "longest_low_motion_controls": 0
+        },
+        "old30": {
+          "id": "heldout-object_offset-init13",
+          "category": "object_offset",
+          "state_sha256": "0bda0176bf333ee286393758ea72e115bd041efd5ee4b28b74bc9d8349feaf2a",
+          "source_initial_id": 13,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 109,
+          "inference_calls": 22,
+          "native_first_step": 87,
+          "video": "heldout-object_offset-init13.mp4",
+          "wall_seconds": 5.243999836005969,
+          "reward_return": 0.891,
+          "longest_low_motion_controls": 0
+        },
+        "new300": {
+          "id": "heldout-object_offset-init13",
+          "category": "object_offset",
+          "state_sha256": "0bda0176bf333ee286393758ea72e115bd041efd5ee4b28b74bc9d8349feaf2a",
+          "source_initial_id": 13,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 208,
+          "inference_calls": 42,
+          "native_first_step": 197,
+          "video": "heldout-object_offset-init13.mp4",
+          "wall_seconds": 9.810137230000691,
+          "reward_return": 0.792,
+          "longest_low_motion_controls": 1
+        }
+      },
+      "comparison_video": "comparison-heldout-object_offset-init13.mp4"
+    },
+    {
+      "id": "heldout-placement_failure-init13",
+      "category": "placement_failure",
+      "state_sha256": "5133af924c8abd12beb166db309e4fe3f535c78f4f9aa981ffaa25e3af981c09",
+      "models": {
+        "sft": {
+          "id": "heldout-placement_failure-init13",
+          "category": "placement_failure",
+          "state_sha256": "5133af924c8abd12beb166db309e4fe3f535c78f4f9aa981ffaa25e3af981c09",
+          "source_initial_id": 13,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 112,
+          "inference_calls": 23,
+          "native_first_step": 106,
+          "video": "heldout-placement_failure-init13.mp4",
+          "wall_seconds": 6.116875167994294,
+          "reward_return": 0.888,
+          "longest_low_motion_controls": 0
+        },
+        "old30": {
+          "id": "heldout-placement_failure-init13",
+          "category": "placement_failure",
+          "state_sha256": "5133af924c8abd12beb166db309e4fe3f535c78f4f9aa981ffaa25e3af981c09",
+          "source_initial_id": 13,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 99,
+          "inference_calls": 20,
+          "native_first_step": 95,
+          "video": "heldout-placement_failure-init13.mp4",
+          "wall_seconds": 5.405291972012492,
+          "reward_return": 0.901,
+          "longest_low_motion_controls": 0
+        },
+        "new300": {
+          "id": "heldout-placement_failure-init13",
+          "category": "placement_failure",
+          "state_sha256": "5133af924c8abd12beb166db309e4fe3f535c78f4f9aa981ffaa25e3af981c09",
+          "source_initial_id": 13,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 110,
+          "inference_calls": 22,
+          "native_first_step": 106,
+          "video": "heldout-placement_failure-init13.mp4",
+          "wall_seconds": 5.886681008996675,
+          "reward_return": 0.89,
+          "longest_low_motion_controls": 0
+        }
+      },
+      "comparison_video": "comparison-heldout-placement_failure-init13.mp4"
+    }
+  ]
+}
