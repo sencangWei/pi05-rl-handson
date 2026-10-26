@@ -1,0 +1,23 @@
+{
+  "run": "v10",
+  "service_result": "oom-kill",
+  "checkpoint_write_completed": true,
+  "path": "logs/ppo_goal_smoke_v10_save2_oom/ppo_goal_smoke/checkpoints/global_step_2/actor/adapter_checkpoint.pt",
+  "bytes": 121226493,
+  "sha256": "0595e247536bc48d5498f5085823a51c595b36cfd14b965f642f81256daaf7f1",
+  "format": "rlinf-fsdp1-single-rank-adapter-v1",
+  "base_weights_sha256": "4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f",
+  "trainable_tensors": 550,
+  "buffers": 0,
+  "finite": true,
+  "persisted_optimizer_updates": 30,
+  "observed_optimizer_updates": 30,
+  "optimizer_state_step_histogram": {
+    "0.0": 308,
+    "30.0": 242
+  },
+  "scheduler_last_epoch": [
+    2
+  ],
+  "scope": "Final atomic adapter is readable, contains 30 updates, and was independently evaluated in eight matched LIBERO scenes (8/8 original predicates). Training process subsequently OOM; runner did not exit normally."
+}

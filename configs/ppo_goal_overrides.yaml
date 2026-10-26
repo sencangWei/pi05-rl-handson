@@ -5,6 +5,9 @@ runner:
     project_name: pi05-rl-handson
     experiment_name: ppo_goal_smoke
   max_epochs: 2
+  # Each evaluation synchronizes the just-updated policy. For these two epochs,
+  # skip the duplicate sync at the second start; sampling still uses fresh weights.
+  weight_sync_interval: 2
   save_interval: 1
   val_check_interval: 1
 
@@ -105,7 +108,7 @@ actor:
     is_lora: True
     lora_rank: 8
     # Native Gemma q_proj/k_proj are ModuleList containers: use actual Linear leaves.
-    # VLM adapters get no gradients while train_expert_only is enabled.
+    # LoRA injection follows base freezing; requires_grad does not imply a nonzero gradient.
     lora_target_scope: all_linear
     openpi:
       embed_dtype: bf16

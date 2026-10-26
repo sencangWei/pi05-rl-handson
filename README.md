@@ -7,7 +7,7 @@
 - 40类1693条数据已全部下载，273465帧数值与每条首尾图像校验通过；训练1525条、留出168条。
 - 40任务 GPU SFT 已完成10000次迭代，17:43启动、18:14保存最后的9999 checkpoint，服务正常退出0。见 evidence/multitask40_lora_v1-status.json。四任务各两个初态仿真已完成，新SFT与官方父模型均8/8触发成功；另测新SFT放碗并松爪2/2通过。18段实际录像、同初态对照及限制见 [本轮仿真记录](artifacts/20261026-sft-simulation/README.md)。
 - 为避开显存阻塞，独立 CPU 测速实验 `cpu_throughput_probe_v1` 已执行3次优化迭代并保存checkpoint；首步预热学习率为0，后两次才更新参数。每步约23秒，10000步粗估65小时，因此不自动改成数天CPU训练，也不称为40任务训练完成。
-- PPO共观察到30次有限梯度更新，首轮15次更新于22:41成功保存；第二轮同步时内存超限，最终交付权重仅含首轮15次更新。已保存首轮权重的独立评测8/8成功；对照SFT同样8/8，尚无能力提升证据。第二轮同步改为仅提取可训练参数及buffer，小模型实际CUDA回归通过，但完整v9仍在保存首轮后同步时触发48GiB CPU内存上限；尚未解决完整两轮正常退出。v8曾因配置读取路径错误未启用该修复，已保留日志。v5/v6完整模型保存均内存超限，保留失败证据；现采用绑定冻结基座SHA的单卡FSDP1 adapter格式，保存LoRA、价值头、优化器、调度器和RNG。不能把此有界试跑当作已证明能力提升。
+- PPO v10 已执行并持久化30次有限梯度更新，最终adapter为121226493字节、550个可训练张量，242个优化器状态记录step=30，另308个仍为0；不能声称全部注入LoRA都得到更新。最终原子保存后进程触发48GiB CPU内存上限，训练未正常退出，内存问题尚未解决。v7首轮15次更新权重的独立评测8/8，对照SFT同样8/8；v10最终权重独立评测已正常退出，8/8成功；SFT/PPO平均控制步105/106，未见提升。见 [最终30更新对照录像与报告](artifacts/20261026-ppo-simulation/final-saved-30-updates/README.md)。见 [检查点证据](evidence/ppo-v10-checkpoint.json) 与 [首轮15次更新录像](artifacts/20261026-ppo-simulation/first-saved-15-updates/README.md)。
 - 现役 LoRA 四任务各测一个初态，4/4成功；另做碗放盘无手指接触5步检查，94步成功。这是既有模型推理，不是本次训练结果。
 
 ## 数据、奖励和机器人互动的关系
@@ -61,7 +61,7 @@ use_rel_reward = false
 
 普通步-0.001，成功步0.999。关闭相对奖励避免重复时间惩罚被差分抵消。修正上游评测倍率与训练不同的问题。没有额外抓取奖励、碰撞惩罚或学好的恢复策略；额外松爪检查目前仅用于评测，未加入PPO奖励。
 
-配置限定goal中抽屉、灶炉、碗放盘、酒瓶放架四类，单环境，300控制步/rollout，10步动作块，micro batch1/global batch2，CPU卸载，2个rollout epoch。30动作块可被global batch整除。原始参数FP32、主干激活BF16，投影/归一化/视觉精度敏感模块与价值头保留FP32。Ray/FSDP已实际完成30次有限梯度更新；其中15次已保存，第二轮同步OOM未保存，独立评测只使用已保存部分。all_linear适配器注入在freeze_vlm之后，实际训练全部注入LoRA及价值头，基座冻结。
+配置限定goal中抽屉、灶炉、碗放盘、酒瓶放架四类，单环境，300控制步/rollout，10步动作块，micro batch1/global batch2，CPU卸载，2个rollout epoch。30动作块可被global batch整除。原始参数FP32、主干激活BF16，投影/归一化/视觉精度敏感模块与价值头保留FP32。Ray/FSDP在v10中实际完成并保存30次有限梯度更新；随后进程OOM，不能称正常完成两轮。all_linear适配器注入在freeze_vlm之后，共550个可训练张量；本次检查点中242个优化器状态step=30，另308个step=0，基座冻结。训练5次流采样、每10步重规划；独立对照评测10次流采样、每5步重规划，两种策略使用同一评测协议，不能把评测协议等同训练采样。
 
 另一份官方 PyTorch 权重 `RLinf/RLinf-Pi05-LIBERO-SFT` 已下载校验，但本轮PPO选择本次JAX训练的9999权重血缘。scripts/export_sft_for_ppo.py 实际合并LoRA并转换，修正输出注意力投影的跨头求和；scripts/check_export_load.py 完整哈希、资产、配置和严格加载通过。scripts/check_export_parity.py 用固定输入、固定噪声、一次Euler步比较原JAX LoRA与RLinf密集网；实际补丁修复两处GELU后，原阈值下通过，证据 evidence/ppo-export-parity-v2/parity.json。失败的v1证据保留。该检查不涵盖BF16、完整采样或仿真完成率，不能代替PPO运行及能力测试。评测seed43不保证初态与训练不重合，此PPO小实验不是最终泛化评测。
 
@@ -142,10 +142,10 @@ uv pip install --python .venv-train/bin/python -r configs/training-requirements.
 
 每次评测保留视频、动作、初态与模型元数据。四任务八次评测仅是本轮预先声明的小样本检查，失败应保留；不能据此声称通用家庭指令或稳定恢复能力。
 
-## 2026-10-26 22:26 CST 保存内存故障与重跑
+## 2026-10-26 22:26 CST 历史故障记录（已被顶部状态更新）
 - v5 完成首轮采样、训练调用和内置评测（任务0两次成功），保存 step1 时触发48GiB CPU cgroup上限，退出oom-kill；没有持久化PPO权重，不声称可交付。证据：evidence/ppo-launch-v5-oom.log、ppo-v5-kernel-oom.log。
 - NO_SHARD的DCP仍生成完整state_dict；保存时CPU副本导致额外内存压力。新增checkpoint_cpu_offload=False，仅本配方启用，保留DCP恢复和标准full_weights.pt。小模型实际CUDA保存/恢复的model、optimizer、scheduler及四类RNG逐项一致，原选项为CPU张量，新选项为CUDA张量；不能代替完整模型容量实测。
 - 增加PPO_UPDATE日志，在checkpoint前记录有限梯度优化次数和训练均值，避免checkpoint失败掩盖实际训练状态。
 - 原生Torch SFT独立仿真8/8成功，控制步119/121/84/80/87/83/129/137；身份、相机录像见artifacts/20261026-ppo-simulation/native-sft-summary.json。与PPO使用同一运行时、初态哈希、噪声及10次流推理/5步重规划协议。
-- v6已启动：pi05-ppo-smoke-20261026-v6.service，48GiB RAM上限、禁用swap、45分钟时限；运行中，需等待完整权重保存和独立评测。
+- 当时启动v6；随后同样OOM。历史过程见progress.md，以顶部当前状态和最终证据为准。
 - 全部18项单元测试在训练环境和PPO环境均通过（JAX_PLATFORMS=cpu）。未指定CPU时JAX先初始化GPU导致Flax LoRA测试TF32误差，重跑固定CPU后通过，未放宽阈值。

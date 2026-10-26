@@ -1,0 +1,98 @@
+[
+  {
+    "task_id": 0,
+    "initial_state": 0,
+    "initial_state_sha256": "5a8f40221c0b59dfaa1061b36a49d4b10b0b47ffb82a1ac0b10080a2aa466ec4",
+    "sft_result": "success",
+    "sft_steps": 119,
+    "ppo_result": "success",
+    "ppo_steps": 118,
+    "sft_reward": 0.881,
+    "ppo_reward": 0.882,
+    "video": "comparison-goal-00-init-00.mp4"
+  },
+  {
+    "task_id": 0,
+    "initial_state": 10,
+    "initial_state_sha256": "358f09a6861cce71b38fe5c338f6325a1c86b3e6fc334644a6d4c1b2d7b3469b",
+    "sft_result": "success",
+    "sft_steps": 121,
+    "ppo_result": "success",
+    "ppo_steps": 123,
+    "sft_reward": 0.879,
+    "ppo_reward": 0.877,
+    "video": "comparison-goal-00-init-10.mp4"
+  },
+  {
+    "task_id": 7,
+    "initial_state": 0,
+    "initial_state_sha256": "7c961c34d695eb9099bdabaf55dfe7c856665830c84ca2555affd2788d70a8a3",
+    "sft_result": "success",
+    "sft_steps": 84,
+    "ppo_result": "success",
+    "ppo_steps": 86,
+    "sft_reward": 0.916,
+    "ppo_reward": 0.914,
+    "video": "comparison-goal-07-init-00.mp4"
+  },
+  {
+    "task_id": 7,
+    "initial_state": 10,
+    "initial_state_sha256": "c310a53a84f33311ff088c0ed6198a9c6a5cd8860212d22e4e9225e6ba05cc0a",
+    "sft_result": "success",
+    "sft_steps": 80,
+    "ppo_result": "success",
+    "ppo_steps": 80,
+    "sft_reward": 0.92,
+    "ppo_reward": 0.92,
+    "video": "comparison-goal-07-init-10.mp4"
+  },
+  {
+    "task_id": 8,
+    "initial_state": 0,
+    "initial_state_sha256": "66b1883f351c4c374c742516714921b55bd5eca7fd6f0fa8e2e0a86abff19ccd",
+    "sft_result": "success",
+    "sft_steps": 87,
+    "ppo_result": "success",
+    "ppo_steps": 87,
+    "sft_reward": 0.913,
+    "ppo_reward": 0.913,
+    "video": "comparison-goal-08-init-00.mp4"
+  },
+  {
+    "task_id": 8,
+    "initial_state": 10,
+    "initial_state_sha256": "a26cb5d4dff6064642d5b4eef1ecfa5e44882500e12f5b00f3d81b06622a99f2",
+    "sft_result": "success",
+    "sft_steps": 83,
+    "ppo_result": "success",
+    "ppo_steps": 83,
+    "sft_reward": 0.917,
+    "ppo_reward": 0.917,
+    "video": "comparison-goal-08-init-10.mp4"
+  },
+  {
+    "task_id": 9,
+    "initial_state": 0,
+    "initial_state_sha256": "c12cdf642eb5c7b4fd04e4d3b55870f592770742ee5434ad8f80eda6168c9654",
+    "sft_result": "success",
+    "sft_steps": 129,
+    "ppo_result": "success",
+    "ppo_steps": 131,
+    "sft_reward": 0.871,
+    "ppo_reward": 0.869,
+    "video": "comparison-goal-09-init-00.mp4"
+  },
+  {
+    "task_id": 9,
+    "initial_state": 10,
+    "initial_state_sha256": "2874eeef938cd922b1606c0ed9436b5a5fee7970b44a9603c0297cc750f7376c",
+    "sft_result": "success",
+    "sft_steps": 137,
+    "ppo_result": "success",
+    "ppo_steps": 140,
+    "sft_reward": 0.863,
+    "ppo_reward": 0.86,
+    "video": "comparison-goal-09-init-10.mp4"
+  }
+]

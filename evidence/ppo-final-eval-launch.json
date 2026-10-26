@@ -1,0 +1,12 @@
+{
+  "service": "pi05-native-ppo-final-eval-20261026.service",
+  "properties": {
+    "ExecStart": "{ path=/home/robot/pi05-rl-handson/.venv-ppo/bin/python ; argv[]=/home/robot/pi05-rl-handson/.venv-ppo/bin/python -u /home/robot/pi05-rl-handson/scripts/evaluate_native_ppo.py --checkpoint /home/robot/pi05-rl-handson/logs/ppo_goal_smoke_v10_save2_oom/ppo_goal_smoke/checkpoints/global_step_2/actor/adapter_checkpoint.pt --output /home/robot/pi05-rl-handson/evaluations/native_ppo_final_20261026 ; ignore_errors=no ; start_time=[Mon 2026-10-26 23:16:08 CST] ; stop_time=[n/a] ; pid=3353826 ; code=(null) ; status=0/0 }",
+    "MemoryMax": "42949672960",
+    "MemorySwapMax": "0",
+    "CPUQuotaPerSecUSec": "8s",
+    "RuntimeMaxUSec": "30min",
+    "Nice": "5",
+    "WorkingDirectory": "/home/robot/pi05-rl-handson"
+  }
+}

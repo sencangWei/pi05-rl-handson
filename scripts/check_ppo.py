@@ -27,6 +27,10 @@ def main():
         assert value["env"][split]["reward_coef"] == 1.0
         assert value["env"][split]["max_steps_per_rollout_epoch"] % value["actor"]["model"]["num_action_chunks"] == 0
     assert value["actor"]["micro_batch_size"] == 1
+    # This bounded recipe relies on evaluation synchronizing after every update.
+    assert value["runner"]["max_epochs"] == 2
+    assert value["runner"]["weight_sync_interval"] == 2
+    assert value["runner"]["val_check_interval"] == 1
     model = value["actor"]["model"]
     assert model["openpi"]["action_horizon"] == 10
     assert model["openpi"]["discrete_state_input"] is False

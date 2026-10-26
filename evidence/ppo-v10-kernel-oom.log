@@ -1,0 +1,286 @@
+Oct 26 23:12:22 robot-MS-7E19 kernel: ray::IDLE invoked oom-killer: gfp_mask=0xcc0(GFP_KERNEL), order=0, oom_score_adj=1000
+Oct 26 23:12:23 robot-MS-7E19 kernel: CPU: 5 PID: 3329283 Comm: ray::IDLE Tainted: G           O       6.8.0-138-generic #138~22.04.1-Ubuntu
+Oct 26 23:12:23 robot-MS-7E19 kernel: Hardware name: Micro-Star International Co., Ltd. MS-7E19/MPG Z890 EDGE TI WIFI (MS-7E19), BIOS 2.AA0 03/19/2026
+Oct 26 23:12:23 robot-MS-7E19 kernel: Call Trace:
+Oct 26 23:12:23 robot-MS-7E19 kernel:  <TASK>
+Oct 26 23:12:23 robot-MS-7E19 kernel:  dump_stack_lvl+0x76/0xa0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  dump_stack+0x10/0x20
+Oct 26 23:12:23 robot-MS-7E19 kernel:  dump_header+0x49/0x210
+Oct 26 23:12:23 robot-MS-7E19 kernel:  oom_kill_process+0x118/0x280
+Oct 26 23:12:23 robot-MS-7E19 kernel:  out_of_memory+0x103/0x340
+Oct 26 23:12:23 robot-MS-7E19 kernel:  mem_cgroup_out_of_memory+0x145/0x170
+Oct 26 23:12:23 robot-MS-7E19 kernel:  try_charge_memcg+0x6c0/0x7c0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? alloc_pages_mpol+0x91/0x210
+Oct 26 23:12:23 robot-MS-7E19 kernel:  __mem_cgroup_charge+0x45/0xc0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  shmem_alloc_and_add_folio+0xc9/0x330
+Oct 26 23:12:23 robot-MS-7E19 kernel:  shmem_get_folio_gfp+0x1fc/0x570
+Oct 26 23:12:23 robot-MS-7E19 kernel:  shmem_fault+0x80/0x130
+Oct 26 23:12:23 robot-MS-7E19 kernel:  __do_fault+0x3a/0x190
+Oct 26 23:12:23 robot-MS-7E19 kernel:  do_shared_fault+0x2d/0x150
+Oct 26 23:12:23 robot-MS-7E19 kernel:  do_fault+0x48/0x260
+Oct 26 23:12:23 robot-MS-7E19 kernel:  handle_pte_fault+0x114/0x1d0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  __handle_mm_fault+0x64f/0x790
+Oct 26 23:12:23 robot-MS-7E19 kernel:  handle_mm_fault+0x18d/0x380
+Oct 26 23:12:23 robot-MS-7E19 kernel:  __get_user_pages+0x170/0x500
+Oct 26 23:12:23 robot-MS-7E19 kernel:  __gup_longterm_locked+0x24e/0x9f0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  pin_user_pages+0x75/0xb0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  os_lock_user_pages+0xc4/0x1d0 [nvidia]
+Oct 26 23:12:23 robot-MS-7E19 kernel:  RmCreateOsDescriptor+0x72/0x110 [nvidia]
+Oct 26 23:12:23 robot-MS-7E19 kernel:  RmIoctl+0xc2c/0xda0 [nvidia]
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? os_release_spinlock+0x1a/0x30 [nvidia]
+Oct 26 23:12:23 robot-MS-7E19 kernel:  rm_ioctl+0x66/0x4e0 [nvidia]
+Oct 26 23:12:23 robot-MS-7E19 kernel:  nvidia_unlocked_ioctl+0x91c/0xb70 [nvidia]
+Oct 26 23:12:23 robot-MS-7E19 kernel:  __x64_sys_ioctl+0xa0/0xf0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  x64_sys_call+0xa71/0x2480
+Oct 26 23:12:23 robot-MS-7E19 kernel:  do_syscall_64+0x89/0x180
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? mmap_region+0x57/0xd0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? vm_mmap_pgoff+0x128/0x1a0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? ksys_mmap_pgoff+0x4a/0x270
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? arch_exit_to_user_mode_prepare.constprop.0+0x1a/0xe0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? arch_exit_to_user_mode_prepare.constprop.0+0x1a/0xe0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? syscall_exit_to_user_mode+0x43/0x1e0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? do_syscall_64+0x95/0x180
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? scheduler_tick+0x153/0x370
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? update_process_times+0x8e/0xb0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? tick_sched_handle+0x32/0x70
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? timerqueue_add+0xa6/0xd0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? ktime_get+0x45/0xc0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? __pfx_tick_nohz_highres_handler+0x10/0x10
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? lapic_next_deadline+0x2c/0x50
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? clockevents_program_event+0xb3/0x140
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? tick_program_event+0x43/0xa0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? hrtimer_interrupt+0x11f/0x250
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? arch_exit_to_user_mode_prepare.constprop.0+0x1a/0xe0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? irqentry_exit_to_user_mode+0x38/0x1e0
+Oct 26 23:12:23 robot-MS-7E19 kernel:  ? irqentry_exit+0x43/0x50
+Oct 26 23:12:23 robot-MS-7E19 kernel:  entry_SYSCALL_64_after_hwframe+0x78/0x80
+Oct 26 23:12:23 robot-MS-7E19 kernel: RIP: 0033:0x70a01e31aa9f
+Oct 26 23:12:23 robot-MS-7E19 kernel: Code: 00 48 89 44 24 18 31 c0 48 8d 44 24 60 c7 04 24 10 00 00 00 48 89 44 24 08 48 8d 44 24 20 48 89 44 24 10 b8 10 00 00 00 0f 05 <41> 89 c0 3d 00 f0 ff ff 77 1f 48 8b 44 24 18 64 48 2b 04 25 28 00
+Oct 26 23:12:23 robot-MS-7E19 kernel: RSP: 002b:000070980abfaac0 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+Oct 26 23:12:23 robot-MS-7E19 kernel: RAX: ffffffffffffffda RBX: 000070980abfabd0 RCX: 000070a01e31aa9f
+Oct 26 23:12:23 robot-MS-7E19 kernel: RDX: 000070980abfabd0 RSI: 00000000c0384627 RDI: 0000000000000037
+Oct 26 23:12:23 robot-MS-7E19 kernel: RBP: 000070980abfab70 R08: 000070980abfabd0 R09: 000070980abfabf8
+Oct 26 23:12:23 robot-MS-7E19 kernel: R10: 000070980abfad88 R11: 0000000000000246 R12: 00000000c0384627
+Oct 26 23:12:23 robot-MS-7E19 kernel: R13: 0000000000000037 R14: 000070980abfabf8 R15: 000070980abfab30
+Oct 26 23:12:23 robot-MS-7E19 kernel:  </TASK>
+Oct 26 23:12:23 robot-MS-7E19 kernel: memory: usage 50331648kB, limit 50331648kB, failcnt 815065
+Oct 26 23:12:23 robot-MS-7E19 kernel: swap: usage 0kB, limit 0kB, failcnt 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: Memory cgroup stats for /user.slice/user-1000.slice/user@1000.service/app.slice/pi05-ppo-smoke-20261026-v10.service:
+Oct 26 23:12:23 robot-MS-7E19 kernel: anon 23993204736
+Oct 26 23:12:23 robot-MS-7E19 kernel: file 27072438272
+Oct 26 23:12:23 robot-MS-7E19 kernel: kernel 473919488
+Oct 26 23:12:23 robot-MS-7E19 kernel: kernel_stack 51249152
+Oct 26 23:12:23 robot-MS-7E19 kernel: pagetables 288292864
+Oct 26 23:12:23 robot-MS-7E19 kernel: sec_pagetables 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: percpu 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: sock 45056
+Oct 26 23:12:23 robot-MS-7E19 kernel: vmalloc 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: shmem 27039272960
+Oct 26 23:12:23 robot-MS-7E19 kernel: zswap 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: zswapped 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: file_mapped 27043450880
+Oct 26 23:12:23 robot-MS-7E19 kernel: file_dirty 20566016
+Oct 26 23:12:23 robot-MS-7E19 kernel: file_writeback 12591104
+Oct 26 23:12:23 robot-MS-7E19 kernel: swapcached 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: anon_thp 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: file_thp 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: shmem_thp 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: inactive_anon 43873366016
+Oct 26 23:12:23 robot-MS-7E19 kernel: active_anon 7159111680
+Oct 26 23:12:23 robot-MS-7E19 kernel: inactive_file 31555584
+Oct 26 23:12:23 robot-MS-7E19 kernel: active_file 1597440
+Oct 26 23:12:23 robot-MS-7E19 kernel: unevictable 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: slab_reclaimable 66156624
+Oct 26 23:12:23 robot-MS-7E19 kernel: slab_unreclaimable 62380904
+Oct 26 23:12:23 robot-MS-7E19 kernel: slab 128537528
+Oct 26 23:12:23 robot-MS-7E19 kernel: workingset_refault_anon 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: workingset_refault_file 1517282
+Oct 26 23:12:23 robot-MS-7E19 kernel: workingset_activate_anon 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: workingset_activate_file 65371
+Oct 26 23:12:23 robot-MS-7E19 kernel: workingset_restore_anon 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: workingset_restore_file 65235
+Oct 26 23:12:23 robot-MS-7E19 kernel: workingset_nodereclaim 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: pgscan 5374206
+Oct 26 23:12:23 robot-MS-7E19 kernel: pgsteal 3670098
+Oct 26 23:12:23 robot-MS-7E19 kernel: pgscan_kswapd 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: pgscan_direct 5374206
+Oct 26 23:12:23 robot-MS-7E19 kernel: pgscan_khugepaged 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: pgsteal_kswapd 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: pgsteal_direct 3670098
+Oct 26 23:12:23 robot-MS-7E19 kernel: pgsteal_khugepaged 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: pgfault 34883040
+Oct 26 23:12:23 robot-MS-7E19 kernel: pgmajfault 3171
+Oct 26 23:12:23 robot-MS-7E19 kernel: pgrefill 3137357
+Oct 26 23:12:23 robot-MS-7E19 kernel: pgactivate 222756
+Oct 26 23:12:23 robot-MS-7E19 kernel: pgdeactivate 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: pglazyfree 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: pglazyfreed 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: zswpin 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: zswpout 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: zswpwb 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: thp_fault_alloc 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: thp_collapse_alloc 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: thp_swpout 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: thp_swpout_fallback 0
+Oct 26 23:12:23 robot-MS-7E19 kernel: Tasks state (memory values in pages):
+Oct 26 23:12:23 robot-MS-7E19 kernel: [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3317907]  1000 3317907  9949045   220464   125568    94896         0  3743744        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324877]  1000 3324877  4414494   157613    88445    69168         0  2347008        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324948]  1000 3324948  4381722    92404    88565     3839         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324950]  1000 3324950  4381722    92358    88567     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324952]  1000 3324952  4381722    92358    88567     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324954]  1000 3324954  4381722    92358    88567     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324956]  1000 3324956  4381722    92358    88567     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324958]  1000 3324958  4381722    92359    88568     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324960]  1000 3324960  4381722    92360    88569     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324962]  1000 3324962  4381722    92360    88569     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324964]  1000 3324964  4381722    92361    88570     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324966]  1000 3324966  4381722    92361    88570     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324968]  1000 3324968  4381722    92362    88571     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324970]  1000 3324970  4381722    92362    88571     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324972]  1000 3324972  4381722    92362    88571     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324974]  1000 3324974  4381722    92362    88571     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324976]  1000 3324976  4381722    92315    88572     3743         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324982]  1000 3324982  4381722    92364    88573     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324984]  1000 3324984  4381722    92364    88573     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324986]  1000 3324986  4381722    92364    88573     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324988]  1000 3324988  4381722    92364    88573     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324990]  1000 3324990  4381722    92364    88573     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324992]  1000 3324992  4381722    92364    88573     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324994]  1000 3324994  4381722    92365    88574     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324996]  1000 3324996  4381722    92413    88574     3839         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3324998]  1000 3324998  4381722    92365    88574     3791         0  1187840        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3325775]  1000 3325775   272284    53887    49807     4080         0  1335296        0             0 gcs_server
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3325935]  1000 3325935   124212    21216    12240     8976         0   655360        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326018]  1000 3326018   191306    30624    18864    11760         0   974848        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326104]  1000 3326104    13009     4704     1968     2736         0   135168        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326105]  1000 3326105    42227    26400    16368    10032         0   352256        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326132]  1000 3326132   183621    23639    18023     5616         0   892928        0             0 ray-dashboard-M
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326133]  1000 3326133   183365    23226    17562     5664         0   888832        0             0 ray-dashboard-D
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326134]  1000 3326134   186442    23367    17559     5808         0   905216        0             0 ray-dashboard-E
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326135]  1000 3326135   183365    23262    17502     5760         0   888832        0             0 ray-dashboard-J
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326136]  1000 3326136   191183    26665    20041     6624         0   933888        0             0 ray-dashboard-N
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326137]  1000 3326137   197325    24720    18384     6336         0   950272        0             0 ray-dashboard-R
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326146]  1000 3326146   183365    23278    17566     5712         0   888832        0             0 ray-dashboard-S
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326151]  1000 3326151   187466    24768    18048     6720         0   917504        0             0 ray-dashboard-S
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326160]  1000 3326160   183365    23259    17499     5760         0   888832        0             0 ray-dashboard-T
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326588]  1000 3326588   114725    20352    11472     8880         0   614400        0             0 python
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326589]  1000 3326589  4573760    11549     6941     4608         0  1089536        0             0 raylet
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326649]  1000 3326649  1045852    37977    24777    13200         0   913408        0             0 ray::DashboardA
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326651]  1000 3326651   545133    19867    11227     8640         0   507904        0             0 ray::RuntimeEnv
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326870]  1000 3326870  5239387    19795    10531     9264         0   675840        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326871]  1000 3326871  5239382    20123    10619     9504         0   675840        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326872]  1000 3326872  5239417    20171    10667     9504         0   684032        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326873]  1000 3326873  5239385    19978    10570     9408         0   671744        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326874]  1000 3326874  5239415    19930    10570     9360         0   684032        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326875]  1000 3326875  5239384    19935    10527     9408         0   675840        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326876]  1000 3326876  5239400    19786    10474     9312         0   675840        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326877]  1000 3326877  6418759   147456    80208    67248         0  2691072        0          1000 ray::_RemoteNod
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326878]  1000 3326878  5239432    19931    10571     9360         0   679936        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326879]  1000 3326879  5239385    19880    10520     9360         0   679936        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326880]  1000 3326880  5239416    20125    10621     9504         0   679936        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326881]  1000 3326881  5239389    20026    10618     9408         0   679936        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326882]  1000 3326882  5239386    19839    10527     9312         0   675840        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326883]  1000 3326883  5239386    19836    10476     9360         0   675840        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326885]  1000 3326885  5239416    20027    10619     9408         0   684032        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326886]  1000 3326886  5239405    20024    10616     9408         0   679936        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326887]  1000 3326887  5239433    20027    10619     9408         0   675840        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326888]  1000 3326888  5239417    19931    10523     9408         0   675840        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326889]  1000 3326889  5239384    19873    10561     9312         0   679936        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326890]  1000 3326890  5239389    19839    10479     9360         0   675840        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326891]  1000 3326891  5239386    19701    10437     9264         0   675840        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326892]  1000 3326892  5239389    19972    10564     9408         0   684032        0          1000 ray::IDLE
+Oct 26 23:12:23 robot-MS-7E19 kernel: [3326893]  1000 3326893  5239416    19943    10535     9408         0   675840        0          1000 ray::IDLE
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3326894]  1000 3326894  5239415    19986    10578     9408         0   675840        0          1000 ray::IDLE
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3328394]  1000 3328394  6418464   147459    80019    67440         0  2703360        0          1000 ray::WorkerMana
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3328395]  1000 3328395  6419540   149169    81825    67344         0  2695168        0          1000 ray::Collective
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3328396]  1000 3328396  6455878   147703    80407    67296         0  2715648        0          1000 ray::PortLockMa
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3328397]  1000 3328397  6418728   147011    80051    66960         0  2691072        0          1000 ray::NodeManage
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3328398]  1000 3328398  6455046   147057    80145    66912         0  2695168        0          1000 ray::DeviceLock
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3328705]  1000 3328705 39694645  7448026   676029   176029   6595968 64135168        0          1000 ray::EmbodiedFS
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3328711]  1000 3328711 14036382  2395058  2236914   153056      5088 22937600        0          1000 ray::MultiStepR
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3328713]  1000 3328713 10603122   250356   145236   105120         0  4489216        0          1000 ray::EnvWorker
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3328719]  1000 3328719 10110800   150008    81128    68880         0  3010560        0          1000 ray::ChannelWor
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3328724]  1000 3328724 10136533   185551   104143    81408         0  3395584        0          1000 ray::ChannelWor
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329013]  1000 3329013 10210318   188828   107180    81648         0  3448832        0          1000 ray::ChannelWor
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329183]  1000 3329183  4414497   157705    88489    69216         0  2347008        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329187]  1000 3329187  4414530   157685    88469    69216         0  2347008        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329199]  1000 3329199  4414495   157580    88412    69168         0  2351104        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329310]  1000 3329310  4381725    92416    88577     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329312]  1000 3329312  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329314]  1000 3329314  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329316]  1000 3329316  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329318]  1000 3329318  4381725    92417    88578     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329320]  1000 3329320  4381725    92417    88578     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329322]  1000 3329322  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329324]  1000 3329324  4381725    92417    88578     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329326]  1000 3329326  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329328]  1000 3329328  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329330]  1000 3329330  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329332]  1000 3329332  4381725    92417    88578     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329334]  1000 3329334  4381725    92417    88578     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329336]  1000 3329336  4381725    92417    88578     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329338]  1000 3329338  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329340]  1000 3329340  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329342]  1000 3329342  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329344]  1000 3329344  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329346]  1000 3329346  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329348]  1000 3329348  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329350]  1000 3329350  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329352]  1000 3329352  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329355]  1000 3329355  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329357]  1000 3329357  4381725    92369    88578     3791         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329361]  1000 3329361  4381758    92434    88547     3887         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329363]  1000 3329363  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329365]  1000 3329365  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329367]  1000 3329367  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329369]  1000 3329369  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329371]  1000 3329371  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329373]  1000 3329373  4381758    92435    88548     3887         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329375]  1000 3329375  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329377]  1000 3329377  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329379]  1000 3329379  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329381]  1000 3329381  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329383]  1000 3329383  4381758    92435    88548     3887         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329385]  1000 3329385  4381758    92435    88548     3887         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329387]  1000 3329387  4381758    92435    88548     3887         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329389]  1000 3329389  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329391]  1000 3329391  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329393]  1000 3329393  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329395]  1000 3329395  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329397]  1000 3329397  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329399]  1000 3329399  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329401]  1000 3329401  4381758    92435    88548     3887         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329404]  1000 3329404  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329406]  1000 3329406  4381758    92387    88548     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329408]  1000 3329408  4381758    92388    88549     3839         0  1187840        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329413]  1000 3329413  4381467    92392    88570     3822         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329415]  1000 3329415  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329417]  1000 3329417  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329419]  1000 3329419  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329421]  1000 3329421  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329423]  1000 3329423  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329425]  1000 3329425  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329427]  1000 3329427  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329429]  1000 3329429  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329431]  1000 3329431  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329433]  1000 3329433  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329436]  1000 3329436  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329438]  1000 3329438  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329440]  1000 3329440  4381467    92410    88571     3839         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329442]  1000 3329442  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329444]  1000 3329444  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329446]  1000 3329446  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329451]  1000 3329451  4381467    92314    88571     3743         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329453]  1000 3329453  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329455]  1000 3329455  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329457]  1000 3329457  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329459]  1000 3329459  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329461]  1000 3329461  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329464]  1000 3329464  4381467    92362    88571     3791         0  1191936        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329652]  1000 3329652     9505     4080     1776     2304         0   106496        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329653]  1000 3329653  2192725   635954   536701    99253         0  6717440        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: [3329654]  1000 3329654  2140362   560629   461484    99145         0  6262784        0          1000 python
+Oct 26 23:12:24 robot-MS-7E19 kernel: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=user.slice,mems_allowed=0,oom_memcg=/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-ppo-smoke-20261026-v10.service,task_memcg=/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-ppo-smoke-20261026-v10.service,task=ray::EmbodiedFS,pid=3328705,uid=1000
+Oct 26 23:12:24 robot-MS-7E19 kernel: Memory cgroup out of memory: Killed process 3328705 (ray::EmbodiedFS) total-vm:158778580kB, anon-rss:2704116kB, file-rss:704116kB, shmem-rss:26383872kB, UID:1000 pgtables:62632kB oom_score_adj:1000
+Oct 26 23:12:24 robot-MS-7E19 kernel: Cannot map memory with base addr 0x7092a0000000 and size of 0x20000 pages

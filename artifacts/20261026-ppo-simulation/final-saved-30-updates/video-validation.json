@@ -1,0 +1,218 @@
+[
+  {
+    "file": "comparison-goal-00-init-00.mp4",
+    "sha256": "0bae5a830de28c11fba87da0dcc0e2cc086d07492d245b20cb7250e8aff499be",
+    "frames": 120,
+    "fps": 10.0,
+    "width": 896,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "comparison-goal-00-init-10.mp4",
+    "sha256": "a47fb49f7c028954a3111004fc97037b43682bad5ce3378c41c52367cc2be0eb",
+    "frames": 124,
+    "fps": 10.0,
+    "width": 896,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "comparison-goal-07-init-00.mp4",
+    "sha256": "efcfb96aba3a3eb6118e859f890e1c0a2c65e2ae4d3da3c40dd8c893795c7cc8",
+    "frames": 87,
+    "fps": 10.0,
+    "width": 896,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "comparison-goal-07-init-10.mp4",
+    "sha256": "4d5dad3a3d9d7bb7f8b9ad46a6f0def80f5c73088649b152dcee42798aa62e6f",
+    "frames": 81,
+    "fps": 10.0,
+    "width": 896,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "comparison-goal-08-init-00.mp4",
+    "sha256": "1a0b68b8482a3231c3d26f257973ca674048f7e2d22bb454032627568ff5b8b0",
+    "frames": 88,
+    "fps": 10.0,
+    "width": 896,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "comparison-goal-08-init-10.mp4",
+    "sha256": "c0cc863fd69fbcf970832db54581a16c34e6ed8ae46da7957e756d8534ca1b42",
+    "frames": 84,
+    "fps": 10.0,
+    "width": 896,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "comparison-goal-09-init-00.mp4",
+    "sha256": "219021b325531a9c4f9eee77ad476cfe33d2439de2d48b7039042fe4350dab1a",
+    "frames": 132,
+    "fps": 10.0,
+    "width": 896,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "comparison-goal-09-init-10.mp4",
+    "sha256": "21881aa86d8fd6b0a53bd41aebc058bd5489ca3c974a5c01804209a8704d4c09",
+    "frames": 141,
+    "fps": 10.0,
+    "width": 896,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "native-sft-goal-00-init-00.mp4",
+    "sha256": "30f1e1b099b5d6b536f6b2a14abb57df584ceda702de5638200569535f070e1e",
+    "frames": 120,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "native-sft-goal-00-init-10.mp4",
+    "sha256": "ab017231672507224347ce95cbd3323f4bfbbe5e8f2fae35964168aad656ade0",
+    "frames": 122,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "native-sft-goal-07-init-00.mp4",
+    "sha256": "d83d4e0f31a8dafe32286d64014368043573fee42fbf1df2b52919940b85f883",
+    "frames": 85,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "native-sft-goal-07-init-10.mp4",
+    "sha256": "6106364c2cf0b3b916cc4ffc0d06cfd659bf5d32941c19607e2476edf24a159d",
+    "frames": 81,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "native-sft-goal-08-init-00.mp4",
+    "sha256": "db302cca3d29382b5b06b3b11565be7f09b7d76b14207ffb14440237f8ce5ecd",
+    "frames": 88,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "native-sft-goal-08-init-10.mp4",
+    "sha256": "4f2c4ffffa0db26f1e9b37c4d99efd28106f69e2055c7abce99bb047f65cc029",
+    "frames": 84,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "native-sft-goal-09-init-00.mp4",
+    "sha256": "0719ff111971f6149af808267c89d5cf0b1779f7a10b2031ce3323067dc7961a",
+    "frames": 130,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "native-sft-goal-09-init-10.mp4",
+    "sha256": "3222794878e9ff66e21b5fb942ff4cd17b8b2755c55c585ee92161c1a99e48d4",
+    "frames": 138,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "ppo-goal-00-init-00.mp4",
+    "sha256": "bb9eddc0b2c96320c469d5fab6d9eeba9e44ff785c64cfff4fcd8f75f66d0790",
+    "frames": 119,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "ppo-goal-00-init-10.mp4",
+    "sha256": "e17b2ed48390b8040f18a55e76f8d7f8c2fb3dd81610ce893c097a15480c5386",
+    "frames": 124,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "ppo-goal-07-init-00.mp4",
+    "sha256": "361de9b8351e786a8a1e5626d7197ebbfe5c4323b79c71972b83d4e70ceb0a92",
+    "frames": 87,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "ppo-goal-07-init-10.mp4",
+    "sha256": "99c24297469bcff370d1f70c5b46162c78b43935b3632778c8b86edca63cf4e3",
+    "frames": 81,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "ppo-goal-08-init-00.mp4",
+    "sha256": "75a44a98b3e43bd2ecaf0218cf328fdd32fe910fc0da81948936992daf8c046f",
+    "frames": 88,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "ppo-goal-08-init-10.mp4",
+    "sha256": "d71139cf5dbd9c2937c8c1ec4cee6bdace6371b6057290977f03eb5f7be8259e",
+    "frames": 84,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "ppo-goal-09-init-00.mp4",
+    "sha256": "b321442050db945cccfc73e44a8d9ad3f6444aba02cafe07ca1f561e8cab720b",
+    "frames": 132,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  },
+  {
+    "file": "ppo-goal-09-init-10.mp4",
+    "sha256": "998ecbf427e7c15bad78d5701bf82fcc52110a4936152a5a15077e2cccdbca03",
+    "frames": 141,
+    "fps": 10.0,
+    "width": 448,
+    "height": 224,
+    "full_decode": "PASS"
+  }
+]

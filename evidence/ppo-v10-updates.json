@@ -1,0 +1,46 @@
+[
+  {
+    "finite_optimizer_steps": 15,
+    "metrics": {
+      "actor/approx_kl": -0.002476596739143133,
+      "actor/clip_fraction": 0.0,
+      "actor/clipped_ratio": 1.0039161443710327,
+      "actor/dual_cliped_ratio": 0.0,
+      "actor/entropy_loss": 0.0,
+      "actor/grad_norm": 39.14610290527344,
+      "actor/lr": 4.999999873689376e-06,
+      "actor/policy_loss": -0.009302373044192791,
+      "actor/policy_loss_abs": 0.8344327807426453,
+      "actor/ratio": 1.0039161443710327,
+      "actor/ratio_abs": 0.03570950776338577,
+      "actor/total_loss": 0.8588680624961853,
+      "critic/explained_variance": -0.38690507411956787,
+      "critic/lr": 9.999999747378752e-05,
+      "critic/value_clip_ratio": 0.8666666746139526,
+      "critic/value_loss": 1.7270385026931763
+    },
+    "optimizer_step_attempts": 15
+  },
+  {
+    "finite_optimizer_steps": 15,
+    "metrics": {
+      "actor/approx_kl": 0.012859293259680271,
+      "actor/clip_fraction": 0.0,
+      "actor/clipped_ratio": 0.9885204434394836,
+      "actor/dual_cliped_ratio": 0.0,
+      "actor/entropy_loss": 0.0,
+      "actor/grad_norm": 33.087554931640625,
+      "actor/lr": 4.987674401490949e-06,
+      "actor/policy_loss": 0.010357541963458061,
+      "actor/policy_loss_abs": 0.6735525727272034,
+      "actor/ratio": 0.9885204434394836,
+      "actor/ratio_abs": 0.029371291399002075,
+      "actor/total_loss": 1.3232836723327637,
+      "critic/explained_variance": -0.14287781715393066,
+      "critic/lr": 9.975348802981898e-05,
+      "critic/value_clip_ratio": 0.9333333373069763,
+      "critic/value_loss": 2.636209726333618
+    },
+    "optimizer_step_attempts": 15
+  }
+]

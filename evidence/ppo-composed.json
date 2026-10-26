@@ -248,7 +248,8 @@
     "val_check_interval": 1,
     "save_interval": 1,
     "resume_dir": null,
-    "ckpt_path": null
+    "ckpt_path": null,
+    "weight_sync_interval": 2
   },
   "algorithm": {
     "normalize_advantages": true,

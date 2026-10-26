@@ -1,0 +1,20 @@
+{
+  "run": "v10",
+  "service": "pi05-ppo-smoke-20261026-v10.service",
+  "max_epochs": 2,
+  "weight_sync_interval": 2,
+  "val_check_interval": 1,
+  "expected_optimizer_updates": 30,
+  "reason": "Evaluation synchronizes updated weights after each epoch and retains the same rollout model across CPU offload. Skip only redundant second-start synchronization. Memory capacity remains to be verified in the full run.",
+  "source_sha256": {
+    "configs/ppo_goal_overrides.yaml": "2aad3e8ec03b58f5d30c73706dbbb869245cacc156a1b5a08f786d0a4d0ae15a",
+    "configs/ppo_goal_smoke.yaml": "f431b34be797d676e049a3be4f544588083d8868bb111ad456974c9524acbe72",
+    "evidence/ppo-composed.json": "7f73a7a5ac39ca07cd6ed3c4b3141ec7e5dfb60041921923964821d1027a38ef",
+    "scripts/check_ppo.py": "c220952f51cecaec4c8206d23acd6d2bd54191069487780a84ef448ee3544e01",
+    "third_party/RLinf/rlinf/runners/embodied_runner.py": "94619101397255b04ec301d63d143570031d13f813e429a813df7a2e479dc0bd",
+    "third_party/RLinf/rlinf/workers/rollout/hf/huggingface_worker.py": "bb7998e285cb70eb0c3b8a73f90a2884fa6a07b0f3060fe1a255d2b0335e03d7"
+  },
+  "launch_snapshots": {
+    "configs/ppo_goal_overrides.yaml": "evidence/ppo-v10-launch-overrides.yaml"
+  }
+}
