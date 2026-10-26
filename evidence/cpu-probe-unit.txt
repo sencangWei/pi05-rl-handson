@@ -1,0 +1,7 @@
+RuntimeMaxUSec=infinity
+Result=success
+ExecMainStatus=0
+MemoryMax=infinity
+MemorySwapMax=infinity
+Nice=0
+CPUAffinity=

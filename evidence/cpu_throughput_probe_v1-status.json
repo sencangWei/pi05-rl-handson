@@ -1,0 +1,27 @@
+{
+  "status": "COMPLETE",
+  "actual_updates": 3,
+  "seed": 42,
+  "experiment": "cpu_throughput_probe_v1",
+  "steps": 3,
+  "batch_size": 1,
+  "learning_rate": 2e-05,
+  "dry_run": false,
+  "device": "cpu",
+  "parent": "/home/robot/voice-arm-sim/models/pi05_libero",
+  "openpi_revision": "15a9616a00943ada6c20a0f158e3adb39df2ccac",
+  "manifest_sha256": "9282c19b3d6cd6bf5779d3169e112a145852066654651e40b333558d9e8a3fde",
+  "checkpoint_dir": "/home/robot/pi05-rl-handson/checkpoints/pi05_multitask40_lora/cpu_throughput_probe_v1",
+  "transformed_action_shape": [
+    10,
+    32
+  ],
+  "effective_sampling_slots": 458040,
+  "train_episodes": 1525,
+  "holdout_episodes": 168,
+  "optimizer_resumed": false,
+  "parameter_filter": "LoRA only; official pi05_libero parent",
+  "learning_rate_schedule": "3-step warmup then constant",
+  "train_wall_seconds": 150.42194975801976,
+  "annotation": "Warmup label corrected to match actual make_config(min(20, steps)); completed run unchanged."
+}

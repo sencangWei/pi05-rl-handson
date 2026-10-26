@@ -1,0 +1,232 @@
+{
+  "passed": true,
+  "checkpoint": "/home/robot/pi05-rl-handson/checkpoints/pi05_multitask40_lora/cpu_throughput_probe_v1/2",
+  "restored_train_state_step": 3,
+  "optimizer_iterations": 3,
+  "nonzero_learning_rate_updates": 2,
+  "note": "Initial warmup iteration uses lr=0. Throughput probe only; no capability claim.",
+  "frozen_base_bfloat16_exact_match": true,
+  "frozen_tensors_checked": 51,
+  "lora_tensors": {
+    "PaliGemma/llm/layers/attn/attn_vec_einsum/lora_a": {
+      "shape": [
+        18,
+        8,
+        256,
+        16
+      ],
+      "finite": true,
+      "nonzero": 589824,
+      "sha256": "3ab7e222ff8ef603ede2ad41f175590715de46aa4aaf3459b7354d2193f63fc8"
+    },
+    "PaliGemma/llm/layers/attn/attn_vec_einsum/lora_b": {
+      "shape": [
+        18,
+        8,
+        16,
+        2048
+      ],
+      "finite": true,
+      "nonzero": 4718592,
+      "sha256": "77bf3422e4e357bfe58e13610412dbb691d804ef86ba7271d53d2ba8d8bb5e9d"
+    },
+    "PaliGemma/llm/layers/attn/attn_vec_einsum_1/lora_a": {
+      "shape": [
+        18,
+        8,
+        256,
+        32
+      ],
+      "finite": true,
+      "nonzero": 1179648,
+      "sha256": "35c341c799be6b66e0ae1ff027aa8660c3f95cf39f9c5a3b04c899c08d97f92f"
+    },
+    "PaliGemma/llm/layers/attn/attn_vec_einsum_1/lora_b": {
+      "shape": [
+        18,
+        8,
+        32,
+        1024
+      ],
+      "finite": true,
+      "nonzero": 4718592,
+      "sha256": "1785c42120ab87c50fd20aae5c26b12ef19d8ccac201bfc96b4f7f8ccffd1bb0"
+    },
+    "PaliGemma/llm/layers/attn/kv_einsum/lora_a": {
+      "shape": [
+        18,
+        2,
+        1,
+        2048,
+        16
+      ],
+      "finite": true,
+      "nonzero": 1179648,
+      "sha256": "6711f0d25986af002f66ec605cf0f2954da8ff12720f5ee7a8bb8999de1e88ca"
+    },
+    "PaliGemma/llm/layers/attn/kv_einsum/lora_b": {
+      "shape": [
+        18,
+        2,
+        1,
+        16,
+        256
+      ],
+      "finite": true,
+      "nonzero": 147456,
+      "sha256": "fe86b27ec32cd68c75432b4d9c1ee9885041598f9e824f88c0e315200539488d"
+    },
+    "PaliGemma/llm/layers/attn/kv_einsum_1/lora_a": {
+      "shape": [
+        18,
+        2,
+        1,
+        1024,
+        32
+      ],
+      "finite": true,
+      "nonzero": 1179648,
+      "sha256": "477a90d4ad129b42c70def20ee2b4f43cd40f3b2cec072231457cec5474f75b2"
+    },
+    "PaliGemma/llm/layers/attn/kv_einsum_1/lora_b": {
+      "shape": [
+        18,
+        2,
+        1,
+        32,
+        256
+      ],
+      "finite": true,
+      "nonzero": 294912,
+      "sha256": "47a02186bd220db44cf417600b78ddde3ed4dd7d72c7a987f973496988f62f4b"
+    },
+    "PaliGemma/llm/layers/attn/q_einsum/lora_a": {
+      "shape": [
+        18,
+        8,
+        2048,
+        16
+      ],
+      "finite": true,
+      "nonzero": 4718592,
+      "sha256": "271d8cad5c23685072929794c7ab427bc71ecbf97bc0859a509bf89f0dcbb652"
+    },
+    "PaliGemma/llm/layers/attn/q_einsum/lora_b": {
+      "shape": [
+        18,
+        8,
+        16,
+        256
+      ],
+      "finite": true,
+      "nonzero": 589824,
+      "sha256": "be4411b5a55503e442a0b25e3702a84869fe8ae3591f9a04793273d7c1457293"
+    },
+    "PaliGemma/llm/layers/attn/q_einsum_1/lora_a": {
+      "shape": [
+        18,
+        8,
+        1024,
+        32
+      ],
+      "finite": true,
+      "nonzero": 4718592,
+      "sha256": "99c7e3df53147197291a969a83ffff3778dc2e829f22280ce839509d088ade3f"
+    },
+    "PaliGemma/llm/layers/attn/q_einsum_1/lora_b": {
+      "shape": [
+        18,
+        8,
+        32,
+        256
+      ],
+      "finite": true,
+      "nonzero": 1179648,
+      "sha256": "627790dd9871c1c9dbc4b6ca0c4a40e365201b9f1dbea0cab805f5869413a0cd"
+    },
+    "PaliGemma/llm/layers/mlp/gating_einsum_lora_a": {
+      "shape": [
+        18,
+        2,
+        2048,
+        16
+      ],
+      "finite": true,
+      "nonzero": 1179648,
+      "sha256": "ac0870864d6e273ffc977a43f883c2ba90d299ca857d9e194f2b1aaa7acf0e80"
+    },
+    "PaliGemma/llm/layers/mlp/gating_einsum_lora_b": {
+      "shape": [
+        18,
+        2,
+        16,
+        16384
+      ],
+      "finite": true,
+      "nonzero": 9437184,
+      "sha256": "92551545d48217f86880cceebe65b1cc46dd629ee4a92c35af6101b92cb42a7c"
+    },
+    "PaliGemma/llm/layers/mlp/linear_lora_a": {
+      "shape": [
+        18,
+        16384,
+        16
+      ],
+      "finite": true,
+      "nonzero": 4718592,
+      "sha256": "d5e8e6ca6614132d58a7d0df6e5a4a6b527289fd7e42f0ed533ff9b84dc1ff5d"
+    },
+    "PaliGemma/llm/layers/mlp/linear_lora_b": {
+      "shape": [
+        18,
+        16,
+        2048
+      ],
+      "finite": true,
+      "nonzero": 589824,
+      "sha256": "6226a6596a7dd33b2c6c4df3210758e8acc338a33cad70b50aacd79faa289b8c"
+    },
+    "PaliGemma/llm/layers/mlp_1/gating_einsum_lora_a": {
+      "shape": [
+        18,
+        2,
+        1024,
+        32
+      ],
+      "finite": true,
+      "nonzero": 1179648,
+      "sha256": "1ea56168ce9d8d1812fb858f412a5dc84eaa93e225c6ba1bc1c66e48a4dccf4f"
+    },
+    "PaliGemma/llm/layers/mlp_1/gating_einsum_lora_b": {
+      "shape": [
+        18,
+        2,
+        32,
+        4096
+      ],
+      "finite": true,
+      "nonzero": 4718592,
+      "sha256": "7ac1e8bdf3c1d49d6762a28f4b45c4a16c2adedbc5ea29bf797fd7b529b573a9"
+    },
+    "PaliGemma/llm/layers/mlp_1/linear_lora_a": {
+      "shape": [
+        18,
+        4096,
+        32
+      ],
+      "finite": true,
+      "nonzero": 2359296,
+      "sha256": "8542af47304d515f0ce068236a88fca5c5167e60c850fe4ddd05182baccc47e4"
+    },
+    "PaliGemma/llm/layers/mlp_1/linear_lora_b": {
+      "shape": [
+        18,
+        32,
+        1024
+      ],
+      "finite": true,
+      "nonzero": 589824,
+      "sha256": "84d2fc1617526c3adf69b6def3c64b745313bd93dd10e5f4d9fc13a7cde3a683"
+    }
+  }
+}

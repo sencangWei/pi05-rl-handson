@@ -1,0 +1,11 @@
+{
+  "scope": "CPU probe and independent PPO preparation scripts; read-only specialist review",
+  "blocking_findings": [
+    "PPO dependencies and model checksums are not yet ready",
+    "JAX SFT LoRA to RLinf PyTorch lineage is not connected",
+    "Installed Torch/CUDA/transformers versions require runtime verification after upstream installer completes"
+  ],
+  "cpu_checkpoint_invalidation_required": false,
+  "resolved_followup": "Future model preparer forces HF_HOME under the independent project. Existing in-flight snapshot download uses local_dir and is not restarted.",
+  "remaining_gpu_constraint_mib": 978
+}

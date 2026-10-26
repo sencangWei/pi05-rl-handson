@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "manifest_sha256": "9282c19b3d6cd6bf5779d3169e112a145852066654651e40b333558d9e8a3fde",
+  "episodes": 1693,
+  "frames": 273465,
+  "scope": "All numeric rows/identities; first and last RGB frames per camera; download separately verifies every file hash"
+}

@@ -4,10 +4,10 @@
 
 ## 当前状态（2026-10-26）
 
-- 后台服务 `pi05-multitask-night-20261026.service` 已启动，正在下载并逐文件校验数据。
-- 新 SFT **实际更新 0 步**。GPU 空闲约978 MiB；队列要求至少24576 MiB，绝不停止其他任务。
-- 全部数据下载校验后，先做 CPU 预检，再等显存最多8小时，满足条件才自动启动10000步 LoRA。等待时间不包含下载时间。
-- PPO **实际更新 0 步**。已修改实际 RLinf 奖励函数并执行单元测试，配置可由上游 Hydra 组合；运行环境、PyTorch 权重、显存与权重衔接尚未验证。队列不会自动启动未准备好的 PPO。
+- 40类1693条数据已全部下载，273465帧数值与每条首尾图像校验通过；训练1525条、留出168条。
+- 计划的10000步 GPU SFT **实际更新 0 步**。GPU 空闲约978 MiB；队列要求至少24576 MiB，绝不停止其他任务。队列在预检后等显存最多8小时，约11:06到期；不会无限等待。
+- 为避开显存阻塞，独立 CPU 测速实验 `cpu_throughput_probe_v1` 已执行3次优化迭代并保存checkpoint；首步预热学习率为0，后两次才更新参数。每步约23秒，10000步粗估65小时，因此不自动改成数天CPU训练，也不称为40任务训练完成。
+- PPO **实际更新 0 步**。已修改实际 RLinf 奖励函数并执行单元测试，配置可由上游 Hydra 组合；独立运行环境正在安装、固定 PyTorch 权重正在下载，显存与权重衔接尚未解决。队列不会自动启动未准备好的 PPO。
 - 现役 LoRA 四任务各测一个初态，4/4成功；另做碗放盘无手指接触5步检查，94步成功。这是既有模型推理，不是本次训练结果。
 
 ## 数据、奖励和机器人互动的关系
@@ -63,9 +63,11 @@ use_rel_reward = false
 
 配置限定goal中抽屉、灶炉、碗放盘、酒瓶放架四类，单环境，300控制步/rollout，10步动作块，micro batch1/global batch2，CPU卸载，2个rollout epoch。30动作块可被global batch整除。尚未完成Ray/FSDP运行验证，不能认定32GB显存可运行。
 
-需要的 RLinf PyTorch 权重 `RLinf/RLinf-Pi05-LIBERO-SFT` 尚未下载。JAX SFT 到 RLinf PyTorch 的LoRA权重衔接未实现，**两段配置不是已连通的SFT→PPO链路**。评测seed43不保证初态与训练不重合，此PPO小实验不是最终泛化评测。
+需要的 RLinf PyTorch 权重 `RLinf/RLinf-Pi05-LIBERO-SFT` 正在由独立服务下载，固定版本 `45ccfcc4e28634f1576ebf78cab0fbe2fd82432d`；以 evidence/rlinf-model-validation.json 的ready字段为准。这是另一份官方PPO父模型。JAX SFT 到 RLinf PyTorch 的LoRA权重衔接未实现，**两段配置不是已连通的SFT→PPO链路**；直接使用上游的密集参数转换器会漏掉LoRA，不能这样冒充衔接完成。评测seed43不保证初态与训练不重合，此PPO小实验不是最终泛化评测。
 
 恢复训练还需加入夹偏、抓空、物体移动后的状态，考察恢复后是否完成任务，并回放常规任务检查遗忘。仅扣时间分不能代替这些实验。
+
+独立环境安装脚本为 `scripts/prepare_ppo_env.sh`。它使用上游支持的 Torch 2.7.1 配套版本、禁用可选 FlashAttention 与 root 操作，隔离虚拟环境、缓存、LIBERO 配置及 Git 全局配置；不会安装到旧训练环境。安装完仍须核对包版本、运行导入/仿真检查，不能把安装成功称为 PPO 训练成功。后台安装日志为 `logs/ppo-env-install.log`；权重校验入口为 `scripts/prepare_rlinf_model.py`。
 
 ## 实际基线
 
@@ -92,6 +94,14 @@ tail -n 20 logs/night-queue.log
 ```
 
 后台顺序：完整下载→行/图像校验→CPU预检→显存等待→有界SFT。阶段失败记录后退出，不覆盖旧实验。机器重启或用户服务管理器退出后，此临时服务不会自动恢复。有服务活动时，不要同时另启任务写同一个实验。
+
+CPU 测速独立于GPU队列，命令如下（新实验名；拒绝覆盖已有目录）：
+
+```bash
+.venv-train/bin/python -u scripts/train_multitask.py --device cpu --experiment another_cpu_probe --steps 3
+```
+
+CPU入口强制隐藏CUDA，仅允许1至10次更新。已实测的服务另设12个逻辑CPU、Nice=10、内存上限36GiB、禁用swap及30分钟总时限；普通终端执行以上命令不会自行获得这些systemd资源限制。完整调用保存在 evidence/cpu-probe-unit.txt。原始日志与状态保存在 evidence/cpu-probe-training.log 和 evidence/cpu_throughput_probe_v1-status.json。权重已独立恢复读取，训练状态step=3，51个冻结张量与父模型转换为bf16后逐字节相同；LoRA张量有限且B矩阵非零，详见 evidence/cpu-probe-checkpoint-validation.json。该实验不是部署模型，不替换现有面板模型。
 
 ```bash
 .venv-train/bin/python -m unittest discover -s tests -v

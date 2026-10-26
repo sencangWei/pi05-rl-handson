@@ -1,0 +1,8 @@
+{
+  "ready": false,
+  "repo": "RLinf/RLinf-Pi05-LIBERO-SFT",
+  "revision": "45ccfcc4e28634f1576ebf78cab0fbe2fd82432d",
+  "root": "/home/robot/pi05-rl-handson/models/RLinf-Pi05-LIBERO-SFT",
+  "lineage": "Separate official PPO parent; not the new JAX LoRA checkpoint",
+  "files": {}
+}

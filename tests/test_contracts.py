@@ -6,6 +6,7 @@ import sys
 import tempfile
 from types import SimpleNamespace
 import unittest
+from unittest import mock
 
 import numpy as np
 
@@ -14,9 +15,19 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from multitask_dataset import window_indices, MultitaskDataset  # noqa: E402
 from prepare_multitask import make_manifest  # noqa: E402
 from training_config import verify_inventory  # noqa: E402
+from train_multitask import configure_device  # noqa: E402
 
 
 class Contracts(unittest.TestCase):
+    def test_cpu_probe_is_bounded_and_cannot_initialize_cuda(self):
+        with mock.patch.dict("os.environ", {"JAX_PLATFORMS": "cuda", "CUDA_VISIBLE_DEVICES": "0"}):
+            configure_device("cpu", 3)
+            import os
+            self.assertEqual(os.environ["JAX_PLATFORMS"], "cpu")
+            self.assertEqual(os.environ["CUDA_VISIBLE_DEVICES"], "")
+        with self.assertRaisesRegex(ValueError, "10"):
+            configure_device("cpu", 10000)
+
     def test_same_size_parent_or_source_corruption_is_rejected(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

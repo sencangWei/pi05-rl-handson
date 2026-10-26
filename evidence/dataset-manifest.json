@@ -3,7 +3,7 @@
   "repo": "physical-intelligence/libero",
   "revision": "a4336d589d589045d1c56423ffdf3b88a0e19b1f",
   "seed": 42,
-  "ready": false,
+  "ready": true,
   "root": "/home/robot/pi05-rl-handson/data/libero",
   "horizon": 10,
   "records": [

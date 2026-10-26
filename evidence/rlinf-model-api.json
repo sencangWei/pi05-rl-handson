@@ -1,0 +1,65 @@
+{
+  "_id": "68f4d12e9680b6a7bc4360c9",
+  "id": "RLinf/RLinf-Pi05-LIBERO-SFT",
+  "private": false,
+  "pipeline_tag": "robotics",
+  "tags": [
+    "safetensors",
+    "robotics",
+    "arxiv:2510.25889",
+    "arxiv:2509.15965",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "downloads": 0,
+  "likes": 6,
+  "modelId": "RLinf/RLinf-Pi05-LIBERO-SFT",
+  "author": "RLinf",
+  "sha": "45ccfcc4e28634f1576ebf78cab0fbe2fd82432d",
+  "lastModified": "2025-11-04T03:16:00.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "pipeline_tag": "robotics",
+    "license": "apache-2.0"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "size": 1519
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "fe9019519807e287e56589f0571c2cd58c697aee",
+      "size": 3844
+    },
+    {
+      "rfilename": "model.safetensors",
+      "blobId": "1c6fa759d53f6fa79cb2fe274cd9d8e23fa7d2d2",
+      "size": 7473091464,
+      "lfs": {
+        "sha256": "4616e4c1966a5fb063b442ea5d69857f45e873222d839b794634d87d252ab9e7",
+        "size": 7473091464,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "physical-intelligence/libero/norm_stats.json",
+      "blobId": "7e9c1cd512cfe9925a0b97e61d7839fc873fb0b3",
+      "size": 4507
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2025-10-19T11:53:18.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 119720608,
+      "BF16": 3497036912
+    },
+    "total": 3616757520
+  },
+  "usedStorage": 7473091464
+}

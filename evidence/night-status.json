@@ -1,5 +1,7 @@
 {
-  "phase": "DOWNLOADING",
-  "updated_utc": "2026-10-25T18:11:27.211355+00:00",
-  "actual_updates": 0
+  "phase": "WAITING_GPU",
+  "updated_utc": "2026-10-26T00:20:54.501466+00:00",
+  "actual_updates": 0,
+  "free_gpu_mib": 978,
+  "required_free_mib": 24576
 }
