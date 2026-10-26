@@ -35,3 +35,7 @@
 - 5090D需要sm_120内核，Torch2.7.1+cu126实测不兼容；同版本cu128实际BF16矩阵与SDPA反传通过。
 - JAX→RLinf合并权重strict加载通过后，整网固定噪声检查仍失败。RLinf SigLIP和Gemma的GELU默认erf，与Flax tanh近似不同；configs/rlinf-gelu-parity.patch实际修复后，未经放宽的1e-3阈值检查通过（最大误差1.66893e-6）。
 - 上游PPO示例默认BF16但未包含当前校验所要求的FP32模块规则；按固定源码docs/source-zh/rst_source/extending/new_model_fsdp.rst的Pi05配方设置FP32参数存储、BF16嵌入及分组规则，包含新增value_head。validate_fsdp_cfg已通过，实际更新尚未验证。
+
+21:57：rollout通过OmegaConf.merge继承actor.model；actor.precision=fp32为FSDP参数存储，不能同时让无FSDP的rollout使用该值。原生Attention将BF16 token直接传nn.Linear，FP32权重时最小测试实际报same dtype，BF16权重时执行通过。rollout明确设置precision=bf16；actor配置不变。此前v2模型加载阶段内存逼近48GiB上限，内存事件max>0但oom_kill=0；未将其误称为GPU训练OOM。
+
+22:13 更新：v3完成300控制步采样，首个训练前向在SigLIP head的PEFT/FSDP边界报FP32/BF16不匹配，实际PPO更新0。PEFT读取未展开权重的FP32 dtype后转换输入，子FSDP随后展开BF16权重，故启用子边界输入转换。Torch2.7也在根_pre_forward执行此转换，另补根策略副本禁用转换，避免PPO chains精度损失；没有原地修改与子节点共享的策略。真实小模型CUDA前后向与真实RLinf包装器的根chains FP32检查PASS。v4在采样/更新前主动停止，保留日志；v5服务22:12启动。独立原生评测入口和5项实际API契约测试通过，待PPO成功后与原生SFT对照。

@@ -111,7 +111,7 @@ rollout:
   pipeline_stage_num: 1
   model:
     model_path: ${actor.model.model_path}
-    precision: ${actor.model.precision}
+    precision: bf16
 actor:
   group_name: ActorGroup
   training_backend: fsdp
@@ -157,7 +157,7 @@ actor:
       param_dtype: bf16
       reduce_dtype: fp32
       buffer_dtype: fp32
-      cast_forward_inputs: false
+      cast_forward_inputs: true
       cast_root_forward_inputs: false
     use_orig_params: true
     wrappers:

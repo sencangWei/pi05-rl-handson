@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "old_config_error": "expected mat1 and mat2 to have the same dtype, but got: float != c10::BFloat16",
+  "cast_forward_inputs_true": {
+    "output_dtype": "torch.float32",
+    "finite_gradients": true
+  },
+  "actual_strategy_root_chains_dtype": "torch.float32",
+  "strategy_source_sha256": "823ca4597133c6e22948e3a2b32d6463e645bcbc94958d1a71a40649f087ad71",
+  "scope": "actual nested FSDP + PEFT CUDA forward/backward and real RLinf strategy; tiny models"
+}

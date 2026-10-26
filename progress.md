@@ -35,3 +35,7 @@ CPU/PPO准备代码备份：d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d已推送公
 21:35 仿真更新：新SFT四任务×双初态8/8，碗放盘松爪额外2/2；官方父模型同哈希初态8/8，酒瓶初态0由299降至131步，其余有快有慢。18段真实视频保存artifacts/20261026-sft-simulation。PPO严格加载811→667张量通过；float32整网对照最大误差0.001248未达既定阈值，正定位GELU等数值差异。Torchcu126在5090D实测no kernel image，独立cu128修复进行中。PPO更新仍0。配置已改为本次合并SFT血缘、horizon10/discreteFalse、正确归一化、all_linear适配器与orig_params，真实运行仍待门槛通过。
 
 21:49 更新：独立Torch2.7.1+cu128实际BF16矩阵/SDPA前后向通过。定位数值差异为RLinf的精确GELU与Flax默认tanh近似不同，实际两行补丁后整网原阈值检查PASS，max_abs=1.66893e-6，保留v1失败与v2通过证据。12项测试在JAX_PLATFORMS=cpu通过；同进程未固定CPU时GELU测试先初始化了JAX GPU，导致后续Flax合并测试精度失败，因此明确测试入口固定CPU。首次PPO启动于FSDP精度配置校验退出，更新0；按上游官方Pi05规则补齐后CPU校验通过，独立v2服务21:48启动、正在加载模型，实际更新仍待观察。
+
+21:57 更新：v2由本项目主动停止，实际更新0，原日志保留；定位到rollout继承actor FP32存储，但无FSDP转换且Gemma输入强制BF16。真实原生Attention最小测试复现dtype冲突，采样权重BF16后通过。仅覆盖rollout.model.precision，actor仍按官方FP32存储/BF16计算规则。v3服务已启动；不能以启动成功替代实际训练。算法提交ae1a721已从GitHub独立获取，27个文件逐字节一致，干净RLinf奖励/GELU补丁重放和5个数值对照源码哈希均通过，证据.local/gelu-remote-verification-20261026.json。
+
+22:13 更新：v3完成300控制步采样，首个训练前向在SigLIP head的PEFT/FSDP边界报FP32/BF16不匹配，实际PPO更新0。PEFT读取未展开权重的FP32 dtype后转换输入，子FSDP随后展开BF16权重，故启用子边界输入转换。Torch2.7也在根_pre_forward执行此转换，另补根策略副本禁用转换，避免PPO chains精度损失；没有原地修改与子节点共享的策略。真实小模型CUDA前后向与真实RLinf包装器的根chains FP32检查PASS。v4在采样/更新前主动停止，保留日志；v5服务22:12启动。独立原生评测入口和5项实际API契约测试通过，待PPO成功后与原生SFT对照。

@@ -32,7 +32,10 @@ def main():
     assert model["openpi"]["discrete_state_input"] is False
     assert model["lora_target_scope"] == "all_linear"
     assert value["actor"]["fsdp_config"]["use_orig_params"] is True
+    assert value["actor"]["fsdp_config"]["mixed_precision"]["cast_forward_inputs"] is True
+    assert value["actor"]["fsdp_config"]["mixed_precision"]["cast_root_forward_inputs"] is False
     assert value["rollout"]["model"]["model_path"] == model["model_path"]
+    assert value["rollout"]["model"]["precision"] == "bf16"
     assert model["model_path"] == str(ROOT / "models/pi05-multitask40-sft-merged")
     assert Path(model["openpi_data"]["norm_stats_path"]).is_file()
     train = value["env"]["train"]

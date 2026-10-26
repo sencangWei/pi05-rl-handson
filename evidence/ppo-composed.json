@@ -131,7 +131,7 @@
         "param_dtype": "bf16",
         "reduce_dtype": "fp32",
         "buffer_dtype": "fp32",
-        "cast_forward_inputs": false,
+        "cast_forward_inputs": true,
         "cast_root_forward_inputs": false
       },
       "wrappers": {
@@ -281,7 +281,7 @@
     "pipeline_stage_num": 1,
     "model": {
       "model_path": "/home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged",
-      "precision": "fp32"
+      "precision": "bf16"
     }
   },
   "reward": {

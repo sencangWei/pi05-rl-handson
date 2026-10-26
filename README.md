@@ -7,7 +7,7 @@
 - 40类1693条数据已全部下载，273465帧数值与每条首尾图像校验通过；训练1525条、留出168条。
 - 40任务 GPU SFT 已完成10000次迭代，17:43启动、18:14保存最后的9999 checkpoint，服务正常退出0。见 evidence/multitask40_lora_v1-status.json。四任务各两个初态仿真已完成，新SFT与官方父模型均8/8触发成功；另测新SFT放碗并松爪2/2通过。18段实际录像、同初态对照及限制见 [本轮仿真记录](artifacts/20261026-sft-simulation/README.md)。
 - 为避开显存阻塞，独立 CPU 测速实验 `cpu_throughput_probe_v1` 已执行3次优化迭代并保存checkpoint；首步预热学习率为0，后两次才更新参数。每步约23秒，10000步粗估65小时，因此不自动改成数天CPU训练，也不称为40任务训练完成。
-- PPO **实际更新 0 步（21:49 启动阶段快照）**。独立 Torch2.7.1+cu128 已通过5090D实际BF16前后向检查。真实SFT导出811张量，RLinf667张量严格加载通过；统一两处GELU近似后，整网float32对照最大误差由0.001248降至0.000001669，通过原有阈值。首启发现缺少FSDP精度规则，现已采用上游Pi05规则并通过配置验证，第二次有界训练正在加载模型；尚未出现真实PPO更新证据。
+- PPO **实际更新 0 步（22:13 启动阶段快照）**。独立 Torch2.7.1+cu128 已通过5090D实际BF16前后向检查。真实SFT导出811张量，RLinf667张量严格加载通过；统一两处GELU近似后，整网float32对照最大误差0.000001669，通过原有阈值。v3完成仿真采样但首次训练前向在PEFT/FSDP边界精度冲突。子包装输入转换与根输入FP32保护经实际小模型CUDA反传验证通过，v5正在重试；尚无PPO更新证据。失败日志及处理记录保留在evidence与progress.md。
 - 现役 LoRA 四任务各测一个初态，4/4成功；另做碗放盘无手指接触5步检查，94步成功。这是既有模型推理，不是本次训练结果。
 
 ## 数据、奖励和机器人互动的关系
@@ -122,6 +122,7 @@ git clone https://github.com/RLinf/RLinf.git third_party/RLinf
 git -C third_party/RLinf checkout 30e0236981c6a1dc19202de64116834c12673828
 git -C third_party/RLinf apply ../../configs/rlinf-step-cost.patch
 git -C third_party/RLinf apply ../../configs/rlinf-gelu-parity.patch
+git -C third_party/RLinf apply ../../configs/rlinf-fsdp-root-input.patch
 cp evidence/dataset-meta/* data/libero/meta/
 uv venv --python 3.11.15 .venv-train
 uv pip install --python .venv-train/bin/python -r configs/training-requirements.txt

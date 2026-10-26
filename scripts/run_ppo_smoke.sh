@@ -34,6 +34,12 @@ manifest = json.loads(Path(parity['export'], 'export_manifest.json').read_text()
 if parity['weights_sha256'] != manifest['output_sha256']:
     raise SystemExit('Parity evidence belongs to different exported weights')
 print('GPU, strict load and network conversion gates PASS; PPO updates not yet run.')
+precision = json.loads(Path('evidence/ppo-fsdp-lora-precision.json').read_text())
+strategy = Path('third_party/RLinf/rlinf/hybrid_engines/fsdp/strategy/fsdp.py')
+if (precision['status'] != 'PASS'
+        or precision.get('actual_strategy_root_chains_dtype') != 'torch.float32'
+        or hashlib.sha256(strategy.read_bytes()).hexdigest() != precision.get('strategy_source_sha256')):
+    raise SystemExit('FSDP/PEFT precision regression gate has not passed for this strategy')
 PY
 .venv-ppo/bin/python scripts/check_ppo_gpu.py
 .venv-ppo/bin/python scripts/check_ppo.py

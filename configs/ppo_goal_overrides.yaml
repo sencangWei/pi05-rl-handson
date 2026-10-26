@@ -48,6 +48,8 @@ rollout:
   enable_offload: True
   model:
     model_path: ${actor.model.model_path}
+    # Rollout has no FSDP wrapper to cast FP32 storage before BF16 attention.
+    precision: bf16
 
 actor:
   micro_batch_size: 1
@@ -61,7 +63,9 @@ actor:
       param_dtype: bf16
       reduce_dtype: fp32
       buffer_dtype: fp32
-      cast_forward_inputs: False
+      # PEFT casts to stored FP32 before calling auto-wrapped BF16 LoRA leaves.
+      # Each child boundary must recast its inputs to its computation dtype.
+      cast_forward_inputs: True
       cast_root_forward_inputs: False
     wrappers:
       projections:

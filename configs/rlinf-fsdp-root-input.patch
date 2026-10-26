@@ -1,0 +1,26 @@
+diff --git a/rlinf/hybrid_engines/fsdp/strategy/fsdp.py b/rlinf/hybrid_engines/fsdp/strategy/fsdp.py
+index f3f0486..d70c310 100644
+--- a/rlinf/hybrid_engines/fsdp/strategy/fsdp.py
++++ b/rlinf/hybrid_engines/fsdp/strategy/fsdp.py
+@@ -14,6 +14,7 @@
+ 
+ import os
+ from contextlib import nullcontext
++from dataclasses import replace
+ from typing import ContextManager, Union
+ 
+ import torch
+@@ -194,6 +195,13 @@ class FSDPStrategy(FSDPStrategyBase):
+             use_orig_params=self.cfg.fsdp_config.use_orig_params,
+             cpu_offload=cpu_offload,
+         )
++        # Torch 2.7 also applies cast_forward_inputs in the root _pre_forward.
++        # Keep PPO chains FP32 while allowing nested PEFT leaves to cast BF16.
++        # Replace rather than mutate: child wrappers may share this policy object.
++        if not mixed_precision.cast_root_forward_inputs:
++            fsdp_model.mixed_precision = replace(
++                fsdp_model.mixed_precision, cast_forward_inputs=False
++            )
+         apply_buffer_dtype_compatibility(fsdp_model)
+         return fsdp_model
+ 
