@@ -1,0 +1,1 @@
+Exploratory only: process imported RecoveryEnv before reward edits, but source identity was captured after model loading during edits. Baseline behavior did not enable shaping. Not a frozen-source comparison.

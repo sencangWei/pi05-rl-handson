@@ -27,6 +27,8 @@ def move(env, obs, target, gripper):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--development-only", action="store_true",
+                        help="New development source IDs 20..23; preserve the existing train/heldout bank")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     os.environ.setdefault("MUJOCO_GL", "osmesa")
@@ -43,7 +45,9 @@ def main():
                              camera_heights=256, camera_widths=256)
     entries = []
     try:
-        for split, ids in (("train", range(1, 7)), ("heldout", range(10, 14))):
+        splits = (("dev", range(20, 24)),) if args.development_only else (
+            ("train", range(1, 7)), ("heldout", range(10, 14)))
+        for split, ids in splits:
             for source_id in ids:
                 for category in ("empty_grasp", "object_offset", "placement_failure"):
                     env.seed(42)
@@ -130,7 +134,9 @@ def main():
                     print(json.dumps(entry), flush=True)
         manifest = {"format": "libero-recovery-bank-v1", "task_suite": "libero_goal", "task_id": 8,
                     "seed": 42, "construction": "Synthetic physical states using OSC initialization and object pose perturbations; no recovery actions scripted into training/evaluation",
-                    "split_protocol": "source initial IDs 1..6 train; 10..13 heldout, larger heldout offsets",
+                    "split_protocol": ("source initial IDs 20..23 development only; old heldout IDs 10..13 excluded"
+                                       if args.development_only else
+                                       "source initial IDs 1..6 train; 10..13 heldout, larger heldout offsets"),
                     "success": "native bowl-on-plate and no finger contact for 5 consecutive controls",
                     "entries": entries}
         (args.output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")

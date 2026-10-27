@@ -1,0 +1,208 @@
+defaults:
+- env/libero_10@env.train
+- env/libero_10@env.eval
+- model/pi0_5@actor.model
+- hybrid_engines/fsdp@actor.fsdp_config
+- weight_syncer/patch_syncer@weight_syncer
+- override hydra/job_logging: stdout
+- _self_
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+  searchpath:
+  - file://${oc.env:EMBODIED_PATH}/config/
+cluster:
+  num_nodes: 1
+  component_placement:
+    actor,env,rollout: all
+runner:
+  task_type: embodied
+  logger:
+    log_path: ${oc.env:PI05_RL_ROOT}/logs/ppo_recovery_sparse_v2
+    project_name: pi05-rl-handson
+    experiment_name: ppo_recovery_sparse_v2
+    logger_backends:
+    - tensorboard
+  max_epochs: 20
+  max_steps: -1
+  only_eval: false
+  val_check_interval: 5
+  save_interval: 5
+  resume_dir: null
+  ckpt_path: null
+  weight_sync_interval: 1
+algorithm:
+  normalize_advantages: true
+  kl_penalty: kl
+  group_size: 1
+  reward_coef: 1.0
+  reward_type: chunk_level
+  logprob_type: chunk_level
+  entropy_type: token_level
+  update_epoch: 1
+  adv_type: gae
+  loss_type: actor_critic
+  loss_agg_func: token-mean
+  kl_beta: 0.0
+  entropy_bonus: 0
+  clip_ratio_high: 0.2
+  clip_ratio_low: 0.2
+  clip_ratio_c: 3.0
+  value_clip: 0.2
+  huber_delta: 10.0
+  gamma: 0.99
+  gae_lambda: 0.95
+  filter_rewards: false
+  rewards_lower_bound: 0.1
+  rewards_upper_bound: 0.9
+env:
+  group_name: EnvGroup
+  train:
+    rollout_epoch: 1
+    total_num_envs: 1
+    max_episode_steps: 300
+    max_steps_per_rollout_epoch: 300
+    reward_coef: 1.0
+    skip_intermediate_renders: true
+    task_suite_name: libero_goal
+    task_id_filter:
+    - 8
+    use_rel_reward: false
+    use_step_penalty: true
+    step_penalty_coef: 0.001
+    auto_reset: true
+    ignore_terminations: false
+    seed: 42
+    recovery:
+      manifest: ${oc.env:PI05_RL_ROOT}/data/recovery-bowl-v3/manifest.json
+      split: train
+      mask_after_done: true
+    video_cfg:
+      save_video: true
+  eval:
+    rollout_epoch: 1
+    total_num_envs: 1
+    auto_reset: true
+    ignore_terminations: false
+    max_episode_steps: 300
+    max_steps_per_rollout_epoch: 300
+    group_size: 1
+    use_fixed_reset_state_ids: true
+    is_eval: true
+    video_cfg:
+      save_video: true
+      video_base_dir: ${runner.logger.log_path}/video/eval
+    task_suite_name: libero_goal
+    task_id_filter:
+    - 8
+    use_rel_reward: false
+    reward_coef: 1.0
+    use_step_penalty: true
+    step_penalty_coef: 0.001
+    seed: 43
+    recovery:
+      manifest: ${oc.env:PI05_RL_ROOT}/data/recovery-bowl-dev27/manifest.json
+      split: dev
+rollout:
+  group_name: RolloutGroup
+  generation_backend: huggingface
+  recompute_logprobs: false
+  unnorm_key: libero_goal
+  enable_offload: true
+  pipeline_stage_num: 1
+  model:
+    model_path: ${actor.model.model_path}
+    precision: bf16
+actor:
+  group_name: ActorGroup
+  training_backend: fsdp
+  micro_batch_size: 1
+  global_batch_size: 2
+  seed: 42
+  enable_offload: true
+  model:
+    model_path: ${oc.env:PI05_RL_ROOT}/models/pi05-multitask40-sft-merged
+    model_type: openpi
+    add_value_head: true
+    openpi:
+      task: rl
+      value_after_vlm: true
+      embed_dtype: bf16
+      torch_compile: false
+      action_horizon: 10
+      discrete_state_input: false
+      train_expert_only: true
+    precision: fp32
+    is_lora: true
+    lora_rank: 8
+    lora_target_scope: all_linear
+    openpi_data:
+      norm_stats_path: ${actor.model.model_path}/assets/physical-intelligence/libero/norm_stats.json
+  optim:
+    lr: 5.0e-06
+    value_lr: 0.0001
+    adam_beta1: 0.9
+    adam_beta2: 0.95
+    adam_eps: 1.0e-08
+    weight_decay: 0.01
+    clip_grad: 1.0
+    critic_warmup_steps: 0
+    total_training_steps: 20
+    min_lr_rate: 0.1
+    lr_scheduler: cosine
+  fsdp_config:
+    strategy: fsdp
+    sharding_strategy: no_shard
+    gradient_checkpointing: false
+    mixed_precision:
+      param_dtype: bf16
+      reduce_dtype: fp32
+      buffer_dtype: fp32
+      cast_forward_inputs: true
+      cast_root_forward_inputs: false
+    checkpoint_format: adapter
+    checkpoint_base_sha256: 4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f
+    save_full_model_weights: false
+    use_orig_params: true
+    wrappers:
+      projections:
+        wrap_names:
+        - action_in_proj
+        - action_out_proj
+        - time_mlp_in
+        - time_mlp_out
+        - value_head
+      norms:
+        module_classes:
+        - RMSNorm
+      vision_embedding:
+        module_names:
+        - img
+        - img.stem
+      vision_mlps:
+        module_names:
+        - img.encoder.layers.*.mlp
+        wrap_mode: subtree
+    mixed_precision_policies:
+      fp32:
+        param_dtype: fp32
+        reduce_dtype: fp32
+        buffer_dtype: fp32
+        cast_forward_inputs: true
+      fp32_preserve_inputs:
+        param_dtype: fp32
+        reduce_dtype: fp32
+        buffer_dtype: fp32
+        cast_forward_inputs: false
+    mixed_precision_rules:
+      projections: fp32
+      norms: fp32_preserve_inputs
+      vision_embedding: fp32_preserve_inputs
+      vision_mlps: fp32
+    amp_autocast:
+      enabled: false
+reward:
+  use_reward_model: false
+critic:
+  use_critic_model: false

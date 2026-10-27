@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "actual_ppo_chunk_reward": -0.010181830264627934,
+  "expected_reward": -0.01018182922214626,
+  "sparse_reward": -0.01,
+  "potential_before": 0.061687598009931115,
+  "potential_after": 0.06169848545735042,
+  "path": "RecoveryEnv subprocess -> LiberoEnv.chunk_step -> PPO reward tensor"
+}

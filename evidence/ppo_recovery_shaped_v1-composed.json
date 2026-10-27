@@ -1,0 +1,304 @@
+{
+  "env": {
+    "train": {
+      "env_type": "libero",
+      "task_suite_name": "libero_goal",
+      "total_num_envs": 1,
+      "auto_reset": true,
+      "ignore_terminations": false,
+      "max_steps_per_rollout_epoch": 300,
+      "max_episode_steps": 300,
+      "use_fixed_reset_state_ids": true,
+      "use_ordered_reset_state_ids": false,
+      "use_rel_reward": false,
+      "reward_coef": 1.0,
+      "reset_gripper_open": true,
+      "is_eval": false,
+      "seed": 42,
+      "group_size": 1,
+      "video_cfg": {
+        "save_video": true,
+        "info_on_video": true,
+        "video_base_dir": "/home/robot/pi05-rl-handson/logs/ppo_recovery_shaped_v1/video/train"
+      },
+      "init_params": {
+        "camera_heights": 256,
+        "camera_widths": 256
+      },
+      "rollout_epoch": 1,
+      "skip_intermediate_renders": true,
+      "task_id_filter": [
+        8
+      ],
+      "use_step_penalty": true,
+      "step_penalty_coef": 0.001,
+      "recovery": {
+        "manifest": "/home/robot/pi05-rl-handson/data/recovery-bowl-v3/manifest.json",
+        "split": "train",
+        "mask_after_done": true,
+        "shaping": {
+          "scale": 0.3,
+          "gamma": 0.99
+        }
+      }
+    },
+    "eval": {
+      "env_type": "libero",
+      "task_suite_name": "libero_goal",
+      "total_num_envs": 1,
+      "auto_reset": true,
+      "ignore_terminations": false,
+      "max_steps_per_rollout_epoch": 300,
+      "max_episode_steps": 300,
+      "use_fixed_reset_state_ids": true,
+      "use_ordered_reset_state_ids": false,
+      "use_rel_reward": false,
+      "reward_coef": 1.0,
+      "reset_gripper_open": true,
+      "is_eval": true,
+      "seed": 43,
+      "group_size": 1,
+      "video_cfg": {
+        "save_video": true,
+        "info_on_video": true,
+        "video_base_dir": "/home/robot/pi05-rl-handson/logs/ppo_recovery_shaped_v1/video/eval"
+      },
+      "init_params": {
+        "camera_heights": 256,
+        "camera_widths": 256
+      },
+      "rollout_epoch": 1,
+      "task_id_filter": [
+        8
+      ],
+      "use_step_penalty": true,
+      "step_penalty_coef": 0.001,
+      "recovery": {
+        "manifest": "/home/robot/pi05-rl-handson/data/recovery-bowl-dev27/manifest.json",
+        "split": "dev"
+      }
+    },
+    "group_name": "EnvGroup"
+  },
+  "actor": {
+    "model": {
+      "model_type": "openpi",
+      "precision": "fp32",
+      "pi05": true,
+      "is_lora": true,
+      "lora_rank": 8,
+      "num_action_chunks": 10,
+      "action_dim": 7,
+      "use_proprio": true,
+      "num_steps": 5,
+      "add_value_head": true,
+      "openpi": {
+        "task": "rl",
+        "config_name": "pi05_libero",
+        "num_images_in_input": 2,
+        "noise_level": 0.5,
+        "action_chunk": 10,
+        "num_steps": 5,
+        "train_expert_only": true,
+        "action_env_dim": 7,
+        "noise_method": "flow_sde",
+        "add_value_head": true,
+        "value_after_vlm": true,
+        "value_vlm_mode": "mean_token",
+        "detach_critic_input": false,
+        "model_action_dim": 32,
+        "paligemma_variant": "gemma_2b",
+        "action_expert_variant": "gemma_300m",
+        "max_token_len": 200,
+        "torch_compile": false,
+        "embed_dtype": "bf16",
+        "action_horizon": 10,
+        "discrete_state_input": false
+      },
+      "model_path": "/home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged",
+      "lora_target_scope": "all_linear",
+      "openpi_data": {
+        "norm_stats_path": "/home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged/assets/physical-intelligence/libero/norm_stats.json"
+      }
+    },
+    "fsdp_config": {
+      "strategy": "fsdp",
+      "sharding_strategy": "no_shard",
+      "gradient_checkpointing": false,
+      "cpu_offload": false,
+      "offload_pin_memory": false,
+      "reshard_after_forward": true,
+      "enable_gradient_accumulation": true,
+      "forward_prefetch": false,
+      "limit_all_gathers": false,
+      "backward_prefetch": null,
+      "use_orig_params": true,
+      "use_liger_kernel": false,
+      "mixed_precision": {
+        "param_dtype": "bf16",
+        "reduce_dtype": "fp32",
+        "buffer_dtype": "fp32",
+        "cast_forward_inputs": true,
+        "cast_root_forward_inputs": false
+      },
+      "wrappers": {
+        "projections": {
+          "wrap_names": [
+            "action_in_proj",
+            "action_out_proj",
+            "time_mlp_in",
+            "time_mlp_out",
+            "value_head"
+          ]
+        },
+        "norms": {
+          "module_classes": [
+            "RMSNorm"
+          ]
+        },
+        "vision_embedding": {
+          "module_names": [
+            "img",
+            "img.stem"
+          ]
+        },
+        "vision_mlps": {
+          "module_names": [
+            "img.encoder.layers.*.mlp"
+          ],
+          "wrap_mode": "subtree"
+        }
+      },
+      "mixed_precision_policies": {
+        "fp32": {
+          "param_dtype": "fp32",
+          "reduce_dtype": "fp32",
+          "buffer_dtype": "fp32",
+          "cast_forward_inputs": true
+        },
+        "fp32_preserve_inputs": {
+          "param_dtype": "fp32",
+          "reduce_dtype": "fp32",
+          "buffer_dtype": "fp32",
+          "cast_forward_inputs": false
+        }
+      },
+      "mixed_precision_rules": {
+        "projections": "fp32",
+        "norms": "fp32_preserve_inputs",
+        "vision_embedding": "fp32_preserve_inputs",
+        "vision_mlps": "fp32"
+      },
+      "amp_autocast": {
+        "enabled": false,
+        "precision": "bf16"
+      },
+      "grad_scaler": {
+        "enabled": false
+      },
+      "checkpoint_format": "adapter",
+      "checkpoint_base_sha256": "4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f",
+      "save_full_model_weights": false
+    },
+    "group_name": "ActorGroup",
+    "training_backend": "fsdp",
+    "micro_batch_size": 1,
+    "global_batch_size": 2,
+    "seed": 42,
+    "enable_offload": true,
+    "optim": {
+      "lr": 5e-06,
+      "value_lr": 0.0001,
+      "adam_beta1": 0.9,
+      "adam_beta2": 0.95,
+      "adam_eps": 1e-08,
+      "weight_decay": 0.01,
+      "clip_grad": 1.0,
+      "critic_warmup_steps": 0,
+      "total_training_steps": 20,
+      "min_lr_rate": 0.1,
+      "lr_scheduler": "cosine"
+    }
+  },
+  "weight_syncer": {
+    "type": "patch",
+    "patch": {
+      "snapshot_device": "cpu",
+      "delta_encoding": true,
+      "compression": "none",
+      "init_sync": {
+        "enabled": true,
+        "prefixes": null,
+        "bucket_size": 134217728
+      }
+    }
+  },
+  "cluster": {
+    "num_nodes": 1,
+    "component_placement": {
+      "actor,env,rollout": "all"
+    }
+  },
+  "runner": {
+    "task_type": "embodied",
+    "logger": {
+      "log_path": "/home/robot/pi05-rl-handson/logs/ppo_recovery_shaped_v1",
+      "project_name": "pi05-rl-handson",
+      "experiment_name": "ppo_recovery_shaped_v1",
+      "logger_backends": [
+        "tensorboard"
+      ]
+    },
+    "max_epochs": 20,
+    "max_steps": -1,
+    "only_eval": false,
+    "val_check_interval": 5,
+    "save_interval": 5,
+    "resume_dir": null,
+    "ckpt_path": null,
+    "weight_sync_interval": 1
+  },
+  "algorithm": {
+    "normalize_advantages": true,
+    "kl_penalty": "kl",
+    "group_size": 1,
+    "reward_coef": 1.0,
+    "reward_type": "chunk_level",
+    "logprob_type": "chunk_level",
+    "entropy_type": "token_level",
+    "update_epoch": 1,
+    "adv_type": "gae",
+    "loss_type": "actor_critic",
+    "loss_agg_func": "token-mean",
+    "kl_beta": 0.0,
+    "entropy_bonus": 0,
+    "clip_ratio_high": 0.2,
+    "clip_ratio_low": 0.2,
+    "clip_ratio_c": 3.0,
+    "value_clip": 0.2,
+    "huber_delta": 10.0,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "filter_rewards": false,
+    "rewards_lower_bound": 0.1,
+    "rewards_upper_bound": 0.9
+  },
+  "rollout": {
+    "group_name": "RolloutGroup",
+    "generation_backend": "huggingface",
+    "recompute_logprobs": false,
+    "unnorm_key": "libero_goal",
+    "enable_offload": true,
+    "pipeline_stage_num": 1,
+    "model": {
+      "model_path": "/home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged",
+      "precision": "bf16"
+    }
+  },
+  "reward": {
+    "use_reward_model": false
+  },
+  "critic": {
+    "use_critic_model": false
+  }
+}

@@ -49,3 +49,12 @@
 - 全部18项单元测试在训练环境和PPO环境均通过（JAX_PLATFORMS=cpu）。未指定CPU时JAX先初始化GPU导致Flax LoRA测试TF32误差，重跑固定CPU后通过，未放宽阈值。
 
 2026-10-27：v10 cgroup OOM：anon约22.35GiB，shmem约25.18GiB；actor共享RSS约25.16GiB。FSDP offload/onload先移动_local_shard再独立移动flat_param.data（两者常共享同一存储），随后又丢弃第一次移动的shard，是可静态确认的重复复制。需实际回归和大模型验证；Ray默认暴露96 CPU引入大量闲置worker，拟在本项目显式限制4 CPU。未把这两个发现当作已解决OOM。
+
+## 2026-10-27 新恢复对照：奖励路径
+- 实际 LiberoEnv.step 丢弃子环境 _reward，使用自身 _calc_step_reward(success)；仅修改 RecoveryEnv 返回值无法影响 PPO。
+- 上轮300更新训练成功率并非全零，因此“整个训练没有正反馈”不成立；需要单独诊断 placement_failure 类。
+- 原12个heldout初态隔离，不再作为本轮调参开发集；新开发源ID20..23，训练仍1..6。
+
+### 奖励超时边界校正
+- 实际 EnvTransition.compute_rewards 在 auto-reset 截断时加入 gamma * V(final_obs)，所以 PBRS 对超时必须保留 Phi(end)，仅真正成功终止置零；新增测试验证与 shaped bootstrap value 抵消。不能把 timeout 与 terminal 混为一谈。
+- SFT 训练放置诊断 0/6，均 native_first_step=null；不是仅成功后不松手，策略从这些失败初态未达到原生放置判据。该诊断启动后源码改动，作为探索证据保留，不作冻结源代码对照。

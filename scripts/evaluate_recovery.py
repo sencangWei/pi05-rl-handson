@@ -33,6 +33,8 @@ def main():
     parser.add_argument("--manifest", type=Path, default=ROOT / "data/recovery-bowl-v3/manifest.json")
     parser.add_argument("--config", type=Path, default=ROOT / "evidence/ppo-recovery-composed.json")
     parser.add_argument("--max-steps", type=int, default=300)
+    parser.add_argument("--split", choices=("train", "dev", "heldout"), default="heldout")
+    parser.add_argument("--category", choices=("empty_grasp", "object_offset", "placement_failure"))
     args = parser.parse_args()
     if not 1 <= args.max_steps <= 1000:
         raise ValueError("Invalid evaluation bound")
@@ -55,6 +57,9 @@ def main():
     from rlinf.hybrid_engines.fsdp.strategy.adapter_checkpoint import read_adapter_model
     from rlinf.models import get_model
 
+    source_paths = [Path(__file__), ROOT / "scripts/evaluate_native_ppo.py",
+                    ROOT / "third_party/RLinf/rlinf/envs/sim/libero/recovery.py"]
+    source_hashes = {str(p.relative_to(ROOT)): sha256(p) for p in source_paths}
     cfg = OmegaConf.load(args.config)
     model_cfg = OmegaConf.merge(cfg.actor.model, cfg.rollout.model)
     model_cfg.num_action_chunks = model_cfg.openpi.action_chunk = 5
@@ -72,20 +77,25 @@ def main():
     raw = OffScreenRenderEnv(bddl_file_name=str(Path(get_libero_path("bddl_files")) /
                             task.problem_folder / task.bddl_file),
                             camera_heights=256, camera_widths=256)
-    env = RecoveryEnv(raw, {"manifest": str(args.manifest), "split": "heldout"})
+    env = RecoveryEnv(raw, {"manifest": str(args.manifest), "split": args.split})
+    if args.category:
+        env.entries = [entry for entry in env.entries if entry["category"] == args.category]
+        if not env.entries:
+            raise ValueError("No recovery entries match the selected category")
     control_hz = raw.env.control_freq
     identity = {"base_sha256": base_hash,
                 "checkpoint_sha256": sha256(args.checkpoint) if args.checkpoint else None,
                 "checkpoint": str(args.checkpoint) if args.checkpoint else None,
                 "manifest_sha256": sha256(args.manifest), "config_sha256": sha256(args.config),
+                "split": args.split, "category": args.category,
                 "model_config": OmegaConf.to_container(model_cfg, resolve=True),
                 "success": "native goal AND no finger contact for 5 consecutive controls",
                 "action_execution": f"learned model only; observe every 5 controls; max {args.max_steps} controls",
                 "control_hz": control_hz, "video_fps": control_hz,
                 "noise": "numpy.default_rng(42+call), reset per episode; 10 flow steps",
-                "sources": {str(p.relative_to(ROOT)): sha256(p) for p in
-                            [Path(__file__), ROOT / "scripts/evaluate_native_ppo.py",
-                             ROOT / "third_party/RLinf/rlinf/envs/sim/libero/recovery.py"]}}
+                "sources": source_hashes}
+    if source_hashes != {str(p.relative_to(ROOT)): sha256(p) for p in source_paths}:
+        raise RuntimeError("Evaluation sources changed during model loading")
     (args.output / "identity.json").write_text(json.dumps(identity, indent=2) + "\n")
     reports = []
     try:

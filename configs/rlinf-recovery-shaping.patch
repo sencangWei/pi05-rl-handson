@@ -1,0 +1,103 @@
+--- a/rlinf/envs/sim/libero/recovery.py
++++ b/rlinf/envs/sim/libero/recovery.py
+@@ -14,11 +14,12 @@
+         if manifest["task_suite"] != "libero_goal" or manifest["task_id"] != 8:
+             raise ValueError("Recovery bank must describe LIBERO goal 8")
+         split = config["split"]
+-        if split not in ("train", "heldout"):
++        if split not in ("train", "dev", "heldout"):
+             raise ValueError("Unknown recovery split")
+         self.entries = [item for item in manifest["entries"] if item["split"] == split]
+         if not self.entries:
+             raise ValueError("Empty recovery split")
++        self.shaping = config.get("shaping")
+         self.streak = 0
+         self.active_entry = None
+ 
+@@ -46,7 +47,24 @@
+               ("id", "category", "split", "state_sha256")}), flush=True)
+         return obs
+ 
++    def potential(self):
++        """Bounded task progress from simulator state, used only for training reward."""
++        env = self.wrapped.env
++        bowl_object = env.get_object("akita_black_bowl_1")
++        bowl = env.sim.data.body_xpos[env.obj_body_id["akita_black_bowl_1"]]
++        plate = env.sim.data.body_xpos[env.obj_body_id["plate_1"]]
++        hand = env.sim.data.site_xpos[env.robots[0].eef_site_id]
++        grasped = bool(env._check_grasp(env.robots[0].gripper, bowl_object))
++        resting_z = env.workspace_offset[2] - bowl_object.bottom_offset[2]
++        reach = 1. - np.tanh(np.linalg.norm(hand - (bowl + [0, 0, .04])) / .10)
++        lift = float(np.clip((bowl[2] - resting_z - .01) / .08, 0., 1.))
++        transport = 1. - np.tanh(np.linalg.norm((bowl - plate)[:2]) / .15)
++        native = bool(self.wrapped.check_success())
++        return float(.2 * reach + .2 * grasped + .2 * grasped * lift
++                     + .3 * grasped * lift * transport + .1 * native)
++
+     def step(self, action):
++        before = self.potential() if getattr(self, "shaping", None) else None
+         obs, _, _, info = self.wrapped.step(action)
+         native = bool(self.wrapped.check_success())
+         env = self.wrapped.env
+@@ -56,8 +74,35 @@
+         success = self.streak >= 5
+         info = dict(info, native_success=native, released_success=success,
+                     release_streak=self.streak, finger_contact=contact)
++        if before is not None:
++            info.update(recovery_potential_before=before,
++                        recovery_potential_after=self.potential())
+         return obs, float(success), success, info
+ 
+ 
+ def wrap_recovery(env, config):
+     return RecoveryEnv(env, config) if config else env
++
++
++def shape_chunk_rewards(rewards, potentials_before, potentials_after, dones,
++                        terminations, scale, gamma):
++    """Add one discounted potential difference per chunk; mask after its first done.
++
++    PPO sums controls without discount, then applies gamma once per chunk.
++    True terminals use zero endpoint potential. Timeouts keep their endpoint
++    because the trajectory layer bootstraps the final value at truncations.
++    """
++    if not 0. <= scale <= 1. or not 0. < gamma <= 1.:
++        raise ValueError("Expected shaping scale in [0,1] and gamma in (0,1]")
++    rewards = np.asarray(rewards).copy()
++    dones = np.asarray(dones, dtype=bool)
++    rows = np.arange(len(rewards))
++    ended = dones.any(axis=1)
++    ends = np.where(ended, dones.argmax(axis=1), rewards.shape[1] - 1)
++    rewards[np.arange(rewards.shape[1])[None, :] > ends[:, None]] = 0.
++    start = np.asarray(potentials_before)[:, 0]
++    finish = np.asarray(potentials_after)[rows, ends]
++    terminal = np.asarray(terminations, dtype=bool)[rows, ends]
++    shaping = scale * (gamma * np.where(terminal, 0., finish) - start)
++    rewards[rows, ends] += shaping
++    return rewards
+--- a/rlinf/envs/sim/libero/libero_env.py
++++ b/rlinf/envs/sim/libero/libero_env.py
+@@ -1013,6 +1013,23 @@
+             valid_action_counts, chunk_size
+         )
+ 
++        recovery_config = self.cfg.get("recovery")
++        if recovery_config and recovery_config.get("mask_after_done", False):
++            chunk_rewards *= valid_action_mask
++        shaping = recovery_config.get("shaping") if recovery_config else None
++        if shaping:
++            from rlinf.envs.sim.libero.recovery import shape_chunk_rewards
++
++            before = np.asarray([info["recovery_potential_before"] for info in infos_list]).T
++            after = np.asarray([info["recovery_potential_after"] for info in infos_list]).T
++            shaped = shape_chunk_rewards(
++                chunk_rewards.cpu().numpy(), before, after, raw_chunk_dones.cpu().numpy(),
++                raw_chunk_terminations.cpu().numpy(),
++                float(shaping["scale"]), float(shaping["gamma"]),
++            )
++            chunk_rewards = torch.as_tensor(shaped, dtype=chunk_rewards.dtype,
++                                            device=chunk_rewards.device)
++
+         # eval_count_mask: per-env bool, True if this completion counts toward eval metrics.
+         eval_count_mask = None
+         if past_dones.any() and self.auto_reset:

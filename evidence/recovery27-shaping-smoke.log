@@ -1,0 +1,23 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/macros.py:53: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+[Warning] You are changing the default path for Libero config. This will affect all the paths in the config file.
+INFO:RLinf:Evaluation Mode: Standard LIBERO
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/macros.py:53: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  ROBOSUITE_DEFAULT_LOGGER.warn("No private macro file found!")
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+RECOVERY_INITIAL {"id": "train-empty_grasp-init01", "category": "empty_grasp", "split": "train", "state_sha256": "ec311db3b576d3169c3d5e848e5b6b02a74815dcf5bf22e0ebe3f53d78c2521a"}
+{"status": "PASS", "actual_ppo_chunk_reward": -0.010181830264627934, "expected_reward": -0.01018182922214626, "sparse_reward": -0.01, "potential_before": 0.061687598009931115, "potential_after": 0.06169848545735042, "path": "RecoveryEnv subprocess -> LiberoEnv.chunk_step -> PPO reward tensor"}

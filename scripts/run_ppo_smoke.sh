@@ -85,6 +85,9 @@ PY
 if [[ "${PPO_CONFIG:-ppo_goal_smoke}" == "ppo_recovery" ]]; then
   .venv-ppo/bin/python scripts/check_recovery.py --config-only
 fi
+if [[ "${PPO_CONFIG:-}" == "ppo_recovery_sparse_v2" || "${PPO_CONFIG:-}" == "ppo_recovery_shaped_v1" ]]; then
+  .venv-ppo/bin/python scripts/check_recovery_shaping.py --config-only
+fi
 exec .venv-ppo/bin/python -u \
   third_party/RLinf/examples/embodiment/train_embodied_agent.py \
   --config-path "$project_root/configs" --config-name "${PPO_CONFIG:-ppo_goal_smoke}" "$@"

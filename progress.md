@@ -95,3 +95,7 @@ CPU/PPO准备代码备份：d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d已推送公
 - 独立code-reviewer启动因账户不支持其gpt-5.5模型而失败；没有独立审查结论。已人工检查实际初态恢复位置、严格成功训练/评测共用实现、相同身份及噪声、动作执行来源、视频帧数/时间和checkpoint更新数。
 
 - 00:58最终备份核验：公开远端experiment/pi05-ppo的b3407ff在独立克隆恢复，556个跟踪文件字节和git tree逐一一致；从远端证据在固定干净RLinf上游重放8补丁，12个实际运行文件SHA一致。新Release权重独立32段下载后121226493字节、SHA c1cadff1e4a87b5f448fa9dacbaccc885ef5e58ca4ddea92e51cdc110c77f63f与本机一致。三份核验JSON保存在evidence/ppo-recovery27-{remote-files,remote-runtime,release-verification}.json。没有自动替换现用模型；放置恢复不足和新模型效率退化如实保留。
+
+新轮开始：用户“对”确认上一轮提出的恢复专项方向。当前基线300更新与SFT均9/12，不能认定单纯增加更新有效；在改奖励前先用训练初态诊断。GPU仅537MiB桌面占用、系统可用54GiB；不停止其他任务。
+
+- 阶段奖励六项回归与真实子进程奖励到达检查通过；超时保留 endpoint potential 以匹配标准 bootstrap。新 dev ID20..23 已固定，SFT 开发评测运行中；仅对旧训练放置初态的探索诊断为 0/6。实际算法9个补丁在干净上游恢复，12文件哈希一致。
