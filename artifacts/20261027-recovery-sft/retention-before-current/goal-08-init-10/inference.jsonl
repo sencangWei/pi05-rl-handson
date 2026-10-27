@@ -1,0 +1,17 @@
+{"call": 0, "step": 0, "seconds": 0.21163624199834885, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 1, "step": 5, "seconds": 0.20201219199952902, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 2, "step": 10, "seconds": 0.21108717799870647, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 3, "step": 15, "seconds": 0.20542322500114096, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 4, "step": 20, "seconds": 0.2026882879981713, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 5, "step": 25, "seconds": 0.20303455500106793, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 6, "step": 30, "seconds": 0.25922539699968183, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 7, "step": 35, "seconds": 0.21030434900239925, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 8, "step": 40, "seconds": 0.21048453700132086, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 9, "step": 45, "seconds": 0.20337277999715297, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 10, "step": 50, "seconds": 0.20088229199973284, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 11, "step": 55, "seconds": 0.2031588389982062, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 12, "step": 60, "seconds": 0.2056907570004114, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 13, "step": 65, "seconds": 0.20358545999988564, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 14, "step": 70, "seconds": 0.20366325999930268, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 15, "step": 75, "seconds": 0.20700341100018704, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 16, "step": 80, "seconds": 0.20506774099703762, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}

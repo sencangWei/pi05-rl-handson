@@ -1,0 +1,2 @@
+{"uploaded": "human28_replay2000_v1-adapter.tar.gz", "bytes": 185471769, "sha256": "9023c7b5bd1b1a851435665d0e585a9242b324ec4d050b8d2d50ae85cc62ca56", "url": "https://github.com/sencangWei/pi05-rl-handson/releases/download/human-recovery-sft-20261027/human28_replay2000_v1-adapter.tar.gz"}
+https://github.com/sencangWei/pi05-rl-handson/releases/tag/human-recovery-sft-20261027

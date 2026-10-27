@@ -1,0 +1,59 @@
+{
+  "base_sha256": "6480dc35d1bfb62f853b9ffbd908a8803cc9ebf1e09bc3b0d5eb867d6da565a9",
+  "checkpoint_sha256": null,
+  "checkpoint": null,
+  "manifest_sha256": "6456c01538beb6c74ca398681c8310288191e1b6dfdb4ab7f7de8032fe869370",
+  "config_sha256": "38b697589482f47e1576d8e14bf28c5e3e0351fe0f839a0fbba75728beab3982",
+  "split": "dev",
+  "category": null,
+  "model_config": {
+    "model_type": "openpi",
+    "precision": "bf16",
+    "pi05": true,
+    "is_lora": true,
+    "lora_rank": 8,
+    "num_action_chunks": 5,
+    "action_dim": 7,
+    "use_proprio": true,
+    "num_steps": 10,
+    "add_value_head": true,
+    "openpi": {
+      "task": "rl",
+      "config_name": "pi05_libero",
+      "num_images_in_input": 2,
+      "noise_level": 0.5,
+      "action_chunk": 5,
+      "num_steps": 10,
+      "train_expert_only": true,
+      "action_env_dim": 7,
+      "noise_method": "flow_sde",
+      "add_value_head": true,
+      "value_after_vlm": true,
+      "value_vlm_mode": "mean_token",
+      "detach_critic_input": false,
+      "model_action_dim": 32,
+      "paligemma_variant": "gemma_2b",
+      "action_expert_variant": "gemma_300m",
+      "max_token_len": 200,
+      "torch_compile": false,
+      "embed_dtype": "bf16",
+      "action_horizon": 10,
+      "discrete_state_input": false
+    },
+    "model_path": "/home/robot/pi05-rl-handson/models/human28_replay2000_v1",
+    "lora_target_scope": "all_linear",
+    "openpi_data": {
+      "norm_stats_path": "/home/robot/pi05-rl-handson/models/pi05-multitask40-sft-merged/assets/physical-intelligence/libero/norm_stats.json"
+    }
+  },
+  "success": "native goal AND no finger contact for 5 consecutive controls",
+  "action_execution": "learned model only; observe every 5 controls; max 300 controls",
+  "control_hz": 20,
+  "video_fps": 20,
+  "noise": "numpy.default_rng(42+call), reset per episode; 10 flow steps",
+  "sources": {
+    "scripts/evaluate_recovery.py": "26805de64d960c89f326a4fab304b847fd87951eec4083f18ab261ad32f74e62",
+    "scripts/evaluate_native_ppo.py": "353f0e9a74b02ec361f6e7c41a9c31ea78cadd43869a311bd67581a685860b2d",
+    "third_party/RLinf/rlinf/envs/sim/libero/recovery.py": "27e5ec21872dce4dc95d240435e1ed612738fc96cdc0d92c0df998939789fa02"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "status": "COMPLETE",
+  "actual_updates": 2000,
+  "experiment": "human28_replay2000_v1",
+  "requested_updates": 2000,
+  "batch_size": 1,
+  "seed": 42,
+  "learning_rate": 5e-06,
+  "warmup_updates": 20,
+  "parent": "/home/robot/pi05-rl-handson/checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999",
+  "parent_files": {
+    "params/_METADATA": "88464a384c524c50fa1a92c1685d23a79570c62807a0ccf021f5f9307fff137c",
+    "params/_sharding": "54899ee3f4d45eee96ddada379a19a9da1324792b141fa0449608620571e6b01",
+    "params/array_metadatas/process_0": "da5f8952b77ab352fa92e3e58d742bfe0db5b9c1b956212f8279895b9df03721",
+    "params/d/e99e57e2878e56ab5f02847ec386e73d": "515654d10237999b2c3c6bea1c1d41f48350f69e514cb7c2c039779a3fb624a9",
+    "params/manifest.ocdbt": "55d9bf8ef0fc7ab5a67aa6a449fe35ef615c1ff79c01eb5829a250db4a9f2979",
+    "params/ocdbt.process_0/d/23e55020a5614908020c5880f744a7a4": "e94b6f05ceef55173200b9a654bc6d84fae3656f3c7e168fafc6291a2847bc7a",
+    "params/ocdbt.process_0/d/31f6986f3a651b625f4c28c5133382ca": "f55fd89dadc9541d14192fd372b98539f7fb5ee34c7394d588ee132ef48bbf73",
+    "params/ocdbt.process_0/d/5014daf415aca9f55984ec2803cf42ef": "3da67fa5b4cfe32f5a4ef75e077b0ba11a018c54414aac0a0548a60110d98260",
+    "params/ocdbt.process_0/d/74358c6b38dd7083ad9c2a1ad5a61906": "f814f6562c5cacf5ffed9d4e9f46556e04dfff7df3e719779b0372f7fb3b3685",
+    "params/ocdbt.process_0/d/c2f1a4f7df5efa162c5555f940946b8e": "ecb33097b929abb52bc1c729d882d947d4c085427ef648bf71e47c4125b0bed3",
+    "params/ocdbt.process_0/d/f25fd307076f23281b9d14bfd63a0f19": "11f3efa9f1c3a7bf9246ec1119434b1b3aa77e8a14fbcba3744cd2c84210470b",
+    "params/ocdbt.process_0/manifest.ocdbt": "8ccac4a15e1beaccd32a4958c60b1f83d7cbb76ab16e2e6716d32687962c15ad",
+    "assets/physical-intelligence/libero/norm_stats.json": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84"
+  },
+  "parent_optimizer_resumed": false,
+  "optimizer": "fresh AdamW, clip=1; LoRA parameters only; no EMA",
+  "human_manifest_sha256": "66a0528d3eef8e9c92cd696177c7cb81b73e6f7d8d2a38085c0e621c7c7f58f7",
+  "replay_manifest_sha256": "9282c19b3d6cd6bf5779d3169e112a145852066654651e40b333558d9e8a3fde",
+  "human_episodes": 10,
+  "human_frames": 2050,
+  "replay_train_episodes": 1525,
+  "replay_tasks": 40,
+  "sampling": "shuffle seed 42; 1 human slot per 3 public replay slots; public task balanced",
+  "effective_sampling_slots": 1832160,
+  "evaluation_plan_sha256": "6d082f79e0ca5c7941d51b2be6ff6da3343ebffec324d3a1857d0984e2e84a63",
+  "task_compatibility_sha256": "6f328c2f824b1b3a202fdbac565b9f6e47cdcfe302a6fafc932f467b51ffb195",
+  "checkpoint_dir": "/home/robot/pi05-rl-handson/checkpoints/pi05_recovery_replay_lora/human28_replay2000_v1",
+  "openpi_revision": "15a9616a00943ada6c20a0f158e3adb39df2ccac",
+  "normalization_sha256": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84",
+  "source_sha256": {
+    "scripts/train_recovery_replay.py": "9bb6e396ac64aabaa88829fef9c1d38f7af11dc262491a272e9ea12c9d977908",
+    "scripts/recovery_replay_dataset.py": "cef255fd7cb6499f9a175521ea4dd8489c0eb008f7de78c23676503c43c50174",
+    "scripts/multitask_dataset.py": "9ad70e675f0122eb78bc4f0e8ca609d80c09186a33d6d7f1ed5e816e36bd8b77",
+    "scripts/training_config.py": "f03c2d7a96de92a6d334bf3e4c92dec6e8c146d72cc61becf1ad012e5f208cac"
+  },
+  "validation": "full parent/source/public-train/human checksums; official transform both branches",
+  "train_wall_seconds": 374.9963469659997,
+  "fetched_samples_including_prefetch": {
+    "human": 543,
+    "replay": 1458
+  }
+}

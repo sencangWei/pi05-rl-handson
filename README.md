@@ -2,7 +2,11 @@
 
 独立目录 `/home/robot/pi05-rl-handson`；不改旧训练项目、中文面板或真机。
 
-## 最新：恢复奖励对照已完成（2026-10-27）
+## 最新：人工恢复示范＋旧任务回放已完成（2026-10-27）
+
+10 条完整人工示范（2050 帧）＋40 任务回放，完成 2000 次真实 LoRA 更新，正常退出、OOM=0。固定开发场景成功数由 10/12 降到 7/12；旧任务小样本检查仍 8/8。**没有通过晋级，不替换现用面板模型。** 人工来自 spatial 场景，本次评测为 goal 场景，属于跨场景迁移。负结果、失败分析、同步对照视频和备份方法见 [完整报告](artifacts/20261027-recovery-sft/README.md)；[数据及权重 Release](https://github.com/sencangWei/pi05-rl-handson/releases/tag/human-recovery-sft-20261027)。
+
+## 上一轮：恢复奖励对照（2026-10-27）
 
 两组各完成 300 次真实 PPO 更新并正常退出，OOM 均为 0。新开发初态独立对照：训练前 SFT 10/12、稀疏奖励 PPO 9/12、增加恢复奖励 PPO 10/12；成功控制步中位数 87 / 97 / 97.5，未证明提升，现用面板模型未替换。训练用放置失败初态另测 SFT 0/6、奖励模型 2/6，仅表示训练分布内局部收益。完整失败、原视频与同步并列视频见 [本轮报告](artifacts/20261027-recovery-stage/README.md)，权重见 [Release](https://github.com/sencangWei/pi05-rl-handson/releases/tag/ppo-recovery-shaping-20261027)。
 
@@ -139,6 +143,7 @@ git -C third_party/RLinf apply ../../configs/rlinf-update-evidence.patch
 git -C third_party/RLinf apply ../../configs/rlinf-adapter-checkpoint.patch
 git -C third_party/RLinf apply ../../configs/rlinf-adapter-sync.patch
 git -C third_party/RLinf apply ../../configs/rlinf-offload-recovery.patch
+git -C third_party/RLinf apply ../../configs/rlinf-recovery-shaping.patch
 cp evidence/dataset-meta/* data/libero/meta/
 uv venv --python 3.11.15 .venv-train
 uv pip install --python .venv-train/bin/python -r configs/training-requirements.txt

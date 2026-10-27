@@ -1,0 +1,16 @@
+{"call": 0, "step": 0, "seconds": 0.20912299399788026, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 1, "step": 5, "seconds": 0.20499290399675374, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 2, "step": 10, "seconds": 0.2198475100012729, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 3, "step": 15, "seconds": 0.20447102899925085, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 4, "step": 20, "seconds": 0.20059989899891661, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 5, "step": 25, "seconds": 0.20445891299823415, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 6, "step": 30, "seconds": 0.20264407099966775, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 7, "step": 35, "seconds": 0.20177912099825335, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 8, "step": 40, "seconds": 0.20342853799957084, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 9, "step": 45, "seconds": 0.21169345900125336, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 10, "step": 50, "seconds": 0.20943983799952548, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 11, "step": 55, "seconds": 0.2100302599974384, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 12, "step": 60, "seconds": 0.2037819559991476, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 13, "step": 65, "seconds": 0.20561708199966233, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 14, "step": 70, "seconds": 0.20394399300130317, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}
+{"call": 15, "step": 75, "seconds": 0.20015066400083015, "shape": [5, 7], "queued_prefix": 5, "guidance_noise_seed": null}

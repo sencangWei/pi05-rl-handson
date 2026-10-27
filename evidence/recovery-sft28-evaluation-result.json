@@ -1,0 +1,470 @@
+{
+  "status": "COMPLETE",
+  "development": {
+    "status": "PASS",
+    "rows": [
+      {
+        "id": "dev-empty_grasp-init20",
+        "state_sha256": "e973f0564159f6f814c3e6926abf399552d245b420277e28c528845f8e7aebb9",
+        "before": true,
+        "after": false,
+        "before_steps": 203,
+        "after_steps": 300
+      },
+      {
+        "id": "dev-object_offset-init20",
+        "state_sha256": "19d450e71c690d8476f319efd3bcc8afa5ca96ed34f2da7c0dd4da35f06ca2e9",
+        "before": true,
+        "after": true,
+        "before_steps": 119,
+        "after_steps": 154
+      },
+      {
+        "id": "dev-placement_failure-init20",
+        "state_sha256": "437684832f558ca5175e0c29a8bbff0694d36308e78205bcb3106492198d5e3a",
+        "before": true,
+        "after": false,
+        "before_steps": 222,
+        "after_steps": 300
+      },
+      {
+        "id": "dev-empty_grasp-init21",
+        "state_sha256": "9214bd3b9bc61471ad807598ea76c542c01fa8f9a506c0d49674dd9192cbd50b",
+        "before": true,
+        "after": true,
+        "before_steps": 81,
+        "after_steps": 85
+      },
+      {
+        "id": "dev-object_offset-init21",
+        "state_sha256": "ff4e6c5bd5edb43cbdab7f287dfc001059295028858efae1d2f84b0206bb46a3",
+        "before": true,
+        "after": true,
+        "before_steps": 81,
+        "after_steps": 98
+      },
+      {
+        "id": "dev-placement_failure-init21",
+        "state_sha256": "1eb98fad974b9aee3e712ff897e6162e7dec816a0e6f60a7a799fdf9a3d6df1a",
+        "before": false,
+        "after": false,
+        "before_steps": 300,
+        "after_steps": 300
+      },
+      {
+        "id": "dev-empty_grasp-init22",
+        "state_sha256": "2343338c25492609c9b014eca5b4a8cdd0c8119323ef96428e3fe8043c12dada",
+        "before": true,
+        "after": false,
+        "before_steps": 81,
+        "after_steps": 300
+      },
+      {
+        "id": "dev-object_offset-init22",
+        "state_sha256": "2617ff96005d14fcfe727cf052245b7b01c423e415ea25585f738aa1f6b2a352",
+        "before": true,
+        "after": true,
+        "before_steps": 98,
+        "after_steps": 98
+      },
+      {
+        "id": "dev-placement_failure-init22",
+        "state_sha256": "57a5d213fff53698d054e6aefd70e846b0f79bd6a972937cbe1c1007801ca1e2",
+        "before": true,
+        "after": true,
+        "before_steps": 84,
+        "after_steps": 97
+      },
+      {
+        "id": "dev-empty_grasp-init23",
+        "state_sha256": "406aab758441b18b26bcf261402bfd3967135b09a30a7fe3f0c6054fe02f01fb",
+        "before": true,
+        "after": true,
+        "before_steps": 74,
+        "after_steps": 80
+      },
+      {
+        "id": "dev-object_offset-init23",
+        "state_sha256": "b94828a2760fa69d54c282da88f8d1f78b67ebbb7d25682e712504012eefdd66",
+        "before": true,
+        "after": true,
+        "before_steps": 90,
+        "after_steps": 98
+      },
+      {
+        "id": "dev-placement_failure-init23",
+        "state_sha256": "5dfba76664c91f4cf3c0d77cf556e99ae73b89f44b027748a226d64103709e15",
+        "before": false,
+        "after": false,
+        "before_steps": 300,
+        "after_steps": 300
+      }
+    ],
+    "before_success": 10,
+    "after_success": 7,
+    "trials": 12
+  },
+  "diagnostic": {
+    "status": "PASS",
+    "rows": [
+      {
+        "id": "train-placement_failure-init01",
+        "state_sha256": "c503e3ccb9ee863c90b70698e71955b9a8d777c0a94dbd661a54988774f3d47c",
+        "before": false,
+        "after": false,
+        "before_steps": 300,
+        "after_steps": 300
+      },
+      {
+        "id": "train-placement_failure-init02",
+        "state_sha256": "0a9ac60b37b9f4c3579be1a2323a996944ee6f0c764412516bb96794ae8322f8",
+        "before": false,
+        "after": false,
+        "before_steps": 300,
+        "after_steps": 300
+      },
+      {
+        "id": "train-placement_failure-init03",
+        "state_sha256": "b923773c7d9c18311bae720225b173fa3d5b5eab19318b5255156cbc71153878",
+        "before": false,
+        "after": false,
+        "before_steps": 300,
+        "after_steps": 300
+      },
+      {
+        "id": "train-placement_failure-init04",
+        "state_sha256": "5618662c94d46d3fc1e371146c174017bcde364d25c0f1af0c19154738b1b35b",
+        "before": false,
+        "after": false,
+        "before_steps": 300,
+        "after_steps": 300
+      },
+      {
+        "id": "train-placement_failure-init05",
+        "state_sha256": "00345d7d1eef84e40a40ff354c3c4e6182f8d92fed1be97b228941573cec35ff",
+        "before": false,
+        "after": true,
+        "before_steps": 300,
+        "after_steps": 124
+      },
+      {
+        "id": "train-placement_failure-init06",
+        "state_sha256": "81d2acbdef72c9bff30a09598d9dd67b81710624ce4afc07bc5b206306907b43",
+        "before": false,
+        "after": false,
+        "before_steps": 300,
+        "after_steps": 300
+      }
+    ],
+    "before_success": 0,
+    "after_success": 1,
+    "trials": 6
+  },
+  "retention": {
+    "status": "PASS",
+    "before_success": 8,
+    "after_success": 8,
+    "trials": 8,
+    "rows": [
+      {
+        "task": 0,
+        "init": 0,
+        "before": "success",
+        "after": "success",
+        "before_steps": 119,
+        "after_steps": 123
+      },
+      {
+        "task": 0,
+        "init": 10,
+        "before": "success",
+        "after": "success",
+        "before_steps": 121,
+        "after_steps": 117
+      },
+      {
+        "task": 7,
+        "init": 0,
+        "before": "success",
+        "after": "success",
+        "before_steps": 84,
+        "after_steps": 85
+      },
+      {
+        "task": 7,
+        "init": 10,
+        "before": "success",
+        "after": "success",
+        "before_steps": 80,
+        "after_steps": 80
+      },
+      {
+        "task": 8,
+        "init": 0,
+        "before": "success",
+        "after": "success",
+        "before_steps": 87,
+        "after_steps": 86
+      },
+      {
+        "task": 8,
+        "init": 10,
+        "before": "success",
+        "after": "success",
+        "before_steps": 83,
+        "after_steps": 89
+      },
+      {
+        "task": 9,
+        "init": 0,
+        "before": "success",
+        "after": "success",
+        "before_steps": 129,
+        "after_steps": 153
+      },
+      {
+        "task": 9,
+        "init": 10,
+        "before": "success",
+        "after": "success",
+        "before_steps": 136,
+        "after_steps": 167
+      }
+    ],
+    "success_scope": "native task predicate; additional five-step release gate belongs only to recovery evaluation"
+  },
+  "after_categories": {
+    "empty_grasp": {
+      "success": 2,
+      "trials": 4
+    },
+    "object_offset": {
+      "success": 4,
+      "trials": 4
+    },
+    "placement_failure": {
+      "success": 1,
+      "trials": 4
+    }
+  },
+  "promotion": "REJECT",
+  "panel_model_replaced": false,
+  "source": "frozen protocol before training; all non-weight identities and states matched; old retention baseline rerun under current evaluator after historical source mismatch was detected",
+  "video_checks": [
+    {
+      "path": "evaluations/recovery-sft28-dev/dev-empty_grasp-init20.mp4",
+      "sha256": "8f6576538d089542a46aaf712c49f89fd58961466757338d560546f5f0aa832f",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "path": "evaluations/recovery-sft28-dev/dev-object_offset-init20.mp4",
+      "sha256": "52cd5d60ce286b2b1a7d43f7492e6715681a9037c2369473ad1fc76200f7c9be",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "155"
+    },
+    {
+      "path": "evaluations/recovery-sft28-dev/dev-placement_failure-init20.mp4",
+      "sha256": "a0c0625d7abe54ac9161d30c5fda9ca6c2b84869c657355a6d3d7f8f833b4529",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "path": "evaluations/recovery-sft28-dev/dev-empty_grasp-init21.mp4",
+      "sha256": "b2463f14d750a9e528eb7d192faad5622b96508064fdf63485fee78d98e5a5dd",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "86"
+    },
+    {
+      "path": "evaluations/recovery-sft28-dev/dev-object_offset-init21.mp4",
+      "sha256": "7251bae0461778872e15fee5c5b99b5babe9e88335f7ef7710796d37ac4dfe77",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "99"
+    },
+    {
+      "path": "evaluations/recovery-sft28-dev/dev-placement_failure-init21.mp4",
+      "sha256": "08ae878d436c356c39ad229ecd68fdfa38d714cc808afc3fc1a30fb546a2d09d",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "path": "evaluations/recovery-sft28-dev/dev-empty_grasp-init22.mp4",
+      "sha256": "9b571601fc031ab7d831601f54dee03b8f82f2e4a321a1fa06a499eb4d7e2dd9",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "path": "evaluations/recovery-sft28-dev/dev-object_offset-init22.mp4",
+      "sha256": "20b49ffad7042d16c5e9f51253d04c6003462dc825586d771800c7e6c54da2e0",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "99"
+    },
+    {
+      "path": "evaluations/recovery-sft28-dev/dev-placement_failure-init22.mp4",
+      "sha256": "dc4eea5539bbf57df77086b02ffcecc278230ce64319219f8324cdf48014f90a",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "98"
+    },
+    {
+      "path": "evaluations/recovery-sft28-dev/dev-empty_grasp-init23.mp4",
+      "sha256": "aa2ff09a8f6b69966d802689d9ecbe6b84a20d000d631ae124432a4a718359b0",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "81"
+    },
+    {
+      "path": "evaluations/recovery-sft28-dev/dev-object_offset-init23.mp4",
+      "sha256": "ff4c5ccb37d0a7ed189dd093a56c7d299c87da950bb499b6e3d4e62139a18534",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "99"
+    },
+    {
+      "path": "evaluations/recovery-sft28-dev/dev-placement_failure-init23.mp4",
+      "sha256": "baa695cb0d38da8ab892f115c6f0b1071cce939fc016247d3b071e24fac2ab07",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "path": "evaluations/recovery-sft28-train-placement/train-placement_failure-init01.mp4",
+      "sha256": "55f857ded29e4b4eab8602912a42b20f309e8ac15841b4688616e31e8be7795c",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "path": "evaluations/recovery-sft28-train-placement/train-placement_failure-init02.mp4",
+      "sha256": "4fa3587ec0c817ec0a0967dfc9e3e11bda23aed73084a776cd932af9a6722b01",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "path": "evaluations/recovery-sft28-train-placement/train-placement_failure-init03.mp4",
+      "sha256": "4f605a389d290c665f3b6ad86face403f26ce8cf1470e97e929a2c34376a7617",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "path": "evaluations/recovery-sft28-train-placement/train-placement_failure-init04.mp4",
+      "sha256": "ca46e69f07087729a1f6792f1dba8478b275535bc94d2326876422254964500a",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "path": "evaluations/recovery-sft28-train-placement/train-placement_failure-init05.mp4",
+      "sha256": "860ec78fe64b1b763ebaf8dc7dc03790f5bfc5c49de41571d1ccbec05639cc5e",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "125"
+    },
+    {
+      "path": "evaluations/recovery-sft28-train-placement/train-placement_failure-init06.mp4",
+      "sha256": "c1c70e7552e8a45eec0720bcec6756b17315cb836a9c4df4b86d9eccd98bc6a4",
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_frames": "301"
+    },
+    {
+      "path": "evaluations/recovery-sft28-retention/goal-00-init-00/paired_cameras.mp4",
+      "sha256": "73dfe2637f249841cc6adcdc51b8533ecda9ae4896f353695cb015dc4796ae1e",
+      "width": 448,
+      "height": 224,
+      "r_frame_rate": "10/1",
+      "nb_frames": "124"
+    },
+    {
+      "path": "evaluations/recovery-sft28-retention/goal-00-init-10/paired_cameras.mp4",
+      "sha256": "9ffe354d0db66accca75da678b000d9f2a221ead60eab77404c50a6a267b0e4a",
+      "width": 448,
+      "height": 224,
+      "r_frame_rate": "10/1",
+      "nb_frames": "118"
+    },
+    {
+      "path": "evaluations/recovery-sft28-retention/goal-07-init-00/paired_cameras.mp4",
+      "sha256": "0aaba6e5e8a8ddfb569c89bec6cbd0e9bc553284a55eb647cbceb99b74978e3b",
+      "width": 448,
+      "height": 224,
+      "r_frame_rate": "10/1",
+      "nb_frames": "86"
+    },
+    {
+      "path": "evaluations/recovery-sft28-retention/goal-07-init-10/paired_cameras.mp4",
+      "sha256": "1cd1b9fe5c78b218354a3405b2dd746fb44a9c6027621085f2646d1df71ad4aa",
+      "width": 448,
+      "height": 224,
+      "r_frame_rate": "10/1",
+      "nb_frames": "81"
+    },
+    {
+      "path": "evaluations/recovery-sft28-retention/goal-08-init-00/paired_cameras.mp4",
+      "sha256": "47b7c86ff83d20eb098f3ac93352167130cc408663f38fb22d4c34ec5b180eca",
+      "width": 448,
+      "height": 224,
+      "r_frame_rate": "10/1",
+      "nb_frames": "87"
+    },
+    {
+      "path": "evaluations/recovery-sft28-retention/goal-08-init-10/paired_cameras.mp4",
+      "sha256": "d516b16213855dee8f1d4c661207cb9b35821e17c1b443108d2097221937e921",
+      "width": 448,
+      "height": 224,
+      "r_frame_rate": "10/1",
+      "nb_frames": "90"
+    },
+    {
+      "path": "evaluations/recovery-sft28-retention/goal-09-init-00/paired_cameras.mp4",
+      "sha256": "a5a670096c4f573fde70b3e250f812c5a2bf897a2602f51753ae21a4d4d3eba8",
+      "width": 448,
+      "height": 224,
+      "r_frame_rate": "10/1",
+      "nb_frames": "154"
+    },
+    {
+      "path": "evaluations/recovery-sft28-retention/goal-09-init-10/paired_cameras.mp4",
+      "sha256": "8c65069f781086e33415e24d9be5c7392351a27173a1599ab74c671125bb4b18",
+      "width": 448,
+      "height": 224,
+      "r_frame_rate": "10/1",
+      "nb_frames": "168"
+    }
+  ],
+  "video_timing_note": "Recovery videos 20 fps at 20 Hz; original retention evaluator exports 10 fps despite 20 Hz controls, so raw retention playback is 2x slower. Both retention models use the same exporter; no model speed inference from playback.",
+  "limits": [
+    "one seed, small observed development suite, not blind heldout",
+    "human spatial task36 differs from goal task8 evaluation scene and language",
+    "diagnostic uses PPO training-state distribution, not human SFT demonstrations",
+    "no new PPO updates in this round"
+  ]
+}

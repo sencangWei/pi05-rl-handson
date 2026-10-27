@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/robot/pi05-rl-handson/.local/finalize-human28-eval.py", line 22, in <module>
+    for field in ("initial_state_sha256","source_sha256","simulator_revision"):assert a[field]==b[field],field
+                                                                                      ^^^^^^^^^^^^^^^^^^
+AssertionError: source_sha256

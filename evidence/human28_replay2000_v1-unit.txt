@@ -1,0 +1,7 @@
+RuntimeMaxUSec=40min
+ExecStart={ path=/home/robot/pi05-rl-handson/.venv-train/bin/python ; argv[]=/home/robot/pi05-rl-handson/.venv-train/bin/python -u /home/robot/pi05-rl-handson/scripts/train_recovery_replay.py ; ignore_errors=no ; start_time=[Tue 2026-10-27 17:02:40 CST] ; stop_time=[n/a] ; pid=1272690 ; code=(null) ; status=0/0 }
+MemoryMax=51539607552
+MemorySwapMax=0
+Environment=XLA_PYTHON_CLIENT_PREALLOCATE=false HF_HUB_OFFLINE=1 WANDB_MODE=disabled OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4
+Id=pi05-human28-replay-20261027.service
+ActiveState=active

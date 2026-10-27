@@ -1,0 +1,217 @@
+[
+  {
+    "id": "dev-empty_grasp-init20",
+    "controls": 300,
+    "native_goal_controls": 0,
+    "finger_contact_controls": 55,
+    "longest_low_motion_controls": 2,
+    "final_bowl_plate_xy_m": 0.033371558084940287,
+    "last50_mean_eef_motion_m": 0.000716589861329946,
+    "last50_open_action_controls": 50,
+    "final": {
+      "step": 300,
+      "native_success": false,
+      "released_success": false,
+      "release_streak": 0,
+      "finger_contact": false,
+      "action": [
+        -0.011271897703409195,
+        0.0028207062277942896,
+        -0.1780201941728592,
+        -0.0019363558385521173,
+        -0.01336092408746481,
+        0.00343979150056839,
+        -0.9972325563430786
+      ],
+      "eef_pos": [
+        0.0367610121381732,
+        -0.03820688317724179,
+        1.0617341303961336
+      ],
+      "eef_motion_m": 0.0015860213459717866,
+      "bowl_pos": [
+        0.03128907277050867,
+        0.006258312976180001,
+        0.9101064465650837
+      ],
+      "plate_pos": [
+        0.038649099816010495,
+        -0.026291508696235123,
+        0.9025028631766541
+      ],
+      "bowl_plate_xy_m": 0.033371558084940287
+    }
+  },
+  {
+    "id": "dev-empty_grasp-init22",
+    "controls": 300,
+    "native_goal_controls": 6,
+    "finger_contact_controls": 67,
+    "longest_low_motion_controls": 1,
+    "final_bowl_plate_xy_m": 0.03420624523495246,
+    "last50_mean_eef_motion_m": 0.005566942360226721,
+    "last50_open_action_controls": 4,
+    "final": {
+      "step": 300,
+      "native_success": false,
+      "released_success": false,
+      "release_streak": 0,
+      "finger_contact": false,
+      "action": [
+        0.022974077612161636,
+        0.04958721995353699,
+        0.0714384987950325,
+        -0.01077752560377121,
+        -0.00540479552000761,
+        -0.014725357294082642,
+        -1.0034615993499756
+      ],
+      "eef_pos": [
+        0.05311527504187028,
+        0.09876325516179021,
+        0.9532217237409532
+      ],
+      "eef_motion_m": 0.0005308071828591269,
+      "bowl_pos": [
+        0.07126849832333947,
+        0.02583450236756332,
+        0.9150035888239588
+      ],
+      "plate_pos": [
+        0.06681081103798679,
+        0.05974904551854374,
+        0.9025027275748564
+      ],
+      "bowl_plate_xy_m": 0.03420624523495246
+    }
+  },
+  {
+    "id": "dev-placement_failure-init20",
+    "controls": 300,
+    "native_goal_controls": 0,
+    "finger_contact_controls": 15,
+    "longest_low_motion_controls": 0,
+    "final_bowl_plate_xy_m": 0.06677317236651051,
+    "last50_mean_eef_motion_m": 0.0035109358475149542,
+    "last50_open_action_controls": 46,
+    "final": {
+      "step": 300,
+      "native_success": false,
+      "released_success": false,
+      "release_streak": 0,
+      "finger_contact": false,
+      "action": [
+        -0.002270722296088934,
+        -0.01104810368269682,
+        0.10854069143533707,
+        -0.001687493990175426,
+        -0.002632478252053261,
+        -0.0019065464148297906,
+        -0.9973251223564148
+      ],
+      "eef_pos": [
+        0.11839626122020376,
+        0.07971520733820725,
+        1.022985456805853
+      ],
+      "eef_motion_m": 0.001494714315240041,
+      "bowl_pos": [
+        0.16005734866890203,
+        0.08972329015965004,
+        0.9141486557002366
+      ],
+      "plate_pos": [
+        0.1314929064781019,
+        0.0293682639379992,
+        0.9336526398657331
+      ],
+      "bowl_plate_xy_m": 0.06677317236651051
+    }
+  },
+  {
+    "id": "dev-placement_failure-init21",
+    "controls": 300,
+    "native_goal_controls": 0,
+    "finger_contact_controls": 0,
+    "longest_low_motion_controls": 3,
+    "final_bowl_plate_xy_m": 0.16115418567284615,
+    "last50_mean_eef_motion_m": 0.001358350472281174,
+    "last50_open_action_controls": 50,
+    "final": {
+      "step": 300,
+      "native_success": false,
+      "released_success": false,
+      "release_streak": 0,
+      "finger_contact": false,
+      "action": [
+        -0.01093740202486515,
+        0.002443835837766528,
+        0.0358901172876358,
+        -0.002436284674331546,
+        -0.1254996359348297,
+        -0.0007875040173530579,
+        -0.9979813098907471
+      ],
+      "eef_pos": [
+        0.06150883285873959,
+        -0.021566683016104742,
+        0.9779971537965775
+      ],
+      "eef_motion_m": 0.001940251857668594,
+      "bowl_pos": [
+        0.18559747325147954,
+        -0.02002867702620848,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.02459638509181814,
+        -0.027051580363369385,
+        0.902506338529415
+      ],
+      "bowl_plate_xy_m": 0.16115418567284615
+    }
+  },
+  {
+    "id": "dev-placement_failure-init23",
+    "controls": 300,
+    "native_goal_controls": 0,
+    "finger_contact_controls": 0,
+    "longest_low_motion_controls": 1,
+    "final_bowl_plate_xy_m": 0.15539493730115236,
+    "last50_mean_eef_motion_m": 0.0015413952367094737,
+    "last50_open_action_controls": 50,
+    "final": {
+      "step": 300,
+      "native_success": false,
+      "released_success": false,
+      "release_streak": 0,
+      "finger_contact": false,
+      "action": [
+        -0.005821864120662212,
+        0.08176567405462265,
+        0.06331872940063477,
+        -0.018364444375038147,
+        -0.020689556375145912,
+        0.0001093887840397656,
+        -0.9985559582710266
+      ],
+      "eef_pos": [
+        0.03555424204909902,
+        0.021625166927950853,
+        0.9169658098263317
+      ],
+      "eef_motion_m": 0.001270952256944649,
+      "bowl_pos": [
+        0.1991008081414785,
+        -0.012169980089677209,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.04373291832241025,
+        -0.01506917859942714,
+        0.9025063385293454
+      ],
+      "bowl_plate_xy_m": 0.15539493730115236
+    }
+  }
+]

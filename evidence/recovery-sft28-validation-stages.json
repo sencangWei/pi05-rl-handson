@@ -1,0 +1,108 @@
+{
+  "status": "COMPLETE",
+  "stages": [
+    {
+      "stage": "export",
+      "command": [
+        ".venv-train/bin/python",
+        "-u",
+        "scripts/export_sft_for_ppo.py",
+        "--checkpoint",
+        "checkpoints/pi05_recovery_replay_lora/human28_replay2000_v1/1999",
+        "--output",
+        "models/human28_replay2000_v1"
+      ],
+      "started": 1793092508.267543,
+      "exit_code": 0,
+      "finished": 1793092673.817723
+    },
+    {
+      "stage": "parity",
+      "command": [
+        ".venv-train/bin/python",
+        "-u",
+        "scripts/check_export_parity.py",
+        "--checkpoint",
+        "checkpoints/pi05_recovery_replay_lora/human28_replay2000_v1/1999",
+        "--export",
+        "models/human28_replay2000_v1",
+        "--work",
+        "evidence/recovery-sft28-parity"
+      ],
+      "started": 1793092673.8675973,
+      "exit_code": 0,
+      "finished": 1793092848.2379308
+    },
+    {
+      "stage": "development",
+      "command": [
+        ".venv-ppo/bin/python",
+        "-u",
+        "scripts/evaluate_recovery.py",
+        "--split",
+        "dev",
+        "--manifest",
+        "data/recovery-bowl-dev27/manifest.json",
+        "--config",
+        "evidence/human28_replay2000_v1-composed.json",
+        "--output",
+        "evaluations/recovery-sft28-dev"
+      ],
+      "started": 1793092848.2380946,
+      "exit_code": 0,
+      "finished": 1793093016.9983513
+    },
+    {
+      "stage": "placement-diagnostic",
+      "command": [
+        ".venv-ppo/bin/python",
+        "-u",
+        "scripts/evaluate_recovery.py",
+        "--split",
+        "train",
+        "--category",
+        "placement_failure",
+        "--manifest",
+        "data/recovery-bowl-v3/manifest.json",
+        "--config",
+        "evidence/human28_replay2000_v1-composed.json",
+        "--output",
+        "evaluations/recovery-sft28-train-placement"
+      ],
+      "started": 1793093016.998543,
+      "exit_code": 0,
+      "finished": 1793093124.5190253
+    },
+    {
+      "stage": "retention",
+      "command": [
+        ".venv-ppo/bin/python",
+        "-u",
+        "scripts/evaluate_native_ppo.py",
+        "--config",
+        "evidence/human28_replay2000_v1-composed.json",
+        "--output",
+        "evaluations/recovery-sft28-retention"
+      ],
+      "started": 1793093124.5192702,
+      "exit_code": 0,
+      "finished": 1793093206.2674682
+    },
+    {
+      "stage": "compact-backup",
+      "command": [
+        ".venv-train/bin/python",
+        "-u",
+        "scripts/export_recovery_adapter.py",
+        "export",
+        "--checkpoint",
+        "checkpoints/pi05_recovery_replay_lora/human28_replay2000_v1/1999",
+        "--adapter",
+        "exports/human28_replay2000_v1"
+      ],
+      "started": 1793093206.2676628,
+      "exit_code": 0,
+      "finished": 1793093360.2407787
+    }
+  ]
+}

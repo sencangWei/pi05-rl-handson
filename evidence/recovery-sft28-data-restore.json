@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "url": "https://github.com/sencangWei/pi05-rl-handson/releases/download/human-recovery-sft-20261027/recovery-human28-data.tar.gz",
+  "archive_sha256": "43f1b28471906b757cba54515903e3fa81ace80f8c4116eb511ac16e39a02fb8",
+  "archive_bytes": 249451963,
+  "files": [
+    {
+      "path": "data/recovery-human28/episode-00.parquet",
+      "sha256": "728fa8bfc3a23c96e960042712bd83a40638da90c2661acb142a1e6f1a46006d",
+      "bytes": 32730226
+    },
+    {
+      "path": "data/recovery-human28/episode-01.parquet",
+      "sha256": "e9e8c984116bb09c8cc9e50c7ad34ba903745d6cc6f00828b32a62107d5dfff8",
+      "bytes": 34387793
+    },
+    {
+      "path": "data/recovery-human28/episode-02.parquet",
+      "sha256": "63d46fee727ab822147b850cf34d485446cb440e3e3c1dcf07aaf6575a70682b",
+      "bytes": 16730870
+    },
+    {
+      "path": "data/recovery-human28/episode-03.parquet",
+      "sha256": "9ccc7a3ff2429e907a3b2a27d2a0f9a54bb719ee8464029ab1b8e23b8046abef",
+      "bytes": 25528737
+    },
+    {
+      "path": "data/recovery-human28/episode-04.parquet",
+      "sha256": "b965f37232cd77360fed7a3fc56985147fd839dfacba0a9207ca216e8f435f96",
+      "bytes": 13464055
+    },
+    {
+      "path": "data/recovery-human28/episode-05.parquet",
+      "sha256": "31513a07ca8b6398eb69e76ddb969bae2ec1180b94fb1951de2a67040e86ab36",
+      "bytes": 26995289
+    },
+    {
+      "path": "data/recovery-human28/episode-06.parquet",
+      "sha256": "749308c78607e63c4d404989337c8b3486966ec85d09d951575979b7358f7b9f",
+      "bytes": 22471600
+    },
+    {
+      "path": "data/recovery-human28/episode-07.parquet",
+      "sha256": "764210d42e0e4258b3a91e649284dcaba00dd2a75db250e986ae068ed6825642",
+      "bytes": 29995591
+    },
+    {
+      "path": "data/recovery-human28/episode-08.parquet",
+      "sha256": "51df7d911a25b28bcbad142bcdae5473ddc5b9911528e0fc8f97c8fcc2e2c279",
+      "bytes": 29758520
+    },
+    {
+      "path": "data/recovery-human28/episode-09.parquet",
+      "sha256": "48761c55d4da91ae7b90908c56084d4395e682fe8ac7f53f3b97be365f016a3f",
+      "bytes": 17548225
+    },
+    {
+      "path": "data/recovery-human28/manifest.json",
+      "sha256": "66a0528d3eef8e9c92cd696177c7cb81b73e6f7d8d2a38085c0e621c7c7f58f7",
+      "bytes": 168907
+    },
+    {
+      "path": "evidence/recovery-human28-manifest.json",
+      "sha256": "66a0528d3eef8e9c92cd696177c7cb81b73e6f7d8d2a38085c0e621c7c7f58f7",
+      "bytes": 168907
+    },
+    {
+      "path": "evidence/recovery-human28-task-compatibility.json",
+      "sha256": "6f328c2f824b1b3a202fdbac565b9f6e47cdcfe302a6fafc932f467b51ffb195",
+      "bytes": 993
+    },
+    {
+      "path": "evidence/recovery-human28-visual-review.json",
+      "sha256": "7b8b113e5ca7c3a3210b53eb2516dfef0a58d0e26a029c19a948fc8dcce8aa49",
+      "bytes": 737
+    }
+  ],
+  "verification": "independent remote download, archive digest, safe fresh extraction, all files byte-digest matched to training input"
+}

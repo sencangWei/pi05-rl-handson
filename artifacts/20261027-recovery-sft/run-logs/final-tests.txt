@@ -1,0 +1,8 @@
+....................................                                     [100%]
+=============================== warnings summary ===============================
+tests/test_lora_merge.py: 80 warnings
+  /home/robot/pi05-rl-handson/.venv-train/lib/python3.11/site-packages/flax/core/scope.py:959: DeprecationWarning: shape requires ndarray or scalar arguments, got <class 'jax._src.api.ShapeDtypeStruct'> at position 0. In a future JAX release this will be an error.
+    if jnp.shape(val) != jnp.shape(abs_val):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+36 passed, 80 warnings in 3.23s

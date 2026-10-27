@@ -1,0 +1,22 @@
+{
+  "status": "COMPLETE",
+  "actual_updates": 2000,
+  "logged_updates": 200,
+  "all_logged_metrics_finite": true,
+  "first": [
+    "0",
+    "0.0645",
+    "0.0833",
+    "1833.3535"
+  ],
+  "last": [
+    "1990",
+    "0.0297",
+    "0.0147",
+    "1833.3573"
+  ],
+  "memory_peak_bytes": 34031599616,
+  "oom_events": 0,
+  "systemd_exit_status": 0,
+  "checkpoint": "checkpoints/pi05_recovery_replay_lora/human28_replay2000_v1/1999"
+}

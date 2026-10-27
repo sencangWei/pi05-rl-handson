@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/robot/pi05-rl-handson/.local/finalize-human28-eval.py", line 41, in <module>
+    assert int(probe["nb_frames"])==n+1 and probe["r_frame_rate"]=="20/1",(name,probe,n)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('goal-00-init-00/paired_cameras.mp4', {'width': 448, 'height': 224, 'r_frame_rate': '10/1', 'nb_frames': '124'}, 123)
