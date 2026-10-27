@@ -19,8 +19,11 @@ def main():
     with tempfile.TemporaryDirectory(prefix="pi05-runtime-restore-") as directory:
         root = Path(directory)
         archive = root / "upstream.tar"
+        # Unrelated upstream tooling contains links outside the archive root.
+        # Restore only the declared runtime directories; keep safe extraction.
+        directories = sorted({Path(name).parts[0] for name in manifest["files"]})
         subprocess.run(["git", "-C", str(args.upstream_repo), "archive", "--format=tar",
-                        "--output", str(archive), manifest["upstream"]], check=True)
+                        "--output", str(archive), manifest["upstream"], *directories], check=True)
         tree = root / "tree"
         tree.mkdir()
         with tarfile.open(archive) as stream:

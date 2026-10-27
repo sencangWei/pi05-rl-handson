@@ -1,0 +1,7 @@
+RuntimeMaxUSec=1h 30min
+MainPID=1705061
+ExecStart={ path=/home/robot/pi05-rl-handson/.venv-train/bin/python ; argv[]=/home/robot/pi05-rl-handson/.venv-train/bin/python -u scripts/train_recovery_replay.py --experiment matched_recovery2000_v1 --recovery-manifest evidence/matched-recovery-manifest-v1.json --evaluation-plan evidence/matched-recovery-evaluation-plan-v1.json --steps 2000 --learning-rate 0.000005 ; ignore_errors=no ; start_time=[Tue 2026-10-27 20:04:17 CST] ; stop_time=[n/a] ; pid=1705061 ; code=(null) ; status=0/0 }
+MemoryMax=51539607552
+MemorySwapMax=0
+Environment=OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 XLA_PYTHON_CLIENT_PREALLOCATE=false
+ActiveState=active

@@ -1,0 +1,173 @@
+{
+  "stages": [
+    {
+      "name": "export",
+      "command": [
+        ".venv-train/bin/python",
+        "-u",
+        "scripts/export_sft_for_ppo.py",
+        "--checkpoint",
+        "checkpoints/pi05_recovery_replay_lora/matched_recovery2000_v1/1999",
+        "--output",
+        "models/pi05-matched-recovery2000-sft-merged"
+      ],
+      "started_unix": 1793103474.6467392,
+      "returncode": 0,
+      "finished_unix": 1793103638.3504102
+    },
+    {
+      "name": "export-load",
+      "command": [
+        ".venv-ppo/bin/python",
+        "-u",
+        "scripts/check_export_load.py",
+        "--export",
+        "models/pi05-matched-recovery2000-sft-merged",
+        "--evidence",
+        "evidence/matched-export-load.json"
+      ],
+      "started_unix": 1793103638.3753498,
+      "returncode": 0,
+      "finished_unix": 1793103673.5680418
+    },
+    {
+      "name": "export-parity",
+      "command": [
+        ".venv-train/bin/python",
+        "-u",
+        "scripts/check_export_parity.py",
+        "--checkpoint",
+        "checkpoints/pi05_recovery_replay_lora/matched_recovery2000_v1/1999",
+        "--export",
+        "models/pi05-matched-recovery2000-sft-merged",
+        "--work",
+        "evidence/matched-export-parity"
+      ],
+      "started_unix": 1793103673.568256,
+      "returncode": 0,
+      "finished_unix": 1793103801.3517706
+    },
+    {
+      "name": "sft-freshdev",
+      "command": [
+        ".venv-ppo/bin/python",
+        "-u",
+        "scripts/evaluate_recovery.py",
+        "--config",
+        "/home/robot/pi05-rl-handson/evidence/matched-sft-composed.json",
+        "--manifest",
+        "data/recovery-bowl-freshdev27/manifest.json",
+        "--split",
+        "dev",
+        "--output",
+        "evaluations/matched-sft-freshdev",
+        "--max-steps",
+        "300",
+        "--noise-seed",
+        "42"
+      ],
+      "started_unix": 1793103801.3522284,
+      "returncode": 0,
+      "finished_unix": 1793103980.3160105
+    },
+    {
+      "name": "sft-olddev",
+      "command": [
+        ".venv-ppo/bin/python",
+        "-u",
+        "scripts/evaluate_recovery.py",
+        "--config",
+        "/home/robot/pi05-rl-handson/evidence/matched-sft-composed.json",
+        "--manifest",
+        "data/recovery-bowl-dev27/manifest.json",
+        "--split",
+        "dev",
+        "--output",
+        "evaluations/matched-sft-olddev",
+        "--max-steps",
+        "300",
+        "--noise-seed",
+        "42"
+      ],
+      "started_unix": 1793103980.3162415,
+      "returncode": 0,
+      "finished_unix": 1793104118.37563
+    },
+    {
+      "name": "sft-retention",
+      "command": [
+        ".venv-ppo/bin/python",
+        "-u",
+        "scripts/evaluate_native_ppo.py",
+        "--config",
+        "/home/robot/pi05-rl-handson/evidence/matched-sft-composed.json",
+        "--output",
+        "evaluations/matched-sft-retention"
+      ],
+      "started_unix": 1793104118.3770437,
+      "returncode": 0,
+      "finished_unix": 1793104198.182419
+    },
+    {
+      "name": "package-freshdev",
+      "command": [
+        ".venv-ppo/bin/python",
+        "-u",
+        "scripts/package_recovery_transfer.py",
+        "--before",
+        "evaluations/matched-parent-freshdev",
+        "--after",
+        "evaluations/matched-sft-freshdev",
+        "--output",
+        "artifacts/20261027-matched-recovery/freshdev-comparison"
+      ],
+      "started_unix": 1793104198.1826622,
+      "returncode": 0,
+      "finished_unix": 1793104202.9697032
+    },
+    {
+      "name": "package-olddev",
+      "command": [
+        ".venv-ppo/bin/python",
+        "-u",
+        "scripts/package_recovery_transfer.py",
+        "--before",
+        "evaluations/matched-parent-olddev",
+        "--after",
+        "evaluations/matched-sft-olddev",
+        "--output",
+        "artifacts/20261027-matched-recovery/olddev-comparison"
+      ],
+      "started_unix": 1793104202.9699023,
+      "returncode": 0,
+      "finished_unix": 1793104207.4419048
+    },
+    {
+      "name": "adapter-export",
+      "command": [
+        ".venv-train/bin/python",
+        "-u",
+        "scripts/export_recovery_adapter.py",
+        "export",
+        "--checkpoint",
+        "checkpoints/pi05_recovery_replay_lora/matched_recovery2000_v1/1999",
+        "--adapter",
+        "exports/matched-recovery2000-lora"
+      ],
+      "started_unix": 1793104207.4420965,
+      "returncode": 0,
+      "finished_unix": 1793104370.26678
+    }
+  ],
+  "training_monitor": {
+    "memory.peak": "39456825344",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "MainPID": "0",
+    "Result": "success",
+    "ExecMainStatus": "0",
+    "ControlGroup": "",
+    "ActiveState": "inactive",
+    "SubState": "dead"
+  },
+  "status": "COMPLETE"
+}

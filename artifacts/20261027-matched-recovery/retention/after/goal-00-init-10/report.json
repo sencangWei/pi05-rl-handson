@@ -1,0 +1,40 @@
+{
+  "suite": "libero_goal",
+  "task_id": 0,
+  "initial_state": 10,
+  "seed": 42,
+  "replan_steps": 5,
+  "max_steps": 300,
+  "score_definition": "selected LIBERO task predicates, independent of prompt override",
+  "result": "success",
+  "steps": 115,
+  "policy_calls": 23,
+  "task_language": "open the middle drawer of the cabinet",
+  "prompt": "open the middle drawer of the cabinet",
+  "initial_state_sha256": "358f09a6861cce71b38fe5c338f6325a1c86b3e6fc334644a6d4c1b2d7b3469b",
+  "initial_state_dtype": "float64",
+  "initial_state_shape": [
+    79
+  ],
+  "server_metadata": {
+    "backend": "local-pi05-libero-lora",
+    "runtime": "native-rlinf-pytorch",
+    "checkpoint": null,
+    "checkpoint_sha256": null,
+    "checkpoint_format": null,
+    "base_weights_sha256": "879f07b1e05acdae644a2e91492f3ae93930e84fdb55203b0f9ce799ab293423",
+    "norm_stats_sha256": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84",
+    "image_size": 224,
+    "action_horizon": 10,
+    "action_chunk": 5,
+    "num_steps": 10,
+    "discrete_state_input": false,
+    "precision": "bf16",
+    "seed_protocol": "numpy.default_rng(42+call).standard_normal((10,32))",
+    "adapter_update": null,
+    "adapter_contract_validated": false,
+    "strict_load": null
+  },
+  "original_task_predicate": true,
+  "elapsed_seconds": 6.898964696003532
+}

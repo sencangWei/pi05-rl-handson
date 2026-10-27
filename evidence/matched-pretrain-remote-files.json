@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson.git",
+  "branch": "experiment/matched-recovery-20261027",
+  "commit": "c8baf4da604d0db9fb7a0292645c4010752d9d56",
+  "tree": "96eacad4bd9a138e40e01783a8987222eeab579a",
+  "tracked_files": 1389,
+  "verification": "independent fetch, clean checkout, all bytes against local and remote blobs"
+}

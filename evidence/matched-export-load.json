@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "export": "/home/robot/pi05-rl-handson/models/pi05-matched-recovery2000-sft-merged",
+  "source": "/home/robot/pi05-rl-handson/checkpoints/pi05_recovery_replay_lora/matched_recovery2000_v1/1999",
+  "output_sha256": "879f07b1e05acdae644a2e91492f3ae93930e84fdb55203b0f9ce799ab293423",
+  "source_metadata_sha256": "88464a384c524c50fa1a92c1685d23a79570c62807a0ccf021f5f9307fff137c",
+  "export_tensor_count": 811,
+  "backbone_tensor_count": 667,
+  "missing": [],
+  "unexpected": [],
+  "shape_errors": {},
+  "strict_load": true,
+  "asset_hashes_verified": true,
+  "config": {
+    "pi05": true,
+    "action_dim": 32,
+    "action_horizon": 10,
+    "max_token_len": 200,
+    "discrete_state_input": false,
+    "paligemma_variant": "gemma_2b",
+    "action_expert_variant": "gemma_300m",
+    "precision": "float32"
+  },
+  "device": "cpu",
+  "torch_version": "2.7.1+cu128",
+  "policy_equivalence_verified": false,
+  "limitation": "Strict keys, shapes and hashes only; no network numeric parity or simulation inference."
+}

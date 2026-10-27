@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "remote": "https://github.com/sencangWei/voice-arm-sim",
+  "commit": "a344b495ae94dcdedeb5a3b2c3a72fcfe53cb9e3",
+  "file": "vla/run.py",
+  "sha256": "406c62b7c2f95bcaa3070576b750266503b6ccd53f518ac20100fa9adda5e533",
+  "verification": "anonymous remote raw content exactly equals current simulator source; old project not modified"
+}
