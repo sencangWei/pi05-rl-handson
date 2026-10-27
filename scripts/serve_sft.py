@@ -13,7 +13,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--parent", action="store_true")
+    weights = parser.add_mutually_exclusive_group()
+    weights.add_argument("--parent", action="store_true")
+    weights.add_argument("--checkpoint", type=Path)
     parser.add_argument("--port", type=int, default=9875)
     args = parser.parse_args()
     os.environ.setdefault("XLA_PYTHON_CLIENT_PREALLOCATE", "false")
@@ -23,6 +25,8 @@ def main():
     from openpi.policies.policy_config import create_trained_policy
     from openpi.serving.websocket_policy_server import WebsocketPolicyServer
     checkpoint = ROOT / "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999"
+    if args.checkpoint:
+        checkpoint = args.checkpoint.resolve()
     if args.parent:
         checkpoint = PARENT
         cfg = dataclasses.replace(cfg, model=dataclasses.replace(

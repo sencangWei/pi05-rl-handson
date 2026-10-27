@@ -9,13 +9,41 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from recovery_replay_dataset import HumanClips, ModelRecoveryClips, RecoveryReplayDataset  # noqa: E402
+from recovery_replay_dataset import BankHumanClips, HumanClips, ModelRecoveryClips, RecoveryReplayDataset  # noqa: E402
 from export_sft_for_ppo import sha256  # noqa: E402
 from multitask_dataset import MultitaskDataset, window_indices  # noqa: E402
 from prepare_recovery_sft import validate_frame  # noqa: E402
+from prepare_manual_recovery import osc_runs  # noqa: E402
 
 
 class ReplayContracts(unittest.TestCase):
+    def test_joint_interruption_splits_windows(self):
+        timeline = [dict(controller=c, path=str(i)) for i, c in enumerate(
+            ["OSC_POSE"] * 20 + ["JOINT_POSITION"] * 12 + ["OSC_POSE"] * 15)]
+        runs = osc_runs(timeline)
+        self.assertEqual([(len(run), terminal) for run, terminal in runs], [(20, False), (15, True)])
+        # Last eligible prefix anchor is 10: all ten labels precede the joint interruption.
+        data = BankHumanClips.__new__(BankHumanClips)
+        data.records = [dict(frames=20, sample_frames=11), dict(frames=15, sample_frames=15)]
+        data.ends = np.array([11, 26])
+        record, frame = data.locate(10)
+        np.testing.assert_array_equal(window_indices(frame, record["frames"]), np.arange(10, 20))
+        self.assertEqual(data.locate(11), (data.records[1], 0))
+
+    def test_bank_human_rejects_nonterminal_padding(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / "episode.parquet"
+            path.write_bytes(b"not-read-by-constructor")
+            record = dict(path=path.name, sha256=sha256(path), frames=20, sample_frames=20,
+                          terminal=False, task_id=8, controller="OSC_POSE", split="train",
+                          entry=dict(split="train", source_initial_id=1))
+            manifest = root / "manifest.json"
+            manifest.write_text(json.dumps(dict(schema=BankHumanClips.schema, ready=True,
+                                                root=directory, records=[record])))
+            with self.assertRaisesRegex(ValueError, "controller boundary"):
+                BankHumanClips(manifest)
+
     def test_ratio_and_replay_coverage(self):
         data = RecoveryReplayDataset.__new__(RecoveryReplayDataset)
         data.human = range(2050)

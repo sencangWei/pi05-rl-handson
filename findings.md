@@ -85,3 +85,13 @@
 - 视频时间更正：18个新恢复原视频和12段对照为20fps；8个新旧任务保持录像为既有导出器10fps、每控制步一帧，相比20Hz仿真慢放两倍。不是策略速度结论；所有26段新原视频帧数/解码验证通过。
 - CPU float32单flow步导出对照max_abs1.43e-6，实际BF16闭环另测。首次全测35/36是JAX先初始化GPU引发TF32误差，进程起始固定CPU后36/36，未放宽断言；该问题以前也记录过，原日志继续保留。
 - 不把负结果归咎于人工质量：10条示范来自spatial，而失败评测为goal；场景和初始状态不配对。下一次应优先取得当前goal训练失败状态族的完整恢复示范，并使用新的独立初态对照。
+
+
+# Findings
+Project /home/robot/pi05-rl-handson, origin sencangWei/pi05-rl-handson, branch experiment/matched-recovery-20261027.
+Six approved recordings: four OSC-only (465,270,245,245 frames) and two mixed OSC/joint (120+444 and285+372). Mixed recordings explicitly training_ready=false. Do not relabel joint targets as OSC.
+Latest recording human_1793124070194277437 approved,245 OSC, all5 observation gates true,490 checksums validated. Gates are demonstration checks, not official benchmark results.
+Previous manual SFT crossed spatial->goal and regressed; previous matched PPO-teacher SFT also failed promotion. Need pinned parent and fresh paired protocol.
+Unrelated untracked evidence/recovery-environment-20261027.json and evidence/recovery-sft28-environment.json must be preserved.
+
+Manual6 compatibility: four complete OSC demos and two mixed demos. Mixed OSC segments can train only the labels actually recorded; intervening joint maneuvers remain untrained. Full raw 79-value states are continuous. Independent replay of empty-grasp demo first diverged above 1e-5 at control34 on finger-contact velocity; final native goal still true. Exact deterministic trajectory equivalence is NOT established. All raw files and metadata retained.

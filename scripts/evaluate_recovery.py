@@ -29,6 +29,8 @@ def payload(obs, prompt, image_tools):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--checkpoint", type=Path)
+    parser.add_argument("--port", type=int, help="Use original JAX policy service instead of Torch conversion")
+    parser.add_argument("--expected-server-checkpoint", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--manifest", type=Path, default=ROOT / "data/recovery-bowl-v3/manifest.json")
     parser.add_argument("--config", type=Path, default=ROOT / "evidence/ppo-recovery-composed.json")
@@ -43,6 +45,8 @@ def main():
         raise ValueError("Invalid evaluation bound")
     if args.record_training_rollouts and args.split != "train":
         raise ValueError("Only training initial states may become demonstrations")
+    if args.port and (args.checkpoint or not args.expected_server_checkpoint):
+        raise ValueError("JAX service requires expected checkpoint identity and no Torch adapter")
     args.output.mkdir(parents=True, exist_ok=False)
     os.environ.setdefault("MUJOCO_GL", "egl")
     os.environ.setdefault("PYOPENGL_PLATFORM", "egl")
@@ -69,14 +73,23 @@ def main():
     model_cfg = OmegaConf.merge(cfg.actor.model, cfg.rollout.model)
     model_cfg.num_action_chunks = model_cfg.openpi.action_chunk = 5
     model_cfg.num_steps = model_cfg.openpi.num_steps = 10
-    torch.manual_seed(42)
-    model = get_model(model_cfg)
-    base_hash = sha256(Path(model_cfg.model_path) / "model.safetensors")
-    if args.checkpoint:
-        saved = torch.load(args.checkpoint, map_location="cpu", weights_only=False, mmap=True)
-        read_adapter_model(model, saved, base_hash, allow_dtype_cast=True)
-        del saved
-    model = model.to("cuda").eval()
+    server_metadata = None
+    if args.port:
+        from openpi_client.websocket_client_policy import WebsocketClientPolicy
+        client = WebsocketClientPolicy(host="127.0.0.1", port=args.port)
+        server_metadata = client.get_server_metadata()
+        if Path(server_metadata["checkpoint"]).resolve() != args.expected_server_checkpoint.resolve():
+            raise ValueError("Wrong policy server checkpoint")
+        model, base_hash = None, None
+    else:
+        torch.manual_seed(42)
+        model = get_model(model_cfg)
+        base_hash = sha256(Path(model_cfg.model_path) / "model.safetensors")
+        if args.checkpoint:
+            saved = torch.load(args.checkpoint, map_location="cpu", weights_only=False, mmap=True)
+            read_adapter_model(model, saved, base_hash, allow_dtype_cast=True)
+            del saved
+        model = model.to("cuda").eval()
     suite = benchmark.get_benchmark_dict()["libero_goal"]()
     task = suite.get_task(8)
     raw = OffScreenRenderEnv(bddl_file_name=str(Path(get_libero_path("bddl_files")) /
@@ -93,7 +106,8 @@ def main():
                 "checkpoint": str(args.checkpoint) if args.checkpoint else None,
                 "manifest_sha256": sha256(args.manifest), "config_sha256": sha256(args.config),
                 "split": args.split, "category": args.category,
-                "model_config": OmegaConf.to_container(model_cfg, resolve=True),
+                "model_config": None if args.port else OmegaConf.to_container(model_cfg, resolve=True),
+                "jax_server": server_metadata,
                 "success": "native goal AND no finger contact for 5 consecutive controls",
                 "action_execution": f"learned model only; observe every 5 controls; max {args.max_steps} controls",
                 "control_hz": control_hz, "video_fps": control_hz,
@@ -109,7 +123,11 @@ def main():
             env.seed(42)
             env.reset()
             obs = env.restore_recovery(index)
-            policy = NativePolicy(model, {"noise_seed": args.noise_seed})
+            if args.port:
+                from baseline import SeededPolicy
+                policy = SeededPolicy(client, args.noise_seed)
+            else:
+                policy = NativePolicy(model, {"noise_seed": args.noise_seed})
             recorder = None
             if args.record_training_rollouts:
                 from recovery_recording import TrainingRecorder
@@ -166,6 +184,8 @@ def main():
             print("RECOVERY_RESULT " + json.dumps(report), flush=True)
     finally:
         env.close()
+        if args.port:
+            client._ws.close()
     return int(any(report["exception"] for report in reports))
 
 

@@ -25,7 +25,7 @@ class HumanClips(MultitaskDataset):
             path = (self.root / record["path"]).resolve()
             if not path.is_relative_to(self.root.resolve()) or sha256(path) != record["sha256"]:
                 raise ValueError("Recovery parquet changed")
-        self.ends = np.cumsum([r["frames"] for r in self.records])
+        self.ends = np.cumsum([r.get("sample_frames", r["frames"]) for r in self.records])
         self.cache = OrderedDict()
 
     def __len__(self):
@@ -62,11 +62,30 @@ class ModelRecoveryClips(HumanClips):
             raise ValueError("Insufficient independently replayed recovery coverage")
 
 
+class BankHumanClips(HumanClips):
+    """Actual OSC labels only; windows never cross a joint-control interruption."""
+    schema = "pi05-bank-human-replay-v1"
+
+    def __init__(self, manifest):
+        super().__init__(manifest)
+        from recovery_recording import validate_training_entry
+        for record in self.records:
+            validate_training_entry(record["entry"])
+            expected = record["frames"] if record["terminal"] else record["frames"] - 9
+            if record["sample_frames"] != expected or expected < 1:
+                raise ValueError("Nonterminal window would cross a controller boundary")
+            if record["controller"] != "OSC_POSE" or record["task_id"] != 8:
+                raise ValueError("Only actual 7D OSC labels for goal task 8 are supported")
+
+
 class RecoveryReplayDataset:
     def __init__(self, human_manifest, replay_manifest):
-        model_data = json.loads(Path(human_manifest).read_text())["schema"] == ModelRecoveryClips.schema
+        schema = json.loads(Path(human_manifest).read_text())["schema"]
+        model_data = schema == ModelRecoveryClips.schema
         self.source_name = "model_recovery" if model_data else "human"
-        self.human = (ModelRecoveryClips if model_data else HumanClips)(human_manifest)
+        loader = {ModelRecoveryClips.schema: ModelRecoveryClips,
+                  BankHumanClips.schema: BankHumanClips, HumanClips.schema: HumanClips}[schema]
+        self.human = loader(human_manifest)
         if sha256(replay_manifest) != self.human.manifest["replay_manifest_sha256"]:
             raise ValueError("Public replay manifest changed")
         self.replay = MultitaskDataset(replay_manifest)

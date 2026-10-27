@@ -39,3 +39,13 @@
 5. [完成] 保留正负结果、实际录像、数据和配置。c739fb2公开远端独立恢复1973文件一致；干净上游9补丁/12运行文件一致，外部模拟器源码一致。Release数据42文件及权重完整SHA通过，71参数叶子（20 LoRA）重构一致。不晋级，不替换面板。
 
 本轮最终结果：新开发6/12→5/12、旧开发10/12→7/12、常规8/8→8/8；不晋级、不替换面板。2000更新正常退出0，OOM0，峰值36.75GiB。88段录像完整解码通过，43项项目测试通过。
+
+
+# Manual recovery 2026-10-28
+Goal: use the six approved manual demonstrations with existing task replay; evaluate parent vs new policy on frozen unseen recovery states. No more collection now. Preserve original recordings and unrelated jobs.
+1. IN PROGRESS: freeze recordings, inspect joint/OSC compatibility, verify replay.
+2. PENDING: prepare validated training data and frozen evaluation protocol; document any excluded/incompatible segments.
+3. PENDING: bounded LoRA training from recorded parent, old task replay, memory monitoring.
+4. PENDING: paired simulator evaluation incl failure category, latency/stall and retention; retain negative results.
+5. PENDING: back up capability code/data/config/results to writable origin and verify restoration.
+Stop: report measured paired results, no unsupported generalization claim; do not replace panel model unless promotion passes.

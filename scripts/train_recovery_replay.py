@@ -71,13 +71,14 @@ def main():
     if (plan["experiment"], plan["train"]["updates"], plan["train"]["lr"],
         plan[manifest_key]) != (args.experiment, args.steps, args.learning_rate, sha256(human)):
         raise ValueError("Requested training differs from the frozen evaluation plan")
-    compatibility = ROOT / ("evidence/matched-recovery-task-compatibility.json" if model_data
+    bank_human = dataset.human.manifest["schema"] == "pi05-bank-human-replay-v1"
+    compatibility = ROOT / ("evidence/matched-recovery-task-compatibility.json" if model_data or bank_human
                             else "evidence/recovery-human28-task-compatibility.json")
     compatible = json.loads(compatibility.read_text())
     if not compatible["passed"] or any(sha256(Path(compatible[k]["path"])) != compatible[k]["expected"]
                                       for k in ("bddl", "init")):
         raise ValueError("Original human task identity changed")
-    if model_data and (compatible["bank_manifest_sha256"] != dataset.human.manifest["bank_manifest_sha256"]
+    if (model_data or bank_human) and (compatible["bank_manifest_sha256"] != dataset.human.manifest["bank_manifest_sha256"]
                        or compatible["task_suite"] != "libero_goal" or compatible["task_id"] != 8
                        or any(r["prompt"] != compatible["prompt"] for r in dataset.human.records)):
         raise ValueError("Matched-scene identity differs from the training bank")

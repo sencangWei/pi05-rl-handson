@@ -1,0 +1,73 @@
+{
+  "status": "FROZEN_BEFORE_TRAINING",
+  "experiment": "manual6_replay2000_v1",
+  "train": {
+    "parent": "multitask40_lora_v1/9999",
+    "updates": 2000,
+    "lr": 5e-06,
+    "batch": 1,
+    "seed": 42,
+    "recovery_probability": 0.25,
+    "old_replay_probability": 0.75,
+    "recovery_episodes": 8,
+    "recovery_frames": 1612,
+    "raw_human_demonstrations": 6,
+    "archived_joint_frames": 816
+  },
+  "development": {
+    "manifest": "data/recovery-bowl-freshdev28/manifest.json",
+    "manifest_sha256": "3f8b1cffc3e7dd8e9dbaa062bd82a22b5e44e9379de80cd61eade50211467768",
+    "source_ids": [
+      40,
+      41,
+      42,
+      43
+    ],
+    "trials": 12,
+    "controls_max": 300,
+    "replan": 5,
+    "flow_steps": 10,
+    "noise_seed": 42,
+    "success": "native goal AND no finger contact for 5 consecutive controls",
+    "label": "fresh development; not training or blind final test"
+  },
+  "regression": {
+    "manifest": "data/recovery-bowl-dev27/manifest.json",
+    "manifest_sha256": "6456c01538beb6c74ca398681c8310288191e1b6dfdb4ab7f7de8032fe869370",
+    "source_ids": [
+      20,
+      21,
+      22,
+      23
+    ],
+    "trials": 12
+  },
+  "retention": {
+    "tasks": [
+      0,
+      7,
+      8,
+      9
+    ],
+    "initial_states": [
+      0,
+      10
+    ],
+    "trials": 8,
+    "max_controls": 300
+  },
+  "selection": "Fresh development total strictly improves over freshly rerun SFT parent, no category decreases; old development total/category do not decrease; retention 8/8. No automatic panel replacement.",
+  "quarantine": "Heldout source IDs 10..13 excluded from training and selection",
+  "provenance": "Six approved human demonstrations, four wholly OSC and two split at joint-control interruptions; 816 raw joint frames preserved but not trained. No synthetic joint-to-OSC labels. LoRA SFT, not PPO.",
+  "human_manifest_sha256": "86e3fc204735dba54261f32dd864297bd00aab8f044ff2d866f46546d7db9cfb",
+  "motion_diagnostics": {
+    "near_stationary_threshold_m_per_control": 0.0002,
+    "measurements": [
+      "longest consecutive near-stationary controls",
+      "fraction of near-stationary controls",
+      "total controls",
+      "wall duration"
+    ],
+    "interpretation": "Diagnostic only; includes deliberate contact and grip holds, not proof of faulty stall."
+  }
+}
