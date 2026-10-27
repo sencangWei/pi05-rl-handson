@@ -27,6 +27,8 @@
 | 成功判据 | LIBERO 原生目标成立且手指不接触碗，连续 5 个控制步 |
 | 视频 | 双相机原视频、逐控制步轨迹、同初态三栏并列，20 fps 仿真时间 |
 
+训练期间的监控评测也使用开发集，但开发初态不参与梯度更新。最终结果是在固定 300 次更新后以独立进程复评，属于开发评测，不是完全未接触的盲测。
+
 两组均从 SFT 开始，不接续上一轮 PPO。`sparse_v2` 只有修正后的稀疏奖励；`shaped_v1` 在相同设置下增加 `0.3 * (0.99 * Phi(next) - Phi(current))`。Phi 使用靠近、真实双指抓持、抬升、搬运对齐和原生放置进展；模拟器物体位姿只用于训练奖励，未增加到模型观测，也未编写恢复轨迹。
 
 PPO 在动作窗口内求和，只在窗口之间折扣一次。真正终止时末端势能置零；超时使用终态价值 bootstrap，因此保留末端势能。悬停不会不断获得正奖励，抬起后退回的收益会抵消。设计参考 [Ng、Harada、Russell 的 potential-based reward shaping](https://people.eecs.berkeley.edu/~pabbeel/cs287-fa09/readings/NgHaradaRussell-shaping-ICML1999.pdf)。这保证的是奖励设计边界，不能保证短训练会学会恢复。

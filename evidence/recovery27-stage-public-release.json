@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "release": "https://github.com/sencangWei/pi05-rl-handson/releases/tag/ppo-recovery-shaping-20261027",
+  "tag": "ppo-recovery-shaping-20261027",
+  "target_commit": "feff50599e4c56140db6bdb939b29537fa2c877d",
+  "public_anonymous_api_status": 200,
+  "prerelease": true,
+  "draft": false,
+  "verified_at": "2026-10-27T07:36:40.952891+00:00",
+  "assets": {
+    "pi05-recovery27-shaped_v1-adapter.pt": {
+      "id": 680803112,
+      "size": 121226493,
+      "digest": "sha256:48869898f6131dbe0a44e7471a4a605ebf2665a1e369ec7e9a2e8bb0e33075eb",
+      "browser_download_url": "https://github.com/sencangWei/pi05-rl-handson/releases/download/ppo-recovery-shaping-20261027/pi05-recovery27-shaped_v1-adapter.pt"
+    },
+    "pi05-recovery27-sparse_v2-adapter.pt": {
+      "id": 680778093,
+      "size": 121226557,
+      "digest": "sha256:484010de5b985f3a4da42fa7916614610beb27ec87951ac3a7a903f329bb7091",
+      "browser_download_url": "https://github.com/sencangWei/pi05-rl-handson/releases/download/ppo-recovery-shaping-20261027/pi05-recovery27-sparse_v2-adapter.pt"
+    },
+    "SHA256SUMS-recovery27.txt": {
+      "id": 680823050,
+      "size": 206,
+      "digest": "sha256:2e0d034633e4862040024dbe6306c277df11266ac712280bbfedc76da496a821",
+      "browser_download_url": "https://github.com/sencangWei/pi05-rl-handson/releases/download/ppo-recovery-shaping-20261027/SHA256SUMS-recovery27.txt"
+    }
+  },
+  "weight_content_checks": [
+    "recovery27-stage-release-pi05-recovery27-sparse_v2-adapter-restore.json",
+    "recovery27-stage-release-pi05-recovery27-shaped_v1-adapter-restore.json"
+  ]
+}
