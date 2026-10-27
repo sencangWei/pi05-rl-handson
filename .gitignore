@@ -8,5 +8,6 @@ models/
 logs/
 data/
 evaluations/
+corrections/
 exports/
 assets/

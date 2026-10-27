@@ -1,0 +1,22 @@
+{
+  "source": "/home/robot/.pi05-handson/scripts",
+  "purpose": "Unmodified snapshot of existing Chinese correction UI. Model/training actions disabled by launcher; no old project writes.",
+  "files": {
+    "correction_data.py": "da0fab27a536a2004076eadd1e172e7d3488269075bbab6217171807d62c27e1",
+    "correction_workbench.py": "a3a829cb9ebf2969f306dfb64d952d0bef271d4d28ac55ea9db072bcaaa861c6",
+    "demo_recording.py": "88187c056d9d2aecf2918427637e1d7bb527c55b8a283d3a934a464dada4d275",
+    "evaluate_libero.py": "c7e7a3d835b3ea8401e52f002210fffff32e581766c0e9a676a4b049ac5150fe",
+    "export_training_curves.py": "625aaf70e2128d75c6d85279896313f844bc98600e7f74039aeaefbd4220a1b5",
+    "lab_jobs.py": "d58619a9007c3bae00ada0ec1e6b822f74db0b92cd4ba4b8b13c4b1bcc51c1e8",
+    "lab_launcher.py": "4f1a096ba021af518dd16e7273d299dc8e05db6f2b115483f0876518b43c40bd",
+    "lab_panel.py": "8d017c5b9a8a99a145e11f7e2ab549abe84cc5f00acc82b24037414bd68c8962",
+    "lab_workbench.py": "adbdfc891a611d6e246bbc73bc23e98c635c8df0eca1ab4a3a552fe3bbbe3688",
+    "live_preview.py": "97b2c012ea3f343afc7acf729b3c44ffb18a45fa9d99e84cd0467c3351051c65",
+    "manual_joystick.py": "440c8e68063099be45d5393ad8ae619866e29dae4c5f33b3c7c694f58aafc3f9",
+    "prepare_corrections.py": "2c9ab0c8dd61f636be76082851c95f3896cee4b4181d34e6a6657118d2294e3a",
+    "responsive_lab.py": "b69107c9dfa480b7c3045b5588e2c5baf6d81c0009b2f5674813f343060d9892",
+    "simulation_lab.py": "d5270cca34ebd42baa1fc8f2a9f312a359df221dcdc7fece82d71cac6cd31f1d",
+    "train_corrections.py": "ded0acd5a61eef8ac2c3993383c18a8e27482c0070963844f1186c6e6254d699",
+    "viewer_controls.py": "53b4be8ad984407e4bf20e95b2fba9fae0209b1ff90e58f64ca0ce9de6f7ea71"
+  }
+}
