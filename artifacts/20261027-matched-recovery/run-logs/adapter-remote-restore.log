@@ -1,0 +1,3 @@
+{"status": "PASS", "mode": "verify", "tensors": 71, "lora_tensors": 20, "tree_sha256": "1bd6ee4c82b81d93820e6654a550d2b1319e61e0ec35d0b6e060a911be4a6a64"}
+
+WEIGHT_BACKUP_RESTORED_PASS

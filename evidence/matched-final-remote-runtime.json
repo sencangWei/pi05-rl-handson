@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "upstream": "30e0236981c6a1dc19202de64116834c12673828",
+  "patches": [
+    "configs/rlinf-step-cost.patch",
+    "configs/rlinf-gelu-parity.patch",
+    "configs/rlinf-fsdp-root-input.patch",
+    "configs/rlinf-checkpoint-memory.patch",
+    "configs/rlinf-update-evidence.patch",
+    "configs/rlinf-adapter-checkpoint.patch",
+    "configs/rlinf-adapter-sync.patch",
+    "configs/rlinf-offload-recovery.patch",
+    "configs/rlinf-recovery-shaping.patch"
+  ],
+  "restored_sha256": {
+    "rlinf/envs/sim/libero/libero_env.py": "3013ca33e1fb5784a25f353ab773c33ace938f6e8bd5099b80663fa9bd7d6507",
+    "rlinf/models/embodiment/openpi/modules/siglip.py": "3ba4963832e698194ab76a9567c6365eee6059fbc92b54ac83156db59652b39b",
+    "rlinf/models/embodiment/openpi/modules/utils.py": "fce5756c7e2b09065fcfb4e2923e33e53d771a77128137e9d7f276228da6eeeb",
+    "rlinf/hybrid_engines/fsdp/strategy/fsdp.py": "47ce54744de35d8974894849f12bd961e986cc972ae155e98f14809c4476cd97",
+    "rlinf/hybrid_engines/fsdp/strategy/base.py": "a5482ab2b6260df63ab676ed6c45cf9b8e01912b0cb7a00b3f5d3b8149de0a8c",
+    "rlinf/hybrid_engines/fsdp/fsdp_model_manager.py": "0c833472bd1eb9dad8e10fe5007005cdfa65a2b6523b594d3d7892f63e9a0215",
+    "rlinf/workers/actor/embodied_fsdp_actor_worker.py": "0730b44019b0d1bd3c1015958a493bb7181675df3d5a65c20fc07d32d957c29c",
+    "rlinf/hybrid_engines/fsdp/strategy/adapter_checkpoint.py": "d7b6e7f5db280676e730ec45391576efa4d67735a5eb2e5d6e1804ed2e60beca",
+    "rlinf/hybrid_engines/weight_syncer/patch_syncer.py": "891deb6e57b9ad3868b2e2c5fe719f9045a1d40b9d5a82a1c06318488cbccbc6",
+    "rlinf/scheduler/cluster/cluster.py": "6f29b10da1b29e589cff76ef756541fd9fe46b9283f5b9c1949b8e1cbd240bca",
+    "rlinf/envs/sim/libero/venv.py": "b59f5c69e4f22f49737de761f0bdb85eec1fec3a91d6db66c8217433c7a322c2",
+    "rlinf/envs/sim/libero/recovery.py": "27e5ec21872dce4dc95d240435e1ed612738fc96cdc0d92c0df998939789fa02"
+  },
+  "artifact_commit": "c739fb2dd0f0a546f9df3c14457de1b804942430"
+}

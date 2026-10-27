@@ -1,0 +1,9 @@
+{
+  "html_url": "https://github.com/sencangWei/pi05-rl-handson/releases/tag/matched-recovery-sft-20261027",
+  "tag_name": "matched-recovery-sft-20261027",
+  "name": "Matched recovery SFT: negative result, not promoted",
+  "body": "Completed bounded experiment; NEGATIVE result, not promoted, panel unchanged.\n\n13 learned-policy recovery demonstrations (1127 frames), independently replayed with original and clipped actions. Training states only; no manual trajectories. Original 40-task SFT parent, 2000 LoRA updates, 25% recovery / 75% old replay, seed 42; normal exit, OOM=0. No additional PPO updates in this round.\n\nPaired before / after: fresh recovery 6/12 -> 5/12; old recovery 10/12 -> 7/12; normal-task retention 8/8 -> 8/8. Frozen promotion gate failed. 88 actual videos fully decoded; 43 project tests passed.\n\n[Report, same-state comparisons, failure analysis and commands](https://github.com/sencangWei/pi05-rl-handson/blob/experiment/matched-recovery-20261027/artifacts/20261027-matched-recovery/README.md)\n\nAssets include training data and compact inference LoRA weights. Original official pi05_libero base is required. Full optimizer checkpoint remains local. This is an experimental prerelease, not a reliable recovery model.",
+  "prerelease": true,
+  "draft": false,
+  "verification": "Anonymous public GitHub API confirms final result text and published prerelease"
+}

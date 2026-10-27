@@ -1,0 +1,4 @@
+来自 https://github.com/sencangWei/pi05-rl-handson
+ * branch            experiment/matched-recovery-20261027 -> FETCH_HEAD
+{"status": "PASS", "remote": "https://github.com/sencangWei/pi05-rl-handson.git", "branch": "experiment/matched-recovery-20261027", "commit": "c739fb2dd0f0a546f9df3c14457de1b804942430", "tree": "c8cad28333494fe88440e09dfb40280cc7e3045a", "tracked_files": 1973, "verification": "independent fetch, clean checkout, all bytes against local and remote blobs"}
+{"status": "PASS", "restored_files": 12, "patches": 9}

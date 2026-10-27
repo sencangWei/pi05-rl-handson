@@ -65,6 +65,8 @@
 
 JAX LoRA 与合并 Torch 导出在固定合成输入、CPU float32 单步流采样上对照通过，最大绝对误差约 1.43e-6；严格加载也通过。该检查不证明 tokenizer、归一化、BF16 或十步完整策略逐位等价，实际闭环结果以本页仿真为准。[数值证据](../../evidence/matched-export-parity/parity.json)。
 
-公开数据和推理 LoRA 权重发布在 [本轮 Release](https://github.com/sencangWei/pi05-rl-handson/releases/tag/matched-recovery-sft-20261027)。数据已独立下载，完整归档 SHA 及 42 个文件哈希一致：[数据恢复证据](../../evidence/matched-recovery-data-restore.json)。权重、最终代码与视频恢复核验记录在交付时追加。
+公开数据和推理 LoRA 权重发布在 [本轮 Release](https://github.com/sencangWei/pi05-rl-handson/releases/tag/matched-recovery-sft-20261027)。数据已独立下载，完整归档 SHA 及 42 个文件哈希一致：[数据恢复证据](../../evidence/matched-recovery-data-restore.json)。权重也从公开 Release 独立下载，185501122 字节的完整归档 SHA 一致；结合相同官方基座重构全部 71 个参数叶子（含 20 个 LoRA 张量），逐叶哈希全部通过：[权重恢复证据](../../evidence/matched-adapter-restore.json)。
+
+代码、配置、报告和实际视频已备份至用户公开仓库 `sencangWei/pi05-rl-handson` 的 `experiment/matched-recovery-20261027` 分支。独立检出提交 `c739fb2dd0f0a546f9df3c14457de1b804942430`，1973 个跟踪文件的工作内容、远端 blob 与树哈希逐一一致：[代码与视频恢复证据](../../evidence/matched-final-remote-files.json)。实际算法涉及的忽略目录 RLinf 也在固定干净上游重放 9 个补丁，12 个运行文件一致：[运行时恢复证据](../../evidence/matched-final-remote-runtime.json)。常规评测借用的旧模拟器源码也与用户公开仓库的固定提交逐字节一致：[外部模拟器核验](../../evidence/matched-external-simulator-restore.json)。最后这批核验记录另作元数据提交，不改变上述已核验算法版本。
 
 完整训练检查点及优化器保留在本机。Release 的紧凑 LoRA 包只用于恢复推理参数；需要相同官方 `pi05_libero` 基座，不等于完整离线训练环境。未上传官方大基座、全部公开数据或 Python 虚拟环境。本轮未改旧项目、未触碰真机。

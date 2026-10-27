@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "mode": "verify",
+  "tensors": 71,
+  "lora_tensors": 20,
+  "tree_sha256": "1bd6ee4c82b81d93820e6654a550d2b1319e61e0ec35d0b6e060a911be4a6a64",
+  "download": {
+    "status": "PASS",
+    "url": "https://github.com/sencangWei/pi05-rl-handson/releases/download/matched-recovery-sft-20261027/matched-recovery2000-lora.tar.gz",
+    "bytes": 185501122,
+    "sha256": "454773aa7b37443bab27e5493ee95f27f01662998764b22103ce2f60d0b3fe36",
+    "restored": "/home/robot/pi05-rl-handson/.local/matched-download-matched-recovery2000-lora/restored",
+    "verification": "Independent anonymous download with checked partial prefixes and 1MiB ranges; full archive SHA256 matches GitHub asset digest"
+  },
+  "verification": "Remote Release archive independently downloaded, all 71 parameter leaves reconstructed from official base, including 20 LoRA tensors"
+}
