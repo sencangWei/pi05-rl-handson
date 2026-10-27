@@ -119,3 +119,5 @@ TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=1 .venv-ppo/bin/python scripts/evaluate_recover
 数据包 `manual6-data.tar.gz` 564035222字节，SHA256 `9f4a2754251209e9f1a7e086d172649e0323808aaf3e397fbb14b7714e6e7c26`。已独立匿名下载，检查Content-Range、完整长度及SHA，解压后4226文件逐一核对：[恢复证据](../../evidence/manual28-data-remote-restore.json)。
 
 LoRA包 `manual6-adapter.tar.gz` 185497214字节，SHA256 `b86b40fba513536145799c1458059c09c69a42c3715ecc360b3235e8d85875e8`。本地从官方基座加20个LoRA重构全部71参数叶子一致，树SHA256 `5af8859ec2c857d46d44a663c73056a55270dab49561ed1877d96f99f3654932`。已从GitHub独立匿名下载，校验完整SHA并解压，再从官方基座重构全部71参数叶子一致：[远端权重恢复证据](../../evidence/manual28-adapter-remote-restore.json)。
+
+代码与结果提交 `18e2041ad82a0198264d2dabba34e024e9fe1da4` 已从GitHub独立克隆拉取并检出，完整树对象一致、2615个跟踪文件内容逐一一致：[代码远端恢复证据](../../evidence/manual28-code-remote-restore.json)。

@@ -47,5 +47,5 @@ Goal: use the six approved manual demonstrations with existing task replay; eval
 2. DONE: 1612 eligible OSC anchors across eight clips; 816 joint controls archived only. Fresh IDs40..43 protocol frozen.
 3. DONE: manual6_replay2000_v1, 2000 LoRA updates, 25% human / 75% old replay, memory monitoring.
 4. DONE: 64 matched evaluations; fresh5/12→6/12, regression9/12→9/12, retention8/8→8/8. Motion efficiency worse; 88 videos decoded, no automatic UI replacement.
-5. PENDING: back up capability code/data/config/results to writable origin and verify restoration.
+5. DONE: payload18e2041 restored independently from user-owned GitHub origin; all2615 tracked files identical. Release data4226 file hashes match; downloaded adapter reconstructs71 leaves exactly (20 LoRA). Evidence committed.
 Stop: report measured paired results, no unsupported generalization claim; do not replace panel model unless promotion passes.

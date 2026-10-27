@@ -141,3 +141,5 @@ CPU/PPO准备代码备份：d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d已推送公
 2026-10-28 02:30: manual6 2000 updates COMPLETE; checkpoint1999 saved, unit normal exit/no OOM. Six-demo data release independently downloaded and all4226 file hashes verified. Paired JAX parent/new evaluation started; no model promotion.
 
 2026-10-28: manual6 experiment complete: 2000 updates, exit0/OOM0. 64 paired episodes fresh5→6/12, old9→9/12, normal8→8/8. Success-only paired median steps fresh89→116, old90→110, not a speed fix. All88 original/comparison videos fully decoded. Frozen gate passes narrowly, UI unchanged, still6 fresh failures; no broad recovery claim. Release data independently restored4226 files; compact adapter export71 leaves exact, independent download underway.
+
+2026-10-28 backup verification: public origin payload18e2041 independently fetched/restored, 2615 tracked file contents identical; Release data4226 files checked; downloaded adapter full71 leaves/20 LoRA reconstruct exactly. No UI model replacement; own training/evaluation services inactive with exit0.
