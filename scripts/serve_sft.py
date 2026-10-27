@@ -35,6 +35,7 @@ def main():
     norm = checkpoint / "assets/physical-intelligence/libero/norm_stats.json"
     metadata = dict(backend="official-pi05-libero-vla" if args.parent else "local-pi05-libero-lora",
                     checkpoint=str(checkpoint), image_size=224, action_horizon=10,
+                    model_config=repr(cfg.model),
                     discrete_state_input=False, seed_protocol="numpy.default_rng(seed).standard_normal((10,32))",
                     norm_stats_sha256=hashlib.sha256(norm.read_bytes()).hexdigest())
 

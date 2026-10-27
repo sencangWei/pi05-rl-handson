@@ -1,0 +1,11 @@
+Running as unit: pi05-manual28-parent-server.service
+RUN ['/home/robot/pi05-rl-handson/.venv-ppo/bin/python', '-u', 'scripts/evaluate_recovery.py', '--port', '9875', '--expected-server-checkpoint', '/home/robot/pi05-rl-handson/checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999', '--manifest', 'data/recovery-bowl-freshdev28/manifest.json', '--split', 'dev', '--max-steps', '300', '--output', 'evaluations/manual28/parent-fresh']
+RUN ['/home/robot/pi05-rl-handson/.venv-ppo/bin/python', '-u', 'scripts/evaluate_recovery.py', '--port', '9875', '--expected-server-checkpoint', '/home/robot/pi05-rl-handson/checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999', '--manifest', 'data/recovery-bowl-dev27/manifest.json', '--split', 'dev', '--max-steps', '300', '--output', 'evaluations/manual28/parent-regression']
+RUN ['/home/robot/pi05-rl-handson/.venv-sim/bin/python', '-u', 'scripts/baseline.py', '--port', '9875', '--tasks', '0', '7', '8', '9', '--initial-states', '0', '10', '--verify-bowl-release', '--output', 'evaluations/manual28/parent-retention']
+FINISHED parent
+Running as unit: pi05-manual28-new-server.service
+RUN ['/home/robot/pi05-rl-handson/.venv-ppo/bin/python', '-u', 'scripts/evaluate_recovery.py', '--port', '9875', '--expected-server-checkpoint', '/home/robot/pi05-rl-handson/checkpoints/pi05_recovery_replay_lora/manual6_replay2000_v1/1999', '--manifest', 'data/recovery-bowl-freshdev28/manifest.json', '--split', 'dev', '--max-steps', '300', '--output', 'evaluations/manual28/new-fresh']
+RUN ['/home/robot/pi05-rl-handson/.venv-ppo/bin/python', '-u', 'scripts/evaluate_recovery.py', '--port', '9875', '--expected-server-checkpoint', '/home/robot/pi05-rl-handson/checkpoints/pi05_recovery_replay_lora/manual6_replay2000_v1/1999', '--manifest', 'data/recovery-bowl-dev27/manifest.json', '--split', 'dev', '--max-steps', '300', '--output', 'evaluations/manual28/new-regression']
+RUN ['/home/robot/pi05-rl-handson/.venv-sim/bin/python', '-u', 'scripts/baseline.py', '--port', '9875', '--tasks', '0', '7', '8', '9', '--initial-states', '0', '10', '--verify-bowl-release', '--output', 'evaluations/manual28/new-retention']
+FINISHED new
+ALL_EVALUATIONS_FINISHED

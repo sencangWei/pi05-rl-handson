@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "url": "https://github.com/sencangWei/pi05-rl-handson/releases/download/manual6-recovery-20261028/manual6-adapter.tar.gz",
+  "bytes": 185497214,
+  "sha256": "b86b40fba513536145799c1458059c09c69a42c3715ecc360b3235e8d85875e8",
+  "verification": "Independent anonymous 16-range download, ranges/length/full SHA checked; safe extraction",
+  "restored": "/home/robot/pi05-rl-handson/.local/manual28-download-manual6-adapter/restored",
+  "parameter_verification": {
+    "status": "PASS",
+    "mode": "verify",
+    "tensors": 71,
+    "lora_tensors": 20,
+    "tree_sha256": "5af8859ec2c857d46d44a663c73056a55270dab49561ed1877d96f99f3654932"
+  }
+}

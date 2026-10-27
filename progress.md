@@ -135,3 +135,9 @@ CPU/PPO准备代码备份：d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d已推送公
 2026-10-28: User approved stopping collection and proceeding with data compatibility + replay + paired comparison. Read Karpathy, RTK, reproducibility and planning skills; inspected git status and six approved metadata. No training launched yet.
 
 2026-10-28 manual6: six approved raw demonstrations preserved; 1630 OSC frames, 1612 eligible window anchors across eight clips, 816 joint frames archived. Nonterminal windows stop before joint interruptions; no fabricated joint-to-OSC targets. Nine targeted tests and Ruff passed. Fresh development IDs40..43 (12 failure states) frozen before training; public replay 75%, human25%.
+
+2026-10-28 02:21: Preflight full public train/parent/human checksums and both official transforms passed; systemd pi05-manual6-train-20261028 launched (48GiB, no swap, 90min bound). 724d96c independently restored from origin, 2011 tracked files exact. Full six-demo data archive 564035222 bytes/SHA9f4a2754251209e9f1a7e086d172649e0323808aaf3e397fbb14b7714e6e7c26 uploading.
+
+2026-10-28 02:30: manual6 2000 updates COMPLETE; checkpoint1999 saved, unit normal exit/no OOM. Six-demo data release independently downloaded and all4226 file hashes verified. Paired JAX parent/new evaluation started; no model promotion.
+
+2026-10-28: manual6 experiment complete: 2000 updates, exit0/OOM0. 64 paired episodes fresh5→6/12, old9→9/12, normal8→8/8. Success-only paired median steps fresh89→116, old90→110, not a speed fix. All88 original/comparison videos fully decoded. Frozen gate passes narrowly, UI unchanged, still6 fresh failures; no broad recovery claim. Release data independently restored4226 files; compact adapter export71 leaves exact, independent download underway.

@@ -1,0 +1,863 @@
+{
+  "status": "PASS",
+  "evaluation_episodes": 64,
+  "recovery": {
+    "fresh": {
+      "totals": {
+        "before": {
+          "success": 5,
+          "trials": 12
+        },
+        "after": {
+          "success": 6,
+          "trials": 12
+        }
+      },
+      "categories": {
+        "before": {
+          "empty_grasp/success": 2,
+          "empty_grasp/trials": 4,
+          "object_offset/success": 2,
+          "object_offset/trials": 4,
+          "placement_failure/success": 1,
+          "placement_failure/trials": 4
+        },
+        "after": {
+          "empty_grasp/success": 2,
+          "empty_grasp/trials": 4,
+          "object_offset/success": 2,
+          "object_offset/trials": 4,
+          "placement_failure/success": 2,
+          "placement_failure/trials": 4
+        }
+      },
+      "motion": {
+        "before": {
+          "success": 5,
+          "trials": 12,
+          "longest_low_motion_controls": 5,
+          "low_motion_controls": 67,
+          "total_controls": 2588,
+          "paired_success_median_steps": 89,
+          "median_wall_seconds": 7.604357975498715
+        },
+        "after": {
+          "success": 6,
+          "trials": 12,
+          "longest_low_motion_controls": 7,
+          "low_motion_controls": 37,
+          "total_controls": 2707,
+          "paired_success_median_steps": 116,
+          "median_wall_seconds": 7.318669435499032
+        }
+      },
+      "paired_success_count": 5,
+      "changed_outcomes": [
+        {
+          "id": "dev-placement_failure-init43",
+          "before": false,
+          "after": true
+        }
+      ]
+    },
+    "regression": {
+      "totals": {
+        "before": {
+          "success": 9,
+          "trials": 12
+        },
+        "after": {
+          "success": 9,
+          "trials": 12
+        }
+      },
+      "categories": {
+        "before": {
+          "empty_grasp/success": 4,
+          "empty_grasp/trials": 4,
+          "object_offset/success": 4,
+          "object_offset/trials": 4,
+          "placement_failure/success": 1,
+          "placement_failure/trials": 4
+        },
+        "after": {
+          "empty_grasp/success": 4,
+          "empty_grasp/trials": 4,
+          "object_offset/success": 4,
+          "object_offset/trials": 4,
+          "placement_failure/success": 1,
+          "placement_failure/trials": 4
+        }
+      },
+      "motion": {
+        "before": {
+          "success": 9,
+          "trials": 12,
+          "longest_low_motion_controls": 1,
+          "low_motion_controls": 4,
+          "total_controls": 1886,
+          "paired_success_median_steps": 90,
+          "median_wall_seconds": 2.668112426497828
+        },
+        "after": {
+          "success": 9,
+          "trials": 12,
+          "longest_low_motion_controls": 5,
+          "low_motion_controls": 24,
+          "total_controls": 2007,
+          "paired_success_median_steps": 110,
+          "median_wall_seconds": 2.882430215002387
+        }
+      },
+      "paired_success_count": 9,
+      "changed_outcomes": []
+    }
+  },
+  "retention": {
+    "parent": {
+      "success": 8,
+      "trials": 8,
+      "median_steps": 107.5
+    },
+    "new": {
+      "success": 8,
+      "trials": 8,
+      "median_steps": 114.5
+    },
+    "equal_fields": [
+      "suite",
+      "task_id",
+      "initial_state",
+      "seed",
+      "replan_steps",
+      "max_steps",
+      "score_definition",
+      "task_language",
+      "prompt",
+      "initial_state_sha256",
+      "initial_state_dtype",
+      "initial_state_shape"
+    ]
+  },
+  "promotion": {
+    "checks": {
+      "fresh_total_strictly_improves": true,
+      "regression_total_no_drop": true,
+      "retention_8_of_8": true,
+      "fresh_categories_no_drop": true,
+      "regression_categories_no_drop": true
+    },
+    "passes_prespecified_gate": true,
+    "ui_model_changed": false,
+    "scope": "12 fresh development starts, 12 regression starts, 8 normal episodes; not blind holdout/general recovery acceptance"
+  },
+  "videos": [
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/after/dev-empty_grasp-init40.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "155",
+      "sha256": "d72fbe91435139ce39f51af5abf63721cae3f84ff90e09d2568583afcb2ab84a"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/after/dev-empty_grasp-init41.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "215",
+      "sha256": "a03b45302106e3da5cf53ba51c71409fbe40f0e6528e1d01848ac6bbc6c42ccd"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/after/dev-empty_grasp-init42.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "18dc1c4ff185b7c73b8663ca6b97614e7d72d732aa8f64d87252e411d7f2e245"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/after/dev-empty_grasp-init43.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "d75fc1ed5bc2387cef980c72eb243c6d9c2705e0d7cbf53d2c536aa946589a46"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/after/dev-object_offset-init40.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "117",
+      "sha256": "0222407513f7b7851ce2665c978763ff064998cb12356d4e66a9bd3992aaae98"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/after/dev-object_offset-init41.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "115",
+      "sha256": "467d6ec2ff8934d2c48f84f061314ea00ca36bd468f8d204e6f2a4b6be6d4f70"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/after/dev-object_offset-init42.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "f153e811088d20a70311b0a5f636c9ed8ec7f636b606ec317f4f6d46f45238d8"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/after/dev-object_offset-init43.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "7317003e4c9485bd0b5b3bba654e1ececc3de03c8f039d29d43df6e56d0b8978"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/after/dev-placement_failure-init40.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "70425ae5bd796b5c459b04a3b4f0d22586b1287e09560887b2ba472cf1bcd98c"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/after/dev-placement_failure-init41.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "116",
+      "sha256": "cf05f224079ff883cac1f68456d03a61908bd763c6f2e854a5910e4d68e1a29e"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/after/dev-placement_failure-init42.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "b1b7440c55464822a78bedae5ed2d1d0ebc4fcf4931836fbfc6eb052df6fb573"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/after/dev-placement_failure-init43.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "195",
+      "sha256": "3b433d00c30efd9a2accdc2835dc6da6260366e1c12c3d5bba7336b379b66952"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/before/dev-empty_grasp-init40.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "75",
+      "sha256": "9d41137f2f9226e33b6908eae810953a77ea08eb69dc29bc3ccb392b336195c3"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/before/dev-empty_grasp-init41.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "115",
+      "sha256": "b0e3b554904649582848705202238d2ad7304c15bbad7fa8b63000dcfdfaf735"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/before/dev-empty_grasp-init42.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "ae2a1c6f81137f5b3e81601fec0f081667d6cdc3ffc1852863534a5685af3897"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/before/dev-empty_grasp-init43.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "ec60426ca4d6951ff95765ddff0cd068504c22726008a54c10285fa408c8d79e"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/before/dev-object_offset-init40.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "125",
+      "sha256": "4d70d5aec676586cd28f08b1e777297fca32ba865754314673cf27deeeb1875f"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/before/dev-object_offset-init41.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "90",
+      "sha256": "db4ca4197b26245a8e2ffef4d8a9b458fc89e2a9efc10a9424a91ac51295809c"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/before/dev-object_offset-init42.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "335321b0a9f1cac08128db4599cde7cd9d9e13ebb25e2fb79a31664cef3b7e62"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/before/dev-object_offset-init43.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "3e31ba8d0d3bcbcf926466e40cc8513b968a612b3f9853a11aa3bdcc76fdbdac"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/before/dev-placement_failure-init40.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "2361652a9f2e8a4afd9a0b6935f03d9993fa6c12e183c17b0c4660af8348d956"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/before/dev-placement_failure-init41.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "88",
+      "sha256": "1351f38e2c4e6fdc878ed53f8e9f06ed721f7a7befbf56964bb3291ed357d0fc"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/before/dev-placement_failure-init42.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "2988b4634f89b507fad8ab33c2e7ddb695fd730142dfa62fc9cb72485acefe17"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/before/dev-placement_failure-init43.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "b565f1f9b2207c97b4e5a37557a7a54009e87168d098ffd8639a9987efd991fb"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/comparison-dev-empty_grasp-init40.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "155",
+      "sha256": "8c5a293d0b2ec6f398d210fd19c0ebc4c8a114cba71b2095c6bc2a942b0c33c9"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/comparison-dev-empty_grasp-init41.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "215",
+      "sha256": "aae92df4f13172606db5de44f3ee3db80e9e9cb460150f37c9b8d0c8a96c9acb"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/comparison-dev-empty_grasp-init42.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "16c70e697436233a0a9570f0e192a9e786c2a6c8a571143b1e8ca65628832d5b"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/comparison-dev-empty_grasp-init43.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "6250edb1edb6087de73de907eba2c1dbc5d964749862ee1f75467f03fbbd1169"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/comparison-dev-object_offset-init40.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "125",
+      "sha256": "fbea6c165abf5a07d7fbea8af4bc96a91e7d12307750ae19d17f2fd280004410"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/comparison-dev-object_offset-init41.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "115",
+      "sha256": "036a555b1b06cda9f02ef10448e3d228fabd710ab0046b7fe8c0f26075ca29c4"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/comparison-dev-object_offset-init42.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "ee7822a207a03e4fea00af3ea4e49979b9bd47007aebd86897b458a79a276188"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/comparison-dev-object_offset-init43.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "ddb6fe4a7c20e6b8b6aeb3fcfc448bd3943e29d4a3e5beee8cc9ab86a1e96971"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/comparison-dev-placement_failure-init40.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "b3ada9c71875cba3b0c589f5c09a043676a0b96bbdc641d1a81ab08750328648"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/comparison-dev-placement_failure-init41.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "116",
+      "sha256": "ed07d7fdeb15d202fb0493e49cbde8bb8c5c98746205f4e66f7316a93d803bf2"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/comparison-dev-placement_failure-init42.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "a7afe5f77e1343e429a3144a2eec84b856da849e450276767326b620812ec0b3"
+    },
+    {
+      "path": "artifacts/20261028-manual6/fresh-comparison/comparison-dev-placement_failure-init43.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "7ca051d42ce70815245255e7f1a058a4d79dba62a301cfea8a930137a638125c"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/after/dev-empty_grasp-init20.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "151",
+      "sha256": "d55a74e975afbd1c418a77eb5e7d8d8cb5547d46357a2201f15f0406cf87b01d"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/after/dev-empty_grasp-init21.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "111",
+      "sha256": "f5f64f8f4b0c90f516c307e87ea39262178d9d603bafb471387f28b7d878c68b"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/after/dev-empty_grasp-init22.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "125",
+      "sha256": "828beec71b1689e0b850da234eba0566bd7d9ca3104ce1d2b3c3953204ce7344"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/after/dev-empty_grasp-init23.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "91",
+      "sha256": "56d9ed9d6d5f4b79610f711fe79586243cacfe2106d0468704096576386c2a5d"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/after/dev-object_offset-init20.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "204",
+      "sha256": "2f21bb81cf733ede0f5c33b308aa86b2c1830722a90c1a35c345e11260a12b76"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/after/dev-object_offset-init21.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "109",
+      "sha256": "4cd936790368c3df382ee9e5b5b7c9e023d50401b0d3f07ca53c34beb8f6851f"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/after/dev-object_offset-init22.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "100",
+      "sha256": "e7b0186e026dab7e5d42199f2ed521b064f4544c2b6f835ea142807a2977836c"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/after/dev-object_offset-init23.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "114",
+      "sha256": "24ca4ee34ff2bd28d4091ccb5164b5b33c27290d1d7dd4aa3d37bc1e2d0013b7"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/after/dev-placement_failure-init20.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "8efdc4fc5f207379c433ae426e4b57ff329a913869e587525732e7a62ef740cd"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/after/dev-placement_failure-init21.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "e306a5c304f4c7196da9b9231a4f86573ed10c83d52904b22bfda6210ad84901"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/after/dev-placement_failure-init22.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "111",
+      "sha256": "555b82722b28bcfac9db3a36aad5f184c3511fde175ac0ac899bab71d493a229"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/after/dev-placement_failure-init23.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "31690b6daadceaa87624bf8baff754e17011968a8ffd1df7f0b21c867ccb5635"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/before/dev-empty_grasp-init20.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "239",
+      "sha256": "2850a197026fcf3de4955cca17f03ac5390de689f08768879683402b31f046d8"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/before/dev-empty_grasp-init21.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "87",
+      "sha256": "5d15fb713b85d00476444d7631498d008dea95f1691abeebd24bb0644fc90b22"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/before/dev-empty_grasp-init22.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "82",
+      "sha256": "d70f65722980fe4767da1f4f7379cb2f0a1607e3cdbd88f5e370c6a86fdc0931"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/before/dev-empty_grasp-init23.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "75",
+      "sha256": "86e72c0829b13226b49f387440451f43f541ab4389ec6dc5d8fd5714921fae54"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/before/dev-object_offset-init20.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "120",
+      "sha256": "14a70e5c7f49a70217b7f2fd38062f333754ac3062e49fe8d394e5bea77d8d4a"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/before/dev-object_offset-init21.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "115",
+      "sha256": "7de84f392b7635bc08f10b0bba54681d9a0a3751cdd7b512b734b862bd1f291f"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/before/dev-object_offset-init22.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "105",
+      "sha256": "caded15e6ba8584ca2e436d25ca0c5c3cc2b5eedda1119dd6339013c2548e911"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/before/dev-object_offset-init23.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "91",
+      "sha256": "0df7fd5abd6f3864e8d8f6d4cdaf2acfee773908db2d44540f5c633e34080116"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/before/dev-placement_failure-init20.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "1ff0bce299e0f6a2573f35480266ec98c94255d108be630431b370b7fd215749"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/before/dev-placement_failure-init21.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "54571001680a072d4c720bd20f1b34a12f78b88000a3c0f8bba5ae39fea1aaa5"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/before/dev-placement_failure-init22.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "81",
+      "sha256": "93b0a94b6833df4e7d1adb5007151093ac6929f97086d394234814223f6ff1f3"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/before/dev-placement_failure-init23.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "86cf7a326494e57d46f0ace2e67223c1d70bbf3af1157216a6f648e26fca0b72"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/comparison-dev-empty_grasp-init20.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "239",
+      "sha256": "03738c8eafd986a9ee46a323aec580ad1e64fcdd6a414104d60a3d90fa26e693"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/comparison-dev-empty_grasp-init21.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "111",
+      "sha256": "c28bc8a251798cc8d015b8014f7f447bd698560478733a7e3e637242999c9002"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/comparison-dev-empty_grasp-init22.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "125",
+      "sha256": "b2a3dd42b9c13a6e03b6c2da5c3f7501b0754addc1d5a950848a8e8d21fe5bc1"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/comparison-dev-empty_grasp-init23.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "91",
+      "sha256": "3767f8cd149f9c2380707da8707222b8afae9d55a95b0c3f54f7acacb49328cb"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/comparison-dev-object_offset-init20.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "204",
+      "sha256": "4d9d1ec35de985489141790faea2fae70b288bb4ff44fd719da3d9cd29b2c1a4"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/comparison-dev-object_offset-init21.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "115",
+      "sha256": "d9b0a1309ec6120f226178f9c2c20d7a080c803a0966af7afb4eb230d9ca8c84"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/comparison-dev-object_offset-init22.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "105",
+      "sha256": "1c8f67371982ea73fb640f19f348de2072723b25525de08244271dab35cae5ce"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/comparison-dev-object_offset-init23.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "114",
+      "sha256": "b4419e965342d875f6a089f3e4dd8d165e6b396b57d19fbb262484b8f48130b7"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/comparison-dev-placement_failure-init20.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "0ae563926fa3b326f45c1a37e700b4f2d21a3e2bd8411bb7fbab4bbe90a7f22d"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/comparison-dev-placement_failure-init21.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "28028b74f270f008d33af7ad1d19413611dc9fd68c248c49a4f0d68dde018e4e"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/comparison-dev-placement_failure-init22.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "111",
+      "sha256": "44598c4fa4f501b365d0e999cbe985e93d2d25c27d554917c37da14740836359"
+    },
+    {
+      "path": "artifacts/20261028-manual6/regression-comparison/comparison-dev-placement_failure-init23.mp4",
+      "width": 512,
+      "height": 256,
+      "avg_frame_rate": "20/1",
+      "nb_frames": "301",
+      "sha256": "c20480da9d907c3a7c4898be50d8974d027b4f7045f423f6a862137ddc1afc7e"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/new/goal-00-init-00/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "123",
+      "sha256": "d56017605ccaea514e99a8884592b7d25b44849a5e893f374eba57f8ba5ab777"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/new/goal-00-init-10/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "128",
+      "sha256": "0b79885af8a5c66539a3408b4201f6ab73c446a6ec2b1b7c6e8a6043833dde24"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/new/goal-07-init-00/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "86",
+      "sha256": "0c344e24a4733877701ca91c6f98640087249b13911e0c5b8a8d4455d368341e"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/new/goal-07-init-10/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "81",
+      "sha256": "5477dfda541268e147b8c5317ed6ff7aa1848d259a3ea5b9c152d71eec6fab82"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/new/goal-08-init-00/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "106",
+      "sha256": "d6576baac24997da9158ab762d9ff6210d594c32cc9ab4c171c7efebc0af4d9e"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/new/goal-08-init-10/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "108",
+      "sha256": "cf3536a25447c9df4bfbb6c02b1c97caf1543389ca0ed6b0f8b7ce7399c5831b"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/new/goal-09-init-00/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "173",
+      "sha256": "3920f2027ef3d5097471698876fea8e60e9ce02ed0665475e20ecbdc0a9c9820"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/new/goal-09-init-10/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "189",
+      "sha256": "ba5cef77b4ddf3d19276a70e607bbff36060be53f878bdc6056904cfaed079e2"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/parent/goal-00-init-00/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "120",
+      "sha256": "dbb09493e55673f4519d701e74f211835bd667d6ad1bb4d96b19f78e709f5372"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/parent/goal-00-init-10/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "126",
+      "sha256": "d668cb88664c05e35e75f95862020550920d858434196d2878958bd06a433211"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/parent/goal-07-init-00/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "86",
+      "sha256": "72badaff82857f1a6921d5d0e8a08dbdffdd13654fb1ddf3b5e2fbb45d3581fa"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/parent/goal-07-init-10/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "81",
+      "sha256": "56322c690eaba87fb1b351b4c11fff09b253805a3a5bbce3a353879efe3526b4"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/parent/goal-08-init-00/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "97",
+      "sha256": "835464a48ee04c38fd75ee0205f735fdec96db93e8abb901e5ed3fd8fe70afb6"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/parent/goal-08-init-10/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "95",
+      "sha256": "cbe6a2fdda24b5054a9796f8dc1c66550e0509daffce96de994b50bea7c57595"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/parent/goal-09-init-00/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "131",
+      "sha256": "dec94409a2b2a12ca2ffe7453379297501062a5e96dcc6cb7bf5ae6afef3a203"
+    },
+    {
+      "path": "artifacts/20261028-manual6/retention/parent/goal-09-init-10/paired_cameras.mp4",
+      "width": 448,
+      "height": 224,
+      "avg_frame_rate": "10/1",
+      "nb_frames": "136",
+      "sha256": "c2fff7ec36f0fe863cadafc07b7b2709a2c487f4f1206c8015e4050ca7136505"
+    }
+  ],
+  "video_count": 88,
+  "all_video_full_decode_pass": true,
+  "retention_video_note": "Control 20Hz, encoded 10fps (historical baseline writer): playback is 2x slower than simulation. Recovery and paired comparisons encode 20fps."
+}

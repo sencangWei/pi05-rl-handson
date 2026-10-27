@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE",
+  "actual_updates": 2000,
+  "train_wall_seconds": 320.729943170998,
+  "fetched_samples_including_prefetch": {
+    "human": 543,
+    "replay": 1458
+  },
+  "unit": "Result=success\nExecMainStatus=0\nActiveState=inactive\n",
+  "memory_peak_sampled_bytes": 32171925504,
+  "oom_seen": false,
+  "checkpoint": "/home/robot/pi05-rl-handson/checkpoints/pi05_recovery_replay_lora/manual6_replay2000_v1"
+}

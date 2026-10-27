@@ -1,0 +1,123 @@
+{
+  "parent": [
+    {
+      "id": "dev-placement_failure-init40",
+      "steps": 300,
+      "native_first_step": null,
+      "last50_median_command_translation_norm": 0.32565143785249323,
+      "last50_median_actual_eef_mm": 4.065230614782518,
+      "last50_native_true_controls": 0,
+      "last50_finger_contact_controls": 6
+    },
+    {
+      "id": "dev-empty_grasp-init42",
+      "steps": 300,
+      "native_first_step": null,
+      "last50_median_command_translation_norm": 0.829437182604297,
+      "last50_median_actual_eef_mm": 6.338151045539373,
+      "last50_native_true_controls": 0,
+      "last50_finger_contact_controls": 50
+    },
+    {
+      "id": "dev-object_offset-init42",
+      "steps": 300,
+      "native_first_step": null,
+      "last50_median_command_translation_norm": 0.6677153978237194,
+      "last50_median_actual_eef_mm": 5.414843612171192,
+      "last50_native_true_controls": 0,
+      "last50_finger_contact_controls": 50
+    },
+    {
+      "id": "dev-placement_failure-init42",
+      "steps": 300,
+      "native_first_step": null,
+      "last50_median_command_translation_norm": 0.3692310705347124,
+      "last50_median_actual_eef_mm": 2.979914248326678,
+      "last50_native_true_controls": 0,
+      "last50_finger_contact_controls": 9
+    },
+    {
+      "id": "dev-empty_grasp-init43",
+      "steps": 300,
+      "native_first_step": null,
+      "last50_median_command_translation_norm": 0.1585398069077513,
+      "last50_median_actual_eef_mm": 1.970085225430183,
+      "last50_native_true_controls": 0,
+      "last50_finger_contact_controls": 0
+    },
+    {
+      "id": "dev-object_offset-init43",
+      "steps": 300,
+      "native_first_step": null,
+      "last50_median_command_translation_norm": 0.8147352806828598,
+      "last50_median_actual_eef_mm": 0.25205208059298845,
+      "last50_native_true_controls": 0,
+      "last50_finger_contact_controls": 0
+    },
+    {
+      "id": "dev-placement_failure-init43",
+      "steps": 300,
+      "native_first_step": null,
+      "last50_median_command_translation_norm": 0.4164266585375035,
+      "last50_median_actual_eef_mm": 4.169925434421082,
+      "last50_native_true_controls": 0,
+      "last50_finger_contact_controls": 13
+    }
+  ],
+  "new": [
+    {
+      "id": "dev-placement_failure-init40",
+      "steps": 300,
+      "native_first_step": null,
+      "last50_median_command_translation_norm": 0.21672722982286155,
+      "last50_median_actual_eef_mm": 2.294667142532686,
+      "last50_native_true_controls": 0,
+      "last50_finger_contact_controls": 0
+    },
+    {
+      "id": "dev-empty_grasp-init42",
+      "steps": 300,
+      "native_first_step": null,
+      "last50_median_command_translation_norm": 0.5648118218659965,
+      "last50_median_actual_eef_mm": 7.2768829147646255,
+      "last50_native_true_controls": 0,
+      "last50_finger_contact_controls": 0
+    },
+    {
+      "id": "dev-object_offset-init42",
+      "steps": 300,
+      "native_first_step": null,
+      "last50_median_command_translation_norm": 0.3259772781205714,
+      "last50_median_actual_eef_mm": 2.974815333505696,
+      "last50_native_true_controls": 0,
+      "last50_finger_contact_controls": 49
+    },
+    {
+      "id": "dev-placement_failure-init42",
+      "steps": 300,
+      "native_first_step": null,
+      "last50_median_command_translation_norm": 0.2634364721757686,
+      "last50_median_actual_eef_mm": 1.5868325823099003,
+      "last50_native_true_controls": 0,
+      "last50_finger_contact_controls": 23
+    },
+    {
+      "id": "dev-empty_grasp-init43",
+      "steps": 300,
+      "native_first_step": null,
+      "last50_median_command_translation_norm": 0.4988490843026872,
+      "last50_median_actual_eef_mm": 5.790382845617056,
+      "last50_native_true_controls": 0,
+      "last50_finger_contact_controls": 50
+    },
+    {
+      "id": "dev-object_offset-init43",
+      "steps": 300,
+      "native_first_step": null,
+      "last50_median_command_translation_norm": 0.27015089458460034,
+      "last50_median_actual_eef_mm": 3.1701241198029755,
+      "last50_native_true_controls": 0,
+      "last50_finger_contact_controls": 19
+    }
+  ]
+}

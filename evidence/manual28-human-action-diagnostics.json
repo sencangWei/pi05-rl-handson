@@ -1,0 +1,125 @@
+{
+  "note": "Raw normalized command norms, not physical speed. Includes intended grasp/release holds; diagnostic only. No labels modified.",
+  "clips": [
+    {
+      "source": "human_1793114449817419797",
+      "frames": 465,
+      "terminal": true,
+      "translation_norm_quantiles": [
+        0.0,
+        0.0,
+        0.10000000149011612,
+        0.10000000149011612,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_translation_fraction": 0.3118279569892473,
+      "small_translation_fraction_lt_0_02": 0.3118279569892473
+    },
+    {
+      "source": "human_1793121358375746008",
+      "frames": 85,
+      "terminal": false,
+      "translation_norm_quantiles": [
+        0.0,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_translation_fraction": 0.11764705882352941,
+      "small_translation_fraction_lt_0_02": 0.11764705882352941
+    },
+    {
+      "source": "human_1793121358375746008",
+      "frames": 35,
+      "terminal": true,
+      "translation_norm_quantiles": [
+        0.0,
+        0.0,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_translation_fraction": 0.2857142857142857,
+      "small_translation_fraction_lt_0_02": 0.2857142857142857
+    },
+    {
+      "source": "human_1793122696228231033",
+      "frames": 235,
+      "terminal": false,
+      "translation_norm_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_translation_fraction": 0.5531914893617021,
+      "small_translation_fraction_lt_0_02": 0.5531914893617021
+    },
+    {
+      "source": "human_1793122696228231033",
+      "frames": 50,
+      "terminal": true,
+      "translation_norm_quantiles": [
+        0.0,
+        0.0,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_translation_fraction": 0.4,
+      "small_translation_fraction_lt_0_02": 0.4
+    },
+    {
+      "source": "human_1793122982775036691",
+      "frames": 270,
+      "terminal": true,
+      "translation_norm_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_translation_fraction": 0.5925925925925926,
+      "small_translation_fraction_lt_0_02": 0.5925925925925926
+    },
+    {
+      "source": "human_1793123928152741170",
+      "frames": 245,
+      "terminal": true,
+      "translation_norm_quantiles": [
+        0.0,
+        0.0,
+        0.10000000149011612,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_translation_fraction": 0.32653061224489793,
+      "small_translation_fraction_lt_0_02": 0.32653061224489793
+    },
+    {
+      "source": "human_1793124070194277437",
+      "frames": 245,
+      "terminal": true,
+      "translation_norm_quantiles": [
+        0.0,
+        0.10000000149011612,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_translation_fraction": 0.12244897959183673,
+      "small_translation_fraction_lt_0_02": 0.12244897959183673
+    }
+  ]
+}

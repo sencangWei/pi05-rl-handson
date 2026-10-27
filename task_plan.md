@@ -43,9 +43,9 @@
 
 # Manual recovery 2026-10-28
 Goal: use the six approved manual demonstrations with existing task replay; evaluate parent vs new policy on frozen unseen recovery states. No more collection now. Preserve original recordings and unrelated jobs.
-1. IN PROGRESS: freeze recordings, inspect joint/OSC compatibility, verify replay.
-2. PENDING: prepare validated training data and frozen evaluation protocol; document any excluded/incompatible segments.
-3. PENDING: bounded LoRA training from recorded parent, old task replay, memory monitoring.
-4. PENDING: paired simulator evaluation incl failure category, latency/stall and retention; retain negative results.
+1. DONE: six recordings frozen, OSC/joint inspected. Raw trajectories preserved; independent contact replay is not bit-exact.
+2. DONE: 1612 eligible OSC anchors across eight clips; 816 joint controls archived only. Fresh IDs40..43 protocol frozen.
+3. DONE: manual6_replay2000_v1, 2000 LoRA updates, 25% human / 75% old replay, memory monitoring.
+4. DONE: 64 matched evaluations; fresh5/12→6/12, regression9/12→9/12, retention8/8→8/8. Motion efficiency worse; 88 videos decoded, no automatic UI replacement.
 5. PENDING: back up capability code/data/config/results to writable origin and verify restoration.
 Stop: report measured paired results, no unsupported generalization claim; do not replace panel model unless promotion passes.

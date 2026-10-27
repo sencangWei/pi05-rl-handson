@@ -1,0 +1,157 @@
+{
+  "status": "PASS",
+  "evaluation_episodes": 64,
+  "recovery": {
+    "fresh": {
+      "totals": {
+        "before": {
+          "success": 5,
+          "trials": 12
+        },
+        "after": {
+          "success": 6,
+          "trials": 12
+        }
+      },
+      "categories": {
+        "before": {
+          "empty_grasp/success": 2,
+          "empty_grasp/trials": 4,
+          "object_offset/success": 2,
+          "object_offset/trials": 4,
+          "placement_failure/success": 1,
+          "placement_failure/trials": 4
+        },
+        "after": {
+          "empty_grasp/success": 2,
+          "empty_grasp/trials": 4,
+          "object_offset/success": 2,
+          "object_offset/trials": 4,
+          "placement_failure/success": 2,
+          "placement_failure/trials": 4
+        }
+      },
+      "motion": {
+        "before": {
+          "success": 5,
+          "trials": 12,
+          "longest_low_motion_controls": 5,
+          "low_motion_controls": 67,
+          "total_controls": 2588,
+          "paired_success_median_steps": 89,
+          "median_wall_seconds": 7.604357975498715
+        },
+        "after": {
+          "success": 6,
+          "trials": 12,
+          "longest_low_motion_controls": 7,
+          "low_motion_controls": 37,
+          "total_controls": 2707,
+          "paired_success_median_steps": 116,
+          "median_wall_seconds": 7.318669435499032
+        }
+      },
+      "paired_success_count": 5,
+      "changed_outcomes": [
+        {
+          "id": "dev-placement_failure-init43",
+          "before": false,
+          "after": true
+        }
+      ]
+    },
+    "regression": {
+      "totals": {
+        "before": {
+          "success": 9,
+          "trials": 12
+        },
+        "after": {
+          "success": 9,
+          "trials": 12
+        }
+      },
+      "categories": {
+        "before": {
+          "empty_grasp/success": 4,
+          "empty_grasp/trials": 4,
+          "object_offset/success": 4,
+          "object_offset/trials": 4,
+          "placement_failure/success": 1,
+          "placement_failure/trials": 4
+        },
+        "after": {
+          "empty_grasp/success": 4,
+          "empty_grasp/trials": 4,
+          "object_offset/success": 4,
+          "object_offset/trials": 4,
+          "placement_failure/success": 1,
+          "placement_failure/trials": 4
+        }
+      },
+      "motion": {
+        "before": {
+          "success": 9,
+          "trials": 12,
+          "longest_low_motion_controls": 1,
+          "low_motion_controls": 4,
+          "total_controls": 1886,
+          "paired_success_median_steps": 90,
+          "median_wall_seconds": 2.668112426497828
+        },
+        "after": {
+          "success": 9,
+          "trials": 12,
+          "longest_low_motion_controls": 5,
+          "low_motion_controls": 24,
+          "total_controls": 2007,
+          "paired_success_median_steps": 110,
+          "median_wall_seconds": 2.882430215002387
+        }
+      },
+      "paired_success_count": 9,
+      "changed_outcomes": []
+    }
+  },
+  "retention": {
+    "parent": {
+      "success": 8,
+      "trials": 8,
+      "median_steps": 107.5
+    },
+    "new": {
+      "success": 8,
+      "trials": 8,
+      "median_steps": 114.5
+    },
+    "equal_fields": [
+      "suite",
+      "task_id",
+      "initial_state",
+      "seed",
+      "replan_steps",
+      "max_steps",
+      "score_definition",
+      "task_language",
+      "prompt",
+      "initial_state_sha256",
+      "initial_state_dtype",
+      "initial_state_shape"
+    ]
+  },
+  "promotion": {
+    "checks": {
+      "fresh_total_strictly_improves": true,
+      "regression_total_no_drop": true,
+      "retention_8_of_8": true,
+      "fresh_categories_no_drop": true,
+      "regression_categories_no_drop": true
+    },
+    "passes_prespecified_gate": true,
+    "ui_model_changed": false,
+    "scope": "12 fresh development starts, 12 regression starts, 8 normal episodes; not blind holdout/general recovery acceptance"
+  },
+  "video_count": 88,
+  "all_video_full_decode_pass": true,
+  "retention_video_note": "Control 20Hz, encoded 10fps (historical baseline writer): playback is 2x slower than simulation. Recovery and paired comparisons encode 20fps."
+}

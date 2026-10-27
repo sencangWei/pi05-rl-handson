@@ -16,20 +16,31 @@ def main():
     args = parser.parse_args()
     sources = {"before": args.before, "after": args.after}
     identities = {k: json.loads((v / "identity.json").read_text()) for k, v in sources.items()}
-    fields = ("manifest_sha256", "split", "category", "success", "action_execution",
+    fields = ("manifest_sha256", "config_sha256", "split", "category", "success", "action_execution",
               "control_hz", "video_fps", "noise", "sources")
     for field in fields:
         if identities["before"][field] != identities["after"][field]:
             raise ValueError("Unmatched evaluation contract: " + field)
-    configs = []
-    for identity in identities.values():
-        config = copy.deepcopy(identity["model_config"])
-        config.pop("model_path")
-        configs.append(config)
-        if identity["checkpoint_sha256"] is not None:
-            raise ValueError("Expected SFT without an additional PPO adapter")
-    if configs[0] != configs[1]:
-        raise ValueError("Non-weight model configuration changed")
+    servers = [identity.get("jax_server") for identity in identities.values()]
+    if any(servers):
+        if not all(servers):
+            raise ValueError("Cannot compare JAX and Torch backends")
+        for field in ("backend", "model_config", "image_size", "action_horizon",
+                      "discrete_state_input", "seed_protocol", "norm_stats_sha256"):
+            if servers[0][field] != servers[1][field]:
+                raise ValueError("Unmatched JAX policy contract: " + field)
+        if servers[0]["checkpoint"] == servers[1]["checkpoint"]:
+            raise ValueError("Expected different parent and candidate checkpoints")
+    else:
+        configs = []
+        for identity in identities.values():
+            config = copy.deepcopy(identity["model_config"])
+            config.pop("model_path")
+            configs.append(config)
+            if identity["checkpoint_sha256"] is not None:
+                raise ValueError("Expected SFT without an additional PPO adapter")
+        if configs[0] != configs[1]:
+            raise ValueError("Non-weight model configuration changed")
     results = {k: {r["id"]: r for r in json.loads((v / "summary.json").read_text())}
                for k, v in sources.items()}
     if len(results["before"]) != 12 or results["before"].keys() != results["after"].keys():
@@ -56,7 +67,11 @@ def main():
             for sample in trace:
                 current = current + 1 if sample["eef_motion_m"] < .0002 and not sample["native_success"] else 0
                 longest = max(longest, current)
-            row["models"][label] = {**result, "longest_low_motion_controls": longest}
+            low_motion = sum(sample["eef_motion_m"] < .0002 and not sample["native_success"]
+                             for sample in trace)
+            row["models"][label] = {**result, "longest_low_motion_controls": longest,
+                                     "low_motion_controls": low_motion,
+                                     "low_motion_fraction": low_motion / max(1, len(trace))}
             totals[label][result["category"] + "/success"] += int(result["success"])
             totals[label][result["category"] + "/trials"] += 1
             duration = max(duration, (result["steps"] + 1) / identities[label]["video_fps"])
@@ -75,6 +90,7 @@ def main():
         rows.append(row)
     report = {"status": "PASS", "equal_protocol_fields": fields, "non_weight_config_equal": True,
               "weight_sha256": {k: v["base_sha256"] for k, v in identities.items()},
+              "jax_servers": {k: v.get("jax_server") for k, v in identities.items()},
               "matched_states": len(rows), "categories": {k: dict(v) for k, v in totals.items()},
               "totals": {k: {"success": sum(r["success"] for r in v.values()), "trials": len(v)}
                          for k, v in results.items()},

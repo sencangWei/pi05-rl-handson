@@ -1,0 +1,4 @@
+{"before": {"success": 5, "trials": 12}, "after": {"success": 6, "trials": 12}}
+{"before": {"success": 9, "trials": 12}, "after": {"success": 9, "trials": 12}}
+{"status": "PASS", "mode": "export", "tensors": 71, "lora_tensors": 20, "tree_sha256": "5af8859ec2c857d46d44a663c73056a55270dab49561ed1877d96f99f3654932"}
+POSTPROCESS_COMPLETE
