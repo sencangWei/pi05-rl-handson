@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "unit": "pi05-recovery-shaped-v1-27-run.service",
+  "systemd": {
+    "Result": "success",
+    "ExecMainStatus": "0",
+    "ActiveState": "inactive"
+  },
+  "rounds": 20,
+  "optimizer_updates": 300,
+  "finite_optimizer_updates": 300,
+  "peak_memory_bytes": 41445097472,
+  "memory_limit_gib": 48,
+  "oom_events": 0,
+  "checkpoint": "logs/ppo_recovery_shaped_v1/ppo_recovery_shaped_v1/checkpoints/global_step_20/actor/adapter_checkpoint.pt",
+  "checkpoint_bytes": 121226493,
+  "checkpoint_sha256": "48869898f6131dbe0a44e7471a4a605ebf2665a1e369ec7e9a2e8bb0e33075eb",
+  "format": "rlinf-fsdp1-single-rank-adapter-v1",
+  "base_weights_sha256": "4526e30c6aa11108a3331f7f4ae7931394629961df42736deedd7169ec154d5f",
+  "finite_saved_model_tensors": 550,
+  "optimizer_state_step_counts": {
+    "0": 308,
+    "300": 242
+  },
+  "scheduler_epochs": [
+    20
+  ],
+  "train_initial_ids": [
+    "train-empty_grasp-init01",
+    "train-empty_grasp-init02",
+    "train-empty_grasp-init03",
+    "train-empty_grasp-init04",
+    "train-empty_grasp-init05",
+    "train-empty_grasp-init06",
+    "train-object_offset-init01",
+    "train-object_offset-init02",
+    "train-object_offset-init03",
+    "train-object_offset-init04",
+    "train-object_offset-init05",
+    "train-object_offset-init06",
+    "train-placement_failure-init01",
+    "train-placement_failure-init02",
+    "train-placement_failure-init03",
+    "train-placement_failure-init04",
+    "train-placement_failure-init05",
+    "train-placement_failure-init06"
+  ],
+  "heldout_initial_ids": [],
+  "reset_counts": {
+    "train/empty_grasp": 13,
+    "train/object_offset": 13,
+    "train/placement_failure": 13,
+    "dev/empty_grasp": 3,
+    "dev/object_offset": 3,
+    "dev/placement_failure": 3
+  },
+  "note": "Zero-step optimizer states are reported; not all injected LoRA tensors are active."
+}

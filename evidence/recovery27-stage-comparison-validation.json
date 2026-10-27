@@ -1,0 +1,340 @@
+{
+  "status": "PASS",
+  "matched_initial_states": 12,
+  "raw_videos": 36,
+  "comparison_videos": 12,
+  "full_decode": true,
+  "frame_dimensions_and_rates_checked": true,
+  "success_trace_check": "native goal and no finger contact for final five consecutive controls",
+  "metrics": {
+    "sft": {
+      "success": 10,
+      "trials": 12,
+      "successful_median_controls": 87.0,
+      "common_success_count": 9,
+      "common_success_median_controls": 84,
+      "categories": {
+        "empty_grasp": 4,
+        "object_offset": 4,
+        "placement_failure": 2
+      }
+    },
+    "sparse_v2": {
+      "success": 9,
+      "trials": 12,
+      "successful_median_controls": 97,
+      "common_success_count": 9,
+      "common_success_median_controls": 97,
+      "categories": {
+        "empty_grasp": 4,
+        "object_offset": 4,
+        "placement_failure": 1
+      },
+      "passes_frozen_selection": false
+    },
+    "shaped_v1": {
+      "success": 10,
+      "trials": 12,
+      "successful_median_controls": 97.5,
+      "common_success_count": 9,
+      "common_success_median_controls": 90,
+      "categories": {
+        "empty_grasp": 4,
+        "object_offset": 4,
+        "placement_failure": 2
+      },
+      "passes_frozen_selection": false
+    }
+  },
+  "panel_model_changed": false,
+  "videos": {
+    "artifacts/20261027-recovery-stage/development-comparison/comparison-dev-empty_grasp-init23.mp4": {
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "75"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/comparison-dev-placement_failure-init23.mp4": {
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/comparison-dev-object_offset-init21.mp4": {
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "144"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/comparison-dev-placement_failure-init21.mp4": {
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/comparison-dev-empty_grasp-init22.mp4": {
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "82"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/comparison-dev-placement_failure-init20.mp4": {
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/comparison-dev-object_offset-init20.mp4": {
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "201"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/comparison-dev-object_offset-init22.mp4": {
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "106"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/comparison-dev-empty_grasp-init20.mp4": {
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "240"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/comparison-dev-object_offset-init23.mp4": {
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "91"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/comparison-dev-empty_grasp-init21.mp4": {
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "89"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/comparison-dev-placement_failure-init22.mp4": {
+      "width": 768,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "199"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sparse_v2/dev-placement_failure-init23.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sparse_v2/dev-empty_grasp-init21.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "81"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sparse_v2/dev-empty_grasp-init22.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "75"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sparse_v2/dev-placement_failure-init20.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sparse_v2/dev-object_offset-init20.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "201"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sparse_v2/dev-empty_grasp-init20.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "240"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sparse_v2/dev-empty_grasp-init23.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "75"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sparse_v2/dev-placement_failure-init22.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "168"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sparse_v2/dev-object_offset-init23.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "91"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sparse_v2/dev-placement_failure-init21.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sparse_v2/dev-object_offset-init22.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "98"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sparse_v2/dev-object_offset-init21.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "144"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/shaped_v1/dev-placement_failure-init23.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/shaped_v1/dev-empty_grasp-init21.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "89"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/shaped_v1/dev-empty_grasp-init22.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "81"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/shaped_v1/dev-placement_failure-init20.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "262"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/shaped_v1/dev-object_offset-init20.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "115"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/shaped_v1/dev-empty_grasp-init20.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "237"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/shaped_v1/dev-empty_grasp-init23.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "75"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/shaped_v1/dev-placement_failure-init22.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "199"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/shaped_v1/dev-object_offset-init23.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "91"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/shaped_v1/dev-placement_failure-init21.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/shaped_v1/dev-object_offset-init22.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "106"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/shaped_v1/dev-object_offset-init21.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "84"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sft/dev-placement_failure-init23.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sft/dev-empty_grasp-init21.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "82"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sft/dev-empty_grasp-init22.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "82"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sft/dev-placement_failure-init20.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "223"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sft/dev-object_offset-init20.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "120"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sft/dev-empty_grasp-init20.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "204"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sft/dev-empty_grasp-init23.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "75"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sft/dev-placement_failure-init22.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "85"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sft/dev-object_offset-init23.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "91"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sft/dev-placement_failure-init21.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sft/dev-object_offset-init22.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "99"
+    },
+    "artifacts/20261027-recovery-stage/development-comparison/sft/dev-object_offset-init21.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "82"
+    }
+  }
+}

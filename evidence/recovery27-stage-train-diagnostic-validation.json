@@ -1,0 +1,366 @@
+{
+  "status": "PASS",
+  "split": "train",
+  "post_main_diagnostic": true,
+  "totals": {
+    "sft": {
+      "success": 0,
+      "trials": 6
+    },
+    "shaped_v1": {
+      "success": 2,
+      "trials": 6
+    }
+  },
+  "identity_equal_fields": [
+    "base_sha256",
+    "manifest_sha256",
+    "config_sha256",
+    "split",
+    "category",
+    "model_config",
+    "success",
+    "action_execution",
+    "control_hz",
+    "video_fps",
+    "noise",
+    "sources"
+  ],
+  "video": "left SFT / right shaped_v1; simulation time; shorter result freezes",
+  "rows": [
+    {
+      "id": "train-placement_failure-init01",
+      "state_sha256": "c503e3ccb9ee863c90b70698e71955b9a8d777c0a94dbd661a54988774f3d47c",
+      "models": {
+        "sft": {
+          "id": "train-placement_failure-init01",
+          "category": "placement_failure",
+          "state_sha256": "c503e3ccb9ee863c90b70698e71955b9a8d777c0a94dbd661a54988774f3d47c",
+          "source_initial_id": 1,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "train-placement_failure-init01.mp4",
+          "wall_seconds": 17.49439294900003,
+          "reward_return": -0.3
+        },
+        "shaped_v1": {
+          "id": "train-placement_failure-init01",
+          "category": "placement_failure",
+          "state_sha256": "c503e3ccb9ee863c90b70698e71955b9a8d777c0a94dbd661a54988774f3d47c",
+          "source_initial_id": 1,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "train-placement_failure-init01.mp4",
+          "wall_seconds": 17.33209361400077,
+          "reward_return": -0.3
+        }
+      },
+      "comparison_video": "comparison-train-placement_failure-init01.mp4"
+    },
+    {
+      "id": "train-placement_failure-init02",
+      "state_sha256": "0a9ac60b37b9f4c3579be1a2323a996944ee6f0c764412516bb96794ae8322f8",
+      "models": {
+        "sft": {
+          "id": "train-placement_failure-init02",
+          "category": "placement_failure",
+          "state_sha256": "0a9ac60b37b9f4c3579be1a2323a996944ee6f0c764412516bb96794ae8322f8",
+          "source_initial_id": 2,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "train-placement_failure-init02.mp4",
+          "wall_seconds": 16.988618341998517,
+          "reward_return": -0.3
+        },
+        "shaped_v1": {
+          "id": "train-placement_failure-init02",
+          "category": "placement_failure",
+          "state_sha256": "0a9ac60b37b9f4c3579be1a2323a996944ee6f0c764412516bb96794ae8322f8",
+          "source_initial_id": 2,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 115,
+          "inference_calls": 23,
+          "native_first_step": 108,
+          "video": "train-placement_failure-init02.mp4",
+          "wall_seconds": 6.835133892000158,
+          "reward_return": 0.885
+        }
+      },
+      "comparison_video": "comparison-train-placement_failure-init02.mp4"
+    },
+    {
+      "id": "train-placement_failure-init03",
+      "state_sha256": "b923773c7d9c18311bae720225b173fa3d5b5eab19318b5255156cbc71153878",
+      "models": {
+        "sft": {
+          "id": "train-placement_failure-init03",
+          "category": "placement_failure",
+          "state_sha256": "b923773c7d9c18311bae720225b173fa3d5b5eab19318b5255156cbc71153878",
+          "source_initial_id": 3,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "train-placement_failure-init03.mp4",
+          "wall_seconds": 17.027684977998433,
+          "reward_return": -0.3
+        },
+        "shaped_v1": {
+          "id": "train-placement_failure-init03",
+          "category": "placement_failure",
+          "state_sha256": "b923773c7d9c18311bae720225b173fa3d5b5eab19318b5255156cbc71153878",
+          "source_initial_id": 3,
+          "success": true,
+          "result": "success",
+          "exception": null,
+          "steps": 114,
+          "inference_calls": 23,
+          "native_first_step": 105,
+          "video": "train-placement_failure-init03.mp4",
+          "wall_seconds": 6.521629955001117,
+          "reward_return": 0.886
+        }
+      },
+      "comparison_video": "comparison-train-placement_failure-init03.mp4"
+    },
+    {
+      "id": "train-placement_failure-init04",
+      "state_sha256": "5618662c94d46d3fc1e371146c174017bcde364d25c0f1af0c19154738b1b35b",
+      "models": {
+        "sft": {
+          "id": "train-placement_failure-init04",
+          "category": "placement_failure",
+          "state_sha256": "5618662c94d46d3fc1e371146c174017bcde364d25c0f1af0c19154738b1b35b",
+          "source_initial_id": 4,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "train-placement_failure-init04.mp4",
+          "wall_seconds": 16.986131068999384,
+          "reward_return": -0.3
+        },
+        "shaped_v1": {
+          "id": "train-placement_failure-init04",
+          "category": "placement_failure",
+          "state_sha256": "5618662c94d46d3fc1e371146c174017bcde364d25c0f1af0c19154738b1b35b",
+          "source_initial_id": 4,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "train-placement_failure-init04.mp4",
+          "wall_seconds": 17.296286715998576,
+          "reward_return": -0.3
+        }
+      },
+      "comparison_video": "comparison-train-placement_failure-init04.mp4"
+    },
+    {
+      "id": "train-placement_failure-init05",
+      "state_sha256": "00345d7d1eef84e40a40ff354c3c4e6182f8d92fed1be97b228941573cec35ff",
+      "models": {
+        "sft": {
+          "id": "train-placement_failure-init05",
+          "category": "placement_failure",
+          "state_sha256": "00345d7d1eef84e40a40ff354c3c4e6182f8d92fed1be97b228941573cec35ff",
+          "source_initial_id": 5,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "train-placement_failure-init05.mp4",
+          "wall_seconds": 16.740248072001123,
+          "reward_return": -0.3
+        },
+        "shaped_v1": {
+          "id": "train-placement_failure-init05",
+          "category": "placement_failure",
+          "state_sha256": "00345d7d1eef84e40a40ff354c3c4e6182f8d92fed1be97b228941573cec35ff",
+          "source_initial_id": 5,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "train-placement_failure-init05.mp4",
+          "wall_seconds": 17.055133452999144,
+          "reward_return": -0.3
+        }
+      },
+      "comparison_video": "comparison-train-placement_failure-init05.mp4"
+    },
+    {
+      "id": "train-placement_failure-init06",
+      "state_sha256": "81d2acbdef72c9bff30a09598d9dd67b81710624ce4afc07bc5b206306907b43",
+      "models": {
+        "sft": {
+          "id": "train-placement_failure-init06",
+          "category": "placement_failure",
+          "state_sha256": "81d2acbdef72c9bff30a09598d9dd67b81710624ce4afc07bc5b206306907b43",
+          "source_initial_id": 6,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "train-placement_failure-init06.mp4",
+          "wall_seconds": 18.036933289000444,
+          "reward_return": -0.3
+        },
+        "shaped_v1": {
+          "id": "train-placement_failure-init06",
+          "category": "placement_failure",
+          "state_sha256": "81d2acbdef72c9bff30a09598d9dd67b81710624ce4afc07bc5b206306907b43",
+          "source_initial_id": 6,
+          "success": false,
+          "result": "timeout",
+          "exception": null,
+          "steps": 300,
+          "inference_calls": 60,
+          "native_first_step": null,
+          "video": "train-placement_failure-init06.mp4",
+          "wall_seconds": 17.789054494001903,
+          "reward_return": -0.3
+        }
+      },
+      "comparison_video": "comparison-train-placement_failure-init06.mp4"
+    }
+  ],
+  "full_decode": true,
+  "videos": {
+    "artifacts/20261027-recovery-stage/training-placement-final/comparison-train-placement_failure-init02.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/comparison-train-placement_failure-init03.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/comparison-train-placement_failure-init04.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/comparison-train-placement_failure-init01.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/comparison-train-placement_failure-init06.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/comparison-train-placement_failure-init05.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/shaped_v1/train-placement_failure-init03.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "115"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/shaped_v1/train-placement_failure-init05.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/shaped_v1/train-placement_failure-init06.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/shaped_v1/train-placement_failure-init04.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/shaped_v1/train-placement_failure-init02.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "116"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/shaped_v1/train-placement_failure-init01.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/sft/train-placement_failure-init03.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/sft/train-placement_failure-init05.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/sft/train-placement_failure-init06.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/sft/train-placement_failure-init04.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/sft/train-placement_failure-init02.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    },
+    "artifacts/20261027-recovery-stage/training-placement-final/sft/train-placement_failure-init01.mp4": {
+      "width": 512,
+      "height": 256,
+      "r_frame_rate": "20/1",
+      "nb_read_frames": "301"
+    }
+  },
+  "limitation": "Train-state comparison only; no unseen recovery gain or reward-only causation claim."
+}

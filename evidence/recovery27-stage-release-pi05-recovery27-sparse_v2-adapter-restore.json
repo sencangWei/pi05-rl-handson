@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "asset_id": 680778093,
+  "asset": "pi05-recovery27-sparse_v2-adapter.pt",
+  "downloaded_bytes": 121226557,
+  "sha256": "484010de5b985f3a4da42fa7916614610beb27ec87951ac3a7a903f329bb7091",
+  "method": "independent authenticated release download, exact Content-Range and full SHA256 verification",
+  "release": "https://github.com/sencangWei/pi05-rl-handson/releases/tag/ppo-recovery-shaping-20261027"
+}

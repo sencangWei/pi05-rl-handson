@@ -1,0 +1,52 @@
+test_actual_patched_rlinf_reward_ongoing_cost_and_terminal_bonus (test_contracts.Contracts.test_actual_patched_rlinf_reward_ongoing_cost_and_terminal_bonus) ... ok
+test_balanced_sampling_and_no_holdout_selection (test_contracts.Contracts.test_balanced_sampling_and_no_holdout_selection) ... ok
+test_cpu_probe_is_bounded_and_cannot_initialize_cuda (test_contracts.Contracts.test_cpu_probe_is_bounded_and_cannot_initialize_cuda) ... ok
+test_frozen_split_has_all_tasks_and_no_leakage (test_contracts.Contracts.test_frozen_split_has_all_tasks_and_no_leakage) ... ok
+test_inventory_cannot_escape_source_root (test_contracts.Contracts.test_inventory_cannot_escape_source_root) ... ok
+test_same_size_parent_or_source_corruption_is_rejected (test_contracts.Contracts.test_same_size_parent_or_source_corruption_is_rejected) ... ok
+test_window_never_crosses_episode_end (test_contracts.Contracts.test_window_never_crosses_episode_end) ... ok
+test_actual_siglip_and_gemma_gelu_match_flax (test_gelu_parity.GeluParityTest.test_actual_siglip_and_gemma_gelu_match_flax) ... ok
+test_actual_attention_equations_scanned_layers (test_lora_merge.MergeTests.test_actual_attention_equations_scanned_layers) ... ok
+test_feedforward_dot_and_gating_axes (test_lora_merge.MergeTests.test_feedforward_dot_and_gating_axes) ... ok
+test_reject_missing_unknown_and_nonfinite_adapters (test_lora_merge.MergeTests.test_reject_missing_unknown_and_nonfinite_adapters) ... ok
+test_upstream_flax_modules (test_lora_merge.MergeTests.test_upstream_flax_modules) ... /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/flax/core/scope.py:959: DeprecationWarning: shape requires ndarray or scalar arguments, got <class 'jax._src.api.ShapeDtypeStruct'> at position 0. In a future JAX release this will be an error.
+  if jnp.shape(val) != jnp.shape(abs_val):
+FAIL
+test_discount_is_applied_once_per_chunk (test_recovery_contract.ChunkShapingTest.test_discount_is_applied_once_per_chunk) ... ok
+test_discounted_shaping_telescopes_for_success_and_failure (test_recovery_contract.ChunkShapingTest.test_discounted_shaping_telescopes_for_success_and_failure) ... ok
+test_hover_cannot_earn_progress_and_retreat_loses_credit (test_recovery_contract.ChunkShapingTest.test_hover_cannot_earn_progress_and_retreat_loses_credit) ... ok
+test_terminal_cancels_potential_and_masks_late_duplicate_success (test_recovery_contract.ChunkShapingTest.test_terminal_cancels_potential_and_masks_late_duplicate_success) ... ok
+test_timeout_potential_cancels_against_bootstrapped_shaped_value (test_recovery_contract.ChunkShapingTest.test_timeout_potential_cancels_against_bootstrapped_shaped_value) ... ok
+test_requires_release_and_five_consecutive_goal_controls (test_recovery_contract.RecoveryContractTest.test_requires_release_and_five_consecutive_goal_controls) ... ok
+test_unwrapped_attention_requires_bf16_weights_for_bf16_tokens (test_rollout_precision.RolloutPrecisionTest.test_unwrapped_attention_requires_bf16_weights_for_bf16_tokens) ... ok
+
+======================================================================
+FAIL: test_upstream_flax_modules (test_lora_merge.MergeTests.test_upstream_flax_modules)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/robot/pi05-rl-handson/tests/test_lora_merge.py", line 57, in test_upstream_flax_modules
+    np.testing.assert_allclose(dense, original, rtol=3e-5, atol=3e-5)
+  File "/home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/numpy/testing/_private/utils.py", line 1504, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "/home/robot/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/numpy/testing/_private/utils.py", line 797, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=3e-05, atol=3e-05
+
+Mismatched elements: 28 / 30 (93.3%)
+Max absolute difference: 0.03438187
+Max relative difference: 0.00217371
+ x: array([[[[ 27.415636,   2.810592, -10.496009,   1.93701 ,   4.658029],
+         [  9.953617, -12.009968,   3.794923, -19.015455,   4.544579],
+         [  6.05108 ,  -7.390637,  -5.246905,   4.618826,  -0.433773]],...
+ y: array([[[[ 27.381254,   2.811978, -10.485294,   1.933738,   4.647926],
+         [  9.944182, -11.999962,   3.794931, -18.996647,   4.541368],
+         [  6.046967,  -7.381908,  -5.241354,   4.611341,  -0.432878]],...
+
+----------------------------------------------------------------------
+Ran 19 tests in 7.559s
+
+FAILED (failures=1)

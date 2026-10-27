@@ -1,0 +1,26 @@
+{
+  "split": "train",
+  "clips": [
+    {
+      "id": "train-placement_failure-init02",
+      "state_sha256": "0a9ac60b37b9f4c3579be1a2323a996944ee6f0c764412516bb96794ae8322f8",
+      "steps": 115,
+      "files_sha256": {
+        "shaped_v1/train-placement_failure-init02.mp4": "18fe74b54d64745c46ea91946632021f606f87847f613b9c8f383e68807fb877",
+        "shaped_v1/train-placement_failure-init02.jsonl": "0ab93f98ce806a153bfad729ebcd1cb213df10668635be53441a1defedd83a6f"
+      }
+    },
+    {
+      "id": "train-placement_failure-init03",
+      "state_sha256": "b923773c7d9c18311bae720225b173fa3d5b5eab19318b5255156cbc71153878",
+      "steps": 114,
+      "files_sha256": {
+        "shaped_v1/train-placement_failure-init03.mp4": "28279044926b27a544bf191c4c727f726e3effbc2078466cc589940f1cb77e88",
+        "shaped_v1/train-placement_failure-init03.jsonl": "3c58f2692379bc03c6f7296ae49119c04587de5b09652bad8c056dcbd0927721"
+      }
+    }
+  ],
+  "not_used_for_training": true,
+  "contains_training_observation_action_pairs": false,
+  "note": "Real learned-policy videos and action traces, not a new imitation-learning dataset."
+}

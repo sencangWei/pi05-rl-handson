@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "packager_invalid_duplicate_and_traversal_labels_rejected": true,
+  "development_video_validation": "recovery27-stage-comparison-validation.json",
+  "training_video_validation": "recovery27-stage-train-diagnostic-validation.json",
+  "video_count": 66,
+  "release_weight_full_sha256_checks": 2,
+  "changed_packager_critical_ruff": "PASS",
+  "git_diff_check": "Source and report whitespace PASS; raw logs retained verbatim (upstream trailing whitespace)",
+  "unchanged_reward_tests": "19 CPU tests passed earlier; initial unrestricted JAX numerical failure retained",
+  "independent_code_review": "Unavailable: installed reviewer model rejected by account; self-review only"
+}

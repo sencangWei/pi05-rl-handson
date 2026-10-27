@@ -1,0 +1,56 @@
+{
+  "sft/dev-placement_failure-init21": {
+    "controls": 300,
+    "native_success_controls": 0,
+    "finger_contact_controls": 211,
+    "eef_motion_median_m": 0.0035570868670374615,
+    "final_bowl_plate_xy_m": 0.05586545963857263,
+    "final_native_success": false,
+    "final_finger_contact": true
+  },
+  "sparse_v2/dev-placement_failure-init21": {
+    "controls": 300,
+    "native_success_controls": 0,
+    "finger_contact_controls": 20,
+    "eef_motion_median_m": 0.0032505715832001607,
+    "final_bowl_plate_xy_m": 0.16873946785178995,
+    "final_native_success": false,
+    "final_finger_contact": false
+  },
+  "shaped_v1/dev-placement_failure-init21": {
+    "controls": 300,
+    "native_success_controls": 0,
+    "finger_contact_controls": 176,
+    "eef_motion_median_m": 0.004557597339042228,
+    "final_bowl_plate_xy_m": 0.0305953235432649,
+    "final_native_success": false,
+    "final_finger_contact": true
+  },
+  "sft/dev-placement_failure-init23": {
+    "controls": 300,
+    "native_success_controls": 0,
+    "finger_contact_controls": 119,
+    "eef_motion_median_m": 0.0029922743062432695,
+    "final_bowl_plate_xy_m": 0.2408818813834424,
+    "final_native_success": false,
+    "final_finger_contact": false
+  },
+  "sparse_v2/dev-placement_failure-init23": {
+    "controls": 300,
+    "native_success_controls": 0,
+    "finger_contact_controls": 196,
+    "eef_motion_median_m": 0.0032504379308387907,
+    "final_bowl_plate_xy_m": 0.06597261793693383,
+    "final_native_success": false,
+    "final_finger_contact": true
+  },
+  "shaped_v1/dev-placement_failure-init23": {
+    "controls": 300,
+    "native_success_controls": 0,
+    "finger_contact_controls": 48,
+    "eef_motion_median_m": 0.004240260899027968,
+    "final_bowl_plate_xy_m": 0.24065654358339034,
+    "final_native_success": false,
+    "final_finger_contact": false
+  }
+}
