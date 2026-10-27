@@ -24,8 +24,9 @@ def main():
     parser.add_argument("--category", choices=("placement_failure", "empty_grasp", "object_offset"),
                         default="placement_failure")
     parser.add_argument("--check", action="store_true", help="Restore and verify without opening windows")
+    parser.add_argument("--check-joints", action="store_true", help="Headless physical joint/OSC switching smoke test")
     args = parser.parse_args()
-    os.environ["MUJOCO_GL"] = "osmesa" if args.check else "glx"
+    os.environ["MUJOCO_GL"] = "osmesa" if args.check or args.check_joints else "glx"
     os.environ["PYOPENGL_PLATFORM"] = os.environ["MUJOCO_GL"]
     os.environ.setdefault("__NV_PRIME_RENDER_OFFLOAD", "1")
     os.environ.setdefault("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
@@ -45,7 +46,9 @@ def main():
     from correction_data import write_json
     from correction_workbench import CorrectionWorkbench
     from manual_rotation_guide import guided_classes
+    from manual_joint_control import JointSetupMixin, joint_classes
     GuidedPreview, GuidedPanel = guided_classes()
+    GuidedPreview, GuidedPanel = joint_classes(GuidedPreview, GuidedPanel)
 
     bank = ROOT / "data/recovery-bowl-v3"
     manifest = json.loads((bank / "manifest.json").read_text())
@@ -93,9 +96,45 @@ def main():
                 raise
 
     bank_task = BankTask()
-    if args.check:
+    if args.check or args.check_joints:
         env, obs = bank_task.create(args.initial_id)
         try:
+            if args.check_joints:
+                from manual_joint_control import physical_joint_jog
+                checks = []
+                for joint, degrees in ((j, d) for j in range(7) for d in (2., -2.)):
+                    _, trace = physical_joint_jog(env, joint, degrees, -1.)
+                    moved = np.rad2deg(trace["after_qpos"] - trace["before_qpos"])
+                    if degrees * moved[joint] <= 0 or abs(moved[joint]) < .2:
+                        raise AssertionError(f"J{joint + 1} did not move in requested direction: {moved}")
+                    if env.env.action_dim != 7 or env.env.robots[0].controller.name != "OSC_POSE":
+                        raise AssertionError("OSC action contract not restored")
+                    obs, _, _, _ = env.step([0., 0., 0., 0., 0., 0., -1.])
+                    if not np.isfinite(env.get_sim_state()).all():
+                        raise AssertionError("Nonfinite OSC physics after joint setup")
+                    checks.append({"joint": joint + 1, "requested_degrees": degrees, "actual_degrees": moved.tolist(),
+                                   "trace_states": len(trace["states"]), "restored_action_dim": env.env.action_dim})
+                normal_step = env.step
+                old_controller = env.env.robots[0].controller
+                old_buffer = env.env.robots[0].recent_actions
+                def failed_step(action):
+                    raise RuntimeError("injected joint step failure")
+                env.step = failed_step
+                try:
+                    try:
+                        physical_joint_jog(env, 3, 2., -1.)
+                    except RuntimeError as error:
+                        if str(error) != "injected joint step failure":
+                            raise
+                    else:
+                        raise AssertionError("Expected injected failure")
+                    if (env.env.action_dim != 7 or env.env.robots[0].controller is not old_controller
+                            or env.env.robots[0].recent_actions is not old_buffer):
+                        raise AssertionError("Joint failure left controller/buffer switched")
+                finally:
+                    env.step = normal_step
+                obs, _, _, _ = env.step([0., 0., 0., 0., 0., 0., -1.])
+                print(json.dumps({"joint_checks": checks}, indent=2))
             print(json.dumps({"ready": True, "entry": entries[args.initial_id],
                               "native_success": bool(env.check_success()),
                               "control_dt": env.env.control_timestep,
@@ -104,7 +143,7 @@ def main():
             env.close()
         return
 
-    class ManualWorkbench(CorrectionWorkbench):
+    class ManualWorkbench(JointSetupMixin, CorrectionWorkbench):
         def begin_correction(self, split="train"):
             if split != "train":
                 raise ValueError("训练失败场景只能录为 train，不能混入测试集")
@@ -114,6 +153,8 @@ def main():
                 bank_entry=entries[self.layout_id], control_hz=1 / self.view.control_dt,
                 launcher_sha256=digest(__file__), physics_files=[],
                 rotation_guide_sha256=digest(ROOT / "scripts/manual_rotation_guide.py"),
+                joint_control_sha256=digest(ROOT / "scripts/manual_joint_control.py"),
+                osc_nullspace_initial_joints=self.env.env.robots[0].controller.initial_joint.tolist(),
                 physics_scope="full MuJoCo pre/post state per human control; controller goals reset at load")
             write_json(self.correction.directory / "metadata.json", self.correction.metadata)
 
