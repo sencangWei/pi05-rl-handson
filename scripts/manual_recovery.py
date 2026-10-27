@@ -168,6 +168,10 @@ def main():
                 joint_control_sha256=digest(ROOT / "scripts/manual_joint_control.py"),
                 osc_nullspace_initial_joints=self.env.env.robots[0].controller.initial_joint.tolist(),
                 physics_scope="full MuJoCo pre/post state per human control; controller goals reset at load")
+            profile = self.correction.metadata["manual_motion_profile"]
+            profile.pop("ui_rotation", None)
+            profile.update(normal_rotation=.3, precision_rotation=.1, rotation_default="precision",
+                           rotation_selection="independent of translation; actual amplitude stored in each action")
             write_json(self.correction.directory / "metadata.json", self.correction.metadata)
 
         def _manual_steps(self, action, repeats):

@@ -3,6 +3,22 @@ import numpy as np
 
 COLORS = ((1., .12, .12, 1.), (.12, 1., .12, 1.), (.15, .4, 1., 1.))
 AXES = "XYZ"
+ROTATION_PRESETS = {"普通旋转": .3, "精细旋转": .1}
+
+
+class RotationSpeedMixin:
+    def _rotation_preset(self, mode):
+        if mode not in ROTATION_PRESETS:
+            raise ValueError("请选择普通旋转或精细旋转")
+        self.translation_joystick.stop()
+        self.rotation_mode_var.set(mode)
+
+    def _manual_jog(self, axis, sign):
+        if axis >= 3:
+            self.lab.manual_jog(axis, sign, scale=ROTATION_PRESETS[self.rotation_mode_var.get()],
+                                repeats=int(self.jog_repeats_var.get()))
+        else:
+            super()._manual_jog(axis, sign)
 
 
 def rotation_arc(origin, axis, sign, radius=.095):
@@ -68,9 +84,20 @@ def guided_classes():
             self.rotation_axis, self.rotation_sign = axis, sign
             self.sync()
 
-    class GuidedPanel(LabPanel):
+    class GuidedPanel(RotationSpeedMixin, LabPanel):
         def __init__(self, root, lab):
             super().__init__(root, lab)
+            options = self.normal_motion_button.master
+            for widget in options.grid_slaves(row=2):
+                widget.grid_configure(row=3)
+            self.rotation_mode_var = tk.StringVar(value="精细旋转")
+            self.rotation_buttons = {}
+            for column, (mode, scale) in enumerate(ROTATION_PRESETS.items()):
+                button = ttk.Radiobutton(options, text=f"{mode}（{scale}）", value=mode,
+                    variable=self.rotation_mode_var, command=lambda m=mode: self._rotation_preset(m))
+                button.grid(row=2, column=column * 2, columnspan=2, sticky="w")
+                self.rotation_buttons[mode] = button
+            self.motion_hint_var.set("平移：普通 0.6／精细 0.1；旋转单独选档，默认精细。")
             self.rotation_hint = tk.StringVar(value="鼠标指向旋转键：三维窗口显示对应旋转箭头；点击才会运动。")
             controls = self.jog_buttons[(3, 1)].master.master
             text = ("旋转控制夹爪整体姿态，多个关节协同，不是某一节臂的开关。\n"
