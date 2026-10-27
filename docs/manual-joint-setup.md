@@ -15,6 +15,8 @@ OSC 帧保留原有7维动作；关节帧单独保存8维控制输入、实际�
 
 混合段标记 training_ready=false，不能直接交给旧7维OSC导出器训练，避免把关节目标误当末端动作。这次修复的是接管操作和完整数据留存，尚未实现混合动作策略训练及关节段续录重放。旧OSC续录器会明确拒绝混合段，原文件保留。关节调整后至少再完成10步OSC验证，且仍须通过原有放置、松爪和抬离成功检查，才能批准。
 
+加载失败库时，零偏移重置原样保留物理状态，不调用挪碗操作；否则抓空初态会因为夹爪距碗小于12厘米而被错误拦截。非零偏移仍经过原有距离、开爪与碰撞检查。冻结的上游界面文件未修改。
+
 ## 验证
 
 - `.venv-train/bin/python -m pytest -q tests/test_manual_joint_control.py tests/test_manual_rotation_guide.py tests/test_recovery_recording.py`：覆盖同段录制、控制类型、状态哈希、混合续录拦截与计数。
@@ -22,6 +24,7 @@ OSC 帧保留原有7维动作；关节帧单独保存8维控制输入、实际�
 - GUI实际点击J4+，再回人工纠正页保持10步：同一目录记录12步关节、10步OSC。
 - 既有 `--check-joints` 验证14次J1～J7正负切换及异常恢复，详见历史证据 `evidence/manual-joint-control-20261028.json`。
 - 本次证据：`evidence/manual-joint-takeover-20261028.json`。
+- 抓空布局1：`--initial-id 1 --category empty_grasp --check-takeover` 实测通过重置和OSC→关节→OSC，肘部+1.97°、物理状态逐步连续；零偏移及非零偏移检查包含在 `tests/test_manual_bank_reset.py`，相关测试共27项通过。
 
 启动：
 

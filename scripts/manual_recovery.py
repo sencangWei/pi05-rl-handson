@@ -18,6 +18,16 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def preserve_unshifted_bowl(move_bowl, target):
+    """Keep frozen bank physics untouched when reset requests no object edit."""
+    def edit(env, obs, dx, dy):
+        if dx == 0. and dy == 0.:
+            position = obs[f"{target}_pos"].tolist()
+            return obs, dict(before_xyz=position, after_xyz=position.copy(), dx_m=dx, dy_m=dy)
+        return move_bowl(env, obs, dx, dy)
+    return edit
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--initial-id", type=int, choices=range(1, 7), default=1)
@@ -44,6 +54,7 @@ def main():
     from libero.libero.envs import OffScreenRenderEnv
     import simulation_lab
     import correction_workbench
+    simulation_lab.move_bowl = preserve_unshifted_bowl(simulation_lab.move_bowl, simulation_lab.TARGET)
     from correction_data import write_json
     from correction_workbench import CorrectionWorkbench
     from manual_rotation_guide import guided_classes
