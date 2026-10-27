@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "mode": "verify",
+  "tensors": 71,
+  "lora_tensors": 20,
+  "tree_sha256": "1da4f780754abe561d56540450f21d9eb6d9f656e8c18c188109785a3c8db084",
+  "verified_at": "2026-10-27T09:46:19.641920+00:00",
+  "remote_download": {
+    "status": "PASS",
+    "url": "https://github.com/sencangWei/pi05-rl-handson/releases/download/human-recovery-sft-20261027/human28_replay2000_v1-adapter.tar.gz",
+    "archive_sha256": "9023c7b5bd1b1a851435665d0e585a9242b324ec4d050b8d2d50ae85cc62ca56",
+    "archive_bytes": 185471769,
+    "files": [
+      {
+        "path": "exports/human28_replay2000_v1/adapter.npz",
+        "sha256": "cc772e95a70d013a873af70c0eb14fb30b76298fbbef62850ab825e7cd3f3657",
+        "bytes": 185437579
+      },
+      {
+        "path": "exports/human28_replay2000_v1/metadata.json",
+        "sha256": "b45aaaf43a8c2ded99d122ac9930c1378c1ff3dad6445f5b9afe270753e677a4",
+        "bytes": 17375
+      },
+      {
+        "path": "exports/human28_replay2000_v1/norm_stats.json",
+        "sha256": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84",
+        "bytes": 1914
+      }
+    ],
+    "verification": "independent remote download, archive digest, safe fresh extraction, all files byte-digest matched to exported adapter"
+  },
+  "command": "JAX_PLATFORMS=cpu OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 .venv-train/bin/python scripts/export_recovery_adapter.py verify --adapter .local/human28-adapter-remote-restore/restored/exports/human28_replay2000_v1",
+  "verification": "Independent remote archive restored; reconstruct every original parameter leaf from the official base plus remote LoRA; compare all shapes/dtypes/content hashes.",
+  "limit": "Inference reconstruction only, optimizer excluded; official base and matching runtime remain required."
+}

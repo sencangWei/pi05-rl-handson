@@ -75,14 +75,14 @@ JAX_PLATFORMS=cpu .venv-train/bin/python scripts/train_recovery_replay.py --dry-
 
 [公开 Release：人工数据与精确 LoRA 备份](https://github.com/sencangWei/pi05-rl-handson/releases/tag/human-recovery-sft-20261027)。备份包含 20 个 LoRA 张量和归一化；需要相同官方 `pi05_libero` 基座，重构后逐一核对全部 71 个参数叶子的形状、dtype、内容哈希。该备份用于推理，不包含优化器状态，不能冒称完整断点续训包。完整 Orbax 训练检查点仍保留在本机。
 
-下载解压后用以下命令核对重构内容（路径为解压后的 adapter 目录）：
+已从 Release 独立下载全部 185471769 字节，SHA256 为 `9023c7b5bd1b1a851435665d0e585a9242b324ec4d050b8d2d50ae85cc62ca56`，重构的全部 71 个参数叶子逐一一致：[权重重构证据](../../evidence/recovery-sft28-adapter-restore.json)。下载解压后用以下命令核对重构内容（路径为解压后的 adapter 目录）：
 
 ```bash
 JAX_PLATFORMS=cpu .venv-train/bin/python scripts/export_recovery_adapter.py verify \
   --adapter exports/human28_replay2000_v1
 ```
 
-数据独立下载恢复记录为 `evidence/recovery-sft28-data-restore.json`；权重、代码及实际 RLinf 算法补丁的恢复记录随本轮最终提交保存。没有将虚拟环境、官方基座或全部 35 GB 公开数据重复上传；跨机器还需恢复对应依赖和固定版本的仿真工程。
+[数据恢复](../../evidence/recovery-sft28-data-restore.json)、[权重下载校验](../../evidence/recovery-sft28-adapter-download.json)、[代码恢复](../../evidence/recovery-sft28-remote-files.json)、[实际 RLinf 算法补丁恢复](../../evidence/recovery-sft28-remote-runtime.json)均保留原始证据。提交 `9c5b6ec` 从用户远端独立恢复，1345 个跟踪文件的工作内容与提交 blob 逐一一致；干净上游重放 9 个补丁，12 个实际运行时文件哈希一致。没有将虚拟环境、官方基座或全部 35 GB 公开数据重复上传；跨机器还需恢复对应依赖和固定版本的仿真工程。
 
 ## 下一步应该改变什么
 
