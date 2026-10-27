@@ -109,3 +109,5 @@ CPU/PPO准备代码备份：d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d已推送公
 
 - 最终备份：公开远端 experiment/pi05-ppo 的 feff505 在独立目录恢复，767 个跟踪文件的 git tree、工作副本和提交 blob 逐一一致；9 个算法补丁在固定干净上游重放，12 个运行文件 SHA 与现役源码一致。两份 adapter 已公开发布为 ppo-recovery-shaping-20261027 预发布，匿名 API 200，完整独立下载 SHA 一致，证据见 recovery27-stage-final-remote-{files,runtime}.json 与 recovery27-stage-public-release.json。
 - 评测边界澄清：新开发集也用于训练期间的监控评测，但没有梯度更新；最终固定 300 更新后的独立进程复评仍属于开发评测，不是盲测。没有自动替换面板或启动新一轮训练。
+
+用户再次确认继续恢复示范+旧数据回放路线。启动只读数据审计，GPU空闲约31GiB、RAM可用54GiB、磁盘148GB；不改旧工程、不触碰真机或终止其他任务。

@@ -1,0 +1,15 @@
+{
+  "status": "REVIEWED",
+  "reviewer": "primary agent visual inspection",
+  "contact_sheets": [
+    {
+      "path": "artifacts/20261027-recovery-sft/human-review/contact-sheet-0.jpg",
+      "sha256": "e3af97540e5708cea90f653dacd1b7f118c65d72b3205e665a9626a4ed783697"
+    },
+    {
+      "path": "artifacts/20261027-recovery-sft/human-review/contact-sheet-1.jpg",
+      "sha256": "4e80918b08a4f69173638ccecb831550836f610426fe9381dbf68f69785937d6"
+    }
+  ],
+  "observations": "All ten show bowl manipulation ending on plate with gripper raised; includes lift/regrasp and held-bowl realignment. Contact-sheet inspection plus final-ten native-done/open-gripper/retreat gates, not independent scene replay. Full original videos retained."
+}

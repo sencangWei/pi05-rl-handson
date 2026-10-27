@@ -1,0 +1,15 @@
+{
+  "bddl": {
+    "path": "/home/robot/voice-arm-sim/.local/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate.bddl",
+    "sha256": "c8fbb9effa27b947d04d26862d75273d93cac1806734e53836cd472a08aec1fe",
+    "expected": "c8fbb9effa27b947d04d26862d75273d93cac1806734e53836cd472a08aec1fe"
+  },
+  "init": {
+    "path": "/home/robot/voice-arm-sim/.local/openpi/third_party/libero/libero/libero/init_files/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate.pruned_init",
+    "sha256": "f43df2d80042130ac8770590d83f1a1e6fd4df7479aebc392aa2ed6e3bd0b83e",
+    "expected": "f43df2d80042130ac8770590d83f1a1e6fd4df7479aebc392aa2ed6e3bd0b83e"
+  },
+  "passed": true,
+  "note": "LIBERO suite uses .pruned_init; full .init is not the suite reference file.",
+  "scope": "Matches original human spatial task only; not equivalence to recovery goal task 8. Cross-scene transfer is tested separately."
+}
