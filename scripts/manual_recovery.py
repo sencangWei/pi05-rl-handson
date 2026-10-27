@@ -44,7 +44,8 @@ def main():
     import correction_workbench
     from correction_data import write_json
     from correction_workbench import CorrectionWorkbench
-    from lab_panel import LabPanel
+    from manual_rotation_guide import guided_classes
+    GuidedPreview, GuidedPanel = guided_classes()
 
     bank = ROOT / "data/recovery-bowl-v3"
     manifest = json.loads((bank / "manifest.json").read_text())
@@ -112,6 +113,7 @@ def main():
                 task_suite="libero_goal", task_id=8, source="human manual recovery",
                 bank_entry=entries[self.layout_id], control_hz=1 / self.view.control_dt,
                 launcher_sha256=digest(__file__), physics_files=[],
+                rotation_guide_sha256=digest(ROOT / "scripts/manual_rotation_guide.py"),
                 physics_scope="full MuJoCo pre/post state per human control; controller goals reset at load")
             write_json(self.correction.directory / "metadata.json", self.correction.metadata)
 
@@ -136,9 +138,9 @@ def main():
 
     import tkinter as tk
     output = ROOT / "evaluations" / f"manual-recovery-{time.time_ns()}"
-    lab = ManualWorkbench(output, bank_task, root=ROOT)
+    lab = ManualWorkbench(output, bank_task, root=ROOT, viewer_factory=GuidedPreview)
     root = tk.Tk()
-    panel = LabPanel(root, lab)
+    panel = GuidedPanel(root, lab)
     root.title("人工恢复采集 · 碗放盘子 · 训练失败场景")
     for tab in panel.notebook.tabs():
         if panel.notebook.tab(tab, "text") == "模型与训练":
@@ -146,6 +148,7 @@ def main():
     panel.correction_split_combo.configure(values=("train",))
     panel.notebook.select(panel.correction_page)
     try:
+        panel.layout_var.set(str(args.initial_id))
         lab.reset(args.initial_id)
         lab.begin_correction()
         lab.status = "已恢复失败场景并暂停，人工接管录制已开启；等待你的操作"
