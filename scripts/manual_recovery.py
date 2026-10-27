@@ -25,8 +25,9 @@ def main():
                         default="placement_failure")
     parser.add_argument("--check", action="store_true", help="Restore and verify without opening windows")
     parser.add_argument("--check-joints", action="store_true", help="Headless physical joint/OSC switching smoke test")
+    parser.add_argument("--check-takeover", action="store_true", help="Verify OSC/joint/OSC recording without windows")
     args = parser.parse_args()
-    os.environ["MUJOCO_GL"] = "osmesa" if args.check or args.check_joints else "glx"
+    os.environ["MUJOCO_GL"] = "osmesa" if args.check or args.check_joints or args.check_takeover else "glx"
     os.environ["PYOPENGL_PLATFORM"] = os.environ["MUJOCO_GL"]
     os.environ.setdefault("__NV_PRIME_RENDER_OFFLOAD", "1")
     os.environ.setdefault("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
@@ -151,7 +152,7 @@ def main():
             self.correction.metadata.update(
                 task_suite="libero_goal", task_id=8, source="human manual recovery",
                 bank_entry=entries[self.layout_id], control_hz=1 / self.view.control_dt,
-                launcher_sha256=digest(__file__), physics_files=[],
+                launcher_sha256=digest(__file__), physics_files=[], control_timeline=[], joint_frame_count=0,
                 rotation_guide_sha256=digest(ROOT / "scripts/manual_rotation_guide.py"),
                 joint_control_sha256=digest(ROOT / "scripts/manual_joint_control.py"),
                 osc_nullspace_initial_joints=self.env.env.robots[0].controller.initial_joint.tolist(),
@@ -161,12 +162,20 @@ def main():
         def _manual_steps(self, action, repeats):
             if type(repeats) is not int or not 1 <= repeats <= 20:
                 raise ValueError("每次执行步数须为 1～20")
+            from correction_data import MAX_FRAMES
+            if self.correction_active and (self.correction.count +
+                    self.correction.metadata.get("joint_frame_count", 0) + repeats > MAX_FRAMES):
+                raise ValueError("本段控制步数已达上限，请保存后继续采集")
             for _ in range(repeats):
                 before = self.env.get_sim_state().copy()
+                nullspace = self.env.env.robots[0].controller.initial_joint.copy()
                 super()._manual_steps(action, 1)
                 path = self.correction.directory / f"physics-{self.correction.count - 1:06d}.npz"
-                np.savez_compressed(path, before=before, after=self.env.get_sim_state(), action=action)
+                np.savez_compressed(path, before=before, after=self.env.get_sim_state(), action=action,
+                                    osc_nullspace_initial_joints=nullspace)
                 self.correction.metadata["physics_files"].append({"path": path.name, "sha256": digest(path)})
+                self.correction.metadata["control_timeline"].append({"controller": "OSC_POSE",
+                    "path": f"frame-{self.correction.count - 1:06d}.npz", "physics": path.name})
                 write_json(self.correction.directory / "metadata.json", self.correction.metadata)
 
         def toggle_run(self):
@@ -176,6 +185,63 @@ def main():
 
         def prepare_corrections(self, *args, **kwargs):
             raise ValueError("先录制并审核恢复片段，再准备本项目的匹配场景训练数据")
+
+    if args.check_takeover:
+        from contextlib import nullcontext
+        class HeadlessPreview:
+            def __init__(self, env):
+                self.control_dt = env.env.control_timestep
+                self.paused, self.single_step, self.running = True, False, True
+            def is_running(self):
+                return self.running
+            def lock(self):
+                return nullcontext()
+            def sync(self):
+                pass
+            def show_joint(self, joint):
+                pass
+            def close(self):
+                self.running = False
+        output = ROOT / "evaluations" / f"takeover-check-{time.time_ns()}"
+        lab = ManualWorkbench(output, bank_task, root=ROOT, viewer_factory=HeadlessPreview)
+        try:
+            lab.reset(args.initial_id)
+            lab.begin_correction()
+            recorder = lab.correction
+            lab.manual_hold(1)
+            q = lab.env.env.robots[0]._joint_positions.copy()
+            lab.manual_joint_jog(3, 2.)
+            moved = float(np.rad2deg(lab.env.env.robots[0]._joint_positions[3] - q[3]))
+            if moved < .2:
+                raise AssertionError("Active takeover elbow did not move")
+            lab.manual_hold(1)
+            if lab.correction is not recorder or not lab.correction_active:
+                raise AssertionError("Takeover was ended or replaced during joint control")
+            if (recorder.count != 2 or recorder.metadata["joint_frame_count"] != 12
+                    or lab.env.env.action_dim != 7):
+                raise AssertionError("Mixed recording/action contract differs")
+            previous = np.load(recorder.directory / "initial_sim_state.npy")
+            for item in recorder.metadata["control_timeline"]:
+                frame = recorder.directory / item.get("physics", item["path"])
+                with np.load(frame, allow_pickle=False) as data:
+                    np.testing.assert_array_equal(data["before"], previous)
+                    previous = data["after"].copy()
+            np.testing.assert_array_equal(previous, lab.env.get_sim_state())
+            try:
+                lab.finish_correction(True)
+            except ValueError:
+                pass
+            else:
+                raise AssertionError("Mixed success gate accepted unfinished recovery")
+            lab.finish_correction(False)
+            report = dict(ready=True, directory=str(recorder.directory), elbow_degrees=moved,
+                osc_frames=recorder.count, joint_frames=recorder.metadata["joint_frame_count"],
+                continuous_physics=True, same_take=True, restored_osc_dim=lab.env.env.action_dim)
+            write_json(output / "check.json", report)
+            print(json.dumps(report, ensure_ascii=False), flush=True)
+        finally:
+            lab.close()
+        return
 
     import tkinter as tk
     output = ROOT / "evaluations" / f"manual-recovery-{time.time_ns()}"

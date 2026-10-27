@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-28",
+  "change": "Allow individual joint adjustment during an active human takeover, without ending the take",
+  "tests": {
+    "command": ".venv-train/bin/python -m pytest -q tests/test_manual_joint_control.py tests/test_manual_rotation_guide.py tests/test_recovery_recording.py",
+    "passed": 23
+  },
+  "headless_physics": {
+    "ready": true,
+    "directory": "/home/robot/pi05-rl-handson/corrections/human_1793120832601417228",
+    "elbow_degrees": 1.9795367571949598,
+    "osc_frames": 2,
+    "joint_frames": 12,
+    "continuous_physics": true,
+    "same_take": true,
+    "restored_osc_dim": 7
+  },
+  "headless_report": "evaluations/takeover-check-1793120829574276297/check.json",
+  "gui": {
+    "directory": "corrections/human_1793120856723667352",
+    "status": "draft",
+    "osc_frames": 10,
+    "joint_frames": 12,
+    "operation": "J4+ then normal OSC hold10, same active recorder",
+    "screenshot_local": ".local/joint-takeover-clicked.png"
+  },
+  "boundaries": [
+    "Mixed joint/OSC records retained with typed timeline; not yet compatible with legacy 7D OSC training/export or resume",
+    "Real physics and contacts remain enabled; joint jogging has no automatic collision avoidance"
+  ],
+  "checks": [
+    "compileall passed",
+    "git diff --check passed"
+  ]
+}
