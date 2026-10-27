@@ -1,0 +1,431 @@
+{
+  "format": "libero-recovery-bank-v1",
+  "task_suite": "libero_goal",
+  "task_id": 8,
+  "seed": 42,
+  "construction": "Synthetic physical states using OSC initialization and object pose perturbations; no recovery actions scripted into training/evaluation",
+  "split_protocol": "source initial IDs 30..33 development only; old heldout IDs 10..13 excluded",
+  "success": "native bowl-on-plate and no finger contact for 5 consecutive controls",
+  "entries": [
+    {
+      "id": "dev-empty_grasp-init30",
+      "split": "dev",
+      "category": "empty_grasp",
+      "source_initial_id": 30,
+      "file": "dev-empty_grasp-init30.npz",
+      "requested_offset_xy_m": [
+        0.055,
+        -0.055
+      ],
+      "offset_xy_m": [
+        0.055,
+        0.055
+      ],
+      "source_state_sha256": "9a1bacb6176aa6b2ff20c5291f5c3b25e6a743ffa64b6cdb7ea735af94c5fc6d",
+      "state_sha256": "3f6ec1bcdadc037794ec8783bef771f03c83d979b63fdc655e41fef77665d4d4",
+      "sha256": "2a3fdc5269b9328f698593cdf690ea5cf771f9910406f86866a7c3f583850c46",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.08427044623403536,
+        -0.004765361476420511,
+        1.0067526898070889
+      ],
+      "bowl_pos": [
+        -0.034609021455281434,
+        0.05034657999671096,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.058681862847353036,
+        -0.023864954545078615,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "dev-object_offset-init30",
+      "split": "dev",
+      "category": "object_offset",
+      "source_initial_id": 30,
+      "file": "dev-object_offset-init30.npz",
+      "requested_offset_xy_m": [
+        0.055,
+        -0.055
+      ],
+      "offset_xy_m": [
+        0.055,
+        0.055
+      ],
+      "source_state_sha256": "9a1bacb6176aa6b2ff20c5291f5c3b25e6a743ffa64b6cdb7ea735af94c5fc6d",
+      "state_sha256": "fd03cb7cdcf3d5f6da6162b54898a0a6ee72abd547ac0dd274fde84a0e875eaf",
+      "sha256": "5d9d291fb0d39fec38a4e882a495ec39e645399958f554ba16f59f88378c3a9d",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.21919572401350795,
+        -0.007340892939803882,
+        1.1620818181040922
+      ],
+      "bowl_pos": [
+        -0.034609021455281434,
+        0.05034657999671096,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.058681862847353036,
+        -0.023864954545078615,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "dev-placement_failure-init30",
+      "split": "dev",
+      "category": "placement_failure",
+      "source_initial_id": 30,
+      "file": "dev-placement_failure-init30.npz",
+      "requested_offset_xy_m": [
+        0.055,
+        -0.055
+      ],
+      "offset_xy_m": [
+        0.14999999999999997,
+        0.0
+      ],
+      "source_state_sha256": "9a1bacb6176aa6b2ff20c5291f5c3b25e6a743ffa64b6cdb7ea735af94c5fc6d",
+      "state_sha256": "02fa087fd1c79b77402a1b9c0faf9da6a7c2a73e329aa1c1b6422083e43f1ff4",
+      "sha256": "793ff9b2f2dc9b7e575ab1e4b871d618684c271ba1407658e408daab0b580118",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        0.06530224336428238,
+        -0.024671376466009032,
+        1.1614791128540405
+      ],
+      "bowl_pos": [
+        0.20868186284735302,
+        -0.023864954545078615,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.058681862847353036,
+        -0.023864954545078615,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "dev-empty_grasp-init31",
+      "split": "dev",
+      "category": "empty_grasp",
+      "source_initial_id": 31,
+      "file": "dev-empty_grasp-init31.npz",
+      "requested_offset_xy_m": [
+        -0.055,
+        -0.055
+      ],
+      "offset_xy_m": [
+        -0.05134966361428567,
+        -0.0573130510446521
+      ],
+      "source_state_sha256": "f2a29258d223fa02d5c49412596018b884b9b8200ee3faaddead25b3d79e3442",
+      "state_sha256": "71328517a99b0d06d3c188876e24a3017dd3c23dcd94de54103184171cd7f1dd",
+      "sha256": "3c7b60bdcfcb45f63cf70a65ffeb3bbb8be3eb8c39c9ce468273e287a07da547",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.08805093368898255,
+        0.008221254500731152,
+        1.0028087567185453
+      ],
+      "bowl_pos": [
+        -0.1413843332238751,
+        -0.04869979773699307,
+        0.9018759457728752
+      ],
+      "plate_pos": [
+        0.04532396670294034,
+        -0.03257531508290557,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "dev-object_offset-init31",
+      "split": "dev",
+      "category": "object_offset",
+      "source_initial_id": 31,
+      "file": "dev-object_offset-init31.npz",
+      "requested_offset_xy_m": [
+        -0.055,
+        -0.055
+      ],
+      "offset_xy_m": [
+        -0.05134966376371208,
+        -0.057313050985618695
+      ],
+      "source_state_sha256": "f2a29258d223fa02d5c49412596018b884b9b8200ee3faaddead25b3d79e3442",
+      "state_sha256": "fcb68a27d5a919a2415b433cf76cd6e7477558d49512412ae745db3b7ebb1ef3",
+      "sha256": "f80dd9d657bdd457523b5bb02f754f4b44cf09940e0ce563b19c049c401a8e4c",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.2068057549052004,
+        0.006599030000749377,
+        1.1770577195095606
+      ],
+      "bowl_pos": [
+        -0.14138433337330153,
+        -0.048699797677959664,
+        0.9018759457699151
+      ],
+      "plate_pos": [
+        0.04532396670294034,
+        -0.03257531508290557,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "dev-placement_failure-init31",
+      "split": "dev",
+      "category": "placement_failure",
+      "source_initial_id": 31,
+      "file": "dev-placement_failure-init31.npz",
+      "requested_offset_xy_m": [
+        -0.055,
+        -0.055
+      ],
+      "offset_xy_m": [
+        -0.10633687776997758,
+        -0.09755351615755958
+      ],
+      "source_state_sha256": "f2a29258d223fa02d5c49412596018b884b9b8200ee3faaddead25b3d79e3442",
+      "state_sha256": "a02999b3c199de3acf7268961c269a19f44e48411e8a618eb233bf6cf992c3dc",
+      "sha256": "2b74a6f20ff4cbe74272f4db3536ba5f4c58a4db8f51a5abc6481abde62acb4a",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        0.051826630797425007,
+        -0.03354611882679994,
+        1.161157045734427
+      ],
+      "bowl_pos": [
+        -0.06101291106703725,
+        -0.13012883124046515,
+        0.8955058731220299
+      ],
+      "plate_pos": [
+        0.04532396670294034,
+        -0.03257531508290557,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "dev-empty_grasp-init32",
+      "split": "dev",
+      "category": "empty_grasp",
+      "source_initial_id": 32,
+      "file": "dev-empty_grasp-init32.npz",
+      "requested_offset_xy_m": [
+        0.055,
+        0.055
+      ],
+      "offset_xy_m": [
+        0.0665354360808646,
+        0.04552327205310794
+      ],
+      "source_state_sha256": "e3218f498ac9620451507188acffe665d47b2a71b022bba92617cda83e29302f",
+      "state_sha256": "3e831d068fd2fd963b62e0cb30437cd902d4f09594567e693baa026db5ce3e38",
+      "sha256": "94c4c3774155eaa4740c93780aeaa54e657670dd16916f5bb2eea331b0c35282",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.07791466526928337,
+        -0.009615375941719004,
+        1.0042078075309964
+      ],
+      "bowl_pos": [
+        -0.016047019355345974,
+        0.03598935591349041,
+        0.9193874501597433
+      ],
+      "plate_pos": [
+        0.050311674865205984,
+        -0.01352008415516394,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "dev-object_offset-init32",
+      "split": "dev",
+      "category": "object_offset",
+      "source_initial_id": 32,
+      "file": "dev-object_offset-init32.npz",
+      "requested_offset_xy_m": [
+        0.055,
+        0.055
+      ],
+      "offset_xy_m": [
+        0.06653543608340506,
+        0.04552327205361268
+      ],
+      "source_state_sha256": "e3218f498ac9620451507188acffe665d47b2a71b022bba92617cda83e29302f",
+      "state_sha256": "65b44528e1b8cddd0bae768950e8e55db90a0fa7ad5b14fbd87fe0384b4869d1",
+      "sha256": "7a053d4b7e29fabdff74c7263d325c00599bffcf225fd31afa46d6f162432c53",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.2076745577288628,
+        0.016198920748639465,
+        1.1726244005830295
+      ],
+      "bowl_pos": [
+        -0.01604701935280551,
+        0.03598935591399515,
+        0.9193874501611781
+      ],
+      "plate_pos": [
+        0.050311674865205984,
+        -0.01352008415516394,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "dev-placement_failure-init32",
+      "split": "dev",
+      "category": "placement_failure",
+      "source_initial_id": 32,
+      "file": "dev-placement_failure-init32.npz",
+      "requested_offset_xy_m": [
+        0.055,
+        0.055
+      ],
+      "offset_xy_m": [
+        0.10606601717798211,
+        0.10606601717798211
+      ],
+      "source_state_sha256": "e3218f498ac9620451507188acffe665d47b2a71b022bba92617cda83e29302f",
+      "state_sha256": "73c7a66ba8bae8d7f9a26238c89b330f8e1c19e3263fbf2b237cd9d04ba12712",
+      "sha256": "d35ec7c3ff0bf32abc7870863fbe5e9d7282e4d2ac2d5f8dbc9a3bc92edbbe8d",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        0.056527814812621535,
+        -0.014160434468645483,
+        1.1612276373200585
+      ],
+      "bowl_pos": [
+        0.1563776920431881,
+        0.09254593302281817,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.050311674865205984,
+        -0.01352008415516394,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "dev-empty_grasp-init33",
+      "split": "dev",
+      "category": "empty_grasp",
+      "source_initial_id": 33,
+      "file": "dev-empty_grasp-init33.npz",
+      "requested_offset_xy_m": [
+        -0.055,
+        0.055
+      ],
+      "offset_xy_m": [
+        -0.05500000000000001,
+        0.055
+      ],
+      "source_state_sha256": "240751828fcffe67789db1c374549b80c4f8427335183d585d6662be054878e0",
+      "state_sha256": "8a12a5447929299fc784d352735cd0a1cdaec80a4707804cbc67e2112eed0be2",
+      "sha256": "5924d5b43ec3000a4a2297f34bc67902f71c205cf4c999c2bf76c62d2d91a200",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.09653008214031147,
+        -0.0029948453253165488,
+        1.0022509945910059
+      ],
+      "bowl_pos": [
+        -0.15398195208255272,
+        0.05187082980228053,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.048238053934212516,
+        -0.03217780103360581,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "dev-object_offset-init33",
+      "split": "dev",
+      "category": "object_offset",
+      "source_initial_id": 33,
+      "file": "dev-object_offset-init33.npz",
+      "requested_offset_xy_m": [
+        -0.055,
+        0.055
+      ],
+      "offset_xy_m": [
+        -0.05500000000000001,
+        0.055
+      ],
+      "source_state_sha256": "240751828fcffe67789db1c374549b80c4f8427335183d585d6662be054878e0",
+      "state_sha256": "a3819300a143b3cb47967b147fb5fc6ac14bd24cc2c869a826c3c3ed4d981507",
+      "sha256": "2e8d99a14bfb308faccfbc77d96957560bd9f8b09eb4a050392e278ae2620b1d",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        -0.21379699817946773,
+        -0.0070549732675099595,
+        1.169316982557332
+      ],
+      "bowl_pos": [
+        -0.15398195208255272,
+        0.05187082980228053,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.048238053934212516,
+        -0.03217780103360581,
+        0.902506338529415
+      ]
+    },
+    {
+      "id": "dev-placement_failure-init33",
+      "split": "dev",
+      "category": "placement_failure",
+      "source_initial_id": 33,
+      "file": "dev-placement_failure-init33.npz",
+      "requested_offset_xy_m": [
+        -0.055,
+        0.055
+      ],
+      "offset_xy_m": [
+        0.15,
+        0.0
+      ],
+      "source_state_sha256": "240751828fcffe67789db1c374549b80c4f8427335183d585d6662be054878e0",
+      "state_sha256": "924b8d0e777b755af1df478064296a8acfd7d2bcd4bdede3bebd4c82f38d7c93",
+      "sha256": "bf97ae6c1c1ee4f8273028a9c9f04504bbecbc8b4d2a0c4dd12fbe85557ea4dd",
+      "initial_native_success": false,
+      "initial_finger_contact": false,
+      "eef_pos": [
+        0.055028645881534465,
+        -0.03314303064391641,
+        1.1612668126894088
+      ],
+      "bowl_pos": [
+        0.1982380539342125,
+        -0.03217780103360581,
+        0.8984070750980836
+      ],
+      "plate_pos": [
+        0.048238053934212516,
+        -0.03217780103360581,
+        0.902506338529415
+      ]
+    }
+  ]
+}

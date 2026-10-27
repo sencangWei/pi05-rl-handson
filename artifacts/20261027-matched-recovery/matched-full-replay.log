@@ -1,0 +1,48 @@
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+RECOVERY_INITIAL {"id": "train-empty_grasp-init02", "category": "empty_grasp", "split": "train", "state_sha256": "68f00711e68e07b552b12df65857ab57556cfcacec0a7ce3af57e82d5f2e8e0d"}
+RECOVERY_INITIAL {"id": "train-empty_grasp-init02", "category": "empty_grasp", "split": "train", "state_sha256": "68f00711e68e07b552b12df65857ab57556cfcacec0a7ce3af57e82d5f2e8e0d"}
+{"record": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init02.record.json", "passed": true, "final_released_success": {"raw": true, "clipped": true}, "max_physics_abs_error": {"raw": 0.0, "clipped": 0.0}, "controls": 64, "tolerance": 1e-05}
+RECOVERY_INITIAL {"id": "train-empty_grasp-init03", "category": "empty_grasp", "split": "train", "state_sha256": "094f3e78c84b595abd5bde475d0706f2ca4243d32f1dfed089777c85f37e9fa7"}
+RECOVERY_INITIAL {"id": "train-empty_grasp-init03", "category": "empty_grasp", "split": "train", "state_sha256": "094f3e78c84b595abd5bde475d0706f2ca4243d32f1dfed089777c85f37e9fa7"}
+{"record": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init03.record.json", "passed": true, "final_released_success": {"raw": true, "clipped": true}, "max_physics_abs_error": {"raw": 0.0, "clipped": 0.0}, "controls": 72, "tolerance": 1e-05}
+RECOVERY_INITIAL {"id": "train-empty_grasp-init04", "category": "empty_grasp", "split": "train", "state_sha256": "b6212b0f9e3b5c1980427f2cb026476541cd52e46925ed1e5979bb95aae91a36"}
+RECOVERY_INITIAL {"id": "train-empty_grasp-init04", "category": "empty_grasp", "split": "train", "state_sha256": "b6212b0f9e3b5c1980427f2cb026476541cd52e46925ed1e5979bb95aae91a36"}
+{"record": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init04.record.json", "passed": true, "final_released_success": {"raw": true, "clipped": true}, "max_physics_abs_error": {"raw": 0.0, "clipped": 0.0}, "controls": 74, "tolerance": 1e-05}
+RECOVERY_INITIAL {"id": "train-empty_grasp-init05", "category": "empty_grasp", "split": "train", "state_sha256": "ccf1fa73ec30733f5c313fcbae711719c862d121f3eef91141c2e3501b293790"}
+RECOVERY_INITIAL {"id": "train-empty_grasp-init05", "category": "empty_grasp", "split": "train", "state_sha256": "ccf1fa73ec30733f5c313fcbae711719c862d121f3eef91141c2e3501b293790"}
+{"record": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init05.record.json", "passed": true, "final_released_success": {"raw": true, "clipped": true}, "max_physics_abs_error": {"raw": 0.0, "clipped": 0.0}, "controls": 89, "tolerance": 1e-05}
+RECOVERY_INITIAL {"id": "train-empty_grasp-init06", "category": "empty_grasp", "split": "train", "state_sha256": "08319f8866593ad6bd33dd8cfb28252527df8346cdfa0d22f5c8a634df24a160"}
+RECOVERY_INITIAL {"id": "train-empty_grasp-init06", "category": "empty_grasp", "split": "train", "state_sha256": "08319f8866593ad6bd33dd8cfb28252527df8346cdfa0d22f5c8a634df24a160"}
+{"record": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init06.record.json", "passed": true, "final_released_success": {"raw": true, "clipped": true}, "max_physics_abs_error": {"raw": 0.0, "clipped": 0.0}, "controls": 65, "tolerance": 1e-05}
+RECOVERY_INITIAL {"id": "train-object_offset-init01", "category": "object_offset", "split": "train", "state_sha256": "f2311ae37eed37f4565c49fa412169d92353f45812683cfb4a4d3fbbdbed7a3e"}
+RECOVERY_INITIAL {"id": "train-object_offset-init01", "category": "object_offset", "split": "train", "state_sha256": "f2311ae37eed37f4565c49fa412169d92353f45812683cfb4a4d3fbbdbed7a3e"}
+{"record": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init01.record.json", "passed": true, "final_released_success": {"raw": true, "clipped": true}, "max_physics_abs_error": {"raw": 0.0, "clipped": 0.0}, "controls": 89, "tolerance": 1e-05}
+RECOVERY_INITIAL {"id": "train-object_offset-init02", "category": "object_offset", "split": "train", "state_sha256": "005c17c39f3549b8dec69ea01c06e2ec947a88acebc9dbb827d9f24ca5fa76db"}
+RECOVERY_INITIAL {"id": "train-object_offset-init02", "category": "object_offset", "split": "train", "state_sha256": "005c17c39f3549b8dec69ea01c06e2ec947a88acebc9dbb827d9f24ca5fa76db"}
+{"record": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init02.record.json", "passed": true, "final_released_success": {"raw": true, "clipped": true}, "max_physics_abs_error": {"raw": 0.0, "clipped": 0.0}, "controls": 84, "tolerance": 1e-05}
+RECOVERY_INITIAL {"id": "train-object_offset-init03", "category": "object_offset", "split": "train", "state_sha256": "129a36bb117fef2b547d0b29b2828e806bc01eb3f61f368543ab7cd32581b72a"}
+RECOVERY_INITIAL {"id": "train-object_offset-init03", "category": "object_offset", "split": "train", "state_sha256": "129a36bb117fef2b547d0b29b2828e806bc01eb3f61f368543ab7cd32581b72a"}
+{"record": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init03.record.json", "passed": true, "final_released_success": {"raw": true, "clipped": true}, "max_physics_abs_error": {"raw": 0.0, "clipped": 0.0}, "controls": 96, "tolerance": 1e-05}
+RECOVERY_INITIAL {"id": "train-object_offset-init04", "category": "object_offset", "split": "train", "state_sha256": "29d9ae5f19183dcfbecd2560aa7f8056a9a53a74aea75d3eb9ac0a156dfdae79"}
+RECOVERY_INITIAL {"id": "train-object_offset-init04", "category": "object_offset", "split": "train", "state_sha256": "29d9ae5f19183dcfbecd2560aa7f8056a9a53a74aea75d3eb9ac0a156dfdae79"}
+{"record": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init04.record.json", "passed": true, "final_released_success": {"raw": true, "clipped": true}, "max_physics_abs_error": {"raw": 0.0, "clipped": 0.0}, "controls": 89, "tolerance": 1e-05}
+RECOVERY_INITIAL {"id": "train-object_offset-init05", "category": "object_offset", "split": "train", "state_sha256": "cdd03b4e480cc80dbc0e76f33917041fcce869e72605b4dba37f8203b0f36801"}
+RECOVERY_INITIAL {"id": "train-object_offset-init05", "category": "object_offset", "split": "train", "state_sha256": "cdd03b4e480cc80dbc0e76f33917041fcce869e72605b4dba37f8203b0f36801"}
+{"record": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init05.record.json", "passed": true, "final_released_success": {"raw": true, "clipped": true}, "max_physics_abs_error": {"raw": 0.0, "clipped": 0.0}, "controls": 90, "tolerance": 1e-05}
+RECOVERY_INITIAL {"id": "train-object_offset-init06", "category": "object_offset", "split": "train", "state_sha256": "590643e55927acba2e045a4eb361482fc41cc2833b283e95333b4e4b5b032f44"}
+RECOVERY_INITIAL {"id": "train-object_offset-init06", "category": "object_offset", "split": "train", "state_sha256": "590643e55927acba2e045a4eb361482fc41cc2833b283e95333b4e4b5b032f44"}
+{"record": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init06.record.json", "passed": true, "final_released_success": {"raw": true, "clipped": true}, "max_physics_abs_error": {"raw": 0.0, "clipped": 0.0}, "controls": 86, "tolerance": 1e-05}
+RECOVERY_INITIAL {"id": "train-placement_failure-init02", "category": "placement_failure", "split": "train", "state_sha256": "0a9ac60b37b9f4c3579be1a2323a996944ee6f0c764412516bb96794ae8322f8"}
+RECOVERY_INITIAL {"id": "train-placement_failure-init02", "category": "placement_failure", "split": "train", "state_sha256": "0a9ac60b37b9f4c3579be1a2323a996944ee6f0c764412516bb96794ae8322f8"}
+{"record": "evaluations/matched-recovery-collect-s42-v2/train-placement_failure-init02.record.json", "passed": true, "final_released_success": {"raw": true, "clipped": true}, "max_physics_abs_error": {"raw": 0.0, "clipped": 0.0}, "controls": 115, "tolerance": 1e-05}
+RECOVERY_INITIAL {"id": "train-placement_failure-init03", "category": "placement_failure", "split": "train", "state_sha256": "b923773c7d9c18311bae720225b173fa3d5b5eab19318b5255156cbc71153878"}
+RECOVERY_INITIAL {"id": "train-placement_failure-init03", "category": "placement_failure", "split": "train", "state_sha256": "b923773c7d9c18311bae720225b173fa3d5b5eab19318b5255156cbc71153878"}
+{"record": "evaluations/matched-recovery-collect-s42-v2/train-placement_failure-init03.record.json", "passed": true, "final_released_success": {"raw": true, "clipped": true}, "max_physics_abs_error": {"raw": 0.0, "clipped": 0.0}, "controls": 114, "tolerance": 1e-05}
+{"ready": true, "episodes": 13, "coverage": {"empty_grasp": [2, 3, 4, 5, 6], "object_offset": [1, 2, 3, 4, 5, 6], "placement_failure": [2, 3]}}

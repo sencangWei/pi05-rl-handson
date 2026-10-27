@@ -50,13 +50,14 @@ class NativePolicy:
 
     def __init__(self, model, metadata):
         self.model, self.metadata, self.index = model, metadata, 0
+        self.noise_seed = metadata.get('noise_seed', 42)
 
     def get_server_metadata(self):
         return self.metadata
 
     def infer(self, payload):
         import torch
-        noise = np.random.default_rng(42 + self.index).standard_normal((10, 32))
+        noise = np.random.default_rng(self.noise_seed + self.index).standard_normal((10, 32))
         self.index += 1
         noise = torch.as_tensor(noise, dtype=torch.float32, device=self.model.device)[None]
         actions, _ = self.model.predict_action_batch(

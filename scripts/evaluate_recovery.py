@@ -35,9 +35,14 @@ def main():
     parser.add_argument("--max-steps", type=int, default=300)
     parser.add_argument("--split", choices=("train", "dev", "heldout"), default="heldout")
     parser.add_argument("--category", choices=("empty_grasp", "object_offset", "placement_failure"))
+    parser.add_argument("--noise-seed", type=int, default=42)
+    parser.add_argument("--record-training-rollouts", action="store_true",
+                        help="Save successful learned rollouts with pre-action RGB/state; train split only")
     args = parser.parse_args()
     if not 1 <= args.max_steps <= 1000:
         raise ValueError("Invalid evaluation bound")
+    if args.record_training_rollouts and args.split != "train":
+        raise ValueError("Only training initial states may become demonstrations")
     args.output.mkdir(parents=True, exist_ok=False)
     os.environ.setdefault("MUJOCO_GL", "egl")
     os.environ.setdefault("PYOPENGL_PLATFORM", "egl")
@@ -57,7 +62,7 @@ def main():
     from rlinf.hybrid_engines.fsdp.strategy.adapter_checkpoint import read_adapter_model
     from rlinf.models import get_model
 
-    source_paths = [Path(__file__), ROOT / "scripts/evaluate_native_ppo.py",
+    source_paths = [Path(__file__), ROOT / "scripts/evaluate_native_ppo.py", ROOT / "scripts/recovery_recording.py",
                     ROOT / "third_party/RLinf/rlinf/envs/sim/libero/recovery.py"]
     source_hashes = {str(p.relative_to(ROOT)): sha256(p) for p in source_paths}
     cfg = OmegaConf.load(args.config)
@@ -92,7 +97,8 @@ def main():
                 "success": "native goal AND no finger contact for 5 consecutive controls",
                 "action_execution": f"learned model only; observe every 5 controls; max {args.max_steps} controls",
                 "control_hz": control_hz, "video_fps": control_hz,
-                "noise": "numpy.default_rng(42+call), reset per episode; 10 flow steps",
+                "noise": f"numpy.default_rng({args.noise_seed}+call), reset per episode; 10 flow steps",
+                "record_training_rollouts": args.record_training_rollouts,
                 "sources": source_hashes}
     if source_hashes != {str(p.relative_to(ROOT)): sha256(p) for p in source_paths}:
         raise RuntimeError("Evaluation sources changed during model loading")
@@ -103,7 +109,11 @@ def main():
             env.seed(42)
             env.reset()
             obs = env.restore_recovery(index)
-            policy = NativePolicy(model, {})
+            policy = NativePolicy(model, {"noise_seed": args.noise_seed})
+            recorder = None
+            if args.record_training_rollouts:
+                from recovery_recording import TrainingRecorder
+                recorder = TrainingRecorder(args.output, entry, index, task.language)
             report = {key: entry[key] for key in ("id", "category", "state_sha256", "source_initial_id")}
             started = time.monotonic()
             success = False
@@ -122,6 +132,9 @@ def main():
                         with torch.inference_mode():
                             actions = policy.infer(payload(obs, task.language, image_tools))["actions"]
                         for action in actions[:min(5, args.max_steps - step)]:
+                            if recorder is not None:
+                                recorder.add(obs, action, raw.get_sim_state(),
+                                             payload(obs, task.language, image_tools)["observation/state"])
                             before = obs["robot0_eef_pos"].copy()
                             obs, _, success, info = env.step(action)
                             step += 1
@@ -147,6 +160,8 @@ def main():
                           video=video_name, wall_seconds=time.monotonic() - started,
                           reward_return=float(success) - .001 * step)
             reports.append(report)
+            if recorder is not None and success and exception is None:
+                recorder.save(raw.get_sim_state())
             (args.output / "summary.json").write_text(json.dumps(reports, indent=2) + "\n")
             print("RECOVERY_RESULT " + json.dumps(report), flush=True)
     finally:

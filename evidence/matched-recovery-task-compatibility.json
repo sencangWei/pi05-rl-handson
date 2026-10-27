@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "task_suite": "libero_goal",
+  "task_id": 8,
+  "prompt": "put the bowl on the plate",
+  "bank_manifest_sha256": "7bac5c686e9acfc522017604a0b3a8d3b966cfddb97c940b4fe05c5614f831af",
+  "bddl": {
+    "path": "/home/robot/voice-arm-sim/.local/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/put_the_bowl_on_the_plate.bddl",
+    "expected": "358b7781437e412c67d6a7648c1c28796b6b1bf117a25e61316cb8dfeb940e5b"
+  },
+  "init": {
+    "path": "/home/robot/voice-arm-sim/.local/openpi/third_party/libero/libero/libero/init_files/libero_goal/put_the_bowl_on_the_plate.pruned_init",
+    "expected": "ef3466ffad734754dc40eba1f6f5712e37aa46b9692c595e0da34f16d3a0c668"
+  }
+}

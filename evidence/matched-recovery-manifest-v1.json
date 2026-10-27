@@ -1,0 +1,907 @@
+{
+  "schema": "pi05-model-recovery-replay-v1",
+  "ready": true,
+  "root": "/home/robot/pi05-rl-handson",
+  "records": [
+    {
+      "path": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init02.parquet",
+      "sha256": "91ff49480af0f226c4dfe6ad15fe8cca9b954588522a4581c409a2e6cd693637",
+      "frames": 64,
+      "episode": 3,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-empty_grasp-init02",
+        "split": "train",
+        "category": "empty_grasp",
+        "source_initial_id": 2,
+        "file": "train-empty_grasp-init02.npz",
+        "requested_offset_xy_m": [
+          0.04,
+          -0.04
+        ],
+        "offset_xy_m": [
+          0.039999999999999994,
+          -0.04
+        ],
+        "source_state_sha256": "e92c3b68aa6af756d9ae0fbee9eefd5c04fb9d5739453b832e9707c8fe290096",
+        "state_sha256": "68f00711e68e07b552b12df65857ab57556cfcacec0a7ce3af57e82d5f2e8e0d",
+        "sha256": "76aee5d0dde175313440bb4b425ad1f625a98a60123de7543d72c8dc9a12cd85",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          -0.10325028491518855,
+          0.0023405935787086563,
+          1.0013729520021968
+        ],
+        "bowl_pos": [
+          -0.06328235427500667,
+          -0.03774699676837808,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.05245630628649128,
+          -0.012704933674087739,
+          0.902506338529415
+        ]
+      },
+      "physics": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init02-physics.npz",
+      "physics_sha256": "55b2b6708622d8cc9c328e6fff6a93f69849d7ca03ab46c1393d34cec2f9f60a",
+      "provenance": "learned-policy autonomous successful rollout, NOT human demonstration",
+      "temporal_policy": "all original pre-action RGB/state and executed actions at 20Hz",
+      "action_labels": "OSC clipped to [-1,1], Panda sign preserved; NPZ retains raw model commands",
+      "recorder_sha256": "5ffa381ff864081bc12aeea8f768cd4f25873d77db9719a897b5c9154799af17",
+      "independent_replay_verified": true,
+      "recording_identity": "evaluations/matched-recovery-collect-s42-v2/identity.json",
+      "recording_identity_sha256": "6dda79f3de1c8a686f80d1e3e4ce2d26a377788cabb868df0e7b17434e98913e"
+    },
+    {
+      "path": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init03.parquet",
+      "sha256": "cb48df628b906e2cb67cb50153071c2cae4ad394c718150e62822c9d1cea8699",
+      "frames": 72,
+      "episode": 6,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-empty_grasp-init03",
+        "split": "train",
+        "category": "empty_grasp",
+        "source_initial_id": 3,
+        "file": "train-empty_grasp-init03.npz",
+        "requested_offset_xy_m": [
+          -0.04,
+          -0.04
+        ],
+        "offset_xy_m": [
+          -0.039943900386525955,
+          -0.03999724375109035
+        ],
+        "source_state_sha256": "3e49f03083abbbd947b9cf8d36193a508c65e7ea2da641cf1dc7682a72328a5c",
+        "state_sha256": "094f3e78c84b595abd5bde475d0706f2ca4243d32f1dfed089777c85f37e9fa7",
+        "sha256": "4d9ac77708b83ba9d5655e8ce7187057a00e1993cb7d410e303de5a2b5834da8",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          -0.08753782100778879,
+          -0.002234032632035245,
+          1.0027313629750514
+        ],
+        "bowl_pos": [
+          -0.13072139827439372,
+          -0.04222958557153462,
+          0.8984134031640166
+        ],
+        "plate_pos": [
+          0.04052078573272849,
+          -0.022221656841679253,
+          0.902506338529415
+        ]
+      },
+      "physics": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init03-physics.npz",
+      "physics_sha256": "323e46f8c740bedd61fc1de9673f9aa80cf05aa3b3a10a11b9397f1920b8a701",
+      "provenance": "learned-policy autonomous successful rollout, NOT human demonstration",
+      "temporal_policy": "all original pre-action RGB/state and executed actions at 20Hz",
+      "action_labels": "OSC clipped to [-1,1], Panda sign preserved; NPZ retains raw model commands",
+      "recorder_sha256": "5ffa381ff864081bc12aeea8f768cd4f25873d77db9719a897b5c9154799af17",
+      "independent_replay_verified": true,
+      "recording_identity": "evaluations/matched-recovery-collect-s42-v2/identity.json",
+      "recording_identity_sha256": "6dda79f3de1c8a686f80d1e3e4ce2d26a377788cabb868df0e7b17434e98913e"
+    },
+    {
+      "path": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init04.parquet",
+      "sha256": "d509c714a82e5967b7ff5b02a37ae705e7ef557f3d8b980eec53e7d95e1c1f43",
+      "frames": 74,
+      "episode": 9,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-empty_grasp-init04",
+        "split": "train",
+        "category": "empty_grasp",
+        "source_initial_id": 4,
+        "file": "train-empty_grasp-init04.npz",
+        "requested_offset_xy_m": [
+          0.04,
+          0.04
+        ],
+        "offset_xy_m": [
+          0.039999999999999994,
+          0.039999999999999994
+        ],
+        "source_state_sha256": "37a6335a9df3d3d5a8fa5a41f6ddfb9097309c755a561166b5d4557ada91bf1f",
+        "state_sha256": "b6212b0f9e3b5c1980427f2cb026476541cd52e46925ed1e5979bb95aae91a36",
+        "sha256": "3e4e3ff3a488bc9a0c2b01174c609df6bdb091db9f5c0c314820ebd6b4fd1ede",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          -0.10362730285034771,
+          0.013401854553128792,
+          1.0024672198902962
+        ],
+        "bowl_pos": [
+          -0.06422521843131501,
+          0.053797493316708675,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.03823994452875654,
+          -0.010652084566305026,
+          0.902506338529415
+        ]
+      },
+      "physics": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init04-physics.npz",
+      "physics_sha256": "5f5cb9f95e726577574d30a52dd8c9dcf69ebaac02d202473fff421f4a356c14",
+      "provenance": "learned-policy autonomous successful rollout, NOT human demonstration",
+      "temporal_policy": "all original pre-action RGB/state and executed actions at 20Hz",
+      "action_labels": "OSC clipped to [-1,1], Panda sign preserved; NPZ retains raw model commands",
+      "recorder_sha256": "5ffa381ff864081bc12aeea8f768cd4f25873d77db9719a897b5c9154799af17",
+      "independent_replay_verified": true,
+      "recording_identity": "evaluations/matched-recovery-collect-s42-v2/identity.json",
+      "recording_identity_sha256": "6dda79f3de1c8a686f80d1e3e4ce2d26a377788cabb868df0e7b17434e98913e"
+    },
+    {
+      "path": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init05.parquet",
+      "sha256": "e5eadfebda7066128ce7c828dd4d99f6c630f6389f83f8c3977ec53fc4504230",
+      "frames": 89,
+      "episode": 12,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-empty_grasp-init05",
+        "split": "train",
+        "category": "empty_grasp",
+        "source_initial_id": 5,
+        "file": "train-empty_grasp-init05.npz",
+        "requested_offset_xy_m": [
+          -0.04,
+          0.04
+        ],
+        "offset_xy_m": [
+          -0.04000000000000001,
+          0.04
+        ],
+        "source_state_sha256": "6600fb90ac0ceaf178c64291eef075068efa4daaa075cc9004b763b2076f7b41",
+        "state_sha256": "ccf1fa73ec30733f5c313fcbae711719c862d121f3eef91141c2e3501b293790",
+        "sha256": "a12eaa1d85e9b568d3964212b06ac52c6e3e8daf387bff37d36ab5e1e304d660",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          -0.07854275585399258,
+          0.002885431153267377,
+          1.0047151883267555
+        ],
+        "bowl_pos": [
+          -0.12333962226857481,
+          0.04291090528832665,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.06446503650836596,
+          -0.02859363943257207,
+          0.902506338529415
+        ]
+      },
+      "physics": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init05-physics.npz",
+      "physics_sha256": "e9936392989c2d63892a5f01cc5a7dc84530dca40fb72a69dedab7ca87227970",
+      "provenance": "learned-policy autonomous successful rollout, NOT human demonstration",
+      "temporal_policy": "all original pre-action RGB/state and executed actions at 20Hz",
+      "action_labels": "OSC clipped to [-1,1], Panda sign preserved; NPZ retains raw model commands",
+      "recorder_sha256": "5ffa381ff864081bc12aeea8f768cd4f25873d77db9719a897b5c9154799af17",
+      "independent_replay_verified": true,
+      "recording_identity": "evaluations/matched-recovery-collect-s42-v2/identity.json",
+      "recording_identity_sha256": "6dda79f3de1c8a686f80d1e3e4ce2d26a377788cabb868df0e7b17434e98913e"
+    },
+    {
+      "path": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init06.parquet",
+      "sha256": "9f0f6feffaef13e1a7405288a3fa99d7ba51f7db4f996800f0fdf191fbe78c69",
+      "frames": 65,
+      "episode": 15,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-empty_grasp-init06",
+        "split": "train",
+        "category": "empty_grasp",
+        "source_initial_id": 6,
+        "file": "train-empty_grasp-init06.npz",
+        "requested_offset_xy_m": [
+          0.04,
+          -0.04
+        ],
+        "offset_xy_m": [
+          -0.040000781555084394,
+          -0.03999995112797422
+        ],
+        "source_state_sha256": "1e80c5a11d420bddc4e28295404eb575e178fbb4285e9703d7fcea5226604d07",
+        "state_sha256": "08319f8866593ad6bd33dd8cfb28252527df8346cdfa0d22f5c8a634df24a160",
+        "sha256": "50ac43c80eeaacb68674a8ceb72f130b1bef30b2c6e1bccb6ea09ae0e84475ac",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          -0.07189731771729567,
+          -0.00777066182258074,
+          1.0049679656949968
+        ],
+        "bowl_pos": [
+          -0.11649788092128226,
+          -0.047859891976857305,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.03695410183144269,
+          -0.03168622350677177,
+          0.9025057052762591
+        ]
+      },
+      "physics": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init06-physics.npz",
+      "physics_sha256": "aa7b967832a6baf74cbab2f40ac27acb69b8b01f905b54e7f83bed9623f5ec30",
+      "provenance": "learned-policy autonomous successful rollout, NOT human demonstration",
+      "temporal_policy": "all original pre-action RGB/state and executed actions at 20Hz",
+      "action_labels": "OSC clipped to [-1,1], Panda sign preserved; NPZ retains raw model commands",
+      "recorder_sha256": "5ffa381ff864081bc12aeea8f768cd4f25873d77db9719a897b5c9154799af17",
+      "independent_replay_verified": true,
+      "recording_identity": "evaluations/matched-recovery-collect-s42-v2/identity.json",
+      "recording_identity_sha256": "6dda79f3de1c8a686f80d1e3e4ce2d26a377788cabb868df0e7b17434e98913e"
+    },
+    {
+      "path": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init01.parquet",
+      "sha256": "f851e224ce8893612e3e247b0fad5e68875adb74bd07b80341f671a78b7ab093",
+      "frames": 89,
+      "episode": 1,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-object_offset-init01",
+        "split": "train",
+        "category": "object_offset",
+        "source_initial_id": 1,
+        "file": "train-object_offset-init01.npz",
+        "requested_offset_xy_m": [
+          -0.04,
+          0.04
+        ],
+        "offset_xy_m": [
+          -0.039999999999999994,
+          0.04
+        ],
+        "source_state_sha256": "458b021de5c47d7b23306d6e7f714ef3c2c55174aa4b2281816d6c3792f408cb",
+        "state_sha256": "f2311ae37eed37f4565c49fa412169d92353f45812683cfb4a4d3fbbdbed7a3e",
+        "sha256": "5e542b866fd6939aa2899859fe05c2b1a130b381df9490816f270eed1685538d",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          -0.19014867566853705,
+          0.003329464539073426,
+          1.189234510124621
+        ],
+        "bowl_pos": [
+          -0.13642826542989062,
+          0.05374865763403042,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.05872732726933982,
+          -0.03431250907543777,
+          0.902506338529415
+        ]
+      },
+      "physics": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init01-physics.npz",
+      "physics_sha256": "fbed46924b4adb0fc095ebfd455e15016258be8d20300610e03b368849e65ae1",
+      "provenance": "learned-policy autonomous successful rollout, NOT human demonstration",
+      "temporal_policy": "all original pre-action RGB/state and executed actions at 20Hz",
+      "action_labels": "OSC clipped to [-1,1], Panda sign preserved; NPZ retains raw model commands",
+      "recorder_sha256": "5ffa381ff864081bc12aeea8f768cd4f25873d77db9719a897b5c9154799af17",
+      "independent_replay_verified": true,
+      "recording_identity": "evaluations/matched-recovery-collect-s42-v2/identity.json",
+      "recording_identity_sha256": "6dda79f3de1c8a686f80d1e3e4ce2d26a377788cabb868df0e7b17434e98913e"
+    },
+    {
+      "path": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init02.parquet",
+      "sha256": "8bd8381d4795c5d067bfbff05223b847ab338460c63e6d7df7deda752f3d56e6",
+      "frames": 84,
+      "episode": 4,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-object_offset-init02",
+        "split": "train",
+        "category": "object_offset",
+        "source_initial_id": 2,
+        "file": "train-object_offset-init02.npz",
+        "requested_offset_xy_m": [
+          0.04,
+          -0.04
+        ],
+        "offset_xy_m": [
+          0.039999999999999994,
+          -0.04
+        ],
+        "source_state_sha256": "e92c3b68aa6af756d9ae0fbee9eefd5c04fb9d5739453b832e9707c8fe290096",
+        "state_sha256": "005c17c39f3549b8dec69ea01c06e2ec947a88acebc9dbb827d9f24ca5fa76db",
+        "sha256": "820997d87c0a99f857e82fd8f8137d4e3cc47ab6a4c936717fb9d1269955d581",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          -0.2090774566345743,
+          0.0027571904957864293,
+          1.1745265199363921
+        ],
+        "bowl_pos": [
+          -0.06328235427500667,
+          -0.03774699676837808,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.05245630628649128,
+          -0.012704933674087739,
+          0.902506338529415
+        ]
+      },
+      "physics": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init02-physics.npz",
+      "physics_sha256": "9316532e5efe49634a19cc507b89b7e8f512a857f03123d25f2a619b5eb79f9a",
+      "provenance": "learned-policy autonomous successful rollout, NOT human demonstration",
+      "temporal_policy": "all original pre-action RGB/state and executed actions at 20Hz",
+      "action_labels": "OSC clipped to [-1,1], Panda sign preserved; NPZ retains raw model commands",
+      "recorder_sha256": "5ffa381ff864081bc12aeea8f768cd4f25873d77db9719a897b5c9154799af17",
+      "independent_replay_verified": true,
+      "recording_identity": "evaluations/matched-recovery-collect-s42-v2/identity.json",
+      "recording_identity_sha256": "6dda79f3de1c8a686f80d1e3e4ce2d26a377788cabb868df0e7b17434e98913e"
+    },
+    {
+      "path": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init03.parquet",
+      "sha256": "1271ed3926fe5e1244cdd301ee4b856f102e4a2809db84cbd55b6b7c1babf093",
+      "frames": 96,
+      "episode": 7,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-object_offset-init03",
+        "split": "train",
+        "category": "object_offset",
+        "source_initial_id": 3,
+        "file": "train-object_offset-init03.npz",
+        "requested_offset_xy_m": [
+          -0.04,
+          -0.04
+        ],
+        "offset_xy_m": [
+          -0.039943900386525955,
+          -0.03999724375109035
+        ],
+        "source_state_sha256": "3e49f03083abbbd947b9cf8d36193a508c65e7ea2da641cf1dc7682a72328a5c",
+        "state_sha256": "129a36bb117fef2b547d0b29b2828e806bc01eb3f61f368543ab7cd32581b72a",
+        "sha256": "98f8bce13335ba0932aaf57ec8766d9c1f295580f7a6ec4d830724d3910d1aba",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          -0.20384466991500216,
+          -0.005960802106852141,
+          1.1641220444028835
+        ],
+        "bowl_pos": [
+          -0.13072139827439372,
+          -0.04222958557153462,
+          0.8984134031640166
+        ],
+        "plate_pos": [
+          0.04052078573272849,
+          -0.022221656841679253,
+          0.902506338529415
+        ]
+      },
+      "physics": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init03-physics.npz",
+      "physics_sha256": "cbaefd1bd7c2063d31959dbfc98e403c2a845116f60cc10fb242b1cbdad8f872",
+      "provenance": "learned-policy autonomous successful rollout, NOT human demonstration",
+      "temporal_policy": "all original pre-action RGB/state and executed actions at 20Hz",
+      "action_labels": "OSC clipped to [-1,1], Panda sign preserved; NPZ retains raw model commands",
+      "recorder_sha256": "5ffa381ff864081bc12aeea8f768cd4f25873d77db9719a897b5c9154799af17",
+      "independent_replay_verified": true,
+      "recording_identity": "evaluations/matched-recovery-collect-s42-v2/identity.json",
+      "recording_identity_sha256": "6dda79f3de1c8a686f80d1e3e4ce2d26a377788cabb868df0e7b17434e98913e"
+    },
+    {
+      "path": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init04.parquet",
+      "sha256": "86352e70ae88152e3a81a8a53b1d2657400f5738cd85a16da6bd499baf447416",
+      "frames": 89,
+      "episode": 10,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-object_offset-init04",
+        "split": "train",
+        "category": "object_offset",
+        "source_initial_id": 4,
+        "file": "train-object_offset-init04.npz",
+        "requested_offset_xy_m": [
+          0.04,
+          0.04
+        ],
+        "offset_xy_m": [
+          0.039999999999999994,
+          0.039999999999999994
+        ],
+        "source_state_sha256": "37a6335a9df3d3d5a8fa5a41f6ddfb9097309c755a561166b5d4557ada91bf1f",
+        "state_sha256": "29d9ae5f19183dcfbecd2560aa7f8056a9a53a74aea75d3eb9ac0a156dfdae79",
+        "sha256": "c0edc9683d6ba907a2590ef77e25672b4e2ce69d7d3e08539912858f969b5801",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          -0.20907757004155297,
+          0.0027782500891631538,
+          1.1719758664251083
+        ],
+        "bowl_pos": [
+          -0.06422521843131501,
+          0.053797493316708675,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.03823994452875654,
+          -0.010652084566305026,
+          0.902506338529415
+        ]
+      },
+      "physics": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init04-physics.npz",
+      "physics_sha256": "53f091ad23687feb43712410365e6af15c2b4a98872562c8b6da664be285df08",
+      "provenance": "learned-policy autonomous successful rollout, NOT human demonstration",
+      "temporal_policy": "all original pre-action RGB/state and executed actions at 20Hz",
+      "action_labels": "OSC clipped to [-1,1], Panda sign preserved; NPZ retains raw model commands",
+      "recorder_sha256": "5ffa381ff864081bc12aeea8f768cd4f25873d77db9719a897b5c9154799af17",
+      "independent_replay_verified": true,
+      "recording_identity": "evaluations/matched-recovery-collect-s42-v2/identity.json",
+      "recording_identity_sha256": "6dda79f3de1c8a686f80d1e3e4ce2d26a377788cabb868df0e7b17434e98913e"
+    },
+    {
+      "path": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init05.parquet",
+      "sha256": "92567ad51627cd3350bc5049b95dee760220278a6627c2f4d5d515a9e7bb0f58",
+      "frames": 90,
+      "episode": 13,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-object_offset-init05",
+        "split": "train",
+        "category": "object_offset",
+        "source_initial_id": 5,
+        "file": "train-object_offset-init05.npz",
+        "requested_offset_xy_m": [
+          -0.04,
+          0.04
+        ],
+        "offset_xy_m": [
+          -0.04000000000000001,
+          0.04
+        ],
+        "source_state_sha256": "6600fb90ac0ceaf178c64291eef075068efa4daaa075cc9004b763b2076f7b41",
+        "state_sha256": "cdd03b4e480cc80dbc0e76f33917041fcce869e72605b4dba37f8203b0f36801",
+        "sha256": "32552d9d43db0324ff42525db9746e4bdb72e6636b03f16a23a27745898c371d",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          -0.20959212782081726,
+          0.005217453006914833,
+          1.174032537404959
+        ],
+        "bowl_pos": [
+          -0.12333962226857481,
+          0.04291090528832665,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.06446503650836596,
+          -0.02859363943257207,
+          0.902506338529415
+        ]
+      },
+      "physics": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init05-physics.npz",
+      "physics_sha256": "64594ca0f1ee3c71061e4ef5d3c9631da61a02928b82cf9df4bcbedb8fb9a230",
+      "provenance": "learned-policy autonomous successful rollout, NOT human demonstration",
+      "temporal_policy": "all original pre-action RGB/state and executed actions at 20Hz",
+      "action_labels": "OSC clipped to [-1,1], Panda sign preserved; NPZ retains raw model commands",
+      "recorder_sha256": "5ffa381ff864081bc12aeea8f768cd4f25873d77db9719a897b5c9154799af17",
+      "independent_replay_verified": true,
+      "recording_identity": "evaluations/matched-recovery-collect-s42-v2/identity.json",
+      "recording_identity_sha256": "6dda79f3de1c8a686f80d1e3e4ce2d26a377788cabb868df0e7b17434e98913e"
+    },
+    {
+      "path": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init06.parquet",
+      "sha256": "39cbb363b72f4f319eb51c2dbeae8f3c2902458b29bf5bd97867c827e10cf8c5",
+      "frames": 86,
+      "episode": 16,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-object_offset-init06",
+        "split": "train",
+        "category": "object_offset",
+        "source_initial_id": 6,
+        "file": "train-object_offset-init06.npz",
+        "requested_offset_xy_m": [
+          0.04,
+          -0.04
+        ],
+        "offset_xy_m": [
+          -0.040000781555084394,
+          -0.03999995112797422
+        ],
+        "source_state_sha256": "1e80c5a11d420bddc4e28295404eb575e178fbb4285e9703d7fcea5226604d07",
+        "state_sha256": "590643e55927acba2e045a4eb361482fc41cc2833b283e95333b4e4b5b032f44",
+        "sha256": "6d4c67440b0fddc22cad033a2f096f3cc284e035d542def2facd883727e33784",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          -0.21827538340899033,
+          -0.00907698563815675,
+          1.1601025781507506
+        ],
+        "bowl_pos": [
+          -0.11649788092128226,
+          -0.047859891976857305,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.03695410183144269,
+          -0.03168622350677177,
+          0.9025057052762591
+        ]
+      },
+      "physics": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init06-physics.npz",
+      "physics_sha256": "b2aeef1086e9ad34055cbf4c051cf0d07351e02f96fe4901205ed5a5e03d3952",
+      "provenance": "learned-policy autonomous successful rollout, NOT human demonstration",
+      "temporal_policy": "all original pre-action RGB/state and executed actions at 20Hz",
+      "action_labels": "OSC clipped to [-1,1], Panda sign preserved; NPZ retains raw model commands",
+      "recorder_sha256": "5ffa381ff864081bc12aeea8f768cd4f25873d77db9719a897b5c9154799af17",
+      "independent_replay_verified": true,
+      "recording_identity": "evaluations/matched-recovery-collect-s42-v2/identity.json",
+      "recording_identity_sha256": "6dda79f3de1c8a686f80d1e3e4ce2d26a377788cabb868df0e7b17434e98913e"
+    },
+    {
+      "path": "evaluations/matched-recovery-collect-s42-v2/train-placement_failure-init02.parquet",
+      "sha256": "7fac483c33b14c6e806adabd8a98bbf82db0d1aa9f0f2ddd852fa9713a355cae",
+      "frames": 115,
+      "episode": 5,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-placement_failure-init02",
+        "split": "train",
+        "category": "placement_failure",
+        "source_initial_id": 2,
+        "file": "train-placement_failure-init02.npz",
+        "requested_offset_xy_m": [
+          0.04,
+          -0.04
+        ],
+        "offset_xy_m": [
+          0.09192388155425119,
+          -0.09192388155425119
+        ],
+        "source_state_sha256": "e92c3b68aa6af756d9ae0fbee9eefd5c04fb9d5739453b832e9707c8fe290096",
+        "state_sha256": "0a9ac60b37b9f4c3579be1a2323a996944ee6f0c764412516bb96794ae8322f8",
+        "sha256": "3cbd539a2328ee6bd63468f3f7104553113589ae550b884b0871afd009d1cc2c",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          0.05956306579319369,
+          -0.013326496070562535,
+          1.161441822226757
+        ],
+        "bowl_pos": [
+          0.14438018784074247,
+          -0.10462881522833892,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.05245630628649128,
+          -0.012704933674087739,
+          0.902506338529415
+        ]
+      },
+      "physics": "evaluations/matched-recovery-collect-s42-v2/train-placement_failure-init02-physics.npz",
+      "physics_sha256": "edbdb30ba40a13066c166b98ed83d6f043ed5021bb24358c9b0a8d1ef909e7ce",
+      "provenance": "learned-policy autonomous successful rollout, NOT human demonstration",
+      "temporal_policy": "all original pre-action RGB/state and executed actions at 20Hz",
+      "action_labels": "OSC clipped to [-1,1], Panda sign preserved; NPZ retains raw model commands",
+      "recorder_sha256": "5ffa381ff864081bc12aeea8f768cd4f25873d77db9719a897b5c9154799af17",
+      "independent_replay_verified": true,
+      "recording_identity": "evaluations/matched-recovery-collect-s42-v2/identity.json",
+      "recording_identity_sha256": "6dda79f3de1c8a686f80d1e3e4ce2d26a377788cabb868df0e7b17434e98913e"
+    },
+    {
+      "path": "evaluations/matched-recovery-collect-s42-v2/train-placement_failure-init03.parquet",
+      "sha256": "c78e7eab4e83a2eab23d542f84e96af6c782c30459eabfd88c6bad6d47446b11",
+      "frames": 114,
+      "episode": 8,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-placement_failure-init03",
+        "split": "train",
+        "category": "placement_failure",
+        "source_initial_id": 3,
+        "file": "train-placement_failure-init03.npz",
+        "requested_offset_xy_m": [
+          -0.04,
+          -0.04
+        ],
+        "offset_xy_m": [
+          0.13,
+          0.0
+        ],
+        "source_state_sha256": "3e49f03083abbbd947b9cf8d36193a508c65e7ea2da641cf1dc7682a72328a5c",
+        "state_sha256": "b923773c7d9c18311bae720225b173fa3d5b5eab19318b5255156cbc71153878",
+        "sha256": "d055e2f6f5aa26088f0bc4853ef59ae6d55ecebfe702976eb53bb104be7c9cda",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          0.04826335958899666,
+          -0.02302625355012957,
+          1.1612560513663666
+        ],
+        "bowl_pos": [
+          0.1705207857327285,
+          -0.022221656841679253,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.04052078573272849,
+          -0.022221656841679253,
+          0.902506338529415
+        ]
+      },
+      "physics": "evaluations/matched-recovery-collect-s42-v2/train-placement_failure-init03-physics.npz",
+      "physics_sha256": "0f7e5b587af4eafaf2ee72c20937c1b6c5cb825a48388fd06ec30f075ffdd953",
+      "provenance": "learned-policy autonomous successful rollout, NOT human demonstration",
+      "temporal_policy": "all original pre-action RGB/state and executed actions at 20Hz",
+      "action_labels": "OSC clipped to [-1,1], Panda sign preserved; NPZ retains raw model commands",
+      "recorder_sha256": "5ffa381ff864081bc12aeea8f768cd4f25873d77db9719a897b5c9154799af17",
+      "independent_replay_verified": true,
+      "recording_identity": "evaluations/matched-recovery-collect-s42-v2/identity.json",
+      "recording_identity_sha256": "6dda79f3de1c8a686f80d1e3e4ce2d26a377788cabb868df0e7b17434e98913e"
+    }
+  ],
+  "audits": [
+    {
+      "record": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init02.record.json",
+      "passed": true,
+      "final_released_success": {
+        "raw": true,
+        "clipped": true
+      },
+      "max_physics_abs_error": {
+        "raw": 0.0,
+        "clipped": 0.0
+      },
+      "controls": 64,
+      "tolerance": 1e-05
+    },
+    {
+      "record": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init03.record.json",
+      "passed": true,
+      "final_released_success": {
+        "raw": true,
+        "clipped": true
+      },
+      "max_physics_abs_error": {
+        "raw": 0.0,
+        "clipped": 0.0
+      },
+      "controls": 72,
+      "tolerance": 1e-05
+    },
+    {
+      "record": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init04.record.json",
+      "passed": true,
+      "final_released_success": {
+        "raw": true,
+        "clipped": true
+      },
+      "max_physics_abs_error": {
+        "raw": 0.0,
+        "clipped": 0.0
+      },
+      "controls": 74,
+      "tolerance": 1e-05
+    },
+    {
+      "record": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init05.record.json",
+      "passed": true,
+      "final_released_success": {
+        "raw": true,
+        "clipped": true
+      },
+      "max_physics_abs_error": {
+        "raw": 0.0,
+        "clipped": 0.0
+      },
+      "controls": 89,
+      "tolerance": 1e-05
+    },
+    {
+      "record": "evaluations/matched-recovery-collect-s42-v2/train-empty_grasp-init06.record.json",
+      "passed": true,
+      "final_released_success": {
+        "raw": true,
+        "clipped": true
+      },
+      "max_physics_abs_error": {
+        "raw": 0.0,
+        "clipped": 0.0
+      },
+      "controls": 65,
+      "tolerance": 1e-05
+    },
+    {
+      "record": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init01.record.json",
+      "passed": true,
+      "final_released_success": {
+        "raw": true,
+        "clipped": true
+      },
+      "max_physics_abs_error": {
+        "raw": 0.0,
+        "clipped": 0.0
+      },
+      "controls": 89,
+      "tolerance": 1e-05
+    },
+    {
+      "record": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init02.record.json",
+      "passed": true,
+      "final_released_success": {
+        "raw": true,
+        "clipped": true
+      },
+      "max_physics_abs_error": {
+        "raw": 0.0,
+        "clipped": 0.0
+      },
+      "controls": 84,
+      "tolerance": 1e-05
+    },
+    {
+      "record": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init03.record.json",
+      "passed": true,
+      "final_released_success": {
+        "raw": true,
+        "clipped": true
+      },
+      "max_physics_abs_error": {
+        "raw": 0.0,
+        "clipped": 0.0
+      },
+      "controls": 96,
+      "tolerance": 1e-05
+    },
+    {
+      "record": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init04.record.json",
+      "passed": true,
+      "final_released_success": {
+        "raw": true,
+        "clipped": true
+      },
+      "max_physics_abs_error": {
+        "raw": 0.0,
+        "clipped": 0.0
+      },
+      "controls": 89,
+      "tolerance": 1e-05
+    },
+    {
+      "record": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init05.record.json",
+      "passed": true,
+      "final_released_success": {
+        "raw": true,
+        "clipped": true
+      },
+      "max_physics_abs_error": {
+        "raw": 0.0,
+        "clipped": 0.0
+      },
+      "controls": 90,
+      "tolerance": 1e-05
+    },
+    {
+      "record": "evaluations/matched-recovery-collect-s42-v2/train-object_offset-init06.record.json",
+      "passed": true,
+      "final_released_success": {
+        "raw": true,
+        "clipped": true
+      },
+      "max_physics_abs_error": {
+        "raw": 0.0,
+        "clipped": 0.0
+      },
+      "controls": 86,
+      "tolerance": 1e-05
+    },
+    {
+      "record": "evaluations/matched-recovery-collect-s42-v2/train-placement_failure-init02.record.json",
+      "passed": true,
+      "final_released_success": {
+        "raw": true,
+        "clipped": true
+      },
+      "max_physics_abs_error": {
+        "raw": 0.0,
+        "clipped": 0.0
+      },
+      "controls": 115,
+      "tolerance": 1e-05
+    },
+    {
+      "record": "evaluations/matched-recovery-collect-s42-v2/train-placement_failure-init03.record.json",
+      "passed": true,
+      "final_released_success": {
+        "raw": true,
+        "clipped": true
+      },
+      "max_physics_abs_error": {
+        "raw": 0.0,
+        "clipped": 0.0
+      },
+      "controls": 114,
+      "tolerance": 1e-05
+    }
+  ],
+  "coverage": {
+    "empty_grasp": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "object_offset": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "placement_failure": [
+      2,
+      3
+    ]
+  },
+  "frames": 1127,
+  "replay_manifest_sha256": "9282c19b3d6cd6bf5779d3169e112a145852066654651e40b333558d9e8a3fde",
+  "bank_manifest_sha256": "7bac5c686e9acfc522017604a0b3a8d3b966cfddb97c940b4fe05c5614f831af",
+  "control_hz": 20,
+  "source": "successful learned-policy rollouts; no human or scripted labels",
+  "validation": "fresh-process raw AND clipped action replay, full physics <=1e-5, released goal >=5 controls"
+}

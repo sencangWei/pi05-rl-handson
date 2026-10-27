@@ -9,9 +9,10 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from recovery_replay_dataset import HumanClips, RecoveryReplayDataset
-from multitask_dataset import MultitaskDataset, window_indices
-from prepare_recovery_sft import validate_frame
+from recovery_replay_dataset import HumanClips, ModelRecoveryClips, RecoveryReplayDataset  # noqa: E402
+from export_sft_for_ppo import sha256  # noqa: E402
+from multitask_dataset import MultitaskDataset, window_indices  # noqa: E402
+from prepare_recovery_sft import validate_frame  # noqa: E402
 
 
 class ReplayContracts(unittest.TestCase):
@@ -37,6 +38,28 @@ class ReplayContracts(unittest.TestCase):
         np.testing.assert_array_equal(window_indices(frame, record["frames"]), [2] * 10)
         with self.assertRaises(IndexError):
             data.locate(5)
+
+    def test_model_rollouts_are_named_and_sampled_separately(self):
+        data = RecoveryReplayDataset.__new__(RecoveryReplayDataset)
+        data.source_name = "model_recovery"
+        data.human, data.replay = range(7), range(40)
+        routes = [data.route(i) for i in range(len(data))]
+        self.assertEqual(sum(name == "model_recovery" for name, _ in routes), 40)
+        self.assertEqual(sum(name == "replay" for name, _ in routes), 120)
+
+    def test_model_data_rejects_unverified_success_labels(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            parquet = root / "a.parquet"
+            parquet.write_bytes(b"test-data")
+            record = dict(split="train", path=parquet.name, frames=1, sha256=sha256(parquet),
+                          independent_replay_verified=False, task_id=8,
+                          entry=dict(split="train", source_initial_id=1))
+            manifest = root / "manifest.json"
+            manifest.write_text(json.dumps(dict(schema=ModelRecoveryClips.schema, ready=True,
+                                               root=directory, records=[record])))
+            with self.assertRaisesRegex(ValueError, "independent recovery verification"):
+                ModelRecoveryClips(manifest)
 
     def test_human_holdout_and_changed_parquet_rejected(self):
         with tempfile.TemporaryDirectory() as directory:

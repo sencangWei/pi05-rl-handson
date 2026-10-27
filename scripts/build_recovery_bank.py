@@ -29,7 +29,13 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--development-only", action="store_true",
                         help="New development source IDs 20..23; preserve the existing train/heldout bank")
+    parser.add_argument("--development-source-start", type=int, default=20,
+                        help="First of four fresh development IDs (default 20)")
     args = parser.parse_args()
+    if args.development_source_start != 20 and not args.development_only:
+        parser.error("Custom development IDs require --development-only")
+    if not 20 <= args.development_source_start <= 46:
+        parser.error("Development IDs must remain within source IDs 20..49")
     args.output.mkdir(parents=True, exist_ok=False)
     os.environ.setdefault("MUJOCO_GL", "osmesa")
     os.environ.setdefault("PYOPENGL_PLATFORM", "osmesa")
@@ -45,7 +51,8 @@ def main():
                              camera_heights=256, camera_widths=256)
     entries = []
     try:
-        splits = (("dev", range(20, 24)),) if args.development_only else (
+        start = args.development_source_start
+        splits = (("dev", range(start, start + 4)),) if args.development_only else (
             ("train", range(1, 7)), ("heldout", range(10, 14)))
         for split, ids in splits:
             for source_id in ids:
@@ -134,7 +141,7 @@ def main():
                     print(json.dumps(entry), flush=True)
         manifest = {"format": "libero-recovery-bank-v1", "task_suite": "libero_goal", "task_id": 8,
                     "seed": 42, "construction": "Synthetic physical states using OSC initialization and object pose perturbations; no recovery actions scripted into training/evaluation",
-                    "split_protocol": ("source initial IDs 20..23 development only; old heldout IDs 10..13 excluded"
+                    "split_protocol": (f"source initial IDs {start}..{start + 3} development only; old heldout IDs 10..13 excluded"
                                        if args.development_only else
                                        "source initial IDs 1..6 train; 10..13 heldout, larger heldout offsets"),
                     "success": "native bowl-on-plate and no finger contact for 5 consecutive controls",

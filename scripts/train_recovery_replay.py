@@ -21,6 +21,8 @@ def main():
     parser.add_argument("--steps", type=int, default=2000)
     parser.add_argument("--learning-rate", type=float, default=5e-6)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--recovery-manifest", type=Path, default=ROOT / "evidence/recovery-human28-manifest.json")
+    parser.add_argument("--evaluation-plan", type=Path, default=ROOT / "evidence/recovery-sft28-evaluation-plan.json")
     args = parser.parse_args()
     if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]{0,79}", args.experiment):
         parser.error("Invalid experiment name")
@@ -38,7 +40,7 @@ def main():
         weight_loader=weight_loaders.CheckpointWeightLoader(str(PARENT / "params")))
     if cfg.checkpoint_dir.exists():
         raise FileExistsError(f"No overwrite or implicit resume: {cfg.checkpoint_dir}")
-    human = ROOT / "evidence/recovery-human28-manifest.json"
+    human = args.recovery_manifest
     replay = ROOT / "evidence/dataset-manifest.json"
     dataset = RecoveryReplayDataset(human, replay)
     validation = json.loads((ROOT / "evidence/data-validation.json").read_text())
@@ -60,29 +62,37 @@ def main():
         if transformed[index]["actions"].shape != (10, 32):
             raise ValueError("Official transformed action window mismatch")
     dataset.fetched.clear()
-    matrix = ROOT / "evidence/recovery-sft28-evaluation-plan.json"
+    matrix = args.evaluation_plan
     if not matrix.is_file():
         raise ValueError("Freeze evaluation plan before training")
     plan = json.loads(matrix.read_text())
+    model_data = dataset.source_name == "model_recovery"
+    manifest_key = "recovery_manifest_sha256" if model_data else "human_manifest_sha256"
     if (plan["experiment"], plan["train"]["updates"], plan["train"]["lr"],
-        plan["human_manifest_sha256"]) != (args.experiment, args.steps, args.learning_rate, sha256(human)):
+        plan[manifest_key]) != (args.experiment, args.steps, args.learning_rate, sha256(human)):
         raise ValueError("Requested training differs from the frozen evaluation plan")
-    compatibility = ROOT / "evidence/recovery-human28-task-compatibility.json"
+    compatibility = ROOT / ("evidence/matched-recovery-task-compatibility.json" if model_data
+                            else "evidence/recovery-human28-task-compatibility.json")
     compatible = json.loads(compatibility.read_text())
     if not compatible["passed"] or any(sha256(Path(compatible[k]["path"])) != compatible[k]["expected"]
                                       for k in ("bddl", "init")):
         raise ValueError("Original human task identity changed")
+    if model_data and (compatible["bank_manifest_sha256"] != dataset.human.manifest["bank_manifest_sha256"]
+                       or compatible["task_suite"] != "libero_goal" or compatible["task_id"] != 8
+                       or any(r["prompt"] != compatible["prompt"] for r in dataset.human.records)):
+        raise ValueError("Matched-scene identity differs from the training bank")
     source_names = ["scripts/train_recovery_replay.py", "scripts/recovery_replay_dataset.py",
-                    "scripts/multitask_dataset.py", "scripts/training_config.py"]
+                    "scripts/multitask_dataset.py", "scripts/training_config.py",
+                    "scripts/recovery_recording.py", "scripts/verify_recovery_recordings.py"]
     record = dict(status="DRY_RUN_READY" if args.dry_run else "RUNNING", actual_updates=0,
         experiment=args.experiment, requested_updates=args.steps, batch_size=1,
         seed=42, learning_rate=args.learning_rate, warmup_updates=min(20, args.steps),
         parent=str(PARENT), parent_files=parent_files, parent_optimizer_resumed=False,
         optimizer="fresh AdamW, clip=1; LoRA parameters only; no EMA",
-        human_manifest_sha256=sha256(human), replay_manifest_sha256=sha256(replay),
-        human_episodes=len(dataset.human.records), human_frames=len(dataset.human),
+        recovery_source=dataset.source_name, recovery_manifest_sha256=sha256(human), replay_manifest_sha256=sha256(replay),
+        recovery_episodes=len(dataset.human.records), recovery_frames=len(dataset.human),
         replay_train_episodes=len(replay_records), replay_tasks=40,
-        sampling="shuffle seed 42; 1 human slot per 3 public replay slots; public task balanced",
+        sampling=f"shuffle seed 42; 1 {dataset.source_name} slot per 3 public replay slots; public task balanced",
         effective_sampling_slots=len(dataset), evaluation_plan_sha256=sha256(matrix),
         task_compatibility_sha256=sha256(compatibility),
         checkpoint_dir=str(cfg.checkpoint_dir), openpi_revision=helper.REVISION,
@@ -90,6 +100,9 @@ def main():
         source_sha256={name: sha256(ROOT / name) for name in source_names},
         validation="full parent/source/public-train/human checksums; official transform both branches")
     status = ROOT / "evidence" / (args.experiment + "-status.json")
+    if not model_data:
+        record.update(human_manifest_sha256=sha256(human), human_episodes=len(dataset.human.records),
+                      human_frames=len(dataset.human))
     status.write_text(json.dumps(record, indent=2) + "\n")
     (ROOT / "evidence" / (args.experiment + "-config.txt")).write_text(repr(cfg) + "\n")
     print(json.dumps({k: v for k, v in record.items() if k != "parent_files"}), flush=True)
