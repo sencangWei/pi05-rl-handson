@@ -1,0 +1,64 @@
+{
+  "manifest": "data/recovery-bowl-physicaldev28-v2/manifest.json",
+  "manifest_sha256": "36372697dd7e5b2b372dc63bd8a959ee5bfe099a6600a1945a6dd053f14c5142",
+  "extra_controls": 0,
+  "pose_tolerance_m": 1e-05,
+  "cases": [
+    {
+      "trace": "artifacts/20261028-taskphase/parent-comparison/before/dev-placement_failure-init40.jsonl",
+      "sha256": "e5a184c889604b37009a178894761cbc5af88e3ccdc06302feda2e50c0069dba",
+      "id": "dev-placement_failure-init40",
+      "label": "parent-40"
+    },
+    {
+      "trace": "artifacts/20261028-taskphase/parent-comparison/before/dev-placement_failure-init41.jsonl",
+      "sha256": "8fee9f8d605102f110e0a53fc4d1e36141d3ed4a4f52c3d22ddb1e8d60fa1e0a",
+      "id": "dev-placement_failure-init41",
+      "label": "parent-41"
+    },
+    {
+      "trace": "artifacts/20261028-taskphase/parent-comparison/before/dev-placement_failure-init42.jsonl",
+      "sha256": "7f7275fe71c04381e258392ed8c54aa5359729826bfd8d1f77d9c1590d781add",
+      "id": "dev-placement_failure-init42",
+      "label": "parent-42"
+    },
+    {
+      "trace": "artifacts/20261028-taskphase/parent-comparison/before/dev-placement_failure-init43.jsonl",
+      "sha256": "37abc468c4c35bef6e13b0bb514f8c0412fc159df7d159e28347463501a2d13a",
+      "id": "dev-placement_failure-init43",
+      "label": "parent-43"
+    },
+    {
+      "trace": "artifacts/20261028-taskphase/candidate/dev-placement_failure-init40.jsonl",
+      "sha256": "376d203907615771dcd691190a87f900ae7adb4c779caa6c4970ab5720b70205",
+      "id": "dev-placement_failure-init40",
+      "label": "candidate-40"
+    },
+    {
+      "trace": "artifacts/20261028-taskphase/candidate/dev-placement_failure-init41.jsonl",
+      "sha256": "a6037c9e9d355e6d5bb7b9c2274257ba5a44cd1676908ac6b4741b7e03ee3fb1",
+      "id": "dev-placement_failure-init41",
+      "label": "candidate-41"
+    },
+    {
+      "trace": "artifacts/20261028-taskphase/candidate/dev-placement_failure-init42.jsonl",
+      "sha256": "123d2d008380da49ad00329864bb92d59e8fd6aade308fe542a7040e7f054276",
+      "id": "dev-placement_failure-init42",
+      "label": "candidate-42"
+    },
+    {
+      "trace": "artifacts/20261028-taskphase/candidate/dev-placement_failure-init43.jsonl",
+      "sha256": "f887821217586ced904c205e4971cd2b28b2c0a05afd98dba1dfe063dce52a78",
+      "id": "dev-placement_failure-init43",
+      "label": "candidate-43"
+    }
+  ],
+  "analysis_contract": {
+    "control_dt_s": 0.05,
+    "divergence": "EEF or bowl distance > 0.01m for 5 consecutive matched controls; descriptive, not causal",
+    "grasp": "robosuite opposing finger-group contact proxy; not proof of force closure",
+    "lift": "bowl >=0.03m above own initial z and grasp proxy for >=5 controls",
+    "human_state_queries": "static forward queries of saved after-states; no synthetic actions",
+    "human_manifest_sha256": "86e3fc204735dba54261f32dd864297bd00aab8f044ff2d866f46546d7db9cfb"
+  }
+}

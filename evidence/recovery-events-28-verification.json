@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "tests": "10 passed: tests/test_recovery_events.py tests/test_recovery_diagnostics.py",
+  "lint": "Full scoped Ruff passed",
+  "source_compile": true,
+  "replay_cases": 8,
+  "all_recorded_pose_and_flag_fidelity_exact": true,
+  "all_eight_videos_fully_decoded": true,
+  "videos": [
+    {
+      "path": "artifacts/20261028-recovery-events/replay/parent-40.mp4",
+      "frames": 300,
+      "sha256": "29307b760f01caea172aa7c686a539a64e419ed1c2192e992de98b4f9f971f61"
+    },
+    {
+      "path": "artifacts/20261028-recovery-events/replay/parent-41.mp4",
+      "frames": 160,
+      "sha256": "06468ff0ce15ed4986d7b9f0742a92dbfd17f207aceb58b4c1ae10db87fd4438"
+    },
+    {
+      "path": "artifacts/20261028-recovery-events/replay/parent-42.mp4",
+      "frames": 300,
+      "sha256": "aaa60648ff4bbfa1f27aaaecb9fa3d407166b6f3be467b7d570e37e726c98760"
+    },
+    {
+      "path": "artifacts/20261028-recovery-events/replay/parent-43.mp4",
+      "frames": 207,
+      "sha256": "f2c1adf5394df99f2bade5cba680a6d84298e7482379f03ac90ff974863b35e9"
+    },
+    {
+      "path": "artifacts/20261028-recovery-events/replay/candidate-40.mp4",
+      "frames": 300,
+      "sha256": "0dc66092545712eb93875a849ee7cb177450efea6b8251a2bfc6fb4ac0b67c64"
+    },
+    {
+      "path": "artifacts/20261028-recovery-events/replay/candidate-41.mp4",
+      "frames": 300,
+      "sha256": "617ecfeaa69819e4be7edf821cf1d44bc2a489d505b45bf130d3386ee7bc77c7"
+    },
+    {
+      "path": "artifacts/20261028-recovery-events/replay/candidate-42.mp4",
+      "frames": 300,
+      "sha256": "3864ea82d4f65979121a61cb408ad9f669dd49ef7051b0fe56ae1cc5402b6835"
+    },
+    {
+      "path": "artifacts/20261028-recovery-events/replay/candidate-43.mp4",
+      "frames": 300,
+      "sha256": "759c6e2d081653f26e90ae3e72a03dead5f56d9592656df31ec814fc003ddc20"
+    }
+  ],
+  "human_static_queries": 2446,
+  "human_raw_identity_and_timeline_checks": "passed in audit run; not exact cached observation replay",
+  "report_local_links_exist": true,
+  "training_started": false,
+  "ui_model_changed": false,
+  "heldout_opened": false,
+  "script_hashes": {
+    "scripts/recovery_events.py": "736d866ad69b1392d0cda163ca2a2a3b9d57b50761ef26cf5cfc80f505c041f7",
+    "scripts/audit_human_event_coverage.py": "a4936a8018f296bb9d657ff349e5699189d2e31b44b5adf9f2155d8ad08c5274",
+    "scripts/report_recovery_events.py": "fae4013534ac7a0aea277c904677125fd38e125bbb434ddf7733ff00a6761731"
+  }
+}

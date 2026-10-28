@@ -1,0 +1,314 @@
+[
+  {
+    "label": "parent-40",
+    "id": "dev-placement_failure-init40",
+    "replay_controls": 300,
+    "controls": 300,
+    "success": false,
+    "fidelity_passed": true,
+    "max_pose_error_m": 0.0,
+    "fidelity_failed_steps": [],
+    "initial_contacts": {
+      "akita_black_bowl_1_g36 / table_collision": {
+        "normal_force_N": 0.003336605740574538,
+        "penetration_m": 3.5344409956083015e-06
+      },
+      "akita_black_bowl_1_g37 / table_collision": {
+        "normal_force_N": 0.002837561845121076,
+        "penetration_m": 3.0058188894416073e-06
+      },
+      "akita_black_bowl_1_g38 / table_collision": {
+        "normal_force_N": 0.0034964802285285517,
+        "penetration_m": 3.703789891004902e-06
+      },
+      "akita_black_bowl_1_g39 / table_collision": {
+        "normal_force_N": 0.0027323785621297977,
+        "penetration_m": 2.8944006882386733e-06
+      },
+      "akita_black_bowl_1_g40 / table_collision": {
+        "normal_force_N": 0.003460308250511126,
+        "penetration_m": 3.6654743655092065e-06
+      }
+    },
+    "last50": {
+      "median_motion_mm": 1.814964564442279,
+      "grasp_controls": 0,
+      "torque_saturated_controls": 1,
+      "min_joint_margin_rad": 0.8428525567681406,
+      "min_translation_jacobian_sigma": 0.2243480034285228
+    }
+  },
+  {
+    "label": "parent-41",
+    "id": "dev-placement_failure-init41",
+    "replay_controls": 160,
+    "controls": 160,
+    "success": true,
+    "fidelity_passed": true,
+    "max_pose_error_m": 0.0,
+    "fidelity_failed_steps": [],
+    "initial_contacts": {
+      "akita_black_bowl_1_g36 / table_collision": {
+        "normal_force_N": 0.0033366057405749077,
+        "penetration_m": 3.5344409956083015e-06
+      },
+      "akita_black_bowl_1_g37 / table_collision": {
+        "normal_force_N": 0.0028375618451214456,
+        "penetration_m": 3.0058188894416073e-06
+      },
+      "akita_black_bowl_1_g38 / table_collision": {
+        "normal_force_N": 0.0034964802285287365,
+        "penetration_m": 3.703789891004902e-06
+      },
+      "akita_black_bowl_1_g39 / table_collision": {
+        "normal_force_N": 0.0027323785621301677,
+        "penetration_m": 2.8944006882386733e-06
+      },
+      "akita_black_bowl_1_g40 / table_collision": {
+        "normal_force_N": 0.0034603082505114957,
+        "penetration_m": 3.6654743655092065e-06
+      }
+    },
+    "last50": {
+      "median_motion_mm": 6.04482441923942,
+      "grasp_controls": 43,
+      "torque_saturated_controls": 0,
+      "min_joint_margin_rad": 0.39800367205836606,
+      "min_translation_jacobian_sigma": 0.15076020552069308
+    }
+  },
+  {
+    "label": "parent-42",
+    "id": "dev-placement_failure-init42",
+    "replay_controls": 300,
+    "controls": 300,
+    "success": false,
+    "fidelity_passed": true,
+    "max_pose_error_m": 0.0,
+    "fidelity_failed_steps": [],
+    "initial_contacts": {
+      "akita_black_bowl_1_g36 / table_collision": {
+        "normal_force_N": 0.0033366057405737988,
+        "penetration_m": 3.5344409956083015e-06
+      },
+      "akita_black_bowl_1_g37 / table_collision": {
+        "normal_force_N": 0.002837561845122185,
+        "penetration_m": 3.0058188894416073e-06
+      },
+      "akita_black_bowl_1_g38 / table_collision": {
+        "normal_force_N": 0.003496480228531139,
+        "penetration_m": 3.703789891009114e-06
+      },
+      "akita_black_bowl_1_g39 / table_collision": {
+        "normal_force_N": 0.0027323785621325702,
+        "penetration_m": 2.894400688242819e-06
+      },
+      "akita_black_bowl_1_g40 / table_collision": {
+        "normal_force_N": 0.0034603082505098325,
+        "penetration_m": 3.6654743655092065e-06
+      }
+    },
+    "last50": {
+      "median_motion_mm": 7.803466236637746,
+      "grasp_controls": 0,
+      "torque_saturated_controls": 50,
+      "min_joint_margin_rad": 0.0587357036748839,
+      "min_translation_jacobian_sigma": 0.0006914843558341808
+    }
+  },
+  {
+    "label": "parent-43",
+    "id": "dev-placement_failure-init43",
+    "replay_controls": 207,
+    "controls": 207,
+    "success": true,
+    "fidelity_passed": true,
+    "max_pose_error_m": 0.0,
+    "fidelity_failed_steps": [],
+    "initial_contacts": {
+      "akita_black_bowl_1_g36 / table_collision": {
+        "normal_force_N": 0.0033366057406177857,
+        "penetration_m": 3.5344409956083015e-06
+      },
+      "akita_black_bowl_1_g37 / table_collision": {
+        "normal_force_N": 0.002837561845161551,
+        "penetration_m": 3.0058188894416073e-06
+      },
+      "akita_black_bowl_1_g38 / table_collision": {
+        "normal_force_N": 0.0034964802284756856,
+        "penetration_m": 3.7037898908938798e-06
+      },
+      "akita_black_bowl_1_g39 / table_collision": {
+        "normal_force_N": 0.0027323785621353423,
+        "penetration_m": 2.8944006882386733e-06
+      },
+      "akita_black_bowl_1_g40 / table_collision": {
+        "normal_force_N": 0.0034603082505551127,
+        "penetration_m": 3.6654743655092065e-06
+      }
+    },
+    "last50": {
+      "median_motion_mm": 6.791585158115106,
+      "grasp_controls": 43,
+      "torque_saturated_controls": 2,
+      "min_joint_margin_rad": -0.003178572212455877,
+      "min_translation_jacobian_sigma": 0.16639726807018787
+    }
+  },
+  {
+    "label": "candidate-40",
+    "id": "dev-placement_failure-init40",
+    "replay_controls": 300,
+    "controls": 300,
+    "success": false,
+    "fidelity_passed": true,
+    "max_pose_error_m": 0.0,
+    "fidelity_failed_steps": [],
+    "initial_contacts": {
+      "akita_black_bowl_1_g36 / table_collision": {
+        "normal_force_N": 0.003336605740574538,
+        "penetration_m": 3.5344409956083015e-06
+      },
+      "akita_black_bowl_1_g37 / table_collision": {
+        "normal_force_N": 0.002837561845121076,
+        "penetration_m": 3.0058188894416073e-06
+      },
+      "akita_black_bowl_1_g38 / table_collision": {
+        "normal_force_N": 0.0034964802285285517,
+        "penetration_m": 3.703789891004902e-06
+      },
+      "akita_black_bowl_1_g39 / table_collision": {
+        "normal_force_N": 0.0027323785621297977,
+        "penetration_m": 2.8944006882386733e-06
+      },
+      "akita_black_bowl_1_g40 / table_collision": {
+        "normal_force_N": 0.003460308250511126,
+        "penetration_m": 3.6654743655092065e-06
+      }
+    },
+    "last50": {
+      "median_motion_mm": 1.6910279264668016,
+      "grasp_controls": 0,
+      "torque_saturated_controls": 1,
+      "min_joint_margin_rad": -0.0018596766388765534,
+      "min_translation_jacobian_sigma": 0.16261250344334208
+    }
+  },
+  {
+    "label": "candidate-41",
+    "id": "dev-placement_failure-init41",
+    "replay_controls": 300,
+    "controls": 300,
+    "success": false,
+    "fidelity_passed": true,
+    "max_pose_error_m": 0.0,
+    "fidelity_failed_steps": [],
+    "initial_contacts": {
+      "akita_black_bowl_1_g36 / table_collision": {
+        "normal_force_N": 0.0033366057405749077,
+        "penetration_m": 3.5344409956083015e-06
+      },
+      "akita_black_bowl_1_g37 / table_collision": {
+        "normal_force_N": 0.0028375618451214456,
+        "penetration_m": 3.0058188894416073e-06
+      },
+      "akita_black_bowl_1_g38 / table_collision": {
+        "normal_force_N": 0.0034964802285287365,
+        "penetration_m": 3.703789891004902e-06
+      },
+      "akita_black_bowl_1_g39 / table_collision": {
+        "normal_force_N": 0.0027323785621301677,
+        "penetration_m": 2.8944006882386733e-06
+      },
+      "akita_black_bowl_1_g40 / table_collision": {
+        "normal_force_N": 0.0034603082505114957,
+        "penetration_m": 3.6654743655092065e-06
+      }
+    },
+    "last50": {
+      "median_motion_mm": 3.4754249252738463,
+      "grasp_controls": 0,
+      "torque_saturated_controls": 1,
+      "min_joint_margin_rad": 0.29213765583116724,
+      "min_translation_jacobian_sigma": 0.12215550159627896
+    }
+  },
+  {
+    "label": "candidate-42",
+    "id": "dev-placement_failure-init42",
+    "replay_controls": 300,
+    "controls": 300,
+    "success": false,
+    "fidelity_passed": true,
+    "max_pose_error_m": 0.0,
+    "fidelity_failed_steps": [],
+    "initial_contacts": {
+      "akita_black_bowl_1_g36 / table_collision": {
+        "normal_force_N": 0.0033366057405737988,
+        "penetration_m": 3.5344409956083015e-06
+      },
+      "akita_black_bowl_1_g37 / table_collision": {
+        "normal_force_N": 0.002837561845122185,
+        "penetration_m": 3.0058188894416073e-06
+      },
+      "akita_black_bowl_1_g38 / table_collision": {
+        "normal_force_N": 0.003496480228531139,
+        "penetration_m": 3.703789891009114e-06
+      },
+      "akita_black_bowl_1_g39 / table_collision": {
+        "normal_force_N": 0.0027323785621325702,
+        "penetration_m": 2.894400688242819e-06
+      },
+      "akita_black_bowl_1_g40 / table_collision": {
+        "normal_force_N": 0.0034603082505098325,
+        "penetration_m": 3.6654743655092065e-06
+      }
+    },
+    "last50": {
+      "median_motion_mm": 0.7842738892656274,
+      "grasp_controls": 32,
+      "torque_saturated_controls": 19,
+      "min_joint_margin_rad": 0.060322571469200836,
+      "min_translation_jacobian_sigma": 0.0006552152728805935
+    }
+  },
+  {
+    "label": "candidate-43",
+    "id": "dev-placement_failure-init43",
+    "replay_controls": 300,
+    "controls": 300,
+    "success": false,
+    "fidelity_passed": true,
+    "max_pose_error_m": 0.0,
+    "fidelity_failed_steps": [],
+    "initial_contacts": {
+      "akita_black_bowl_1_g36 / table_collision": {
+        "normal_force_N": 0.0033366057406177857,
+        "penetration_m": 3.5344409956083015e-06
+      },
+      "akita_black_bowl_1_g37 / table_collision": {
+        "normal_force_N": 0.002837561845161551,
+        "penetration_m": 3.0058188894416073e-06
+      },
+      "akita_black_bowl_1_g38 / table_collision": {
+        "normal_force_N": 0.0034964802284756856,
+        "penetration_m": 3.7037898908938798e-06
+      },
+      "akita_black_bowl_1_g39 / table_collision": {
+        "normal_force_N": 0.0027323785621353423,
+        "penetration_m": 2.8944006882386733e-06
+      },
+      "akita_black_bowl_1_g40 / table_collision": {
+        "normal_force_N": 0.0034603082505551127,
+        "penetration_m": 3.6654743655092065e-06
+      }
+    },
+    "last50": {
+      "median_motion_mm": 5.023931446180258,
+      "grasp_controls": 0,
+      "torque_saturated_controls": 44,
+      "min_joint_margin_rad": 0.017407941185204834,
+      "min_translation_jacobian_sigma": 0.0006127179471819021
+    }
+  }
+]

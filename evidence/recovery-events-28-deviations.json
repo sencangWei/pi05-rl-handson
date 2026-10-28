@@ -1,0 +1,16 @@
+{
+  "status": "DEVIATION_REPORTED_NOT_EXACT_HUMAN_REPLAY",
+  "first_attempt": {
+    "output": "artifacts/20261028-recovery-events/human",
+    "first_state_pose_error_m": 0.000928,
+    "attempted_tolerance_m": 1e-06,
+    "outcome": "rejected before saving summary"
+  },
+  "replacement_protocol": "Hash-verified saved after-state + sim.forward, no control execution; compare against cached recorded post observations and expose discrepancies. Not proof of original contact timing.",
+  "max_recorded_pose_error_m": 0.019121263336250527,
+  "recorded_goal_disagreements": 5,
+  "controls": 2446,
+  "superseded_output": "human-static-v2 contains same state queries before adding lifted-contact evidence and helper hash; preserved",
+  "current_output": "artifacts/20261028-recovery-events/human-static-v3",
+  "causal_limit": "Observation/physics sampling timing remains unresolved; a one-substep rewind did not eliminate the discrepancy. Do not use static labels as exact original contact replay."
+}

@@ -1,0 +1,480 @@
+{
+  "plan_sha256": "50a1015b4f27f647e8d6bfab82907c48a066771cbe3bf6adcaba49eefe65aaeb",
+  "script_sha256": "fae4013534ac7a0aea277c904677125fd38e125bbb434ddf7733ff00a6761731",
+  "event_helper_sha256": "736d866ad69b1392d0cda163ca2a2a3b9d57b50761ef26cf5cfc80f505c041f7",
+  "run_indices": "zero-based inclusive; divergence and illustrated model controls one-based",
+  "pairs": [
+    {
+      "id": 40,
+      "divergence": {
+        "eef_pos": 36,
+        "bowl_pos": 38
+      },
+      "parent": {
+        "controls": 300,
+        "grasp_controls": 22,
+        "grasp_runs": [
+          [
+            57,
+            75
+          ]
+        ],
+        "lifted_grasp_runs": [
+          [
+            57,
+            75
+          ]
+        ],
+        "lifted_contact_runs": [
+          [
+            52,
+            91
+          ]
+        ],
+        "max_lift_m": 0.15192317709157177,
+        "native_success_controls": 0,
+        "released_goal_runs": [],
+        "min_bowl_plate_xy_m": 0.06954047021157517,
+        "last50": {
+          "torque_saturated_controls": 1,
+          "min_translation_jacobian_sigma": 0.2243480034285228,
+          "min_joint_margin_rad": 0.8428525567681406,
+          "median_motion_mm": 1.814964564442279
+        }
+      },
+      "candidate": {
+        "controls": 300,
+        "grasp_controls": 0,
+        "grasp_runs": [],
+        "lifted_grasp_runs": [],
+        "lifted_contact_runs": [],
+        "max_lift_m": 0.021882049618493382,
+        "native_success_controls": 0,
+        "released_goal_runs": [],
+        "min_bowl_plate_xy_m": 0.037607334114789684,
+        "peak_robot_table_contact": {
+          "normal_force_N": 74.34583285653696,
+          "control": 112,
+          "geoms": "gripper0_finger2_collision / table_collision"
+        },
+        "last50": {
+          "torque_saturated_controls": 1,
+          "min_translation_jacobian_sigma": 0.16261250344334208,
+          "min_joint_margin_rad": -0.0018596766388765534,
+          "median_motion_mm": 1.6910279264668016
+        }
+      },
+      "illustrated_frames": [
+        {
+          "label": "parent",
+          "step": 36,
+          "video": "artifacts/20261028-recovery-events/replay/parent-40.mp4",
+          "video_frame_index": 35
+        },
+        {
+          "label": "candidate",
+          "step": 36,
+          "video": "artifacts/20261028-recovery-events/replay/candidate-40.mp4",
+          "video_frame_index": 35
+        },
+        {
+          "label": "parent",
+          "step": 150,
+          "video": "artifacts/20261028-recovery-events/replay/parent-40.mp4",
+          "video_frame_index": 149
+        },
+        {
+          "label": "candidate",
+          "step": 150,
+          "video": "artifacts/20261028-recovery-events/replay/candidate-40.mp4",
+          "video_frame_index": 149
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "divergence": {
+        "eef_pos": 63,
+        "bowl_pos": 65
+      },
+      "parent": {
+        "controls": 160,
+        "grasp_controls": 55,
+        "grasp_runs": [
+          [
+            98,
+            152
+          ]
+        ],
+        "lifted_grasp_runs": [
+          [
+            99,
+            144
+          ]
+        ],
+        "lifted_contact_runs": [
+          [
+            99,
+            144
+          ]
+        ],
+        "max_lift_m": 0.18014211386263523,
+        "native_success_controls": 11,
+        "released_goal_runs": [
+          [
+            155,
+            159
+          ]
+        ],
+        "min_bowl_plate_xy_m": 0.02358119877610739,
+        "last50": {
+          "torque_saturated_controls": 0,
+          "min_translation_jacobian_sigma": 0.15076020552069308,
+          "min_joint_margin_rad": 0.39800367205836606,
+          "median_motion_mm": 6.04482441923942
+        }
+      },
+      "candidate": {
+        "controls": 300,
+        "grasp_controls": 0,
+        "grasp_runs": [],
+        "lifted_grasp_runs": [],
+        "lifted_contact_runs": [
+          [
+            96,
+            157
+          ]
+        ],
+        "max_lift_m": 0.22141104889754304,
+        "native_success_controls": 0,
+        "released_goal_runs": [],
+        "min_bowl_plate_xy_m": 0.14010841361586934,
+        "last50": {
+          "torque_saturated_controls": 1,
+          "min_translation_jacobian_sigma": 0.12215550159627896,
+          "min_joint_margin_rad": 0.29213765583116724,
+          "median_motion_mm": 3.4754249252738463
+        }
+      },
+      "illustrated_frames": [
+        {
+          "label": "parent",
+          "step": 63,
+          "video": "artifacts/20261028-recovery-events/replay/parent-41.mp4",
+          "video_frame_index": 62
+        },
+        {
+          "label": "candidate",
+          "step": 63,
+          "video": "artifacts/20261028-recovery-events/replay/candidate-41.mp4",
+          "video_frame_index": 62
+        },
+        {
+          "label": "parent",
+          "step": 155,
+          "video": "artifacts/20261028-recovery-events/replay/parent-41.mp4",
+          "video_frame_index": 154
+        },
+        {
+          "label": "candidate",
+          "step": 155,
+          "video": "artifacts/20261028-recovery-events/replay/candidate-41.mp4",
+          "video_frame_index": 154
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "divergence": {
+        "eef_pos": 21,
+        "bowl_pos": 49
+      },
+      "parent": {
+        "controls": 300,
+        "grasp_controls": 88,
+        "grasp_runs": [
+          [
+            79,
+            106
+          ],
+          [
+            125,
+            131
+          ],
+          [
+            136,
+            142
+          ],
+          [
+            161,
+            174
+          ],
+          [
+            185,
+            198
+          ],
+          [
+            200,
+            204
+          ]
+        ],
+        "lifted_grasp_runs": [],
+        "lifted_contact_runs": [],
+        "max_lift_m": 0.014694548823562581,
+        "native_success_controls": 0,
+        "released_goal_runs": [],
+        "min_bowl_plate_xy_m": 0.15,
+        "peak_robot_table_contact": {
+          "normal_force_N": 834.6447516374309,
+          "control": 265,
+          "geoms": "gripper0_finger2_pad_collision / table_collision"
+        },
+        "last50": {
+          "torque_saturated_controls": 50,
+          "min_translation_jacobian_sigma": 0.0006914843558341808,
+          "min_joint_margin_rad": 0.0587357036748839,
+          "median_motion_mm": 7.803466236637746
+        }
+      },
+      "candidate": {
+        "controls": 300,
+        "grasp_controls": 236,
+        "grasp_runs": [
+          [
+            41,
+            115
+          ],
+          [
+            118,
+            210
+          ],
+          [
+            212,
+            219
+          ],
+          [
+            221,
+            229
+          ],
+          [
+            231,
+            281
+          ]
+        ],
+        "lifted_grasp_runs": [],
+        "lifted_contact_runs": [],
+        "max_lift_m": 0.08213107816322773,
+        "native_success_controls": 0,
+        "released_goal_runs": [],
+        "min_bowl_plate_xy_m": 0.15,
+        "peak_robot_table_contact": {
+          "normal_force_N": 513.9880343839526,
+          "control": 299,
+          "geoms": "gripper0_finger2_collision / table_collision"
+        },
+        "last50": {
+          "torque_saturated_controls": 19,
+          "min_translation_jacobian_sigma": 0.0006552152728805935,
+          "min_joint_margin_rad": 0.060322571469200836,
+          "median_motion_mm": 0.7842738892656274
+        }
+      },
+      "illustrated_frames": [
+        {
+          "label": "parent",
+          "step": 21,
+          "video": "artifacts/20261028-recovery-events/replay/parent-42.mp4",
+          "video_frame_index": 20
+        },
+        {
+          "label": "candidate",
+          "step": 21,
+          "video": "artifacts/20261028-recovery-events/replay/candidate-42.mp4",
+          "video_frame_index": 20
+        },
+        {
+          "label": "parent",
+          "step": 250,
+          "video": "artifacts/20261028-recovery-events/replay/parent-42.mp4",
+          "video_frame_index": 249
+        },
+        {
+          "label": "candidate",
+          "step": 250,
+          "video": "artifacts/20261028-recovery-events/replay/candidate-42.mp4",
+          "video_frame_index": 249
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "divergence": {
+        "eef_pos": 58,
+        "bowl_pos": 61
+      },
+      "parent": {
+        "controls": 207,
+        "grasp_controls": 96,
+        "grasp_runs": [
+          [
+            105,
+            199
+          ]
+        ],
+        "lifted_grasp_runs": [
+          [
+            109,
+            185
+          ]
+        ],
+        "lifted_contact_runs": [
+          [
+            109,
+            185
+          ]
+        ],
+        "max_lift_m": 0.23008722733970932,
+        "native_success_controls": 13,
+        "released_goal_runs": [
+          [
+            202,
+            206
+          ]
+        ],
+        "min_bowl_plate_xy_m": 0.022650997051652088,
+        "last50": {
+          "torque_saturated_controls": 2,
+          "min_translation_jacobian_sigma": 0.16639726807018787,
+          "min_joint_margin_rad": -0.003178572212455877,
+          "median_motion_mm": 6.791585158115106
+        }
+      },
+      "candidate": {
+        "controls": 300,
+        "grasp_controls": 0,
+        "grasp_runs": [],
+        "lifted_grasp_runs": [],
+        "lifted_contact_runs": [],
+        "max_lift_m": 0.008091986197261813,
+        "native_success_controls": 0,
+        "released_goal_runs": [],
+        "min_bowl_plate_xy_m": 0.15,
+        "peak_robot_table_contact": {
+          "normal_force_N": 848.6413045946799,
+          "control": 290,
+          "geoms": "robot0_link5_collision / table_collision"
+        },
+        "last50": {
+          "torque_saturated_controls": 44,
+          "min_translation_jacobian_sigma": 0.0006127179471819021,
+          "min_joint_margin_rad": 0.017407941185204834,
+          "median_motion_mm": 5.023931446180258
+        }
+      },
+      "illustrated_frames": [
+        {
+          "label": "parent",
+          "step": 58,
+          "video": "artifacts/20261028-recovery-events/replay/parent-43.mp4",
+          "video_frame_index": 57
+        },
+        {
+          "label": "candidate",
+          "step": 58,
+          "video": "artifacts/20261028-recovery-events/replay/candidate-43.mp4",
+          "video_frame_index": 57
+        },
+        {
+          "label": "parent",
+          "step": 180,
+          "video": "artifacts/20261028-recovery-events/replay/parent-43.mp4",
+          "video_frame_index": 179
+        },
+        {
+          "label": "candidate",
+          "step": 180,
+          "video": "artifacts/20261028-recovery-events/replay/candidate-43.mp4",
+          "video_frame_index": 179
+        }
+      ]
+    }
+  ],
+  "human_illustrations": [
+    {
+      "source": "human_1793121358375746008",
+      "timeline_index": 84,
+      "source_frame": "frame-000084.npz",
+      "controller": "OSC_POSE",
+      "image_timing": "before control"
+    },
+    {
+      "source": "human_1793121358375746008",
+      "timeline_index": 100,
+      "source_frame": "joint-frame-000015.npz",
+      "controller": "JOINT_POSITION",
+      "image_timing": "before control"
+    },
+    {
+      "source": "human_1793121358375746008",
+      "timeline_index": 300,
+      "source_frame": "joint-frame-000215.npz",
+      "controller": "JOINT_POSITION",
+      "image_timing": "before control"
+    },
+    {
+      "source": "human_1793121358375746008",
+      "timeline_index": 528,
+      "source_frame": "joint-frame-000443.npz",
+      "controller": "JOINT_POSITION",
+      "image_timing": "before control"
+    },
+    {
+      "source": "human_1793121358375746008",
+      "timeline_index": 533,
+      "source_frame": "frame-000089.npz",
+      "controller": "OSC_POSE",
+      "image_timing": "before control"
+    },
+    {
+      "source": "human_1793122696228231033",
+      "timeline_index": 234,
+      "source_frame": "frame-000234.npz",
+      "controller": "OSC_POSE",
+      "image_timing": "before control"
+    },
+    {
+      "source": "human_1793122696228231033",
+      "timeline_index": 250,
+      "source_frame": "joint-frame-000015.npz",
+      "controller": "JOINT_POSITION",
+      "image_timing": "before control"
+    },
+    {
+      "source": "human_1793122696228231033",
+      "timeline_index": 450,
+      "source_frame": "joint-frame-000215.npz",
+      "controller": "JOINT_POSITION",
+      "image_timing": "before control"
+    },
+    {
+      "source": "human_1793122696228231033",
+      "timeline_index": 606,
+      "source_frame": "joint-frame-000371.npz",
+      "controller": "JOINT_POSITION",
+      "image_timing": "before control"
+    },
+    {
+      "source": "human_1793122696228231033",
+      "timeline_index": 613,
+      "source_frame": "frame-000241.npz",
+      "controller": "OSC_POSE",
+      "image_timing": "before control"
+    }
+  ],
+  "human_static_summary_sha256": "1e5dea5be4dccb7fbb8bbd57882186e54874a1de6a5068118015a4c4266b34cf",
+  "total_human_controls": 2446,
+  "human_lifted_grasp_by_controller": {
+    "OSC_POSE": 777,
+    "JOINT_POSITION": 787
+  }
+}

@@ -169,3 +169,10 @@ Task-phase preflight: all1612human and7633publictask8 anchors partitioned exhaus
 2000 LoRA updates completed, batch1/seed42, fresh optimizer; actual1603 general replay+192 publictask8+205 human samples match frozen preview. Twelve reused physically valid dev scenes: parent10/12, old25%10/12, previous2.5%8/12, taskphase8/12; placement0/4. Common8 median controls parent92.5 vs candidate98; both frozen gates FAIL. All36 paired comparison videos decoded; full raw traces retained. Contact sheet shows tipped plate/init40 and unsuccessful grasp/transport/init41..43; native goal never met in all four timeouts. No UI promotion, no heldout/40-task retention evaluation. Inference export71 leaves/20LoRA exact; optimizer remains local. Result/code/weight remote restore verification pending.
 
 2026-10-28 Task/phase delivery verification COMPLETE: owned public origin branch experiment/matched-recovery-20261027 payload d64a37edd407d90e314b8e4c542e6be445253d79 independently restored all3225 tracked files; rebuilt tree b2b3dfb3fabdaf69e94ab592ed9966ee2f2f6c77 exact. Release taskphase-ablation-20261028 independently downloaded185501727bytes in32 validated ranges; SHA2568cf5a41d4c5df14bfe0403383f87ad78591c37d6b92da472a0ceb2cf484638be exact; official-base reconstruction71 tensors/20LoRA exact. Own train/server inactive with exit0; no UI change. Bounded experiment delivered with negative outcome8/12 and placement0/4; no heldout or40-task retention claim.
+
+Started approved event-level placement recovery diagnosis; preserve trained models/raw data/UI. No new training launched.
+
+## 2026-10-28 放置恢复事件诊断
+八条父/候选动作回放记录的EEF/碗/盘位置及目标/手指接触标志误差0.0，视频全解码。父模型placement2/4，候选0/4；候选40未持续提起且碰翻盘，41以非指垫接触抬起但未搬向盘，42/43推走并撞桌、后段饱和和小Jacobian。代理不能当稳定抓持真值。
+六条已批准原录制2446控制含1630OSC/816joint，身份及时间线连续性通过；两条混合控制的抬起指垫代理OSC0/55步对joint417/370步，关键搬运未进入现有7D OSC监督，全部原始数据保留。这是控制契约覆盖缺口，不是退化唯一原因的证明。静态after查询和缓存观测最大差19.121mm、5个目标标志差异，首个严格检查失败已显式留证，不能声称人工精确回放。
+三项诊断源码、10项针对性测试、完整范围Ruff及编译通过，报告/两张帧图/八视频/逐步JSON已保留。未训练、未改面板/其他任务、封存集未开；下一步先检验原关节搬运是否可用当前控制契约完整执行，不盲目要求重录位置或增加更新。报告reports/recovery-events-20261028/README.md；本轮远端备份正在验证。

@@ -1,0 +1,515 @@
+{
+  "manifest_sha256": "86e3fc204735dba54261f32dd864297bd00aab8f044ff2d866f46546d7db9cfb",
+  "script_sha256": "761abb7685c0b10af21dcfd94c7a3bbca33b83d1ad373d98f2d89b98697201c2",
+  "packages": {
+    "mujoco": "3.8.1",
+    "robosuite": "1.4.1",
+    "numpy": "1.26.4"
+  },
+  "protocol": "Static forward queries of recorded after-states, no policy or controls. Grasp is opposing fingerpad contact, not proof of force closure. Run indices zero-based inclusive, timeline includes joint controls. Fresh forward positions can differ from cached recorded observations; both error and native-goal disagreement are reported, not called exact replay.",
+  "sources": [
+    {
+      "source": "human_1793114449817419797",
+      "entry": "train-placement_failure-init01",
+      "max_recorded_pose_error_m": 0.00970410661414256,
+      "recorded_goal_disagreements": 3,
+      "controls": 465,
+      "grasp_controls": 366,
+      "grasp_runs": [
+        [
+          61,
+          425
+        ]
+      ],
+      "lifted_grasp_runs": [
+        [
+          65,
+          141
+        ],
+        [
+          203,
+          408
+        ]
+      ],
+      "max_lift_m": 0.06652756902970924,
+      "native_success_controls": 44,
+      "released_goal_runs": [
+        [
+          426,
+          464
+        ]
+      ],
+      "min_bowl_plate_xy_m": 0.007800367934545037,
+      "clips": [
+        {
+          "episode": 0,
+          "terminal": true,
+          "source_frame_range": [
+            "frame-000000.npz",
+            "frame-000464.npz"
+          ],
+          "controls": 465,
+          "grasp_controls": 366,
+          "grasp_runs": [
+            [
+              61,
+              425
+            ]
+          ],
+          "lifted_grasp_runs": [
+            [
+              65,
+              141
+            ],
+            [
+              203,
+              408
+            ]
+          ],
+          "max_lift_m": 0.06652756902970924,
+          "native_success_controls": 44,
+          "released_goal_runs": [
+            [
+              426,
+              464
+            ]
+          ],
+          "min_bowl_plate_xy_m": 0.007800367934545037
+        }
+      ],
+      "controller_counts": {
+        "OSC_POSE": 465,
+        "JOINT_POSITION": 0
+      },
+      "grasp_by_controller": {
+        "OSC_POSE": 366,
+        "JOINT_POSITION": 0
+      },
+      "lifted_grasp_by_controller": {
+        "OSC_POSE": 283,
+        "JOINT_POSITION": 0
+      }
+    },
+    {
+      "source": "human_1793121358375746008",
+      "entry": "train-placement_failure-init04",
+      "max_recorded_pose_error_m": 0.019121263336250527,
+      "recorded_goal_disagreements": 1,
+      "controls": 564,
+      "grasp_controls": 436,
+      "grasp_runs": [
+        [
+          94,
+          529
+        ]
+      ],
+      "lifted_grasp_runs": [
+        [
+          94,
+          510
+        ]
+      ],
+      "max_lift_m": 0.23019843416618235,
+      "native_success_controls": 43,
+      "released_goal_runs": [
+        [
+          533,
+          563
+        ]
+      ],
+      "min_bowl_plate_xy_m": 0.01065202751482776,
+      "clips": [
+        {
+          "episode": 1,
+          "terminal": false,
+          "source_frame_range": [
+            "frame-000000.npz",
+            "frame-000084.npz"
+          ],
+          "controls": 85,
+          "grasp_controls": 0,
+          "grasp_runs": [],
+          "lifted_grasp_runs": [],
+          "max_lift_m": 0.23019843416618235,
+          "native_success_controls": 0,
+          "released_goal_runs": [],
+          "min_bowl_plate_xy_m": 0.11864637050978585
+        },
+        {
+          "episode": 2,
+          "terminal": true,
+          "source_frame_range": [
+            "frame-000085.npz",
+            "frame-000119.npz"
+          ],
+          "controls": 35,
+          "grasp_controls": 1,
+          "grasp_runs": [],
+          "lifted_grasp_runs": [],
+          "max_lift_m": 0.01848124178071875,
+          "native_success_controls": 34,
+          "released_goal_runs": [
+            [
+              4,
+              34
+            ]
+          ],
+          "min_bowl_plate_xy_m": 0.011575067409800096
+        }
+      ],
+      "controller_counts": {
+        "OSC_POSE": 120,
+        "JOINT_POSITION": 444
+      },
+      "grasp_by_controller": {
+        "OSC_POSE": 1,
+        "JOINT_POSITION": 435
+      },
+      "lifted_grasp_by_controller": {
+        "OSC_POSE": 0,
+        "JOINT_POSITION": 417
+      }
+    },
+    {
+      "source": "human_1793122696228231033",
+      "entry": "train-placement_failure-init05",
+      "max_recorded_pose_error_m": 0.014854001159450458,
+      "recorded_goal_disagreements": 0,
+      "controls": 657,
+      "grasp_controls": 431,
+      "grasp_runs": [
+        [
+          179,
+          289
+        ],
+        [
+          292,
+          611
+        ]
+      ],
+      "lifted_grasp_runs": [
+        [
+          184,
+          289
+        ],
+        [
+          292,
+          610
+        ]
+      ],
+      "max_lift_m": 0.3937915738201295,
+      "native_success_controls": 45,
+      "released_goal_runs": [
+        [
+          613,
+          656
+        ]
+      ],
+      "min_bowl_plate_xy_m": 0.007446918261618966,
+      "clips": [
+        {
+          "episode": 3,
+          "terminal": false,
+          "source_frame_range": [
+            "frame-000000.npz",
+            "frame-000234.npz"
+          ],
+          "controls": 235,
+          "grasp_controls": 56,
+          "grasp_runs": [
+            [
+              179,
+              234
+            ]
+          ],
+          "lifted_grasp_runs": [
+            [
+              184,
+              234
+            ]
+          ],
+          "max_lift_m": 0.39324507699702094,
+          "native_success_controls": 0,
+          "released_goal_runs": [],
+          "min_bowl_plate_xy_m": 0.09055960667952999
+        },
+        {
+          "episode": 4,
+          "terminal": true,
+          "source_frame_range": [
+            "frame-000235.npz",
+            "frame-000284.npz"
+          ],
+          "controls": 50,
+          "grasp_controls": 5,
+          "grasp_runs": [
+            [
+              0,
+              4
+            ]
+          ],
+          "lifted_grasp_runs": [],
+          "max_lift_m": 0.053433128174910305,
+          "native_success_controls": 45,
+          "released_goal_runs": [
+            [
+              6,
+              49
+            ]
+          ],
+          "min_bowl_plate_xy_m": 0.0118068356010967
+        }
+      ],
+      "controller_counts": {
+        "OSC_POSE": 285,
+        "JOINT_POSITION": 372
+      },
+      "grasp_by_controller": {
+        "OSC_POSE": 61,
+        "JOINT_POSITION": 370
+      },
+      "lifted_grasp_by_controller": {
+        "OSC_POSE": 55,
+        "JOINT_POSITION": 370
+      }
+    },
+    {
+      "source": "human_1793122982775036691",
+      "entry": "train-empty_grasp-init01",
+      "max_recorded_pose_error_m": 0.008862611464432346,
+      "recorded_goal_disagreements": 0,
+      "controls": 270,
+      "grasp_controls": 193,
+      "grasp_runs": [
+        [
+          38,
+          230
+        ]
+      ],
+      "lifted_grasp_runs": [
+        [
+          41,
+          224
+        ]
+      ],
+      "max_lift_m": 0.10917606745805608,
+      "native_success_controls": 39,
+      "released_goal_runs": [
+        [
+          231,
+          269
+        ]
+      ],
+      "min_bowl_plate_xy_m": 0.0016969688761177954,
+      "clips": [
+        {
+          "episode": 5,
+          "terminal": true,
+          "source_frame_range": [
+            "frame-000000.npz",
+            "frame-000269.npz"
+          ],
+          "controls": 270,
+          "grasp_controls": 193,
+          "grasp_runs": [
+            [
+              38,
+              230
+            ]
+          ],
+          "lifted_grasp_runs": [
+            [
+              41,
+              224
+            ]
+          ],
+          "max_lift_m": 0.10917606745805608,
+          "native_success_controls": 39,
+          "released_goal_runs": [
+            [
+              231,
+              269
+            ]
+          ],
+          "min_bowl_plate_xy_m": 0.0016969688761177954
+        }
+      ],
+      "controller_counts": {
+        "OSC_POSE": 270,
+        "JOINT_POSITION": 0
+      },
+      "grasp_by_controller": {
+        "OSC_POSE": 193,
+        "JOINT_POSITION": 0
+      },
+      "lifted_grasp_by_controller": {
+        "OSC_POSE": 184,
+        "JOINT_POSITION": 0
+      }
+    },
+    {
+      "source": "human_1793123928152741170",
+      "entry": "train-object_offset-init01",
+      "max_recorded_pose_error_m": 0.007792344077862667,
+      "recorded_goal_disagreements": 1,
+      "controls": 245,
+      "grasp_controls": 142,
+      "grasp_runs": [
+        [
+          58,
+          194
+        ],
+        [
+          196,
+          200
+        ]
+      ],
+      "lifted_grasp_runs": [
+        [
+          59,
+          194
+        ]
+      ],
+      "max_lift_m": 0.12066291317839128,
+      "native_success_controls": 49,
+      "released_goal_runs": [
+        [
+          202,
+          244
+        ]
+      ],
+      "min_bowl_plate_xy_m": 0.0013875375379718631,
+      "clips": [
+        {
+          "episode": 6,
+          "terminal": true,
+          "source_frame_range": [
+            "frame-000000.npz",
+            "frame-000244.npz"
+          ],
+          "controls": 245,
+          "grasp_controls": 142,
+          "grasp_runs": [
+            [
+              58,
+              194
+            ],
+            [
+              196,
+              200
+            ]
+          ],
+          "lifted_grasp_runs": [
+            [
+              59,
+              194
+            ]
+          ],
+          "max_lift_m": 0.12066291317839128,
+          "native_success_controls": 49,
+          "released_goal_runs": [
+            [
+              202,
+              244
+            ]
+          ],
+          "min_bowl_plate_xy_m": 0.0013875375379718631
+        }
+      ],
+      "controller_counts": {
+        "OSC_POSE": 245,
+        "JOINT_POSITION": 0
+      },
+      "grasp_by_controller": {
+        "OSC_POSE": 142,
+        "JOINT_POSITION": 0
+      },
+      "lifted_grasp_by_controller": {
+        "OSC_POSE": 136,
+        "JOINT_POSITION": 0
+      }
+    },
+    {
+      "source": "human_1793124070194277437",
+      "entry": "train-object_offset-init02",
+      "max_recorded_pose_error_m": 0.008112948403195874,
+      "recorded_goal_disagreements": 0,
+      "controls": 245,
+      "grasp_controls": 131,
+      "grasp_runs": [
+        [
+          69,
+          199
+        ]
+      ],
+      "lifted_grasp_runs": [
+        [
+          71,
+          103
+        ],
+        [
+          107,
+          192
+        ]
+      ],
+      "max_lift_m": 0.11435365991909874,
+      "native_success_controls": 44,
+      "released_goal_runs": [
+        [
+          201,
+          244
+        ]
+      ],
+      "min_bowl_plate_xy_m": 0.019562298624584452,
+      "clips": [
+        {
+          "episode": 7,
+          "terminal": true,
+          "source_frame_range": [
+            "frame-000000.npz",
+            "frame-000244.npz"
+          ],
+          "controls": 245,
+          "grasp_controls": 131,
+          "grasp_runs": [
+            [
+              69,
+              199
+            ]
+          ],
+          "lifted_grasp_runs": [
+            [
+              71,
+              103
+            ],
+            [
+              107,
+              192
+            ]
+          ],
+          "max_lift_m": 0.11435365991909874,
+          "native_success_controls": 44,
+          "released_goal_runs": [
+            [
+              201,
+              244
+            ]
+          ],
+          "min_bowl_plate_xy_m": 0.019562298624584452
+        }
+      ],
+      "controller_counts": {
+        "OSC_POSE": 245,
+        "JOINT_POSITION": 0
+      },
+      "grasp_by_controller": {
+        "OSC_POSE": 131,
+        "JOINT_POSITION": 0
+      },
+      "lifted_grasp_by_controller": {
+        "OSC_POSE": 119,
+        "JOINT_POSITION": 0
+      }
+    }
+  ]
+}
