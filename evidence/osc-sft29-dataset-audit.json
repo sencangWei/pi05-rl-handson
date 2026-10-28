@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "old_records_unchanged": true,
+  "old_anchors": 1612,
+  "expert_anchors": 907,
+  "total_anchors": 2519,
+  "endpoint_window_checks": [
+    {
+      "episode": "data/osc-expert-replay29-v1/human_1793121358375746008.parquet",
+      "anchor": 0,
+      "shape": [
+        10,
+        7
+      ],
+      "rgb_shapes": [
+        [
+          256,
+          256,
+          3
+        ],
+        [
+          256,
+          256,
+          3
+        ]
+      ]
+    },
+    {
+      "episode": "data/osc-expert-replay29-v1/human_1793121358375746008.parquet",
+      "anchor": 481,
+      "shape": [
+        10,
+        7
+      ],
+      "rgb_shapes": [
+        [
+          256,
+          256,
+          3
+        ],
+        [
+          256,
+          256,
+          3
+        ]
+      ]
+    },
+    {
+      "episode": "data/osc-expert-replay29-v1/human_1793122696228231033.parquet",
+      "anchor": 0,
+      "shape": [
+        10,
+        7
+      ],
+      "rgb_shapes": [
+        [
+          256,
+          256,
+          3
+        ],
+        [
+          256,
+          256,
+          3
+        ]
+      ]
+    },
+    {
+      "episode": "data/osc-expert-replay29-v1/human_1793122696228231033.parquet",
+      "anchor": 424,
+      "shape": [
+        10,
+        7
+      ],
+      "rgb_shapes": [
+        [
+          256,
+          256,
+          3
+        ],
+        [
+          256,
+          256,
+          3
+        ]
+      ]
+    }
+  ],
+  "new_labels_retimed": false,
+  "expert_demonstrations_are_not_model_evaluations": true
+}

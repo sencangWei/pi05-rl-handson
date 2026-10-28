@@ -1,0 +1,570 @@
+{
+  "schema": "pi05-bank-human-replay-v1",
+  "ready": true,
+  "root": "/home/robot/pi05-rl-handson",
+  "records": [
+    {
+      "path": "data/manual-recovery28-v1/episode-00.parquet",
+      "sha256": "7c655c97baef96fa17669f2fa11a372e585dd09e2ad05d181c29d3f0fc23ca9a",
+      "frames": 465,
+      "sample_frames": 465,
+      "terminal": true,
+      "controller": "OSC_POSE",
+      "episode": 0,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-placement_failure-init01",
+        "split": "train",
+        "category": "placement_failure",
+        "source_initial_id": 1,
+        "file": "train-placement_failure-init01.npz",
+        "requested_offset_xy_m": [
+          -0.04,
+          0.04
+        ],
+        "offset_xy_m": [
+          -0.09208161165754317,
+          0.08058695571298755
+        ],
+        "source_state_sha256": "458b021de5c47d7b23306d6e7f714ef3c2c55174aa4b2281816d6c3792f408cb",
+        "state_sha256": "c503e3ccb9ee863c90b70698e71955b9a8d777c0a94dbd661a54988774f3d47c",
+        "sha256": "d7918cb4471d5297ee3464776f5baf0660c616af16432557059fa8794057c773",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          0.06651213682886256,
+          -0.03532740683993269,
+          1.1617642274451734
+        ],
+        "bowl_pos": [
+          -0.033354284388203356,
+          0.04627444663754977,
+          0.8984070750980833
+        ],
+        "plate_pos": [
+          0.05872732726933982,
+          -0.03431250907543777,
+          0.902506338529415
+        ]
+      },
+      "source": "human_1793114449817419797",
+      "source_frame_range": [
+        "frame-000000.npz",
+        "frame-000464.npz"
+      ]
+    },
+    {
+      "path": "data/manual-recovery28-v1/episode-01.parquet",
+      "sha256": "829ec767a145a9f06248edfea3f8f8994297a16278ef40ea016f8b97bfc79267",
+      "frames": 85,
+      "sample_frames": 76,
+      "terminal": false,
+      "controller": "OSC_POSE",
+      "episode": 1,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-placement_failure-init04",
+        "split": "train",
+        "category": "placement_failure",
+        "source_initial_id": 4,
+        "file": "train-placement_failure-init04.npz",
+        "requested_offset_xy_m": [
+          0.04,
+          0.04
+        ],
+        "offset_xy_m": [
+          0.09192388155425119,
+          0.09192388155425119
+        ],
+        "source_state_sha256": "37a6335a9df3d3d5a8fa5a41f6ddfb9097309c755a561166b5d4557ada91bf1f",
+        "state_sha256": "5618662c94d46d3fc1e371146c174017bcde364d25c0f1af0c19154738b1b35b",
+        "sha256": "81eda50dc1fa67d900fb56295f03b9029c261e4ee2bb87e8b937b3987dca5d6b",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          0.044772513715174114,
+          -0.011255162392985848,
+          1.1609586042457332
+        ],
+        "bowl_pos": [
+          0.13016382608300772,
+          0.08127179698794616,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.03823994452875654,
+          -0.010652084566305026,
+          0.902506338529415
+        ]
+      },
+      "source": "human_1793121358375746008",
+      "source_frame_range": [
+        "frame-000000.npz",
+        "frame-000084.npz"
+      ]
+    },
+    {
+      "path": "data/manual-recovery28-v1/episode-02.parquet",
+      "sha256": "129cde29adef15c9c563cd594093a13e48a990bde9fceeb49758cff75cf285e9",
+      "frames": 35,
+      "sample_frames": 35,
+      "terminal": true,
+      "controller": "OSC_POSE",
+      "episode": 2,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-placement_failure-init04",
+        "split": "train",
+        "category": "placement_failure",
+        "source_initial_id": 4,
+        "file": "train-placement_failure-init04.npz",
+        "requested_offset_xy_m": [
+          0.04,
+          0.04
+        ],
+        "offset_xy_m": [
+          0.09192388155425119,
+          0.09192388155425119
+        ],
+        "source_state_sha256": "37a6335a9df3d3d5a8fa5a41f6ddfb9097309c755a561166b5d4557ada91bf1f",
+        "state_sha256": "5618662c94d46d3fc1e371146c174017bcde364d25c0f1af0c19154738b1b35b",
+        "sha256": "81eda50dc1fa67d900fb56295f03b9029c261e4ee2bb87e8b937b3987dca5d6b",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          0.044772513715174114,
+          -0.011255162392985848,
+          1.1609586042457332
+        ],
+        "bowl_pos": [
+          0.13016382608300772,
+          0.08127179698794616,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.03823994452875654,
+          -0.010652084566305026,
+          0.902506338529415
+        ]
+      },
+      "source": "human_1793121358375746008",
+      "source_frame_range": [
+        "frame-000085.npz",
+        "frame-000119.npz"
+      ]
+    },
+    {
+      "path": "data/manual-recovery28-v1/episode-03.parquet",
+      "sha256": "4f538f2cb9fced6e4e676615d6672c97b1ce446d4565e34c27d911e7b09ceb34",
+      "frames": 235,
+      "sample_frames": 226,
+      "terminal": false,
+      "controller": "OSC_POSE",
+      "episode": 3,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-placement_failure-init05",
+        "split": "train",
+        "category": "placement_failure",
+        "source_initial_id": 5,
+        "file": "train-placement_failure-init05.npz",
+        "requested_offset_xy_m": [
+          -0.04,
+          0.04
+        ],
+        "offset_xy_m": [
+          0.13,
+          0.0
+        ],
+        "source_state_sha256": "6600fb90ac0ceaf178c64291eef075068efa4daaa075cc9004b763b2076f7b41",
+        "state_sha256": "00345d7d1eef84e40a40ff354c3c4e6182f8d92fed1be97b228941573cec35ff",
+        "sha256": "567c8e53afa89146f27af79017c6a4b323352b4392ecb5c50fd7f586474903e7",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          0.07255743708667355,
+          -0.029498760092358422,
+          1.1619431290933724
+        ],
+        "bowl_pos": [
+          0.19446503650836597,
+          -0.02859363943257207,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.06446503650836596,
+          -0.02859363943257207,
+          0.902506338529415
+        ]
+      },
+      "source": "human_1793122696228231033",
+      "source_frame_range": [
+        "frame-000000.npz",
+        "frame-000234.npz"
+      ]
+    },
+    {
+      "path": "data/manual-recovery28-v1/episode-04.parquet",
+      "sha256": "7a599c9e117efcfea2ec26fdc1e7d3c4166d8ec64e76001bdf812f50b74d5403",
+      "frames": 50,
+      "sample_frames": 50,
+      "terminal": true,
+      "controller": "OSC_POSE",
+      "episode": 4,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-placement_failure-init05",
+        "split": "train",
+        "category": "placement_failure",
+        "source_initial_id": 5,
+        "file": "train-placement_failure-init05.npz",
+        "requested_offset_xy_m": [
+          -0.04,
+          0.04
+        ],
+        "offset_xy_m": [
+          0.13,
+          0.0
+        ],
+        "source_state_sha256": "6600fb90ac0ceaf178c64291eef075068efa4daaa075cc9004b763b2076f7b41",
+        "state_sha256": "00345d7d1eef84e40a40ff354c3c4e6182f8d92fed1be97b228941573cec35ff",
+        "sha256": "567c8e53afa89146f27af79017c6a4b323352b4392ecb5c50fd7f586474903e7",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          0.07255743708667355,
+          -0.029498760092358422,
+          1.1619431290933724
+        ],
+        "bowl_pos": [
+          0.19446503650836597,
+          -0.02859363943257207,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.06446503650836596,
+          -0.02859363943257207,
+          0.902506338529415
+        ]
+      },
+      "source": "human_1793122696228231033",
+      "source_frame_range": [
+        "frame-000235.npz",
+        "frame-000284.npz"
+      ]
+    },
+    {
+      "path": "data/manual-recovery28-v1/episode-05.parquet",
+      "sha256": "88ff8ca494c1b69bcad06198a9b994221939901f63a7eee6395d32aaa3b9e759",
+      "frames": 270,
+      "sample_frames": 270,
+      "terminal": true,
+      "controller": "OSC_POSE",
+      "episode": 5,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-empty_grasp-init01",
+        "split": "train",
+        "category": "empty_grasp",
+        "source_initial_id": 1,
+        "file": "train-empty_grasp-init01.npz",
+        "requested_offset_xy_m": [
+          -0.04,
+          0.04
+        ],
+        "offset_xy_m": [
+          -0.039999999999999994,
+          0.04
+        ],
+        "source_state_sha256": "458b021de5c47d7b23306d6e7f714ef3c2c55174aa4b2281816d6c3792f408cb",
+        "state_sha256": "ec311db3b576d3169c3d5e848e5b6b02a74815dcf5bf22e0ebe3f53d78c2521a",
+        "sha256": "2e84eb59f1d0033a31549a2eee1eac27f022f0d8b23059de10a621946a8ef7d4",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          -0.09836922329686591,
+          0.013261716285400191,
+          1.0028539547866653
+        ],
+        "bowl_pos": [
+          -0.13642826542989062,
+          0.05374865763403042,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.05872732726933982,
+          -0.03431250907543777,
+          0.902506338529415
+        ]
+      },
+      "source": "human_1793122982775036691",
+      "source_frame_range": [
+        "frame-000000.npz",
+        "frame-000269.npz"
+      ]
+    },
+    {
+      "path": "data/manual-recovery28-v1/episode-06.parquet",
+      "sha256": "95090420dbd8448dfacc3d78394769cc1ddad5817f7aa74417a1c9fd3cf2b920",
+      "frames": 245,
+      "sample_frames": 245,
+      "terminal": true,
+      "controller": "OSC_POSE",
+      "episode": 6,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-object_offset-init01",
+        "split": "train",
+        "category": "object_offset",
+        "source_initial_id": 1,
+        "file": "train-object_offset-init01.npz",
+        "requested_offset_xy_m": [
+          -0.04,
+          0.04
+        ],
+        "offset_xy_m": [
+          -0.039999999999999994,
+          0.04
+        ],
+        "source_state_sha256": "458b021de5c47d7b23306d6e7f714ef3c2c55174aa4b2281816d6c3792f408cb",
+        "state_sha256": "f2311ae37eed37f4565c49fa412169d92353f45812683cfb4a4d3fbbdbed7a3e",
+        "sha256": "5e542b866fd6939aa2899859fe05c2b1a130b381df9490816f270eed1685538d",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          -0.19014867566853705,
+          0.003329464539073426,
+          1.189234510124621
+        ],
+        "bowl_pos": [
+          -0.13642826542989062,
+          0.05374865763403042,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.05872732726933982,
+          -0.03431250907543777,
+          0.902506338529415
+        ]
+      },
+      "source": "human_1793123928152741170",
+      "source_frame_range": [
+        "frame-000000.npz",
+        "frame-000244.npz"
+      ]
+    },
+    {
+      "path": "data/manual-recovery28-v1/episode-07.parquet",
+      "sha256": "762047ddc6a596f5eec99a34e52d941404aeba59b5a089a9819c47a53e0a06e1",
+      "frames": 245,
+      "sample_frames": 245,
+      "terminal": true,
+      "controller": "OSC_POSE",
+      "episode": 7,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-object_offset-init02",
+        "split": "train",
+        "category": "object_offset",
+        "source_initial_id": 2,
+        "file": "train-object_offset-init02.npz",
+        "requested_offset_xy_m": [
+          0.04,
+          -0.04
+        ],
+        "offset_xy_m": [
+          0.039999999999999994,
+          -0.04
+        ],
+        "source_state_sha256": "e92c3b68aa6af756d9ae0fbee9eefd5c04fb9d5739453b832e9707c8fe290096",
+        "state_sha256": "005c17c39f3549b8dec69ea01c06e2ec947a88acebc9dbb827d9f24ca5fa76db",
+        "sha256": "820997d87c0a99f857e82fd8f8137d4e3cc47ab6a4c936717fb9d1269955d581",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          -0.2090774566345743,
+          0.0027571904957864293,
+          1.1745265199363921
+        ],
+        "bowl_pos": [
+          -0.06328235427500667,
+          -0.03774699676837808,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.05245630628649128,
+          -0.012704933674087739,
+          0.902506338529415
+        ]
+      },
+      "source": "human_1793124070194277437",
+      "source_frame_range": [
+        "frame-000000.npz",
+        "frame-000244.npz"
+      ]
+    },
+    {
+      "path": "data/osc-expert-replay29-v1/human_1793121358375746008.parquet",
+      "sha256": "cf321af61d6966fa562c6bf4591ebed4ad8155470b97947f61d1728b82e8d377",
+      "frames": 491,
+      "sample_frames": 482,
+      "terminal": false,
+      "controller": "OSC_POSE",
+      "episode": 8,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-placement_failure-init04",
+        "split": "train",
+        "category": "placement_failure",
+        "source_initial_id": 4,
+        "file": "train-placement_failure-init04.npz",
+        "requested_offset_xy_m": [
+          0.04,
+          0.04
+        ],
+        "offset_xy_m": [
+          0.09192388155425119,
+          0.09192388155425119
+        ],
+        "source_state_sha256": "37a6335a9df3d3d5a8fa5a41f6ddfb9097309c755a561166b5d4557ada91bf1f",
+        "state_sha256": "5618662c94d46d3fc1e371146c174017bcde364d25c0f1af0c19154738b1b35b",
+        "sha256": "81eda50dc1fa67d900fb56295f03b9029c261e4ee2bb87e8b937b3987dca5d6b",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          0.044772513715174114,
+          -0.011255162392985848,
+          1.1609586042457332
+        ],
+        "bowl_pos": [
+          0.13016382608300772,
+          0.08127179698794616,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.03823994452875654,
+          -0.010652084566305026,
+          0.902506338529415
+        ]
+      },
+      "source": "human_1793121358375746008",
+      "provenance": "expert-derived OSC execution, actual pre-action observations",
+      "recorded_prompt": "pick up the black bowl next to the plate and place it on the plate",
+      "original_pairs_sha256": "3446b31e429c66605c57a42ae9314faf7825fbd926ee1f5b6f89ac29921830f7"
+    },
+    {
+      "path": "data/osc-expert-replay29-v1/human_1793122696228231033.parquet",
+      "sha256": "7c24f003fc1336d6ebee959a02c33ef8bc93a78b0dc1d382d29a0835fb29366f",
+      "frames": 434,
+      "sample_frames": 425,
+      "terminal": false,
+      "controller": "OSC_POSE",
+      "episode": 9,
+      "task_id": 8,
+      "prompt": "put the bowl on the plate",
+      "split": "train",
+      "entry": {
+        "id": "train-placement_failure-init05",
+        "split": "train",
+        "category": "placement_failure",
+        "source_initial_id": 5,
+        "file": "train-placement_failure-init05.npz",
+        "requested_offset_xy_m": [
+          -0.04,
+          0.04
+        ],
+        "offset_xy_m": [
+          0.13,
+          0.0
+        ],
+        "source_state_sha256": "6600fb90ac0ceaf178c64291eef075068efa4daaa075cc9004b763b2076f7b41",
+        "state_sha256": "00345d7d1eef84e40a40ff354c3c4e6182f8d92fed1be97b228941573cec35ff",
+        "sha256": "567c8e53afa89146f27af79017c6a4b323352b4392ecb5c50fd7f586474903e7",
+        "initial_native_success": false,
+        "initial_finger_contact": false,
+        "eef_pos": [
+          0.07255743708667355,
+          -0.029498760092358422,
+          1.1619431290933724
+        ],
+        "bowl_pos": [
+          0.19446503650836597,
+          -0.02859363943257207,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.06446503650836596,
+          -0.02859363943257207,
+          0.902506338529415
+        ]
+      },
+      "source": "human_1793122696228231033",
+      "provenance": "expert-derived OSC execution, actual pre-action observations",
+      "recorded_prompt": "pick up the black bowl next to the plate and place it on the plate",
+      "original_pairs_sha256": "e7a876d1793a2d6d7079e27046bc0de5ffd1a63920272340ac09acae04ccc573"
+    }
+  ],
+  "bank_manifest_sha256": "7bac5c686e9acfc522017604a0b3a8d3b966cfddb97c940b4fe05c5614f831af",
+  "replay_manifest_sha256": "9282c19b3d6cd6bf5779d3169e112a145852066654651e40b333558d9e8a3fde",
+  "previous_manifest_sha256": "86e3fc204735dba54261f32dd864297bd00aab8f044ff2d866f46546d7db9cfb",
+  "expert_review_manifest_sha256": "350a47b2cc6f524f13b7d1aea714fe11c770b8fb9ff676403017a705bb2299bd",
+  "human_review_sha256": "988e2887a4c98032806d23b73093140968018a591bf2ac641175e2436fb77a01",
+  "audits": [
+    {
+      "source": "human_1793121358375746008",
+      "validation": {
+        "passed": true,
+        "paired_rows": 511,
+        "decoded_rgb_images": 1022,
+        "pre_observation_action_alignment": true,
+        "continuous_physics": true,
+        "unchanged_saved_actions": true
+      },
+      "kept_controls": 491,
+      "eligible_anchors": 482,
+      "excluded_hold_controls": 20,
+      "excluded_short_window_anchors": 9
+    },
+    {
+      "source": "human_1793122696228231033",
+      "validation": {
+        "passed": true,
+        "paired_rows": 454,
+        "decoded_rgb_images": 908,
+        "pre_observation_action_alignment": true,
+        "continuous_physics": true,
+        "unchanged_saved_actions": true
+      },
+      "kept_controls": 434,
+      "eligible_anchors": 425,
+      "excluded_hold_controls": 20,
+      "excluded_short_window_anchors": 9
+    }
+  ],
+  "old_records_unchanged": true,
+  "old_eligible_anchors": 1612,
+  "expert_eligible_anchors": 907,
+  "temporal_policy": "20Hz unchanged labels. New expert clips exclude all diagnostic holds and last nine incomplete-window anchors; no padding/resampling. Old clips unchanged.",
+  "provenance": "Old human OSC plus two expert-derived executions of human recovery; not autonomous VLA demonstrations.",
+  "prompt_policy": "Validate recorded full bowl-to-plate instruction; use unchanged bank-compatible canonical training prompt 'put the bowl on the plate'. Physical bank/task8 identity unchanged.",
+  "sampling": "75% task-balanced public replay / 25% combined recovery; recovery uniformly over eligible anchors; report seeded actual counts",
+  "normalization": "Unchanged official LIBERO normalization, matching own 40-task parent"
+}
