@@ -1,11 +1,11 @@
 {
-  "status": "prepared",
+  "status": "uploaded_and_independently_restored",
   "url": "https://github.com/sencangWei/pi05-rl-handson/releases/tag/osc-pairs-review-20261029",
   "asset": "osc-pairs-review-20261029-v1.tar.gz",
   "bytes": 113996547,
   "sha256": "cc879af91ae01474e3fa8490bb443a7a96a9bf34a1517bf78fd4c76f31eb8194",
   "ready": false,
-  "human_review": "pending",
+  "human_review": "approved",
   "files": {
     "reports/osc-pairs-20261029/v1/human_1793121358375746008/pairs.parquet": {
       "bytes": 61688633,
@@ -15,5 +15,7 @@
       "bytes": 52763797,
       "sha256": "e7a876d1793a2d6d7079e27046bc0de5ffd1a63920272340ac09acae04ccc573"
     }
-  }
+  },
+  "restore_proof": "evidence/osc-pairs29-data-restore.json",
+  "code_restore_proof": "evidence/osc-pairs29-remote-restore.json"
 }

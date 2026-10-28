@@ -147,3 +147,5 @@ original-v1/v2各执行两源共1221控制，四录像2442帧全部解码；最�
 
 ## 2026-10-29 实际观测重采
 两条转换专家轨迹重新执行，511+454=965组动作前RGB/8D状态/7D动作，1930张PNG独立解码配对通过；物理后状态、后RGB及目标/接触记录逐位一致。两个末尾20步诊断保持均放稳且松爪。四个视频1934帧全解码，中文审核页与关键帧生成。35项相关测试及5子测试、Ruff与编译通过。ready=false/human_review=pending/training=false；保留原数据，未训练/换面板。这是新专家执行，不是模型已学会恢复。备份待验证。
+
+2026-10-29 重采交付完成：用户明确确认“两段没毛病确实放上去了”，human-review.json 已记录审批与视频哈希；965对含40诊断保持步，未训练/换面板。载荷 b05024ae09d27643780c7380e057d20f39bfbe47 已推至自有公开 sencangWei/pi05-rl-handson 的 experiment/matched-recovery-20261027；独立恢复3487跟踪文件，SHA256和Git树6be2b363c8f7e5a10811f3fc796d116cb2e2f5b0精确一致，恢复树上35测试及5子测试/Ruff再次通过。Release osc-pairs-review-20261029 的113996547字节数据包通过32段远端下载、整体/文件SHA核对及1930张PNG独立配对校验。证明 evidence/osc-pairs29-remote-restore.json 与 evidence/osc-pairs29-data-restore.json。后续训练格式/抽样预检尚未执行，ready仍false；两段为专家新执行，非模型恢复能力验收。

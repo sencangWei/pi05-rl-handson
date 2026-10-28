@@ -1,0 +1,21 @@
+{
+  "status": "approved",
+  "actor": "user",
+  "recorded_at_utc": "2026-10-28T16:36:22.173193+00:00",
+  "user_statement": "我审核过了没毛病确实放上去了",
+  "scope": "Both replay review clips visually approved; not a claim that a trained policy can recover.",
+  "sources": [
+    {
+      "source": "human_1793121358375746008",
+      "paired_rows": 511,
+      "labeled_sha256": "2afd4c2a40e0ebd92c5d7b69c7777327caf574f2c40cd35ac873fb7e58a9c9d9"
+    },
+    {
+      "source": "human_1793122696228231033",
+      "paired_rows": 454,
+      "labeled_sha256": "50cfb8da9724678141ac8027be70ed9e2ca7ba1350c6dafca72ec9512b650118"
+    }
+  ],
+  "training_started": false,
+  "exclude_diagnostic_hold_anchors": true
+}

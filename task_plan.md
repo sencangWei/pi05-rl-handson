@@ -110,4 +110,6 @@ Task-phase preflight: all1612human and7633publictask8 anchors partitioned exhaus
 1. [完成] 固定通过的tracking动作、完整初态快照和源码身份；不改原录制/训练/面板。
 2. [完成] 新进程逐步采集执行前RGB/8D状态与7D动作，逐位核对执行后物理状态及像素。
 3. [完成] 保存待审核Parquet、全程20fps视频、中文审核页与校验证据；ready=false，不启动训练。
-4. [本地验证完成，远端核验进行中] 针对性测试、全量数据/视频校验、可视检查后提交自有远端并独立恢复验证。
+4. [完成] 针对性测试、全量数据/视频校验、可视检查后提交自有远端并独立恢复验证。
+
+2026-10-29 重采交付完成：用户明确确认“两段没毛病确实放上去了”，human-review.json 已记录审批与视频哈希；965对含40诊断保持步，未训练/换面板。载荷 b05024ae09d27643780c7380e057d20f39bfbe47 已推至自有公开 sencangWei/pi05-rl-handson 的 experiment/matched-recovery-20261027；独立恢复3487跟踪文件，SHA256和Git树6be2b363c8f7e5a10811f3fc796d116cb2e2f5b0精确一致，恢复树上35测试及5子测试/Ruff再次通过。Release osc-pairs-review-20261029 的113996547字节数据包通过32段远端下载、整体/文件SHA核对及1930张PNG独立配对校验。证明 evidence/osc-pairs29-remote-restore.json 与 evidence/osc-pairs29-data-restore.json。后续训练格式/抽样预检尚未执行，ready仍false；两段为专家新执行，非模型恢复能力验收。

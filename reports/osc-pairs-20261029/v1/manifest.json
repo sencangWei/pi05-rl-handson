@@ -1,7 +1,7 @@
 {
   "schema": "pi05-osc-expert-pairs-review-v1",
   "ready": false,
-  "human_review": "pending",
+  "human_review": "approved",
   "training": false,
   "records": [
     {
@@ -13,7 +13,7 @@
       "unchanged_saved_actions": true,
       "source": "human_1793121358375746008",
       "ready": false,
-      "human_review": "pending",
+      "human_review": "approved",
       "split": "train_candidate",
       "expert_reference_actions": true,
       "vla_inference": false,
@@ -51,7 +51,7 @@
       "unchanged_saved_actions": true,
       "source": "human_1793122696228231033",
       "ready": false,
-      "human_review": "pending",
+      "human_review": "approved",
       "split": "train_candidate",
       "expert_reference_actions": true,
       "vla_inference": false,
@@ -80,5 +80,7 @@
         }
       }
     }
-  ]
+  ],
+  "human_review_record": "human-review.json",
+  "ready_reason": "Trainer dataset conversion and split/sampling preflight not performed in this recording task."
 }

@@ -1,4 +1,4 @@
-# 两段恢复动作的实际观测重采（待人工审核）
+# 两段恢复动作的实际观测重采（人工审核通过）
 
 本轮将两段已通过物理检查的关节→OSC转换轨迹重新执行，采集动作执行前的真实相机画面与状态。未训练、未替换面板模型。录像展示专家轨迹执行，不代表 VLA 已学会恢复。
 
@@ -19,7 +19,7 @@
 - 独立从磁盘解码1930张PNG，检查连续物理时间线、动作和状态；四个原始/标注视频共1934帧全解码通过。
 - 相关测试35项及5个子测试通过；新增三文件 Ruff 与 Python 编译通过。代码审查子代理因本机配置模型不支持启动失败，已由主代理直接复查，不声称完成独立代理审查。
 
-`v1/protocol.json` 固定输入与源码哈希，`v1/manifest.json` 保持 `ready=false`、`human_review=pending`、`training=false`。各源目录包含逐步物理状态、配对审计和结果，`v1/review-validation.json` 记录独立解码结果。
+`v1/protocol.json` 固定输入与源码哈希，`v1/manifest.json` 目前为 `ready=false`、`human_review=approved`、`training=false`；尚未进行训练格式转换与抽样预检。冻结的 protocol/result 保留执行时待审核状态，后续人工结论见 `v1/human-review.json`。各源目录包含逐步物理状态、配对审计和结果，`v1/review-validation.json` 记录独立解码结果。
 
 来源为 `reports/osc-conversion-20261029/v1` 的 tracking 动作与 `reports/full-state-replay-20261028` 的完整初态快照。它们是可复现的新执行，不是对缺少内部状态的旧录制进行逐位重建。不能据此推断任意位置、任意关节恢复或模型泛化成功。
 
@@ -43,8 +43,8 @@ OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=1 \
 
 ## 数据备份
 
-代码、报告、物理状态、审计和录像提交至用户自有公开仓库 `sencangWei/pi05-rl-handson` 的 `experiment/matched-recovery-20261027` 分支。约114MB无损 Parquet 单独存放于 [GitHub Release](https://github.com/sencangWei/pi05-rl-handson/releases/tag/osc-pairs-review-20261029)，避免写入 Git 历史。上传与恢复状态以 `v1/release-data.json` 和后续 `evidence/osc-pairs29-*-restore.json` 为准；准备完成不等于远端备份完成。
+代码、报告、物理状态、审计和录像提交至用户自有公开仓库 `sencangWei/pi05-rl-handson` 的 `experiment/matched-recovery-20261027` 分支。约114MB无损 Parquet 单独存放于 [GitHub Release](https://github.com/sencangWei/pi05-rl-handson/releases/tag/osc-pairs-review-20261029)，避免写入 Git 历史。已独立恢复全部3487个Git跟踪文件及重建Git树一致，恢复目录中35项测试及5个子测试再次通过。数据包113996547字节经32段远端下载后，整体/文件哈希与1930张PNG配对检查均通过。上传与恢复状态以 `v1/release-data.json` 和后续 `evidence/osc-pairs29-*-restore.json` 为准；准备完成不等于远端备份完成。
 
 Release 压缩包只包含两份 Parquet，按项目相对路径解压。校验完整压缩包及两份文件的 SHA256，结合 Git 恢复出的 physics/audit 再执行 `validate_dataset`，才能验证可恢复。
 
-下一步由用户检查两段动作是否适合学习；本轮不会把技术检查通过自动等同于人工批准训练。
+用户已明确确认“两段没毛病，确实放上去了”，批准记录与录像哈希见 `v1/human-review.json`。下一步准备训练格式、排除诊断保持锚点，并保留旧数据回放；此采集任务未启动训练。

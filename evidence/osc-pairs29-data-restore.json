@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "release": "https://github.com/sencangWei/pi05-rl-handson/releases/tag/osc-pairs-review-20261029",
+  "asset": "osc-pairs-review-20261029-v1.tar.gz",
+  "archive_bytes": 113996547,
+  "archive_sha256": "cc879af91ae01474e3fa8490bb443a7a96a9bf34a1517bf78fd4c76f31eb8194",
+  "independent_remote_download": true,
+  "archive_and_file_hashes_exact": true,
+  "restored_pair_validation": {
+    "reports/osc-pairs-20261029/v1/human_1793121358375746008/pairs.parquet": {
+      "passed": true,
+      "paired_rows": 511,
+      "decoded_rgb_images": 1022,
+      "pre_observation_action_alignment": true,
+      "continuous_physics": true,
+      "unchanged_saved_actions": true
+    },
+    "reports/osc-pairs-20261029/v1/human_1793122696228231033/pairs.parquet": {
+      "passed": true,
+      "paired_rows": 454,
+      "decoded_rgb_images": 908,
+      "pre_observation_action_alignment": true,
+      "continuous_physics": true,
+      "unchanged_saved_actions": true
+    }
+  },
+  "total_pairs": 965,
+  "total_decoded_rgb_images": 1930,
+  "training": false,
+  "human_review": "approved",
+  "human_review_at_restored_payload": "pending",
+  "human_review_record": "reports/osc-pairs-20261029/v1/human-review.json"
+}
