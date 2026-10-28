@@ -55,4 +55,4 @@ OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=1 \
 
 ## 验证与备份
 
-40项相关测试通过，范围Ruff与Python编译通过；22段视频逐帧解码与预期长度核验见[verification.json](verification.json)。独立审查角色因本机配置模型不支持未能启动，本轮为直接源码检查和独立进程物理验证。备份状态以evidence/full-state-replay-28-remote-restore.json为准；缺少该文件时不得称远端恢复已通过。
+40项相关测试通过，范围Ruff与Python编译通过；22段视频逐帧解码与预期长度核验见[verification.json](verification.json)。独立审查角色因本机配置模型不支持未能启动，本轮为直接源码检查和独立进程物理验证。载荷 db2c707e989648f7a5e974aadcc2a45ae459e416 已推至自有公开仓库 sencangWei/pi05-rl-handson 的 experiment/matched-recovery-20261027 分支；全部 3406 个跟踪文件从远端独立恢复，内容 SHA256 与重建 Git 树 cefb8715771eab09f1d00ab06e0ad47043fa817d 一致。4份快照经远端分段下载和 Git blob SHA 校验。恢复证明见[full-state-replay-28-remote-restore.json](../../evidence/full-state-replay-28-remote-restore.json)。

@@ -95,4 +95,4 @@ Task-phase preflight: all1612human and7633publictask8 anchors partitioned exhaus
 ## 2026-10-28 完整状态恢复契约（用户确认继续）
 1. [完成] 新增离线 OSC 边界快照：MuJoCo 原生数据、控制器目标/缓存、夹爪累积、观测相位、机器人缓冲、计数和 RNG；固定运行库与模型身份，禁止恢复时 forward/reset_goal。
 2. [完成] 两条旧动作各生成一次新的参考执行，在 OSC→joint 前和最后 joint→OSC 前各保存快照；独立新进程恢复后执行剩余动作，不注入下一状态。对照旧79维、原生物理单独恢复、完整恢复。严格门沿用 qpos1e-6/qvel1e-5/缓存位置1e-5m，并记录像素/目标/接触一致性。
-3. [本地验证完成，备份待核验] 此实验只能验证新快照，无法补回旧录制丢失的内部状态；不得称旧轨迹保真已修复。通过前不转换标签或训练。报告、验证及远端独立恢复后交付。
+3. [完成] 完整恢复及 integration+Python 均4/4完全一致，旧79维0/4；40项测试、22录像2126帧通过。载荷 db2c707e989648f7a5e974aadcc2a45ae459e416 已推至自有公开仓库 sencangWei/pi05-rl-handson 的 experiment/matched-recovery-20261027 分支；全部 3406 个跟踪文件从远端独立恢复，内容 SHA256 与重建 Git 树 cefb8715771eab09f1d00ab06e0ad47043fa817d 一致。4份快照经远端分段下载和 Git blob SHA 校验。此实验无法补回旧录制丢失的内部状态，未转换训练标签、未训练或替换面板模型。

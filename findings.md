@@ -135,3 +135,5 @@ original-v1/v2各执行两源共1221控制，四录像2442帧全部解码；最�
 
 ## 2026-10-28 完整状态短接触复现
 两个新参考564/657步，在4窗口181控制（103接触控制）比较四种恢复，16新进程重放全部退出0。完整MjData+Python与integration+Python均4/4数值、time/qpos/qvel逐位、原始像素及标志完全一致；旧79维0/4，仅原生物理0/4（后者两窗物理一致但缓存偏差约5–6mm）。不唯一归因warmstart。修复MjData.__setstate__对已初始化对象静默无效，改未初始化对象恢复并mj_copyData。只证明新快照；旧缺失状态无法重建，不转换标签、不训练、不换UI。40项相关测试与Ruff通过，4段三栏录像已生成，远端恢复验证待完成。报告reports/full-state-replay-20261028/README.md。
+
+2026-10-28 完整状态恢复交付核验完成：载荷 db2c707e989648f7a5e974aadcc2a45ae459e416 已推至自有公开仓库 sencangWei/pi05-rl-handson 的 experiment/matched-recovery-20261027 分支；全部 3406 个跟踪文件从远端独立恢复，内容 SHA256 与重建 Git 树 cefb8715771eab09f1d00ab06e0ad47043fa817d 一致。4份快照经远端分段下载和 Git blob SHA 校验。证明 evidence/full-state-replay-28-remote-restore.json。后续先验证关节接管动作能否由7维OSC表达及实际跟踪误差；本轮未修复模型恢复能力，未动原始录制或面板模型。
