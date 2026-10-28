@@ -1,0 +1,615 @@
+{
+  "status": "COMPLETE",
+  "experiment": "manual6_taskphase_2000_v1",
+  "totals": {
+    "parent": {
+      "successes": 10,
+      "trials": 12,
+      "categories": {
+        "empty_grasp": 4,
+        "object_offset": 4,
+        "placement_failure": 2
+      },
+      "total_controls_including_timeouts": 1742,
+      "wall_seconds": 52.070511245998205
+    },
+    "old_mix": {
+      "successes": 10,
+      "trials": 12,
+      "categories": {
+        "empty_grasp": 4,
+        "object_offset": 4,
+        "placement_failure": 2
+      },
+      "total_controls_including_timeouts": 2299,
+      "wall_seconds": 54.580256752014975
+    },
+    "sampling025": {
+      "successes": 8,
+      "trials": 12,
+      "categories": {
+        "empty_grasp": 4,
+        "object_offset": 4,
+        "placement_failure": 0
+      },
+      "total_controls_including_timeouts": 1970,
+      "wall_seconds": 57.799910303001525
+    },
+    "candidate": {
+      "successes": 8,
+      "trials": 12,
+      "categories": {
+        "empty_grasp": 4,
+        "object_offset": 4,
+        "placement_failure": 0
+      },
+      "total_controls_including_timeouts": 1999,
+      "wall_seconds": 60.01687417300127
+    }
+  },
+  "paired_comparisons": {
+    "parent": {
+      "shared_success_ids": [
+        "dev-empty_grasp-init40",
+        "dev-object_offset-init40",
+        "dev-empty_grasp-init41",
+        "dev-object_offset-init41",
+        "dev-empty_grasp-init42",
+        "dev-object_offset-init42",
+        "dev-empty_grasp-init43",
+        "dev-object_offset-init43"
+      ],
+      "baseline_median_controls": 92.5,
+      "candidate_median_controls": 98.0,
+      "median_paired_delta_controls": 2.0,
+      "faster": 2,
+      "slower": 5,
+      "equal": 1
+    },
+    "old_mix": {
+      "shared_success_ids": [
+        "dev-empty_grasp-init40",
+        "dev-object_offset-init40",
+        "dev-empty_grasp-init41",
+        "dev-object_offset-init41",
+        "dev-empty_grasp-init42",
+        "dev-object_offset-init42",
+        "dev-empty_grasp-init43",
+        "dev-object_offset-init43"
+      ],
+      "baseline_median_controls": 113.5,
+      "candidate_median_controls": 98.0,
+      "median_paired_delta_controls": -24.0,
+      "faster": 7,
+      "slower": 1,
+      "equal": 0
+    },
+    "sampling025": {
+      "shared_success_ids": [
+        "dev-empty_grasp-init40",
+        "dev-object_offset-init40",
+        "dev-empty_grasp-init41",
+        "dev-object_offset-init41",
+        "dev-empty_grasp-init42",
+        "dev-object_offset-init42",
+        "dev-empty_grasp-init43",
+        "dev-object_offset-init43"
+      ],
+      "baseline_median_controls": 92.5,
+      "candidate_median_controls": 98.0,
+      "median_paired_delta_controls": 0.0,
+      "faster": 4,
+      "slower": 4,
+      "equal": 0
+    }
+  },
+  "predeclared_gates": {
+    "success_at_least_10_of_12": false,
+    "paired_controls_median_no_worse_than_parent": false
+  },
+  "diagnostic_gates_passed": false,
+  "automatic_promotion": false,
+  "heldout_evaluated": false,
+  "data_scope": "12 reused physically-valid development states; not unseen generalization",
+  "intervention": "combined source-weight and command-phase balancing, not a single-variable ablation",
+  "training_metrics": {
+    "logged_updates": 200,
+    "all_logged_values_finite": true,
+    "first_loss": 0.0003,
+    "last_loss": 0.001
+  },
+  "candidate_trace_diagnostics": [
+    {
+      "id": "dev-empty_grasp-init40",
+      "success": true,
+      "steps": 84,
+      "native_success_controls": 15,
+      "open_command_controls": 17,
+      "longest_low_motion_controls": 0,
+      "last_sample": {
+        "step": 84,
+        "native_success": true,
+        "released_success": true,
+        "release_streak": 5,
+        "finger_contact": false,
+        "action": [
+          0.05165269660171856,
+          -0.01075975216013203,
+          0.3887789757899045,
+          -0.008653085565388366,
+          0.0029547287445628456,
+          -0.003254645534494699,
+          -1.0030973929636477
+        ],
+        "eef_pos": [
+          0.03473447240010617,
+          -0.033332484975977794,
+          0.9619065673169088
+        ],
+        "eef_motion_m": 0.004164635729386719,
+        "bowl_pos": [
+          0.05683217502371547,
+          0.01425609386781026,
+          0.9088154538256331
+        ],
+        "plate_pos": [
+          0.047909837384534665,
+          -0.00980092994224164,
+          0.902502722482436
+        ],
+        "bowl_plate_xy_m": 0.02565830281887223
+      }
+    },
+    {
+      "id": "dev-object_offset-init40",
+      "success": true,
+      "steps": 124,
+      "native_success_controls": 13,
+      "open_command_controls": 50,
+      "longest_low_motion_controls": 0,
+      "last_sample": {
+        "step": 124,
+        "native_success": true,
+        "released_success": true,
+        "release_streak": 5,
+        "finger_contact": false,
+        "action": [
+          0.03183584219208346,
+          0.04134107233893869,
+          0.40965681353569017,
+          -0.034662939691355046,
+          0.012438709062592701,
+          -0.00394309787763189,
+          -1.002879164299786
+        ],
+        "eef_pos": [
+          0.06280552400119749,
+          0.017621972634193375,
+          0.9694500608682501
+        ],
+        "eef_motion_m": 0.00506077898248313,
+        "bowl_pos": [
+          0.05588228418874547,
+          -0.03480363839480568,
+          0.90696439818594
+        ],
+        "plate_pos": [
+          0.04663596429884857,
+          -0.02733638942394246,
+          0.9025030617133761
+        ],
+        "bowl_plate_xy_m": 0.011885042646080859
+      }
+    },
+    {
+      "id": "dev-placement_failure-init40",
+      "success": false,
+      "steps": 300,
+      "native_success_controls": 0,
+      "open_command_controls": 225,
+      "longest_low_motion_controls": 0,
+      "last_sample": {
+        "step": 300,
+        "native_success": false,
+        "released_success": false,
+        "release_streak": 0,
+        "finger_contact": false,
+        "action": [
+          -0.002215750986158893,
+          -0.012292299144089247,
+          0.05662918016862861,
+          -0.0010630082837922022,
+          -0.018918322193293508,
+          -0.018811958254872863,
+          -0.9988933029719889
+        ],
+        "eef_pos": [
+          0.11561280211477838,
+          0.08950843785388854,
+          0.967942934249776
+        ],
+        "eef_motion_m": 0.0010880785208063147,
+        "bowl_pos": [
+          0.15881658018373215,
+          0.07921898157796459,
+          0.920289124716577
+        ],
+        "plate_pos": [
+          0.14963961607915885,
+          0.017501702942630787,
+          0.935370387477884
+        ],
+        "bowl_plate_xy_m": 0.06239582640151549
+      }
+    },
+    {
+      "id": "dev-empty_grasp-init41",
+      "success": true,
+      "steps": 103,
+      "native_success_controls": 27,
+      "open_command_controls": 21,
+      "longest_low_motion_controls": 0,
+      "last_sample": {
+        "step": 103,
+        "native_success": true,
+        "released_success": true,
+        "release_streak": 5,
+        "finger_contact": false,
+        "action": [
+          0.19340363382840142,
+          -0.014314560513615682,
+          0.5251962910351753,
+          -0.0030937333727349275,
+          0.07843637799228001,
+          -0.0020627598704465733,
+          -1.0036147772508264
+        ],
+        "eef_pos": [
+          0.051001488802116496,
+          -0.03612372613141542,
+          0.9685374524039273
+        ],
+        "eef_motion_m": 0.005824812262011783,
+        "bowl_pos": [
+          0.06655031412757528,
+          0.006777725925462382,
+          0.9071640013824371
+        ],
+        "plate_pos": [
+          0.06814885240762461,
+          -0.007772354976357728,
+          0.9025029602215691
+        ],
+        "bowl_plate_xy_m": 0.014637628868170329
+      }
+    },
+    {
+      "id": "dev-object_offset-init41",
+      "success": true,
+      "steps": 90,
+      "native_success_controls": 11,
+      "open_command_controls": 36,
+      "longest_low_motion_controls": 0,
+      "last_sample": {
+        "step": 90,
+        "native_success": true,
+        "released_success": true,
+        "release_streak": 5,
+        "finger_contact": false,
+        "action": [
+          0.13709913215905412,
+          0.009467450294613822,
+          0.37203773193109035,
+          -0.023734153196871763,
+          0.07063299251828659,
+          0.0010441963413955202,
+          -1.0038729330596328
+        ],
+        "eef_pos": [
+          0.06988815997430996,
+          0.027144972711351783,
+          0.9553402769545859
+        ],
+        "eef_motion_m": 0.004112369282063971,
+        "bowl_pos": [
+          0.06564402023785172,
+          -0.026996835488554492,
+          0.9061390841986432
+        ],
+        "plate_pos": [
+          0.06372072256093762,
+          -0.022142993407228587,
+          0.9025031357870232
+        ],
+        "bowl_plate_xy_m": 0.00522100152312498
+      }
+    },
+    {
+      "id": "dev-placement_failure-init41",
+      "success": false,
+      "steps": 300,
+      "native_success_controls": 0,
+      "open_command_controls": 222,
+      "longest_low_motion_controls": 1,
+      "last_sample": {
+        "step": 300,
+        "native_success": false,
+        "released_success": false,
+        "release_streak": 0,
+        "finger_contact": false,
+        "action": [
+          -0.009618343271315166,
+          -0.008427083415329495,
+          0.15365572118425375,
+          -1.6010561524351652e-05,
+          -0.0024100060720490535,
+          -0.011090264467796623,
+          -1.0052396332718134
+        ],
+        "eef_pos": [
+          0.18419221566743307,
+          -0.033191533022938306,
+          0.9949706996915394
+        ],
+        "eef_motion_m": 0.002367008910102945,
+        "bowl_pos": [
+          0.20413863881702388,
+          -0.07137905605603972,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.06490933310589453,
+          -0.02292999119776801,
+          0.902506338529415
+        ],
+        "bowl_plate_xy_m": 0.14741815171288825
+      }
+    },
+    {
+      "id": "dev-empty_grasp-init42",
+      "success": true,
+      "steps": 107,
+      "native_success_controls": 11,
+      "open_command_controls": 27,
+      "longest_low_motion_controls": 0,
+      "last_sample": {
+        "step": 107,
+        "native_success": true,
+        "released_success": true,
+        "release_streak": 5,
+        "finger_contact": false,
+        "action": [
+          0.07563215371662368,
+          0.0034106331689953695,
+          0.39782258615779864,
+          -0.021427562642889447,
+          0.01704916904913864,
+          -0.00017166880140542795,
+          -0.9991718990952969
+        ],
+        "eef_pos": [
+          0.04033076583824052,
+          0.013835490042836785,
+          0.9527396206952706
+        ],
+        "eef_motion_m": 0.005015202833514987,
+        "bowl_pos": [
+          0.02777849407583808,
+          -0.03413212347876431,
+          0.9072396009212089
+        ],
+        "plate_pos": [
+          0.037850526520915424,
+          -0.024834077848527522,
+          0.9025033178557058
+        ],
+        "bowl_plate_xy_m": 0.013707643492470039
+      }
+    },
+    {
+      "id": "dev-object_offset-init42",
+      "success": true,
+      "steps": 108,
+      "native_success_controls": 24,
+      "open_command_controls": 38,
+      "longest_low_motion_controls": 0,
+      "last_sample": {
+        "step": 108,
+        "native_success": true,
+        "released_success": true,
+        "release_streak": 5,
+        "finger_contact": false,
+        "action": [
+          0.004031792719781269,
+          0.0470257065315246,
+          0.47686023448443415,
+          -0.03190074458690767,
+          0.0007513137374907664,
+          4.1703315195262824e-05,
+          -1.0015662167513966
+        ],
+        "eef_pos": [
+          0.056788844549559285,
+          0.022831456604341827,
+          0.9653174211745884
+        ],
+        "eef_motion_m": 0.0060604406850733785,
+        "bowl_pos": [
+          0.052243567241794894,
+          -0.03766270412890016,
+          0.9082051732354376
+        ],
+        "plate_pos": [
+          0.03860382032801641,
+          -0.02425107538214104,
+          0.9025030871361813
+        ],
+        "bowl_plate_xy_m": 0.019128891277667537
+      }
+    },
+    {
+      "id": "dev-placement_failure-init42",
+      "success": false,
+      "steps": 300,
+      "native_success_controls": 0,
+      "open_command_controls": 200,
+      "longest_low_motion_controls": 4,
+      "last_sample": {
+        "step": 300,
+        "native_success": false,
+        "released_success": false,
+        "release_streak": 0,
+        "finger_contact": false,
+        "action": [
+          0.6089093676661846,
+          0.014056851216018185,
+          0.32665587450456623,
+          -0.00512598451945849,
+          0.01711975436681873,
+          -0.00522177718961872,
+          0.9991326009563206
+        ],
+        "eef_pos": [
+          0.22148487245897497,
+          -0.04490436436894516,
+          0.9194328806951143
+        ],
+        "eef_motion_m": 0.009194394288545897,
+        "bowl_pos": [
+          0.32989707582436706,
+          -0.01089508378569341,
+          0.8984070748877774
+        ],
+        "plate_pos": [
+          0.039009690038424194,
+          -0.021994435185789963,
+          0.9021827512698141
+        ],
+        "bowl_plate_xy_m": 0.29109906700448696
+      }
+    },
+    {
+      "id": "dev-empty_grasp-init43",
+      "success": true,
+      "steps": 90,
+      "native_success_controls": 17,
+      "open_command_controls": 18,
+      "longest_low_motion_controls": 0,
+      "last_sample": {
+        "step": 90,
+        "native_success": true,
+        "released_success": true,
+        "release_streak": 5,
+        "finger_contact": false,
+        "action": [
+          0.09001042012292138,
+          -0.01175334194171429,
+          0.46814892822015275,
+          -0.004044345285565923,
+          0.02774452627520896,
+          -0.001426745670468882,
+          -0.9999674623565078
+        ],
+        "eef_pos": [
+          0.038584987879428344,
+          -0.03442264275442363,
+          0.9678352794300433
+        ],
+        "eef_motion_m": 0.005522144833733174,
+        "bowl_pos": [
+          0.05770163647964895,
+          0.011909159350754345,
+          0.9081306355422681
+        ],
+        "plate_pos": [
+          0.04961462681126486,
+          -0.00757447306663824,
+          0.902502823147706
+        ],
+        "bowl_plate_xy_m": 0.021095299418415682
+      }
+    },
+    {
+      "id": "dev-object_offset-init43",
+      "success": true,
+      "steps": 93,
+      "native_success_controls": 13,
+      "open_command_controls": 36,
+      "longest_low_motion_controls": 0,
+      "last_sample": {
+        "step": 93,
+        "native_success": true,
+        "released_success": true,
+        "release_streak": 5,
+        "finger_contact": false,
+        "action": [
+          0.021049331073015876,
+          0.04008404828989498,
+          0.3614447844076156,
+          -0.034784322327241796,
+          0.010118146242099502,
+          0.0010095090450863708,
+          -1.0015452401021123
+        ],
+        "eef_pos": [
+          0.06940746446688847,
+          0.02078504609565484,
+          0.9570389435185748
+        ],
+        "eef_motion_m": 0.0045912181895996045,
+        "bowl_pos": [
+          0.05915378948458057,
+          -0.031805726784321,
+          0.9062141685097466
+        ],
+        "plate_pos": [
+          0.05358761063041156,
+          -0.024415911546462648,
+          0.9025031143720081
+        ],
+        "bowl_plate_xy_m": 0.009251579123926995
+      }
+    },
+    {
+      "id": "dev-placement_failure-init43",
+      "success": false,
+      "steps": 300,
+      "native_success_controls": 0,
+      "open_command_controls": 61,
+      "longest_low_motion_controls": 1,
+      "last_sample": {
+        "step": 300,
+        "native_success": false,
+        "released_success": false,
+        "release_streak": 0,
+        "finger_contact": false,
+        "action": [
+          0.5599700075587629,
+          -0.013125973124802126,
+          0.2474785556569099,
+          -0.000922366798711452,
+          0.005881585811977369,
+          -0.004480494586059397,
+          1.001134917478919
+        ],
+        "eef_pos": [
+          0.22005499633191156,
+          0.027852082178236866,
+          0.9129578220883082
+        ],
+        "eef_motion_m": 0.0015823581027973358,
+        "bowl_pos": [
+          0.3057177088061728,
+          -0.02078134246824401,
+          0.8984070750980836
+        ],
+        "plate_pos": [
+          0.05321355926843033,
+          -0.024296706659746908,
+          0.902506338529415
+        ],
+        "bowl_plate_xy_m": 0.2525286188121606
+      }
+    }
+  ]
+}
