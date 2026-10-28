@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "training_import_path": "/home/robot/pi05-rl-handson/third_party/openpi/src/openpi/__init__.py",
+  "vendor_revision": "15a9616a00943ada6c20a0f158e3adb39df2ccac",
+  "checked_snapshot_files": 141,
+  "all_snapshot_hashes_match": true,
+  "snapshot_manifest_sha256": "8c885f956a4c6b97366e14d28f81cc7b19f9f29366b0a800ab69bc47bccdb9ad",
+  "external_libero_provider_git": "b0334d6424d85de642ac06248ddfe2009c36ee45",
+  "scope": "Runtime import location and vendored Openpi snapshot verification; external LIBERO provider is not the training Openpi package."
+}

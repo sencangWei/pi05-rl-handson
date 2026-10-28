@@ -70,3 +70,9 @@
 - 原视频、逐步轨迹、同状态哈希、两组配对结果和训练日志均保留。checkpoint在 checkpoints/pi05_recovery_replay_lora/manual6_sampling025_2000_v1/1999。
 - [复现命令](commands.md)，训练和评测命令、环境及不可变输入见 evidence/recovery-sampling025-28-launch.json、*-execution-plan.json、*-environment.json；实际样本见 evidence/manual6_sampling025_2000_v1-consumed-samples.json。
 - 权重采用可精确重构的推理LoRA导出，优化器状态仅留本机，不把推理包当作断点续训包；远端备份和恢复证明另见 evidence/recovery-sampling025-28-*-restore.json。
+
+## 远端备份与恢复
+
+已提交到用户公开仓库 [sencangWei/pi05-rl-handson](https://github.com/sencangWei/pi05-rl-handson/tree/experiment/matched-recovery-20261027)，结果提交 `c2d71769a6645c2b536d715f8fc70b3a311a833f`。从独立GitHub克隆检出后，全2976个跟踪文件SHA256一致，含代码、报告、原始录像和24段同步对比。证明：[代码与结果恢复](../../evidence/recovery-sampling025-28-results-restore.json)。
+
+[推理权重Release](https://github.com/sencangWei/pi05-rl-handson/releases/tag/sampling-ablation-20261028) 已独立重新下载185506847字节，完整SHA256为 `4f3a6db8a609372dcf7b2496beffdecfe01a895722479b1c91dd0d45cbe7b960`；从官方基座重构全部71个参数叶子（含20个LoRA张量）完全一致。证明：[权重恢复](../../evidence/recovery-sampling025-28-adapter-restore.json)。推理包不含优化器，不作为断点续训包；本实验失败结果也保留，不自动部署。

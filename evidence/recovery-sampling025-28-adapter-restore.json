@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson/releases/tag/sampling-ablation-20261028",
+  "target_revision": "c2d71769a6645c2b536d715f8fc70b3a311a833f",
+  "asset": "https://github.com/sencangWei/pi05-rl-handson/releases/download/sampling-ablation-20261028/pi05-manual6-sampling025-2000-inference.tar.gz",
+  "archive_sha256": "4f3a6db8a609372dcf7b2496beffdecfe01a895722479b1c91dd0d45cbe7b960",
+  "bytes": 185506847,
+  "downloaded_independently": true,
+  "verified_content_ranges": 32,
+  "tensor_restore": {
+    "status": "PASS",
+    "mode": "verify",
+    "tensors": 71,
+    "lora_tensors": 20,
+    "tree_sha256": "722d857d2d2ae9c9641849b15ba384466c14ad72957ff8aaf46cc513cef267bc"
+  },
+  "scope": "Exact inference backup; optimizer state excluded. Official base required. No UI promotion."
+}

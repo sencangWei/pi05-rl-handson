@@ -68,4 +68,4 @@ Stop: deliver measured data audit and concrete training recommendation; preserve
 1. DONE: configurable 1:39 sampling, preserve default1:3 and all data; seeded preview1950 public/50 human.92tests+6subtests and scoped Ruff passed; code fe28dde independently restored from remote patch, whole tree/all2802 tracked files identical.
 2. DONE: fresh parent LoRA2000 updates, batch1/seed42/lr5e-6; finalized1999, normal exit0, exact consumed1950public/50human and excluded1prefetch.
 3. DONE: same valid12 dev states: parent10/12, old mix10/12, candidate8/12; placement0/4. Shared-success median old113.5→new92.5, parent92.5→new92.5. Gate failed; no UI promotion, heldout sealed.
-4. IN PROGRESS: report, 24 comparisons/12 original videos decoded; publish inference adapter and independently restore remote artifacts; preserve unrelated jobs.
+4. DONE: report, 24 comparisons/12 original videos decoded and published. Remote payload c2d7176 independently restored: all2976 tracked files identical. Release adapter independently downloaded185506847bytes/SHA exact; official-base reconstruction71 leaves/20 LoRA exact. No UI replacement; unrelated jobs preserved.

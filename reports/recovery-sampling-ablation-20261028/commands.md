@@ -1,6 +1,6 @@
 # 本轮实际命令
 
-项目目录 `/home/robot/pi05-rl-handson`。源码运行版本 `fe28dde81a2218a96737defcdfa02811788b8b24`；Openpi固定 `15a9616a00943ada6c20a0f158e3adb39df2ccac`。父模型、数据和归一化SHA见冻结执行计划。以下是已经执行的历史命令；输出目录及实验名已存在，**不要原样覆盖重跑**。要复现实验，先复制执行计划并同步变更 experiment 字段和 CLI 实验名，再使用全新的输出路径。未提供自动覆盖参数。
+项目目录 `/home/robot/pi05-rl-handson`。源码运行版本 `fe28dde81a2218a96737defcdfa02811788b8b24`；Openpi固定 `15a9616a00943ada6c20a0f158e3adb39df2ccac`。训练导入的是本项目 `third_party/openpi/src` 源码快照，141个文件已逐项核对 evidence/openpi-source.json 全部一致；评测PYTHONPATH中的外部目录仅供LIBERO使用，不把其Git提交当作训练Openpi版本。父模型、数据和归一化SHA见冻结执行计划。以下是已经执行的历史命令；输出目录及实验名已存在，**不要原样覆盖重跑**。要复现实验，先复制执行计划并同步变更 experiment 字段和 CLI 实验名，再使用全新的输出路径。未提供自动覆盖参数。
 
 ## 训练（实际systemd启动及资源限制）
 
