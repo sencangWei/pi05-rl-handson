@@ -87,3 +87,7 @@
 4. 晋级仍要求恢复成功率与共同成功场景效率均不差于父模型，并另行做旧任务保持检查。失败也保留录像和数字。上述转换与训练都没有在本轮冒充完成。
 
 本轮终点是交付可复核诊断及下一项可区分原因的实验。恢复问题未解决，候选不推广；不触碰真机，不停止其他任务，不更改面板。
+
+## 备份与核验
+
+源码、测试、报告、逐步指标和八段录像已备份至 [sencangWei/pi05-rl-handson 的实验分支](https://github.com/sencangWei/pi05-rl-handson/tree/experiment/matched-recovery-20261027)，载荷提交 `6b7d2e6595486252989879124ce8b4e1ca1fe9c0`。从远端 Git 树及 blob 内容恢复全部 3274 个跟踪文件，逐文件 SHA256 和重建 Git 树均一致；[恢复证明](../../evidence/recovery-events-28-remote-restore.json)。本轮没有生成新权重。
