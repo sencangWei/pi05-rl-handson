@@ -1,0 +1,10 @@
+{
+  "versions": {
+    "mujoco": "3.8.1",
+    "robosuite": "1.4.1",
+    "numpy": "1.26.4"
+  },
+  "model_sha256": "9bcc60ec07ac33a13a65b775a57ce4a6256efbee07385c47528e6119c861e89e",
+  "controller_type": "OperationalSpaceController",
+  "control_timestep": 0.05
+}

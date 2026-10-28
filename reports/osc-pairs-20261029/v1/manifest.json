@@ -1,0 +1,84 @@
+{
+  "schema": "pi05-osc-expert-pairs-review-v1",
+  "ready": false,
+  "human_review": "pending",
+  "training": false,
+  "records": [
+    {
+      "passed": true,
+      "paired_rows": 511,
+      "decoded_rgb_images": 1022,
+      "pre_observation_action_alignment": true,
+      "continuous_physics": true,
+      "unchanged_saved_actions": true,
+      "source": "human_1793121358375746008",
+      "ready": false,
+      "human_review": "pending",
+      "split": "train_candidate",
+      "expert_reference_actions": true,
+      "vla_inference": false,
+      "original_controls": 491,
+      "diagnostic_hold_controls": 20,
+      "original_start": 73,
+      "all_post_states_bitwise_match": true,
+      "all_post_rgb_and_flags_exact": true,
+      "final_released_goal_controls": 20,
+      "files": {
+        "pairs.parquet": {
+          "sha256": "3446b31e429c66605c57a42ae9314faf7825fbd926ee1f5b6f89ac29921830f7",
+          "bytes": 61688633
+        },
+        "physics.npz": {
+          "sha256": "e16ee3302f42d8ac5bc508ca84f39622245b6acb45ec02ac2eab07215027fa49",
+          "bytes": 506376
+        },
+        "pair-audit.json": {
+          "sha256": "66eba02a019d77f1e16aca6bcb0625c85b09dfcd300d0e72ee26106c133f78a4",
+          "bytes": 413604
+        },
+        "review.mp4": {
+          "sha256": "90ee88c92bf55a8557d2aed99308585cc57423514373516604dcf1cc05b2ff35",
+          "bytes": 573075
+        }
+      }
+    },
+    {
+      "passed": true,
+      "paired_rows": 454,
+      "decoded_rgb_images": 908,
+      "pre_observation_action_alignment": true,
+      "continuous_physics": true,
+      "unchanged_saved_actions": true,
+      "source": "human_1793122696228231033",
+      "ready": false,
+      "human_review": "pending",
+      "split": "train_candidate",
+      "expert_reference_actions": true,
+      "vla_inference": false,
+      "original_controls": 434,
+      "diagnostic_hold_controls": 20,
+      "original_start": 223,
+      "all_post_states_bitwise_match": true,
+      "all_post_rgb_and_flags_exact": true,
+      "final_released_goal_controls": 20,
+      "files": {
+        "pairs.parquet": {
+          "sha256": "e7a876d1793a2d6d7079e27046bc0de5ffd1a63920272340ac09acae04ccc573",
+          "bytes": 52763797
+        },
+        "physics.npz": {
+          "sha256": "223626e9d2dec74385eb87d77aaca631de2c55928d5ec3e5319a43fab7074404",
+          "bytes": 440031
+        },
+        "pair-audit.json": {
+          "sha256": "a56ae85bb5c37d68b4cbe78939a5ebce82c6b6bd87a63b07342e089d8e61063d",
+          "bytes": 367749
+        },
+        "review.mp4": {
+          "sha256": "cc0d9b58c302d0d5465016e380c150f988bf3a0599e1b963646aeac610f899c7",
+          "bytes": 456229
+        }
+      }
+    }
+  ]
+}
