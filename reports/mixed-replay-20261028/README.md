@@ -46,4 +46,4 @@ OSC 使用物理档案中的 float64 原动作，而非训练帧内 float32 副�
 - 新增重放器和4个控制边界拒绝测试；本轮运行30个相关测试通过，错误级Ruff通过。
 - 四段双相机录像全部解码；原始元数据和文件SHA再次核验不变。原始数据的远端归档沿用[已核验的六示范备份](../recovery-taskphase-20261028/README.md)。
 - 当前面板、模型和其他运行任务未修改；无真机操作、无新梯度更新、无封存集评测。剩余风险是严格状态恢复未解决，现有模型恢复问题仍存在。
-- [复现命令](commands.md)。源码、测试和本目录证据将提交到用户自有 `sencangWei/pi05-rl-handson` 的 `experiment/matched-recovery-20261027` 分支，并从远端内容独立恢复校验；核验完成后补充证明。
+- [复现命令](commands.md)。源码、测试和本目录证据已提交 `5048f3eadc93a8e1b829e5184dd35be8eabf2a74` 至用户自有 `sencangWei/pi05-rl-handson` 的 `experiment/matched-recovery-20261027` 分支。从远端内容独立恢复全部3307个跟踪文件，逐文件SHA256一致，重建Git树 `f36ef5616a70b282946c958c3944a7c277e939e4` 一致；[恢复验证证明](../../evidence/mixed-replay-28-remote-restore.json)。
