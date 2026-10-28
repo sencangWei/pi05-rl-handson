@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "revision": "8bd6b6e017b4f58d3778f44a9b37b3656e9bdf10",
+  "remote_revision": "8bd6b6e017b4f58d3778f44a9b37b3656e9bdf10",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson.git",
+  "branch": "experiment/matched-recovery-20261027",
+  "tree": "a96a203af9336f05524c992d66b2e4abf273fe14",
+  "files_verified": 2787,
+  "mismatches": [],
+  "method": "Existing independent GitHub clone fetched remote branch and checked out FETCH_HEAD; complete git tree identity and SHA256 of every restored tracked file equal local content. No local object copying.",
+  "payload_components": [
+    "initial-state construction collision fix",
+    "physics replay and audit scripts with tests",
+    "12 valid physical dev states and manifest",
+    "60 raw/comparison/diagnostic videos and step traces",
+    "frozen protocols and corrected reports"
+  ],
+  "external_runtime": "unchanged;12 files match previously clean-upstream-restored remote patch bundle (evidence/recovery27-stage-runtime-restore.json), also rechecked in evidence/recovery-diagnostics28-verification.json",
+  "weights_and_human_data": "unchanged; prior independently restored release proofs evidence/manual28-adapter-remote-restore.json and evidence/manual28-data-remote-restore.json",
+  "proof_scope": "This proof records payload commit; itself and final status are committed separately."
+}
