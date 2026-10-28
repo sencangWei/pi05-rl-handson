@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "release": "https://github.com/sencangWei/pi05-rl-handson/releases/tag/osc-expert-sft-20261029",
+  "asset": "osc-sft29-inference-adapter.tar.gz",
+  "bytes": 185499139,
+  "sha256": "ad95a0e159c66a8f67d49992ec799f4134e8df4bde9cdb6c891308f5bbf31496",
+  "validated_http_ranges": 47,
+  "network_recovery": "Range25 refetched as16 smaller independently Content-Range-validated subranges; remaining31 original ranges preserved",
+  "files_exact": {
+    "metadata.json": "edf41d13b8cf5a738e4344240528ef1846cfda9ad339dee13666fadd57258ccc",
+    "adapter.npz": "c5403f02eb7e77ab1f84038ca0923c21d37803e09e715ee9cc5cf1057648c222",
+    "norm_stats.json": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84"
+  },
+  "official_base_reconstruction": {
+    "status": "PASS",
+    "mode": "verify",
+    "tensors": 71,
+    "lora_tensors": 20,
+    "tree_sha256": "c75bfd44d44b413ef61f30f57afc81518c4c8250396013be042b7c9dc9b5f254"
+  },
+  "scope": "Inference parameters only; full optimizer checkpoint remains local"
+}

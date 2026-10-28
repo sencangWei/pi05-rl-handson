@@ -69,6 +69,6 @@
 
 [数据及权重 Release](https://github.com/sencangWei/pi05-rl-handson/releases/tag/osc-expert-sft-20261029) 标为实验预发布，并明确记录负面结果。两份新增专家Parquet及训练清单已从远端重新下载，四个文件SHA256全部一致；证据为 evidence/osc-sft29-data-restore.json。原始人工数据没有删除。
 
-推理适配器已上传，正在从远端下载并重建核验，完成后记录 evidence/osc-sft29-adapter-restore.json。它需要官方pi05_libero基座；完整可续训的优化器检查点仅保存在本机，本Release不等同于完整续训备份。
+推理适配器已从Release独立下载，压缩包及三个文件SHA256全部一致；使用官方pi05_libero基座重建的71个张量（含20个LoRA张量）与原模型精确一致。证明见 evidence/osc-sft29-adapter-restore.json，重建日志为 remote-adapter-verify.log。完整可续训的优化器检查点仅保存在本机，本Release不等同于完整续训备份。
 
-源码、配置、逐步结果、失败录像和12段并列录像提交至自有公开仓库 sencangWei/pi05-rl-handson 的 experiment/matched-recovery-20261027 分支；最终远端恢复证明完成后另附。不会把本轮模型接入面板。
+源码、配置、逐步结果、失败录像和12段并列录像已提交至自有公开仓库 sencangWei/pi05-rl-handson 的 experiment/matched-recovery-20261027 分支。载荷提交 b2ed8691448d2b94e1e7589c148d481662efee90 的3644个跟踪文件已在独立目录从远端恢复，内容SHA256与重建Git树 bdd46e4ec5c46162a75de517e0470cea7e347f37 全部一致；证明见 evidence/osc-sft29-final-remote-restore.json。普通Git推送超时后改用GitHub Git数据API，上传前后blob/tree/commit身份一致，更新分支时未强推。不会把本轮模型接入面板。
