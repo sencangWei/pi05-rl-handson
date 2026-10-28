@@ -1,0 +1,30 @@
+{
+  "command": [
+    "systemd-run",
+    "--user",
+    "--unit=pi05-sampling025-train-20261028",
+    "--property=WorkingDirectory=/home/robot/pi05-rl-handson",
+    "--property=MemoryMax=40G",
+    "--property=MemorySwapMax=0",
+    "--property=RuntimeMaxSec=3600",
+    "--property=StandardOutput=append:/home/robot/pi05-rl-handson/logs/manual6_sampling025_2000_v1-train.log",
+    "--property=StandardError=append:/home/robot/pi05-rl-handson/logs/manual6_sampling025_2000_v1-train.log",
+    "--setenv=XLA_PYTHON_CLIENT_PREALLOCATE=false",
+    "--setenv=OMP_NUM_THREADS=4",
+    "--setenv=OPENBLAS_NUM_THREADS=4",
+    "/home/robot/pi05-rl-handson/.venv-train/bin/python",
+    "-u",
+    "scripts/train_recovery_replay.py",
+    "--experiment",
+    "manual6_sampling025_2000_v1",
+    "--public-slots",
+    "39",
+    "--recovery-manifest",
+    "evidence/manual-recovery28-manifest.json",
+    "--evaluation-plan",
+    "evidence/recovery-sampling025-28-execution-plan.json"
+  ],
+  "runtime_seconds_limit": 3600,
+  "host_memory_limit": "40G",
+  "unrelated_processes_stopped": false
+}

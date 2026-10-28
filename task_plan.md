@@ -63,3 +63,9 @@ Stop: diagnosis delivered; do not claim recovery repaired or promote unchanged m
 3. DONE: document evidence-backed next experiment, distinguishing sampling/label hypotheses from causal proof; do not launch training or replace UI during this audit.
 4. DONE: CPU tests (90 + 2 subtests) and lint pass; audit payload d1a0d16 pushed to user-owned origin and independently restored, all2796 tracked files SHA256-identical.
 Stop: deliver measured data audit and concrete training recommendation; preserve original human demonstrations and all unrelated jobs.
+
+## 2026-10-28 Approved sampling-only ablation
+1. IN PROGRESS: configurable 1:39 sampling, preserve default1:3 and all data; seeded sampler preview and consumed-gradient trace.
+2. TODO: fresh parent LoRA2000 updates, batch1/seed42/lr5e-6; validate checkpoint and numerical logs.
+3. TODO: same valid12 dev states, compare parent/current/candidate success and paired control steps; no automatic UI promotion, heldout sealed.
+4. TODO: report and same-day remote restore verification; preserve unrelated jobs.

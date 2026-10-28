@@ -1,0 +1,62 @@
+{
+  "status": "FROZEN_BEFORE_TRAINING",
+  "experiment": "manual6_sampling025_2000_v1",
+  "train": {
+    "updates": 2000,
+    "lr": 5e-06,
+    "public_slots": 39,
+    "batch": 1,
+    "seed": 42
+  },
+  "human_manifest_sha256": "86e3fc204735dba54261f32dd864297bd00aab8f044ff2d866f46546d7db9cfb",
+  "proposal_sha256": "51e5fbc7274201d8eed25515d8682001cf086da26038338ab44b964c36fcd12c",
+  "parent_files": {
+    "params/_METADATA": "88464a384c524c50fa1a92c1685d23a79570c62807a0ccf021f5f9307fff137c",
+    "params/_sharding": "54899ee3f4d45eee96ddada379a19a9da1324792b141fa0449608620571e6b01",
+    "params/array_metadatas/process_0": "da5f8952b77ab352fa92e3e58d742bfe0db5b9c1b956212f8279895b9df03721",
+    "params/d/e99e57e2878e56ab5f02847ec386e73d": "515654d10237999b2c3c6bea1c1d41f48350f69e514cb7c2c039779a3fb624a9",
+    "params/manifest.ocdbt": "55d9bf8ef0fc7ab5a67aa6a449fe35ef615c1ff79c01eb5829a250db4a9f2979",
+    "params/ocdbt.process_0/d/23e55020a5614908020c5880f744a7a4": "e94b6f05ceef55173200b9a654bc6d84fae3656f3c7e168fafc6291a2847bc7a",
+    "params/ocdbt.process_0/d/31f6986f3a651b625f4c28c5133382ca": "f55fd89dadc9541d14192fd372b98539f7fb5ee34c7394d588ee132ef48bbf73",
+    "params/ocdbt.process_0/d/5014daf415aca9f55984ec2803cf42ef": "3da67fa5b4cfe32f5a4ef75e077b0ba11a018c54414aac0a0548a60110d98260",
+    "params/ocdbt.process_0/d/74358c6b38dd7083ad9c2a1ad5a61906": "f814f6562c5cacf5ffed9d4e9f46556e04dfff7df3e719779b0372f7fb3b3685",
+    "params/ocdbt.process_0/d/c2f1a4f7df5efa162c5555f940946b8e": "ecb33097b929abb52bc1c729d882d947d4c085427ef648bf71e47c4125b0bed3",
+    "params/ocdbt.process_0/d/f25fd307076f23281b9d14bfd63a0f19": "11f3efa9f1c3a7bf9246ec1119434b1b3aa77e8a14fbcba3744cd2c84210470b",
+    "params/ocdbt.process_0/manifest.ocdbt": "8ccac4a15e1beaccd32a4958c60b1f83d7cbb76ab16e2e6716d32687962c15ad",
+    "assets/physical-intelligence/libero/norm_stats.json": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84"
+  },
+  "replay_manifest_sha256": "9282c19b3d6cd6bf5779d3169e112a145852066654651e40b333558d9e8a3fde",
+  "source_sha256": {
+    "scripts/train_recovery_replay.py": "b337b78a5fb3392267df43b229414fb94a9ef8b1ced1c6c4a80a2c8d3ea11c42",
+    "scripts/recovery_replay_dataset.py": "9311afde4bf518c04e21552518f452f795a275128352a011fba81908d0cf761d",
+    "scripts/multitask_dataset.py": "9ad70e675f0122eb78bc4f0e8ca609d80c09186a33d6d7f1ed5e816e36bd8b77",
+    "scripts/training_config.py": "f03c2d7a96de92a6d334bf3e4c92dec6e8c146d72cc61becf1ad012e5f208cac",
+    "scripts/recovery_recording.py": "5ffa381ff864081bc12aeea8f768cd4f25873d77db9719a897b5c9154799af17",
+    "scripts/verify_recovery_recordings.py": "d81bab9026b657332ebb4d662b270dd43b5f9a5be534e922cf160ce2780d4c88"
+  },
+  "evaluation": {
+    "manifest": "data/recovery-bowl-physicaldev28-v2/manifest.json",
+    "manifest_sha256": "36372697dd7e5b2b372dc63bd8a959ee5bfe099a6600a1945a6dd053f14c5142",
+    "split": "dev",
+    "cases": 12,
+    "noise_seed": 42,
+    "control_hz": 20,
+    "horizon": 10,
+    "replan_controls": 5,
+    "flow_steps": 10,
+    "max_controls": 300,
+    "success": "native bowl-on-plate and no finger contact for 5 consecutive controls",
+    "comparators": [
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999",
+      "checkpoints/pi05_recovery_replay_lora/manual6_replay2000_v1/1999"
+    ],
+    "diagnostic_gates": [
+      "at least 10/12 successes, retain every failure/timeout in denominator",
+      "paired control-step median no worse than parent on shared successes; report every case and subset membership",
+      "report category success, grasp verification, control steps and wall latency separately"
+    ],
+    "promotion": "No automatic promotion; freeze a 40-task old-skill regression manifest and efficiency criteria before evaluating that gate; heldout remains sealed until recipe frozen",
+    "limitations": "Reused development cases; not unseen generalization. About 50 human samples expected at this budget; may undertrain rare recovery."
+  },
+  "unchanged": "all other original training settings; no action retiming, phase filtering, scaling, extra updates or joint-to-OSC conversion"
+}

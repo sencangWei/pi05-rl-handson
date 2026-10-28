@@ -79,7 +79,10 @@ class BankHumanClips(HumanClips):
 
 
 class RecoveryReplayDataset:
-    def __init__(self, human_manifest, replay_manifest):
+    def __init__(self, human_manifest, replay_manifest, public_slots=3):
+        if isinstance(public_slots, bool) or not isinstance(public_slots, int) or public_slots < 1:
+            raise ValueError("public_slots must be a positive integer")
+        self.public_slots = public_slots
         schema = json.loads(Path(human_manifest).read_text())["schema"]
         model_data = schema == ModelRecoveryClips.schema
         self.source_name = "model_recovery" if model_data else "human"
@@ -90,19 +93,29 @@ class RecoveryReplayDataset:
             raise ValueError("Public replay manifest changed")
         self.replay = MultitaskDataset(replay_manifest)
         self.fetched = Counter()
+        self.fetched_indices = []
 
     def __len__(self):
-        return 4 * len(self.replay)
+        return (getattr(self, "public_slots", 3) + 1) * len(self.replay)
 
     def route(self, index):
         if not 0 <= index < len(self):
             raise IndexError(index)
-        group, slot = divmod(index, 4)
+        public_slots = getattr(self, "public_slots", 3)
+        group, slot = divmod(index, public_slots + 1)
         if slot == 0:
             return getattr(self, "source_name", "human"), group % len(self.human)
-        return "replay", (3 * group + slot - 1) % len(self.replay)
+        return "replay", (public_slots * group + slot - 1) % len(self.replay)
+
+    def describe(self, index):
+        source, frame = self.route(index)
+        record, anchor = (self.replay if source == "replay" else self.human).locate(frame)
+        return dict(index=int(index), source=source, episode=record["path"],
+                    task_id=record["task_id"], anchor=int(anchor))
 
     def __getitem__(self, index):
         source, frame = self.route(index)
+        sample = (self.replay if source == "replay" else self.human)[frame]
         self.fetched[source] += 1
-        return (self.replay if source == "replay" else self.human)[frame]
+        self.fetched_indices.append(int(index))
+        return sample

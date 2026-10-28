@@ -17,6 +17,24 @@ from prepare_manual_recovery import osc_runs  # noqa: E402
 
 
 class ReplayContracts(unittest.TestCase):
+    def test_lower_human_ratio_preserves_all_public_tasks_and_indices(self):
+        data = RecoveryReplayDataset.__new__(RecoveryReplayDataset)
+        data.public_slots = 39
+        data.human, data.replay = range(7), range(80)
+        routes = [data.route(i) for i in range(len(data))]
+        self.assertEqual(sum(name == "human" for name, _ in routes), 80)
+        self.assertEqual(sum(name == "replay" for name, _ in routes), 3120)
+        for index in range(80):
+            self.assertEqual(routes.count(("replay", index)), 39)
+        for index in (-1, len(data)):
+            with self.assertRaises(IndexError):
+                data.route(index)
+
+    def test_invalid_sampling_rejected_before_reading_data(self):
+        for slots in (0, -1, 1.5, True):
+            with self.subTest(slots=slots), self.assertRaises(ValueError):
+                RecoveryReplayDataset("does-not-exist", "does-not-exist", slots)
+
     def test_joint_interruption_splits_windows(self):
         timeline = [dict(controller=c, path=str(i)) for i, c in enumerate(
             ["OSC_POSE"] * 20 + ["JOINT_POSITION"] * 12 + ["OSC_POSE"] * 15)]

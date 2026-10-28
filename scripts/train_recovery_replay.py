@@ -1,5 +1,6 @@
 """Bounded recovery LoRA fine-tuning from our SFT parent, with old-task replay."""
 import argparse
+from collections import Counter
 import dataclasses
 import importlib.util
 import json
@@ -20,6 +21,7 @@ def main():
     parser.add_argument("--experiment", default="human28_replay2000_v1")
     parser.add_argument("--steps", type=int, default=2000)
     parser.add_argument("--learning-rate", type=float, default=5e-6)
+    parser.add_argument("--public-slots", type=int, default=3)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--recovery-manifest", type=Path, default=ROOT / "evidence/recovery-human28-manifest.json")
     parser.add_argument("--evaluation-plan", type=Path, default=ROOT / "evidence/recovery-sft28-evaluation-plan.json")
@@ -42,7 +44,7 @@ def main():
         raise FileExistsError(f"No overwrite or implicit resume: {cfg.checkpoint_dir}")
     human = args.recovery_manifest
     replay = ROOT / "evidence/dataset-manifest.json"
-    dataset = RecoveryReplayDataset(human, replay)
+    dataset = RecoveryReplayDataset(human, replay, args.public_slots)
     validation = json.loads((ROOT / "evidence/data-validation.json").read_text())
     if not validation["passed"] or validation["manifest_sha256"] != sha256(replay):
         raise ValueError("Public replay validation is missing or stale")
@@ -62,6 +64,7 @@ def main():
         if transformed[index]["actions"].shape != (10, 32):
             raise ValueError("Official transformed action window mismatch")
     dataset.fetched.clear()
+    dataset.fetched_indices.clear()
     matrix = args.evaluation_plan
     if not matrix.is_file():
         raise ValueError("Freeze evaluation plan before training")
@@ -71,6 +74,19 @@ def main():
     if (plan["experiment"], plan["train"]["updates"], plan["train"]["lr"],
         plan[manifest_key]) != (args.experiment, args.steps, args.learning_rate, sha256(human)):
         raise ValueError("Requested training differs from the frozen evaluation plan")
+    if plan["train"].get("public_slots", 3) != args.public_slots:
+        raise ValueError("Sampling ratio differs from the frozen evaluation plan")
+    # Use the same single-process Torch sampler as OpenPI, without decoding images.
+    import torch
+    preview_loader = torch.utils.data.DataLoader(range(len(dataset)), batch_size=1, shuffle=True,
+        drop_last=True, num_workers=0, generator=torch.Generator().manual_seed(42))
+    preview = []
+    for index in preview_loader:
+        preview.append(dataset.describe(int(index[0])))
+        if len(preview) == args.steps + 1:
+            break
+    if len(preview) != args.steps + 1:
+        raise ValueError("Sampling preview requires training to fit within one dataset epoch")
     bank_human = dataset.human.manifest["schema"] == "pi05-bank-human-replay-v1"
     compatibility = ROOT / ("evidence/matched-recovery-task-compatibility.json" if model_data or bank_human
                             else "evidence/recovery-human28-task-compatibility.json")
@@ -93,7 +109,9 @@ def main():
         recovery_source=dataset.source_name, recovery_manifest_sha256=sha256(human), replay_manifest_sha256=sha256(replay),
         recovery_episodes=len(dataset.human.records), recovery_frames=len(dataset.human),
         replay_train_episodes=len(replay_records), replay_tasks=40,
-        sampling=f"shuffle seed 42; 1 {dataset.source_name} slot per 3 public replay slots; public task balanced",
+        sampling=f"shuffle seed 42; 1 {dataset.source_name} slot per {args.public_slots} public replay slots; public task balanced",
+        public_slots=args.public_slots,
+        seeded_gradient_source_preview=dict(Counter(row["source"] for row in preview[:args.steps])),
         effective_sampling_slots=len(dataset), evaluation_plan_sha256=sha256(matrix),
         task_compatibility_sha256=sha256(compatibility),
         checkpoint_dir=str(cfg.checkpoint_dir), openpi_revision=helper.REVISION,
@@ -106,6 +124,8 @@ def main():
                       human_frames=len(dataset.human))
     status.write_text(json.dumps(record, indent=2) + "\n")
     (ROOT / "evidence" / (args.experiment + "-config.txt")).write_text(repr(cfg) + "\n")
+    (ROOT / "evidence" / (args.experiment + "-sampling-preview.json")).write_text(
+        json.dumps(preview, indent=2) + "\n")
     print(json.dumps({k: v for k, v in record.items() if k != "parent_files"}), flush=True)
     if args.dry_run:
         return 0
@@ -126,6 +146,18 @@ def main():
     try:
         trainer.main(cfg)
         record.update(status="COMPLETE", actual_updates=args.steps)
+        # Pinned upstream: one initial batch, one update then one next(batch) per step.
+        # batch=1, num_workers=0; the final fetched batch never enters a gradient.
+        actual = [dataset.describe(i) for i in dataset.fetched_indices]
+        if actual != preview:
+            raise RuntimeError("Fetched order differs from the preflight sampler; counts unverified")
+        consumed = actual[:args.steps]
+        record.update(consumed_gradient_source_counts=dict(Counter(r["source"] for r in consumed)),
+            consumed_gradient_episode_counts=dict(Counter(r["source"] + ":" + r["episode"] for r in consumed)),
+            consumed_gradient_task_counts=dict(Counter(str(r["task_id"]) for r in consumed)),
+            sampling_preview_exact_match=True, excluded_final_prefetch=actual[-1])
+        (ROOT / "evidence" / (args.experiment + "-consumed-samples.json")).write_text(
+            json.dumps(consumed, indent=2) + "\n")
     except BaseException as error:
         record.update(status="FAILED", actual_updates=None, error=repr(error))
         raise

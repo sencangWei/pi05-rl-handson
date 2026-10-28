@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "frozen_source_parent_data_equal": true,
+  "gradient_source_preview": {
+    "replay": 1950,
+    "human": 50
+  },
+  "preview_public_task8": 49,
+  "checks": [
+    "92 pytest tests, 6 subtests passed",
+    "ruff --isolated --select E9,F63,F7,F82 passed",
+    "git diff --check passed"
+  ],
+  "review": "Direct pinned sampler/train-loop inspection; child code-reviewer could not start because installed role model unsupported. No independent review claimed."
+}
