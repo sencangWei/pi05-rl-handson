@@ -1,0 +1,10 @@
+{
+  "training_unit": "pi05-taskphase-train-20261028",
+  "evaluation_server_unit": "pi05-taskphase-server-20261028",
+  "both_inactive": true,
+  "both_result": "success",
+  "both_exec_main_status": 0,
+  "ui_model_replaced": false,
+  "heldout_opened": false,
+  "forty_task_retention_evaluated": false
+}

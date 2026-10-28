@@ -1,0 +1,8 @@
+{
+  "release": "https://github.com/sencangWei/pi05-rl-handson/releases/tag/taskphase-ablation-20261028",
+  "target_revision": "d64a37edd407d90e314b8e4c542e6be445253d79",
+  "asset": "https://github.com/sencangWei/pi05-rl-handson/releases/download/taskphase-ablation-20261028/pi05-manual6-taskphase-2000-inference.tar.gz",
+  "asset_name": "pi05-manual6-taskphase-2000-inference.tar.gz",
+  "bytes": 185501727,
+  "sha256": "8cf5a41d4c5df14bfe0403383f87ad78591c37d6b92da472a0ceb2cf484638be"
+}
