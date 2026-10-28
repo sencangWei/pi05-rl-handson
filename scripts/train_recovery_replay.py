@@ -22,6 +22,7 @@ def main():
     parser.add_argument("--steps", type=int, default=2000)
     parser.add_argument("--learning-rate", type=float, default=5e-6)
     parser.add_argument("--public-slots", type=int, default=3)
+    parser.add_argument("--sampling-profile", choices=("legacy", "task_phase_v1"), default="legacy")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--recovery-manifest", type=Path, default=ROOT / "evidence/recovery-human28-manifest.json")
     parser.add_argument("--evaluation-plan", type=Path, default=ROOT / "evidence/recovery-sft28-evaluation-plan.json")
@@ -34,7 +35,7 @@ def main():
     if not args.dry_run and free_gpu_mib() < 24576:
         raise RuntimeError("Need 24 GiB free; other GPU processes will not be stopped")
     import training_config as helper
-    from recovery_replay_dataset import RecoveryReplayDataset
+    from recovery_replay_dataset import RecoveryReplayDataset, TaskPhaseReplayDataset
 
     cfg = helper.make_config(args.experiment, args.steps, 1, args.learning_rate)
     from openpi.training import data_loader, weight_loaders
@@ -44,7 +45,10 @@ def main():
         raise FileExistsError(f"No overwrite or implicit resume: {cfg.checkpoint_dir}")
     human = args.recovery_manifest
     replay = ROOT / "evidence/dataset-manifest.json"
-    dataset = RecoveryReplayDataset(human, replay, args.public_slots)
+    if args.sampling_profile == "task_phase_v1" and args.public_slots != 3:
+        raise ValueError("public-slots applies only to the legacy sampling profile")
+    dataset = (TaskPhaseReplayDataset(human, replay) if args.sampling_profile == "task_phase_v1"
+               else RecoveryReplayDataset(human, replay, args.public_slots))
     validation = json.loads((ROOT / "evidence/data-validation.json").read_text())
     if not validation["passed"] or validation["manifest_sha256"] != sha256(replay):
         raise ValueError("Public replay validation is missing or stale")
@@ -60,7 +64,7 @@ def main():
     if len(norms) != 1 or sha256(norms[0]) != helper.NORM_SHA256:
         raise ValueError("Own SFT parent normalization differs from replay normalization")
     transformed = data_loader.transform_dataset(dataset, cfg.data.create(cfg.assets_dirs, cfg.model))
-    for index in (0, 1):  # Both human and public pathways must satisfy the same official transforms.
+    for index in ((0, 1, 2) if args.sampling_profile == "task_phase_v1" else (0, 1)):
         if transformed[index]["actions"].shape != (10, 32):
             raise ValueError("Official transformed action window mismatch")
     dataset.fetched.clear()
@@ -76,6 +80,14 @@ def main():
         raise ValueError("Requested training differs from the frozen evaluation plan")
     if plan["train"].get("public_slots", 3) != args.public_slots:
         raise ValueError("Sampling ratio differs from the frozen evaluation plan")
+    if plan["train"].get("sampling_profile", "legacy") != args.sampling_profile:
+        raise ValueError("Sampling profile differs from the frozen evaluation plan")
+    if "parent_files" in plan and plan["parent_files"] != parent_files:
+        raise ValueError("Parent differs from frozen plan")
+    if "source_sha256" in plan:
+        helper.verify_inventory(ROOT, plan["source_sha256"])
+    if "replay_manifest_sha256" in plan and plan["replay_manifest_sha256"] != sha256(replay):
+        raise ValueError("Public manifest differs from frozen plan")
     # Use the same single-process Torch sampler as OpenPI, without decoding images.
     import torch
     preview_loader = torch.utils.data.DataLoader(range(len(dataset)), batch_size=1, shuffle=True,
@@ -111,6 +123,7 @@ def main():
         replay_train_episodes=len(replay_records), replay_tasks=40,
         sampling=f"shuffle seed 42; 1 {dataset.source_name} slot per {args.public_slots} public replay slots; public task balanced",
         public_slots=args.public_slots,
+        sampling_profile=args.sampling_profile,
         seeded_gradient_source_preview=dict(Counter(row["source"] for row in preview[:args.steps])),
         effective_sampling_slots=len(dataset), evaluation_plan_sha256=sha256(matrix),
         task_compatibility_sha256=sha256(compatibility),
@@ -118,6 +131,11 @@ def main():
         normalization_sha256=helper.NORM_SHA256,
         source_sha256={name: sha256(ROOT / name) for name in source_names},
         validation="full parent/source/public-train/human checksums; official transform both branches")
+    if args.sampling_profile == "task_phase_v1":
+        record.update(sampling="80% task-balanced public / 10% public task8 / 10% human; special sources each equal command phases; shuffle seed42",
+            phase_definition="nearest closing/opening command transition within +/-10 controls; other otherwise; not grasp/physical state labels",
+            phase_pool_sizes={s: {p: len(v) for p, v in pools.items()} for s, pools in dataset.phase_pools.items()},
+            seeded_gradient_phase_preview=dict(Counter(r["source"] + ":" + str(r["command_phase"]) for r in preview[:args.steps])))
     status = ROOT / "evidence" / (args.experiment + "-status.json")
     if not model_data:
         record.update(human_manifest_sha256=sha256(human), human_episodes=len(dataset.human.records),
@@ -156,6 +174,8 @@ def main():
             consumed_gradient_episode_counts=dict(Counter(r["source"] + ":" + r["episode"] for r in consumed)),
             consumed_gradient_task_counts=dict(Counter(str(r["task_id"]) for r in consumed)),
             sampling_preview_exact_match=True, excluded_final_prefetch=actual[-1])
+        if args.sampling_profile == "task_phase_v1":
+            record["consumed_gradient_phase_counts"] = dict(Counter(r["source"] + ":" + str(r["command_phase"]) for r in consumed))
         (ROOT / "evidence" / (args.experiment + "-consumed-samples.json")).write_text(
             json.dumps(consumed, indent=2) + "\n")
     except BaseException as error:

@@ -106,3 +106,8 @@ Manual6 compatibility: four complete OSC demos and two mixed demos. Mixed OSC se
 - 同任务8内纠错抽样集中：seed42索引重建2000次人工543、公开任务8仅33；含1次预取计数与原状态一致。93.02%理论、94.27%重建任务内人工比例；尚非因果证明。
 - 训练库17/18通过；placement_failure-init06穿插但未用于6条录制。精确原录制起点6/6通过。816关节控制保留，当前7D OSC监督不能学习完整关节接管。
 - 冻结仅改采样1:3→1:39的提案，未训练/未换UI；保留全量数据。报告 reports/recovery-data-audit-20261028/README.md。
+
+## 2026-10-28 Approved task/phase sampling experiment
+User approved the next bounded run after sampling025 failed. Audit observable phase labels first; preserve all raw/public data and OSC temporal labels. Freeze task/phase mixture, parent, 2000-update budget and matched dev/retention gates before training. No UI promotion without verified gates. Back up code/results to owned origin and independently restore.
+
+Task-phase preflight: all1612human and7633publictask8 anchors partitioned exhaustively/disjointly. Human pools other1386/closing126/opening100. Public pools6289/672/672. 85 scoped tests passed and error-level Ruff passed. Physical grasp labels unavailable; command changes only. Reviewer role unavailable (unsupported configured model); direct review. No UI promotion this experiment.

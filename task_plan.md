@@ -69,3 +69,8 @@ Stop: deliver measured data audit and concrete training recommendation; preserve
 2. DONE: fresh parent LoRA2000 updates, batch1/seed42/lr5e-6; finalized1999, normal exit0, exact consumed1950public/50human and excluded1prefetch.
 3. DONE: same valid12 dev states: parent10/12, old mix10/12, candidate8/12; placement0/4. Shared-success median old113.5→new92.5, parent92.5→new92.5. Gate failed; no UI promotion, heldout sealed.
 4. DONE: report, 24 comparisons/12 original videos decoded and published. Remote payload c2d7176 independently restored: all2976 tracked files identical. Release adapter independently downloaded185506847bytes/SHA exact; official-base reconstruction71 leaves/20 LoRA exact. No UI replacement; unrelated jobs preserved.
+
+## 2026-10-28 Approved task/phase sampling experiment
+User approved the next bounded run after sampling025 failed. Audit observable phase labels first; preserve all raw/public data and OSC temporal labels. Freeze task/phase mixture, parent, 2000-update budget and matched dev/retention gates before training. No UI promotion without verified gates. Back up code/results to owned origin and independently restore.
+
+Task-phase preflight: all1612human and7633publictask8 anchors partitioned exhaustively/disjointly. Human pools other1386/closing126/opening100. Public pools6289/672/672. 85 scoped tests passed and error-level Ruff passed. Physical grasp labels unavailable; command changes only. Reviewer role unavailable (unsupported configured model); direct review. No UI promotion this experiment.

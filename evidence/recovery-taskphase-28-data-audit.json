@@ -1,0 +1,281 @@
+{
+  "status": "PASS",
+  "recipe": "task_phase_v1",
+  "raw_data_modified": false,
+  "independent_review": "unavailable: configured gpt-5.5 role unsupported by account; direct review and tests only",
+  "sources": {
+    "human": {
+      "eligible_anchors": 1612,
+      "pools": {
+        "other": 1386,
+        "closing": 126,
+        "opening": 100
+      },
+      "disjoint_exhaustive": true,
+      "full_epoch_covers_each_anchor": true,
+      "gripper_command_signs": [
+        -1.0,
+        1.0
+      ],
+      "episodes": [
+        {
+          "path": "data/manual-recovery28-v1/episode-00.parquet",
+          "frames": 465,
+          "eligible_anchors": 465,
+          "sha256": "7c655c97baef96fa17669f2fa11a372e585dd09e2ad05d181c29d3f0fc23ca9a"
+        },
+        {
+          "path": "data/manual-recovery28-v1/episode-01.parquet",
+          "frames": 85,
+          "eligible_anchors": 76,
+          "sha256": "829ec767a145a9f06248edfea3f8f8994297a16278ef40ea016f8b97bfc79267"
+        },
+        {
+          "path": "data/manual-recovery28-v1/episode-02.parquet",
+          "frames": 35,
+          "eligible_anchors": 35,
+          "sha256": "129cde29adef15c9c563cd594093a13e48a990bde9fceeb49758cff75cf285e9"
+        },
+        {
+          "path": "data/manual-recovery28-v1/episode-03.parquet",
+          "frames": 235,
+          "eligible_anchors": 226,
+          "sha256": "4f538f2cb9fced6e4e676615d6672c97b1ce446d4565e34c27d911e7b09ceb34"
+        },
+        {
+          "path": "data/manual-recovery28-v1/episode-04.parquet",
+          "frames": 50,
+          "eligible_anchors": 50,
+          "sha256": "7a599c9e117efcfea2ec26fdc1e7d3c4166d8ec64e76001bdf812f50b74d5403"
+        },
+        {
+          "path": "data/manual-recovery28-v1/episode-05.parquet",
+          "frames": 270,
+          "eligible_anchors": 270,
+          "sha256": "88ff8ca494c1b69bcad06198a9b994221939901f63a7eee6395d32aaa3b9e759"
+        },
+        {
+          "path": "data/manual-recovery28-v1/episode-06.parquet",
+          "frames": 245,
+          "eligible_anchors": 245,
+          "sha256": "95090420dbd8448dfacc3d78394769cc1ddad5817f7aa74417a1c9fd3cf2b920"
+        },
+        {
+          "path": "data/manual-recovery28-v1/episode-07.parquet",
+          "frames": 245,
+          "eligible_anchors": 245,
+          "sha256": "762047ddc6a596f5eec99a34e52d941404aeba59b5a089a9819c47a53e0a06e1"
+        }
+      ]
+    },
+    "public_task8": {
+      "eligible_anchors": 7633,
+      "pools": {
+        "other": 6289,
+        "closing": 672,
+        "opening": 672
+      },
+      "disjoint_exhaustive": true,
+      "full_epoch_covers_each_anchor": true,
+      "gripper_command_signs": [
+        -1.0,
+        1.0
+      ],
+      "episodes": [
+        {
+          "path": "data/chunk-000/episode_000254.parquet",
+          "frames": 227,
+          "eligible_anchors": 227,
+          "sha256": "733485b8ccdd3e40cb843c53ce339123c2e31ffa651eadd34e679b5619b5bf5b"
+        },
+        {
+          "path": "data/chunk-000/episode_000319.parquet",
+          "frames": 237,
+          "eligible_anchors": 237,
+          "sha256": "20cb44fab9e337f88a129b6af8fa9c0c5232fd47a12d8f52285adfb1bf84ce36"
+        },
+        {
+          "path": "data/chunk-000/episode_000353.parquet",
+          "frames": 261,
+          "eligible_anchors": 261,
+          "sha256": "799d24d194dbc972ec952fc7e457148e1b68cb6550299cf6824c4628e89d6228"
+        },
+        {
+          "path": "data/chunk-000/episode_000089.parquet",
+          "frames": 229,
+          "eligible_anchors": 229,
+          "sha256": "c135bd84bd6bca3e98cd49b0b894f6b909ae131f8d518a8edbc4272a6f0506db"
+        },
+        {
+          "path": "data/chunk-000/episode_000255.parquet",
+          "frames": 291,
+          "eligible_anchors": 291,
+          "sha256": "1ab2d7014773f90dd4aca5bfdd5cdd7666892a499b96353e55bded9cbfbdd70e"
+        },
+        {
+          "path": "data/chunk-000/episode_000375.parquet",
+          "frames": 255,
+          "eligible_anchors": 255,
+          "sha256": "2e99ab70c805d4a4b5ea444ca1901b74a7050aafe9e11e5235166974dbcd0666"
+        },
+        {
+          "path": "data/chunk-000/episode_000014.parquet",
+          "frames": 257,
+          "eligible_anchors": 257,
+          "sha256": "8cec14466bc6a51dd3fb3355a0387e4c29af12355bfc2b4a3e5c9cf52a5d653b"
+        },
+        {
+          "path": "data/chunk-000/episode_000189.parquet",
+          "frames": 252,
+          "eligible_anchors": 252,
+          "sha256": "190fd0ebeadf02c19898db39e48774377c8204e0fec4cda2470b3ac0ef29931f"
+        },
+        {
+          "path": "data/chunk-000/episode_000327.parquet",
+          "frames": 235,
+          "eligible_anchors": 235,
+          "sha256": "78b808343f8ac61bf18d07de5725cf9270a3a0cfc2c28bab58e21aaf657803ea"
+        },
+        {
+          "path": "data/chunk-000/episode_000268.parquet",
+          "frames": 229,
+          "eligible_anchors": 229,
+          "sha256": "94b4e6c6b384d5462826274ae3bb3fed131ce715928e30905d5cec50a4ff3ac3"
+        },
+        {
+          "path": "data/chunk-000/episode_000192.parquet",
+          "frames": 230,
+          "eligible_anchors": 230,
+          "sha256": "340fbfb3223ba90699d0b2a72f73be589e08e1c57e6527da27ba944f37ac73f1"
+        },
+        {
+          "path": "data/chunk-000/episode_000097.parquet",
+          "frames": 249,
+          "eligible_anchors": 249,
+          "sha256": "5e548432df74098ac121bac8492d89845c1d79deed0786d6e9992ec6e185dea5"
+        },
+        {
+          "path": "data/chunk-000/episode_000169.parquet",
+          "frames": 287,
+          "eligible_anchors": 287,
+          "sha256": "dabe9656aec8644eae406823800f94a4385c2ea29bb17deb3eb70632d261c09a"
+        },
+        {
+          "path": "data/chunk-000/episode_000274.parquet",
+          "frames": 230,
+          "eligible_anchors": 230,
+          "sha256": "95896f0cd8340649b8a8c2c96b90a3c78ec2294b3faad3cfd260941809ee688a"
+        },
+        {
+          "path": "data/chunk-000/episode_000377.parquet",
+          "frames": 229,
+          "eligible_anchors": 229,
+          "sha256": "cda5b9decb7e04a40a254807a7024d0199806cd63c5809fafea2338cee6dbf72"
+        },
+        {
+          "path": "data/chunk-000/episode_000177.parquet",
+          "frames": 244,
+          "eligible_anchors": 244,
+          "sha256": "b86f6469536dfea83302a1d973ccb4591648e79f6b125f4da1e0fd283cfd3665"
+        },
+        {
+          "path": "data/chunk-000/episode_000090.parquet",
+          "frames": 223,
+          "eligible_anchors": 223,
+          "sha256": "ea0f892eead00bd86fcc6b21292996ad35743d161532773f0674541618321f9e"
+        },
+        {
+          "path": "data/chunk-000/episode_000015.parquet",
+          "frames": 242,
+          "eligible_anchors": 242,
+          "sha256": "75bea5d65ac14a7e92382af713d7423fdc3433a8c0ad848124c8d83790c8296e"
+        },
+        {
+          "path": "data/chunk-000/episode_000016.parquet",
+          "frames": 248,
+          "eligible_anchors": 248,
+          "sha256": "3e719b3cb732371d25674cbc5f6e2a0febf0778b8487a2716f866511342d875c"
+        },
+        {
+          "path": "data/chunk-000/episode_000112.parquet",
+          "frames": 263,
+          "eligible_anchors": 263,
+          "sha256": "d850c630a4a29c37ecb2585987a6b766deb724ff6bff0d4267399190e8510ff0"
+        },
+        {
+          "path": "data/chunk-000/episode_000262.parquet",
+          "frames": 228,
+          "eligible_anchors": 228,
+          "sha256": "8bd3cc183085fcf5fc670001f3cd4a24228bb3f9c8158d6d802e41d305ecb76d"
+        },
+        {
+          "path": "data/chunk-000/episode_000032.parquet",
+          "frames": 229,
+          "eligible_anchors": 229,
+          "sha256": "466e3c1ea2ce01196330f1261730992a6003db1299b1526d794b02f77412fcdf"
+        },
+        {
+          "path": "data/chunk-000/episode_000304.parquet",
+          "frames": 306,
+          "eligible_anchors": 306,
+          "sha256": "9b8b6bfa4373d7a714732d5c80d02d8e3c726e5bb19497518e0490910e6c6593"
+        },
+        {
+          "path": "data/chunk-000/episode_000031.parquet",
+          "frames": 241,
+          "eligible_anchors": 241,
+          "sha256": "4eae4fdd60f20b42471b4f271aa577b6f5ee7050d92d31e5333eebb460867a29"
+        },
+        {
+          "path": "data/chunk-000/episode_000075.parquet",
+          "frames": 240,
+          "eligible_anchors": 240,
+          "sha256": "8a332a3ffa24f8349cd52fd066149541eb816f1dea7d5c12e28dcb63ad05640b"
+        },
+        {
+          "path": "data/chunk-000/episode_000198.parquet",
+          "frames": 235,
+          "eligible_anchors": 235,
+          "sha256": "fdf2d1a38237f1be081eb5b364665d74fc7326b4d2ac4c9531c06d509ac6ac4a"
+        },
+        {
+          "path": "data/chunk-000/episode_000300.parquet",
+          "frames": 237,
+          "eligible_anchors": 237,
+          "sha256": "7bc8e359150a58c39d0b296c070cddd429b091a825ef085383d6fcceaa976e9d"
+        },
+        {
+          "path": "data/chunk-000/episode_000338.parquet",
+          "frames": 221,
+          "eligible_anchors": 221,
+          "sha256": "79d0d10d4e18ac1350e8068eb8788343a7bf616aa4a8bde7cb0676d3f014e6fb"
+        },
+        {
+          "path": "data/chunk-000/episode_000337.parquet",
+          "frames": 227,
+          "eligible_anchors": 227,
+          "sha256": "3bdf08f219aea3448b212b94d51ca03fbc77900f87b4b81a1a56242948b8fafd"
+        },
+        {
+          "path": "data/chunk-000/episode_000155.parquet",
+          "frames": 267,
+          "eligible_anchors": 267,
+          "sha256": "188a17a002b73c7caa51cbd6fa584822d326854dacd8e85eeed53916eddef066"
+        },
+        {
+          "path": "data/chunk-000/episode_000144.parquet",
+          "frames": 284,
+          "eligible_anchors": 284,
+          "sha256": "6ca349a27f19ad624c8babd9e4b1d82b76be3682d1be5877bd2c13562a0ebc29"
+        }
+      ]
+    }
+  },
+  "replay": {
+    "equal_task_slots": 40,
+    "all_replay_indices_reachable": true,
+    "length": 458040,
+    "recipe_length": 13741200,
+    "route_cycle_coverage": "General replay route enumerates 8*3*N consecutive indices modulo N over an epoch; special phases enumerate N indices per phase, and N exceeds every pool length"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "pytest": {
+    "passed": 85,
+    "command": ".venv-train/bin/python -m pytest -q tests/test_task_phase_replay.py tests/test_recovery_replay.py tests/test_recovery_data_audit.py tests/test_recovery_recording.py tests/test_recovery_diagnostics.py tests/test_recovery_contract.py tests/test_rollout_precision.py tests/test_ppo_comparison_identity.py tests/test_native_eval_contract.py tests/test_manual_joint_control.py tests/test_manual_rotation_guide.py tests/test_manual_rotation_speed.py tests/test_manual_bank_reset.py"
+  },
+  "ruff": {
+    "exit_code": 0,
+    "select": "E9,F63,F7,F82",
+    "files": [
+      "scripts/train_recovery_replay.py",
+      "scripts/recovery_replay_dataset.py",
+      "tests/test_task_phase_replay.py"
+    ]
+  },
+  "git_diff_check": 0,
+  "independent_review": "UNAVAILABLE; gpt-5.5 configured role unsupported by account; direct review only"
+}

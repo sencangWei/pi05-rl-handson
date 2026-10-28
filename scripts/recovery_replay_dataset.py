@@ -109,13 +109,98 @@ class RecoveryReplayDataset:
 
     def describe(self, index):
         source, frame = self.route(index)
-        record, anchor = (self.replay if source == "replay" else self.human).locate(frame)
+        record, anchor = self.data_for_source(source).locate(frame)
         return dict(index=int(index), source=source, episode=record["path"],
                     task_id=record["task_id"], anchor=int(anchor))
 
     def __getitem__(self, index):
         source, frame = self.route(index)
-        sample = (self.replay if source == "replay" else self.human)[frame]
+        sample = self.data_for_source(source)[frame]
         self.fetched[source] += 1
         self.fetched_indices.append(int(index))
         return sample
+
+    def data_for_source(self, source):
+        return self.replay if source == "replay" else self.human
+
+
+PHASES = ("other", "closing", "opening")
+
+
+def command_phases(actions, anchors):
+    """Nearest gripper-command change within ten controls; never a grasp label."""
+    actions = np.asarray(actions)
+    if (actions.ndim != 2 or actions.shape[1] != 7 or not np.isfinite(actions).all()
+            or not 0 < anchors <= len(actions)):
+        raise ValueError("Invalid phase action/anchor contract")
+    signs = np.sign(actions[:, 6])
+    labels = np.zeros(anchors, dtype=int)
+    closest = np.full(anchors, len(actions) + 1)
+    for transition in np.flatnonzero(np.diff(signs) != 0) + 1:
+        distance = np.abs(np.arange(anchors) - transition)
+        mask = (distance <= 10) & (distance < closest)
+        labels[mask] = 1 if signs[transition] > 0 else 2
+        closest[mask] = distance[mask]
+    return [PHASES[label] for label in labels]
+
+
+class TaskPhaseReplayDataset(RecoveryReplayDataset):
+    """Fixed 80% public replay, 10% public task8, 10% manual phase mixture.
+
+    All anchors remain eligible. Only sampling changes, not observations, labels,
+    action-window boundaries or timing. Phases describe commands, not physics.
+    """
+
+    def __init__(self, human_manifest, replay_manifest):
+        super().__init__(human_manifest, replay_manifest)
+        if self.human.schema != BankHumanClips.schema:
+            raise ValueError("Task/phase experiment requires approved bank human OSC clips")
+        records = [r for r in self.replay.manifest["records"] if r["split"] == "train" and r["task_id"] == 8]
+        self.public_task8 = HumanClips.__new__(HumanClips)
+        self.public_task8.root = self.replay.root
+        self.public_task8.records = records
+        self.public_task8.ends = np.cumsum([r["frames"] for r in records])
+        self.public_task8.cache = OrderedDict()
+        self.phase_pools = {}
+        import pyarrow.parquet as pq
+        for source in ("human", "public_task8"):
+            data = self.data_for_source(source)
+            pools = {phase: [] for phase in PHASES}
+            offset = 0
+            for record in data.records:
+                path = data.root / record["path"]
+                if sha256(path) != record["sha256"]:
+                    raise ValueError("Phase source parquet changed")
+                table = pq.read_table(path, columns=["actions"])
+                if table.num_rows != record["frames"]:
+                    raise ValueError("Phase episode length changed")
+                anchors = record.get("sample_frames", record["frames"])
+                for anchor, phase in enumerate(command_phases(table["actions"].to_pylist(), anchors)):
+                    pools[phase].append(offset + anchor)
+                offset += anchors
+            if not all(pools.values()) or offset != len(data):
+                raise ValueError("Missing phase or anchor coverage")
+            self.phase_pools[source] = pools
+
+    def __len__(self):
+        return 30 * len(self.replay)
+
+    def route(self, index):
+        if not 0 <= index < len(self):
+            raise IndexError(index)
+        group, slot = divmod(index, 10)
+        if slot < 2:
+            source = "human" if slot == 0 else "public_task8"
+            pool = self.phase_pools[source][PHASES[group % 3]]
+            return source, pool[(group // 3) % len(pool)]
+        return "replay", (8 * group + slot - 2) % len(self.replay)
+
+    def phase_for(self, index):
+        self.route(index)  # bounds check
+        return PHASES[(index // 10) % 3] if index % 10 < 2 else None
+
+    def describe(self, index):
+        return dict(super().describe(index), command_phase=self.phase_for(index))
+
+    def data_for_source(self, source):
+        return self.public_task8 if source == "public_task8" else super().data_for_source(source)
