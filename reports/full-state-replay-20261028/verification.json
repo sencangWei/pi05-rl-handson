@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "tests": 40,
+  "ruff": "PASS",
+  "compile": "PASS",
+  "frozen_script_hashes_exact": true,
+  "videos": [
+    {
+      "path": "v1/comparisons/1033-223-259.mp4",
+      "frames": 36,
+      "sha256": "26e5c4a06d0d5d3510c3827c97f77e312dc322fae66b9ef085c06deea0c7f3e2"
+    },
+    {
+      "path": "v1/comparisons/1033-595-657.mp4",
+      "frames": 62,
+      "sha256": "6b20b5c136bc7eda99f9fe33572d29e499fbd33afda9f15bbc2376d0dc5dd50c"
+    },
+    {
+      "path": "v1/comparisons/6008-517-564.mp4",
+      "frames": 47,
+      "sha256": "7dbabe4c4e0788a7072cfaacb77c1e0d015ca5632662db8e0040b41791a2fb37"
+    },
+    {
+      "path": "v1/comparisons/6008-73-109.mp4",
+      "frames": 36,
+      "sha256": "742b8e3a97921f4bb54942eeb5293b190dcbc0ca77c4c06f51ebbb420ff1736a"
+    },
+    {
+      "path": "v1/human_1793121358375746008/full-517-564.mp4",
+      "frames": 47,
+      "sha256": "e8299e84a60ed17a5b4e45b1a9a06765cd4d8496418c157d5a931a1ef99483b0"
+    },
+    {
+      "path": "v1/human_1793121358375746008/full-73-109.mp4",
+      "frames": 36,
+      "sha256": "cf4e28919688c31b8e7a4cd3e79a062afb9e5aa362fe1fc82843228defa2b4ee"
+    },
+    {
+      "path": "v1/human_1793121358375746008/integration_python-517-564.mp4",
+      "frames": 47,
+      "sha256": "e8299e84a60ed17a5b4e45b1a9a06765cd4d8496418c157d5a931a1ef99483b0"
+    },
+    {
+      "path": "v1/human_1793121358375746008/integration_python-73-109.mp4",
+      "frames": 36,
+      "sha256": "cf4e28919688c31b8e7a4cd3e79a062afb9e5aa362fe1fc82843228defa2b4ee"
+    },
+    {
+      "path": "v1/human_1793121358375746008/legacy-517-564.mp4",
+      "frames": 47,
+      "sha256": "0cb5f901fb8cccdd0ded3adcd837313560b0e52996896b0f4044ca06b21ed5f6"
+    },
+    {
+      "path": "v1/human_1793121358375746008/legacy-73-109.mp4",
+      "frames": 36,
+      "sha256": "843b7b82ac78f61521d97eaa772fad28438693204476f2ef70b8fb86fad2a250"
+    },
+    {
+      "path": "v1/human_1793121358375746008/native_only-517-564.mp4",
+      "frames": 47,
+      "sha256": "486b65df2ed6d17b91df55c77c81bf60f8954c8694699fedb8f69168bfa1857e"
+    },
+    {
+      "path": "v1/human_1793121358375746008/native_only-73-109.mp4",
+      "frames": 36,
+      "sha256": "5919369731452c123abafc2ae04709dc0d469a7dcbaafcced7c01349b796f10d"
+    },
+    {
+      "path": "v1/human_1793121358375746008/reference.mp4",
+      "frames": 564,
+      "sha256": "e57d56ae978142c586b767ae1f263f2048c0fcd4ee5a4fb8bca1dc7bb04d64f4"
+    },
+    {
+      "path": "v1/human_1793122696228231033/full-223-259.mp4",
+      "frames": 36,
+      "sha256": "9e86d42e4108cdaebce9cc7541b90cebfe75a38af34f9309fe55e98e9c3352fb"
+    },
+    {
+      "path": "v1/human_1793122696228231033/full-595-657.mp4",
+      "frames": 62,
+      "sha256": "e4ae0e94824915ba1bb60805d24ac0df41ec3b2144170672c9bd8aec8fa2d426"
+    },
+    {
+      "path": "v1/human_1793122696228231033/integration_python-223-259.mp4",
+      "frames": 36,
+      "sha256": "9e86d42e4108cdaebce9cc7541b90cebfe75a38af34f9309fe55e98e9c3352fb"
+    },
+    {
+      "path": "v1/human_1793122696228231033/integration_python-595-657.mp4",
+      "frames": 62,
+      "sha256": "e4ae0e94824915ba1bb60805d24ac0df41ec3b2144170672c9bd8aec8fa2d426"
+    },
+    {
+      "path": "v1/human_1793122696228231033/legacy-223-259.mp4",
+      "frames": 36,
+      "sha256": "d88a77229cdea50cb134977ad6f8f4000da6b67ab898fe623303150b0c038d48"
+    },
+    {
+      "path": "v1/human_1793122696228231033/legacy-595-657.mp4",
+      "frames": 62,
+      "sha256": "c10f09b1d5dae41f2eb4241a32f3e917ad5359ac25d647080075509739fadf38"
+    },
+    {
+      "path": "v1/human_1793122696228231033/native_only-223-259.mp4",
+      "frames": 36,
+      "sha256": "04b37fcea43accd7fb32a5c24cabd825fbb1f04860d4d4a3e9239e931d6e2e12"
+    },
+    {
+      "path": "v1/human_1793122696228231033/native_only-595-657.mp4",
+      "frames": 62,
+      "sha256": "57ee43d09f578b8bf6f3850b341a20f5bf811c3cc5b2372fefa7265e2ee39e87"
+    },
+    {
+      "path": "v1/human_1793122696228231033/reference.mp4",
+      "frames": 657,
+      "sha256": "9209589c89e8a3809aabd0c822fd080edb4ea832b97e2167ca301ec83abb891a"
+    }
+  ],
+  "total_frames": 2126
+}

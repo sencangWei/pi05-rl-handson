@@ -131,3 +131,7 @@ Task-phase preflight: all1612human and7633publictask8 anchors partitioned exhaus
 original-v1/v2各执行两源共1221控制，四录像2442帧全部解码；最后原生目标+无手指接触分别连续33/44步。严格保真0/2：首步机器人qpos精确，但非机器人qpos/qvel及缓存观测有误差，后续接触放大；v2最大缓存位置坐标误差31.28/19.66mm。按元数据SHA找回启动器7b2f7a9，补齐原零偏移编辑/开始接管的两次刷新后，缓存差减小但v1/v2物理状态逐位相同。旧接口只存time/qpos/qvel，未存完整求解器/控制器/观测状态；具体误差源未唯一隔离，不能归罪于人工质量。原始所有SHA不变。按冻结门阻止关节→OSC转换和新训练；当前模型/面板不改。30测试、Ruff通过；报告reports/mixed-replay-20261028/README.md，备份正在验证。
 
 2026-10-28 混合动作验证交付完成：源码、测试、报告、逐步指标与四段执行录像载荷5048f3eadc93a8e1b829e5184dd35be8eabf2a74已推至用户自有sencangWei/pi05-rl-handson的experiment/matched-recovery-20261027分支。独立从远端恢复全部3307个跟踪文件，SHA256及重建Git树f36ef5616a70b282946c958c3944a7c277e939e4一致；证明evidence/mixed-replay-28-remote-restore.json。严格保真失败结果保留，不生成OSC标签、不重训、不替换面板。
+
+
+## 2026-10-28 完整状态短接触复现
+两个新参考564/657步，在4窗口181控制（103接触控制）比较四种恢复，16新进程重放全部退出0。完整MjData+Python与integration+Python均4/4数值、time/qpos/qvel逐位、原始像素及标志完全一致；旧79维0/4，仅原生物理0/4（后者两窗物理一致但缓存偏差约5–6mm）。不唯一归因warmstart。修复MjData.__setstate__对已初始化对象静默无效，改未初始化对象恢复并mj_copyData。只证明新快照；旧缺失状态无法重建，不转换标签、不训练、不换UI。40项相关测试与Ruff通过，4段三栏录像已生成，远端恢复验证待完成。报告reports/full-state-replay-20261028/README.md。

@@ -1,0 +1,162 @@
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"reference": "human_1793121358375746008", "controls": 564, "windows": [[73, 109], [517, 564]]}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793121358375746008", "mode": "legacy", "start": 73, "stop": 109, "controls": 36, "faithful": false, "first_divergent_control": 73, "all_state_bitwise_equal": false, "all_flags_and_images_equal": false, "max_errors": {"qpos": 0.04273804392684455, "qvel": 2.2882790023250204, "cached_position_m": 0.016190732085381798}, "contact_controls": 34, "reference_contact_controls": 35, "final_goal": false, "final_contact": true, "snapshot_sha256": "b2ba0b5864f2a052b62ad66d3f3a50cd404eb593f638fa1c1fad1bd637345547"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793121358375746008", "mode": "native_only", "start": 73, "stop": 109, "controls": 36, "faithful": false, "first_divergent_control": 73, "all_state_bitwise_equal": false, "all_flags_and_images_equal": false, "max_errors": {"qpos": 0.04273804392684788, "qvel": 2.2882790016161243, "cached_position_m": 0.016204407688371836}, "contact_controls": 34, "reference_contact_controls": 35, "final_goal": false, "final_contact": true, "snapshot_sha256": "b2ba0b5864f2a052b62ad66d3f3a50cd404eb593f638fa1c1fad1bd637345547"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793121358375746008", "mode": "integration_python", "start": 73, "stop": 109, "controls": 36, "faithful": true, "first_divergent_control": null, "all_state_bitwise_equal": true, "all_flags_and_images_equal": true, "max_errors": {"qpos": 0.0, "qvel": 0.0, "cached_position_m": 0.0}, "contact_controls": 35, "reference_contact_controls": 35, "final_goal": false, "final_contact": true, "snapshot_sha256": "b2ba0b5864f2a052b62ad66d3f3a50cd404eb593f638fa1c1fad1bd637345547"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793121358375746008", "mode": "full", "start": 73, "stop": 109, "controls": 36, "faithful": true, "first_divergent_control": null, "all_state_bitwise_equal": true, "all_flags_and_images_equal": true, "max_errors": {"qpos": 0.0, "qvel": 0.0, "cached_position_m": 0.0}, "contact_controls": 35, "reference_contact_controls": 35, "final_goal": false, "final_contact": true, "snapshot_sha256": "b2ba0b5864f2a052b62ad66d3f3a50cd404eb593f638fa1c1fad1bd637345547"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793121358375746008", "mode": "legacy", "start": 517, "stop": 564, "controls": 47, "faithful": false, "first_divergent_control": 517, "all_state_bitwise_equal": false, "all_flags_and_images_equal": false, "max_errors": {"qpos": 2.2446699880773746e-08, "qvel": 4.660292680980227e-06, "cached_position_m": 0.005233980588219556}, "contact_controls": 14, "reference_contact_controls": 14, "final_goal": true, "final_contact": false, "snapshot_sha256": "955e215ea4f6127262b1dbd5093b84f7b929d882c2385d4bd9fb5172615741e4"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793121358375746008", "mode": "native_only", "start": 517, "stop": 564, "controls": 47, "faithful": false, "first_divergent_control": 517, "all_state_bitwise_equal": true, "all_flags_and_images_equal": false, "max_errors": {"qpos": 0.0, "qvel": 0.0, "cached_position_m": 0.005557954032179513}, "contact_controls": 14, "reference_contact_controls": 14, "final_goal": true, "final_contact": false, "snapshot_sha256": "955e215ea4f6127262b1dbd5093b84f7b929d882c2385d4bd9fb5172615741e4"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793121358375746008", "mode": "integration_python", "start": 517, "stop": 564, "controls": 47, "faithful": true, "first_divergent_control": null, "all_state_bitwise_equal": true, "all_flags_and_images_equal": true, "max_errors": {"qpos": 0.0, "qvel": 0.0, "cached_position_m": 0.0}, "contact_controls": 14, "reference_contact_controls": 14, "final_goal": true, "final_contact": false, "snapshot_sha256": "955e215ea4f6127262b1dbd5093b84f7b929d882c2385d4bd9fb5172615741e4"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793121358375746008", "mode": "full", "start": 517, "stop": 564, "controls": 47, "faithful": true, "first_divergent_control": null, "all_state_bitwise_equal": true, "all_flags_and_images_equal": true, "max_errors": {"qpos": 0.0, "qvel": 0.0, "cached_position_m": 0.0}, "contact_controls": 14, "reference_contact_controls": 14, "final_goal": true, "final_contact": false, "snapshot_sha256": "955e215ea4f6127262b1dbd5093b84f7b929d882c2385d4bd9fb5172615741e4"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"reference": "human_1793122696228231033", "controls": 657, "windows": [[223, 259], [595, 657]]}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793122696228231033", "mode": "legacy", "start": 223, "stop": 259, "controls": 36, "faithful": false, "first_divergent_control": 223, "all_state_bitwise_equal": false, "all_flags_and_images_equal": false, "max_errors": {"qpos": 0.43875945250246695, "qvel": 4.583752100399145, "cached_position_m": 0.23817760630573306}, "contact_controls": 36, "reference_contact_controls": 36, "final_goal": false, "final_contact": true, "snapshot_sha256": "704adc4c3dc058a1fadbdd45f196eb6a2e581ff315cc4d3ffe19bb53abaec15c"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+{"source": "human_1793122696228231033", "mode": "native_only", "start": 223, "stop": 259, "controls": 36, "faithful": false, "first_divergent_control": 223, "all_state_bitwise_equal": false, "all_flags_and_images_equal": false, "max_errors": {"qpos": 0.43875945250245985, "qvel": 4.583752100366373, "cached_position_m": 0.23839295180898948}, "contact_controls": 36, "reference_contact_controls": 36, "final_goal": false, "final_contact": true, "snapshot_sha256": "704adc4c3dc058a1fadbdd45f196eb6a2e581ff315cc4d3ffe19bb53abaec15c"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793122696228231033", "mode": "integration_python", "start": 223, "stop": 259, "controls": 36, "faithful": true, "first_divergent_control": null, "all_state_bitwise_equal": true, "all_flags_and_images_equal": true, "max_errors": {"qpos": 0.0, "qvel": 0.0, "cached_position_m": 0.0}, "contact_controls": 36, "reference_contact_controls": 36, "final_goal": false, "final_contact": true, "snapshot_sha256": "704adc4c3dc058a1fadbdd45f196eb6a2e581ff315cc4d3ffe19bb53abaec15c"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793122696228231033", "mode": "full", "start": 223, "stop": 259, "controls": 36, "faithful": true, "first_divergent_control": null, "all_state_bitwise_equal": true, "all_flags_and_images_equal": true, "max_errors": {"qpos": 0.0, "qvel": 0.0, "cached_position_m": 0.0}, "contact_controls": 36, "reference_contact_controls": 36, "final_goal": false, "final_contact": true, "snapshot_sha256": "704adc4c3dc058a1fadbdd45f196eb6a2e581ff315cc4d3ffe19bb53abaec15c"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793122696228231033", "mode": "legacy", "start": 595, "stop": 657, "controls": 62, "faithful": false, "first_divergent_control": 595, "all_state_bitwise_equal": false, "all_flags_and_images_equal": false, "max_errors": {"qpos": 1.7453052891802656e-14, "qvel": 1.2973813313144167e-12, "cached_position_m": 0.005797419501883505}, "contact_controls": 18, "reference_contact_controls": 18, "final_goal": true, "final_contact": false, "snapshot_sha256": "bab4b74c9e0d0ad73b31f81d8557071406078500ec351b0493cdd5f0fe30c094"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793122696228231033", "mode": "native_only", "start": 595, "stop": 657, "controls": 62, "faithful": false, "first_divergent_control": 595, "all_state_bitwise_equal": true, "all_flags_and_images_equal": false, "max_errors": {"qpos": 0.0, "qvel": 0.0, "cached_position_m": 0.006082698426713717}, "contact_controls": 18, "reference_contact_controls": 18, "final_goal": true, "final_contact": false, "snapshot_sha256": "bab4b74c9e0d0ad73b31f81d8557071406078500ec351b0493cdd5f0fe30c094"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793122696228231033", "mode": "integration_python", "start": 595, "stop": 657, "controls": 62, "faithful": true, "first_divergent_control": null, "all_state_bitwise_equal": true, "all_flags_and_images_equal": true, "max_errors": {"qpos": 0.0, "qvel": 0.0, "cached_position_m": 0.0}, "contact_controls": 18, "reference_contact_controls": 18, "final_goal": true, "final_contact": false, "snapshot_sha256": "bab4b74c9e0d0ad73b31f81d8557071406078500ec351b0493cdd5f0fe30c094"}
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+{"source": "human_1793122696228231033", "mode": "full", "start": 595, "stop": 657, "controls": 62, "faithful": true, "first_divergent_control": null, "all_state_bitwise_equal": true, "all_flags_and_images_equal": true, "max_errors": {"qpos": 0.0, "qvel": 0.0, "cached_position_m": 0.0}, "contact_controls": 18, "reference_contact_controls": 18, "final_goal": true, "final_contact": false, "snapshot_sha256": "bab4b74c9e0d0ad73b31f81d8557071406078500ec351b0493cdd5f0fe30c094"}

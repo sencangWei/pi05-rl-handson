@@ -1,0 +1,26 @@
+{
+  "sources": [
+    "human_1793121358375746008",
+    "human_1793122696228231033"
+  ],
+  "seed": 42,
+  "limits": {
+    "qpos": 1e-06,
+    "qvel": 1e-05,
+    "cached_position_m": 1e-05
+  },
+  "modes": [
+    "legacy",
+    "native_only",
+    "integration_python",
+    "full"
+  ],
+  "script_sha256": "19366a02ac01677e31238d42d0fb80df84fd7f238ef23ce96b4718938046dcbb",
+  "snapshot_script_sha256": "ce73f413ad333d86bef5b2c14500c34d540d5bbfdf739cd4142657c7e4f24c5b",
+  "windows": "12 OSC + first two joint jogs; last joint jog + all final OSC controls",
+  "fresh_process_per_replay": true,
+  "saved_next_state_injection": false,
+  "old_recordings_repaired": false,
+  "training_labels_generated": false,
+  "claim": "New reference execution only; missing old internal states cannot be reconstructed."
+}

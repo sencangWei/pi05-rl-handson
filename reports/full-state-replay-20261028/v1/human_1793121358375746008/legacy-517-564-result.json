@@ -1,0 +1,21 @@
+{
+  "source": "human_1793121358375746008",
+  "mode": "legacy",
+  "start": 517,
+  "stop": 564,
+  "controls": 47,
+  "faithful": false,
+  "first_divergent_control": 517,
+  "all_state_bitwise_equal": false,
+  "all_flags_and_images_equal": false,
+  "max_errors": {
+    "qpos": 2.2446699880773746e-08,
+    "qvel": 4.660292680980227e-06,
+    "cached_position_m": 0.005233980588219556
+  },
+  "contact_controls": 14,
+  "reference_contact_controls": 14,
+  "final_goal": true,
+  "final_contact": false,
+  "snapshot_sha256": "955e215ea4f6127262b1dbd5093b84f7b929d882c2385d4bd9fb5172615741e4"
+}

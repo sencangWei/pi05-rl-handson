@@ -1,0 +1,11 @@
+{
+  "executable": "/home/robot/pi05-rl-handson/.venv-ppo/bin/python",
+  "python": "3.11.15 (main, Jun 23 2026, 15:19:43) [Clang 22.1.3 ]",
+  "versions": {
+    "mujoco": "3.8.1",
+    "robosuite": "1.4.1",
+    "numpy": "1.26.4",
+    "imageio": "2.38.1"
+  },
+  "scope": "Actual worker environment; discovery snapshot used system Python and is not the simulation runtime."
+}

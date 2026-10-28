@@ -1,0 +1,21 @@
+{
+  "source": "human_1793122696228231033",
+  "mode": "integration_python",
+  "start": 595,
+  "stop": 657,
+  "controls": 62,
+  "faithful": true,
+  "first_divergent_control": null,
+  "all_state_bitwise_equal": true,
+  "all_flags_and_images_equal": true,
+  "max_errors": {
+    "qpos": 0.0,
+    "qvel": 0.0,
+    "cached_position_m": 0.0
+  },
+  "contact_controls": 18,
+  "reference_contact_controls": 18,
+  "final_goal": true,
+  "final_contact": false,
+  "snapshot_sha256": "bab4b74c9e0d0ad73b31f81d8557071406078500ec351b0493cdd5f0fe30c094"
+}
