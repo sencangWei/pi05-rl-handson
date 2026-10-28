@@ -1,0 +1,140 @@
+{
+  "status": "COMPLETE",
+  "raw_videos": [
+    {
+      "file": "artifacts/20261028-sampling025/candidate/dev-empty_grasp-init40.mp4",
+      "sha256": "904cc83e3d9b982b4ca1114916d443fe75b933b8c3a402e821fbe15160d1cc7e",
+      "full_decode": "PASS"
+    },
+    {
+      "file": "artifacts/20261028-sampling025/candidate/dev-empty_grasp-init41.mp4",
+      "sha256": "82652dfe4f108b9f10ce17bb4718df86b29ff7bbc22c769432fb9710970316eb",
+      "full_decode": "PASS"
+    },
+    {
+      "file": "artifacts/20261028-sampling025/candidate/dev-empty_grasp-init42.mp4",
+      "sha256": "44009f9fdf161a19422e3f860376e5d69f6d9b5f3c8d102544325c104b493e62",
+      "full_decode": "PASS"
+    },
+    {
+      "file": "artifacts/20261028-sampling025/candidate/dev-empty_grasp-init43.mp4",
+      "sha256": "af75180f7ced2fbe5385b0a7aaf85a29e0c611a8afd0e1ea74a25dba2700ed7a",
+      "full_decode": "PASS"
+    },
+    {
+      "file": "artifacts/20261028-sampling025/candidate/dev-object_offset-init40.mp4",
+      "sha256": "9ec48b66f578f4cde7bb6c506794b94345ca17c2e83e4ab182735b9f9dfee1a7",
+      "full_decode": "PASS"
+    },
+    {
+      "file": "artifacts/20261028-sampling025/candidate/dev-object_offset-init41.mp4",
+      "sha256": "5e1c40b79ef81d519090acc6bef7bff590b661840a68f4a9d272739c3f4dbc79",
+      "full_decode": "PASS"
+    },
+    {
+      "file": "artifacts/20261028-sampling025/candidate/dev-object_offset-init42.mp4",
+      "sha256": "d42212c09339dd8ccf36d5259720d3f2f9d916640867a7ca713c0c8b80c96466",
+      "full_decode": "PASS"
+    },
+    {
+      "file": "artifacts/20261028-sampling025/candidate/dev-object_offset-init43.mp4",
+      "sha256": "3e505c25f1214b11196de176d61d1b3a79682ab251fa7b4f054304578fbf75e7",
+      "full_decode": "PASS"
+    },
+    {
+      "file": "artifacts/20261028-sampling025/candidate/dev-placement_failure-init40.mp4",
+      "sha256": "6841862a77d79903759b2a8644d9cc532a62850563ea225be6af5c5e85274a09",
+      "full_decode": "PASS"
+    },
+    {
+      "file": "artifacts/20261028-sampling025/candidate/dev-placement_failure-init41.mp4",
+      "sha256": "d76baa723d2978fee5f5da98055e21e76234499f663a33f6e6e7c3f553933deb",
+      "full_decode": "PASS"
+    },
+    {
+      "file": "artifacts/20261028-sampling025/candidate/dev-placement_failure-init42.mp4",
+      "sha256": "c62e06e1508a864e9f0a47cc6443f7fd88eecd2f74d006a2a1af3eadc1c23b2f",
+      "full_decode": "PASS"
+    },
+    {
+      "file": "artifacts/20261028-sampling025/candidate/dev-placement_failure-init43.mp4",
+      "sha256": "d5996ec4409b6cc9a71b073574a07ea1457bbbe27e8b67da099c97eabf94a495",
+      "full_decode": "PASS"
+    }
+  ],
+  "placement_failures": [
+    {
+      "case": "dev-placement_failure-init40",
+      "trace_sha256": "7a8e20698e1e54ebb96bce28ed1ad124ebc3e0ebf94ad7bcd52ae217c882b889",
+      "controls": 300,
+      "native_success_controls": 0,
+      "finger_contact_controls": 62,
+      "eef_motion_below_0_2mm_controls": 1,
+      "median_xyz_action_norm": 0.31310375634045173,
+      "bowl_z_start_end_max_m": [
+        0.8984070750980836,
+        0.9125061265858933,
+        0.9408175365093637
+      ],
+      "bowl_plate_xy_start_end_m": [
+        0.14999999999999997,
+        0.08729770680415327
+      ]
+    },
+    {
+      "case": "dev-placement_failure-init41",
+      "trace_sha256": "36f2638a159b773166fe3b706a5840d55eaa79a03936808cc6bc800429fb80c9",
+      "controls": 300,
+      "native_success_controls": 0,
+      "finger_contact_controls": 42,
+      "eef_motion_below_0_2mm_controls": 0,
+      "median_xyz_action_norm": 0.5943855736164696,
+      "bowl_z_start_end_max_m": [
+        0.8984070750980836,
+        0.8984070750980836,
+        0.9100583644302894
+      ],
+      "bowl_plate_xy_start_end_m": [
+        0.15,
+        0.23089812532648746
+      ]
+    },
+    {
+      "case": "dev-placement_failure-init42",
+      "trace_sha256": "c26a161a4677721ee7b7b82fb50b89229d36d980023557c91443ca5fe25c4e1a",
+      "controls": 300,
+      "native_success_controls": 0,
+      "finger_contact_controls": 63,
+      "eef_motion_below_0_2mm_controls": 1,
+      "median_xyz_action_norm": 0.5920154622856868,
+      "bowl_z_start_end_max_m": [
+        0.8984070750980836,
+        0.8984070750980836,
+        0.9070789447903916
+      ],
+      "bowl_plate_xy_start_end_m": [
+        0.15,
+        0.2523275564273819
+      ]
+    },
+    {
+      "case": "dev-placement_failure-init43",
+      "trace_sha256": "7ff2022fa927ec2b365ee26fe3fea445cabe17936b85c7c980526933f2e94f8f",
+      "controls": 300,
+      "native_success_controls": 0,
+      "finger_contact_controls": 49,
+      "eef_motion_below_0_2mm_controls": 0,
+      "median_xyz_action_norm": 0.5912201720411505,
+      "bowl_z_start_end_max_m": [
+        0.8984070750980836,
+        0.8984070750980836,
+        0.9089035704925189
+      ],
+      "bowl_plate_xy_start_end_m": [
+        0.15,
+        0.24566802614406735
+      ]
+    }
+  ],
+  "interpretation": "All four placement cases ran 300 controls; native goal never reached. XYZ command norms are not near zero and only 0-1 controls per case have end-effector motion below 0.2mm. This metric does not support broad immobility as the cause of these four failures; finger contact is not proof of a stable grasp."
+}

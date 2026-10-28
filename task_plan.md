@@ -65,7 +65,7 @@ Stop: diagnosis delivered; do not claim recovery repaired or promote unchanged m
 Stop: deliver measured data audit and concrete training recommendation; preserve original human demonstrations and all unrelated jobs.
 
 ## 2026-10-28 Approved sampling-only ablation
-1. IN PROGRESS: configurable 1:39 sampling, preserve default1:3 and all data; seeded sampler preview and consumed-gradient trace.
-2. TODO: fresh parent LoRA2000 updates, batch1/seed42/lr5e-6; validate checkpoint and numerical logs.
-3. TODO: same valid12 dev states, compare parent/current/candidate success and paired control steps; no automatic UI promotion, heldout sealed.
-4. TODO: report and same-day remote restore verification; preserve unrelated jobs.
+1. DONE: configurable 1:39 sampling, preserve default1:3 and all data; seeded preview1950 public/50 human.92tests+6subtests and scoped Ruff passed; code fe28dde independently restored from remote patch, whole tree/all2802 tracked files identical.
+2. DONE: fresh parent LoRA2000 updates, batch1/seed42/lr5e-6; finalized1999, normal exit0, exact consumed1950public/50human and excluded1prefetch.
+3. DONE: same valid12 dev states: parent10/12, old mix10/12, candidate8/12; placement0/4. Shared-success median old113.5→new92.5, parent92.5→new92.5. Gate failed; no UI promotion, heldout sealed.
+4. IN PROGRESS: report, 24 comparisons/12 original videos decoded; publish inference adapter and independently restore remote artifacts; preserve unrelated jobs.

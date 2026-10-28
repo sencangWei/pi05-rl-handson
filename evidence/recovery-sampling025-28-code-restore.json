@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "revision": "fe28dde81a2218a96737defcdfa02811788b8b24",
+  "tree": "10fd6bd09f6a5102c2d8d6819022e1e1202d361a",
+  "files_verified": 2802,
+  "remote": "https://github.com/sencangWei/pi05-rl-handson.git",
+  "method": "Downloaded GitHub patch applied with git apply --index to independent clean remote clone at parent; whole staged git tree and every tracked file SHA256 match",
+  "patch_sha256": "77ea16059134c9268c4adf594cb7a950e1fd6bc157067acfbb50ddff5b79b6e7"
+}

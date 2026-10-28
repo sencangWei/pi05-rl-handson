@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "lora_tensors": 20,
+  "all_adapter_values_finite": true,
+  "export_stdout": {
+    "status": "PASS",
+    "mode": "export",
+    "tensors": 71,
+    "lora_tensors": 20,
+    "tree_sha256": "722d857d2d2ae9c9641849b15ba384466c14ad72957ff8aaf46cc513cef267bc"
+  },
+  "files": {
+    "exports/sampling025-20261028/adapter/adapter.npz": "39f64f45775679df987fd991ac0d467e8f930e7cf06d8159826b4b8103a02a5d",
+    "exports/sampling025-20261028/adapter/metadata.json": "91e01d6de542040213b70e68755a398dc40b1387436be21c5e6b32c9e29d37be",
+    "exports/sampling025-20261028/adapter/norm_stats.json": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84"
+  },
+  "archive": "exports/sampling025-20261028/pi05-manual6-sampling025-2000-inference.tar.gz",
+  "archive_bytes": 185506847,
+  "archive_sha256": "4f3a6db8a609372dcf7b2496beffdecfe01a895722479b1c91dd0d45cbe7b960",
+  "scope": "Inference only; original export checked every reconstructed leaf; remote verification pending. Optimizer state remains local."
+}

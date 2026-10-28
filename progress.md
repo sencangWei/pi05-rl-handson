@@ -153,3 +153,7 @@ CPU/PPO准备代码备份：d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d已推送公
 ## 2026-10-28 数据审计及远端恢复核验完成
 
 完成只读物理起点、1630帧对齐及采样重建；诊断库初态1例不合格，未污染本轮6条原录制。90 tests + 2 subtests通过，Ruff通过。下一轮仅改抽样比例的提案已保存，未启动训练；保持用户面板/权重不变。审计代码/提案/证据已提交 d1a0d16 到 sencangWei/pi05-rl-handson 的 experiment/matched-recovery-20261027，独立GitHub克隆恢复后全2796个跟踪文件SHA256一致；证明见 evidence/recovery-data-audit28-remote-restore.json。
+
+## 2026-10-28 Sampling-only ablation results
+
+Fresh 2000-update LoRA run completed, exit0; actual1950 public/50 human windows match seeded preview, one unused prefetch excluded. Valid matched dev: parent10/12, old1:3 mix10/12, new1:39 mix8/12 (empty4/4,offset4/4,placement0/4). Eight shared successes old113.5→new92.5 median controls, parent92.5→new92.5. Gate FAIL, no UI replacement, heldout sealed. All12 raw candidate and24 comparisons fully decoded; representative frames/trace analysis preserved. Four failures each reached300controls without native success, not an early-stop fix. Inference export71 reconstructed leaves exact/20 finite LoRA tensors; report and remote backup verification underway.

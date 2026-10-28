@@ -1,0 +1,12 @@
+{
+  "unit": "pi05-sampling025-train-20261028",
+  "properties": {
+    "RuntimeMaxUSec": "infinity",
+    "Result": "success",
+    "ExecMainStatus": "0",
+    "MemoryMax": "infinity",
+    "MemorySwapMax": "infinity",
+    "ActiveState": "inactive"
+  },
+  "checkpoint": "/home/robot/pi05-rl-handson/checkpoints/pi05_recovery_replay_lora/manual6_sampling025_2000_v1/1999"
+}

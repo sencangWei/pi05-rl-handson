@@ -1,0 +1,91 @@
+{
+  "status": "COMPLETE",
+  "experiment": "manual6_sampling025_2000_v1",
+  "totals": {
+    "parent": {
+      "successes": 10,
+      "trials": 12,
+      "categories": {
+        "empty_grasp": 4,
+        "object_offset": 4,
+        "placement_failure": 2
+      },
+      "total_controls_including_timeouts": 1742,
+      "wall_seconds": 52.070511245998205
+    },
+    "old_mix": {
+      "successes": 10,
+      "trials": 12,
+      "categories": {
+        "empty_grasp": 4,
+        "object_offset": 4,
+        "placement_failure": 2
+      },
+      "total_controls_including_timeouts": 2299,
+      "wall_seconds": 54.580256752014975
+    },
+    "candidate": {
+      "successes": 8,
+      "trials": 12,
+      "categories": {
+        "empty_grasp": 4,
+        "object_offset": 4,
+        "placement_failure": 0
+      },
+      "total_controls_including_timeouts": 1970,
+      "wall_seconds": 57.799910303001525
+    }
+  },
+  "paired_comparisons": {
+    "parent": {
+      "shared_success_ids": [
+        "dev-empty_grasp-init40",
+        "dev-object_offset-init40",
+        "dev-empty_grasp-init41",
+        "dev-object_offset-init41",
+        "dev-empty_grasp-init42",
+        "dev-object_offset-init42",
+        "dev-empty_grasp-init43",
+        "dev-object_offset-init43"
+      ],
+      "baseline_median_controls": 92.5,
+      "candidate_median_controls": 92.5,
+      "median_paired_delta_controls": 0.0,
+      "faster": 3,
+      "slower": 3,
+      "equal": 2
+    },
+    "old_mix": {
+      "shared_success_ids": [
+        "dev-empty_grasp-init40",
+        "dev-object_offset-init40",
+        "dev-empty_grasp-init41",
+        "dev-object_offset-init41",
+        "dev-empty_grasp-init42",
+        "dev-object_offset-init42",
+        "dev-empty_grasp-init43",
+        "dev-object_offset-init43"
+      ],
+      "baseline_median_controls": 113.5,
+      "candidate_median_controls": 92.5,
+      "median_paired_delta_controls": -22.0,
+      "faster": 8,
+      "slower": 0,
+      "equal": 0
+    }
+  },
+  "predeclared_gates": {
+    "success_at_least_10_of_12": false,
+    "paired_controls_median_no_worse_than_parent": true
+  },
+  "diagnostic_gates_passed": false,
+  "automatic_promotion": false,
+  "heldout_evaluated": false,
+  "data_scope": "12 reused physically-valid development states; not unseen generalization",
+  "training_metrics": {
+    "logged_updates": 200,
+    "all_logged_values_finite": true,
+    "first_loss": 0.0003,
+    "last_loss": 0.0015
+  }
+}

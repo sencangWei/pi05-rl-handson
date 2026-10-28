@@ -1,0 +1,21 @@
+INFO:datasets:PyTorch version 2.7.1 available.
+INFO:datasets:Polars version 1.30.0 available.
+INFO:datasets:JAX version 0.5.3 available.
+INFO:root:Loading model...
+INFO:2026-10-28 12:28:17,254:jax._src.xla_bridge:925: Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+INFO:jax._src.xla_bridge:Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+INFO:2026-10-28 12:28:17,254:jax._src.xla_bridge:925: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+INFO:jax._src.xla_bridge:Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+INFO:absl:orbax-checkpoint version: 0.11.13
+INFO:absl:Created BasePyTreeCheckpointHandler: use_ocdbt=True, use_zarr3=False, pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=<orbax.checkpoint._src.metadata.array_metadata_store.Store object at 0x704e09f72d50>
+INFO:absl:Restoring checkpoint from /home/robot/pi05-rl-handson/checkpoints/pi05_recovery_replay_lora/manual6_sampling025_2000_v1/1999/params.
+INFO:absl:[thread=MainThread] Failed to get flag value for EXPERIMENTAL_ORBAX_USE_DISTRIBUTED_PROCESS_ID.
+INFO:absl:[process=0] /jax/checkpoint/read/bytes_per_sec: 1.9 GiB/s (total bytes: 6.3 GiB) (time elapsed: 3 seconds) (per-host)
+INFO:absl:Finished restoring checkpoint in 3.30 seconds from /home/robot/pi05-rl-handson/checkpoints/pi05_recovery_replay_lora/manual6_sampling025_2000_v1/1999/params.
+INFO:root:Loaded norm stats from /home/robot/voice-arm-sim/models/pi05_libero/assets/physical-intelligence/libero
+INFO:root:Loaded norm stats from /home/robot/pi05-rl-handson/checkpoints/pi05_recovery_replay_lora/manual6_sampling025_2000_v1/1999/assets/physical-intelligence/libero
+POLICY_READY {'backend': 'local-pi05-libero-lora', 'checkpoint': '/home/robot/pi05-rl-handson/checkpoints/pi05_recovery_replay_lora/manual6_sampling025_2000_v1/1999', 'image_size': 224, 'action_horizon': 10, 'model_config': "Pi0Config(action_dim=32, action_horizon=10, max_token_len=200, dtype='bfloat16', paligemma_variant='gemma_2b_lora', action_expert_variant='gemma_300m_lora', pi05=True, discrete_state_input=False, pytorch_compile_mode='max-autotune')", 'discrete_state_input': False, 'seed_protocol': 'numpy.default_rng(seed).standard_normal((10,32))', 'norm_stats_sha256': 'b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84'}
+INFO:websockets.server:server listening on 127.0.0.1:9875
+INFO:websockets.server:connection open
+INFO:openpi.serving.websocket_policy_server:Connection from ('127.0.0.1', 48618) opened
+INFO:openpi.serving.websocket_policy_server:Connection from ('127.0.0.1', 48618) closed
