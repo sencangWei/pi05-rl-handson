@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson.git",
+  "revision": "44f7d601ac4ab860c6f2afe36b3444c967f47a06",
+  "method": "independent git fetch, clean archive extraction, every tracked file SHA256 compared",
+  "verified_files": 2986,
+  "content_manifest_sha256": "a9958ace56685f7c9ad71d6eb293b73506ba2b1884e95d2327f1c80ce15effe4"
+}

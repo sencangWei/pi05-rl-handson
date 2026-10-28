@@ -1,0 +1,30 @@
+{
+  "replay": {
+    "draws": 1603,
+    "distinct_episode_anchors": 1593,
+    "distinct_episodes": 973,
+    "phase_draws": {
+      "null": 1603
+    }
+  },
+  "human": {
+    "draws": 205,
+    "distinct_episode_anchors": 165,
+    "distinct_episodes": 8,
+    "phase_draws": {
+      "other": 57,
+      "closing": 75,
+      "opening": 73
+    }
+  },
+  "public_task8": {
+    "draws": 192,
+    "distinct_episode_anchors": 185,
+    "distinct_episodes": 31,
+    "phase_draws": {
+      "closing": 66,
+      "other": 67,
+      "opening": 59
+    }
+  }
+}
