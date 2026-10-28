@@ -1,0 +1,1585 @@
+{
+  "script_sha256": "ad9a3dd20ceda31a23657359b504aaef1bd34e641f5a62ce069e7b757a4477fc",
+  "executable": "/home/robot/pi05-rl-handson/.venv-ppo/bin/python",
+  "packages": {
+    "numpy": "1.26.4",
+    "pyarrow": "25.0.1",
+    "torch": "2.7.1+cu128"
+  },
+  "manifests": {
+    "evidence/manual-recovery28-manifest.json": "86e3fc204735dba54261f32dd864297bd00aab8f044ff2d866f46546d7db9cfb",
+    "evidence/dataset-manifest.json": "9282c19b3d6cd6bf5779d3169e112a145852066654651e40b333558d9e8a3fde",
+    "evidence/manual6_replay2000_v1-status.json": "f6d638f52ad0c0d95ebf905b926f4f2b62a8b40f5f70e392a12d7512273228a8"
+  },
+  "scope": "Train only. No labels changed. Zero pose means zero 6D command, not measured physical stillness. Gripper command is not grasp verification.",
+  "raw_sources": [
+    {
+      "source": "human_1793114449817419797",
+      "inventory_files": 930,
+      "entry": "train-placement_failure-init01",
+      "raw_initial_state_sha256": "9e25d275e7482f7c7874f145da44407f3cfaa8438c395eee74b661c3412376db",
+      "bank_state_sha256": "c503e3ccb9ee863c90b70698e71955b9a8d777c0a94dbd661a54988774f3d47c",
+      "control_dt": 0.05,
+      "pauses_excluded": true,
+      "joint_frames_archived": 0
+    },
+    {
+      "source": "human_1793121358375746008",
+      "inventory_files": 684,
+      "entry": "train-placement_failure-init04",
+      "raw_initial_state_sha256": "c00bcaabecf61203072e2157864ea92398076a36f494aafbcdb30f47d7b479a3",
+      "bank_state_sha256": "5618662c94d46d3fc1e371146c174017bcde364d25c0f1af0c19154738b1b35b",
+      "control_dt": 0.05,
+      "pauses_excluded": true,
+      "joint_frames_archived": 444
+    },
+    {
+      "source": "human_1793122696228231033",
+      "inventory_files": 942,
+      "entry": "train-placement_failure-init05",
+      "raw_initial_state_sha256": "c14af3a204dfca7b8d7979b5a8b048f72114c4e3f3c839bfd6da9c7c1b4d302f",
+      "bank_state_sha256": "00345d7d1eef84e40a40ff354c3c4e6182f8d92fed1be97b228941573cec35ff",
+      "control_dt": 0.05,
+      "pauses_excluded": true,
+      "joint_frames_archived": 372
+    },
+    {
+      "source": "human_1793122982775036691",
+      "inventory_files": 540,
+      "entry": "train-empty_grasp-init01",
+      "raw_initial_state_sha256": "ec311db3b576d3169c3d5e848e5b6b02a74815dcf5bf22e0ebe3f53d78c2521a",
+      "bank_state_sha256": "ec311db3b576d3169c3d5e848e5b6b02a74815dcf5bf22e0ebe3f53d78c2521a",
+      "control_dt": 0.05,
+      "pauses_excluded": true,
+      "joint_frames_archived": 0
+    },
+    {
+      "source": "human_1793123928152741170",
+      "inventory_files": 490,
+      "entry": "train-object_offset-init01",
+      "raw_initial_state_sha256": "f2311ae37eed37f4565c49fa412169d92353f45812683cfb4a4d3fbbdbed7a3e",
+      "bank_state_sha256": "f2311ae37eed37f4565c49fa412169d92353f45812683cfb4a4d3fbbdbed7a3e",
+      "control_dt": 0.05,
+      "pauses_excluded": true,
+      "joint_frames_archived": 0
+    },
+    {
+      "source": "human_1793124070194277437",
+      "inventory_files": 490,
+      "entry": "train-object_offset-init02",
+      "raw_initial_state_sha256": "005c17c39f3549b8dec69ea01c06e2ec947a88acebc9dbb827d9f24ca5fa76db",
+      "bank_state_sha256": "005c17c39f3549b8dec69ea01c06e2ec947a88acebc9dbb827d9f24ca5fa76db",
+      "control_dt": 0.05,
+      "pauses_excluded": true,
+      "joint_frames_archived": 0
+    }
+  ],
+  "human_clips": [
+    {
+      "episode": 0,
+      "source": "human_1793114449817419797",
+      "entry": "train-placement_failure-init01",
+      "terminal": true,
+      "frames": 465,
+      "anchors": 465,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.0,
+        0.10000000149011612,
+        0.10000000149011612,
+        0.6000000238418579
+      ],
+      "zero_xyz_frames": 145,
+      "rotation_only_frames": 115,
+      "zero_pose_frames": 30,
+      "zero_pose_runs": [
+        10,
+        10,
+        10
+      ],
+      "longest_pose_hold_controls": 10,
+      "zero_pose_near_gripper_transition": 20,
+      "gripper_sign_transitions": [
+        50,
+        425
+      ],
+      "low_translation_nonzero_frames": 225,
+      "close_command_frames": 375,
+      "window_label_count": 4650,
+      "window_zero_pose_labels": 345,
+      "all_pose_hold_windows": 12,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.007867225678637626,
+        1.0769713521003723,
+        7.755474948883056
+      ]
+    },
+    {
+      "episode": 1,
+      "source": "human_1793121358375746008",
+      "entry": "train-placement_failure-init04",
+      "terminal": false,
+      "frames": 85,
+      "anchors": 76,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_xyz_frames": 10,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 10,
+      "zero_pose_runs": [
+        10
+      ],
+      "longest_pose_hold_controls": 10,
+      "zero_pose_near_gripper_transition": 10,
+      "gripper_sign_transitions": [
+        45
+      ],
+      "low_translation_nonzero_frames": 0,
+      "close_command_frames": 40,
+      "window_label_count": 760,
+      "window_zero_pose_labels": 100,
+      "all_pose_hold_windows": 1,
+      "padded_label_count": 0,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.7049079656600967,
+        7.52647066116333,
+        8.44873857498169
+      ]
+    },
+    {
+      "episode": 2,
+      "source": "human_1793121358375746008",
+      "entry": "train-placement_failure-init04",
+      "terminal": true,
+      "frames": 35,
+      "anchors": 35,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.0,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_xyz_frames": 10,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 10,
+      "zero_pose_runs": [
+        10
+      ],
+      "longest_pose_hold_controls": 10,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [],
+      "low_translation_nonzero_frames": 0,
+      "close_command_frames": 0,
+      "window_label_count": 350,
+      "window_zero_pose_labels": 55,
+      "all_pose_hold_windows": 1,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.00036505054449662564,
+        7.670929431915283,
+        8.074490642547607
+      ]
+    },
+    {
+      "episode": 3,
+      "source": "human_1793122696228231033",
+      "entry": "train-placement_failure-init05",
+      "terminal": false,
+      "frames": 235,
+      "anchors": 226,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_xyz_frames": 130,
+      "rotation_only_frames": 120,
+      "zero_pose_frames": 10,
+      "zero_pose_runs": [
+        10
+      ],
+      "longest_pose_hold_controls": 10,
+      "zero_pose_near_gripper_transition": 10,
+      "gripper_sign_transitions": [
+        170
+      ],
+      "low_translation_nonzero_frames": 15,
+      "close_command_frames": 65,
+      "window_label_count": 2260,
+      "window_zero_pose_labels": 100,
+      "all_pose_hold_windows": 1,
+      "padded_label_count": 0,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.047162222862243655,
+        0.08671461418271065,
+        7.727874755859376
+      ]
+    },
+    {
+      "episode": 4,
+      "source": "human_1793122696228231033",
+      "entry": "train-placement_failure-init05",
+      "terminal": true,
+      "frames": 50,
+      "anchors": 50,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.0,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_xyz_frames": 20,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 20,
+      "zero_pose_runs": [
+        10,
+        10
+      ],
+      "longest_pose_hold_controls": 10,
+      "zero_pose_near_gripper_transition": 10,
+      "gripper_sign_transitions": [
+        5
+      ],
+      "low_translation_nonzero_frames": 0,
+      "close_command_frames": 5,
+      "window_label_count": 500,
+      "window_zero_pose_labels": 235,
+      "all_pose_hold_windows": 11,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.023840573057532313,
+        7.529440879821777,
+        8.031997108459473
+      ]
+    },
+    {
+      "episode": 5,
+      "source": "human_1793122982775036691",
+      "entry": "train-empty_grasp-init01",
+      "terminal": true,
+      "frames": 270,
+      "anchors": 270,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_xyz_frames": 160,
+      "rotation_only_frames": 120,
+      "zero_pose_frames": 40,
+      "zero_pose_runs": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "longest_pose_hold_controls": 10,
+      "zero_pose_near_gripper_transition": 20,
+      "gripper_sign_transitions": [
+        25,
+        230
+      ],
+      "low_translation_nonzero_frames": 10,
+      "close_command_frames": 205,
+      "window_label_count": 2700,
+      "window_zero_pose_labels": 400,
+      "all_pose_hold_windows": 13,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.021489447727799416,
+        0.09035459160804749,
+        7.824746036529541
+      ]
+    },
+    {
+      "episode": 6,
+      "source": "human_1793123928152741170",
+      "entry": "train-object_offset-init01",
+      "terminal": true,
+      "frames": 245,
+      "anchors": 245,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.0,
+        0.10000000149011612,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_xyz_frames": 80,
+      "rotation_only_frames": 50,
+      "zero_pose_frames": 30,
+      "zero_pose_runs": [
+        10,
+        10,
+        10
+      ],
+      "longest_pose_hold_controls": 10,
+      "zero_pose_near_gripper_transition": 20,
+      "gripper_sign_transitions": [
+        45,
+        200
+      ],
+      "low_translation_nonzero_frames": 45,
+      "close_command_frames": 155,
+      "window_label_count": 2450,
+      "window_zero_pose_labels": 345,
+      "all_pose_hold_windows": 12,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.2873145341873169,
+        3.5650261640548706,
+        8.084397220611573
+      ]
+    },
+    {
+      "episode": 7,
+      "source": "human_1793124070194277437",
+      "entry": "train-object_offset-init02",
+      "terminal": true,
+      "frames": 245,
+      "anchors": 245,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.10000000149011612,
+        0.6000000238418579,
+        0.6000000238418579,
+        0.6000000238418579
+      ],
+      "zero_xyz_frames": 30,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 30,
+      "zero_pose_runs": [
+        10,
+        10,
+        10
+      ],
+      "longest_pose_hold_controls": 10,
+      "zero_pose_near_gripper_transition": 20,
+      "gripper_sign_transitions": [
+        55,
+        200
+      ],
+      "low_translation_nonzero_frames": 80,
+      "close_command_frames": 145,
+      "window_label_count": 2450,
+      "window_zero_pose_labels": 345,
+      "all_pose_hold_windows": 12,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 3,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.7521471619606018,
+        5.028908967971802,
+        8.0981915473938
+      ]
+    }
+  ],
+  "public_task8": [
+    {
+      "episode": 254,
+      "frames": 227,
+      "anchors": 227,
+      "xyz_norm_quantiles": [
+        0.0026785715017467737,
+        0.41386088107194374,
+        0.5545095505297919,
+        0.7002453425088717,
+        0.988697688138906
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        77,
+        155
+      ],
+      "low_translation_nonzero_frames": 18,
+      "close_command_frames": 78,
+      "window_label_count": 2270,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 1,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.9852473149642258,
+        6.679835580117501,
+        9.15714200079304
+      ]
+    },
+    {
+      "episode": 319,
+      "frames": 237,
+      "anchors": 237,
+      "xyz_norm_quantiles": [
+        0.010714286006987095,
+        0.4430991912526594,
+        0.6367905554915918,
+        0.7171671844648887,
+        0.9458771371586957
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        65,
+        142
+      ],
+      "low_translation_nonzero_frames": 7,
+      "close_command_frames": 77,
+      "window_label_count": 2370,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 1,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.1306515502701973,
+        6.1953183360746475,
+        9.080081622112045
+      ]
+    },
+    {
+      "episode": 353,
+      "frames": 261,
+      "anchors": 261,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.4052174966190552,
+        0.5464548210857707,
+        0.6294015781747768,
+        0.8626081302585374
+      ],
+      "zero_xyz_frames": 3,
+      "rotation_only_frames": 3,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        81,
+        163
+      ],
+      "low_translation_nonzero_frames": 14,
+      "close_command_frames": 82,
+      "window_label_count": 2610,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 2,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.94483212637204,
+        6.354666789879351,
+        8.479051594178577
+      ]
+    },
+    {
+      "episode": 89,
+      "frames": 229,
+      "anchors": 229,
+      "xyz_norm_quantiles": [
+        0.02142857201397419,
+        0.4714285731315613,
+        0.566573253869814,
+        0.7393827500544967,
+        0.9891330045391212
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        65,
+        143
+      ],
+      "low_translation_nonzero_frames": 8,
+      "close_command_frames": 78,
+      "window_label_count": 2290,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 1,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.5668362844497652,
+        6.920219058371014,
+        9.056413159183478
+      ]
+    },
+    {
+      "episode": 255,
+      "frames": 291,
+      "anchors": 291,
+      "xyz_norm_quantiles": [
+        0.06428571790456772,
+        0.3863028514774519,
+        0.5813549382087754,
+        0.690040104353822,
+        0.8809609478050066
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        80,
+        175
+      ],
+      "low_translation_nonzero_frames": 14,
+      "close_command_frames": 95,
+      "window_label_count": 2910,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.6497025970319725,
+        7.102960928080388,
+        8.925641283133395
+      ]
+    },
+    {
+      "episode": 375,
+      "frames": 255,
+      "anchors": 255,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.4129508227443085,
+        0.5251161598994455,
+        0.7112444538159133,
+        0.9538234374437237
+      ],
+      "zero_xyz_frames": 4,
+      "rotation_only_frames": 4,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        72,
+        170
+      ],
+      "low_translation_nonzero_frames": 7,
+      "close_command_frames": 98,
+      "window_label_count": 2550,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 1,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.067488048198537,
+        5.799256893872647,
+        9.411283463838112
+      ]
+    },
+    {
+      "episode": 14,
+      "frames": 257,
+      "anchors": 257,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.3929748297766726,
+        0.5897907861475226,
+        0.6923679918743519,
+        0.8194414837583679
+      ],
+      "zero_xyz_frames": 4,
+      "rotation_only_frames": 4,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        86,
+        161
+      ],
+      "low_translation_nonzero_frames": 22,
+      "close_command_frames": 75,
+      "window_label_count": 2570,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.6680541634572162,
+        6.49437282166231,
+        8.630320108173414
+      ]
+    },
+    {
+      "episode": 189,
+      "frames": 252,
+      "anchors": 252,
+      "xyz_norm_quantiles": [
+        0.008035714738070965,
+        0.4254408631822414,
+        0.5046246003698163,
+        0.7200213531958151,
+        1.0215475869087642
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        79,
+        161
+      ],
+      "low_translation_nonzero_frames": 23,
+      "close_command_frames": 82,
+      "window_label_count": 2520,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 1,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.6814548004444859,
+        6.075023670513635,
+        8.515347461781108
+      ]
+    },
+    {
+      "episode": 327,
+      "frames": 235,
+      "anchors": 235,
+      "xyz_norm_quantiles": [
+        0.010714286006987095,
+        0.40271754232850093,
+        0.5400959052917225,
+        0.6423319699045122,
+        0.9113955086887019
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        72,
+        157
+      ],
+      "low_translation_nonzero_frames": 12,
+      "close_command_frames": 85,
+      "window_label_count": 2350,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.2722086790690654,
+        6.539950401857719,
+        8.568421251605697
+      ]
+    },
+    {
+      "episode": 268,
+      "frames": 229,
+      "anchors": 229,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.3561996546413098,
+        0.5112072897126103,
+        0.7704513803512026,
+        1.0132331581780585
+      ],
+      "zero_xyz_frames": 5,
+      "rotation_only_frames": 5,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        81,
+        157
+      ],
+      "low_translation_nonzero_frames": 4,
+      "close_command_frames": 76,
+      "window_label_count": 2290,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 1,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.8311520221590426,
+        6.3094631726793295,
+        9.740244183485789
+      ]
+    },
+    {
+      "episode": 192,
+      "frames": 230,
+      "anchors": 230,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.3387827407416537,
+        0.5523231365074324,
+        0.6797359832056052,
+        0.8015689327971164
+      ],
+      "zero_xyz_frames": 1,
+      "rotation_only_frames": 1,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        76,
+        155
+      ],
+      "low_translation_nonzero_frames": 20,
+      "close_command_frames": 79,
+      "window_label_count": 2300,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.4030661403676639,
+        6.9193248769604345,
+        8.7429176352842
+      ]
+    },
+    {
+      "episode": 97,
+      "frames": 249,
+      "anchors": 249,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.3222979257626209,
+        0.5346686132766811,
+        0.6463354492871852,
+        0.8950157109230027
+      ],
+      "zero_xyz_frames": 3,
+      "rotation_only_frames": 3,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        75,
+        176
+      ],
+      "low_translation_nonzero_frames": 15,
+      "close_command_frames": 101,
+      "window_label_count": 2490,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 2,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.7609625830141824,
+        6.556395833612564,
+        9.039144965586312
+      ]
+    },
+    {
+      "episode": 169,
+      "frames": 287,
+      "anchors": 287,
+      "xyz_norm_quantiles": [
+        0.027965107105149923,
+        0.47137789942657193,
+        0.6059080151903959,
+        0.7719010358046622,
+        0.9850079673293669
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        56,
+        105,
+        140,
+        214
+      ],
+      "low_translation_nonzero_frames": 15,
+      "close_command_frames": 123,
+      "window_label_count": 2870,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.458373312367339,
+        7.634635000887091,
+        10.594568193582635
+      ]
+    },
+    {
+      "episode": 274,
+      "frames": 230,
+      "anchors": 230,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.40662035224878185,
+        0.5471468614661914,
+        0.6841586624027093,
+        1.0075417185351392
+      ],
+      "zero_xyz_frames": 3,
+      "rotation_only_frames": 3,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        78,
+        154
+      ],
+      "low_translation_nonzero_frames": 14,
+      "close_command_frames": 76,
+      "window_label_count": 2300,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.9621052956873928,
+        6.107215834791382,
+        9.272286026336698
+      ]
+    },
+    {
+      "episode": 377,
+      "frames": 229,
+      "anchors": 229,
+      "xyz_norm_quantiles": [
+        0.05089285597205162,
+        0.3878845187131448,
+        0.49279891392367875,
+        0.6357870313028647,
+        0.9543310309027632
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        82,
+        162
+      ],
+      "low_translation_nonzero_frames": 15,
+      "close_command_frames": 80,
+      "window_label_count": 2290,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.449685517093484,
+        6.419531040022657,
+        8.785954558597195
+      ]
+    },
+    {
+      "episode": 177,
+      "frames": 244,
+      "anchors": 244,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.43271943071390717,
+        0.5756185784988088,
+        0.6814319400230682,
+        1.0680616787491435
+      ],
+      "zero_xyz_frames": 3,
+      "rotation_only_frames": 3,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        71,
+        166
+      ],
+      "low_translation_nonzero_frames": 10,
+      "close_command_frames": 95,
+      "window_label_count": 2440,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 1,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.807827066033762,
+        6.859157195189954,
+        9.333957660970054
+      ]
+    },
+    {
+      "episode": 90,
+      "frames": 223,
+      "anchors": 223,
+      "xyz_norm_quantiles": [
+        0.024695209522218705,
+        0.44245733460891407,
+        0.572569318540783,
+        0.7868869984928115,
+        1.0267771651455577
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        78,
+        142
+      ],
+      "low_translation_nonzero_frames": 15,
+      "close_command_frames": 64,
+      "window_label_count": 2230,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 1,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.5800313877131802,
+        6.640474291567431,
+        9.567239907799195
+      ]
+    },
+    {
+      "episode": 15,
+      "frames": 242,
+      "anchors": 242,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.47691584366808354,
+        0.5907406510642197,
+        0.752854879895974,
+        0.8776972116427848
+      ],
+      "zero_xyz_frames": 1,
+      "rotation_only_frames": 1,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        71,
+        140
+      ],
+      "low_translation_nonzero_frames": 17,
+      "close_command_frames": 69,
+      "window_label_count": 2420,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 1,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.7688003215894981,
+        6.884584986599451,
+        9.876191917351273
+      ]
+    },
+    {
+      "episode": 16,
+      "frames": 248,
+      "anchors": 248,
+      "xyz_norm_quantiles": [
+        0.04088661848928137,
+        0.4055912888280998,
+        0.5497594663106147,
+        0.756279377416073,
+        1.1917053851990316
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        76,
+        155
+      ],
+      "low_translation_nonzero_frames": 8,
+      "close_command_frames": 79,
+      "window_label_count": 2480,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 1,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.9989414247916358,
+        5.913294365273875,
+        8.509123910034056
+      ]
+    },
+    {
+      "episode": 112,
+      "frames": 263,
+      "anchors": 263,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.38075565562577574,
+        0.4881912281161833,
+        0.6553489570267712,
+        0.9626660800708793
+      ],
+      "zero_xyz_frames": 1,
+      "rotation_only_frames": 1,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        78,
+        183
+      ],
+      "low_translation_nonzero_frames": 11,
+      "close_command_frames": 105,
+      "window_label_count": 2630,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 3,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.6346157226682103,
+        5.918962209601078,
+        8.999118336748229
+      ]
+    },
+    {
+      "episode": 262,
+      "frames": 228,
+      "anchors": 228,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.4016263418681563,
+        0.5418565265301749,
+        0.7407774538256091,
+        0.9472225548081873
+      ],
+      "zero_xyz_frames": 1,
+      "rotation_only_frames": 1,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        81,
+        150
+      ],
+      "low_translation_nonzero_frames": 12,
+      "close_command_frames": 69,
+      "window_label_count": 2280,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 1,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.255131950041028,
+        6.53496099323138,
+        9.543479723594944
+      ]
+    },
+    {
+      "episode": 32,
+      "frames": 229,
+      "anchors": 229,
+      "xyz_norm_quantiles": [
+        0.08216711345365386,
+        0.40084712541218354,
+        0.5015513359477768,
+        0.7129730989105431,
+        0.8426693901419928
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        77,
+        157
+      ],
+      "low_translation_nonzero_frames": 10,
+      "close_command_frames": 80,
+      "window_label_count": 2290,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.2253181363328682,
+        6.527033664086202,
+        9.012817420728071
+      ]
+    },
+    {
+      "episode": 304,
+      "frames": 306,
+      "anchors": 306,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.3644548640530331,
+        0.5195811190785928,
+        0.654849046114313,
+        0.8469243063833811
+      ],
+      "zero_xyz_frames": 3,
+      "rotation_only_frames": 3,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        76,
+        179
+      ],
+      "low_translation_nonzero_frames": 25,
+      "close_command_frames": 103,
+      "window_label_count": 3060,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.2046009950494586,
+        4.488632296135375,
+        9.183140469477477
+      ]
+    },
+    {
+      "episode": 31,
+      "frames": 241,
+      "anchors": 241,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.4210216780636844,
+        0.563500384372726,
+        0.7243740418521885,
+        1.07740190284985
+      ],
+      "zero_xyz_frames": 1,
+      "rotation_only_frames": 1,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        85,
+        163
+      ],
+      "low_translation_nonzero_frames": 18,
+      "close_command_frames": 78,
+      "window_label_count": 2410,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.083300303507369,
+        6.928621550943342,
+        9.910116500114055
+      ]
+    },
+    {
+      "episode": 75,
+      "frames": 240,
+      "anchors": 240,
+      "xyz_norm_quantiles": [
+        0.0053571430034935474,
+        0.435669419402112,
+        0.5853010398774733,
+        0.6950099253216998,
+        0.8668893530430042
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        79,
+        158
+      ],
+      "low_translation_nonzero_frames": 15,
+      "close_command_frames": 79,
+      "window_label_count": 2400,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.4746315822682008,
+        6.258796266568624,
+        8.538910192999758
+      ]
+    },
+    {
+      "episode": 198,
+      "frames": 235,
+      "anchors": 235,
+      "xyz_norm_quantiles": [
+        0.0026785715017467737,
+        0.3851304921058972,
+        0.5140484927775395,
+        0.6683081634984016,
+        0.9370062621932694
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        74,
+        158
+      ],
+      "low_translation_nonzero_frames": 14,
+      "close_command_frames": 84,
+      "window_label_count": 2350,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 1,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.513773944120896,
+        6.32449744644993,
+        9.452170243046291
+      ]
+    },
+    {
+      "episode": 300,
+      "frames": 237,
+      "anchors": 237,
+      "xyz_norm_quantiles": [
+        0.020399393110858192,
+        0.3981712410028507,
+        0.4724699170374703,
+        0.604200471036267,
+        0.9833020873763147
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        77,
+        166
+      ],
+      "low_translation_nonzero_frames": 12,
+      "close_command_frames": 89,
+      "window_label_count": 2370,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.7927274519303764,
+        5.769847987428161,
+        7.812219579839004
+      ]
+    },
+    {
+      "episode": 338,
+      "frames": 221,
+      "anchors": 221,
+      "xyz_norm_quantiles": [
+        0.04184062482417382,
+        0.4167740166961242,
+        0.5401955647882113,
+        0.6884762502450937,
+        0.9273661526693081
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        70,
+        143
+      ],
+      "low_translation_nonzero_frames": 12,
+      "close_command_frames": 73,
+      "window_label_count": 2210,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.33768340942754,
+        6.374769246796221,
+        9.624676315498727
+      ]
+    },
+    {
+      "episode": 337,
+      "frames": 227,
+      "anchors": 227,
+      "xyz_norm_quantiles": [
+        0.01875000074505806,
+        0.4193351520705977,
+        0.5595714808624169,
+        0.7780155055245223,
+        1.0290212261388914
+      ],
+      "zero_xyz_frames": 0,
+      "rotation_only_frames": 0,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        63,
+        150
+      ],
+      "low_translation_nonzero_frames": 7,
+      "close_command_frames": 87,
+      "window_label_count": 2270,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 0,
+      "consecutive_eef_displacement_mm_quantiles": [
+        2.2595783187849863,
+        6.863569086122132,
+        10.563396669491205
+      ]
+    },
+    {
+      "episode": 155,
+      "frames": 267,
+      "anchors": 267,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.3243400421914877,
+        0.5143485184266732,
+        0.568469471882793,
+        0.8536283877250591
+      ],
+      "zero_xyz_frames": 6,
+      "rotation_only_frames": 6,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        82,
+        194
+      ],
+      "low_translation_nonzero_frames": 10,
+      "close_command_frames": 112,
+      "window_label_count": 2670,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 2,
+      "consecutive_eef_displacement_mm_quantiles": [
+        0.9318536273020539,
+        6.168734730199822,
+        7.7070783757815695
+      ]
+    },
+    {
+      "episode": 144,
+      "frames": 284,
+      "anchors": 284,
+      "xyz_norm_quantiles": [
+        0.0,
+        0.35238774151765384,
+        0.4964029108143077,
+        0.6032059471168264,
+        0.9192379340625871
+      ],
+      "zero_xyz_frames": 3,
+      "rotation_only_frames": 3,
+      "zero_pose_frames": 0,
+      "zero_pose_runs": [],
+      "longest_pose_hold_controls": 0,
+      "zero_pose_near_gripper_transition": 0,
+      "gripper_sign_transitions": [
+        78,
+        207
+      ],
+      "low_translation_nonzero_frames": 16,
+      "close_command_frames": 129,
+      "window_label_count": 2840,
+      "window_zero_pose_labels": 0,
+      "all_pose_hold_windows": 0,
+      "padded_label_count": 45,
+      "translation_cancellation_windows": 1,
+      "consecutive_eef_displacement_mm_quantiles": [
+        1.1661532306912412,
+        5.819615867389563,
+        8.076944988770933
+      ]
+    }
+  ],
+  "alignment": {
+    "all_raw_inventory_hashes_match": true,
+    "state_action_image_pixels_exact": true,
+    "physics_actions_exact_after_float32": true,
+    "frames_checked": 1630
+  },
+  "sampling": {
+    "protocol": "CPU index-only torch DataLoader, same seed/batch/workers/drop_last/shuffle; not a per-gradient source log",
+    "index_sha256": "e731b4578e9d97030d8d8ce3ece2236577a88674c658179111abaeec62cb7bfb",
+    "recorded_prefetch_counts_match": true,
+    "reconstructed": {
+      "2000": {
+        "sources": {
+          "human": 543,
+          "replay": 1457
+        },
+        "human_clips": {
+          "3": 77,
+          "0": 153,
+          "6": 86,
+          "5": 97,
+          "1": 31,
+          "7": 71,
+          "2": 14,
+          "4": 14
+        },
+        "public_tasks": {
+          "13": 42,
+          "14": 36,
+          "19": 35,
+          "6": 35,
+          "9": 34,
+          "26": 45,
+          "20": 38,
+          "32": 35,
+          "33": 34,
+          "31": 26,
+          "25": 46,
+          "22": 28,
+          "39": 41,
+          "21": 43,
+          "1": 46,
+          "7": 32,
+          "23": 40,
+          "15": 35,
+          "5": 35,
+          "27": 38,
+          "37": 41,
+          "24": 43,
+          "38": 38,
+          "29": 36,
+          "18": 46,
+          "11": 43,
+          "12": 35,
+          "2": 33,
+          "16": 23,
+          "28": 28,
+          "8": 33,
+          "17": 28,
+          "36": 42,
+          "34": 33,
+          "30": 34,
+          "0": 29,
+          "4": 40,
+          "3": 42,
+          "10": 34,
+          "35": 32
+        }
+      },
+      "2001": {
+        "sources": {
+          "human": 543,
+          "replay": 1458
+        },
+        "human_clips": {
+          "3": 77,
+          "0": 153,
+          "6": 86,
+          "5": 97,
+          "1": 31,
+          "7": 71,
+          "2": 14,
+          "4": 14
+        },
+        "public_tasks": {
+          "13": 43,
+          "14": 36,
+          "19": 35,
+          "6": 35,
+          "9": 34,
+          "26": 45,
+          "20": 38,
+          "32": 35,
+          "33": 34,
+          "31": 26,
+          "25": 46,
+          "22": 28,
+          "39": 41,
+          "21": 43,
+          "1": 46,
+          "7": 32,
+          "23": 40,
+          "15": 35,
+          "5": 35,
+          "27": 38,
+          "37": 41,
+          "24": 43,
+          "38": 38,
+          "29": 36,
+          "18": 46,
+          "11": 43,
+          "12": 35,
+          "2": 33,
+          "16": 23,
+          "28": 28,
+          "8": 33,
+          "17": 28,
+          "36": 42,
+          "34": 33,
+          "30": 34,
+          "0": 29,
+          "4": 40,
+          "3": 42,
+          "10": 34,
+          "35": 32
+        }
+      }
+    },
+    "nominal_human_mass": 0.25,
+    "nominal_public_task8_mass": 0.01875,
+    "nominal_human_share_within_task8": 0.9302325581395349
+  }
+}

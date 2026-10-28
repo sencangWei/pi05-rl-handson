@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-28",
+  "scope": "read-only data audit; no training/policy/UI mutation",
+  "source_start_revision": "3a76e954f25fbb7911330ef7c930031ae68cebd0",
+  "branch": "experiment/matched-recovery-20261027",
+  "origin": "https://github.com/sencangWei/pi05-rl-handson.git",
+  "checks": [
+    {
+      "command": "OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 .venv-ppo/bin/python scripts/audit_recovery_data.py --output artifacts/20261028-data-audit/label-sampling-audit.json",
+      "exit_code": 0,
+      "result": "1630 aligned frames; pinned sampler prefetch counts match"
+    },
+    {
+      "command": "PYTHONPATH=/home/robot/voice-arm-sim/.local/openpi/third_party/libero MUJOCO_GL=egl PYOPENGL_PLATFORM=egl CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=1 .venv-ppo/bin/python scripts/audit_recovery_bank.py --manifest data/recovery-bowl-v3/manifest.json --split train --manual-manifest evidence/manual-recovery28-manifest.json --output artifacts/20261028-data-audit/train-and-recorded-starts.json",
+      "exit_code": 1,
+      "result": "Expected diagnostic failure: 17/18 bank starts pass, 6/6 exact raw recorded starts pass"
+    },
+    {
+      "command": "JAX_PLATFORMS=cpu .venv-ppo/bin/python -m pytest -q tests",
+      "exit_code": 0,
+      "result": "90 passed, 2 subtests passed, 80 pre-existing Flax deprecation warnings; 3.19 s"
+    },
+    {
+      "command": ".venv-ppo/bin/ruff check scripts/audit_recovery_data.py scripts/audit_recovery_bank.py tests/test_recovery_data_audit.py",
+      "exit_code": 0,
+      "result": "All checks passed"
+    }
+  ],
+  "collection_limit": "Unscoped pytest also collected third_party and failed five collection imports (pyrealsense2, gello, scripts.train_test, two lerobot.common). Repository tests/ pass; vendor suite not validated.",
+  "evidence_sha256": {
+    "scripts/audit_recovery_data.py": "ad9a3dd20ceda31a23657359b504aaef1bd34e641f5a62ce069e7b757a4477fc",
+    "scripts/audit_recovery_bank.py": "196524b9eff8774c9f1524500309afe8883987bb1c4ddbf08abf06a12ded9b8e",
+    "tests/test_recovery_data_audit.py": "41766e4b2cbd3440e655581d5f4d52b330002d93d477ee18fe1cc4b6b91724d6",
+    "artifacts/20261028-data-audit/label-sampling-audit.json": "c26be5b3e3598b130c6ddd70c75a3431ad3c5812fa17701ab17c424a11bc5d56",
+    "artifacts/20261028-data-audit/train-and-recorded-starts.json": "25bfbc30f23ece186fa06a5adbe690fee9c124450c1c535d9c01b07706ff4a3c"
+  },
+  "host_snapshot_note": "recovery-data-audit28-environment.json was captured by system Python; actual audit interpreter and package versions are in the artifact JSONs",
+  "causality_limit": "Sampling concentration is a hypothesis; no sampling ablation trained or causal fix verified"
+}

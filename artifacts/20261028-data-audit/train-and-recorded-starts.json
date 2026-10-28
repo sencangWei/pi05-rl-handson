@@ -1,0 +1,703 @@
+{
+  "manifest_sha256": "7bac5c686e9acfc522017604a0b3a8d3b966cfddb97c940b4fe05c5614f831af",
+  "script_sha256": "196524b9eff8774c9f1524500309afe8883987bb1c4ddbf08abf06a12ded9b8e",
+  "guard_sha256": "602710fde9ce8d46872ea83876eddaf511e9d36ba1dd7a0cd1e50d192a24bbad",
+  "packages": {
+    "mujoco": "3.8.1",
+    "robosuite": "1.4.1",
+    "numpy": "1.26.4"
+  },
+  "split": "train",
+  "protocol": "restore every selected state, sim.forward, check bowl-other penetration >0.1 mm / bowl-table >1 mm; no controls",
+  "entries": [
+    {
+      "id": "train-empty_grasp-init01",
+      "state_sha256": "ec311db3b576d3169c3d5e848e5b6b02a74815dcf5bf22e0ebe3f53d78c2521a",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-object_offset-init01",
+      "state_sha256": "f2311ae37eed37f4565c49fa412169d92353f45812683cfb4a4d3fbbdbed7a3e",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-placement_failure-init01",
+      "state_sha256": "c503e3ccb9ee863c90b70698e71955b9a8d777c0a94dbd661a54988774f3d47c",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-empty_grasp-init02",
+      "state_sha256": "68f00711e68e07b552b12df65857ab57556cfcacec0a7ce3af57e82d5f2e8e0d",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-object_offset-init02",
+      "state_sha256": "005c17c39f3549b8dec69ea01c06e2ec947a88acebc9dbb827d9f24ca5fa76db",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-placement_failure-init02",
+      "state_sha256": "0a9ac60b37b9f4c3579be1a2323a996944ee6f0c764412516bb96794ae8322f8",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-empty_grasp-init03",
+      "state_sha256": "094f3e78c84b595abd5bde475d0706f2ca4243d32f1dfed089777c85f37e9fa7",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-object_offset-init03",
+      "state_sha256": "129a36bb117fef2b547d0b29b2828e806bc01eb3f61f368543ab7cd32581b72a",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-placement_failure-init03",
+      "state_sha256": "b923773c7d9c18311bae720225b173fa3d5b5eab19318b5255156cbc71153878",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-empty_grasp-init04",
+      "state_sha256": "b6212b0f9e3b5c1980427f2cb026476541cd52e46925ed1e5979bb95aae91a36",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-object_offset-init04",
+      "state_sha256": "29d9ae5f19183dcfbecd2560aa7f8056a9a53a74aea75d3eb9ac0a156dfdae79",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-placement_failure-init04",
+      "state_sha256": "5618662c94d46d3fc1e371146c174017bcde364d25c0f1af0c19154738b1b35b",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-empty_grasp-init05",
+      "state_sha256": "ccf1fa73ec30733f5c313fcbae711719c862d121f3eef91141c2e3501b293790",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-object_offset-init05",
+      "state_sha256": "cdd03b4e480cc80dbc0e76f33917041fcce869e72605b4dba37f8203b0f36801",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-placement_failure-init05",
+      "state_sha256": "00345d7d1eef84e40a40ff354c3c4e6182f8d92fed1be97b228941573cec35ff",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-empty_grasp-init06",
+      "state_sha256": "08319f8866593ad6bd33dd8cfb28252527df8346cdfa0d22f5c8a634df24a160",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-object_offset-init06",
+      "state_sha256": "590643e55927acba2e045a4eb361482fc41cc2833b283e95333b4e4b5b032f44",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "train-placement_failure-init06",
+      "state_sha256": "81d2acbdef72c9bff30a09598d9dd67b81710624ce4afc07bc5b206306907b43",
+      "overlaps": [
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g1"
+          ],
+          "penetration_m": 0.005431019151163033
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g1"
+          ],
+          "penetration_m": 0.0031098716639676354
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g2"
+          ],
+          "penetration_m": 0.003957795127224316
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g2"
+          ],
+          "penetration_m": 0.0019260724633054288
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g3"
+          ],
+          "penetration_m": 0.0025742752950718914
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g3"
+          ],
+          "penetration_m": 0.0012618562274970353
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g4"
+          ],
+          "penetration_m": 0.0014967592830901835
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g4"
+          ],
+          "penetration_m": 0.0012101934148878199
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g5"
+          ],
+          "penetration_m": 0.001711844592322413
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g5"
+          ],
+          "penetration_m": 0.001007871160921834
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g6"
+          ],
+          "penetration_m": 0.0026991447163991376
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g6"
+          ],
+          "penetration_m": 0.0010649889703518256
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g7"
+          ],
+          "penetration_m": 0.003984754231779776
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g7"
+          ],
+          "penetration_m": 0.00169377494097346
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g8"
+          ],
+          "penetration_m": 0.005296718131712333
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g8"
+          ],
+          "penetration_m": 0.002764238092359961
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g9"
+          ],
+          "penetration_m": 0.0063914124386313075
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g9"
+          ],
+          "penetration_m": 0.004079156550442779
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g10"
+          ],
+          "penetration_m": 0.00702669750595397
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g10"
+          ],
+          "penetration_m": 0.005331313687299076
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g11"
+          ],
+          "penetration_m": 0.007117909957526224
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g11"
+          ],
+          "penetration_m": 0.0063292502405841835
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g12"
+          ],
+          "penetration_m": 0.007117909957526224
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g12"
+          ],
+          "penetration_m": 0.0063292502405841835
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g13"
+          ],
+          "penetration_m": 0.006875256772004484
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g13"
+          ],
+          "penetration_m": 0.006734465445091121
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g14"
+          ],
+          "penetration_m": 0.00692371199507621
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g14"
+          ],
+          "penetration_m": 0.006106327652859713
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g15"
+          ],
+          "penetration_m": 0.006563839285159105
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g15"
+          ],
+          "penetration_m": 0.004963063138289134
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g16"
+          ],
+          "penetration_m": 0.005920184341454257
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g16"
+          ],
+          "penetration_m": 0.0039337313705103075
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g36"
+          ],
+          "penetration_m": 0.007690506155525958
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g36"
+          ],
+          "penetration_m": 0.00758370805154556
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g36"
+          ],
+          "penetration_m": 0.003906942156740713
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g36"
+          ],
+          "penetration_m": 0.0038001440527603153
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g37"
+          ],
+          "penetration_m": 0.007719155937783141
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g37"
+          ],
+          "penetration_m": 0.007689401585607607
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g37"
+          ],
+          "penetration_m": 0.003935591938997896
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g37"
+          ],
+          "penetration_m": 0.003905837586822362
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g38"
+          ],
+          "penetration_m": 0.008505148348101645
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g38"
+          ],
+          "penetration_m": 0.00734691447092249
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g38"
+          ],
+          "penetration_m": 0.008398350244121245
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g38"
+          ],
+          "penetration_m": 0.007240116366942088
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g39"
+          ],
+          "penetration_m": 0.004208397884165427
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g39"
+          ],
+          "penetration_m": 0.003148438396565109
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g39"
+          ],
+          "penetration_m": 0.004101599780185025
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g39"
+          ],
+          "penetration_m": 0.0030416402925847077
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g40"
+          ],
+          "penetration_m": 0.0076086644281382395
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g40"
+          ],
+          "penetration_m": 0.007557509033794688
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g40"
+          ],
+          "penetration_m": 0.003825100429352994
+        },
+        {
+          "geoms": [
+            "table_collision",
+            "akita_black_bowl_1_g40"
+          ],
+          "penetration_m": 0.0037739450350094423
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g4",
+            "wooden_cabinet_1_g2"
+          ],
+          "penetration_m": 0.00033653685207270766
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g5",
+            "wooden_cabinet_1_g2"
+          ],
+          "penetration_m": 0.00017623692148644073
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g5",
+            "wooden_cabinet_1_g3"
+          ],
+          "penetration_m": 0.0007956688269104125
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g5",
+            "wooden_cabinet_1_g3"
+          ],
+          "penetration_m": 0.0004231653594765586
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g21",
+            "wooden_cabinet_1_g3"
+          ],
+          "penetration_m": 0.005589409389474396
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g21",
+            "wooden_cabinet_1_g3"
+          ],
+          "penetration_m": 0.004732060590082918
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g22",
+            "wooden_cabinet_1_g3"
+          ],
+          "penetration_m": 0.008529785119030442
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g22",
+            "wooden_cabinet_1_g3"
+          ],
+          "penetration_m": 0.0060685784970576535
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g20",
+            "wooden_cabinet_1_g33"
+          ],
+          "penetration_m": 0.001941973271867048
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g20",
+            "wooden_cabinet_1_g33"
+          ],
+          "penetration_m": 0.005807411212922432
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g21",
+            "wooden_cabinet_1_g33"
+          ],
+          "penetration_m": 0.006652893081378468
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g21",
+            "wooden_cabinet_1_g33"
+          ],
+          "penetration_m": 0.0005122514697060377
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g21",
+            "wooden_cabinet_1_g33"
+          ],
+          "penetration_m": 0.0019125680844301717
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g21",
+            "wooden_cabinet_1_g35"
+          ],
+          "penetration_m": 0.0011804109347066962
+        }
+      ],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": false
+    }
+  ],
+  "manual_manifest_sha256": "86e3fc204735dba54261f32dd864297bd00aab8f044ff2d866f46546d7db9cfb",
+  "recorded_starts": [
+    {
+      "source": "human_1793114449817419797",
+      "entry": "train-placement_failure-init01",
+      "raw_initial_state_sha256": "9e25d275e7482f7c7874f145da44407f3cfaa8438c395eee74b661c3412376db",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "source": "human_1793121358375746008",
+      "entry": "train-placement_failure-init04",
+      "raw_initial_state_sha256": "c00bcaabecf61203072e2157864ea92398076a36f494aafbcdb30f47d7b479a3",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "source": "human_1793122696228231033",
+      "entry": "train-placement_failure-init05",
+      "raw_initial_state_sha256": "c14af3a204dfca7b8d7979b5a8b048f72114c4e3f3c839bfd6da9c7c1b4d302f",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "source": "human_1793122982775036691",
+      "entry": "train-empty_grasp-init01",
+      "raw_initial_state_sha256": "ec311db3b576d3169c3d5e848e5b6b02a74815dcf5bf22e0ebe3f53d78c2521a",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "source": "human_1793123928152741170",
+      "entry": "train-object_offset-init01",
+      "raw_initial_state_sha256": "f2311ae37eed37f4565c49fa412169d92353f45812683cfb4a4d3fbbdbed7a3e",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "source": "human_1793124070194277437",
+      "entry": "train-object_offset-init02",
+      "raw_initial_state_sha256": "005c17c39f3549b8dec69ea01c06e2ec947a88acebc9dbb827d9f24ca5fa76db",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    }
+  ],
+  "passed": false
+}

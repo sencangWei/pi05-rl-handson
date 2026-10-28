@@ -1,0 +1,77 @@
+{
+  "status": "PROPOSED_NOT_IMPLEMENTED_OR_STARTED",
+  "date": "2026-10-28",
+  "purpose": "Single-variable sampling-ratio ablation; not a promised fix or model promotion",
+  "training": {
+    "parent": "/home/robot/pi05-rl-handson/checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999",
+    "parent_files": {
+      "params/_METADATA": "88464a384c524c50fa1a92c1685d23a79570c62807a0ccf021f5f9307fff137c",
+      "params/_sharding": "54899ee3f4d45eee96ddada379a19a9da1324792b141fa0449608620571e6b01",
+      "params/array_metadatas/process_0": "da5f8952b77ab352fa92e3e58d742bfe0db5b9c1b956212f8279895b9df03721",
+      "params/d/e99e57e2878e56ab5f02847ec386e73d": "515654d10237999b2c3c6bea1c1d41f48350f69e514cb7c2c039779a3fb624a9",
+      "params/manifest.ocdbt": "55d9bf8ef0fc7ab5a67aa6a449fe35ef615c1ff79c01eb5829a250db4a9f2979",
+      "params/ocdbt.process_0/d/23e55020a5614908020c5880f744a7a4": "e94b6f05ceef55173200b9a654bc6d84fae3656f3c7e168fafc6291a2847bc7a",
+      "params/ocdbt.process_0/d/31f6986f3a651b625f4c28c5133382ca": "f55fd89dadc9541d14192fd372b98539f7fb5ee34c7394d588ee132ef48bbf73",
+      "params/ocdbt.process_0/d/5014daf415aca9f55984ec2803cf42ef": "3da67fa5b4cfe32f5a4ef75e077b0ba11a018c54414aac0a0548a60110d98260",
+      "params/ocdbt.process_0/d/74358c6b38dd7083ad9c2a1ad5a61906": "f814f6562c5cacf5ffed9d4e9f46556e04dfff7df3e719779b0372f7fb3b3685",
+      "params/ocdbt.process_0/d/c2f1a4f7df5efa162c5555f940946b8e": "ecb33097b929abb52bc1c729d882d947d4c085427ef648bf71e47c4125b0bed3",
+      "params/ocdbt.process_0/d/f25fd307076f23281b9d14bfd63a0f19": "11f3efa9f1c3a7bf9246ec1119434b1b3aa77e8a14fbcba3744cd2c84210470b",
+      "params/ocdbt.process_0/manifest.ocdbt": "8ccac4a15e1beaccd32a4958c60b1f83d7cbb76ab16e2e6716d32687962c15ad",
+      "assets/physical-intelligence/libero/norm_stats.json": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84"
+    },
+    "optimizer": "fresh AdamW, clip=1; LoRA parameters only; no EMA",
+    "parent_optimizer_resumed": false,
+    "updates": 2000,
+    "batch_size": 1,
+    "seed": 42,
+    "learning_rate": 5e-06,
+    "warmup_updates": 20,
+    "horizon": 10,
+    "openpi_revision": "15a9616a00943ada6c20a0f158e3adb39df2ccac",
+    "normalization_sha256": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84",
+    "human_manifest": "evidence/manual-recovery28-manifest.json",
+    "human_manifest_sha256": "86e3fc204735dba54261f32dd864297bd00aab8f044ff2d866f46546d7db9cfb",
+    "public_manifest": "evidence/dataset-manifest.json",
+    "public_manifest_sha256": "9282c19b3d6cd6bf5779d3169e112a145852066654651e40b333558d9e8a3fde",
+    "only_intended_change": "1 human : 39 public replay slots instead of 1:3; public remains 40-task balanced; same full files",
+    "nominal_human_mass": 0.025,
+    "nominal_public_task8_mass": 0.024375,
+    "nominal_human_share_within_task8": 0.5063291139240507,
+    "recording_requirement": "Log consumed-gradient source and episode separately from prefetch; preflight seeded routes before training",
+    "unchanged": "all other original training settings; no action retiming, phase filtering, scaling, extra updates or joint-to-OSC conversion"
+  },
+  "quarantine": {
+    "bank": "data/recovery-bowl-v3/manifest.json",
+    "entry": "train-placement_failure-init06",
+    "reason": "bowl-table and bowl-cabinet penetration; not among six approved recordings",
+    "applies_to": "future synthetic-state sampling/PPO; original files preserved, this proposal trains existing approved clips only"
+  },
+  "evaluation": {
+    "manifest": "data/recovery-bowl-physicaldev28-v2/manifest.json",
+    "manifest_sha256": "36372697dd7e5b2b372dc63bd8a959ee5bfe099a6600a1945a6dd053f14c5142",
+    "split": "dev",
+    "cases": 12,
+    "noise_seed": 42,
+    "control_hz": 20,
+    "horizon": 10,
+    "replan_controls": 5,
+    "flow_steps": 10,
+    "max_controls": 300,
+    "success": "native bowl-on-plate and no finger contact for 5 consecutive controls",
+    "comparators": [
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999",
+      "checkpoints/pi05_recovery_replay_lora/manual6_replay2000_v1/1999"
+    ],
+    "diagnostic_gates": [
+      "at least 10/12 successes, retain every failure/timeout in denominator",
+      "paired control-step median no worse than parent on shared successes; report every case and subset membership",
+      "report category success, grasp verification, control steps and wall latency separately"
+    ],
+    "promotion": "No automatic promotion; freeze a 40-task old-skill regression manifest and efficiency criteria before evaluating that gate; heldout remains sealed until recipe frozen",
+    "limitations": "Reused development cases; not unseen generalization. About 50 human samples expected at this budget; may undertrain rare recovery."
+  },
+  "audit_inputs": {
+    "artifacts/20261028-data-audit/label-sampling-audit.json": "c26be5b3e3598b130c6ddd70c75a3431ad3c5812fa17701ab17c424a11bc5d56",
+    "artifacts/20261028-data-audit/train-and-recorded-starts.json": "25bfbc30f23ece186fa06a5adbe690fee9c124450c1c535d9c01b07706ff4a3c"
+  }
+}

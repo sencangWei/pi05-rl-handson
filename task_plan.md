@@ -56,3 +56,10 @@ Stop: report measured paired results, no unsupported generalization claim; do no
 3. DONE: six historical failures continued300→600 controls,0/6success (five invalid starts); new valid paired bank parent10/12 vs manual6 10/12, all9 shared successes slower95→114 median controls. Two remaining failures never grasped bowl, each exact300-control replay complete.
 4. DONE: report/correction,86 tests+2subtests, Ruff and60 full video decodes passed. No training/UI change. Code/evidence payload8bd6b6e independently restored from user-owned GitHub origin, all2787 tracked files identical; proof recorded in evidence/recovery-diagnostics28-remote-restore.json.
 Stop: diagnosis delivered; do not claim recovery repaired or promote unchanged model. Training-state audit and targeted relabeling are a proposed next experiment, not executed in this turn.
+
+## 2026-10-28 用户继续同意：训练数据与采样审计
+1. DONE: preserve manifests/raw recordings; audit train initial states with the existing penetration gate, without using dev/heldout as training data.
+2. DONE: verify raw→Parquet action/state alignment; quantify stationary controls, terminal padding, window cancellation and actual mixture weights against public task8 train data.
+3. DONE: document evidence-backed next experiment, distinguishing sampling/label hypotheses from causal proof; do not launch training or replace UI during this audit.
+4. IN_PROGRESS: CPU tests (90 + 2 subtests) and lint pass; commit/push exact files and verify independent remote restoration.
+Stop: deliver measured data audit and concrete training recommendation; preserve original human demonstrations and all unrelated jobs.

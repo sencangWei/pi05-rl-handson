@@ -99,3 +99,10 @@ Manual6 compatibility: four complete OSC demos and two mixed demos. Mixed OSC se
 2026-10-28 diagnostic baseline: manual6 model still fails six fresh dev cases (placement40; all categories42; empty43; offset43). Last50 command norm0.217..0.565 with actual median1.587..7.277mm/step. Parent offset43 has command0.815 vs actual0.252mm/step. Existing traces lack force/limits/Jacobian, so collision or singularity is unproven. Reproduce original commands first; no assumed action-size fix.
 
 2026-10-28 final diagnostic findings: old synthetic dev bank6/12 has initial bowl/cabinet/plate/bottle penetration, including successes; old5→6/12 cannot support improvement. Strict insertion+settled collision guard fixed; appended equal-radius candidates under pre-outcome amendment, no outcome selection; separate process restoration newbank12/12 valid. Parent/new10/12 each, placement42 gain/41 regression, all9 shared successes slower95→114median controls. Newfailures40/41 never grasp0/300, final50 torque saturation0, translation sigma0.203/0.189; policy not reacquiring bowl despite motions near plate. Six historical600-control trials0/6, five invalidinitials; valid40 proves budget not sole cause. WrongMuJoCo3.2.3 replay rejected; matched3.8.1 eight historical+six continuation prefixes+two newfailures zero recorded pose error. Fullstate/pixel equality unproven.86 tests+2subtests/Ruff/60video decodesPASS. External12 runtime hashes and simulator unchanged vs prior verified backups. No new training, UI/model unchanged.
+
+## 2026-10-28 人工恢复数据审计
+
+- 6录制/8 OSC片段/1630帧 raw→Parquet状态、动作及两路像素全部一致；1612可采窗口起点。180帧位姿全零，最长10控制步=0.5秒；405帧仅旋转，不可当停顿删除。
+- 同任务8内纠错抽样集中：seed42索引重建2000次人工543、公开任务8仅33；含1次预取计数与原状态一致。93.02%理论、94.27%重建任务内人工比例；尚非因果证明。
+- 训练库17/18通过；placement_failure-init06穿插但未用于6条录制。精确原录制起点6/6通过。816关节控制保留，当前7D OSC监督不能学习完整关节接管。
+- 冻结仅改采样1:3→1:39的提案，未训练/未换UI；保留全量数据。报告 reports/recovery-data-audit-20261028/README.md。
