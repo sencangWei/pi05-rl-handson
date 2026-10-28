@@ -202,3 +202,5 @@ original-v1/v2各执行两源共1221控制，四录像2442帧全部解码；最�
 - 6段原录像+2段20fps同步三栏视频，共3860帧全解码，2张关键帧人工查看；30测试、4文件Ruff、3脚本编译通过，原始数据哈希/冻结协议源码/动作范围再次通过。
 - 渲染首次把imageio.Reader当iterator报错，改用iter(reader)后通过，不影响已完成的物理结果。未重跑或改动验收门。
 - 新增scripts/osc_action_conversion.py、verify_osc_conversion.py、render_osc_conversion.py及测试、报告、环境与校验证据。未生成训练集、未训练、未换UI、未停止其他任务。下一项仅建议采集通过转换的实际观测后再有界微调。
+
+2026-10-29 OSC转换交付远端核验完成：载荷9eec59001dd9bd6daa69779332566ce3d5317611已推自有origin，独立恢复3461个跟踪文件，54个新增Git blob从API下载并校验，内容与重建树84671b2b0123f9874ac1a553d20d22d11768b4be完全一致。恢复目录内9项转换测试通过。证明evidence/osc-conversion29-remote-restore.json。未训练或修改现役面板模型。
