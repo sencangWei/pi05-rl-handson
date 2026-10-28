@@ -150,6 +150,6 @@ CPU/PPO准备代码备份：d1d630ecd7118cdd0f39736a5819a9dbbdcdf82d已推送公
 
 2026-10-28 diagnostic backup complete: payload8bd6b6e017b4f58d3778f44a9b37b3656e9bdf10 independently fetched from public sencangWei/pi05-rl-handson branch experiment/matched-recovery-20261027; all2787 tracked file SHA256s and whole git tree identical. Covers code,12 valid states,60 videos, physics traces and reports. Existing external runtime12files match prior restored patches, no new weight/data release. Proof/status follow in metadata commit. No pending diagnostic work; policy recovery remains incomplete.
 
-## 2026-10-28 数据审计完成，备份核验待完成
+## 2026-10-28 数据审计及远端恢复核验完成
 
-完成只读物理起点、1630帧对齐及采样重建；诊断库初态1例不合格，未污染本轮6条原录制。90 tests + 2 subtests通过，Ruff通过。下一轮仅改抽样比例的提案已保存，未启动训练；保持用户面板/权重不变。即将提交审计代码与证据到 origin 并独立恢复比对。
+完成只读物理起点、1630帧对齐及采样重建；诊断库初态1例不合格，未污染本轮6条原录制。90 tests + 2 subtests通过，Ruff通过。下一轮仅改抽样比例的提案已保存，未启动训练；保持用户面板/权重不变。审计代码/提案/证据已提交 d1a0d16 到 sencangWei/pi05-rl-handson 的 experiment/matched-recovery-20261027，独立GitHub克隆恢复后全2796个跟踪文件SHA256一致；证明见 evidence/recovery-data-audit28-remote-restore.json。

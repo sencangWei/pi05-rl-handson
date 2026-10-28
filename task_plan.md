@@ -61,5 +61,5 @@ Stop: diagnosis delivered; do not claim recovery repaired or promote unchanged m
 1. DONE: preserve manifests/raw recordings; audit train initial states with the existing penetration gate, without using dev/heldout as training data.
 2. DONE: verify raw→Parquet action/state alignment; quantify stationary controls, terminal padding, window cancellation and actual mixture weights against public task8 train data.
 3. DONE: document evidence-backed next experiment, distinguishing sampling/label hypotheses from causal proof; do not launch training or replace UI during this audit.
-4. IN_PROGRESS: CPU tests (90 + 2 subtests) and lint pass; commit/push exact files and verify independent remote restoration.
+4. DONE: CPU tests (90 + 2 subtests) and lint pass; audit payload d1a0d16 pushed to user-owned origin and independently restored, all2796 tracked files SHA256-identical.
 Stop: deliver measured data audit and concrete training recommendation; preserve original human demonstrations and all unrelated jobs.

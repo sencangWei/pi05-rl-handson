@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "date": "2026-10-28",
+  "revision": "d1a0d16b9d9b26586d203be251f2941920b32657",
+  "remote_revision": "d1a0d16b9d9b26586d203be251f2941920b32657",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson.git",
+  "branch": "experiment/matched-recovery-20261027",
+  "tree": "21c8b54a3aa4906b006e4ccfc12d2b1ef35ebc8d",
+  "files_verified": 2796,
+  "mismatches": [],
+  "method": "Independent GitHub clone fetch and clean detached checkout, complete git tree plus every tracked regular/symlink file SHA256 comparison; no local object copying",
+  "proof_scope": "Audit payload revision. This proof and completion status committed separately; no new weights or raw-data release."
+}
