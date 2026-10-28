@@ -1,0 +1,17 @@
+{
+  "python": "/home/robot/pi05-rl-handson/.venv-ppo/bin/python",
+  "packages": {
+    "numpy": "1.26.4",
+    "mujoco": "3.8.1",
+    "robosuite": "1.4.1",
+    "torch": "2.7.1+cu128",
+    "jax": "0.5.3"
+  },
+  "env": {
+    "MUJOCO_GL": "egl",
+    "PYOPENGL_PLATFORM": "egl",
+    "OMP_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "2"
+  },
+  "explanation": "Actual replay/audit/evaluation interpreter. Broader evidence snapshot used system Python and is inventory only."
+}

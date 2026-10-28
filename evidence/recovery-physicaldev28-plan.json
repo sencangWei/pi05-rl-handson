@@ -1,0 +1,38 @@
+{
+  "purpose": "Repair synthetic development initial-state physical validation, not policy training or recovery scripting",
+  "historical_manifest": "data/recovery-bowl-freshdev28/manifest.json",
+  "historical_manifest_sha256": "3f8b1cffc3e7dd8e9dbaa062bd82a22b5e44e9379de80cd61eade50211467768",
+  "new_bank": "data/recovery-bowl-physicaldev28",
+  "source_initial_ids": [
+    40,
+    41,
+    42,
+    43
+  ],
+  "categories": [
+    "empty_grasp",
+    "object_offset",
+    "placement_failure"
+  ],
+  "seed": 42,
+  "physics": "mujoco==3.8.1, robosuite==1.4.1",
+  "guard": "reject bowl-other penetration >0.1 mm and bowl-table >1 mm before and after settling; preserve displacement/stability/gripper/native-goal checks",
+  "candidate_policy": "same bounded candidate order/radii as historical generator; no outcome-based selection",
+  "evaluation": {
+    "checkpoint": "checkpoints/pi05_recovery_replay_lora/manual6_replay2000_v1/1999",
+    "parent_checkpoint": "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999",
+    "max_controls": 300,
+    "replan_controls": 5,
+    "flow_steps": 10,
+    "noise_seed": 42,
+    "success": "native bowl-on-plate AND no finger contact for 5 consecutive controls"
+  },
+  "interpretation": "New bank differs from historical bank; preserve historical all-case denominators. Evaluate every accepted new dev case; no heldout or training use. If candidates exhausted, report construction failure, do not weaken guard.",
+  "amendment_before_v2_evaluation": {
+    "reason": "All four original equal-distance offsets for dev40 empty_grasp collide on insertion. Keep strict guard; append twelve equal-radius angular alternatives, no policy-outcome selection.",
+    "candidate_count_nonplacement": 16,
+    "radius_unchanged": true,
+    "failed_construction": "artifacts/20261028-diagnostics/physicaldev-attempt1-failure.json",
+    "new_bank": "data/recovery-bowl-physicaldev28-v2"
+  }
+}

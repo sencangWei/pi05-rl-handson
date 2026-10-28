@@ -1,0 +1,828 @@
+[
+  {
+    "label": "new-dev-placement_failure-init40",
+    "id": "dev-placement_failure-init40",
+    "replay_controls": 300,
+    "controls": 600,
+    "success": false,
+    "fidelity_passed": true,
+    "max_pose_error_m": 0.0,
+    "fidelity_failed_steps": [],
+    "initial_contacts": {
+      "akita_black_bowl_1_g36 / table_collision": {
+        "normal_force_N": 0.0033540552843339825,
+        "penetration_m": 7.069146938308909e-06
+      },
+      "akita_black_bowl_1_g37 / table_collision": {
+        "normal_force_N": 0.0028466610080177825,
+        "penetration_m": 6.011673913751124e-06
+      },
+      "akita_black_bowl_1_g38 / table_collision": {
+        "normal_force_N": 0.0035165968138201427,
+        "penetration_m": 7.407914811794326e-06
+      },
+      "akita_black_bowl_1_g39 / table_collision": {
+        "normal_force_N": 0.0027397714454215987,
+        "penetration_m": 5.788802980531513e-06
+      },
+      "akita_black_bowl_1_g40 / table_collision": {
+        "normal_force_N": 0.003479830596747605,
+        "penetration_m": 7.331270395420535e-06
+      }
+    },
+    "last50": {
+      "median_motion_mm": 1.5047647088853862,
+      "grasp_controls": 0,
+      "torque_saturated_controls": 0,
+      "min_joint_margin_rad": 0.08311642447357909,
+      "min_translation_jacobian_sigma": 0.19496440827997796
+    }
+  },
+  {
+    "label": "new-dev-empty_grasp-init42",
+    "id": "dev-empty_grasp-init42",
+    "replay_controls": 300,
+    "controls": 600,
+    "success": false,
+    "fidelity_passed": true,
+    "max_pose_error_m": 0.0,
+    "fidelity_failed_steps": [],
+    "initial_contacts": {
+      "gripper0_finger1_pad_collision / gripper0_finger2_pad_collision": {
+        "normal_force_N": 0.11000930847184963,
+        "penetration_m": 4.2796362553776433e-07
+      },
+      "akita_black_bowl_1_g7 / plate_1_g9": {
+        "normal_force_N": 426.2240342178652,
+        "penetration_m": 0.0035821007858504554
+      },
+      "akita_black_bowl_1_g7 / plate_1_g10": {
+        "normal_force_N": 660.3719777449866,
+        "penetration_m": 0.005658202764669967
+      },
+      "akita_black_bowl_1_g8 / plate_1_g9": {
+        "normal_force_N": 310.9738956989268,
+        "penetration_m": 0.0025892433965996283
+      },
+      "akita_black_bowl_1_g8 / plate_1_g10": {
+        "normal_force_N": 543.197851192545,
+        "penetration_m": 0.0046738841655401125
+      },
+      "akita_black_bowl_1_g9 / plate_1_g1": {
+        "normal_force_N": 249.2210498693106,
+        "penetration_m": 0.002100925237692526
+      },
+      "akita_black_bowl_1_g9 / plate_1_g2": {
+        "normal_force_N": 741.2459834578133,
+        "penetration_m": 0.006315527379977772
+      },
+      "akita_black_bowl_1_g9 / plate_1_g3": {
+        "normal_force_N": 741.2459834578133,
+        "penetration_m": 0.006315527379977772
+      },
+      "akita_black_bowl_1_g9 / plate_1_g9": {
+        "normal_force_N": 211.88342514580003,
+        "penetration_m": 0.0017699340025013333
+      },
+      "akita_black_bowl_1_g9 / plate_1_g10": {
+        "normal_force_N": 561.3959373967217,
+        "penetration_m": 0.004790123188858921
+      },
+      "akita_black_bowl_1_g10 / plate_1_g2": {
+        "normal_force_N": 741.3299118040997,
+        "penetration_m": 0.006319383667367579
+      },
+      "akita_black_bowl_1_g10 / plate_1_g3": {
+        "normal_force_N": 741.3299118040997,
+        "penetration_m": 0.006319383667367579
+      },
+      "akita_black_bowl_1_g10 / plate_1_g10": {
+        "normal_force_N": 585.4984251319819,
+        "penetration_m": 0.0049956636806569536
+      },
+      "akita_black_bowl_1_g11 / plate_1_g2": {
+        "normal_force_N": 432.1793131181787,
+        "penetration_m": 0.003646436312463768
+      },
+      "akita_black_bowl_1_g11 / plate_1_g3": {
+        "normal_force_N": 432.1793131181787,
+        "penetration_m": 0.003646436312463768
+      },
+      "akita_black_bowl_1_g11 / plate_1_g10": {
+        "normal_force_N": 355.7583838794722,
+        "penetration_m": 0.003006204758939966
+      },
+      "akita_black_bowl_1_g12 / plate_1_g2": {
+        "normal_force_N": 432.1793131181787,
+        "penetration_m": 0.003646436312463768
+      },
+      "akita_black_bowl_1_g12 / plate_1_g3": {
+        "normal_force_N": 432.1793131181787,
+        "penetration_m": 0.003646436312463768
+      },
+      "akita_black_bowl_1_g12 / plate_1_g10": {
+        "normal_force_N": 355.7583838794722,
+        "penetration_m": 0.003006204758939966
+      },
+      "akita_black_bowl_1_g24 / plate_1_g9": {
+        "normal_force_N": 286.3632691960837,
+        "penetration_m": 0.0023803101673916735
+      },
+      "akita_black_bowl_1_g24 / plate_1_g10": {
+        "normal_force_N": 175.16288553584465,
+        "penetration_m": 0.0014341816454002225
+      },
+      "akita_black_bowl_1_g25 / plate_1_g9": {
+        "normal_force_N": 272.6237043528912,
+        "penetration_m": 0.0022648699976464143
+      },
+      "akita_black_bowl_1_g25 / plate_1_g10": {
+        "normal_force_N": 250.12261027719276,
+        "penetration_m": 0.0020714104800003217
+      },
+      "akita_black_bowl_1_g26 / plate_1_g1": {
+        "normal_force_N": 153.00937299789783,
+        "penetration_m": 0.0012645897248715655
+      },
+      "akita_black_bowl_1_g26 / plate_1_g9": {
+        "normal_force_N": 235.51574389998828,
+        "penetration_m": 0.0019481510375080925
+      },
+      "akita_black_bowl_1_g26 / plate_1_g10": {
+        "normal_force_N": 243.59281522774043,
+        "penetration_m": 0.002014941258873859
+      },
+      "akita_black_bowl_1_g27 / plate_1_g1": {
+        "normal_force_N": 165.8066175496809,
+        "penetration_m": 0.0013905843221448722
+      },
+      "akita_black_bowl_1_g27 / plate_1_g2": {
+        "normal_force_N": 93.651537099206,
+        "penetration_m": 0.0007870026715824929
+      },
+      "akita_black_bowl_1_g27 / plate_1_g3": {
+        "normal_force_N": 93.651537099206,
+        "penetration_m": 0.0007870026715824929
+      },
+      "akita_black_bowl_1_g27 / plate_1_g10": {
+        "normal_force_N": 242.1753873267286,
+        "penetration_m": 0.002016301033191649
+      },
+      "akita_black_bowl_1_g28 / plate_1_g2": {
+        "normal_force_N": 323.68905358472125,
+        "penetration_m": 0.002780960228765627
+      },
+      "akita_black_bowl_1_g28 / plate_1_g3": {
+        "normal_force_N": 323.68905358472125,
+        "penetration_m": 0.002780960228765627
+      },
+      "akita_black_bowl_1_g28 / plate_1_g10": {
+        "normal_force_N": 150.6160167531273,
+        "penetration_m": 0.0012652955522816853
+      },
+      "akita_black_bowl_1_g29 / plate_1_g2": {
+        "normal_force_N": 379.8421155513357,
+        "penetration_m": 0.0033026571921008652
+      },
+      "akita_black_bowl_1_g29 / plate_1_g3": {
+        "normal_force_N": 379.8421155513357,
+        "penetration_m": 0.0033026571921008652
+      },
+      "akita_black_bowl_1_g30 / plate_1_g2": {
+        "normal_force_N": 382.416727977675,
+        "penetration_m": 0.00331678110297989
+      },
+      "akita_black_bowl_1_g30 / plate_1_g3": {
+        "normal_force_N": 382.416727977675,
+        "penetration_m": 0.00331678110297989
+      },
+      "akita_black_bowl_1_g31 / plate_1_g2": {
+        "normal_force_N": 382.416727977675,
+        "penetration_m": 0.00331678110297989
+      },
+      "akita_black_bowl_1_g31 / plate_1_g3": {
+        "normal_force_N": 382.416727977675,
+        "penetration_m": 0.00331678110297989
+      },
+      "akita_black_bowl_1_g36 / plate_1_g2": {
+        "normal_force_N": 201.41271405928035,
+        "penetration_m": 0.0016405089328548877
+      },
+      "akita_black_bowl_1_g36 / plate_1_g3": {
+        "normal_force_N": 201.41271405928035,
+        "penetration_m": 0.0016405089328548877
+      },
+      "akita_black_bowl_1_g36 / plate_1_g10": {
+        "normal_force_N": 31.58855840783535,
+        "penetration_m": 0.0001875916272446711
+      },
+      "akita_black_bowl_1_g37 / plate_1_g2": {
+        "normal_force_N": 98.26852035795521,
+        "penetration_m": 0.000804363971401629
+      },
+      "akita_black_bowl_1_g37 / plate_1_g3": {
+        "normal_force_N": 98.26852035795521,
+        "penetration_m": 0.000804363971401629
+      },
+      "akita_black_bowl_1_g38 / plate_1_g2": {
+        "normal_force_N": 201.41271405928686,
+        "penetration_m": 0.0016405089328549432
+      },
+      "akita_black_bowl_1_g38 / plate_1_g3": {
+        "normal_force_N": 201.41271405928686,
+        "penetration_m": 0.0016405089328549432
+      },
+      "akita_black_bowl_1_g38 / plate_1_g10": {
+        "normal_force_N": 31.58855840784184,
+        "penetration_m": 0.00018759162724472879
+      }
+    },
+    "last50": {
+      "median_motion_mm": 3.9254681204945214,
+      "grasp_controls": 0,
+      "torque_saturated_controls": 39,
+      "min_joint_margin_rad": 0.015549725432875805,
+      "min_translation_jacobian_sigma": 0.0003478014739269357
+    }
+  },
+  {
+    "label": "new-dev-object_offset-init42",
+    "id": "dev-object_offset-init42",
+    "replay_controls": 300,
+    "controls": 600,
+    "success": false,
+    "fidelity_passed": true,
+    "max_pose_error_m": 0.0,
+    "fidelity_failed_steps": [],
+    "initial_contacts": {
+      "akita_black_bowl_1_g7 / plate_1_g9": {
+        "normal_force_N": 426.22403362664653,
+        "penetration_m": 0.0035821007808721863
+      },
+      "akita_black_bowl_1_g7 / plate_1_g10": {
+        "normal_force_N": 660.371977459819,
+        "penetration_m": 0.005658202761910469
+      },
+      "akita_black_bowl_1_g8 / plate_1_g9": {
+        "normal_force_N": 310.9738951010253,
+        "penetration_m": 0.002589243391546285
+      },
+      "akita_black_bowl_1_g8 / plate_1_g10": {
+        "normal_force_N": 543.1978510545865,
+        "penetration_m": 0.004673884164330764
+      },
+      "akita_black_bowl_1_g9 / plate_1_g1": {
+        "normal_force_N": 249.22104873973447,
+        "penetration_m": 0.0021009252276000608
+      },
+      "akita_black_bowl_1_g9 / plate_1_g2": {
+        "normal_force_N": 741.2459842680305,
+        "penetration_m": 0.006315527387364747
+      },
+      "akita_black_bowl_1_g9 / plate_1_g3": {
+        "normal_force_N": 741.2459842680305,
+        "penetration_m": 0.006315527387364747
+      },
+      "akita_black_bowl_1_g9 / plate_1_g9": {
+        "normal_force_N": 211.88342328149972,
+        "penetration_m": 0.0017699339864589384
+      },
+      "akita_black_bowl_1_g9 / plate_1_g10": {
+        "normal_force_N": 561.3959386489508,
+        "penetration_m": 0.004790123199969716
+      },
+      "akita_black_bowl_1_g10 / plate_1_g2": {
+        "normal_force_N": 741.3299113731484,
+        "penetration_m": 0.006319383664159385
+      },
+      "akita_black_bowl_1_g10 / plate_1_g3": {
+        "normal_force_N": 741.3299113731484,
+        "penetration_m": 0.006319383664159385
+      },
+      "akita_black_bowl_1_g10 / plate_1_g10": {
+        "normal_force_N": 585.4984263788629,
+        "penetration_m": 0.004995663691716446
+      },
+      "akita_black_bowl_1_g11 / plate_1_g2": {
+        "normal_force_N": 432.1793131802288,
+        "penetration_m": 0.0036464363134810864
+      },
+      "akita_black_bowl_1_g11 / plate_1_g3": {
+        "normal_force_N": 432.1793131802288,
+        "penetration_m": 0.0036464363134810864
+      },
+      "akita_black_bowl_1_g11 / plate_1_g10": {
+        "normal_force_N": 355.75838055329024,
+        "penetration_m": 0.0030062047308905067
+      },
+      "akita_black_bowl_1_g12 / plate_1_g2": {
+        "normal_force_N": 432.1793131802288,
+        "penetration_m": 0.0036464363134810864
+      },
+      "akita_black_bowl_1_g12 / plate_1_g3": {
+        "normal_force_N": 432.1793131802288,
+        "penetration_m": 0.0036464363134810864
+      },
+      "akita_black_bowl_1_g12 / plate_1_g10": {
+        "normal_force_N": 355.75838055329024,
+        "penetration_m": 0.0030062047308905067
+      },
+      "akita_black_bowl_1_g24 / plate_1_g9": {
+        "normal_force_N": 286.3632689170408,
+        "penetration_m": 0.002380310165138025
+      },
+      "akita_black_bowl_1_g24 / plate_1_g10": {
+        "normal_force_N": 175.16288588086277,
+        "penetration_m": 0.0014341816484559587
+      },
+      "akita_black_bowl_1_g25 / plate_1_g9": {
+        "normal_force_N": 272.623704247102,
+        "penetration_m": 0.0022648699969131
+      },
+      "akita_black_bowl_1_g25 / plate_1_g10": {
+        "normal_force_N": 250.1226099438389,
+        "penetration_m": 0.002071410477014526
+      },
+      "akita_black_bowl_1_g26 / plate_1_g1": {
+        "normal_force_N": 153.00937306286207,
+        "penetration_m": 0.0012645897250711437
+      },
+      "akita_black_bowl_1_g26 / plate_1_g9": {
+        "normal_force_N": 235.51574276178286,
+        "penetration_m": 0.0019481510277244221
+      },
+      "akita_black_bowl_1_g26 / plate_1_g10": {
+        "normal_force_N": 243.59281499790586,
+        "penetration_m": 0.0020149412568084817
+      },
+      "akita_black_bowl_1_g27 / plate_1_g1": {
+        "normal_force_N": 165.80661690795412,
+        "penetration_m": 0.0013905843162005463
+      },
+      "akita_black_bowl_1_g27 / plate_1_g2": {
+        "normal_force_N": 93.6515374148579,
+        "penetration_m": 0.0007870026737929747
+      },
+      "akita_black_bowl_1_g27 / plate_1_g3": {
+        "normal_force_N": 93.6515374148579,
+        "penetration_m": 0.0007870026737929747
+      },
+      "akita_black_bowl_1_g27 / plate_1_g10": {
+        "normal_force_N": 242.17538648849768,
+        "penetration_m": 0.0020163010257291357
+      },
+      "akita_black_bowl_1_g28 / plate_1_g2": {
+        "normal_force_N": 323.68905351138756,
+        "penetration_m": 0.0027809602276579436
+      },
+      "akita_black_bowl_1_g28 / plate_1_g3": {
+        "normal_force_N": 323.68905351138756,
+        "penetration_m": 0.0027809602276579436
+      },
+      "akita_black_bowl_1_g28 / plate_1_g10": {
+        "normal_force_N": 150.6160154773108,
+        "penetration_m": 0.001265295540965286
+      },
+      "akita_black_bowl_1_g29 / plate_1_g2": {
+        "normal_force_N": 379.8421152289041,
+        "penetration_m": 0.0033026571889720087
+      },
+      "akita_black_bowl_1_g29 / plate_1_g3": {
+        "normal_force_N": 379.8421152289041,
+        "penetration_m": 0.0033026571889720087
+      },
+      "akita_black_bowl_1_g30 / plate_1_g2": {
+        "normal_force_N": 382.4167276869911,
+        "penetration_m": 0.003316781100097546
+      },
+      "akita_black_bowl_1_g30 / plate_1_g3": {
+        "normal_force_N": 382.4167276869911,
+        "penetration_m": 0.003316781100097546
+      },
+      "akita_black_bowl_1_g31 / plate_1_g2": {
+        "normal_force_N": 382.4167276869911,
+        "penetration_m": 0.003316781100097546
+      },
+      "akita_black_bowl_1_g31 / plate_1_g3": {
+        "normal_force_N": 382.4167276869911,
+        "penetration_m": 0.003316781100097546
+      },
+      "akita_black_bowl_1_g36 / plate_1_g2": {
+        "normal_force_N": 201.412713967298,
+        "penetration_m": 0.0016405089319996777
+      },
+      "akita_black_bowl_1_g36 / plate_1_g3": {
+        "normal_force_N": 201.412713967298,
+        "penetration_m": 0.0016405089319996777
+      },
+      "akita_black_bowl_1_g36 / plate_1_g10": {
+        "normal_force_N": 31.588558326658937,
+        "penetration_m": 0.00018759162641871592
+      },
+      "akita_black_bowl_1_g37 / plate_1_g2": {
+        "normal_force_N": 98.26852068135922,
+        "penetration_m": 0.000804363974221645
+      },
+      "akita_black_bowl_1_g37 / plate_1_g3": {
+        "normal_force_N": 98.26852068135922,
+        "penetration_m": 0.000804363974221645
+      },
+      "akita_black_bowl_1_g38 / plate_1_g2": {
+        "normal_force_N": 201.41271396730596,
+        "penetration_m": 0.0016405089319997453
+      },
+      "akita_black_bowl_1_g38 / plate_1_g3": {
+        "normal_force_N": 201.41271396730596,
+        "penetration_m": 0.0016405089319997453
+      },
+      "akita_black_bowl_1_g38 / plate_1_g10": {
+        "normal_force_N": 31.58855832666668,
+        "penetration_m": 0.00018759162641878487
+      }
+    },
+    "last50": {
+      "median_motion_mm": 2.541962563071835,
+      "grasp_controls": 0,
+      "torque_saturated_controls": 21,
+      "min_joint_margin_rad": 0.04769879012546441,
+      "min_translation_jacobian_sigma": 0.0019745506806091765
+    }
+  },
+  {
+    "label": "new-dev-placement_failure-init42",
+    "id": "dev-placement_failure-init42",
+    "replay_controls": 300,
+    "controls": 600,
+    "success": false,
+    "fidelity_passed": true,
+    "max_pose_error_m": 0.0,
+    "fidelity_failed_steps": [],
+    "initial_contacts": {
+      "akita_black_bowl_1_g1 / table_collision": {
+        "normal_force_N": 7.098134071809003,
+        "penetration_m": 0.004153969943231245
+      },
+      "akita_black_bowl_1_g2 / table_collision": {
+        "normal_force_N": 3.9191473156298104,
+        "penetration_m": 0.0023880820558416843
+      },
+      "akita_black_bowl_1_g3 / table_collision": {
+        "normal_force_N": 1.820720652917702,
+        "penetration_m": 0.0011352052234189407
+      },
+      "akita_black_bowl_1_g4 / table_collision": {
+        "normal_force_N": 3.6330197505464294,
+        "penetration_m": 0.0018628957144037426
+      },
+      "akita_black_bowl_1_g5 / table_collision": {
+        "normal_force_N": 6.348737760786609,
+        "penetration_m": 0.0032729912166656735
+      },
+      "akita_black_bowl_1_g6 / table_collision": {
+        "normal_force_N": 9.647116709501562,
+        "penetration_m": 0.005016670353237276
+      },
+      "akita_black_bowl_1_g7 / table_collision": {
+        "normal_force_N": 12.883622605624954,
+        "penetration_m": 0.00672705303833009
+      },
+      "akita_black_bowl_1_g8 / table_collision": {
+        "normal_force_N": 15.268839263678187,
+        "penetration_m": 0.008039514051810796
+      },
+      "akita_black_bowl_1_g9 / table_collision": {
+        "normal_force_N": 16.354541228032318,
+        "penetration_m": 0.008707842501453053
+      },
+      "akita_black_bowl_1_g10 / table_collision": {
+        "normal_force_N": 15.937180959850611,
+        "penetration_m": 0.008601483169236986
+      },
+      "akita_black_bowl_1_g11 / table_collision": {
+        "normal_force_N": 15.950328185201341,
+        "penetration_m": 0.008521634263556274
+      },
+      "akita_black_bowl_1_g12 / table_collision": {
+        "normal_force_N": 15.950328185201341,
+        "penetration_m": 0.008521634263556274
+      },
+      "akita_black_bowl_1_g13 / table_collision": {
+        "normal_force_N": 15.669886803303285,
+        "penetration_m": 0.008447075791211681
+      },
+      "akita_black_bowl_1_g14 / table_collision": {
+        "normal_force_N": 14.146520011636492,
+        "penetration_m": 0.007755258373144598
+      },
+      "akita_black_bowl_1_g15 / table_collision": {
+        "normal_force_N": 11.505128686460935,
+        "penetration_m": 0.006457639519471185
+      },
+      "akita_black_bowl_1_g16 / table_collision": {
+        "normal_force_N": 8.94168151187366,
+        "penetration_m": 0.005156366466891833
+      },
+      "akita_black_bowl_1_g36 / table_collision": {
+        "normal_force_N": 18.602603236714014,
+        "penetration_m": 0.009852794145751957
+      },
+      "akita_black_bowl_1_g37 / table_collision": {
+        "normal_force_N": 20.14458949708716,
+        "penetration_m": 0.010584453863200009
+      },
+      "akita_black_bowl_1_g38 / table_collision": {
+        "normal_force_N": 20.09333773971009,
+        "penetration_m": 0.010672311286000631
+      },
+      "akita_black_bowl_1_g39 / table_collision": {
+        "normal_force_N": 11.393987150463763,
+        "penetration_m": 0.005955096097659435
+      },
+      "akita_black_bowl_1_g40 / table_collision": {
+        "normal_force_N": 14.197724413407125,
+        "penetration_m": 0.007762715603499769
+      },
+      "akita_black_bowl_1_g3 / wooden_cabinet_1_g2": {
+        "normal_force_N": 176.9260828554947,
+        "penetration_m": 0.0010536371358791652
+      },
+      "akita_black_bowl_1_g4 / wooden_cabinet_1_g2": {
+        "normal_force_N": 375.17592346147376,
+        "penetration_m": 0.0021711017761799015
+      },
+      "akita_black_bowl_1_g4 / wooden_cabinet_1_g3": {
+        "normal_force_N": 262.5810400624047,
+        "penetration_m": 0.0014741597906879286
+      },
+      "akita_black_bowl_1_g20 / wooden_cabinet_1_g3": {
+        "normal_force_N": 780.2143742286058,
+        "penetration_m": 0.004423707532174612
+      },
+      "akita_black_bowl_1_g21 / wooden_cabinet_1_g2": {
+        "normal_force_N": 105.92716563774509,
+        "penetration_m": 0.0005994521211953802
+      },
+      "akita_black_bowl_1_g21 / wooden_cabinet_1_g3": {
+        "normal_force_N": 1615.8386023327803,
+        "penetration_m": 0.009289589965027023
+      },
+      "akita_black_bowl_1_g19 / wooden_cabinet_1_g33": {
+        "normal_force_N": 701.7865184049831,
+        "penetration_m": 0.004526070899992629
+      },
+      "akita_black_bowl_1_g20 / wooden_cabinet_1_g33": {
+        "normal_force_N": 608.5966310787652,
+        "penetration_m": 0.002941872119556832
+      },
+      "akita_black_bowl_1_g20 / wooden_cabinet_1_g35": {
+        "normal_force_N": 272.4378265627598,
+        "penetration_m": 0.0020757728578521873
+      },
+      "akita_black_bowl_1_g20 / wooden_cabinet_1_g37": {
+        "normal_force_N": 76.52851748846543,
+        "penetration_m": 0.0009245607040243043
+      }
+    },
+    "last50": {
+      "median_motion_mm": 7.117193944015437,
+      "grasp_controls": 43,
+      "torque_saturated_controls": 0,
+      "min_joint_margin_rad": 0.42691584756420653,
+      "min_translation_jacobian_sigma": 0.17833869684620654
+    }
+  },
+  {
+    "label": "new-dev-empty_grasp-init43",
+    "id": "dev-empty_grasp-init43",
+    "replay_controls": 300,
+    "controls": 600,
+    "success": false,
+    "fidelity_passed": true,
+    "max_pose_error_m": 0.0,
+    "fidelity_failed_steps": [],
+    "initial_contacts": {
+      "akita_black_bowl_1_g40 / table_collision": {
+        "normal_force_N": 0.11572584577292712,
+        "penetration_m": 0.00014911226437163837
+      },
+      "gripper0_finger1_pad_collision / gripper0_finger2_pad_collision": {
+        "normal_force_N": 0.13243937841216252,
+        "penetration_m": 3.854289288372087e-07
+      },
+      "akita_black_bowl_1_g1 / wine_bottle_1_g3": {
+        "normal_force_N": 1184.7676656491226,
+        "penetration_m": 0.009307276396717875
+      },
+      "akita_black_bowl_1_g1 / wine_bottle_1_g22": {
+        "normal_force_N": 207.7992528562202,
+        "penetration_m": 0.0015635328137476876
+      },
+      "akita_black_bowl_1_g2 / wine_bottle_1_g3": {
+        "normal_force_N": 894.3244026172022,
+        "penetration_m": 0.007028709693985937
+      },
+      "akita_black_bowl_1_g2 / wine_bottle_1_g18": {
+        "normal_force_N": 807.484962980027,
+        "penetration_m": 0.00635234192356354
+      },
+      "akita_black_bowl_1_g2 / wine_bottle_1_g22": {
+        "normal_force_N": 726.9705577370415,
+        "penetration_m": 0.005605330775458493
+      },
+      "akita_black_bowl_1_g15 / wine_bottle_1_g3": {
+        "normal_force_N": 545.8452073121043,
+        "penetration_m": 0.004291044771280881
+      },
+      "akita_black_bowl_1_g15 / wine_bottle_1_g19": {
+        "normal_force_N": 797.9189322053286,
+        "penetration_m": 0.006257250704474602
+      },
+      "akita_black_bowl_1_g15 / wine_bottle_1_g20": {
+        "normal_force_N": 197.43037324574559,
+        "penetration_m": 0.0016265609637293316
+      },
+      "akita_black_bowl_1_g15 / wine_bottle_1_g23": {
+        "normal_force_N": 237.57534275713783,
+        "penetration_m": 0.0017948807722512662
+      },
+      "akita_black_bowl_1_g16 / wine_bottle_1_g3": {
+        "normal_force_N": 1243.2165916773808,
+        "penetration_m": 0.00976118156582416
+      },
+      "akita_black_bowl_1_g16 / wine_bottle_1_g19": {
+        "normal_force_N": 765.9650254284729,
+        "penetration_m": 0.005996313719415405
+      },
+      "akita_black_bowl_1_g16 / wine_bottle_1_g20": {
+        "normal_force_N": 69.59591037899334,
+        "penetration_m": 0.0005898595814956631
+      },
+      "akita_black_bowl_1_g16 / wine_bottle_1_g23": {
+        "normal_force_N": 212.79765457925686,
+        "penetration_m": 0.0016042458090339603
+      },
+      "akita_black_bowl_1_g17 / wine_bottle_1_g3": {
+        "normal_force_N": 784.1947759816902,
+        "penetration_m": 0.006181227886109015
+      },
+      "akita_black_bowl_1_g17 / wine_bottle_1_g22": {
+        "normal_force_N": 547.0344844054729,
+        "penetration_m": 0.004237562530704551
+      },
+      "akita_black_bowl_1_g18 / wine_bottle_1_g3": {
+        "normal_force_N": 788.7563401969932,
+        "penetration_m": 0.006173154452932158
+      },
+      "akita_black_bowl_1_g18 / wine_bottle_1_g18": {
+        "normal_force_N": 706.866988963496,
+        "penetration_m": 0.005581205867730655
+      },
+      "akita_black_bowl_1_g18 / wine_bottle_1_g22": {
+        "normal_force_N": 873.804690348623,
+        "penetration_m": 0.006874298540964595
+      },
+      "akita_black_bowl_1_g34 / wine_bottle_1_g3": {
+        "normal_force_N": 1013.748639413974,
+        "penetration_m": 0.007889935334031782
+      },
+      "akita_black_bowl_1_g34 / wine_bottle_1_g19": {
+        "normal_force_N": 891.9714873535453,
+        "penetration_m": 0.007007288972254282
+      },
+      "akita_black_bowl_1_g34 / wine_bottle_1_g23": {
+        "normal_force_N": 668.564856534987,
+        "penetration_m": 0.005180769482609988
+      },
+      "akita_black_bowl_1_g35 / wine_bottle_1_g3": {
+        "normal_force_N": 1043.6302497599454,
+        "penetration_m": 0.008205432294814729
+      },
+      "akita_black_bowl_1_g35 / wine_bottle_1_g23": {
+        "normal_force_N": 330.23717503907733,
+        "penetration_m": 0.002547524068662422
+      }
+    },
+    "last50": {
+      "median_motion_mm": 0.5670122619091249,
+      "grasp_controls": 0,
+      "torque_saturated_controls": 0,
+      "min_joint_margin_rad": -0.00020247564539545293,
+      "min_translation_jacobian_sigma": 0.20766226987452785
+    }
+  },
+  {
+    "label": "new-dev-object_offset-init43",
+    "id": "dev-object_offset-init43",
+    "replay_controls": 300,
+    "controls": 600,
+    "success": false,
+    "fidelity_passed": true,
+    "max_pose_error_m": 0.0,
+    "fidelity_failed_steps": [],
+    "initial_contacts": {
+      "akita_black_bowl_1_g40 / table_collision": {
+        "normal_force_N": 0.11572584717792625,
+        "penetration_m": 0.00014911226761018842
+      },
+      "akita_black_bowl_1_g1 / wine_bottle_1_g3": {
+        "normal_force_N": 1184.76768615616,
+        "penetration_m": 0.009307276558172418
+      },
+      "akita_black_bowl_1_g1 / wine_bottle_1_g22": {
+        "normal_force_N": 207.79925138048534,
+        "penetration_m": 0.0015635328019571564
+      },
+      "akita_black_bowl_1_g2 / wine_bottle_1_g3": {
+        "normal_force_N": 894.324413777936,
+        "penetration_m": 0.007028709781636033
+      },
+      "akita_black_bowl_1_g2 / wine_bottle_1_g18": {
+        "normal_force_N": 807.4849785687886,
+        "penetration_m": 0.006352342046009988
+      },
+      "akita_black_bowl_1_g2 / wine_bottle_1_g22": {
+        "normal_force_N": 726.9705551599732,
+        "penetration_m": 0.005605330754889709
+      },
+      "akita_black_bowl_1_g15 / wine_bottle_1_g3": {
+        "normal_force_N": 545.8452190612197,
+        "penetration_m": 0.004291044863655069
+      },
+      "akita_black_bowl_1_g15 / wine_bottle_1_g19": {
+        "normal_force_N": 797.9189452927877,
+        "penetration_m": 0.006257250807469363
+      },
+      "akita_black_bowl_1_g15 / wine_bottle_1_g20": {
+        "normal_force_N": 197.4303883595671,
+        "penetration_m": 0.0016265610829065517
+      },
+      "akita_black_bowl_1_g15 / wine_bottle_1_g23": {
+        "normal_force_N": 237.5753428780895,
+        "penetration_m": 0.001794880772991248
+      },
+      "akita_black_bowl_1_g16 / wine_bottle_1_g3": {
+        "normal_force_N": 1243.216611408404,
+        "penetration_m": 0.00976118172114631
+      },
+      "akita_black_bowl_1_g16 / wine_bottle_1_g19": {
+        "normal_force_N": 765.9650267434862,
+        "penetration_m": 0.005996313729486274
+      },
+      "akita_black_bowl_1_g16 / wine_bottle_1_g20": {
+        "normal_force_N": 69.59591900556455,
+        "penetration_m": 0.0005898596516721122
+      },
+      "akita_black_bowl_1_g16 / wine_bottle_1_g23": {
+        "normal_force_N": 212.797656858912,
+        "penetration_m": 0.0016042458257146408
+      },
+      "akita_black_bowl_1_g17 / wine_bottle_1_g3": {
+        "normal_force_N": 784.1947753997762,
+        "penetration_m": 0.006181227882167411
+      },
+      "akita_black_bowl_1_g17 / wine_bottle_1_g22": {
+        "normal_force_N": 547.0344868204294,
+        "penetration_m": 0.0042375625491436536
+      },
+      "akita_black_bowl_1_g18 / wine_bottle_1_g3": {
+        "normal_force_N": 788.756341068579,
+        "penetration_m": 0.006173154459545178
+      },
+      "akita_black_bowl_1_g18 / wine_bottle_1_g18": {
+        "normal_force_N": 706.8669911898819,
+        "penetration_m": 0.005581205885607161
+      },
+      "akita_black_bowl_1_g18 / wine_bottle_1_g22": {
+        "normal_force_N": 873.8046916893458,
+        "penetration_m": 0.006874298551702091
+      },
+      "akita_black_bowl_1_g34 / wine_bottle_1_g3": {
+        "normal_force_N": 1013.7486385308213,
+        "penetration_m": 0.007889935327345972
+      },
+      "akita_black_bowl_1_g34 / wine_bottle_1_g19": {
+        "normal_force_N": 891.9714851941995,
+        "penetration_m": 0.007007288956046324
+      },
+      "akita_black_bowl_1_g34 / wine_bottle_1_g23": {
+        "normal_force_N": 668.5648531249809,
+        "penetration_m": 0.005180769453999257
+      },
+      "akita_black_bowl_1_g35 / wine_bottle_1_g3": {
+        "normal_force_N": 1043.630248716285,
+        "penetration_m": 0.008205432287259984
+      },
+      "akita_black_bowl_1_g35 / wine_bottle_1_g23": {
+        "normal_force_N": 330.23716948377,
+        "penetration_m": 0.0025475240233251385
+      }
+    },
+    "last50": {
+      "median_motion_mm": 0.47829123229719933,
+      "grasp_controls": 0,
+      "torque_saturated_controls": 0,
+      "min_joint_margin_rad": -0.0002986442319822674,
+      "min_translation_jacobian_sigma": 0.21248618023040347
+    }
+  }
+]

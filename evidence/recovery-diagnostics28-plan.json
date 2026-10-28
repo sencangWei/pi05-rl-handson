@@ -1,0 +1,60 @@
+{
+  "status": "FROZEN_BEFORE_DIAGNOSTIC",
+  "manifest": "data/recovery-bowl-freshdev28/manifest.json",
+  "manifest_sha256": "3f8b1cffc3e7dd8e9dbaa062bd82a22b5e44e9379de80cd61eade50211467768",
+  "extra_controls": 0,
+  "pose_tolerance_m": 1e-05,
+  "cases": [
+    {
+      "label": "new-dev-placement_failure-init40",
+      "id": "dev-placement_failure-init40",
+      "trace": "artifacts/20261028-manual6/fresh-comparison/after/dev-placement_failure-init40.jsonl",
+      "sha256": "1f7259357bfdbba2f0806d868ddc5e1e4dfd5ce84a96fef6f6c4453f32e4ffb8"
+    },
+    {
+      "label": "new-dev-empty_grasp-init42",
+      "id": "dev-empty_grasp-init42",
+      "trace": "artifacts/20261028-manual6/fresh-comparison/after/dev-empty_grasp-init42.jsonl",
+      "sha256": "67be98df4ea2ea78c329f096780d8cd6d05672b5698e696399008d122bd35db4"
+    },
+    {
+      "label": "new-dev-object_offset-init42",
+      "id": "dev-object_offset-init42",
+      "trace": "artifacts/20261028-manual6/fresh-comparison/after/dev-object_offset-init42.jsonl",
+      "sha256": "2d67dcf3fce5a0779ccb529db8def830c2fd332e7bc67d409c663873df929bf5"
+    },
+    {
+      "label": "new-dev-placement_failure-init42",
+      "id": "dev-placement_failure-init42",
+      "trace": "artifacts/20261028-manual6/fresh-comparison/after/dev-placement_failure-init42.jsonl",
+      "sha256": "87cb0a9abd4fc0afdc1207998522278fba7f0c8a0161867757e3b44d2831997d"
+    },
+    {
+      "label": "new-dev-empty_grasp-init43",
+      "id": "dev-empty_grasp-init43",
+      "trace": "artifacts/20261028-manual6/fresh-comparison/after/dev-empty_grasp-init43.jsonl",
+      "sha256": "02b71ef43a69328f2d4e66e20855d1c26e688eb289385ec5c1404d28062d166b"
+    },
+    {
+      "label": "new-dev-object_offset-init43",
+      "id": "dev-object_offset-init43",
+      "trace": "artifacts/20261028-manual6/fresh-comparison/after/dev-object_offset-init43.jsonl",
+      "sha256": "c328748c7d4322d95131d738a65ff215d1976509f241c566a7414fd62b0d978d"
+    },
+    {
+      "label": "parent-dev-object_offset-init43",
+      "id": "dev-object_offset-init43",
+      "trace": "artifacts/20261028-manual6/fresh-comparison/before/dev-object_offset-init43.jsonl",
+      "sha256": "e6e5c08fd0e425061961beef7c67c388e18259e3b6ca6b3d39f1755e4c6af994"
+    },
+    {
+      "label": "new-control-placement43",
+      "id": "dev-placement_failure-init43",
+      "trace": "artifacts/20261028-manual6/fresh-comparison/after/dev-placement_failure-init43.jsonl",
+      "sha256": "6b956f54fd75c83fafaee4b648b467c327d9c82958b7dcf278c655deeafce36e"
+    }
+  ],
+  "checkpoint": "checkpoints/pi05_recovery_replay_lora/manual6_replay2000_v1/1999",
+  "criteria": "All recorded EEF/bowl/plate positions <=1e-5m and native/contact/released flags equal at every replay control; physics probes passive; no corrective actions. Extra-controls protocol, if needed, frozen separately at 300 additional controls.",
+  "classification": "Contacts and low Jacobian values are evidence, not alone proof of causal blocking. Match successful controls and inspect force/direction. No heldout or training."
+}

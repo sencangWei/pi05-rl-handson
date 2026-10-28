@@ -1,6 +1,7 @@
 """Construct disclosed synthetic failure starts, never scripted evaluation actions."""
 import argparse
 import hashlib
+import importlib.metadata
 import json
 import os
 import sys
@@ -11,7 +12,23 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from baseline import configure_libero
+from baseline import configure_libero  # noqa: E402 - direct script execution
+
+
+def bowl_penetrations(sim, bowl_geoms):
+    """Allow numerical support contact, reject inserted bowls inside scene objects."""
+    bowl_geoms = set(bowl_geoms)
+    rejected = []
+    for contact in sim.data.contact[:sim.data.ncon]:
+        a, b = (sim.model.geom_id2name(int(g)) for g in (contact.geom1, contact.geom2))
+        if (a in bowl_geoms) == (b in bowl_geoms):
+            continue
+        other = b if a in bowl_geoms else a
+        # Table support uses a soft contact solver; shallow support penetration is normal.
+        tolerance = .001 if other == "table_collision" else .0001
+        if -float(contact.dist) > tolerance:
+            rejected.append(dict(geoms=[a, b], penetration_m=-float(contact.dist)))
+    return rejected
 
 
 def move(env, obs, target, gripper):
@@ -91,6 +108,11 @@ def main():
                             candidate = qpos.copy()
                             candidate[:2] = original[:2] + offset * [flip_x, flip_y]
                             candidates.append(candidate)
+                        # The four corners may all intersect clutter; keep the same offset radius.
+                        for angle in np.linspace(0, 2 * np.pi, 12, endpoint=False):
+                            candidate = qpos.copy()
+                            candidate[:2] = original[:2] + np.linalg.norm(offset) * np.array([np.cos(angle), np.sin(angle)])
+                            candidates.append(candidate)
                     if category == "placement_failure":
                         directions = [offset / np.linalg.norm(offset)]
                         directions += [np.array([np.cos(t), np.sin(t)])
@@ -100,21 +122,34 @@ def main():
                             candidate = qpos.copy()
                             candidate[:2] = plate[:2] + direction * (.13 if split == "train" else .15)
                             candidates.append(candidate)
-                    for candidate in candidates:
+                    rejected_candidates = []
+                    for candidate_index, candidate in enumerate(candidates):
                         env.set_init_state(settled_base)
                         rob.sim.data.set_joint_qpos(joint, candidate)
                         rob.sim.data.set_joint_qvel(joint, np.zeros(6))
                         rob.sim.forward()
+                        overlaps = bowl_penetrations(rob.sim, bowl.contact_geoms)
+                        if overlaps:
+                            rejected_candidates.append(dict(index=candidate_index, phase="insert", overlaps=overlaps))
+                            continue
                         for _ in range(10):
                             obs, _, _, _ = env.step([0, 0, 0, 0, 0, 0,
                                                     1 if category == "empty_grasp" else -1])
+                        rob.sim.forward()
+                        overlaps = bowl_penetrations(rob.sim, bowl.contact_geoms)
                         actual = rob.sim.data.get_joint_qpos(joint)[:3]
                         stable = (np.linalg.norm(actual[:2] - candidate[:2]) < .015
                                   and abs(actual[2] - original[2]) < .025)
                         contact = rob.check_contact(rob.robots[0].gripper.contact_geoms, bowl)
-                        if stable and not contact and not env.check_success():
+                        if stable and not contact and not overlaps and not env.check_success():
                             break
+                        rejected_candidates.append(dict(index=candidate_index, phase="settled", overlaps=overlaps,
+                                                        stable=bool(stable), finger_contact=bool(contact),
+                                                        native_success=bool(env.check_success())))
                     else:
+                        (args.output / "construction-failure.json").write_text(json.dumps(
+                            dict(split=split, source_initial_id=source_id, category=category,
+                                 rejected_candidates=rejected_candidates), indent=2) + "\n")
                         raise RuntimeError(f"No stable collision-free initial state: {split} {source_id} {category}")
                     state = env.get_sim_state().copy()
                     if not np.isfinite(state).all() or env.check_success():
@@ -134,6 +169,9 @@ def main():
                              "state_sha256": hashlib.sha256(state.tobytes()).hexdigest(),
                              "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
                              "initial_native_success": False, "initial_finger_contact": held,
+                             "collision_guard": {"candidate_index": candidate_index,
+                                                 "rejected_candidates": rejected_candidates,
+                                                 "bowl_overlaps": overlaps},
                              "eef_pos": obs["robot0_eef_pos"].tolist(),
                              "bowl_pos": rob.sim.data.get_joint_qpos(joint)[:3].tolist(),
                              "plate_pos": plate.tolist()}
@@ -141,6 +179,10 @@ def main():
                     print(json.dumps(entry), flush=True)
         manifest = {"format": "libero-recovery-bank-v1", "task_suite": "libero_goal", "task_id": 8,
                     "seed": 42, "construction": "Synthetic physical states using OSC initialization and object pose perturbations; no recovery actions scripted into training/evaluation",
+                    "physics": {"mujoco": importlib.metadata.version("mujoco"),
+                                "robosuite": importlib.metadata.version("robosuite"),
+                                "generator_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+                                "overlap_guard": "before insertion settling AND after settling; bowl-table max 1 mm, bowl-other max 0.1 mm"},
                     "split_protocol": (f"source initial IDs {start}..{start + 3} development only; old heldout IDs 10..13 excluded"
                                        if args.development_only else
                                        "source initial IDs 1..6 train; 10..13 heldout, larger heldout offsets"),

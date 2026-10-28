@@ -1,0 +1,969 @@
+{
+  "split": "dev",
+  "source_initial_id": 40,
+  "category": "empty_grasp",
+  "rejected_candidates": [
+    {
+      "index": 0,
+      "phase": "insert",
+      "overlaps": [
+        {
+          "geoms": [
+            "akita_black_bowl_1_g11",
+            "cream_cheese_1_g1"
+          ],
+          "penetration_m": 0.0006290008761824437
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g12",
+            "cream_cheese_1_g1"
+          ],
+          "penetration_m": 0.0006290008761824437
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g29",
+            "cream_cheese_1_g1"
+          ],
+          "penetration_m": 0.0008081268946655318
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g30",
+            "cream_cheese_1_g1"
+          ],
+          "penetration_m": 0.0004319530320734382
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g31",
+            "cream_cheese_1_g1"
+          ],
+          "penetration_m": 0.0004319530320734382
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g32",
+            "cream_cheese_1_g1"
+          ],
+          "penetration_m": 0.00022270840327408032
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "phase": "insert",
+      "overlaps": [
+        {
+          "geoms": [
+            "akita_black_bowl_1_g32",
+            "flat_stove_1_base_vis"
+          ],
+          "penetration_m": 0.0019060250224979093
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g32",
+            "flat_stove_1_base"
+          ],
+          "penetration_m": 0.0019060250224979093
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g32",
+            "flat_stove_1_collision_burner"
+          ],
+          "penetration_m": 0.003300932519996828
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g32",
+            "flat_stove_1_collision_burner"
+          ],
+          "penetration_m": 0.0030473129749970258
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "phase": "insert",
+      "overlaps": [
+        {
+          "geoms": [
+            "akita_black_bowl_1_g7",
+            "plate_1_g2"
+          ],
+          "penetration_m": 0.0007979518282841134
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g7",
+            "plate_1_g3"
+          ],
+          "penetration_m": 0.0007979518282841134
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g7",
+            "plate_1_g10"
+          ],
+          "penetration_m": 0.0016179708844550802
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g7",
+            "plate_1_g10"
+          ],
+          "penetration_m": 0.0071503745495801515
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g8",
+            "plate_1_g10"
+          ],
+          "penetration_m": 0.007305008733205929
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g9",
+            "plate_1_g2"
+          ],
+          "penetration_m": 0.009354040703907386
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g9",
+            "plate_1_g3"
+          ],
+          "penetration_m": 0.009354040703907386
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g9",
+            "plate_1_g10"
+          ],
+          "penetration_m": 0.01045908311355582
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g9",
+            "plate_1_g10"
+          ],
+          "penetration_m": 0.011087918534087932
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g10",
+            "plate_1_g2"
+          ],
+          "penetration_m": 0.009633053005388916
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g10",
+            "plate_1_g2"
+          ],
+          "penetration_m": 0.00413037350005887
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g10",
+            "plate_1_g3"
+          ],
+          "penetration_m": 0.009633053005388916
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g10",
+            "plate_1_g3"
+          ],
+          "penetration_m": 0.00413037350005887
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g10",
+            "plate_1_g4"
+          ],
+          "penetration_m": 0.0011671107042720975
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g11",
+            "plate_1_g2"
+          ],
+          "penetration_m": 0.0009249577867362652
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g11",
+            "plate_1_g2"
+          ],
+          "penetration_m": 0.004411513703463546
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g11",
+            "plate_1_g3"
+          ],
+          "penetration_m": 0.0009249577867362652
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g11",
+            "plate_1_g3"
+          ],
+          "penetration_m": 0.004411513703463546
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g11",
+            "plate_1_g4"
+          ],
+          "penetration_m": 0.0012738390210719473
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g11",
+            "plate_1_g4"
+          ],
+          "penetration_m": 0.0007176229786257281
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g12",
+            "plate_1_g2"
+          ],
+          "penetration_m": 0.0009249577867362652
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g12",
+            "plate_1_g2"
+          ],
+          "penetration_m": 0.004411513703463546
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g12",
+            "plate_1_g3"
+          ],
+          "penetration_m": 0.0009249577867362652
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g12",
+            "plate_1_g3"
+          ],
+          "penetration_m": 0.004411513703463546
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g12",
+            "plate_1_g4"
+          ],
+          "penetration_m": 0.0012738390210719473
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g12",
+            "plate_1_g4"
+          ],
+          "penetration_m": 0.0007176229786257281
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g24",
+            "plate_1_g10"
+          ],
+          "penetration_m": 0.00395528723062632
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g24",
+            "plate_1_g10"
+          ],
+          "penetration_m": 0.004543268900131001
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g25",
+            "plate_1_g10"
+          ],
+          "penetration_m": 0.0011276757388550308
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g25",
+            "plate_1_g10"
+          ],
+          "penetration_m": 0.001008337531977658
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g28",
+            "plate_1_g2"
+          ],
+          "penetration_m": 0.0021317648237343736
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g28",
+            "plate_1_g2"
+          ],
+          "penetration_m": 0.001999832588786926
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g28",
+            "plate_1_g3"
+          ],
+          "penetration_m": 0.0021317648237343736
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g28",
+            "plate_1_g3"
+          ],
+          "penetration_m": 0.001999832588786926
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g29",
+            "plate_1_g2"
+          ],
+          "penetration_m": 0.004372631380420987
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g29",
+            "plate_1_g2"
+          ],
+          "penetration_m": 0.005084339627685181
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g29",
+            "plate_1_g2"
+          ],
+          "penetration_m": 0.001122477228198943
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g29",
+            "plate_1_g3"
+          ],
+          "penetration_m": 0.004372631380420987
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g29",
+            "plate_1_g3"
+          ],
+          "penetration_m": 0.005084339627685181
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g29",
+            "plate_1_g3"
+          ],
+          "penetration_m": 0.001122477228198943
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g29",
+            "plate_1_g4"
+          ],
+          "penetration_m": 0.000835522888513087
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "phase": "insert",
+      "overlaps": [
+        {
+          "geoms": [
+            "akita_black_bowl_1_g1",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.008798559877473295
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g1",
+            "wine_bottle_1_g16"
+          ],
+          "penetration_m": 0.00619010205909389
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g1",
+            "wine_bottle_1_g19"
+          ],
+          "penetration_m": 0.004109691639139809
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g1",
+            "wine_bottle_1_g19"
+          ],
+          "penetration_m": 0.004109726133424777
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g1",
+            "wine_bottle_1_g19"
+          ],
+          "penetration_m": 0.00404898461074943
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g1",
+            "wine_bottle_1_g20"
+          ],
+          "penetration_m": 0.011412814885824097
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g2",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.00146045067670966
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g2",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.008575564128098324
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g2",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.007944159936045515
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g2",
+            "wine_bottle_1_g16"
+          ],
+          "penetration_m": 0.005973399053034175
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g2",
+            "wine_bottle_1_g16"
+          ],
+          "penetration_m": 0.009083393251415613
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g2",
+            "wine_bottle_1_g21"
+          ],
+          "penetration_m": 0.0077536419077870265
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g2",
+            "wine_bottle_1_g21"
+          ],
+          "penetration_m": 0.008453987081705935
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g16",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.0022730173314530863
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g16",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.002255508749611175
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g16",
+            "wine_bottle_1_g19"
+          ],
+          "penetration_m": 0.004151912865847071
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g16",
+            "wine_bottle_1_g19"
+          ],
+          "penetration_m": 0.0048613819569605
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g16",
+            "wine_bottle_1_g19"
+          ],
+          "penetration_m": 0.003554551843287192
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g16",
+            "wine_bottle_1_g20"
+          ],
+          "penetration_m": 0.0037562131421172576
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g16",
+            "wine_bottle_1_g20"
+          ],
+          "penetration_m": 0.003545249666022609
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.014361505704589423
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.014361491895275576
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.01436073671108914
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.014360722901775293
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g4"
+          ],
+          "penetration_m": 0.003982417594217029
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g4"
+          ],
+          "penetration_m": 0.003982513664140068
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g4"
+          ],
+          "penetration_m": 0.0033332335839357744
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g6"
+          ],
+          "penetration_m": 0.0006446345720286158
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g6"
+          ],
+          "penetration_m": 0.0006446345396896137
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g7"
+          ],
+          "penetration_m": 0.0013346346136638234
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g7"
+          ],
+          "penetration_m": 0.00046066659840002244
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g7"
+          ],
+          "penetration_m": 0.0013346345396896017
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g7"
+          ],
+          "penetration_m": 0.0004606909726600818
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g8"
+          ],
+          "penetration_m": 0.0029146346380356887
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g8"
+          ],
+          "penetration_m": 0.0029146345507032735
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g8"
+          ],
+          "penetration_m": 0.0020406990029691453
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g8"
+          ],
+          "penetration_m": 0.002040670227694613
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g9"
+          ],
+          "penetration_m": 0.002699941144274679
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g9"
+          ],
+          "penetration_m": 0.002699941053990194
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g9"
+          ],
+          "penetration_m": 0.003536322578310422
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g9"
+          ],
+          "penetration_m": 0.0035362947439122002
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g19"
+          ],
+          "penetration_m": 0.003511483165834979
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g19"
+          ],
+          "penetration_m": 0.0034782710113498007
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g19"
+          ],
+          "penetration_m": 0.0033847440684401857
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g19"
+          ],
+          "penetration_m": 0.003351531913955007
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g20"
+          ],
+          "penetration_m": 0.0003904979138435547
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g17",
+            "wine_bottle_1_g20"
+          ],
+          "penetration_m": 0.005012281939092096
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.017312459516533853
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.008455098772261855
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.0016560397238230395
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g4"
+          ],
+          "penetration_m": 0.003982799342254537
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g4"
+          ],
+          "penetration_m": 0.0033335568798757874
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g6"
+          ],
+          "penetration_m": 0.0003624595165338399
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g11"
+          ],
+          "penetration_m": 0.0005683176261489353
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g12"
+          ],
+          "penetration_m": 0.0014654982353467286
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g12"
+          ],
+          "penetration_m": 0.002381241879484389
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g12"
+          ],
+          "penetration_m": 0.000564506987640451
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g13"
+          ],
+          "penetration_m": 0.003982817358115734
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g13"
+          ],
+          "penetration_m": 0.003982759974261896
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g14"
+          ],
+          "penetration_m": 0.0017636006664037709
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g14"
+          ],
+          "penetration_m": 0.0008896861638877683
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g18"
+          ],
+          "penetration_m": 0.001813184573094284
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g18"
+          ],
+          "penetration_m": 0.0008021266992736358
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g21"
+          ],
+          "penetration_m": 0.004359826024837929
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g21"
+          ],
+          "penetration_m": 0.003701320343521986
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g21"
+          ],
+          "penetration_m": 0.001830664726780532
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g18",
+            "wine_bottle_1_g21"
+          ],
+          "penetration_m": 0.001172159045464589
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g19",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.003988616915538044
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g19",
+            "wine_bottle_1_g3"
+          ],
+          "penetration_m": 0.003988628644714245
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g19",
+            "wine_bottle_1_g18"
+          ],
+          "penetration_m": 0.004235525545564695
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g19",
+            "wine_bottle_1_g18"
+          ],
+          "penetration_m": 0.004235512255978054
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g19",
+            "wine_bottle_1_g18"
+          ],
+          "penetration_m": 0.0018958302508271575
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g19",
+            "wine_bottle_1_g21"
+          ],
+          "penetration_m": 0.002950560083461909
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g19",
+            "wine_bottle_1_g21"
+          ],
+          "penetration_m": 0.0027151019002868587
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g19",
+            "wine_bottle_1_g21"
+          ],
+          "penetration_m": 0.002046381934004752
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g19",
+            "wine_bottle_1_g21"
+          ],
+          "penetration_m": 0.0018109237508297017
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g35",
+            "wine_bottle_1_g19"
+          ],
+          "penetration_m": 0.0046998641186010185
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g35",
+            "wine_bottle_1_g19"
+          ],
+          "penetration_m": 0.0041846340035115335
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g35",
+            "wine_bottle_1_g19"
+          ],
+          "penetration_m": 0.0026765202707064962
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g35",
+            "wine_bottle_1_g19"
+          ],
+          "penetration_m": 0.002161290155617011
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g35",
+            "wine_bottle_1_g20"
+          ],
+          "penetration_m": 0.005696813377003132
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g35",
+            "wine_bottle_1_g20"
+          ],
+          "penetration_m": 0.005696905143543428
+        },
+        {
+          "geoms": [
+            "akita_black_bowl_1_g35",
+            "wine_bottle_1_g20"
+          ],
+          "penetration_m": 0.0024787834651847857
+        }
+      ]
+    }
+  ]
+}

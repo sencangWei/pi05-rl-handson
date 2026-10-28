@@ -1,0 +1,122 @@
+{
+  "manifest_sha256": "36372697dd7e5b2b372dc63bd8a959ee5bfe099a6600a1945a6dd053f14c5142",
+  "script_sha256": "62f53adecf10d06386624ab701081f4bf1416c565ffc0a0cf4620179f3bbb2bb",
+  "guard_sha256": "602710fde9ce8d46872ea83876eddaf511e9d36ba1dd7a0cd1e50d192a24bbad",
+  "packages": {
+    "mujoco": "3.8.1",
+    "robosuite": "1.4.1",
+    "numpy": "1.26.4"
+  },
+  "protocol": "restore every dev state, sim.forward, check bowl-other penetration >0.1 mm / bowl-table >1 mm; no controls",
+  "entries": [
+    {
+      "id": "dev-empty_grasp-init40",
+      "state_sha256": "d6047c11e43bba7c76f3bcca94388d760e555a8c5d155f4d26c28152596e5441",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "dev-object_offset-init40",
+      "state_sha256": "c225ce064c3b449443f86c29d81ae6e3b12171b3ace3f04fbfb42bbc2d86d31e",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "dev-placement_failure-init40",
+      "state_sha256": "1371fe53a0fd842a9cf426810138295cc363091964571ce6724cfc2494676669",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "dev-empty_grasp-init41",
+      "state_sha256": "151542650b136f14105b1b73c7ed4712dd140f813b7e038b021d63d13c69fa16",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "dev-object_offset-init41",
+      "state_sha256": "9e86379d938c389b69fbbaae48cbe41cf4fead9f7cf54580f2eec5f65a39868e",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "dev-placement_failure-init41",
+      "state_sha256": "fc218c93a0ce795133b4e7fc7c26d54aa6f48d57677239e3421d0011e8377551",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "dev-empty_grasp-init42",
+      "state_sha256": "5dc4376284aebf900e300fe0ec4cc5c8cdb41791ec8e3ce16f7021ebd6ecf61b",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "dev-object_offset-init42",
+      "state_sha256": "dae78e15dc57b29d0925e370ba0845d841b48e2852ca4baeccc146f1a3ebe8f0",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "dev-placement_failure-init42",
+      "state_sha256": "1617bdf56b0165fcd095f5cb8f67e8b64fbaedc121aa171fee18156532902795",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "dev-empty_grasp-init43",
+      "state_sha256": "b9de1d5df2f49de33a028c07f12722088674ca17f6d23badaaa2ffdd629820e8",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "dev-object_offset-init43",
+      "state_sha256": "58bb5b4450193f01308fe3d61cdc754a34963279c3870d8af04f3f3e7a5e253d",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    },
+    {
+      "id": "dev-placement_failure-init43",
+      "state_sha256": "6b2b75ab367a9f80a33fbea40b168ffe7ec7eb9cecb642a4228fb7d16ae00760",
+      "overlaps": [],
+      "finite": true,
+      "native_success": false,
+      "finger_contact": false,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

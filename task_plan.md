@@ -49,3 +49,10 @@ Goal: use the six approved manual demonstrations with existing task replay; eval
 4. DONE: 64 matched evaluations; fresh5/12→6/12, regression9/12→9/12, retention8/8→8/8. Motion efficiency worse; 88 videos decoded, no automatic UI replacement.
 5. DONE: payload18e2041 restored independently from user-owned GitHub origin; all2615 tracked files identical. Release data4226 file hashes match; downloaded adapter reconstructs71 leaves exactly (20 LoRA). Evidence committed.
 Stop: report measured paired results, no unsupported generalization claim; do not replace panel model unless promotion passes.
+
+## 2026-10-28 用户同意：慢动作/恢复失败分层诊断
+1. DONE: original trace hashes/protocol frozen; same MuJoCo3.8.1 matched eight trajectories exactly on recorded positions/flags. Wrong-version replay archived and excluded.
+2. DONE: original dev bank audit6/12 invalid from bowl overlap; generator now rejects insertion/settled overlaps and records candidates. Separate restoration audit new bank12/12 valid; original states preserved.
+3. DONE: six historical failures continued300→600 controls,0/6success (five invalid starts); new valid paired bank parent10/12 vs manual6 10/12, all9 shared successes slower95→114 median controls. Two remaining failures never grasped bowl, each exact300-control replay complete.
+4. DONE: report/correction,86 tests+2subtests, Ruff and60 full video decodes passed. No training/UI change. Code/evidence remote restore pending below.
+Stop: diagnosis delivered; do not claim recovery repaired or promote unchanged model. Training-state audit and targeted relabeling are a proposed next experiment, not executed in this turn.

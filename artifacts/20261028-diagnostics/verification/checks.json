@@ -1,0 +1,36 @@
+[
+  {
+    "name": "pytest-cpu",
+    "command": [
+      "env",
+      "JAX_PLATFORMS=cpu",
+      ".venv-ppo/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "ruff",
+    "command": [
+      ".venv-train/bin/ruff",
+      "check",
+      "scripts/build_recovery_bank.py",
+      "scripts/diagnose_recovery.py",
+      "scripts/audit_recovery_bank.py",
+      "tests/test_recovery_diagnostics.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0
+  }
+]

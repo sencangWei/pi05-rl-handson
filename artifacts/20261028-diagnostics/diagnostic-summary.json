@@ -1,0 +1,406 @@
+{
+  "matched_replays": [
+    {
+      "label": "new-dev-placement_failure-init40",
+      "controls": 300,
+      "success": false,
+      "fidelity_passed": true,
+      "max_pose_error_m": 0.0,
+      "last50": {
+        "median_motion_mm": 2.2946671425326857,
+        "grasp_controls": 0,
+        "torque_saturated_controls": 0,
+        "min_joint_margin_rad": 0.7437162010107572,
+        "min_translation_jacobian_sigma": 0.20622926203133624
+      },
+      "grasp_controls_total": 0,
+      "last50_median_xyz_command_norm": 0.21672722982286155,
+      "last50_robot_obstacle_peak_pairs": [],
+      "final_eef_pos": [
+        0.1059975911453638,
+        0.04888869775623253,
+        1.0289666937218154
+      ],
+      "final_bowl_pos": [
+        0.15661406946904952,
+        0.10102058626796352,
+        0.8984077815232804
+      ],
+      "final_plate_pos": [
+        0.10444852497971986,
+        0.03883412582461089,
+        0.9324754378614076
+      ]
+    },
+    {
+      "label": "new-dev-empty_grasp-init42",
+      "controls": 300,
+      "success": false,
+      "fidelity_passed": true,
+      "max_pose_error_m": 0.0,
+      "last50": {
+        "median_motion_mm": 7.2768829147646255,
+        "grasp_controls": 0,
+        "torque_saturated_controls": 50,
+        "min_joint_margin_rad": 0.05716253449602782,
+        "min_translation_jacobian_sigma": 0.0007370362724822319
+      },
+      "grasp_controls_total": 103,
+      "last50_median_xyz_command_norm": 0.5648118218659965,
+      "last50_robot_obstacle_peak_pairs": [
+        [
+          "robot0_link7_collision / wooden_cabinet_1_g3",
+          {
+            "normal_force_N": 1068.3195485014992,
+            "penetration_m": 0.0005169291923863284
+          }
+        ],
+        [
+          "gripper0_finger2_pad_collision / table_collision",
+          {
+            "normal_force_N": 1005.4071535302595,
+            "penetration_m": 0.0026737243347673026
+          }
+        ],
+        [
+          "gripper0_hand_collision / wooden_cabinet_1_g3",
+          {
+            "normal_force_N": 738.4683960536984,
+            "penetration_m": 0.0007158236920439539
+          }
+        ],
+        [
+          "gripper0_finger2_collision / table_collision",
+          {
+            "normal_force_N": 646.4719841099609,
+            "penetration_m": 0.0058413967859152205
+          }
+        ],
+        [
+          "gripper0_finger1_pad_collision / table_collision",
+          {
+            "normal_force_N": 423.5325719100973,
+            "penetration_m": 0.001242461153245767
+          }
+        ]
+      ],
+      "final_eef_pos": [
+        0.22653073312768127,
+        -0.07847218247250379,
+        0.9392826588842982
+      ],
+      "final_bowl_pos": [
+        0.2753995655972755,
+        -0.11671199837057744,
+        0.9143929121986686
+      ],
+      "final_plate_pos": [
+        0.3474360060883374,
+        -0.06651582524192425,
+        0.9025049393277801
+      ]
+    },
+    {
+      "label": "new-dev-object_offset-init42",
+      "controls": 300,
+      "success": false,
+      "fidelity_passed": true,
+      "max_pose_error_m": 0.0,
+      "last50": {
+        "median_motion_mm": 2.974815333505696,
+        "grasp_controls": 48,
+        "torque_saturated_controls": 12,
+        "min_joint_margin_rad": 0.12593898669641668,
+        "min_translation_jacobian_sigma": 0.017025347930963112
+      },
+      "grasp_controls_total": 236,
+      "last50_median_xyz_command_norm": 0.3259772781205714,
+      "last50_robot_obstacle_peak_pairs": [],
+      "final_eef_pos": [
+        0.22925733262081865,
+        0.24545273441172522,
+        1.0674505660435247
+      ],
+      "final_bowl_pos": [
+        0.25382212623153877,
+        0.21937408854662022,
+        1.0074901141522248
+      ],
+      "final_plate_pos": [
+        0.2747240663884451,
+        0.23738033775014158,
+        1.0906236795907303
+      ]
+    },
+    {
+      "label": "new-dev-placement_failure-init42",
+      "controls": 300,
+      "success": false,
+      "fidelity_passed": true,
+      "max_pose_error_m": 0.0,
+      "last50": {
+        "median_motion_mm": 1.5868325823099,
+        "grasp_controls": 0,
+        "torque_saturated_controls": 0,
+        "min_joint_margin_rad": 0.43383197172449495,
+        "min_translation_jacobian_sigma": 0.1813411361245427
+      },
+      "grasp_controls_total": 0,
+      "last50_median_xyz_command_norm": 0.2634364721757686,
+      "last50_robot_obstacle_peak_pairs": [
+        [
+          "gripper0_hand_collision / wooden_cabinet_1_g33",
+          {
+            "normal_force_N": 269.46515924884835,
+            "penetration_m": 0.00013770264134344124
+          }
+        ]
+      ],
+      "final_eef_pos": [
+        0.12465967097239324,
+        -0.07384782909093197,
+        0.98030853214327
+      ],
+      "final_bowl_pos": [
+        0.1468074366587636,
+        -0.12736148292371116,
+        0.8917730399046271
+      ],
+      "final_plate_pos": [
+        0.03885305118790846,
+        -0.022100596997648523,
+        0.902506338529415
+      ]
+    },
+    {
+      "label": "new-dev-empty_grasp-init43",
+      "controls": 300,
+      "success": false,
+      "fidelity_passed": true,
+      "max_pose_error_m": 0.0,
+      "last50": {
+        "median_motion_mm": 5.7903828456170565,
+        "grasp_controls": 0,
+        "torque_saturated_controls": 4,
+        "min_joint_margin_rad": -0.00857020584342693,
+        "min_translation_jacobian_sigma": 0.1983613740413643
+      },
+      "grasp_controls_total": 3,
+      "last50_median_xyz_command_norm": 0.4988490843026872,
+      "last50_robot_obstacle_peak_pairs": [],
+      "final_eef_pos": [
+        0.07995752195744245,
+        -0.022392436936338505,
+        1.0289430275199893
+      ],
+      "final_bowl_pos": [
+        0.1254447084650597,
+        -0.03174298385651893,
+        0.9621560844914693
+      ],
+      "final_plate_pos": [
+        0.05321356050953683,
+        -0.02429671339779608,
+        0.902506338529415
+      ]
+    },
+    {
+      "label": "new-dev-object_offset-init43",
+      "controls": 300,
+      "success": false,
+      "fidelity_passed": true,
+      "max_pose_error_m": 0.0,
+      "last50": {
+        "median_motion_mm": 3.170124119802975,
+        "grasp_controls": 18,
+        "torque_saturated_controls": 0,
+        "min_joint_margin_rad": -0.0007935589582019204,
+        "min_translation_jacobian_sigma": 0.202020200248751
+      },
+      "grasp_controls_total": 83,
+      "last50_median_xyz_command_norm": 0.27015089458460034,
+      "last50_robot_obstacle_peak_pairs": [],
+      "final_eef_pos": [
+        0.06883590798361518,
+        -0.01347955172309935,
+        1.1150026817178431
+      ],
+      "final_bowl_pos": [
+        0.1130564284071125,
+        -0.025491157001574057,
+        0.9504372057306618
+      ],
+      "final_plate_pos": [
+        0.05170733940255439,
+        -0.025438113203209194,
+        0.9024951935406093
+      ]
+    },
+    {
+      "label": "parent-dev-object_offset-init43",
+      "controls": 300,
+      "success": false,
+      "fidelity_passed": true,
+      "max_pose_error_m": 0.0,
+      "last50": {
+        "median_motion_mm": 0.25205208059298845,
+        "grasp_controls": 0,
+        "torque_saturated_controls": 0,
+        "min_joint_margin_rad": 0.9713710253643058,
+        "min_translation_jacobian_sigma": 0.22299069019142856
+      },
+      "grasp_controls_total": 0,
+      "last50_median_xyz_command_norm": 0.8147352806828598,
+      "last50_robot_obstacle_peak_pairs": [
+        [
+          "gripper0_hand_collision / wooden_cabinet_1_g18",
+          {
+            "normal_force_N": 119.31743470124609,
+            "penetration_m": 7.544314711965422e-05
+          }
+        ]
+      ],
+      "final_eef_pos": [
+        0.05724667158252119,
+        -0.0579378742830296,
+        1.0604634540761717
+      ],
+      "final_bowl_pos": [
+        -0.18480528388223763,
+        -0.046790026560176855,
+        0.9422735323604734
+      ],
+      "final_plate_pos": [
+        0.05321356050953683,
+        -0.02429671339779608,
+        0.902506338529415
+      ]
+    },
+    {
+      "label": "new-control-placement43",
+      "controls": 194,
+      "success": true,
+      "fidelity_passed": true,
+      "max_pose_error_m": 0.0,
+      "last50": {
+        "median_motion_mm": 4.802349090359554,
+        "grasp_controls": 27,
+        "torque_saturated_controls": 0,
+        "min_joint_margin_rad": 0.8837654234839152,
+        "min_translation_jacobian_sigma": 0.2294855794531958
+      },
+      "grasp_controls_total": 27,
+      "last50_median_xyz_command_norm": 0.4117851337798869,
+      "last50_robot_obstacle_peak_pairs": [
+        [
+          "gripper0_hand_collision / wooden_cabinet_1_g29",
+          {
+            "normal_force_N": 133.67529125882945,
+            "penetration_m": 9.785341039762317e-05
+          }
+        ]
+      ],
+      "final_eef_pos": [
+        0.05947365679501014,
+        0.03373007896647505,
+        1.010213271110298
+      ],
+      "final_bowl_pos": [
+        0.039409934444905655,
+        0.016035828925146635,
+        0.9099055830206833
+      ],
+      "final_plate_pos": [
+        0.05883067849396428,
+        -0.005355172258938002,
+        0.9025019800185482
+      ]
+    }
+  ],
+  "continuations": [
+    {
+      "label": "new-dev-placement_failure-init40",
+      "controls": 600,
+      "success": false,
+      "fidelity_passed": true,
+      "max_pose_error_m": 0.0,
+      "last50": {
+        "median_motion_mm": 1.5047647088853862,
+        "grasp_controls": 0,
+        "torque_saturated_controls": 0,
+        "min_joint_margin_rad": 0.08311642447357909,
+        "min_translation_jacobian_sigma": 0.19496440827997796
+      }
+    },
+    {
+      "label": "new-dev-empty_grasp-init42",
+      "controls": 600,
+      "success": false,
+      "fidelity_passed": true,
+      "max_pose_error_m": 0.0,
+      "last50": {
+        "median_motion_mm": 3.9254681204945214,
+        "grasp_controls": 0,
+        "torque_saturated_controls": 39,
+        "min_joint_margin_rad": 0.015549725432875805,
+        "min_translation_jacobian_sigma": 0.0003478014739269357
+      }
+    },
+    {
+      "label": "new-dev-object_offset-init42",
+      "controls": 600,
+      "success": false,
+      "fidelity_passed": true,
+      "max_pose_error_m": 0.0,
+      "last50": {
+        "median_motion_mm": 2.541962563071835,
+        "grasp_controls": 0,
+        "torque_saturated_controls": 21,
+        "min_joint_margin_rad": 0.04769879012546441,
+        "min_translation_jacobian_sigma": 0.0019745506806091765
+      }
+    },
+    {
+      "label": "new-dev-placement_failure-init42",
+      "controls": 600,
+      "success": false,
+      "fidelity_passed": true,
+      "max_pose_error_m": 0.0,
+      "last50": {
+        "median_motion_mm": 7.117193944015437,
+        "grasp_controls": 43,
+        "torque_saturated_controls": 0,
+        "min_joint_margin_rad": 0.42691584756420653,
+        "min_translation_jacobian_sigma": 0.17833869684620654
+      }
+    },
+    {
+      "label": "new-dev-empty_grasp-init43",
+      "controls": 600,
+      "success": false,
+      "fidelity_passed": true,
+      "max_pose_error_m": 0.0,
+      "last50": {
+        "median_motion_mm": 0.5670122619091249,
+        "grasp_controls": 0,
+        "torque_saturated_controls": 0,
+        "min_joint_margin_rad": -0.00020247564539545293,
+        "min_translation_jacobian_sigma": 0.20766226987452785
+      }
+    },
+    {
+      "label": "new-dev-object_offset-init43",
+      "controls": 600,
+      "success": false,
+      "fidelity_passed": true,
+      "max_pose_error_m": 0.0,
+      "last50": {
+        "median_motion_mm": 0.47829123229719933,
+        "grasp_controls": 0,
+        "torque_saturated_controls": 0,
+        "min_joint_margin_rad": -0.0002986442319822674,
+        "min_translation_jacobian_sigma": 0.21248618023040347
+      }
+    }
+  ]
+}

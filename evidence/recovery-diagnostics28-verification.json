@@ -1,0 +1,134 @@
+{
+  "status": "PASS",
+  "scope": "test-construction fix and bounded physics/policy diagnosis; no new training or UI changes",
+  "checks": [
+    {
+      "name": "pytest-cpu",
+      "command": [
+        "env",
+        "JAX_PLATFORMS=cpu",
+        ".venv-ppo/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "ruff",
+      "command": [
+        ".venv-train/bin/ruff",
+        "check",
+        "scripts/build_recovery_bank.py",
+        "scripts/diagnose_recovery.py",
+        "scripts/audit_recovery_bank.py",
+        "tests/test_recovery_diagnostics.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "video_verification": "evidence/recovery-diagnostics28-video-verification.json",
+  "videos": 60,
+  "replay_fidelity": {
+    "replay-matched": {
+      "cases": 8,
+      "all_fidelity_passed": true,
+      "max_pose_error_m": 0
+    },
+    "continuation": {
+      "cases": 6,
+      "all_fidelity_passed": true,
+      "max_pose_error_m": 0
+    },
+    "physicaldev-failure-replay": {
+      "cases": 2,
+      "all_fidelity_passed": true,
+      "max_pose_error_m": 0
+    }
+  },
+  "old_manifest_sha256": "3f8b1cffc3e7dd8e9dbaa062bd82a22b5e44e9379de80cd61eade50211467768",
+  "new_manifest_sha256": "36372697dd7e5b2b372dc63bd8a959ee5bfe099a6600a1945a6dd053f14c5142",
+  "new_bank_restoration_passed": true,
+  "comparison": {
+    "identity_validation": {
+      "passed": true,
+      "equal_fields": [
+        "base_sha256",
+        "manifest_sha256",
+        "config_sha256",
+        "split",
+        "category",
+        "model_config",
+        "success",
+        "action_execution",
+        "control_hz",
+        "video_fps",
+        "noise",
+        "sources"
+      ],
+      "matched_states": 12
+    },
+    "totals": {
+      "parent": 10,
+      "manual6": 10
+    },
+    "categories": {
+      "empty_grasp": {
+        "parent": 4,
+        "manual6": 4
+      },
+      "object_offset": {
+        "parent": 4,
+        "manual6": 4
+      },
+      "placement_failure": {
+        "parent": 2,
+        "manual6": 2
+      }
+    },
+    "common_success": {
+      "cases": 9,
+      "median_controls": {
+        "parent": 95,
+        "manual6": 114
+      },
+      "slower_manual6": 9
+    }
+  },
+  "external_runtime_unchanged_against_previously_restored_patch_bundle": {
+    "rlinf/envs/sim/libero/libero_env.py": true,
+    "rlinf/models/embodiment/openpi/modules/siglip.py": true,
+    "rlinf/models/embodiment/openpi/modules/utils.py": true,
+    "rlinf/hybrid_engines/fsdp/strategy/fsdp.py": true,
+    "rlinf/hybrid_engines/fsdp/strategy/base.py": true,
+    "rlinf/hybrid_engines/fsdp/fsdp_model_manager.py": true,
+    "rlinf/workers/actor/embodied_fsdp_actor_worker.py": true,
+    "rlinf/hybrid_engines/fsdp/strategy/adapter_checkpoint.py": true,
+    "rlinf/hybrid_engines/weight_syncer/patch_syncer.py": true,
+    "rlinf/scheduler/cluster/cluster.py": true,
+    "rlinf/envs/sim/libero/venv.py": true,
+    "rlinf/envs/sim/libero/recovery.py": true
+  },
+  "external_simulator_unchanged_sha256": "406c62b7c2f95bcaa3070576b750266503b6ccd53f518ac20100fa9adda5e533",
+  "prior_runtime_restore": "evidence/recovery27-stage-runtime-restore.json",
+  "services": "Result=success\nId=pi05-diag28-server.service\nActiveState=inactive\n\nResult=success\nId=pi05-diag28-parent.service\nActiveState=inactive\n",
+  "existing_user_ui": "    PID COMMAND\n2124267 .venv-sim/bin/python -u scripts/manual_recovery.py --initial-id 2 --category object_offset\n",
+  "new_training_updates": 0,
+  "gui_replaced": false,
+  "limits": [
+    "small development set, not blind test",
+    "initial collision guard is bowl-focused, no guarantee of future collision-free controls",
+    "replay fidelity covers recorded positions/flags, not complete original physics or pixels",
+    "two valid policy failures remain; no recovery repair claim"
+  ]
+}

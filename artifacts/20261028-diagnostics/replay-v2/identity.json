@@ -1,0 +1,12 @@
+{
+  "plan_sha256": "1e3bcf50999515f9d20946a3c095e6234a1a2a62e58d283fafdf86d9f56cd925",
+  "script_sha256": "d6819c2de55adeef84ee1b254db2f8df14d7c49af4ff7643967968d1df89f254",
+  "packages": {
+    "numpy": "1.26.4",
+    "mujoco": "3.2.3",
+    "robosuite": "1.4.1",
+    "torch": "2.7.1"
+  },
+  "server": null,
+  "limitation": "Replay fidelity checks recorded EEF/bowl/plate positions and goal/contact flags, not unrecorded full physics"
+}

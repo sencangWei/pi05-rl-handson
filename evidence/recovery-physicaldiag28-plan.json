@@ -1,0 +1,22 @@
+{
+  "purpose": "Passive diagnostics of both failures on physically validated development bank; no controls changed",
+  "manifest": "data/recovery-bowl-physicaldev28-v2/manifest.json",
+  "manifest_sha256": "36372697dd7e5b2b372dc63bd8a959ee5bfe099a6600a1945a6dd053f14c5142",
+  "checkpoint": "checkpoints/pi05_recovery_replay_lora/manual6_replay2000_v1/1999",
+  "extra_controls": 0,
+  "pose_tolerance_m": 1e-05,
+  "cases": [
+    {
+      "id": "dev-placement_failure-init40",
+      "label": "new-physical-dev-placement_failure-init40",
+      "trace": "artifacts/20261028-diagnostics/physicaldev-after/dev-placement_failure-init40.jsonl",
+      "sha256": "c06d2cce3c20e2b97099907e2a740efbb6185bf28e0e7314e877cced95cefd87"
+    },
+    {
+      "id": "dev-placement_failure-init41",
+      "label": "new-physical-dev-placement_failure-init41",
+      "trace": "artifacts/20261028-diagnostics/physicaldev-after/dev-placement_failure-init41.jsonl",
+      "sha256": "1cbeba96d0344a7908c07fa11e86d242d2f95cba6075eeebaec283ec82923c46"
+    }
+  ]
+}

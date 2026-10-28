@@ -1,0 +1,21 @@
+{
+  "plan_sha256": "8eae71493ebf2d19a64b4c60dc5654c73aa1a477c7b5f03f11754f0420ecc62c",
+  "script_sha256": "d6819c2de55adeef84ee1b254db2f8df14d7c49af4ff7643967968d1df89f254",
+  "packages": {
+    "numpy": "1.26.4",
+    "mujoco": "3.8.1",
+    "robosuite": "1.4.1",
+    "torch": "2.7.1+cu128"
+  },
+  "server": {
+    "backend": "local-pi05-libero-lora",
+    "checkpoint": "/home/robot/pi05-rl-handson/checkpoints/pi05_recovery_replay_lora/manual6_replay2000_v1/1999",
+    "image_size": 224,
+    "action_horizon": 10,
+    "model_config": "Pi0Config(action_dim=32, action_horizon=10, max_token_len=200, dtype='bfloat16', paligemma_variant='gemma_2b_lora', action_expert_variant='gemma_300m_lora', pi05=True, discrete_state_input=False, pytorch_compile_mode='max-autotune')",
+    "discrete_state_input": false,
+    "seed_protocol": "numpy.default_rng(seed).standard_normal((10,32))",
+    "norm_stats_sha256": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84"
+  },
+  "limitation": "Replay fidelity checks recorded EEF/bowl/plate positions and goal/contact flags, not unrecorded full physics"
+}
