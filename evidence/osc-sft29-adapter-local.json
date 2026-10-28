@@ -1,0 +1,11 @@
+{
+  "archive": "exports/osc-sft29/osc-sft29-inference-adapter.tar.gz",
+  "bytes": 185499139,
+  "sha256": "ad95a0e159c66a8f67d49992ec799f4134e8df4bde9cdb6c891308f5bbf31496",
+  "files": {
+    "metadata.json": "edf41d13b8cf5a738e4344240528ef1846cfda9ad339dee13666fadd57258ccc",
+    "adapter.npz": "c5403f02eb7e77ab1f84038ca0923c21d37803e09e715ee9cc5cf1057648c222",
+    "norm_stats.json": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84"
+  },
+  "purpose": "Exact inference backup; optimizer state excluded; requires official pi05_libero base"
+}

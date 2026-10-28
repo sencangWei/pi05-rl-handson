@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson",
+  "branch": "experiment/matched-recovery-20261027",
+  "revision": "fa78c5f7e321e6843d91994e83de991364570847",
+  "method": "Remote GitHub recursive Git tree + SHA-validated base64 Git blob API contents; unchanged blobs from previously independently fetched remote clone; full clean directory restored",
+  "tracked_files": 3500,
+  "new_blobs_downloaded_independently": 20,
+  "all_tracked_contents_exact": true,
+  "git_tree": "ac7f987a55704a69ee02d27d384b8d235f985603",
+  "rebuilt_git_tree_exact": true,
+  "manifest_sha256": "322cc05fbeb7e3dc615107c1ebfd12f0f6fa9421e61960fdd576cd4a39f898a9",
+  "scope": "Frozen pre-training code/config/dataset conversion/protocol; source pairs already independently restored from prior Release. No newly trained weights yet."
+}

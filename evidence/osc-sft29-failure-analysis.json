@@ -1,0 +1,60 @@
+{
+  "status": "DIAGNOSED_OBSERVATIONS",
+  "rows": [
+    {
+      "id": "dev-placement_failure-init40",
+      "controls": 300,
+      "native_goal_controls": 0,
+      "finger_contact_controls": 0,
+      "bowl_z_min": 0.8984070750980836,
+      "bowl_z_max": 0.8984070750980836,
+      "initial_bowl_plate_xy_m": 0.14999999999999997,
+      "final_bowl_plate_xy_m": 0.1619378887505415,
+      "min_bowl_plate_xy_m": 0.14999999999999997
+    },
+    {
+      "id": "dev-placement_failure-init41",
+      "controls": 300,
+      "native_goal_controls": 0,
+      "finger_contact_controls": 0,
+      "bowl_z_min": 0.8984070750980836,
+      "bowl_z_max": 0.8984070750980836,
+      "initial_bowl_plate_xy_m": 0.15,
+      "final_bowl_plate_xy_m": 0.35422148573783413,
+      "min_bowl_plate_xy_m": 0.14206069096746127
+    },
+    {
+      "id": "dev-placement_failure-init42",
+      "controls": 300,
+      "native_goal_controls": 0,
+      "finger_contact_controls": 0,
+      "bowl_z_min": 0.8984070750980836,
+      "bowl_z_max": 0.8984070750980836,
+      "initial_bowl_plate_xy_m": 0.15,
+      "final_bowl_plate_xy_m": 0.14996861117795351,
+      "min_bowl_plate_xy_m": 0.148862817674719
+    },
+    {
+      "id": "dev-placement_failure-init43",
+      "controls": 300,
+      "native_goal_controls": 0,
+      "finger_contact_controls": 56,
+      "bowl_z_min": 0.8978143064814625,
+      "bowl_z_max": 0.9093769528635602,
+      "initial_bowl_plate_xy_m": 0.15,
+      "final_bowl_plate_xy_m": 0.1599621461781861,
+      "min_bowl_plate_xy_m": 0.15
+    }
+  ],
+  "evidence": "Stored real policy rollouts; 4x6 candidate contact sheet visually inspected",
+  "observations": [
+    "All four never satisfy native goal, not merely post-goal release filtering.",
+    "First three have zero finger contact and unchanged bowl height, while arm acts near plate; fourth contacts bowl but fails transport."
+  ],
+  "hypothesis": "New experts begin already holding bowl. Holding/transport-phase supervision may bias behavior before grasp. Not isolated causally: old human and new expert sample weights both changed.",
+  "limitations": [
+    "One training seed and one rollout per development initial state; no causal attribution to a single sample or learning rate.",
+    "Fresh parent scored9/12 versus previous10/12; use this fresh paired run, do not pool or select best scores. Repeatability difference not isolated.",
+    "No evidence that longer time budget would repair goal grounding or new-object generalization."
+  ]
+}

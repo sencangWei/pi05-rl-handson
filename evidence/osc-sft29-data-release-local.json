@@ -1,0 +1,11 @@
+{
+  "file": "exports/osc-sft29/osc-sft29-training-pairs.tar.gz",
+  "bytes": 112309668,
+  "sha256": "7fab65762068a39be7775f511c197b4b5813dc2c92c7eaada1deb80555eea5d2",
+  "files": {
+    "data/osc-expert-replay29-v1/human_1793121358375746008.parquet": "cf321af61d6966fa562c6bf4591ebed4ad8155470b97947f61d1728b82e8d377",
+    "data/osc-expert-replay29-v1/human_1793122696228231033.parquet": "7c24f003fc1336d6ebee959a02c33ef8bc93a78b0dc1d382d29a0835fb29366f",
+    "data/osc-expert-replay29-v1/manifest.json": "552490dda31809055346988766337811689d912195441971caa318fc56155e8d",
+    "evidence/osc-expert-replay29-manifest.json": "552490dda31809055346988766337811689d912195441971caa318fc56155e8d"
+  }
+}

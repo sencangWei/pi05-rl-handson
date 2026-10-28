@@ -1,0 +1,26 @@
+{
+  "status": "COMPLETE",
+  "phase": "between completed parent and candidate evaluations",
+  "failure": "strict bind reported EADDRINUSE for 127.0.0.1:9875 after own parent server exited successfully",
+  "observed_socket_state": "TIME-WAIT; no LISTEN socket and own parent service inactive",
+  "minimal_reproduction": {
+    "strict_bind": "EADDRINUSE",
+    "SO_REUSEADDR_bind": "PASS"
+  },
+  "fix": "Match server socket reuse option for availability probe; still reject any active listener. Candidate-only restart validates completed parent checkpoint, manifest and all12 unique results; parent files not overwritten.",
+  "frozen_training_source_changed": false,
+  "evaluation_algorithm_changed": false,
+  "runner_before_sha256": "4a4214b3a3c22f8ca58520f7e25c7f5f09b10b4d2cb0d3f513012211d4b003ac",
+  "runner_after_sha256": "c5b1330f9c28826fc05ecf18e914f861857b49c809ff7f108eefdc2309ea844f",
+  "resume_command": ".venv-ppo/bin/python -u reports/osc-sft-20261029/evaluate_run.py --candidate-only",
+  "preserved_logs": [
+    "logs/osc-sft29-evaluation-runner.log",
+    "logs/osc-sft29-postprocess.log",
+    "logs/osc-sft29-evaluation-resume.log"
+  ],
+  "active_listener_still_rejected": true,
+  "resumed_candidate_trials": 12,
+  "parent_results_preserved": true,
+  "resume_evaluation_exit_status": 0,
+  "resume_postprocess_exit_status": 0
+}

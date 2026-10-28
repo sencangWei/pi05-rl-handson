@@ -1,0 +1,63 @@
+{"before": {"success": 9, "trials": 12}, "after": {"success": 6, "trials": 12}}
+{
+  "status": "COMPLETE",
+  "experiment": "osc_expert_replay2000_v1",
+  "totals": {
+    "parent": {
+      "successes": 9,
+      "trials": 12,
+      "categories": {
+        "empty_grasp": 4,
+        "object_offset": 4,
+        "placement_failure": 1
+      },
+      "total_controls_including_timeouts": 1839,
+      "wall_seconds": 52.688629413052695
+    },
+    "candidate": {
+      "successes": 6,
+      "trials": 12,
+      "categories": {
+        "empty_grasp": 2,
+        "object_offset": 4,
+        "placement_failure": 0
+      },
+      "total_controls_including_timeouts": 2821,
+      "wall_seconds": 71.59842398899491
+    }
+  },
+  "shared_success_ids": [
+    "dev-object_offset-init40",
+    "dev-empty_grasp-init41",
+    "dev-object_offset-init41",
+    "dev-empty_grasp-init42",
+    "dev-object_offset-init42",
+    "dev-object_offset-init43"
+  ],
+  "paired_success_median_controls": {
+    "parent": 92.5,
+    "candidate": 166.5
+  },
+  "median_paired_delta_controls": 63.0,
+  "predeclared_gates": {
+    "success_at_least_10_of_12": false,
+    "paired_controls_median_no_worse_than_parent": false
+  },
+  "diagnostic_gates_passed": false,
+  "automatic_promotion": false,
+  "heldout_evaluated": false,
+  "ordinary_40task_retention_evaluated": false,
+  "data_scope": "12 reused development states; not unseen generalization; expert demonstrations are not policy tests",
+  "actual_source_counts": {
+    "human": 543,
+    "replay": 1457
+  },
+  "metrics": {
+    "logged_updates": 200,
+    "all_finite": true,
+    "first_loss": 0.0446,
+    "last_loss": 0.011
+  }
+}
+{"status": "PASS", "mode": "export", "tensors": 71, "lora_tensors": 20, "tree_sha256": "c75bfd44d44b413ef61f30f57afc81518c4c8250396013be042b7c9dc9b5f254"}
+SUMMARY_AND_EXACT_EXPORT_COMPLETE

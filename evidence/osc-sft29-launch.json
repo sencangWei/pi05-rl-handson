@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-10-29T00:58:24.219946+08:00",
+  "revision": "fa78c5f7e321e6843d91994e83de991364570847",
+  "units": {
+    "train": [
+      "systemd-run",
+      "--user",
+      "--unit=pi05-osc-sft29-train",
+      "--property=WorkingDirectory=/home/robot/pi05-rl-handson",
+      "--property=MemoryMax=40G",
+      "--property=MemorySwapMax=0",
+      "--property=RuntimeMaxSec=3600",
+      "--property=StandardOutput=append:/home/robot/pi05-rl-handson/logs/osc_expert_replay2000_v1-train.log",
+      "--property=StandardError=append:/home/robot/pi05-rl-handson/logs/osc_expert_replay2000_v1-train.log",
+      "--setenv=XLA_PYTHON_CLIENT_PREALLOCATE=false",
+      "--setenv=OMP_NUM_THREADS=4",
+      "--setenv=OPENBLAS_NUM_THREADS=4",
+      "/home/robot/pi05-rl-handson/.venv-train/bin/python",
+      "-u",
+      "scripts/train_recovery_replay.py",
+      "--experiment",
+      "osc_expert_replay2000_v1",
+      "--recovery-manifest",
+      "evidence/osc-expert-replay29-manifest.json",
+      "--evaluation-plan",
+      "evidence/osc-sft29-execution-plan.json"
+    ],
+    "evaluate": [
+      "systemd-run",
+      "--user",
+      "--unit=pi05-osc-sft29-evaluate",
+      "--property=WorkingDirectory=/home/robot/pi05-rl-handson",
+      "--property=RuntimeMaxSec=7200",
+      "--property=StandardOutput=append:/home/robot/pi05-rl-handson/logs/osc-sft29-evaluation-runner.log",
+      "--property=StandardError=append:/home/robot/pi05-rl-handson/logs/osc-sft29-evaluation-runner.log",
+      "/home/robot/pi05-rl-handson/.venv-ppo/bin/python",
+      "-u",
+      "reports/osc-sft-20261029/evaluate_run.py"
+    ]
+  },
+  "scope": "approved bounded LoRA training and matched development evaluation; no UI promotion; unrelated jobs untouched",
+  "dry_run": "evidence/osc-sft29-dry-run-status.json",
+  "data_coverage": "evidence/osc-sft29-preview-coverage.json"
+}

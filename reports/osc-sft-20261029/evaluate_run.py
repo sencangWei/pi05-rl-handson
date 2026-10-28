@@ -1,4 +1,5 @@
 """Evaluate frozen parent and candidate after verified bounded training; no UI promotion."""
+import argparse
 import hashlib
 import json
 import os
@@ -20,6 +21,10 @@ def properties(unit):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--candidate-only", action="store_true",
+                        help="Resume after the completed parent run without overwriting it")
+    args = parser.parse_args()
     started = time.monotonic()
     while properties(TRAIN_UNIT)["ActiveState"] in ("active", "activating", "deactivating"):
         if time.monotonic() - started > 3700:
@@ -42,8 +47,17 @@ def main():
         "parent": ROOT / "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999",
         "candidate": ROOT / f"checkpoints/pi05_recovery_replay_lora/{EXPERIMENT}/1999",
     }
+    if args.candidate_only:
+        parent = ROOT / "artifacts/20261029-osc-sft/parent"
+        identity = json.loads((parent / "identity.json").read_text())
+        rows = json.loads((parent / "summary.json").read_text())
+        assert identity["jax_server"]["checkpoint"] == str(checkpoints["parent"])
+        assert identity["manifest_sha256"] == evaluation["manifest_sha256"]
+        assert len(rows) == 12 and len({r["id"] for r in rows}) == 12
+        del checkpoints["parent"]
     for label, checkpoint in checkpoints.items():
         with socket.socket() as check:
+            check.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             check.bind(("127.0.0.1", 9875))
         unit = f"pi05-osc-sft29-{label}-server"
         log = ROOT / f"logs/{EXPERIMENT}-{label}-server.log"

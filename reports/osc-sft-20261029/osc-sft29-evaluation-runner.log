@@ -1,0 +1,7 @@
+Running as unit: pi05-osc-sft29-parent-server.service
+Traceback (most recent call last):
+  File "/home/robot/pi05-rl-handson/reports/osc-sft-20261029/evaluate_run.py", line 80, in <module>
+    main()
+  File "/home/robot/pi05-rl-handson/reports/osc-sft-20261029/evaluate_run.py", line 47, in main
+    check.bind(("127.0.0.1", 9875))
+OSError: [Errno 98] Address already in use

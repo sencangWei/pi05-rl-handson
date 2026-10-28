@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "url": "https://github.com/sencangWei/pi05-rl-handson/releases/tag/osc-expert-sft-20261029",
+  "prerelease": true,
+  "body": "Bounded experiment completed: 2000-update pi0.5 LoRA SFT, seed42/batch1, preserving all old corrections plus 40-task public replay and 2 approved converted expert demonstrations.\n\nNegative result on 12 reused development initial states: freshly rerun parent 9/12; candidate 6/12. Placement recovery 1/4 -> 0/4. On 6 jointly successful states median controls 92.5 -> 166.5. Both predeclared gates failed. No UI promotion, no heldout or ordinary 40-task retention claim. Demonstration execution success does not imply policy recovery success.\n\nArtifacts: osc-sft29-training-pairs.tar.gz contains the two added expert Parquets and combined manifests; osc-sft29-inference-adapter.tar.gz contains compact inference weights, normalization and metadata. Official pi05_libero base weights are required for reconstruction. Optimizer/resumable full checkpoint remains local; this Release is not a full training-resume checkpoint.\n\nReport and paired videos: https://github.com/sencangWei/pi05-rl-handson/blob/experiment/matched-recovery-20261027/reports/osc-sft-20261029/README.md\n",
+  "assets": [
+    {
+      "name": "osc-sft29-inference-adapter.tar.gz",
+      "size": 185499139,
+      "digest": "sha256:ad95a0e159c66a8f67d49992ec799f4134e8df4bde9cdb6c891308f5bbf31496",
+      "url": "https://github.com/sencangWei/pi05-rl-handson/releases/download/osc-expert-sft-20261029/osc-sft29-inference-adapter.tar.gz"
+    },
+    {
+      "name": "osc-sft29-training-pairs.tar.gz",
+      "size": 112309668,
+      "digest": "sha256:7fab65762068a39be7775f511c197b4b5813dc2c92c7eaada1deb80555eea5d2",
+      "url": "https://github.com/sencangWei/pi05-rl-handson/releases/download/osc-expert-sft-20261029/osc-sft29-training-pairs.tar.gz"
+    }
+  ]
+}

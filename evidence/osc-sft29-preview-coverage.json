@@ -1,0 +1,28 @@
+{
+  "gradient_samples": 2000,
+  "excluded_final_prefetch": {
+    "index": 1315485,
+    "source": "replay",
+    "episode": "data/chunk-000/episode_000413.parquet",
+    "task_id": 13,
+    "anchor": 35
+  },
+  "counts": {
+    "old_human": 345,
+    "public": 1457,
+    "new_expert": 198
+  },
+  "per_episode": {
+    "data/manual-recovery28-v1/episode-06.parquet": 58,
+    "data/osc-expert-replay29-v1/human_1793122696228231033.parquet": 99,
+    "data/manual-recovery28-v1/episode-03.parquet": 48,
+    "data/manual-recovery28-v1/episode-01.parquet": 15,
+    "data/manual-recovery28-v1/episode-00.parquet": 109,
+    "data/osc-expert-replay29-v1/human_1793121358375746008.parquet": 99,
+    "data/manual-recovery28-v1/episode-04.parquet": 10,
+    "data/manual-recovery28-v1/episode-05.parquet": 55,
+    "data/manual-recovery28-v1/episode-07.parquet": 43,
+    "data/manual-recovery28-v1/episode-02.parquet": 7
+  },
+  "unique_recovery_anchors": 487
+}

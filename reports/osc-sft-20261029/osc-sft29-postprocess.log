@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/robot/pi05-rl-handson/.local/osc-sft29-postprocess.py", line 11, in <module>
+    p=props('pi05-osc-sft29-evaluate');assert p['Result']=='success' and p['ExecMainStatus']=='0',p
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'Result': 'exit-code', 'ExecMainStatus': '1', 'ActiveState': 'failed'}

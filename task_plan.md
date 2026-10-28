@@ -120,3 +120,10 @@ Task-phase preflight: all1612human and7633publictask8 anchors partitioned exhaus
 2. 同一40任务父模型、fresh AdamW、2000更新/batch1/seed42/lr5e-6；75%公开回放/25%恢复槽，旧人工与新专家按有效起点分配。冻结源码、数据、父权重与12个既有dev场景；不打开封存集。
 3. 实际训练、核对梯度样本顺序，独立仿真对比父模型；逐场报告恢复/耗步/时延。无UI自动晋升。
 4. 测试、训练配置、结果与推理权重备份自有远端，独立恢复比对。成功仅指完成有证据实验，不预设能力改善。
+
+2026-10-29 00:55 CST: actual bounded OSC expert replay training launched as pi05-osc-sft29-train; preflight passed. Frozen first2000 preview: public1457 + oldhuman345 + expert198; 1 final prefetch excluded. Matched 12+12 evaluation runner waits for verified completion. No UI change.
+
+
+## 2026-10-29 OSC专家补充微调完成（能力门未通过）
+实际2000次LoRA更新、batch1、seed42，公开1457/旧人工345/新增专家198，全部2000样本顺序与冻结预览一致；未删除任何原始纠错。训练与保存正常退出，无OOM。重新配对12个既有开发初态：父9/12、新6/12；抓空4→2/4、偏移4→4/4、放置1→0/4。共同成功6例控制步中位数92.5→166.5，预设两门均失败，未替换面板，未评测封存集或40任务保留能力。
+四个放置场景均未到原生目标；前三个没有手指接触且碗高度完全不变，不能归因于成功后未松手。新增示范从持碗开始，阶段分布偏向只是待验证假设，不是已证明因果。23项针对性测试+9子测试、Ruff通过；60视频文件12201帧全解码通过。父评测后端口TIME-WAIT导致误报，保留失败日志，修可用性探测并仅接续候选；策略算法和冻结训练源不变。结果、原始轨迹、左右对比见reports/osc-sft-20261029/README.md；远端最终恢复核验进行中。

@@ -8,3 +8,13 @@ systemd-run --user --unit=pi05-osc-sft29-evaluate --property=WorkingDirectory=/h
 ```
 
 评测服务与模拟器的精确参数见 evaluate_run.py。无UI模型替换。
+
+### 评测切换恢复记录
+
+首轮父模型12例完成后，端口探测未启用 SO_REUSEADDR，误将退出服务的 TIME-WAIT 视为端口占用。已核实没有监听者；相同端口严格绑定失败、启用复用绑定成功。仅修正探测，并使用以下命令接着评测新模型，父模型录像和结果不覆盖。训练/模型动作/评测标准未变。
+
+```bash
+.venv-ppo/bin/python -u reports/osc-sft-20261029/evaluate_run.py --candidate-only
+```
+
+初次失败及恢复日志均保留，证据见 evidence/osc-sft29-evaluation-recovery.json。

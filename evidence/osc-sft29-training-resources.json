@@ -1,0 +1,377 @@
+[
+  {
+    "epoch": 1793206880.4638844,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "11360505856",
+      "CPUUsageNSec": "91423792000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "16645734400\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793206890.4765184,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "12274114560",
+      "CPUUsageNSec": "95917546000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "16645734400\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793206900.490063,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "12662734848",
+      "CPUUsageNSec": "101711582000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "16645734400\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793206910.5027993,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "13339824128",
+      "CPUUsageNSec": "106644389000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "16645734400\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793206920.5156524,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "14100508672",
+      "CPUUsageNSec": "111873034000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "16645734400\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793206930.5283382,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "14624063488",
+      "CPUUsageNSec": "116983706000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "16645734400\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793206940.54115,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "15111524352",
+      "CPUUsageNSec": "122320158000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "16645734400\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793206950.5538886,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "15779983360",
+      "CPUUsageNSec": "127537811000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "16645734400\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793206960.5671651,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "16509812736",
+      "CPUUsageNSec": "131990586000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "16645734400\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793206970.5797708,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "16826261504",
+      "CPUUsageNSec": "137889873000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "16826359808\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793206980.592403,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "17012166656",
+      "CPUUsageNSec": "144215623000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "17085882368\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793206990.6069696,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "17257451520",
+      "CPUUsageNSec": "149703809000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "17394216960\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207000.6209195,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "17560432640",
+      "CPUUsageNSec": "155026937000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "17676292096\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207010.6338265,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "17739968512",
+      "CPUUsageNSec": "161574444000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "17823526912\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207020.6468282,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "18135961600",
+      "CPUUsageNSec": "166454261000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "18159448064\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207030.660291,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "18433200128",
+      "CPUUsageNSec": "171662468000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "18433200128\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207040.6739244,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "18620411904",
+      "CPUUsageNSec": "177033455000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "18685415424\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207050.6890872,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "18681372672",
+      "CPUUsageNSec": "183504872000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "18790764544\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207060.7021797,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "19177586688",
+      "CPUUsageNSec": "188940353000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "19207397376\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207070.7158635,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "19429728256",
+      "CPUUsageNSec": "194709982000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "19429728256\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207080.7285926,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "19746324480",
+      "CPUUsageNSec": "201077579000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "19746521088\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207090.7346435,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "20010999808",
+      "CPUUsageNSec": "208373467000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "20030013440\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207100.7478993,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "20149698560",
+      "CPUUsageNSec": "218234634000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "20150726656\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207110.7611947,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "25639710720",
+      "CPUUsageNSec": "232509145000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "25646788608\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207120.931497,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "30425718784",
+      "CPUUsageNSec": "238452538000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "30445170688\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207130.968812,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "30420164608",
+      "CPUUsageNSec": "238560826000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "30445170688\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207141.0366237,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "30339006464",
+      "CPUUsageNSec": "238648548000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "30445170688\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207151.1524389,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/pi05-osc-sft29-train.service",
+      "MemoryCurrent": "30012309504",
+      "CPUUsageNSec": "238746913000",
+      "ActiveState": "active"
+    },
+    "memory.peak": "30445170688\n",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  {
+    "epoch": 1793207161.1790893,
+    "unit": {
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "ControlGroup": "",
+      "MemoryCurrent": "[not set]",
+      "CPUUsageNSec": "[not set]",
+      "ActiveState": "inactive"
+    }
+  }
+]

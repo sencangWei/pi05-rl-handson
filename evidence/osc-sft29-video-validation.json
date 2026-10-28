@@ -1,0 +1,308 @@
+{
+  "status": "PASS",
+  "video_files": 60,
+  "frames_including_copies": 12201,
+  "method": "ffmpeg -xerror full decode plus independent OpenCV decoded frame count",
+  "files": [
+    {
+      "path": "artifacts/20261029-osc-sft/candidate/dev-empty_grasp-init40.mp4",
+      "frames": 301,
+      "sha256": "7b1a7b05760b670690177bbeb6ee6f39b6afe718d7e8309620ab4808ac6c289a"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/candidate/dev-empty_grasp-init41.mp4",
+      "frames": 126,
+      "sha256": "07c52723dc93298425d73267d13518875e32c88ea1f952fda5827c06e9aae99f"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/candidate/dev-empty_grasp-init42.mp4",
+      "frames": 106,
+      "sha256": "43e9a2f8f33a93f68dea25a202ee06780c378866d200e488f57bebf09120b733"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/candidate/dev-empty_grasp-init43.mp4",
+      "frames": 301,
+      "sha256": "e8c0f8aceba9b99368a6c363350244c695a35fdc7298a2a0772ad246a7e7d179"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/candidate/dev-object_offset-init40.mp4",
+      "frames": 225,
+      "sha256": "2356888cfbcab62571e1cd039dd8702435a88d09d91a166b8aecf1e6632bfe87"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/candidate/dev-object_offset-init41.mp4",
+      "frames": 245,
+      "sha256": "a4ad007c32a91476e0b13d5cf1bcf0b6272e7701371372ea3f957c34440193a8"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/candidate/dev-object_offset-init42.mp4",
+      "frames": 116,
+      "sha256": "6873b886669174d7f8a6203a7e6e0e67772c95c593a2ff11a3d2ca140033330c"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/candidate/dev-object_offset-init43.mp4",
+      "frames": 209,
+      "sha256": "a9195275739d1b29509961853f28fcbdda8c61e77e10e425562ccdc463a3cf16"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/candidate/dev-placement_failure-init40.mp4",
+      "frames": 301,
+      "sha256": "225668a7bd64a059ef263e0e99fab1c2611a63fc732f5152c7964a0a20a267df"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/candidate/dev-placement_failure-init41.mp4",
+      "frames": 301,
+      "sha256": "d9afd75d69fa1b76a3a1de7bc316e297960bf31e223862c76246d4b8a3a61a9b"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/candidate/dev-placement_failure-init42.mp4",
+      "frames": 301,
+      "sha256": "e4aaea01e3cc5a65bde2131539497032e25657e21a057214cf4f26f6f7820fa8"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/candidate/dev-placement_failure-init43.mp4",
+      "frames": 301,
+      "sha256": "3dfa459078df3886588969f813e11dcc6fa2061fbf55029d86ff5ad3cc230699"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent/dev-empty_grasp-init40.mp4",
+      "frames": 91,
+      "sha256": "1095c8fc1e88a78cd1505c9980b0415d9584813458c189610a5148a78d0ef464"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent/dev-empty_grasp-init41.mp4",
+      "frames": 98,
+      "sha256": "3b283382c7663290aebb5588d2be9bfe38a115d4ba4d831a5cfe611a2b3b8cca"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent/dev-empty_grasp-init42.mp4",
+      "frames": 75,
+      "sha256": "78b93b41f32a820a3b57b459906fd8e1b0d611b67f3a1ecca0cbb2b82bdc479a"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent/dev-empty_grasp-init43.mp4",
+      "frames": 97,
+      "sha256": "2c034e1b3e76cc4b00893af42f7a94f99910ffb6af574e07bf11170fdd2844ac"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent/dev-object_offset-init40.mp4",
+      "frames": 130,
+      "sha256": "13d0018bd19abe713785b0498aa4d2dc8d451b50424558ce156c4be5080df70c"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent/dev-object_offset-init41.mp4",
+      "frames": 90,
+      "sha256": "02d522de194761f82dfcb477f360196458243ccfbe16c89f641416578f9f00c8"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent/dev-object_offset-init42.mp4",
+      "frames": 97,
+      "sha256": "77175613453b8a10be787d51c518455b8c35d0c04e108a272014db71d236d68a"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent/dev-object_offset-init43.mp4",
+      "frames": 90,
+      "sha256": "144d5e5d3b5126a6ddefb7701ba1e9107baa9c7d23c78d0b26aba122ae728e8f"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent/dev-placement_failure-init40.mp4",
+      "frames": 301,
+      "sha256": "49f284ea742328454270dee565154a1995782f6bd96dc425f6b93cea0c099529"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent/dev-placement_failure-init41.mp4",
+      "frames": 301,
+      "sha256": "7ef3ac1d5075b53c0ce5b22cdf51d753cd2e7ba910dd7816556b79b5e097d988"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent/dev-placement_failure-init42.mp4",
+      "frames": 301,
+      "sha256": "f7a72180da2d5bed517b28b9696068f05d09a1086ced855867f329c893c308e1"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent/dev-placement_failure-init43.mp4",
+      "frames": 180,
+      "sha256": "81ceb95b78214fad21251df59d13693251ab6e2c96fab4b7d81abb4a310272e1"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/after/dev-empty_grasp-init40.mp4",
+      "frames": 301,
+      "sha256": "7b1a7b05760b670690177bbeb6ee6f39b6afe718d7e8309620ab4808ac6c289a"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/after/dev-empty_grasp-init41.mp4",
+      "frames": 126,
+      "sha256": "07c52723dc93298425d73267d13518875e32c88ea1f952fda5827c06e9aae99f"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/after/dev-empty_grasp-init42.mp4",
+      "frames": 106,
+      "sha256": "43e9a2f8f33a93f68dea25a202ee06780c378866d200e488f57bebf09120b733"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/after/dev-empty_grasp-init43.mp4",
+      "frames": 301,
+      "sha256": "e8c0f8aceba9b99368a6c363350244c695a35fdc7298a2a0772ad246a7e7d179"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/after/dev-object_offset-init40.mp4",
+      "frames": 225,
+      "sha256": "2356888cfbcab62571e1cd039dd8702435a88d09d91a166b8aecf1e6632bfe87"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/after/dev-object_offset-init41.mp4",
+      "frames": 245,
+      "sha256": "a4ad007c32a91476e0b13d5cf1bcf0b6272e7701371372ea3f957c34440193a8"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/after/dev-object_offset-init42.mp4",
+      "frames": 116,
+      "sha256": "6873b886669174d7f8a6203a7e6e0e67772c95c593a2ff11a3d2ca140033330c"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/after/dev-object_offset-init43.mp4",
+      "frames": 209,
+      "sha256": "a9195275739d1b29509961853f28fcbdda8c61e77e10e425562ccdc463a3cf16"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/after/dev-placement_failure-init40.mp4",
+      "frames": 301,
+      "sha256": "225668a7bd64a059ef263e0e99fab1c2611a63fc732f5152c7964a0a20a267df"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/after/dev-placement_failure-init41.mp4",
+      "frames": 301,
+      "sha256": "d9afd75d69fa1b76a3a1de7bc316e297960bf31e223862c76246d4b8a3a61a9b"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/after/dev-placement_failure-init42.mp4",
+      "frames": 301,
+      "sha256": "e4aaea01e3cc5a65bde2131539497032e25657e21a057214cf4f26f6f7820fa8"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/after/dev-placement_failure-init43.mp4",
+      "frames": 301,
+      "sha256": "3dfa459078df3886588969f813e11dcc6fa2061fbf55029d86ff5ad3cc230699"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/before/dev-empty_grasp-init40.mp4",
+      "frames": 91,
+      "sha256": "1095c8fc1e88a78cd1505c9980b0415d9584813458c189610a5148a78d0ef464"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/before/dev-empty_grasp-init41.mp4",
+      "frames": 98,
+      "sha256": "3b283382c7663290aebb5588d2be9bfe38a115d4ba4d831a5cfe611a2b3b8cca"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/before/dev-empty_grasp-init42.mp4",
+      "frames": 75,
+      "sha256": "78b93b41f32a820a3b57b459906fd8e1b0d611b67f3a1ecca0cbb2b82bdc479a"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/before/dev-empty_grasp-init43.mp4",
+      "frames": 97,
+      "sha256": "2c034e1b3e76cc4b00893af42f7a94f99910ffb6af574e07bf11170fdd2844ac"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/before/dev-object_offset-init40.mp4",
+      "frames": 130,
+      "sha256": "13d0018bd19abe713785b0498aa4d2dc8d451b50424558ce156c4be5080df70c"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/before/dev-object_offset-init41.mp4",
+      "frames": 90,
+      "sha256": "02d522de194761f82dfcb477f360196458243ccfbe16c89f641416578f9f00c8"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/before/dev-object_offset-init42.mp4",
+      "frames": 97,
+      "sha256": "77175613453b8a10be787d51c518455b8c35d0c04e108a272014db71d236d68a"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/before/dev-object_offset-init43.mp4",
+      "frames": 90,
+      "sha256": "144d5e5d3b5126a6ddefb7701ba1e9107baa9c7d23c78d0b26aba122ae728e8f"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/before/dev-placement_failure-init40.mp4",
+      "frames": 301,
+      "sha256": "49f284ea742328454270dee565154a1995782f6bd96dc425f6b93cea0c099529"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/before/dev-placement_failure-init41.mp4",
+      "frames": 301,
+      "sha256": "7ef3ac1d5075b53c0ce5b22cdf51d753cd2e7ba910dd7816556b79b5e097d988"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/before/dev-placement_failure-init42.mp4",
+      "frames": 301,
+      "sha256": "f7a72180da2d5bed517b28b9696068f05d09a1086ced855867f329c893c308e1"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/before/dev-placement_failure-init43.mp4",
+      "frames": 180,
+      "sha256": "81ceb95b78214fad21251df59d13693251ab6e2c96fab4b7d81abb4a310272e1"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/comparison-dev-empty_grasp-init40.mp4",
+      "frames": 301,
+      "sha256": "8f61e16067af18fb9fd381c43fbd06e371a94df2b8192e4002d130961adad210"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/comparison-dev-empty_grasp-init41.mp4",
+      "frames": 126,
+      "sha256": "0d929eb111dfb0f26c95fc85e3dbd22fb0b4e94ea2bf2252755382df33f2d23e"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/comparison-dev-empty_grasp-init42.mp4",
+      "frames": 106,
+      "sha256": "1871a3e54e3f84713e0068ec5e5bbb87b0544e0688af4c73456369a0ea4adeba"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/comparison-dev-empty_grasp-init43.mp4",
+      "frames": 301,
+      "sha256": "27c3e4adb846105ce56ec00135a8a5378be4338e02386fa760d0b9a40d8e4915"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/comparison-dev-object_offset-init40.mp4",
+      "frames": 225,
+      "sha256": "c101f1d1032cecff007b15ad5df2970e4778425e37b782b6ab462fa4e6037921"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/comparison-dev-object_offset-init41.mp4",
+      "frames": 245,
+      "sha256": "b31d49bb2182d9a74af425ce10efc71334ca8fe347f19ba18ed0fdb91be8c006"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/comparison-dev-object_offset-init42.mp4",
+      "frames": 116,
+      "sha256": "5a9b3b5884ea5af44fe2695b9ac53c7dd66d674b4d9f0d54037f73ac54ee67fc"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/comparison-dev-object_offset-init43.mp4",
+      "frames": 209,
+      "sha256": "ca55adf3c8aeddb55d87784a95cc7590df4999f92b73e9b7fd39bef35884fe85"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/comparison-dev-placement_failure-init40.mp4",
+      "frames": 301,
+      "sha256": "be6ea70dac2188278f4a4886e067f34d082f2c01f9a046e859b5c58792d5f62d"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/comparison-dev-placement_failure-init41.mp4",
+      "frames": 301,
+      "sha256": "c4980dbf68ea98211f5a63bf6d9b17d88b2ea9f3a2b9f3a6e2e6154ab7d995c3"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/comparison-dev-placement_failure-init42.mp4",
+      "frames": 301,
+      "sha256": "9019fd421b8b266c24bb0759b3110a5dc188f36903d078285e45089f90a61388"
+    },
+    {
+      "path": "artifacts/20261029-osc-sft/parent-comparison/comparison-dev-placement_failure-init43.mp4",
+      "frames": 301,
+      "sha256": "1718f8aa3ade648f20bf90d34fa3d5206139d5f6da36662d8fe75984bd32aa95"
+    }
+  ]
+}
