@@ -1,0 +1,43 @@
+{
+  "seed": 42,
+  "modes": [
+    "reference",
+    "delta",
+    "tracking"
+  ],
+  "limits": {
+    "position_p95_m": 0.02,
+    "rotation_p95_rad": 0.15,
+    "cabinet_extra_penetration_m": 0.001
+  },
+  "hold_controls": 20,
+  "timestep_s": 0.05,
+  "preserve_original_osc": true,
+  "convert_joint_only": true,
+  "reference_nullspace_injection": false,
+  "next_state_injection": false,
+  "tracking": "Expert reference next pose minus actual pose, joint controls only; not a VLA policy",
+  "delta": "Reference consecutive physical pose difference, joint controls only",
+  "training": false,
+  "sources": {
+    "human_1793121358375746008": {
+      "start": 73,
+      "stop": 564,
+      "snapshot_sha256": "b2ba0b5864f2a052b62ad66d3f3a50cd404eb593f638fa1c1fad1bd637345547",
+      "raw_metadata_sha256": "7725bae9b1577c5fbee1c20c7f8f8166e4b1e0c448cf506547af269aaf7d5707"
+    },
+    "human_1793122696228231033": {
+      "start": 223,
+      "stop": 657,
+      "snapshot_sha256": "704adc4c3dc058a1fadbdd45f196eb6a2e581ff315cc4d3ffe19bb53abaec15c",
+      "raw_metadata_sha256": "d16eeb38f9dd8ebccbf8703f7faf2e81d6336556eb88ebfd9278c4521b29e2a0"
+    }
+  },
+  "code_sha256": {
+    "verify_osc_conversion.py": "7d286c04023eacdef32b09d585c1d2c5592c0477f6a023290fd05662c18c690f",
+    "osc_action_conversion.py": "5f20b4d3df70538f6b2ecd2a45afdd76d50ab80ab9255f881ecf8b87c11ac630",
+    "simulation_snapshot.py": "ce73f413ad333d86bef5b2c14500c34d540d5bbfdf739cd4142657c7e4f24c5b",
+    "verify_simulation_snapshot.py": "19366a02ac01677e31238d42d0fb80df84fd7f238ef23ce96b4718938046dcbb",
+    "replay_mixed_correction.py": "8b4891d33abc7eea7dd59d96ccce21f8df7799ad0f32f9895b6d98a2ebdf0b76"
+  }
+}

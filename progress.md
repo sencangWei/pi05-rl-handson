@@ -193,3 +193,12 @@ original-v1/v2各执行两源共1221控制，四录像2442帧全部解码；最�
 两个新参考564/657步，在4窗口181控制（103接触控制）比较四种恢复，16新进程重放全部退出0。完整MjData+Python与integration+Python均4/4数值、time/qpos/qvel逐位、原始像素及标志完全一致；旧79维0/4，仅原生物理0/4（后者两窗物理一致但缓存偏差约5–6mm）。不唯一归因warmstart。修复MjData.__setstate__对已初始化对象静默无效，改未初始化对象恢复并mj_copyData。只证明新快照；旧缺失状态无法重建，不转换标签、不训练、不换UI。40项相关测试与Ruff通过，4段三栏录像已生成，远端恢复验证待完成。报告reports/full-state-replay-20261028/README.md。
 
 2026-10-28 完整状态恢复交付核验完成：载荷 db2c707e989648f7a5e974aadcc2a45ae459e416 已推至自有公开仓库 sencangWei/pi05-rl-handson 的 experiment/matched-recovery-20261027 分支；全部 3406 个跟踪文件从远端独立恢复，内容 SHA256 与重建 Git 树 cefb8715771eab09f1d00ab06e0ad47043fa817d 一致。4份快照经远端分段下载和 Git blob SHA 校验。证明 evidence/full-state-replay-28-remote-restore.json。后续先验证关节接管动作能否由7维OSC表达及实际跟踪误差；本轮未修复模型恢复能力，未动原始录制或面板模型。
+# 2026-10-29 开始批准的关节→OSC物理转换实验
+工作目录pi05-rl-handson，分支experiment/matched-recovery-20261027，起点1e13544；两个旧未跟踪环境文件不动。技能和RTK已读，catchup正常退出无输出。使用.venv-ppo（MuJoCo3.8.1）；环境快照已用实际仿真解释器重新捕获并检查，无凭据。尚未训练或替换UI。
+
+
+## 2026-10-29 OSC转换物理验收完成、待远端核验
+- 两源×参考/差分/实际位姿修正共6次独立进程物理执行，2895控制/72375物理子步；完整快照匹配且参考位级一致。差分0/2，修正2/2；真实负结果保留，不称为策略恢复成功率。
+- 6段原录像+2段20fps同步三栏视频，共3860帧全解码，2张关键帧人工查看；30测试、4文件Ruff、3脚本编译通过，原始数据哈希/冻结协议源码/动作范围再次通过。
+- 渲染首次把imageio.Reader当iterator报错，改用iter(reader)后通过，不影响已完成的物理结果。未重跑或改动验收门。
+- 新增scripts/osc_action_conversion.py、verify_osc_conversion.py、render_osc_conversion.py及测试、报告、环境与校验证据。未生成训练集、未训练、未换UI、未停止其他任务。下一项仅建议采集通过转换的实际观测后再有界微调。

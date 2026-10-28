@@ -50,6 +50,14 @@ Goal: use the six approved manual demonstrations with existing task replay; eval
 5. DONE: payload18e2041 restored independently from user-owned GitHub origin; all2615 tracked files identical. Release data4226 file hashes match; downloaded adapter reconstructs71 leaves exactly (20 LoRA). Evidence committed.
 Stop: report measured paired results, no unsupported generalization claim; do not replace panel model unless promotion passes.
 
+## 2026-10-29 用户批准：关节恢复转换为7维OSC的物理验收
+1. [完成] 保留原录制和旧快照；固定两个新参考的完整剩余恢复段、动作缩放/旋转约定及验收门。只读FK副本，不向执行仿真注入参考状态。
+2. [完成] 同一完整快照：原混合动作基准、仅关节段转换的位姿增量、仅关节段按参考位姿闭环跟踪。保持20Hz/原OSC指令/夹爪指令，不偷用关节目标更新OSC零空间锚点。
+3. [完成] 验收实际抓取、全物理子步柜体接触、末端误差、末尾20控制的放置释放；保留失败和左右对照。转换未通过则不生成训练集、不训练、不换面板。
+4. [待完成] 数学/门槛测试、运行检查、视频解码；代码与结果推自有远端，独立恢复比对后交付。
+
+实测：两条参考逐状态位级一致；直接差分0/2、按实际位姿修正2/2通过，位置误差P95为1.20/0.85厘米；释放保持20/20，未训练/未换面板。30项测试、lint、编译及8录像3860帧已通过；远端备份验证进行中。
+
 ## 2026-10-28 用户同意：慢动作/恢复失败分层诊断
 1. DONE: original trace hashes/protocol frozen; same MuJoCo3.8.1 matched eight trajectories exactly on recorded positions/flags. Wrong-version replay archived and excluded.
 2. DONE: original dev bank audit6/12 invalid from bowl overlap; generator now rejects insertion/settled overlaps and records candidates. Separate restoration audit new bank12/12 valid; original states preserved.

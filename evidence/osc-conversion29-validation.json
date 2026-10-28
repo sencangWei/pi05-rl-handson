@@ -1,0 +1,298 @@
+{
+  "status": "PASS",
+  "scope": "Artifacts and declared physical gates validated; not a trained policy",
+  "physics_runs": 6,
+  "control_steps": 2895,
+  "physics_substeps": 72375,
+  "tests_passed": 30,
+  "ruff": "PASS (4 files)",
+  "py_compile": "PASS (3 scripts)",
+  "raw_hashes_rechecked": true,
+  "reference_bitwise_matches": 2,
+  "candidate_actions_finite_bounded_7d": true,
+  "identical_initial_runtime_contract": true,
+  "source_code_matches_frozen_protocol": true,
+  "training": false,
+  "ui_model_changed": false,
+  "results": [
+    {
+      "source": "human_1793121358375746008",
+      "mode": "reference",
+      "controls": 511,
+      "pass_gate": true,
+      "released_hold_controls": 20
+    },
+    {
+      "source": "human_1793121358375746008",
+      "mode": "delta",
+      "controls": 511,
+      "pass_gate": false,
+      "released_hold_controls": 0
+    },
+    {
+      "source": "human_1793121358375746008",
+      "mode": "tracking",
+      "controls": 511,
+      "pass_gate": true,
+      "released_hold_controls": 20
+    },
+    {
+      "source": "human_1793122696228231033",
+      "mode": "reference",
+      "controls": 454,
+      "pass_gate": true,
+      "released_hold_controls": 20
+    },
+    {
+      "source": "human_1793122696228231033",
+      "mode": "delta",
+      "controls": 454,
+      "pass_gate": false,
+      "released_hold_controls": 0
+    },
+    {
+      "source": "human_1793122696228231033",
+      "mode": "tracking",
+      "controls": 454,
+      "pass_gate": true,
+      "released_hold_controls": 20
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/comparison.mp4",
+      "bytes": 1738304,
+      "sha256": "9669798dd7c8b50575edbbb5d2cfdf3a2b53c861cb56750547ac25621fbb137c"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/contact-sheet.jpg",
+      "bytes": 358464,
+      "sha256": "f0ab77bdb29995c6dbc6d720db7e6ca3186636088dbc6b891e97ace7389c0ea5"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/delta-candidate-actions.npz",
+      "bytes": 41080,
+      "sha256": "0ea6b4af365c60a42097e23aa988ebd519f4a6c3061c9acd26aa88b8a563bbb6"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/delta-identity.json",
+      "bytes": 1928,
+      "sha256": "2f0e9927cf8db57d65cd9299461bbf530a7ccc915d13642606cc19e7c56eeb55"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/delta-poses.npz",
+      "bytes": 87660,
+      "sha256": "8ceeb779a4b0f7ceed5f3bc66ca4abf136dbaf0619807705e7834835f3f863e2"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/delta-result.json",
+      "bytes": 698,
+      "sha256": "94d01b0a0276c3f7adf1c0c51d89a5ed9e9be7b9d94b09b4c5042902b0034824"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/delta-states.npz",
+      "bytes": 221723,
+      "sha256": "15989a4fee991196df5a6461b75268c805b697ce8a3f94f24213c9c540ea5382"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/delta-steps.json",
+      "bytes": 566238,
+      "sha256": "f05fbc03a97bbefa8cbcd7c2d208876984bf14e0d0e51aed8ebd29a313167e5b"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/delta.mp4",
+      "bytes": 431087,
+      "sha256": "79410d592e453fa0530c234db31cd84030ddf5c28860f48efcb29d49b6c133e6"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/reference-identity.json",
+      "bytes": 1928,
+      "sha256": "2f0e9927cf8db57d65cd9299461bbf530a7ccc915d13642606cc19e7c56eeb55"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/reference-poses.npz",
+      "bytes": 91207,
+      "sha256": "c6521813eaa79d7af3820cf0b045110f9b7b8fd2c2af6127a80d08ff88edc87d"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/reference-result.json",
+      "bytes": 685,
+      "sha256": "27d7e3c063611c23d89e8fe042e0258f0ef22adefe14961811a71eac3b99907d"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/reference-states.npz",
+      "bytes": 225581,
+      "sha256": "94c6e4ea31bd294feaa27a11f21047f69f1a8fbd33c272c10ae3069e7a5eeb24"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/reference-steps.json",
+      "bytes": 459503,
+      "sha256": "e23067426359c4120a8d55af62a1e1e791932632f37164e2986d24a923140d43"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/reference.mp4",
+      "bytes": 532081,
+      "sha256": "522a99175902d2ed5bc06e70d1be44eb20d65f0e9e75b92356c03fda6dd6e307"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/tracking-candidate-actions.npz",
+      "bytes": 41767,
+      "sha256": "513b755667e3a008e42afed166c9a6ba31fec587ae3cdf29cc18365c2322319b"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/tracking-identity.json",
+      "bytes": 1928,
+      "sha256": "2f0e9927cf8db57d65cd9299461bbf530a7ccc915d13642606cc19e7c56eeb55"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/tracking-poses.npz",
+      "bytes": 92314,
+      "sha256": "55cf6af4a64575ffb3d11d11f92b1684725a99992b1263cae216cc0dd38a262d"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/tracking-result.json",
+      "bytes": 719,
+      "sha256": "8a037365d7cfd488e8774c038098a15b8263936e9227b3eb3fb53937b5a55f99"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/tracking-states.npz",
+      "bytes": 227155,
+      "sha256": "becbfa51947f16573da5831fb3471cb0177728a6f19643f4a8b11f64282e3f77"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/tracking-steps.json",
+      "bytes": 565166,
+      "sha256": "333f075118817f607d17c1f57fee583db25433d21fadb7e1a77e9b02807e9ab2"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793121358375746008/tracking.mp4",
+      "bytes": 570864,
+      "sha256": "50bb27cd2e17af9978716d083808f8e9237c9e04b2b1bbe9a922a2dfafc977a8"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/comparison.mp4",
+      "bytes": 1372682,
+      "sha256": "3b95c498297fb41a66049707e358a09eaf7b10cd9d478fc51bc892315ce3356f"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/contact-sheet.jpg",
+      "bytes": 357715,
+      "sha256": "47cbb3547f41c18e7951596ed01613990ea3dc1e85f99c2f2400eb05d083d298"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/delta-candidate-actions.npz",
+      "bytes": 33659,
+      "sha256": "4c90ae3147342515156b8bb8a40ed92bb49f30082ed3a474ed9fb2ef6145b563"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/delta-identity.json",
+      "bytes": 1928,
+      "sha256": "2f0e9927cf8db57d65cd9299461bbf530a7ccc915d13642606cc19e7c56eeb55"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/delta-poses.npz",
+      "bytes": 79384,
+      "sha256": "3532c643a22382e1ee1a89119ec06631654d6cfc73f76a70219acf74c7e37fcb"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/delta-result.json",
+      "bytes": 682,
+      "sha256": "985d00eb5120b5ed8dc822af938ace3d4add3ad84ec942791c1ead96b49b8438"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/delta-states.npz",
+      "bytes": 196110,
+      "sha256": "854cf754091b5674626649d4e93ee03959cc9d3dd43c76bce617c9b3bd55ba49"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/delta-steps.json",
+      "bytes": 499449,
+      "sha256": "5245fe5f124b83c50af68fe496957ccbf262ace6b0ac02da376c6682fcfba203"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/delta.mp4",
+      "bytes": 325623,
+      "sha256": "a67fe84cad262004d4bc6aac27aa1883444ddb4655289454f0f4abb8f3104bf5"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/reference-identity.json",
+      "bytes": 1928,
+      "sha256": "2f0e9927cf8db57d65cd9299461bbf530a7ccc915d13642606cc19e7c56eeb55"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/reference-poses.npz",
+      "bytes": 81478,
+      "sha256": "9b8b1992f3f8cc97703c9401f9b20f547a85415fcdaeaf28a234be905dac3bd3"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/reference-result.json",
+      "bytes": 650,
+      "sha256": "3b68f0c44b4ef22a34b7bfe0c42d14e9a578463090fe6e8c86aa63cee887e21e"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/reference-states.npz",
+      "bytes": 195731,
+      "sha256": "b6643dbbb45a558d2b6cbf6876a6e031c326e83a7bd64b7afc4408ecceb4e740"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/reference-steps.json",
+      "bytes": 407892,
+      "sha256": "777feaf8449c098eb731543b509850277906643ad1289b1119dabc229274bc37"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/reference.mp4",
+      "bytes": 435268,
+      "sha256": "c2e29938732cd1dbb29b969de6b544ee00539494d50df6e4cfe2dcf612611516"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/tracking-candidate-actions.npz",
+      "bytes": 35129,
+      "sha256": "0a2591d4913948eea9801634c054852f0dc8111b7f1534ddc5b7f51c6863a543"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/tracking-identity.json",
+      "bytes": 1928,
+      "sha256": "2f0e9927cf8db57d65cd9299461bbf530a7ccc915d13642606cc19e7c56eeb55"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/tracking-poses.npz",
+      "bytes": 81988,
+      "sha256": "0c46f5b1ce2989482fc5d5e3ddce8a18a46146ec7d936039f44514a7b387201f"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/tracking-result.json",
+      "bytes": 683,
+      "sha256": "b09e332a66933a32d9f163633eb8ffe56f893b64e8df449025649f653b243610"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/tracking-states.npz",
+      "bytes": 197340,
+      "sha256": "a963ec5dd2991e37e7cca4e6eb0c0a89199a5c09c42a785b7e5b86d75887155a"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/tracking-steps.json",
+      "bytes": 497489,
+      "sha256": "015cd7a251b6dce24dee2f391abdc9aa2d5c9317d1f7ce92b76dcb89a3764dec"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/human_1793122696228231033/tracking.mp4",
+      "bytes": 454730,
+      "sha256": "0667abeb7b1023bf2bdbd7e7d82205a6f48cf3e695273bb707a236eb428b16b6"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/protocol.json",
+      "bytes": 1671,
+      "sha256": "7d21d56ecc2c2460cc716b6ce99e99d98ddfc478060bdafb317d4f659d98ba11"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/summary.json",
+      "bytes": 4402,
+      "sha256": "a2ab7c3658bd920f908a4a0143924530946d8d066ce966fd7fd37fd28baaa49a"
+    },
+    {
+      "path": "reports/osc-conversion-20261029/v1/video-validation.json",
+      "bytes": 321,
+      "sha256": "37e04398651698fc9734fb477fa8376a913f2979bd19fed758c18a05bb678325"
+    }
+  ]
+}

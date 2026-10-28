@@ -1,0 +1,140 @@
+[
+  {
+    "passed": true,
+    "gates": {
+      "released_goal_hold": true,
+      "grasp_observed": true,
+      "position_tracking": true,
+      "rotation_tracking": true,
+      "cabinet_contact": true
+    },
+    "position_p95_m": 0.0,
+    "rotation_p95_rad": 0.0,
+    "cabinet_peak_penetration_m": 0.0003116764626942135,
+    "reference_cabinet_peak_penetration_m": 0.0003116764626942135,
+    "source": "human_1793121358375746008",
+    "mode": "reference",
+    "controls": 511,
+    "start": 73,
+    "converted_joint_controls": 444,
+    "clipped_controls": 0,
+    "snapshot_sha256": "b2ba0b5864f2a052b62ad66d3f3a50cd404eb593f638fa1c1fad1bd637345547",
+    "reference_bitwise_verified": true,
+    "training_dataset_generated": false
+  },
+  {
+    "passed": false,
+    "gates": {
+      "released_goal_hold": false,
+      "grasp_observed": true,
+      "position_tracking": false,
+      "rotation_tracking": false,
+      "cabinet_contact": true
+    },
+    "position_p95_m": 0.1572142474829073,
+    "rotation_p95_rad": 0.2861148942521432,
+    "cabinet_peak_penetration_m": 0.0,
+    "reference_cabinet_peak_penetration_m": 0.0003116764626942135,
+    "source": "human_1793121358375746008",
+    "mode": "delta",
+    "controls": 511,
+    "start": 73,
+    "converted_joint_controls": 444,
+    "clipped_controls": 0,
+    "snapshot_sha256": "b2ba0b5864f2a052b62ad66d3f3a50cd404eb593f638fa1c1fad1bd637345547",
+    "reference_bitwise_verified": false,
+    "training_dataset_generated": false
+  },
+  {
+    "passed": true,
+    "gates": {
+      "released_goal_hold": true,
+      "grasp_observed": true,
+      "position_tracking": true,
+      "rotation_tracking": true,
+      "cabinet_contact": true
+    },
+    "position_p95_m": 0.011972673664864602,
+    "rotation_p95_rad": 0.021536847729016595,
+    "cabinet_peak_penetration_m": 6.459713879706392e-05,
+    "reference_cabinet_peak_penetration_m": 0.0003116764626942135,
+    "source": "human_1793121358375746008",
+    "mode": "tracking",
+    "controls": 511,
+    "start": 73,
+    "converted_joint_controls": 444,
+    "clipped_controls": 0,
+    "snapshot_sha256": "b2ba0b5864f2a052b62ad66d3f3a50cd404eb593f638fa1c1fad1bd637345547",
+    "reference_bitwise_verified": false,
+    "training_dataset_generated": false
+  },
+  {
+    "passed": true,
+    "gates": {
+      "released_goal_hold": true,
+      "grasp_observed": true,
+      "position_tracking": true,
+      "rotation_tracking": true,
+      "cabinet_contact": true
+    },
+    "position_p95_m": 0.0,
+    "rotation_p95_rad": 0.0,
+    "cabinet_peak_penetration_m": 0.0,
+    "reference_cabinet_peak_penetration_m": 0.0,
+    "source": "human_1793122696228231033",
+    "mode": "reference",
+    "controls": 454,
+    "start": 223,
+    "converted_joint_controls": 372,
+    "clipped_controls": 0,
+    "snapshot_sha256": "704adc4c3dc058a1fadbdd45f196eb6a2e581ff315cc4d3ffe19bb53abaec15c",
+    "reference_bitwise_verified": true,
+    "training_dataset_generated": false
+  },
+  {
+    "passed": false,
+    "gates": {
+      "released_goal_hold": false,
+      "grasp_observed": true,
+      "position_tracking": false,
+      "rotation_tracking": false,
+      "cabinet_contact": true
+    },
+    "position_p95_m": 0.22267659164021786,
+    "rotation_p95_rad": 0.4491272793763067,
+    "cabinet_peak_penetration_m": 0.0,
+    "reference_cabinet_peak_penetration_m": 0.0,
+    "source": "human_1793122696228231033",
+    "mode": "delta",
+    "controls": 454,
+    "start": 223,
+    "converted_joint_controls": 372,
+    "clipped_controls": 0,
+    "snapshot_sha256": "704adc4c3dc058a1fadbdd45f196eb6a2e581ff315cc4d3ffe19bb53abaec15c",
+    "reference_bitwise_verified": false,
+    "training_dataset_generated": false
+  },
+  {
+    "passed": true,
+    "gates": {
+      "released_goal_hold": true,
+      "grasp_observed": true,
+      "position_tracking": true,
+      "rotation_tracking": true,
+      "cabinet_contact": true
+    },
+    "position_p95_m": 0.008465831964930186,
+    "rotation_p95_rad": 0.03166504122578336,
+    "cabinet_peak_penetration_m": 0.0,
+    "reference_cabinet_peak_penetration_m": 0.0,
+    "source": "human_1793122696228231033",
+    "mode": "tracking",
+    "controls": 454,
+    "start": 223,
+    "converted_joint_controls": 372,
+    "clipped_controls": 0,
+    "snapshot_sha256": "704adc4c3dc058a1fadbdd45f196eb6a2e581ff315cc4d3ffe19bb53abaec15c",
+    "reference_bitwise_verified": false,
+    "training_dataset_generated": false
+  }
+]
