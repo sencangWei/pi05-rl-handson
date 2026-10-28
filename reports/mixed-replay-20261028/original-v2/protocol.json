@@ -1,0 +1,25 @@
+{
+  "script_sha256": "8b4891d33abc7eea7dd59d96ccce21f8df7799ad0f32f9895b6d98a2ebdf0b76",
+  "manifest_sha256": "86e3fc204735dba54261f32dd864297bd00aab8f044ff2d866f46546d7db9cfb",
+  "joint_source_sha256": "93e74726d2ddc6b50fe368e14893eccced098294c2970d84134153d1c55b5b7f",
+  "sources": [
+    "human_1793121358375746008",
+    "human_1793122696228231033"
+  ],
+  "packages": {
+    "mujoco": "3.8.1",
+    "robosuite": "1.4.1",
+    "numpy": "1.26.4"
+  },
+  "seed": 42,
+  "control_hz": 20,
+  "fidelity_limits": {
+    "qpos": 1e-06,
+    "qvel": 1e-05,
+    "cached_position_m": 1e-05
+  },
+  "training_labels_generated": false,
+  "original_launcher_commit": "7b2f7a9e49c1a29adb88632b6966f1634235c700",
+  "original_launcher_sha256": "1233f81994d3ed3f533090295312caa7a53ef34aa2149a64d87f28111049b00b",
+  "protocol": "Initial recorded state once; subsequent refresh uses actual current state. Two initial current-state refreshes reproduce the original zero-offset scene edit and begin-correction calls. Float64 OSC physics actions; absolute joint targets, new controller every 12 steps, original OSC restored and reanchored after each jog. No saved-next-state injection. Failed replay blocks label conversion."
+}

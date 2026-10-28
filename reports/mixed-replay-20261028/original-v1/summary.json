@@ -1,0 +1,32 @@
+[
+  {
+    "source": "human_1793121358375746008",
+    "controls": 564,
+    "faithful": false,
+    "first_divergent_control": 0,
+    "max_errors": {
+      "qpos": 0.11006666483566914,
+      "qvel": 5.794287275700011,
+      "cached_position_m": 0.030678108221278366
+    },
+    "goal_disagreements": 1,
+    "final_native_goal": true,
+    "final_finger_contact": false,
+    "training_labels_generated": false
+  },
+  {
+    "source": "human_1793122696228231033",
+    "controls": 657,
+    "faithful": false,
+    "first_divergent_control": 0,
+    "max_errors": {
+      "qpos": 0.10667553641829013,
+      "qvel": 4.479683656131288,
+      "cached_position_m": 0.01978491896112189
+    },
+    "goal_disagreements": 0,
+    "final_native_goal": true,
+    "final_finger_contact": false,
+    "training_labels_generated": false
+  }
+]

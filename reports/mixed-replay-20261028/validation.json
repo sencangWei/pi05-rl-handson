@@ -1,0 +1,16 @@
+{
+  "pytest": {
+    "command": ".venv-ppo/bin/python -m pytest -q tests/test_mixed_correction_replay.py tests/test_manual_joint_control.py tests/test_recovery_events.py tests/test_recovery_diagnostics.py tests/test_recovery_recording.py",
+    "exit_code": 0,
+    "passed": 30,
+    "duration_s": 2.33
+  },
+  "ruff": {
+    "command": ".venv-train/bin/ruff check --select E9,F63,F7,F82 scripts/replay_mixed_correction.py tests/test_mixed_correction_replay.py",
+    "exit_code": 0
+  },
+  "sources": {
+    "scripts/replay_mixed_correction.py": "8b4891d33abc7eea7dd59d96ccce21f8df7799ad0f32f9895b6d98a2ebdf0b76",
+    "tests/test_mixed_correction_replay.py": "5015807105262dec9797de52d9da323a72d677740880faa9ed0ebcfc8c336585"
+  }
+}

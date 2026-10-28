@@ -178,3 +178,10 @@ Started approved event-level placement recovery diagnosis; preserve trained mode
 三项诊断源码、10项针对性测试、完整范围Ruff及编译通过，报告/两张帧图/八视频/逐步JSON已保留。未训练、未改面板/其他任务、封存集未开；下一步先检验原关节搬运是否可用当前控制契约完整执行，不盲目要求重录位置或增加更新。报告reports/recovery-events-20261028/README.md；本轮远端备份正在验证。
 
 2026-10-28 放置恢复事件诊断交付完成：源码、测试、逐步指标、报告和八段录像已提交 6b7d2e6595486252989879124ce8b4e1ca1fe9c0 至用户自有 sencangWei/pi05-rl-handson 的 experiment/matched-recovery-20261027 分支；从远端内容独立恢复全部3274个跟踪文件，SHA256及重建Git树4cb44d4b43fb4fb0c458962d8032ee02d364d3a5一致。证明见evidence/recovery-events-28-remote-restore.json。当前任务仅完成诊断交付；恢复未修好、未训练/未换面板；下一项控制契约实验尚未执行。
+
+开始已批准的混合关节动作执行验证，先读原采集控制切换实现。工作区仅两份既有未跟踪环境证据，保持不动；项目内无AGENTS.md/.codegraph，应用会话规则。探索子代理因模型不支持失败，改直接检查；初次meta.json路径及glob无匹配属于检索错误，改精确metadata.json和rg文件列表。
+
+混合重放器已添加，4项边界测试和两源身份预检通过，原动作重放original-v1已启动（仅独立无窗口仿真）。初次补丁因findings锚点不匹配未写入，修正后重放器创建；ruff初次指向不存在.venv/bin，已改实际.venv-train路径。
+
+## 2026-10-28 混合动作原执行验证结果
+original-v1/v2各执行两源共1221控制，四录像2442帧全部解码；最后原生目标+无手指接触分别连续33/44步。严格保真0/2：首步机器人qpos精确，但非机器人qpos/qvel及缓存观测有误差，后续接触放大；v2最大缓存位置坐标误差31.28/19.66mm。按元数据SHA找回启动器7b2f7a9，补齐原零偏移编辑/开始接管的两次刷新后，缓存差减小但v1/v2物理状态逐位相同。旧接口只存time/qpos/qvel，未存完整求解器/控制器/观测状态；具体误差源未唯一隔离，不能归罪于人工质量。原始所有SHA不变。按冻结门阻止关节→OSC转换和新训练；当前模型/面板不改。30测试、Ruff通过；报告reports/mixed-replay-20261028/README.md，备份正在验证。

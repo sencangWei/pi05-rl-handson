@@ -1,0 +1,52 @@
+{
+  "sources": [
+    {
+      "source": "human_1793121358375746008",
+      "raw_manifest_unchanged": true,
+      "controls": 564,
+      "v1_v2_physics_bitwise_equal": true,
+      "first_control": {
+        "robot_qpos_max_abs": 0.0,
+        "all_qpos_max_abs": 1.0141815295350298e-05,
+        "all_qvel_max_abs": 0.00022586635994037823,
+        "cached_position_max_abs_m": 0.0001686389784339576,
+        "recorded_time_before": 3.7499999999998086,
+        "recorded_time_after": 3.799999999999803,
+        "replay_time_after": 3.799999999999803
+      },
+      "final_consecutive_native_goal_without_finger_contact": 33,
+      "functional_release_gate_pass": true,
+      "strict_fidelity_pass": false,
+      "training_labels_generated": false
+    },
+    {
+      "source": "human_1793122696228231033",
+      "raw_manifest_unchanged": true,
+      "controls": 657,
+      "v1_v2_physics_bitwise_equal": true,
+      "first_control": {
+        "robot_qpos_max_abs": 0.0,
+        "all_qpos_max_abs": 1.0141815295350298e-05,
+        "all_qvel_max_abs": 0.0002258663599404293,
+        "cached_position_max_abs_m": 0.00017103240811114362,
+        "recorded_time_before": 4.049999999999776,
+        "recorded_time_after": 4.0999999999997705,
+        "replay_time_after": 4.0999999999997705
+      },
+      "final_consecutive_native_goal_without_finger_contact": 44,
+      "functional_release_gate_pass": true,
+      "strict_fidelity_pass": false,
+      "training_labels_generated": false
+    }
+  ],
+  "conversion_gate": "BLOCKED: strict original replay fidelity failed for both sources",
+  "full_integration_state_recorded": false,
+  "omitted_state_causality": "Not isolated: omitted solver/controller/observation state is a limitation, not a proven unique cause",
+  "ui_model_changed": false,
+  "new_training": false,
+  "physical_state_layout": {
+    "nq": 41,
+    "nv": 37,
+    "time_values": 1
+  }
+}

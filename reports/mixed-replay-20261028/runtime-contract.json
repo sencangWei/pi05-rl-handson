@@ -1,0 +1,41 @@
+{
+  "nq": 41,
+  "nv": 37,
+  "robot_qpos_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "gripper_qpos_indices": [
+    7,
+    8
+  ],
+  "control_hz": 20,
+  "model_timestep": 0.002,
+  "bddl_sha256": "358b7781437e412c67d6a7648c1c28796b6b1bf117a25e61316cb8dfeb940e5b",
+  "runtime_files": [
+    {
+      "path": "/home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/utils/binding_utils.py",
+      "sha256": "5ac3c9da0cb9f85d694c6147103268df65151f751612a6c575ae0da4eb4988e4"
+    },
+    {
+      "path": "/home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/controllers/osc.py",
+      "sha256": "cfa62a0e719bc53ef0c701efa66f7b3e2272d4fca2150ec73c05bb145eba85cb"
+    },
+    {
+      "path": "/home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/robosuite/utils/observables.py",
+      "sha256": "19ea2e0e2cfb4ebcd5911cd2526dd645859535d25fc7bc55944c54a90e6672dc"
+    },
+    {
+      "path": "/home/robot/pi05-rl-handson/.venv-ppo/lib/python3.11/site-packages/libero/libero/envs/env_wrapper.py",
+      "sha256": "a782fb76c9792268d28979474fe72849e1e98ada49c8e997a65359a8d6b6acd0"
+    }
+  ],
+  "get_state_source": "    def get_state(self):\n        \"\"\"Return MjSimState instance for current state.\"\"\"\n        return MjSimState(\n            time=self.data.time,\n            qpos=np.copy(self.data.qpos),\n            qvel=np.copy(self.data.qvel),\n        )\n",
+  "set_state_source": "    def set_state(self, value):\n        \"\"\"\n        Set internal state from MjSimState instance. Should\n        call @forward afterwards to synchronize derived quantities.\n        \"\"\"\n        self.data.time = value.time\n        self.data.qpos[:] = np.copy(value.qpos)\n        self.data.qvel[:] = np.copy(value.qvel)\n",
+  "regenerate_observation_source": "    def regenerate_obs_from_state(self, mujoco_state):\n        self.set_state(mujoco_state)\n        self.env.sim.forward()\n        self.check_success()\n        self._post_process()\n        self._update_observables(force=True)\n        return self.env._get_observations()\n"
+}

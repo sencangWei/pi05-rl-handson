@@ -1,0 +1,15 @@
+{
+  "source": "human_1793122696228231033",
+  "controls": 657,
+  "faithful": false,
+  "first_divergent_control": 0,
+  "max_errors": {
+    "qpos": 0.10667553641829013,
+    "qvel": 4.479683656131288,
+    "cached_position_m": 0.01978491896112189
+  },
+  "goal_disagreements": 0,
+  "final_native_goal": true,
+  "final_finger_contact": false,
+  "training_labels_generated": false
+}

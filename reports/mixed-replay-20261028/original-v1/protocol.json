@@ -1,0 +1,23 @@
+{
+  "script_sha256": "f9e3e195c66cb4a49e93e811c4520bd0cf864057d2dbf11cbe5249a6e837ca95",
+  "manifest_sha256": "86e3fc204735dba54261f32dd864297bd00aab8f044ff2d866f46546d7db9cfb",
+  "joint_source_sha256": "93e74726d2ddc6b50fe368e14893eccced098294c2970d84134153d1c55b5b7f",
+  "sources": [
+    "human_1793121358375746008",
+    "human_1793122696228231033"
+  ],
+  "packages": {
+    "mujoco": "3.8.1",
+    "robosuite": "1.4.1",
+    "numpy": "1.26.4"
+  },
+  "seed": 42,
+  "control_hz": 20,
+  "fidelity_limits": {
+    "qpos": 1e-06,
+    "qvel": 1e-05,
+    "cached_position_m": 1e-05
+  },
+  "training_labels_generated": false,
+  "protocol": "Initial recorded state once; subsequent refresh uses actual current state. Float64 OSC physics actions; absolute joint targets, new controller every 12 steps, original OSC restored and reanchored after each jog. No saved-next-state injection. Failed replay blocks label conversion."
+}
