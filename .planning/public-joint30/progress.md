@@ -1,3 +1,5 @@
 Source audit started; old checkpoints untouched. Plan separates native public action labels from validated re-execution conversions. Training is explicitly authorized.
 
 Downloaded and hashed468246288B official source; saved7.1MB exact states/actions/XML archive durably. First physical demo conversion passed with110rows; all50 batch runningCPUonly4workers. Newdataset80/20normal/recovery, newrunner, compactadapterexport andcontinuousobservation evaluator implemented.35targetedtests pass; no real training launched yet.
+
+All50 conversions finished:47accepted,37train/3428motion+10holdout/958motion,3rejected; diagnosticholds excluded. Retained3human/1631frames. Actual official transforms and9-dimension state token canary pass; frozen10k plan SHA2b2d41735c91290afa914a0a29892175a7be1b368836e1b62de320990fc31268. Real training launched (PID1790380), early finite losses logged. Code commit642c6e2 independently recovered from GitHub with17blob and root-tree hashes matching. Public bulk dataset Release backup ongoing.

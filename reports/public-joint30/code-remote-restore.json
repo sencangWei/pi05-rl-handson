@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "verified_at_utc": "2026-10-29T17:31:10.689964+00:00",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson",
+  "branch": "experiment/joint-residual-choice-20261029",
+  "revision": "642c6e25f193b5ac75c53d69bb90e06801a3f9a0",
+  "remote_branch_revision": "642c6e25f193b5ac75c53d69bb90e06801a3f9a0",
+  "base_revision": "390226f7cee6d0a44002d3ba2091831cba1bc212",
+  "base_tree": "35866bce3da1cc1f72addf26d6247bd3521be25e",
+  "remote_commit_tree": "67082b1991e7a760410ffde8fc2d401ed47d06e9",
+  "rebuilt_tree": "67082b1991e7a760410ffde8fc2d401ed47d06e9",
+  "rebuilt_tree_exact": true,
+  "method": "Fresh fixed-commit raw GitHub downloads; Git blob SHA1 plus byte-for-byte and SHA256 comparison against local committed objects; isolated base index plus freshly downloaded delta reconstructs remote root tree",
+  "scope": "Only the 17 newly added tracked files were independently downloaded and materialized. Unchanged base objects were reused read-only from the local object database after remote base revision/tree verification; this is not a full independent base restore. Training checkpoints and generated replay datasets are outside this proof.",
+  "restored_directory": "/dev/shm/public-joint30-code-restore-q03mzsh0",
+  "downloaded_blob_files": 17,
+  "downloaded_bytes": 7193034,
+  "files": [
+    {
+      "path": ".planning/public-joint30/findings.md",
+      "mode": "100644",
+      "git_blob": "94fcbbb6bd74192c1ca7cf5c372aca4b6de047e6",
+      "size": 2158,
+      "sha256": "8fe8c91e228cb5b0bd568db615ef96bf30da00d845a3f75313ce6f948a4ee7c0",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/.planning/public-joint30/findings.md",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": ".planning/public-joint30/progress.md",
+      "mode": "100644",
+      "git_blob": "0c012a80cd508eb0668b41bd0760e945e6b8f4a1",
+      "size": 522,
+      "sha256": "0dc9561fa6a76eb4424d615e4e5129b5badd613de4d8491e8b7895bbab62c474",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/.planning/public-joint30/progress.md",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": ".planning/public-joint30/task_plan.md",
+      "mode": "100644",
+      "git_blob": "a812e4281726eb2911746c7db57341fa50a73343",
+      "size": 926,
+      "sha256": "6d01487d7cda84f4fc735e88c45f5388267d8ac3548301e32175b855cfd6e82a",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/.planning/public-joint30/task_plan.md",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": "reports/public-joint30/README.md",
+      "mode": "100644",
+      "git_blob": "caf7b919a52eadc0c623af16bf323cb79e522992",
+      "size": 5645,
+      "sha256": "08f06ca6c8d195d2a490dbf951963f828481ae1849301eae0e00321042128666",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/reports/public-joint30/README.md",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": "reports/public-joint30/environment.json",
+      "mode": "100644",
+      "git_blob": "d6f0c2ba09581f4e7f1b48464edfd63da1c13ed2",
+      "size": 18307,
+      "sha256": "b1416002296b65e9947a3a53b706d2cc2e8ed591919837cd19acf3d2b76296ec",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/reports/public-joint30/environment.json",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": "reports/public-joint30/fresh-demo0-verification.json",
+      "mode": "100644",
+      "git_blob": "3c47b465c1eccb5d608fae46f494fcdf26052606",
+      "size": 135,
+      "sha256": "954c546ad7d0b8a5f61a3206388a0384cc70c95cc21d7f29ddfeb77de3dc8091",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/reports/public-joint30/fresh-demo0-verification.json",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": "reports/public-joint30/source-actions-states.hdf5",
+      "mode": "100644",
+      "git_blob": "127f7a309f26066c39a351bc6cf36ae0d4ed05ae",
+      "size": 7110383,
+      "sha256": "d7415020d15e6898ff1b7541b87cee6f4ae08c297b91f8d2b386b524af2ee51a",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/reports/public-joint30/source-actions-states.hdf5",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": "reports/public-joint30/source-download.json",
+      "mode": "100644",
+      "git_blob": "3ee602e06272e784da520ea7590cf733ef489fe6",
+      "size": 1991,
+      "sha256": "ca049d79d12efc313acc3e53f4eda4943a50a25dddc8cd51357fcfd6cd98b9c4",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/reports/public-joint30/source-download.json",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": "scripts/evaluate_public_joint.py",
+      "mode": "100644",
+      "git_blob": "4dfc9beaa8ba1b7f966acf088ab2388e91ec55fe",
+      "size": 2708,
+      "sha256": "383e8a1ad5e3fd212e18a32a26b8df4b057c6f094e91f78f6a8969737f406ff2",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/scripts/evaluate_public_joint.py",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": "scripts/export_public_joint_adapter.py",
+      "mode": "100644",
+      "git_blob": "9123bde9ac2fabea14963362e0e1003bc4c9e73c",
+      "size": 8730,
+      "sha256": "756b46ec02ccf3d370ab198ad055a94e2cfb2dd78cee33fe3f8ab8341ce39972",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/scripts/export_public_joint_adapter.py",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": "scripts/fetch_public_joint_source.py",
+      "mode": "100644",
+      "git_blob": "494160ea512bb70d92e50e942126646745cf486f",
+      "size": 5415,
+      "sha256": "598c5b43e856e2b49ae9e731f21da272333a864aacdc3463870b41c496f7387f",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/scripts/fetch_public_joint_source.py",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": "scripts/public_joint_dataset.py",
+      "mode": "100644",
+      "git_blob": "4f548d91573871e6abb3c418add9ed8f30bbd325",
+      "size": 7040,
+      "sha256": "597d0c39a8896f488034685f0478e7c01685b3d076fc89ec8f441666ed669305",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/scripts/public_joint_dataset.py",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": "scripts/public_joint_replay.py",
+      "mode": "100644",
+      "git_blob": "b283dc593e35fadb4b8658b169a63500d0fd9347",
+      "size": 15988,
+      "sha256": "26d51039aecfef11562b4ce52f5908b0d5d89e600e46ff3afeab4694290088e2",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/scripts/public_joint_replay.py",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": "scripts/train_public_joint.py",
+      "mode": "100644",
+      "git_blob": "46f2ba37873e27681371058841f336f8e0d9b72f",
+      "size": 5453,
+      "sha256": "1ddb635b350b51baf60022f9bd95db9bece38d1d8ae7a8de8ab0da42a315e96f",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/scripts/train_public_joint.py",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": "tests/test_public_joint_adapter.py",
+      "mode": "100644",
+      "git_blob": "04888025accd40136e142b9c25f8742a754ea308",
+      "size": 2107,
+      "sha256": "49a76b798bf3f4f88b567fd7087ac80bb7414eeca2004ac6d5911cd31d3f7146",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/tests/test_public_joint_adapter.py",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": "tests/test_public_joint_dataset.py",
+      "mode": "100644",
+      "git_blob": "689d8f461a180acea27708b0d7827e6e9f412def",
+      "size": 2139,
+      "sha256": "202c93dcb35affb6d0b573a63f3b670877438f370fb29f3771e36f71eb58201f",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/tests/test_public_joint_dataset.py",
+      "restored_bytes_exact": true
+    },
+    {
+      "path": "tests/test_public_joint_replay.py",
+      "mode": "100644",
+      "git_blob": "786262556a6f730c1c3aff9094f24c27b2d37835",
+      "size": 3387,
+      "sha256": "abb9dde3088af5e4a7896723bb9c3cf3e3bc7167a27be45cf0e818bb420702c4",
+      "remote_url": "https://raw.githubusercontent.com/sencangWei/pi05-rl-handson/642c6e25f193b5ac75c53d69bb90e06801a3f9a0/tests/test_public_joint_replay.py",
+      "restored_bytes_exact": true
+    }
+  ]
+}

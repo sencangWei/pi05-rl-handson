@@ -1,0 +1,2051 @@
+{
+  "schema": "public_joint_source_conversion_summary_v1",
+  "source_revision": "f13aa24a3da8c43c7225569f28c562979fa0e35a",
+  "source_sha256": "e69528b0cf10dfc59b20698e12ec2affc03f3887309034d3eb74cac3ec929406",
+  "source_episode_count": 50,
+  "accepted_episodes": 47,
+  "rejected_episodes": [
+    13,
+    21,
+    36
+  ],
+  "split_rule": "0..39 train and 40..49 holdout, frozen before outcomes",
+  "splits": {
+    "train": {
+      "source_episodes": 40,
+      "accepted_episodes": 37,
+      "rejected_episodes": [
+        13,
+        21,
+        36
+      ],
+      "motion_rows": 3428,
+      "diagnostic_hold_rows": 740,
+      "paired_rows": 4168
+    },
+    "holdout": {
+      "source_episodes": 10,
+      "accepted_episodes": 10,
+      "rejected_episodes": [],
+      "motion_rows": 958,
+      "diagnostic_hold_rows": 200,
+      "paired_rows": 1158
+    }
+  },
+  "worst_accepted_metrics": {
+    "position_p95_m": 0.015478619262345153,
+    "position_max_m": 0.017091298084649067,
+    "joint_p95_rad": 0.025848798615156186,
+    "joint_max_rad": 0.029628636724767676,
+    "cabinet_extra_penetration_m": 0.0
+  },
+  "verified_file_hashes": 597,
+  "all_protocol_script_hashes_match_current": true,
+  "script_sha256": "26d51039aecfef11562b4ce52f5908b0d5d89e600e46ff3afeab4694290088e2",
+  "runtime_artifact_root": "/dev/shm/pi05-public-joint30/replays",
+  "artifact_storage": "RAM disk, requires persistence before reboot; compact source archive and converter are durable",
+  "normal_goal_contract": "native LIBERO goal + no grasp + no finger contact for final 20 controls",
+  "strict_eef_clearance_0_10m_required": false,
+  "training_rows": "motion_rows only; exclude diagnostic_hold rows",
+  "human_review": "pending, automated physical and alignment acceptance only",
+  "fresh_demo0_verification": "fresh-demo0-verification.json",
+  "episodes": [
+    {
+      "episode": 0,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 90,
+      "paired_rows": 110,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005316589080035452,
+        "position_max_m": 0.005893416393270641,
+        "joint_p95_rad": 0.021983855432378005,
+        "joint_max_rad": 0.025594494558064174,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "288fb7b05a8a4fef637026efbe86bf180246ab2916ce6ad5de6b9d5e90c6a2d6",
+        "initial_state.npy": "761219477451801445d75bcde4406feeb84d765018f314dd933aae64d4064a9b",
+        "initial-snapshot.npz": "c2b8ae75629cf35539deadc1a59d8716a8fbb74cc6a5c6be18b782f806f57fd3",
+        "identity.json": "60206e40cd31542de0bdeb0c806ce0b6345d5be2baee469d618695e0a570ee5f",
+        "protocol.json": "dc9be97a01d55d96e939813a7126dd194873a6d71e0e5418f28d67f7088dbe8f",
+        "reference-audit.json": "e92661cb8826068715c3c918d35753f276effee0ec6f0990ae1cbca4798b8db5",
+        "reference-motion.npz": "6185a09207dbf9c4f6de4a045efffc525a6eda702e33cb02a7cc197411a15141",
+        "pair-audit.json": "e445340c37b523543e133d0e83121da40eb7c3cd3fd217b17facf7724ae54bed",
+        "physics.npz": "3960e5ea0c1fc0399817f5d342567795dfcae3d8115241912cf83cbb8ef5c506",
+        "reference.mp4": "0a61310492f4b542d9418d00d35ed576c03cdbc78d90529dae1f4cc3f4fac773",
+        "review.mp4": "2dc2383693cf22315e3096058fc90b7b67f35657efc4357d85bdf1df59601a66",
+        "pairs.parquet": "6da1da9c1a0cd102f5f013c838dce8cb900206d29e26bed1ef6c0c8ffc2e834f"
+      }
+    },
+    {
+      "episode": 1,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 88,
+      "paired_rows": 108,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.00521957671541803,
+        "position_max_m": 0.005623978049023963,
+        "joint_p95_rad": 0.021737627237827725,
+        "joint_max_rad": 0.02391479132093388,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "afd1fc847c7d1d198a07ac17cbcce4a2a6687f977d4d530bf65ab88a166f99ad",
+        "initial_state.npy": "d01d530636e0781c52fbc7cfefda032e72a605a751bf20c257d377ca8c924613",
+        "initial-snapshot.npz": "cd01dee591f363f59573d2930b8df6de16dbf0b3d82babf81b8c4fdf2600ef2d",
+        "identity.json": "d09f97a68829e19c97ea86d7204cb39f0e98d9ca8b5b551a4b338d699e732229",
+        "protocol.json": "32bf79192e2998b6d90683bfe77cd5e8ed2d5b06753d90881e2ccb26b671c9be",
+        "reference-audit.json": "4ab2e3a1cefcb1bcb0e2701f844c33a5a0fae9773791c3cc98be8a419929b34b",
+        "reference-motion.npz": "e813e7ebc0961645eb20516f09706a6945790dea6b651402c14b83bb534bcb01",
+        "pair-audit.json": "179db0c35faab911aed5f39abca2cfe13aa8bad3f7093035e12d948177dac52c",
+        "physics.npz": "6cd47a582478b71c681b0000184a62dd944901e57e4d748fd01f361de76cb75f",
+        "reference.mp4": "90b3c822302aefbcf7ba0369028976516d854eba47c43ebc0d25ca0cc2af1369",
+        "review.mp4": "cb01dcabe18e9dc2898effeb727a7bd79bec6af5274b14d1cfccf1a84b8f5b91",
+        "pairs.parquet": "59a057cb431f5b3f569cc40a8e9e818bfbeefe9dcf997f3fc54d0037e392d87e"
+      }
+    },
+    {
+      "episode": 2,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 92,
+      "paired_rows": 112,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005036866578543489,
+        "position_max_m": 0.0053810351778282185,
+        "joint_p95_rad": 0.020418415987529928,
+        "joint_max_rad": 0.023689468606577835,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "7ce4493971eca71b4ad2be3bc7ec41117bbeb74bdb08a3f15de33a9c033e983c",
+        "initial_state.npy": "db9aee146bdc605dd8e1a4885526757d45e9c62901b815c2dbc585acfe634b45",
+        "initial-snapshot.npz": "02716e3943f42bf6296243512847fdecbc4eca7e945a4b7a9ce968e0b1ef2e2a",
+        "identity.json": "18ea7bf076d79c36189dd44fd4259a3b518b0df8a5154f10dc22b42d20c3c81b",
+        "protocol.json": "657c4980ef6bd81bdd0d0a7dab45948d0cbb1c6983e581402d9b3d1bb2fcff5f",
+        "reference-audit.json": "6f21dadf6038a388c023c70a5a1d7a49c90a478d293197e71b1e1d790ee0d485",
+        "reference-motion.npz": "774048d783aa406662d4e49fbdc497a65cfc9a8730dfc98b6dc0ff529c445797",
+        "pair-audit.json": "cae38788823526a875e5f9c85c81520c64fa0f4b6f8970904eeec317327717fa",
+        "physics.npz": "c3d59a51d6d35d4c7ec215557f6520fdf539a282a800316e8bc6d2392809a8c8",
+        "reference.mp4": "8b54162b052f21a80cd69f3d0e9ee816013cbd057e03c73afeb82c20f55a4cf2",
+        "review.mp4": "2c27d3a7f66d49386a14bcc4f7640dbf68f975bd7c12269444d2949ba47b7de8",
+        "pairs.parquet": "d01ee57bdb9e580e16de423435e74548506e4880e10d1558c75b3d16c14536f2"
+      }
+    },
+    {
+      "episode": 3,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 94,
+      "paired_rows": 114,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.0059733277781779705,
+        "position_max_m": 0.00664283956731884,
+        "joint_p95_rad": 0.019920049976038485,
+        "joint_max_rad": 0.023593154961679463,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "181746f34aaa82108320af0fefde918c59ff1d46bbe7bcc2308314de66613ec3",
+        "initial_state.npy": "4323a8c467a68ef99caa9d688e58ce67485ef64a5683d5a760c6e362bb23df4e",
+        "initial-snapshot.npz": "67033b385ebe8123c5fd1b0a00be563a7d490ad324ccb9c78c38a7f5ae554ae7",
+        "identity.json": "3dcb30eec824ef2ec622f0b1f83bb0a69f4f143d7fc5044f21dc4ad26dfd4295",
+        "protocol.json": "727f851a165c98c79916410c3d7160dda57f50eccf8799215c50ff9f18c9790e",
+        "reference-audit.json": "db642acb8dffacc6b7fa1782448d8b8ac628d59581badde3cdaa11dd49830bd5",
+        "reference-motion.npz": "eeeafeb70a5d526cc545d5df82e4b8c93aad7d524ea1c8d30c29923f7c1d830f",
+        "pair-audit.json": "68e856736a37db0c6eec7ca8c30da8aa3538dbd477e0b866b8be124ca3f188d5",
+        "physics.npz": "658148aa4bbcf4f500b0387e6e30f13ca0ba8354bb064a334e4e954e2b878528",
+        "reference.mp4": "551a0166e5d6b880be5c179016aedac45021453f54577d71faaf622e52319410",
+        "review.mp4": "fd0499717ab446fd12a03a98a25639790967ab8e2bdc79227e65c74c784aa6d4",
+        "pairs.parquet": "48a6a14f043e7409dab544a4ddaa777fa7c54919ddd88b8c253c807a02acaf9a"
+      }
+    },
+    {
+      "episode": 4,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 80,
+      "paired_rows": 100,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005149460803374011,
+        "position_max_m": 0.005966628106210752,
+        "joint_p95_rad": 0.02397906339997123,
+        "joint_max_rad": 0.026963747173086583,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "1a62538858d0e4c34a4a3f9bddfedd323c9fd9471de69d295b0d9d99ab3ecea4",
+        "initial_state.npy": "dd914c88d932de761f797b3b00af2bf3be35a9483c19860583f38fc2ba10df09",
+        "initial-snapshot.npz": "ad7c7358fe43c3b2447d7aec65b565b4be81f8f4e9aac156ca0c75ced6e6ce31",
+        "identity.json": "cbea1b7550d67d3d748ee5c3dc989968b43598bda9feef15da92b0d95c5f3765",
+        "protocol.json": "0df9f7aa24b646292df3aef73592af475b7de658173b32c723229cebd529e4e0",
+        "reference-audit.json": "68e4ec941d44be868786dd9ba00778971c74bd8ab497dcc8606948e2bfa75c98",
+        "reference-motion.npz": "459774bab5cb3cd4ce3943c040b706714cdfc592b16ba9dc5ca06525d71c7358",
+        "pair-audit.json": "4809839b24fb55da588cec91ba36290a2afd4fa7abb6f48ede35f5e929698a6b",
+        "physics.npz": "8beb3151c7452b08254bebf435bfd6022c832c1cc93839b182462cb5f2b625cb",
+        "reference.mp4": "ca9498336bc27050db59d386882584f8b9d5db61a3b917925d3720f1ad5ad4ba",
+        "review.mp4": "857296121b874038021c82f1b85b3febfcf6298a8ecb5f0855680b3cd6e5f04c",
+        "pairs.parquet": "600cdb46b2cd5a2b17f8f5e3fd3c66362a784b3127334b7fe79fe999b1e891ed"
+      }
+    },
+    {
+      "episode": 5,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 89,
+      "paired_rows": 109,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005420417094912331,
+        "position_max_m": 0.006175200818642512,
+        "joint_p95_rad": 0.02225848168737259,
+        "joint_max_rad": 0.02267872799133963,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "8f6d36861d945059856e867d3a89439ae2b42163cd4dcb0ae30f3ccffdbe3faa",
+        "initial_state.npy": "276aeaf2eee6cab4797dcd7b7904f39fe93debdd67b865be6f842c4554d7c59e",
+        "initial-snapshot.npz": "f36dde807ec05072ee7457c4f7559cae8d39d3ac51763609e83641d1e64d6327",
+        "identity.json": "8be65fa96f4f06676d1db74acb0e33feff2169794c15811a4cf1b6ab5d8ee04d",
+        "protocol.json": "818a155920f8e69df838ed1d318ce03e80ae3a155de8ff74b579539846297efd",
+        "reference-audit.json": "905ffc2a6c54e73b1edd72fcaaaba040da8f1a5e1ef0c4d71dd7dd91ee2832fc",
+        "reference-motion.npz": "2ba26bfb5bb83f15a869cbb7c75a60c91c588c99f5d2b04c1a76250b1fc7601c",
+        "pair-audit.json": "dac8bca55a250ebc5fd01ef1445f36da09ea8817f51219c4033c1748dbd3ef93",
+        "physics.npz": "a9c109b20fb21f5bc42e16a0e1253640229ca3060ab44753305e27e2dfc9daea",
+        "reference.mp4": "9ffbf40c44cfa095697ea138d5eb587db90913207e74b3659800e008e5be37e2",
+        "review.mp4": "f921085e60f481408b341ed7abdae52e9b76f81d0a7b822b934ee27eb5424aea",
+        "pairs.parquet": "0f54064324a9b9dea40d2a27aaadb5dad79234e36a61223a62da2f0131630ad8"
+      }
+    },
+    {
+      "episode": 6,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 105,
+      "paired_rows": 125,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.0057032997755150855,
+        "position_max_m": 0.006267309306624852,
+        "joint_p95_rad": 0.022358805623832544,
+        "joint_max_rad": 0.02425348109079639,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "957cf023ef5e39eb4327a07c0b7d9b7ea83b4beb3c255785c363675286748b64",
+        "initial_state.npy": "cc4fdcd3a11d612147096f23163b0c47ffb1ef7a358949aefb5fd510050d6453",
+        "initial-snapshot.npz": "00c1351f64d065b88a0adb292935686366995fc7c56a8f4b3b37a154efbc7bec",
+        "identity.json": "fb9111284d4827a7776a5390b1472a0c4fc0ec8d8260b4aace59c4423ec5db3d",
+        "protocol.json": "2c3f19dcf8955126ca738c3923de4bf2f45411f8eca90233c2a855b3b13ef831",
+        "reference-audit.json": "723b7cdb4a984f4d9526bd635dd5d91dcc8099466455d1490f950b6ea44eeb2a",
+        "reference-motion.npz": "e0c097f28e163b05f301e1c5c3c425e2dfb83e9f6292cc301589ded1feb5a531",
+        "pair-audit.json": "018a63a8bf1da1a102a45ba2fd05ed0e1dc8274bf6da6a671716d79727833027",
+        "physics.npz": "183ee47419039bd26d0f51b78ff8788cc81c763b89c496f352a069114f59ac5e",
+        "reference.mp4": "fb463105ab7888b9781a1f180215005e05e42104841cfb87424c1138e07c96f3",
+        "review.mp4": "2d499f4f10ca5f1ed4ef93aa0e3176915021fb26f44e0058a5895444a078ff2c",
+        "pairs.parquet": "bc22a03ea97f7de213d5a4c8eaac13e17005830aa32f5fc9cdb0b77634f13c0e"
+      }
+    },
+    {
+      "episode": 7,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 92,
+      "paired_rows": 112,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.0045249668411936625,
+        "position_max_m": 0.005176634661863663,
+        "joint_p95_rad": 0.02027647522634473,
+        "joint_max_rad": 0.022643449885084488,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "703bcfb0a1225928fd6f331c6d6fd3db7fff06e15467218525a8187d4022d47d",
+        "initial_state.npy": "b67bddf624e0ce3050a92274bf86d944e8376f35ea46ff58b902fd1aea39223c",
+        "initial-snapshot.npz": "c4a3a7b9ac86e2fa29a913bedcdcb9cefd1a0556b6659d6658392500baec32bb",
+        "identity.json": "4c7571d066f04078685dff20494196cbd0b26331b5c6cd6106dcf998b2feb608",
+        "protocol.json": "770f30dd0b2bddc18f0f348a5fd850b0477d9b4faf7db0de887a8e0add311f47",
+        "reference-audit.json": "d47445ae602b206278418698dca50c4ae2722a3b8c35995380609a12f9685cc2",
+        "reference-motion.npz": "77c3d8bdafba48c82d8563cfb12310c703150a1638ba8fc665f3a80e5591dcd5",
+        "pair-audit.json": "74d63037e4c0b4ac8cb246934383ba17bb04fe4e9d8afa55855998827aeb0b75",
+        "physics.npz": "e01e479ffba4c593a8cd5ea24eb4881fa49e7d5a4d386c421dca2696f93a6b29",
+        "reference.mp4": "3c4a396f6fee5ede0ce84caf9d6782d373f2fd1edfd02b62683008be6d73ec07",
+        "review.mp4": "0c62a5bc1cc7e2ef18e97c6af1762a4dce7eb1ac10d4890c90c0abff4e93147d",
+        "pairs.parquet": "3cb49f64eeaa4a99761a24e2baaf4d134e23c1f99072c8ceb87ad50efc282fdc"
+      }
+    },
+    {
+      "episode": 8,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 84,
+      "paired_rows": 104,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005121307570158877,
+        "position_max_m": 0.005378027555382496,
+        "joint_p95_rad": 0.02313864352679334,
+        "joint_max_rad": 0.026065841142120405,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "4ab54bcd3195b0647eed243601fe6c6cbe47b43855d9eac4a89d644785ad7d1d",
+        "initial_state.npy": "e48f6d3656bfab91643467c5cf1642b3c5e67b2669a13f0521589ba144aedb49",
+        "initial-snapshot.npz": "ae07f4b1581f19a9450438cbcdee42b6808c335cb3f49d43911321982ebfdd90",
+        "identity.json": "25b1e8177ed16b34196f1372f4cbb8318254d8a7c9eaac65c62e01496d803c2c",
+        "protocol.json": "617d1901286f32b3a0397048cb94d3fb975c049dac5d2c66702e006bb9d6ecf9",
+        "reference-audit.json": "a9058d32c0386c864ca5ee8bff0618827158bb693b927c83da100f2928155f51",
+        "reference-motion.npz": "9b073c2bbc49fb946f3b74f3404d69e4485672d179900b079f6778c4546a9c2c",
+        "pair-audit.json": "d2a68e5237eb19081a8b332a44d3adfc2f9de7b7a9151b71c1fc09ce25757f0b",
+        "physics.npz": "0bbabb6ff63a45e592b4b33370dc7be76318fbf32959e7005c20a8602226c3d3",
+        "reference.mp4": "9d0626503d04b5041f2e473d3de1e33551e1acbf3a7201127fb4ac787ad02614",
+        "review.mp4": "45862b4c41f56e3f80e7057caf442671263ee339727620dbc82f7f9f9262122e",
+        "pairs.parquet": "a40f8c2c078d43df3a64369c654b47d3b431ce3e8f93a97932015ecf111876a5"
+      }
+    },
+    {
+      "episode": 9,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 90,
+      "paired_rows": 110,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.00516987533751355,
+        "position_max_m": 0.005488164761126567,
+        "joint_p95_rad": 0.021241903056411392,
+        "joint_max_rad": 0.024467683621153258,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "6545c2331154479465ba7bfa7bd214419d7416a536ebc3bd347e7502e3763415",
+        "initial_state.npy": "623a58d90b52bc41b16c8b9511791202151c43256bf17a8255884a1a8a9e438f",
+        "initial-snapshot.npz": "2d82a846481fc82592eab9d50ae3be21d3dcf36200f54404b1faf7ccf4063390",
+        "identity.json": "75f4698685172a9e6140e7ee8a113ce3c1d0160e3ab6e4240a47edb4af421b42",
+        "protocol.json": "83d924154ee20c8ef06861aa96552d783e210138bc9bea6c834b95b7f9fc93b4",
+        "reference-audit.json": "c31a285517932300bede48aed577f81121461c47c0d11adba7091735879ef8b8",
+        "reference-motion.npz": "6e366c0e26c0b95d93081717647bd52dc3a36f3670fae42dd82a858b91f86573",
+        "pair-audit.json": "2db1ccd79233c1bf6c03c314402c611643070ab43decc0744c698b6788556700",
+        "physics.npz": "83a65cb3c61347f244e52dc211bb037c63273a6e49a243c63d1dcc1d5c509f3b",
+        "reference.mp4": "6ed09e059d7a0daefef8adee7e292ea154f571c009488d29e89b0f43959c4023",
+        "review.mp4": "128390c0ee6ae350667dceb43b83bb56b1db12e7eb4c21986ddeb2809d75ae6f",
+        "pairs.parquet": "cee5d89974bfdd758674db7ff4538f0c60d9b980bbf44aa0f4e8777cbb705fd1"
+      }
+    },
+    {
+      "episode": 10,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 112,
+      "paired_rows": 132,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.004682024306669901,
+        "position_max_m": 0.0052484404181323,
+        "joint_p95_rad": 0.022235117674328897,
+        "joint_max_rad": 0.023310497810584474,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "95f360f39afb34360e192ed7e3d3f62995ef6e3fdb4132126c0e8caaa6108893",
+        "initial_state.npy": "65e27de292fd8a2e7d35d91ba141065d1744ea7015198b450c9873a18c1391e6",
+        "initial-snapshot.npz": "2f22e9b3daf37e12d3a44fe4f08636ff481209c314d242d3befbe7a3a13ab91c",
+        "identity.json": "b04510a62a38860ff5ed7ac42d83d78831bb38c430657ac6225b3ea74798a321",
+        "protocol.json": "78d043678bbde6a96cefe18e85e712eb922c0568acb3d700abcf1f90bcdbf520",
+        "reference-audit.json": "2a126e35a1382631ce86fef71f5151c51345bf69bcc411d863e3f1339ea68cae",
+        "reference-motion.npz": "730c987bf14f8fc6f67a65905719dfcaf186e2972f060163945a2f24e62ac7ac",
+        "pair-audit.json": "0454f25d6d5bcbd92251e3ed1096a63790db34f3c042ea62d889827ac13de9fe",
+        "physics.npz": "7c32a134b9d5943364f2ca47a19f667e024157d6d657ff330e11ed934acbaeb3",
+        "reference.mp4": "9597b784d38b07b4543d524bafa32dbd2ab407ea5d3de5bc7cfc00b6a6f10729",
+        "review.mp4": "bd5ea8556de4cbe1342ed858487f68220bc2847435681f90654188cb1f5bd0c3",
+        "pairs.parquet": "e384647a9b39628cd8b12ffd1a4b723f51a00516dd83c5214999a4efa36568d7"
+      }
+    },
+    {
+      "episode": 11,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 85,
+      "paired_rows": 105,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005355625933654391,
+        "position_max_m": 0.005713243520593556,
+        "joint_p95_rad": 0.02065278475795011,
+        "joint_max_rad": 0.023968261039664096,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "7df1a96a9292a1bc68c6078e52f4ac9da75d2d7c46ca73f83dc1a0568163a0f1",
+        "initial_state.npy": "31ec2903c85b04b3087991dc79b3dfb8b8a0eb991747bfb1ace597c2c0247922",
+        "initial-snapshot.npz": "88e1e4793c3abef3fa79c5edb005a41115213173546fc4c042997e18fb362955",
+        "identity.json": "e79966348cec9f7e59c805994d23e6a73c458aaa29dacd59a4d225fb740c1200",
+        "protocol.json": "68de8001710f4648b87d46d09ea24895c10f0b3da016002aa7952a45f92f7e3c",
+        "reference-audit.json": "b0848c74749962e6d57ef0f4dee912081fee942ada93acea64965ae6c36c5b42",
+        "reference-motion.npz": "33d7c81212989dc1e2a56ced78d6169d24c89904352cb2b4b252681b204614fb",
+        "pair-audit.json": "2f2f6d7dd3f22d4201e01735ae14b0b8852d28850beaab66f7f077908c26e1e7",
+        "physics.npz": "3ae6a057e007af0eee8cb20e9a1507b2b9e49926913ba87ee533881b2d9aaf08",
+        "reference.mp4": "3fc1f3a99565d4f392766d15ecf46f9e333c5396899d3d62ba33aa8194f655df",
+        "review.mp4": "e02edd377f4572f8170c2ce2673867c18d2d075f521d8381759ff6d8734215b4",
+        "pairs.parquet": "4e5fd7372f0a7915c346808261d36c8d84b5daac8d7340782120c719770e9d77"
+      }
+    },
+    {
+      "episode": 12,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 88,
+      "paired_rows": 108,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005093019836033062,
+        "position_max_m": 0.005841818686142674,
+        "joint_p95_rad": 0.019042382643818946,
+        "joint_max_rad": 0.019705989940770552,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "9a020147507ed98156cf9c278816cab85bfa79401e126ac88b8f9a5b98945f31",
+        "initial_state.npy": "7757869bf9c5652d352222b8c8b5ff9da79df9a3cea7785d1b51fa794369d750",
+        "initial-snapshot.npz": "d7ea4425ff7babe3b5e35aa48ce320dc1f8c2f0a2dd80b3c2274c1ca4b293efb",
+        "identity.json": "f809eae1b4add3faf9a0dabf6d6726b1b1bd28ccff8de8fe5ee7a8d7eb64d9d0",
+        "protocol.json": "c7d19c9caeca4126d3b28f3e63c8436d58317b5859f31a5cc046c7adf7392a3e",
+        "reference-audit.json": "45fd76612bc276ca7103dfb98f00977d8874776173b7ad2ccb3965b31d1b936c",
+        "reference-motion.npz": "89e059757e47d513563ab2fafb6255ab7caef73989fe5610335260eb133aa85f",
+        "pair-audit.json": "d92a3f2c12e3000433b948e4c1fe837c0bbf236a2360894b095aa3ba2c581e0c",
+        "physics.npz": "9a0c4150896ca9cd25cd036e31168b24cd683b9c8cc21384d4031c2d1a111fb9",
+        "reference.mp4": "76cd57832e66182d9624fe790db5c723fdd2135ee1166b7009114f343fdc3d60",
+        "review.mp4": "73282cc7220bfc0f79197d4a5539bfd09f2af33fc5005f5300e52b6aa2f4a633",
+        "pairs.parquet": "86e8a12c12aa10807775061d7b4f7b8648bf2cf3044247f12c6a624afc6e3ea4"
+      }
+    },
+    {
+      "episode": 13,
+      "split": "train",
+      "passed": false,
+      "motion_rows": 98,
+      "paired_rows": 118,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": false,
+        "finite_physics": true,
+        "no_clipped_joint_targets": false,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.004993340161498469,
+        "position_max_m": 0.007904229127286489,
+        "joint_p95_rad": 0.02986312106137991,
+        "joint_max_rad": 0.03205007323462339,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "d228d92f88ba239eddec5d06f0f083b0db68692a09b5116dd60c8c759c458c4e",
+        "initial_state.npy": "89b846e0fb111512095dab802f48ec2ac1865341694b1c5d1f6407ce09f90022",
+        "initial-snapshot.npz": "ed09be978e8497ad332a2e353afa22bca95140a9b08ea20f794cbb0c55d07fed",
+        "identity.json": "4108e90910c805e8cf9f2561754d7140c356ba338de649c1656047fb97ea2322",
+        "protocol.json": "3deb294d7039aeacd347433b0b852a4dcbf2067e3cf61561e698df4ee159c844",
+        "reference-audit.json": "a3b9f60781363d3ac55812a36c832a40b6478c5db01889c87e47a8cca62a7b7e",
+        "reference-motion.npz": "533a65ac2e2881edb8ecf85944be702f16c016ae1b5d453ce2fbc776a182e733",
+        "pair-audit.json": "0516f241184192c66392ed3de31165e6ff65da95a02e602fb39b0cae2521019d",
+        "physics.npz": "d5790ffbbe5c5459cd66bcf5e4768f8499cf1779646649843c3940b7ac981193",
+        "reference.mp4": "6f7a1c80c40b941527acb0294b79c0b25f839db4ea2f738209379511d95d1e89",
+        "review.mp4": "89362db51e1ef626299c0949ec0b01c338f62093fbd4d8836d3b0e9953947fc0"
+      }
+    },
+    {
+      "episode": 14,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 87,
+      "paired_rows": 107,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005544537931012762,
+        "position_max_m": 0.006836355195404192,
+        "joint_p95_rad": 0.021198120912074136,
+        "joint_max_rad": 0.02408660388771433,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "2784ba9c360d083adb2c0eeda5ca0dfb077562ddfc331eb45cf7a1758ff26563",
+        "initial_state.npy": "f7a982d3f0ca7680b47b1c1db27e46b668f1d9c9e04e0fb90d3ef94f895dd75b",
+        "initial-snapshot.npz": "b0cf1ae5a8fde2d6e96048f6e6fb7695556e1032de673b6c6983849ab7ab9a46",
+        "identity.json": "0513b916cd2fb100b548650e6207758d1c0905cc91e01d11476c2d71419a2364",
+        "protocol.json": "19a57f72b6d975b2f7ee4d7e95ea2643a113cd24f0b2e37dc60dbda82f116d96",
+        "reference-audit.json": "eeb977613a4485c9c20f0978af256f209613de642103b999582f47e02deeea8d",
+        "reference-motion.npz": "28acece8e003101170f63dfd2a7a2a1bba3f230e06d3a660f042d137809b44d4",
+        "pair-audit.json": "52d2c25a0f5fcb4c1e41d40ccbf0e9dd4e30acaf5d60665ab491e92c888eeaa5",
+        "physics.npz": "700dfcd0ab0aa07c41dde910b5f07b1ebb36cd1a9878fd0034172a8e85b539d4",
+        "reference.mp4": "bc787a9e3c048088307b1d60fb6d36a406abc7014ca6cfc3f4e8ca4b4983c45a",
+        "review.mp4": "2757e769b7af6c9742cc929c79b2e5a2e6140f6109e89bac61d91bdbb6e568b6",
+        "pairs.parquet": "5d5a109209d34a26dad0bd209510b0324a4471ed05c262767713c16b920e68ce"
+      }
+    },
+    {
+      "episode": 15,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 84,
+      "paired_rows": 104,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005385155221039713,
+        "position_max_m": 0.006244849682005846,
+        "joint_p95_rad": 0.02097326546444899,
+        "joint_max_rad": 0.023294420643289904,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "f198a76f3b2d063dc1ec855d8245ce7104966f0d2b84cbbe0878eb5049cf9877",
+        "initial_state.npy": "871cafe1375dca13ea14f166cadf2ee1e7e4ec496059286493396703354cad3a",
+        "initial-snapshot.npz": "1d207a4f0e0436f4a1d1f4639451d16f15b449bf131d6be9e7724c7ab599d8a6",
+        "identity.json": "e39cf897f11c074e470e9f5f090c3448e1119a0007dcf952fbcbb745c2090267",
+        "protocol.json": "b3e36109566bbf8c443a79454f08b27ddf95468d71a909983cb81454981ad9e5",
+        "reference-audit.json": "d82f5daff46391f18f06f59801a4c3871937c4cc0495a7ba70834d7654b3c086",
+        "reference-motion.npz": "83a35396e680e9ce637f5563fe54564cc6ef8d9e31f6956f3909bf8882258dbe",
+        "pair-audit.json": "b8948ecac071a1d5b1a9f85a564bc1af34dee866cf5c560111f503e5173c1aad",
+        "physics.npz": "858d7f24ae0d5ef4b314fd6be43f94f480e978055a2b0aab02d8593a0df4d438",
+        "reference.mp4": "012de7b26512c3fba9a9c4ea95482204732f533628db1fa97f1ccf6c0dfda562",
+        "review.mp4": "19ff07096a411771523dbf7ff8fcbf81d8d90e84a9a620c45e7445aceef7f9d7",
+        "pairs.parquet": "75c5fd6ee7e9f8316e7e430a7e5eb1461b7d920f133d6e3ee13ae813db2b39b6"
+      }
+    },
+    {
+      "episode": 16,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 95,
+      "paired_rows": 115,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005092851888428854,
+        "position_max_m": 0.0056019962793564144,
+        "joint_p95_rad": 0.0205382939687484,
+        "joint_max_rad": 0.02283010424670917,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "3c1e1f5b1f98ba145fcde4f85216cadb34b5d0d1fc18b443e7409f288fb0d2ac",
+        "initial_state.npy": "da3ac7652b07831b8190fde56d3fda2eaa87f3e9667857ced0886703ce120e74",
+        "initial-snapshot.npz": "20491b6a13fe571e1b3890114e696eda63bd29093b7cbf148ed15810990e421d",
+        "identity.json": "5f77031406706e9b6c8c02c17589a20194d73bc334038e7f095d7c320323c970",
+        "protocol.json": "ea6cfa9894b8371e21506df0a09219c1e8bc4e742c79b1c5dbf8348f63236958",
+        "reference-audit.json": "b07eaddd0372a642fd0d77ddcb31cc89b41d6c5e20f25df6e8ff572e12d1252b",
+        "reference-motion.npz": "3fca6bdd7473344ce177f09560826fcd0626531094b03961aab30e7e4e099d24",
+        "pair-audit.json": "fdb98a3e85a3763577b087e4b353990fee7a8ca1609803f493f15ab250041a17",
+        "physics.npz": "f46cad582433558da14b404a36b0ced1d965eaae9bc85fabd6c0071bc42e5959",
+        "reference.mp4": "23e4ca94664c25b8cc5249f91f26f459b9d3b2f572ef348900cc951b356a0688",
+        "review.mp4": "8873fe078b82a8e58607ee0a281ec4d6a040cec7da397eeaf4014ef6fae2837e",
+        "pairs.parquet": "19a6b75fbcbed2d32f0eccac1609f02994c3f885a701d184eb2c78dd5dc963c5"
+      }
+    },
+    {
+      "episode": 17,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 88,
+      "paired_rows": 108,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.004865759535973029,
+        "position_max_m": 0.005417083796082071,
+        "joint_p95_rad": 0.024819322984567786,
+        "joint_max_rad": 0.026754071248596523,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "0a5c5df1b7db936eb8412fcae62b8c79a9db93d0a2b68278564a97fdede14548",
+        "initial_state.npy": "3604663ed49cc8088c7160080c2401a5509aada2320cd19175b7e023da22a4e1",
+        "initial-snapshot.npz": "87a9272796037be32526809ea229d30d407f54f37d78f3620242a1c4a7a07053",
+        "identity.json": "9bfd4fe0a9301e3e9d312cb71ed54ec7d0002ddc102b5e94798e206e4d5fbaaa",
+        "protocol.json": "4e3493f76824832c5fc63e1a6e9f84b47b621528b18c5fcf7eb135668bdffb08",
+        "reference-audit.json": "d863d2b3a13a50722b41f4c560405061dde709c64251d561553c264b4a7197ef",
+        "reference-motion.npz": "e7cde2f5266ba8f03894353a88595e3607198ccbcc10645e6e796364dff82c10",
+        "pair-audit.json": "ef32ab76af45545e8440b5f0650d18238f0070366d7b951317befc209c57bb28",
+        "physics.npz": "f2a7b3a1c9787b46d0641ada03e8dea857337d901283de85c1f53e93261311fb",
+        "reference.mp4": "f43eceae2f861b87fb1f99299a8c7a20a88e432875a51a234c24560683ebd321",
+        "review.mp4": "63d0181a063397106eb4297c48d10eed4f9480255899e9d00cfca7878df89c61",
+        "pairs.parquet": "43f9dc9f457d406fa013b68cd652beb17a316fc1d9dcc28189bfa0a33ef75c82"
+      }
+    },
+    {
+      "episode": 18,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 93,
+      "paired_rows": 113,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005028458535340729,
+        "position_max_m": 0.005373602201144829,
+        "joint_p95_rad": 0.02335851886643758,
+        "joint_max_rad": 0.026152296617280024,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "5161643f9d6a90b1bb3183d958739414e5f51c02dfc911e70ef097b4d84d40f7",
+        "initial_state.npy": "6d85494aea99e23ae18782114e4cc3824cc2119ac1c1162732ce1a432b2b81ae",
+        "initial-snapshot.npz": "460832bdf30ed9ada5b486f9c0343f818ca408f973af36f1ba137261fb5a0ccc",
+        "identity.json": "91db14e9dfbc949ded9d170ef05b8b7b7c239b7975d78da654f21516c1d1ef4f",
+        "protocol.json": "ab3e0784afd66dc7d8b0b35a1961e71c92f7924fac595473086f9ee4de0ad8ae",
+        "reference-audit.json": "0b3cac77b6ce16ac82b50a0f946546a52883153f39ca3209557760df327c9186",
+        "reference-motion.npz": "e31ab17adaea26fe39cce034081fc798e158a2640c0d0ecd9c45513c15e860b3",
+        "pair-audit.json": "05c2ece83de4ba5997f38f05ea28c999708f269fc7a628cb3e77bcf267eaf31f",
+        "physics.npz": "73025fa49fb4bdf003d75e47e8ebf62a80fabb608fdd619f6dfef9f107723660",
+        "reference.mp4": "b42f526085c362182403b6a009f4a6ff307c18335523afbbf5ad92c9a8ef333b",
+        "review.mp4": "8569f15a560d1c3a123003064107109ed034c600f1618ce09fd12a3aef1c62cd",
+        "pairs.parquet": "4069e9f00b10b6295a7d581f17a01d787fe0cdc8e5b97fa8adba3a5d0d6f6848"
+      }
+    },
+    {
+      "episode": 19,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 95,
+      "paired_rows": 115,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.004710809445383878,
+        "position_max_m": 0.004966873622785523,
+        "joint_p95_rad": 0.019677704297324735,
+        "joint_max_rad": 0.023775608877408816,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "632e2fd26bf29da13befc07edaba26d4a54eff7db364858b3dfaf2aa3d18189a",
+        "initial_state.npy": "46780999056f7b4d5438df36de24259834fb4d3f2c33cb9114824ced390d85af",
+        "initial-snapshot.npz": "be47965580ab99a26eb3eb55875633dcb4e1c3dfa99df52166f147d014798529",
+        "identity.json": "5268a7925bc5492ca17fb8e031c62f0df5b6c6ba5cb3d50b0fae242397619e1d",
+        "protocol.json": "2f3194482a57ca0772e3540aa977eb14faeb78ddf6451da640d99252a1877f45",
+        "reference-audit.json": "954150f4f10ef5d0872bfd39396fa7a47edd9b284d39b66269ad318ccdd797c9",
+        "reference-motion.npz": "a7e2e1d164a158373e3e4782d859060a11b93838bd38ebed37b25c4227b606e0",
+        "pair-audit.json": "3040208564ac90ba9222fae21c08b862642e2e31a5cf89f8fffafb01fa6b079d",
+        "physics.npz": "694dbe9d4a181369d9aec09d9a7d6c745d078dd1be84a972253cffdf50d172d7",
+        "reference.mp4": "a7a92eaefbef4cd3a1e68bf058b2b0f231400ac9899c0fc962f99e4bd015d9c0",
+        "review.mp4": "24c3a002abe658a103c1f7625e9cd7a07e46a38350b3e854d298bda66ff96573",
+        "pairs.parquet": "de8c7c1dbf32929b2e04b1c5300e3a6e6ac4c38371b85e6b36e365b867d3f945"
+      }
+    },
+    {
+      "episode": 20,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 95,
+      "paired_rows": 115,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005746443048431841,
+        "position_max_m": 0.007882420604051234,
+        "joint_p95_rad": 0.025848798615156186,
+        "joint_max_rad": 0.029628636724767676,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "339f056e9f4a9a4b5c13d2508339f403bbb80fe6e5a09540d0eb7dd846f70485",
+        "initial_state.npy": "c029d8ba376c8ec04c709d968683c00c05315fbc9a8cc88768bb1f00d426170f",
+        "initial-snapshot.npz": "a45e8d500d9cf4661b43b770568cd0abac8739c45ba35d22d0ab486aa09837a4",
+        "identity.json": "468885f36bb0096c6081a9f9f89743304f1544a7e1db8df06be22d859508082d",
+        "protocol.json": "13aed43848456347fdfabd5d3af5ed12e5f7a99e9a61965317be8c7c14cb36ff",
+        "reference-audit.json": "8c738f6eb57c5b6324181423eeb25613e05e9b2dca5041ce6981f8e43dd4d66f",
+        "reference-motion.npz": "91f2ce9f480332f04d8a5ef6429509ff7c0eb64105aea1b132e147eab2500193",
+        "pair-audit.json": "3a0036c0636446375840181c33b9f9ab2e756b3e322d4a425133c910872b27e4",
+        "physics.npz": "f66dc00f19a9949020d7f83186b380cb82662e5e23afd74d5f1c0abae3f4e4a0",
+        "reference.mp4": "3b08b8590cc42f29af6c4bce9574075483ef5a7fd39480d3930ae987440a2aea",
+        "review.mp4": "eef4c6ed82e617f6f1923f02527ec175b749bd89207e2fbe2a62bdcc6fd18a74",
+        "pairs.parquet": "631359717648fd923fa663d83f288eee79f042a0bc7d1c3b009ea3f0305eb4e6"
+      }
+    },
+    {
+      "episode": 21,
+      "split": "train",
+      "passed": false,
+      "motion_rows": 106,
+      "paired_rows": 126,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": false,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.004745004971555718,
+        "position_max_m": 0.005261788345124888,
+        "joint_p95_rad": 0.019990087705811288,
+        "joint_max_rad": 0.024635483522820856,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "cbba44e5b440b3a80a25b69341500bdd1352cc8565bca2d5dffe61758837d326",
+        "initial_state.npy": "d7d4e75a00764697008c06bee677d0e84d2fe796b86d4fc8ad73bfee07b8fded",
+        "initial-snapshot.npz": "94757b03ee4958fb0aca0f7c1c75d6fef57f6288383355d30ccfae2d4cdf4632",
+        "identity.json": "97088d1cbbec2046060814ecd1f2ad3f66c6ecae2967a75fc5a00cd243ccaee2",
+        "protocol.json": "dde11c142ae8b4c7d5ad491e9d6f6af2bc2bd6cefd706d36a39856cf0819a3bf",
+        "reference-audit.json": "6cea4e6678ff934fecf33291682fe9fa0ec1241604333e75883a5bb6727cbb5c",
+        "reference-motion.npz": "f9e06e682ee9f7365d26b0da171832c677c6828c170986853d8113756d32557e",
+        "pair-audit.json": "40d7b42d39fe03612c6990239faeca2f7a20abf4087c131766ed62819c0a65b7",
+        "physics.npz": "050ba267632f0b1e3511130674e9930e0c795cfc0b7920288f0b497b24be81c6",
+        "reference.mp4": "1c71352d1d8b490b2990fe44e281fe69cec00957d6f920c54cca8622db461b2a",
+        "review.mp4": "e9ed1c5083a14a528524e613ec3075a923d61fa904e56c95165c721ca8c0af46"
+      }
+    },
+    {
+      "episode": 22,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 80,
+      "paired_rows": 100,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005346053109203867,
+        "position_max_m": 0.005893943733270209,
+        "joint_p95_rad": 0.020551376785273343,
+        "joint_max_rad": 0.02346830942749567,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "b54b7cccad2e31a3bd203afa733b9e996997f439c79016f04f8e3edaab39f286",
+        "initial_state.npy": "1b70dd254f2aefb24c6dd07b0c4f2a4bcf623f1ecac2987518ff8fe8006d0f43",
+        "initial-snapshot.npz": "3f2f935fef021aba062c7c5a84d4d080a788d37e41dab33d7b74f2d8e8d1783d",
+        "identity.json": "6e4be98d72458a3f5e2aed6eba4ac4d43d9a5c1d815c4d022da84d710f8d358a",
+        "protocol.json": "720ff5963c9181c0857e8e404ca3fd444802e4870bcf6652d145488a593e59d6",
+        "reference-audit.json": "659da2b2f4a721b92a945955840cd67c53445e0b1c66f62dc23bab7aebdcc2a3",
+        "reference-motion.npz": "612cc71059bee369c2b71ef2c4ec09185c0cbe2dd420e5cdd83e455536220066",
+        "pair-audit.json": "7b1ca35c1bf0080202dd5e1df3714bb565e278ad1993cee32d6d8507722b6d96",
+        "physics.npz": "17a13582e0acf9b4e12f8149cc092983f7236314867fdb7137933e9e7a2f7b96",
+        "reference.mp4": "3b608d017a841bf4bbadb22337f57b522b2e2a4cc47b765271325966e0a812f3",
+        "review.mp4": "be2d749221d7b302a1c8e630295c381f808f8a6fcb253e6580a50158afa23292",
+        "pairs.parquet": "e1e9a74235fabec81a309ce3c33f4830f7c957ddc7f55002466bf4c0867a3ea4"
+      }
+    },
+    {
+      "episode": 23,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 107,
+      "paired_rows": 127,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005730675049436998,
+        "position_max_m": 0.006857781910701464,
+        "joint_p95_rad": 0.021582821355931325,
+        "joint_max_rad": 0.02293000628315922,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "82927d0f2f658b0fd61ef3db50aa158fa4622b36978aec13840f1bfd4df7e6df",
+        "initial_state.npy": "e7f03bafd9320220fcb269592c2dd48b33b29596688141d84b3f24ba5ff3ae56",
+        "initial-snapshot.npz": "0a5a59db4d36a294274c006d703e7bd984507b9362bd37dabacf76337d839e24",
+        "identity.json": "0dd0a42696d7030b37d1e720915fdb57522114ee7b459afee77ad5c38dcbeb15",
+        "protocol.json": "ddbee20cd6fe990ca2fb6f6762be01e9fc80ffa8d8535729ec5aac0f9042d2d4",
+        "reference-audit.json": "c694d1ecc49a95d159610902b9a42eb9e096c6e3bdf863c882ffeb4506df212c",
+        "reference-motion.npz": "cc5e2f27b94609141d56c41eb984be0ac1a5b1e9a58aa4fdaa938dbcf608ebf5",
+        "pair-audit.json": "88818b49ce329c44185d8fe972cfa1c9f24c6605aed846209906918f7cc3cb4c",
+        "physics.npz": "e210decb23d72df53515378eb28d824d19c6eea0de03f5338ed38cefce102930",
+        "reference.mp4": "8e39179ae4586fa912dc4dd478dd9fc2a65434c471a2c6d18fdae81a56e8e563",
+        "review.mp4": "30f8e8c7ccc5877a1087439da7e6848f979e0bef29968acb718dd487eb8ed850",
+        "pairs.parquet": "ca6db1579728d2627802028abf00a75ca5ffe3274a6d19667d8994c190ec0aca"
+      }
+    },
+    {
+      "episode": 24,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 90,
+      "paired_rows": 110,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005760781330588601,
+        "position_max_m": 0.007091474697671983,
+        "joint_p95_rad": 0.019077953962456696,
+        "joint_max_rad": 0.02166264034665355,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "ac55c3c769bbf01e986eff9106bdd8e39dd3161f608a33361378869840ab039b",
+        "initial_state.npy": "d27ee838dfd53786dd8c4594e107b8c2c79ad94788e4d557a141245bf4486b95",
+        "initial-snapshot.npz": "3b940c8f926495b2840c19764532a0afc969697b1d60ef71e9a02a7224255de4",
+        "identity.json": "b2d300c9f258a0226183ebb5a86b1d289a85d9facf93ebb091f2ce2c643586d0",
+        "protocol.json": "304ef36c1f75332ae0b2a9daed2eab292136a1a68e7a57231e8d4bd4df32f849",
+        "reference-audit.json": "8a53126193801a60ac715df1f0e2799acbbf53450b44d6d68d5dc26d525cdcdd",
+        "reference-motion.npz": "170ec8d19e8ef02328dc7281cf4ef21d48ac3dc866d2fb14ae8b9476a2dd8939",
+        "pair-audit.json": "3172d394c46eef2bf85e00f721fdcabea35656d57d7b6451c0585b1e69e29cb5",
+        "physics.npz": "f1a3df586dbb8abdb4b700549c71e035f7bbea582b29daf9dcd7ca9c82cf104d",
+        "reference.mp4": "be3c64e881346a97399f5775645844796f2d0fe47c09c41175f56ef3dc76e480",
+        "review.mp4": "73e17487f67708e1fca7456dcb6235929d40e17070d6b443fdf66bf739c4afbe",
+        "pairs.parquet": "a5485297e02bf842b4fa1f97ccc67d54723854cf680114f8bffe700d7dc56556"
+      }
+    },
+    {
+      "episode": 25,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 103,
+      "paired_rows": 123,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.004764122235282731,
+        "position_max_m": 0.005585427866754411,
+        "joint_p95_rad": 0.0222587726727113,
+        "joint_max_rad": 0.02654450721257584,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "a88d6aa52315495bfe8662494d08ffad188ab2c366ff1a0d9eb950716f03cfb4",
+        "initial_state.npy": "d255f63b1727f3166a373048805ca97088e7e7ca303e49d5988fb1c22f5ad6ea",
+        "initial-snapshot.npz": "dbb75f5bb49ba158199eb32bbe09d5f4ef31148eca5fb95aa9f33092f187edff",
+        "identity.json": "2954f2325f9656221d1c4df24df5e7fd953a9a3f8869fd43c1020e4b338744d8",
+        "protocol.json": "96a64c1731cdd453febfc749bb492efdcd52364f194c70a4f8b075fbe1b21d9c",
+        "reference-audit.json": "1a546459ac66eb8e40dbff8b33187005dd0c93562c75f32f6c45d7c3760a7249",
+        "reference-motion.npz": "1a59b015763efce2d42a4f1ffd2708070f077b0247e597f9cabb4aa9a134fbbd",
+        "pair-audit.json": "7f1e64c9bb2f729c55ab59fc1f237c8c3ddfedcffaf6e00c1249757378ff052d",
+        "physics.npz": "1c2e1eefd1688dfe6ce8a457ea2d18d1f6b3aa996e764a3848f8efe30580911f",
+        "reference.mp4": "45f63e4a8740d5bed8f7dca5ae2ac6e2562fe578b61b3613fa8ce3527b538143",
+        "review.mp4": "c4d2e5bb309daa8e14847f357e62afd87b02cf204151ba301ac34bce69fc33d8",
+        "pairs.parquet": "64f20fe26b21f783a55a6247616a4e67673781f3422cbc7e9448fadf39aa262f"
+      }
+    },
+    {
+      "episode": 26,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 96,
+      "paired_rows": 116,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.004991306771068395,
+        "position_max_m": 0.005660550285406067,
+        "joint_p95_rad": 0.022723981995171227,
+        "joint_max_rad": 0.0252241481065012,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "9bcd294c32b5e262e4a78acd48d3059cffc76233add7708d15547521c96963f4",
+        "initial_state.npy": "44aaefe0dfd5f0d24d28fbc6f8a6122857fb5d8fb50dd8f14ddf1ac06c37823d",
+        "initial-snapshot.npz": "3dd3e5e2d751fb6726391664e360f65a73c826eb737ff28452489f0c4de55055",
+        "identity.json": "abe4e6d10e857ec3171e14575653d06a3de68615b8ec7889a58d876f382a496e",
+        "protocol.json": "b78f18a86e57f4b8ccac2466cb5d69ea47b16d8251cadbe32b7303107768737a",
+        "reference-audit.json": "0797a1998cc2ca4d013b8f1609578e735cb6da4ccbfd0d5a546957c7c9c2d2f6",
+        "reference-motion.npz": "e06450eabdf38d681461cf9baa6cad208b19834199f5761666d8d7c76acedecb",
+        "pair-audit.json": "a8e88c45945e2496bad18ab36b37b792374ec58862aa19957dd854951453ffb0",
+        "physics.npz": "8a1770d89d0035d8009ff8cfddc94b96784624e442f1c8287d59ccabaf57339b",
+        "reference.mp4": "edd4bc7aa50285e17692c6be55896b53baf7dfbec1757920f3de1c84e5836bdd",
+        "review.mp4": "a1155a56f7a638739b29b5d978ce568e45fa886ab0ff5b6cf2db1d85c721a198",
+        "pairs.parquet": "d701eebdfb027ec03b127fb58ba0ec47cd1498b50e1e5022080f70dbe641f50b"
+      }
+    },
+    {
+      "episode": 27,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 87,
+      "paired_rows": 107,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005132935827104658,
+        "position_max_m": 0.005602667359580348,
+        "joint_p95_rad": 0.02341108179250211,
+        "joint_max_rad": 0.025469369011269283,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "9d003e68119738c3ac41347bce2e7095daf633b6893d0ce6496a98bc151b76c6",
+        "initial_state.npy": "26c27de20c653c23bb1ef2f14b833c9e8b995a4708a0e2d25e4aa979d441974b",
+        "initial-snapshot.npz": "315f75d86562a130d31aa677306d9edc9b6f59f2b782ea75193d6fe2ca052840",
+        "identity.json": "ed460f3976150460962357192fe19f157d401dc77458832daba20f765c74698a",
+        "protocol.json": "a0da24d29e856a199d91f66a434b2f9a189f90e4aafeca1ed25c6cf68fb1b946",
+        "reference-audit.json": "e4eec6ea508cdd95207e2971a9636afc676eaf6ed638585ba9ebb15e4d2a0614",
+        "reference-motion.npz": "7cebd11fa12983d0950bf9d9e67bc8a1799865f9f5a20d0a2177dd7f0b8af79e",
+        "pair-audit.json": "a3605e79cd6c89dae09c6a60a37afb25f4c63e6152d6bcd4052047323b53451c",
+        "physics.npz": "d3f15650b405a3e6cfe7f6af83593a46ac37bde4435ea32178f89bf7c17ae256",
+        "reference.mp4": "3861a8cc316d231c0a5e0552f349cdbed49bf172051c1eea4074459f9e207f1a",
+        "review.mp4": "a40454c470226daab7b398db701904e90bdf91ce7e50687cb1d42957d3b5bd22",
+        "pairs.parquet": "684dfb7a064f24331e12d05f23b3f153cb39d7b322b4f6e9a869d25eecaa1a3e"
+      }
+    },
+    {
+      "episode": 28,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 87,
+      "paired_rows": 107,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.004809842616223552,
+        "position_max_m": 0.005145875903588486,
+        "joint_p95_rad": 0.021108123513428393,
+        "joint_max_rad": 0.02568881985115956,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "65e52de88d338b701234480e11353e9c78870707a4eeb1ece81f18ece063219a",
+        "initial_state.npy": "8b7a785c1738d76f0976af3787b20f8c6b98339994ea9f276f8b953d063d8e9f",
+        "initial-snapshot.npz": "eb6fade9d553073756cffc38b40e9cb8b2fea3d1e4a2479d8aa025098193575b",
+        "identity.json": "fa7e9a52db46c4c2e4a96ddfc3a3500822d4ff12bd933463203be863d0f55ba7",
+        "protocol.json": "91534033b16005f3d2c1191fdc7a1838997de2ba970b99795aa7720072a6b49d",
+        "reference-audit.json": "b003b136aa7bec44f947b535f85c707289712618cd38ba47416d68d9ef8dbef2",
+        "reference-motion.npz": "8596deb63be40b6ff2c9a1a849be2773aad5eeca0ce3b89cff036dd0b6716e7e",
+        "pair-audit.json": "7a564dcce33eb6bdc1e6604fb2c1a5d5f4539bd4d01ad9239c9e183b12f9c568",
+        "physics.npz": "70994692bd7fcdb569d3e13a35b97b864a38713469b05177865be55c2f3f39bb",
+        "reference.mp4": "3eb7403a82d1f0ece0ece5141b48825f72ae176c83115a17228542551ca08f55",
+        "review.mp4": "40c96ba9637c52d3236b4d23cab6b96a5a450307941a0014bb571b1aaa68a913",
+        "pairs.parquet": "0294667f121ed71422dd86efdc0b5956ec9555407ef78b2c91bdcfc84464fd33"
+      }
+    },
+    {
+      "episode": 29,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 103,
+      "paired_rows": 123,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.00553541040671303,
+        "position_max_m": 0.006231421178619292,
+        "joint_p95_rad": 0.022349836088044018,
+        "joint_max_rad": 0.025397340928123402,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "9fca2b50c7702b2d8ae80d1f50cb0973424780f9d99c00efe1b9e692f0c56efc",
+        "initial_state.npy": "eb660e691226fec4e838d259e169ee420e7fa0579213fefac0b8ced8e0abf3f1",
+        "initial-snapshot.npz": "75232ea299e0081d964777c1512b41cb47f4cde552ebb6183ceadc95ce27adec",
+        "identity.json": "0f00674caee953b0a90d3094ca32334751f6fe4dceacc52b6b4f000a6373796d",
+        "protocol.json": "920c890acd1d43d5368dd6ca27611700d7b789cf8e5eb90a390c2e012b4664ad",
+        "reference-audit.json": "84049a66d7d6966a3268abf7817d2a5f427c58ec1782bf6067e8b88a317816b8",
+        "reference-motion.npz": "8f75e60b0e9f920b7f1952637bc83e0bea5ac49dfb4cc0e6d4e74a11188ac123",
+        "pair-audit.json": "ce10ba943ef88a37f49da478d43d7703c10ae780458de789d2e79fa5af6c3557",
+        "physics.npz": "a34196fd03efb01ee4ac31ebfb9a2465aed7e7b8dbb121fda95f58eefe332b48",
+        "reference.mp4": "feb0297718460c36b397c26152504bac85f266c6245a0ab2f5d6b4910e8bed6a",
+        "review.mp4": "533c43f536c615ad2c1457bb2fbf964f1d4d50ba95c7d3711f1a0ecdfd9b6199",
+        "pairs.parquet": "f27247bc5287456d925f1aa476a82c2d01ec838168c6c7190569fc394f1b66bd"
+      }
+    },
+    {
+      "episode": 30,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 103,
+      "paired_rows": 123,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.004206608444807394,
+        "position_max_m": 0.00518747872782032,
+        "joint_p95_rad": 0.019599765639109857,
+        "joint_max_rad": 0.024057544016377053,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "3bfd5cbecff3b624813bbc99ebb2b253b841ae6821aecce93da03e71acfd19a4",
+        "initial_state.npy": "8e15357daedd05834e6009d11f843cf78a1609074e2636c40fb043a022154bf5",
+        "initial-snapshot.npz": "244c7fa7cc7cb738a9df0addd4f1b569d7f579f4884a25b8fbf34557c6969a20",
+        "identity.json": "275d182d5db5b9e207335e6f24b2b28744db7a914274d978fbd7e8586dac3ba3",
+        "protocol.json": "74d9eda2880d366b2eff7fc72ebb2ce81c7eeb4ba3b9c5826d926b2f5c0357b6",
+        "reference-audit.json": "16f36725c42b3704a7f1d5ffafd619467fdf168f5442b6fa24e823fb6e26a824",
+        "reference-motion.npz": "6e30e90ca947670a34b588c0cf03c1cea2c4763e05f9577c4d0bba9d4674c5e4",
+        "pair-audit.json": "fbbea96f195a8b02057826468f35166406037ba06546af24f10dcb25c95c63e7",
+        "physics.npz": "a6bcc033b65a33e9cbac3d0c4b1042b7759554220acf73641b61efb8c43b6bc7",
+        "reference.mp4": "5b26656073576f722f278b3ec60441acdb832d89fa3f5cc926db75c3e6fe94f8",
+        "review.mp4": "b0bf86e02721d7ef101b2b8883e7010b10c9973a3b780c8ec518554a2bee9473",
+        "pairs.parquet": "cb13f595b27d24143c063c2db99388e898c52bf693535857bf320a8336dc3c2e"
+      }
+    },
+    {
+      "episode": 31,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 97,
+      "paired_rows": 117,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005438314602507188,
+        "position_max_m": 0.007586689937671504,
+        "joint_p95_rad": 0.02206251164611856,
+        "joint_max_rad": 0.02479515283799638,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "041ed3d27d1bf42a13975c677663bfd81d585e7bee94b868b4c0c8789c5d76d3",
+        "initial_state.npy": "85c0a31c2bc588a680f79d5d802090b83ffd97629f8e2b25b62bde350189f673",
+        "initial-snapshot.npz": "4571ef0be9c8ec1bc49f8fb91c68ddeb6ea473853026b692495baee6744d31fb",
+        "identity.json": "c73a52f989c71bd5b540d1fb712a4b7a9c07e09e0f799f09817bbae7f441c4da",
+        "protocol.json": "35b395bd3c5c090bf854130823c73f0846268ae60a88f1da640867ab3c80827b",
+        "reference-audit.json": "2657d9c06daed4fbb842f1477a1914d02f7b0269acba17a0a0695b1da45e1353",
+        "reference-motion.npz": "29802f1feebc4adbe2d849760c70ff2465f7954affd49518abd3d6dd5ae04c7e",
+        "pair-audit.json": "d6d267633977247fbe66a2c13842638a36b963645843930d875d73c6d4026685",
+        "physics.npz": "ebf74266dfd66c6ad71e6ad151053b9a994965fbd1a2f65e3b37de5b6a3fafe0",
+        "reference.mp4": "8e8c8253b31e3a888efc3d4cab95746df66e1c7b8af7bce5b1b6a724b7900f21",
+        "review.mp4": "9180c42b13610b78eb2fbd51495001c9a8dce9dfde61956e49b1dc515168859b",
+        "pairs.parquet": "3c1d09ae7fbcdd6c0065505a8065bec88492a8d564c98e7b72e398b6b4f91567"
+      }
+    },
+    {
+      "episode": 32,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 92,
+      "paired_rows": 112,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005227866505338203,
+        "position_max_m": 0.0054848481117036755,
+        "joint_p95_rad": 0.01664650427146663,
+        "joint_max_rad": 0.017352443584470967,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "ac11841b98c567249d090eb000fc23f452c9994835afb180112204e58e694bbf",
+        "initial_state.npy": "216722d59c2401a13389032a1a03ff986528119b7dc226270a378fff25ad0936",
+        "initial-snapshot.npz": "c988b6ffda7cf6d3bcea00b5a518c095e90f6723092818bf4a0b2ec19ef1fd01",
+        "identity.json": "71a414e0ad899e887d80875b12db254c6ca0003ed9cb89ff7a99b20cad24e87e",
+        "protocol.json": "0a9b3a4a64cc26dc63da1342f7fbb5328259a8feb29f7c7935e161d08e085dbe",
+        "reference-audit.json": "2349061ee9f83fb56f76c0d7f80fe4857c3658e31aceecfc27e9bf8d70aaba6c",
+        "reference-motion.npz": "309346f777cb938a246073f5821317fc0dba57272547eaab69a3513f684fb081",
+        "pair-audit.json": "525f231a504f0359012a74177c2af2960350942223544484ba5157cdddb7ecb5",
+        "physics.npz": "47ff2b56509b8982477b13ef731a6c074c93c3de37c4f16f4c0e72417dbfed49",
+        "reference.mp4": "d8d40a75bebc886c1bea120a81843ddde0e65fb79760c3e9c157b4dadf598f97",
+        "review.mp4": "5115be5cabb5ce893cb526fc6b20f4cbd3b181b93f91c53acc8e628408dde579",
+        "pairs.parquet": "ec3a9255151e42c4050d75fd9848230423abe28c92a3164be5db5f5111836507"
+      }
+    },
+    {
+      "episode": 33,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 86,
+      "paired_rows": 106,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005126073762129443,
+        "position_max_m": 0.005674150948544492,
+        "joint_p95_rad": 0.02328885359986471,
+        "joint_max_rad": 0.02569086486609118,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "5473bdecc1f68541a340bcf1610f8e120851dc54997853bb212467c9453e854b",
+        "initial_state.npy": "ae49024c70abced23424894668a97e98c525355b7a6f6e8b96d5f65efbe03234",
+        "initial-snapshot.npz": "1a1665ee44ccde537d24bd74134eaa790ed2161f116508cebe7b7e23aac5a4c9",
+        "identity.json": "c8eeaaa21ce8ec26dca48afd8d9f7583c2cc232fd4d63a39b79efdfdda0fc0e4",
+        "protocol.json": "673d3b5825f8138ee38a7589b55ef2d5061fe60708f2bbe270e7446cce000c8a",
+        "reference-audit.json": "d3a0964ec7e0c49630f82de87f0770f33484f537767885f003fa068045af95ef",
+        "reference-motion.npz": "3e23299fc6a325325ca654c44f30c599cfc476e67de3cf7492d8fa61d30b75b5",
+        "pair-audit.json": "230345b2ca8c430d4e71a821916032b065016efd169bd152f5e9aa14bd9249a1",
+        "physics.npz": "84251c9bfac739146310afa95d2ba5ec24f18ee849b4a117b189d1acd3e7cb2a",
+        "reference.mp4": "f17a2ab4525e56272d6aae7d878d775ed6dc4b0ccd35bf70b74326d522f50f52",
+        "review.mp4": "43f152050771f1cecc0bbca5be9469ce92c7679e04da2b67a29287b8e83e05d6",
+        "pairs.parquet": "8a43d82a04623e723a8b0c55ce9a2c809ea19a73bd2a88198b200424f68d0c86"
+      }
+    },
+    {
+      "episode": 34,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 92,
+      "paired_rows": 112,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.004927527190841902,
+        "position_max_m": 0.00545084622736036,
+        "joint_p95_rad": 0.021812807359927158,
+        "joint_max_rad": 0.023935124631594862,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "7ebec646489e4b5e093ade9c2401286408d3f59249ce4d294ed493a5d8ed2789",
+        "initial_state.npy": "acc69f477fa1fc869577d93006cc6a4bf9941b6756c8e5011dfb6d38e6450857",
+        "initial-snapshot.npz": "9229e6f1f6b07c6aefa61844acf6455fc7844e2ac001c1ba617f621edfc06d25",
+        "identity.json": "910880db15b7a3db8d6b22c412e53fd794521de91599ca4e8e3e2780ca1cd410",
+        "protocol.json": "41076ea76f04bf2ba0cd31b0915cfcb4d2c0065f41bedefe111b79a8c8cf3f09",
+        "reference-audit.json": "cbe01c91ee2e2186c59cf958dadc7c04320e242451edc0b3e699059a2acd339c",
+        "reference-motion.npz": "9bb218087e96934c1e6b64361e719a7167ab85b1b97fd6f8e9f5358e0694bf5c",
+        "pair-audit.json": "4557f33f61ac161ca112e2ac838e2ed3dafe0fb85fb930fad1918e3cef42e59c",
+        "physics.npz": "74d117bcfe603b078c37c4aae72ba8cf09d2d163aee500d05917e5295cea4829",
+        "reference.mp4": "b46d54604472fa4e2651fa7fdca0731a7ec3b239efe7bb9059ea838a395c116e",
+        "review.mp4": "f8601f7654ff663dcff0ab13accc7c82e301e966997c1a880bb62c1ba88b292e",
+        "pairs.parquet": "d584125df1bd5ee4e60b32ce2ea1f5d92e285240badba8af249e81ce6494bb3c"
+      }
+    },
+    {
+      "episode": 35,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 94,
+      "paired_rows": 114,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.007083888633052676,
+        "position_max_m": 0.011898703279335803,
+        "joint_p95_rad": 0.01917014678361595,
+        "joint_max_rad": 0.023079155980988864,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "ac508829adc6eb744f514864debdafd9484c8e7a3bb6048f3c43b4f3fd27e446",
+        "initial_state.npy": "2fcef0f993cca09f688ce2e1efbdfcc659329062d97d9a8f8466a13f0eccc5b8",
+        "initial-snapshot.npz": "65c587837ae3a5d6d3eca0eff9cddcad6202d5da003251ed6b450a3911e3f7af",
+        "identity.json": "aafab2107e39222becb90a0b8a37d14e925a1709e251671602c4cf98bf03a6fd",
+        "protocol.json": "b269be89cecfd3eec31a1803c6cd6f17b37dc112eaca1f13ae3e5fc36715bbbd",
+        "reference-audit.json": "d1fda8c6b4151c5d0b2a00e0e6d82573aac2736879918603d1513a4ce99400a3",
+        "reference-motion.npz": "07a0be494ac33a9c451cf7d9e9a796eecf8bd3416fa98b9487fb705cb3e21816",
+        "pair-audit.json": "b35615dc7f1279796195ed0b5c8d4993c06ef30994a9070c7ad17749d9063a7f",
+        "physics.npz": "e901f77600f768f1cdb2d79c5853aebc799865a4806daf10ad2f3a176541f13b",
+        "reference.mp4": "0ea10e14abb8188b0e854caf80c844e7315807bc06cd404ccc1d2392479bfb21",
+        "review.mp4": "6648618489258790d5ae4ec4f401db3fc7f5937799553fbdbb152b7a9952e148",
+        "pairs.parquet": "61bf0015d6f528b390aaf21d71b9a200ea5cb3e701f2257554b0e142e9d478e7"
+      }
+    },
+    {
+      "episode": 36,
+      "split": "train",
+      "passed": false,
+      "motion_rows": 79,
+      "paired_rows": 99,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": false,
+        "finite_physics": true,
+        "no_clipped_joint_targets": false,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.00599260615420229,
+        "position_max_m": 0.012627582454459269,
+        "joint_p95_rad": 0.03083803967511388,
+        "joint_max_rad": 0.034684912258342915,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "9cc83a246f9fee5a9adbb5bb69ab47b08d8e4658c9f50fd71a2afcd4707d8787",
+        "initial_state.npy": "70921d610325ff8c55e449865161d6425de03cbb3c9794a6ffea9c1ca3d647d8",
+        "initial-snapshot.npz": "09587152cb060a8df3bbfee1f5a78cfca948bd6b2f3f6045933d58260cd20e34",
+        "identity.json": "4d63c9bf3a3cdeb90e0ba7340f674071cb68588526ed6ab0a864589ffb7688a9",
+        "protocol.json": "6b5a3fe6219f2bbf4b1d5f9c9616207910d91850bffba8aa8e1815372437c8c5",
+        "reference-audit.json": "77fcf84e95a4c388e324d8f6f7d020736de2b7283420438e5cad195fd0bcf0e4",
+        "reference-motion.npz": "ff65942f67dffc50edf0a08f0d227f8f7201c21b3efee12df693c9ad8511e4fd",
+        "pair-audit.json": "ae1aca9207f70f1a52f7ceff7f1dda27dd10176ff3934cbf5e9cd9b7d9741dec",
+        "physics.npz": "b08daefc8e6affc07ecfa8504f78d9833a8f510e9f5378955d7b2eddc891ff04",
+        "reference.mp4": "0cbd6d0405a97327915e39d2b548ad0342dd5f66bbef82a666d0328e925e5429",
+        "review.mp4": "8afa145fa6063635c9990a880d6909305c1bf08fc0eeaf286ab64a87a679f56f"
+      }
+    },
+    {
+      "episode": 37,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 96,
+      "paired_rows": 116,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005111787420314772,
+        "position_max_m": 0.00564022026291269,
+        "joint_p95_rad": 0.021725760445263143,
+        "joint_max_rad": 0.023759226493427654,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "89f34cc60379c65ca576e06f9045e8377fefb78dd7fd093a686dbb4b824fa460",
+        "initial_state.npy": "7a65c1a38af69a6b24491972af201ff38f80ef95e9def362263d086e995676b1",
+        "initial-snapshot.npz": "2d4b37821078913c27ae8a885d983099ddfea2036a4d1bddb7e63ef4f144ffab",
+        "identity.json": "b2d208bda5b7a324817d814d8f0ee91168116f00498120c041581e722b5c252a",
+        "protocol.json": "c41f818374743bb6b9c1716f954bb9cf650f25a9bd11441e6f47b6b88d407510",
+        "reference-audit.json": "6c346989fbdb362821148925a9431551e6127282aca73ae7e4abe76161db5969",
+        "reference-motion.npz": "401782d5abad9b2d82b6a011f6db3bd77805684f8405e49ff6d6c2308babfefa",
+        "pair-audit.json": "40ce1efefbe5d5a79116cf28c50d92788c113e1f95bddccb6f8c957ef8dea262",
+        "physics.npz": "7a9a55694b76792ba873e759c2f7aacddfc590dbb66bcc7cf3bc3dcc1e91432c",
+        "reference.mp4": "d52b7332b6918eedcb7c8eb5c7cbaa1d9b03bc3763fdaf8f27d21d8f690482eb",
+        "review.mp4": "ce71078885a48c3621a77b01a6f3df11c1d5a29992d8ac0cd63fafe86fb0fed1",
+        "pairs.parquet": "6a92f19c5981db28b8c5d06c7bc941aa00c86d10eab7fdf400e9e4047209be8a"
+      }
+    },
+    {
+      "episode": 38,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 106,
+      "paired_rows": 126,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005283299280324425,
+        "position_max_m": 0.006095932018571462,
+        "joint_p95_rad": 0.02220822338518985,
+        "joint_max_rad": 0.02493817457069425,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "3f7fe6f88088bd2c2a0232e6d6510b9fe186d4bc7118a5f26dc4b875eaa8d183",
+        "initial_state.npy": "c5731361d65d8cb648ee398cc416aaff4e9ff8d51e2c828a949c83cfd31e1b29",
+        "initial-snapshot.npz": "0b6a1f400b5e91e9cad94e8207405a08624c658bdcbaffdf6be465878ff54c85",
+        "identity.json": "a4eadce3f3c4d69ccb5a3ba066c1704027b70e4c23a3b4f21c7e2c78028a99ec",
+        "protocol.json": "7f7f17a72f435d76c5c3d7aa83079ed52cf3f873e8509b5f48cf4810c25f2cb2",
+        "reference-audit.json": "891359500b4f08b8fe49bccc82d6383c6a6192aa1cdb83e43ca3bde45d4b3af2",
+        "reference-motion.npz": "086a8443b5d6e9c1903e3150081e91c838b5cd5d14522f630505d91cfad704cd",
+        "pair-audit.json": "3cbf074f036adeafc07b640a9318333060a8c6452a24f7c70db6eb5361b91f91",
+        "physics.npz": "50d143ce56e0266d15980d08f6c4922152e1a8129fef00f68b52560d160bb3a0",
+        "reference.mp4": "40907cd4f733873b7aa06cf0035cb421bd6ecc96a4a8785f8d91f2c1417bbe0a",
+        "review.mp4": "a17e9ccc2eb2b609ea1d80f1ef14ddfafc265260d81e2bf6c5b19f859f8eaa8e",
+        "pairs.parquet": "c3f1188f3133143fe56450cd209e59050e17e61fe201a7a76df734d46f88ca00"
+      }
+    },
+    {
+      "episode": 39,
+      "split": "train",
+      "passed": true,
+      "motion_rows": 83,
+      "paired_rows": 103,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005181374355685306,
+        "position_max_m": 0.005571973880541339,
+        "joint_p95_rad": 0.020974615735685678,
+        "joint_max_rad": 0.024399765329907952,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "7cbfded53f600b27f18232cf15dbd8357d2a8a6b9ab1e96525046433ef254fe1",
+        "initial_state.npy": "de3512c92ff157b3ae5c5bcd3583b707796cfa2a0c97ac47bdc2d8d5c11d4661",
+        "initial-snapshot.npz": "f2faa65c31a3ee044cd8e2c339b0e5ef3669e4302f797da4a4419d34fce31a97",
+        "identity.json": "54e9dc1e3305a8593431c7af101ba857c9038b82948f4b91a2021d85f1d06ffa",
+        "protocol.json": "159d079dde482db6af1bdd6dfa91800615a30f4d22a5c0c5986c5501a0da235b",
+        "reference-audit.json": "c886af38bb6b836d74dba12168b1b56a5db3cbd243f46cc042f5b3bcb1e67cf3",
+        "reference-motion.npz": "34e46adf8760d52f9fae81baf0ac8e20bf6c093e395ac4d5c6b292864a9d269e",
+        "pair-audit.json": "49cea798c1ea3377b952957cd418bdae96d74826a9d6ebb699b11257a2ba2439",
+        "physics.npz": "81a5681c1ed5ec60f405f1df7d34b43fd571b9707b2b674f3c279bb78676844e",
+        "reference.mp4": "d39dd1c241bc2ddb9f0943c4c584ba40339e3e06ddd487ee023733969793c368",
+        "review.mp4": "820b4c4922ef76e98262f0f98e4eac42327fa9ef90e7fc94ceb87f28c411bb64",
+        "pairs.parquet": "37eabc899af28e9c14eeeefd89380d729b00faf616ab09b5f3e7113b1410db4f"
+      }
+    },
+    {
+      "episode": 40,
+      "split": "holdout",
+      "passed": true,
+      "motion_rows": 90,
+      "paired_rows": 110,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.015478619262345153,
+        "position_max_m": 0.017091298084649067,
+        "joint_p95_rad": 0.024027136690853768,
+        "joint_max_rad": 0.02940703222330665,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "eb2262106597793fec852472e9e7f7d2486d9dcb40439bbb8611eb230d9820e6",
+        "initial_state.npy": "8cc19ab0bc486c5d509d4dfa2b57ba0dafab9547d988403985627ed2c573e7c6",
+        "initial-snapshot.npz": "bf1c5e31b7a6f1f09e01738a870799dfc232a4e3f7e7c7daeba74c4af24bde8a",
+        "identity.json": "e01496a3d1c01831ecf5b314543c7ef09896ede56a5b3e8426ce2cfbfdeca37a",
+        "protocol.json": "0819254e5521404a6f1da570956292619656ad3a36f7e0a067a86f477cce68a6",
+        "reference-audit.json": "c3a5e6310002a195d7a03ebacc170988e7124ed4b9d3972ae332775030e40882",
+        "reference-motion.npz": "d6d62a5c5e8a5e8c15d4176d4759950d8627b0df16336d052c004cfcc84e1e5b",
+        "pair-audit.json": "cf22615ffda4307f81c9a99feae30382594a623d44fa051c3457e19499d5384b",
+        "physics.npz": "30b2fa7c60d8354032b47bea968c4e3cf0976105d5f09414be9928aaf74cc206",
+        "reference.mp4": "6ce0a209c628bf9e582473d031c14f364b254c024103712fd674fae6e8868ee3",
+        "review.mp4": "ebfc1172ff5f273309886a5d876b55df7f536cf48ea1f3e02633debda8207920",
+        "pairs.parquet": "984477d346e6280e4a8ee64ece338a8f1fe2337ab98fca321a98c149aa82064b"
+      }
+    },
+    {
+      "episode": 41,
+      "split": "holdout",
+      "passed": true,
+      "motion_rows": 90,
+      "paired_rows": 110,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.004919500216057158,
+        "position_max_m": 0.0051187507907213495,
+        "joint_p95_rad": 0.019414161438196444,
+        "joint_max_rad": 0.020939287123702632,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "33bf1c9fc645f57bb647759549dc7c21d6a3168bb42b07c4c57c8d340cfddab1",
+        "initial_state.npy": "1c1eb6939e527b87f3ed36e41fa501068e3f7d1252b0987b7b1165d289196bff",
+        "initial-snapshot.npz": "05b9fd891d3a6998431634fd1f3d3c3b4f8d5d695b2b17686a23fa7320244f61",
+        "identity.json": "49606553630cc56e58c06e1a4f93f14562eaacb8a4a6710197534139f0829031",
+        "protocol.json": "89c1a5a38b4b6ccc348dbc565c07f89bf1897d8847aa4986611cf38d71223f01",
+        "reference-audit.json": "8b29b8ae4cc79faafbd5aeb3c040bf1de192324af475d8d1fa23d6659cbc8b78",
+        "reference-motion.npz": "90bf76191a9659ce5477b0a064aba895c24e6be74eae6f3de6192ffd23cd2a3a",
+        "pair-audit.json": "004ca68c6d073da43391bf6a514fdd356d7dbe2c1f5cc10daee2af245ebfdccf",
+        "physics.npz": "20e232c0af21945a91bc964af4d2ae2d9037872cb280421398ea5556690a2de5",
+        "reference.mp4": "d31d8839e578069a030f04136c6a289ea26e1034804f3d6fdb4829ae4c65ca99",
+        "review.mp4": "8c0c878d0377a8542a73637ccd8439b422c26612d2015b2fbd2e9f12ba76bb88",
+        "pairs.parquet": "15463fd8ff06555c916a980cda23e272380fd1251fb6c49a67f77339d1d54531"
+      }
+    },
+    {
+      "episode": 42,
+      "split": "holdout",
+      "passed": true,
+      "motion_rows": 103,
+      "paired_rows": 123,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005504216035360011,
+        "position_max_m": 0.005756000800940416,
+        "joint_p95_rad": 0.019857711507878358,
+        "joint_max_rad": 0.02153718811752503,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "ffac8ae8d6827fb0caca30482c2be391097310113d5165edb611fc666e1b10ae",
+        "initial_state.npy": "9193bc867396dab89b3e4d004010f0c372a8c77e520aa2e147d1bd3e3914c790",
+        "initial-snapshot.npz": "6748e1b3ed09f23d82f97bb011a0be1ede0e29269c044c78fdc7adb28dbe86d8",
+        "identity.json": "b93b7c51a2f799ba4d12f198d0b539fb7f2f711834ce3ed4d3a1c1186274c960",
+        "protocol.json": "59adfac3f569c40efcb094f77acfec3006f51f0a1ace2ac9768399fbc80ef1ae",
+        "reference-audit.json": "443887fefc39f6d30e25ddde3eed7f4814444c0f8066f44e6f5bd7bb75a89da5",
+        "reference-motion.npz": "57647e353423679d1a3f51596f89e403775907b36dedb2306cddcba5b4ba0064",
+        "pair-audit.json": "d3b6ea3f818e8797bdb91af205c8ec84f3018e23239cf3bdfe8169fc77468e0f",
+        "physics.npz": "7d752494b7a96381e4e7ced5ac20b90b5fd3db9db6869112579da0685d58dccf",
+        "reference.mp4": "d0747118c39158a35554bfc051891dd410ae009fc3979cd5dea0d593d6e5819e",
+        "review.mp4": "bb3afb6539090a44edc58d59933edd4ab29a9255738e900ac31a6c577a870f3e",
+        "pairs.parquet": "965b28f06e8e8d9362035c2ca9f1328a6f67ac6b4a98c0e5ab84bc511b92b407"
+      }
+    },
+    {
+      "episode": 43,
+      "split": "holdout",
+      "passed": true,
+      "motion_rows": 126,
+      "paired_rows": 146,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.004691995856870963,
+        "position_max_m": 0.005350316424099952,
+        "joint_p95_rad": 0.019013116940873154,
+        "joint_max_rad": 0.02067966293872825,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "b1866b3681ff986d1775f5ca3b535ec6969d4516f71aadc6ed60c5a41968eef1",
+        "initial_state.npy": "7cb4e068bf80b256965b5735be9824884e21a0f627f94a6694a504b2277f3250",
+        "initial-snapshot.npz": "87d4d3541c616dcefe0c23c723a8115f22beed90f4d3e79405c0246659eb4eb7",
+        "identity.json": "1f78ff53e7e9d053d449eacb12e1b2fc24c71007276ceb536ec41552e4ba1db7",
+        "protocol.json": "a87784c96ed58bf0c6cbf23a1234dbb23c0b690543312410539ab561274df439",
+        "reference-audit.json": "798d5d9568af1e4635b058c9d7f066b6290935ababd1628184cc44dfde6fb955",
+        "reference-motion.npz": "f9e9fd38d196e841afe19bd0558d6c8b41bd9b1fe3015480f136760823ec8a92",
+        "pair-audit.json": "ab75ce504c8b26c4a3abeb2622ad7ca227b11281d7f4a1490baa7fbaa7e07984",
+        "physics.npz": "250ce17df42c0c64a1f46ca03be3d1aeee7483d6466f3974ec03ac5a5a4bf039",
+        "reference.mp4": "2396824b60e683b86f1c80ba4d3efd963b670d047b25832889d898abb01f3d48",
+        "review.mp4": "e33fbc2cf8326adcbc9f9944229988fa04e143c713f4a20edd09ba393c221fae",
+        "pairs.parquet": "7ebace2aabb9f9b84ff55322cda36cbd2eb1bbe4de595105a9666024735cc772"
+      }
+    },
+    {
+      "episode": 44,
+      "split": "holdout",
+      "passed": true,
+      "motion_rows": 89,
+      "paired_rows": 109,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.00556294270887635,
+        "position_max_m": 0.006296259184529676,
+        "joint_p95_rad": 0.019013687324969906,
+        "joint_max_rad": 0.022627275509099265,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "482835b36b114ed19c696e72751ca4e8313751cef206c59aa91028b6a86cde4e",
+        "initial_state.npy": "3af575e0347e985f14155debccc5e700614efa916afe9f3e61fe74309ce464c4",
+        "initial-snapshot.npz": "5433330af94e8ec777f1b340cbcecd42355e8eb35ffbb91d5a293f62fa423eba",
+        "identity.json": "9a3963b9981cc4c0aa8b5a04d322b6bdf73cc1f43a323a049d10ae2e39e9bec1",
+        "protocol.json": "b52365aa6ba8bed9a8f5b4914c161eb4dc7ab33ed011c0cedfb21fedeeff9d57",
+        "reference-audit.json": "f54bbb0a1ba8d2050fcaf0bf2bbfd5fc772d64bef41da7edcca0749da6061197",
+        "reference-motion.npz": "f63a7ec736b9087ddb9aa4e56e0336b5e9eb6dfec90fad23721ebcb5148d7325",
+        "pair-audit.json": "3f9465e71dfb02397a5ebe93e79ca871c8a70395e79f7bf99fbc5985d69dbdbe",
+        "physics.npz": "e8b2c141d658dba180d930f550e58bf7d0bd266403dc17b1170cf94fa9342604",
+        "reference.mp4": "6cedb2c98437f6b993c3681ffca75b94c5e00f685000327c9a92f4e5b46c66ae",
+        "review.mp4": "5d92913074da59587f48c3537ff28bfc540906bfedd42b0f7db2c09ef32b3295",
+        "pairs.parquet": "2cdb62e57a4214cff06ff55cba45ae59a2c732c5ed427583929112dae64450ae"
+      }
+    },
+    {
+      "episode": 45,
+      "split": "holdout",
+      "passed": true,
+      "motion_rows": 109,
+      "paired_rows": 129,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005596507401505822,
+        "position_max_m": 0.007648750132277561,
+        "joint_p95_rad": 0.023106074497088076,
+        "joint_max_rad": 0.026511860556643008,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "a5d456d7a909a4c677ffcd5fe8b147dfbeaf637cd13608dfe73888c28418e4c5",
+        "initial_state.npy": "a0c6ed149a4909f045f4be66f4759f3f8b78d458b9c17b35f6b5719d5b6feefc",
+        "initial-snapshot.npz": "f545f441337cba97ebc7fda1fee0f13865193dbef007dd5da69a791b189c9491",
+        "identity.json": "29c69be08a9745bbc4caea267a0c4543007bb54d77d20261531fc95264fc6b77",
+        "protocol.json": "8575055f924c000a03981a4b7e6ee473422db119a7d2575fb15577f9b5c5cfed",
+        "reference-audit.json": "22aedb1c6caeee78f49159c9bae3be88c670b11a2a6200b0957dc29296d22dbf",
+        "reference-motion.npz": "800a468a0c11fb413cee9c47e7c754a8d78261cf3b89fbc60ff600b3be8b8532",
+        "pair-audit.json": "10bc954ef6ed4d67c9b19ca434d8f52f380c03fc0b05e57247f517814284e131",
+        "physics.npz": "a7642cad2a701e803a1e60bfe38bc39c50c5ddef4bce380c775ed0f14b708396",
+        "reference.mp4": "90e225e5a8cd0754034c01ef0d60d5a3121d98d995ed1f69aedf2a97a7ee1f98",
+        "review.mp4": "771132813cbf44f3b6fd33b1714ba599eb5cb88784f37426c7b6a3891d5f8d40",
+        "pairs.parquet": "cba3ac7ad1abc994cf37f81be866087b254756aa44f48aeb6168eefba94b7b11"
+      }
+    },
+    {
+      "episode": 46,
+      "split": "holdout",
+      "passed": true,
+      "motion_rows": 79,
+      "paired_rows": 99,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.0049935907354524516,
+        "position_max_m": 0.005247891343924404,
+        "joint_p95_rad": 0.022331589521162605,
+        "joint_max_rad": 0.024518288610246186,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "92360842e54b1f72bc66092d99d79faaa849722afc07946fb01cfb9022f8dc3a",
+        "initial_state.npy": "c7497f654668b4262e637a73f19dc958e6f022f7bbe50688f76836eef422ad42",
+        "initial-snapshot.npz": "c13aa7db8838ccab9c2684a704bda2777cc8213ec9681aa44f5ede57a8b23353",
+        "identity.json": "6cc27d61cb23085624754ca557a5ea74aa8718ac0db96520391f4ee562e7329c",
+        "protocol.json": "dfa9a4b99283a9a8c6d90b2bf07ed34018227cb2fb11002aea4768d308a2699b",
+        "reference-audit.json": "7dcc9f5ec8c96bac42c3fd822ae46e599957d6d72d497cb27feb0184802410a4",
+        "reference-motion.npz": "0b84e27e3b868eaa2dcd4c239cfe691922be9e2e1c0e3d062a7dc869681b4827",
+        "pair-audit.json": "ebd527e0ea4bbfe888bfa213523bd204ab4c78147345d77566b240a705ace5b3",
+        "physics.npz": "2efa07c6d8aab85b22ebbec0f10d6c43c166e525c28d47a5eb1e90bfa94175f8",
+        "reference.mp4": "50f6b36b694cd9849c83c5ff0c6996063d1df4c587829fefa329a82b2e90694f",
+        "review.mp4": "952dc698cb35de9e44ba32bf0240d6f6c55b003d3efb1147084b868acdc455e6",
+        "pairs.parquet": "937f3fe8ec7f175276e4644b10a61cd327719a2d151f6be501f5cf7408c1d2dc"
+      }
+    },
+    {
+      "episode": 47,
+      "split": "holdout",
+      "passed": true,
+      "motion_rows": 93,
+      "paired_rows": 113,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.00624595034859894,
+        "position_max_m": 0.008772558698886785,
+        "joint_p95_rad": 0.019621470268251996,
+        "joint_max_rad": 0.02232905979453581,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "916ffa108c1dcbf3975c200b01cbd10f4ff9ccbf007b637deaf31318338bc2aa",
+        "initial_state.npy": "7ea816df3889470ca1c39dab495624bac7eb6151bef9ea2dc805af54fa86331e",
+        "initial-snapshot.npz": "fc0dcb4a32a830951685d426a10aac78f3b71a64d1fab7f34b0adda9c5d6fb7c",
+        "identity.json": "1d239a4704f25488b321c7d5e11d0c3ab0767c5230ed79dc7a33527c6e198dbe",
+        "protocol.json": "aa2173c8c760ca7f4be96c193f12b008fe99fb4d10645cb24ddad66db9c51877",
+        "reference-audit.json": "5521117f0132cc0b58e291959ef636d2b7d9b02ee260f66b5eb227cf754fd279",
+        "reference-motion.npz": "18a531fa50c3a8cd14acf7ca9e3065a0297276e3c800cdf8bf5392603fc2feab",
+        "pair-audit.json": "6a55b743fdaebef851d6b947d59a3a1308d0a686b62cd925871dc3820d262344",
+        "physics.npz": "f4ec2e40a7d18562f95dffd43b3c9d9974d1d7fc6b2b295267e79045390a6d35",
+        "reference.mp4": "9b3fc09f742ffb50639f980cb5f9a291d15612bd6dcae282cc64b71a3510cf4f",
+        "review.mp4": "9bd745a0583a5f21b3e23966aa023645ee193464dfd22fa7fef48543b2cdc007",
+        "pairs.parquet": "3216360dff2bb20beb518f9c4e1436cda8d551434272e05613df4b3fc1ba79fc"
+      }
+    },
+    {
+      "episode": 48,
+      "split": "holdout",
+      "passed": true,
+      "motion_rows": 90,
+      "paired_rows": 110,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005176312948064408,
+        "position_max_m": 0.005604651938696397,
+        "joint_p95_rad": 0.025102852498397075,
+        "joint_max_rad": 0.027044978285434507,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "e9ef66949bf7c1b3732ac8829797c867b149113dbf8d8811d4e565acb133e83d",
+        "initial_state.npy": "b1711bfb54063874afd8831ea87cb83dfb3fb8ac26d2f29b6fc965e325b6b201",
+        "initial-snapshot.npz": "6a6f45e8267cfabb8e24596c624cd6252d062148eec8e7476cae93aa548e8ca2",
+        "identity.json": "bc8e78ceb3bb6d1283f645a7098b28790a07fb824a17836c243f9c0c0a670b3c",
+        "protocol.json": "4f137e04825ba5f701550aea59c69bd0ba86aa90f6f80f7fa6603927eead7144",
+        "reference-audit.json": "be498f86880541c82a13350a16d1b794a1eaf132b6974bc91f67b0f267a37a00",
+        "reference-motion.npz": "ed0feb57395b088b335782935095ea75bbd2bcd8e6c4e399188b379cc0e83d1f",
+        "pair-audit.json": "410aa651fddd97a93c8edb586977bc4b2ff0eaf31c5e862707919f4f7f16436c",
+        "physics.npz": "5a34f8125db8f21f626004caf865167693856628365f57cc440e46d5f493557c",
+        "reference.mp4": "5602c0bbdeca826cbd25db5b0e191acb380be9d4bb5ea68684586c8e5b316a80",
+        "review.mp4": "8683482a28573b7534edfda453c06241feddf2aae0664e5bfcc08d6b76f63ba9",
+        "pairs.parquet": "5f4e813f5d5d5a702555241330719e359216474a3dd406b9555cd99b3efc83d8"
+      }
+    },
+    {
+      "episode": 49,
+      "split": "holdout",
+      "passed": true,
+      "motion_rows": 89,
+      "paired_rows": 109,
+      "checks": {
+        "position_p95_m": true,
+        "position_max_m": true,
+        "joint_p95_rad": true,
+        "joint_max_rad": true,
+        "cabinet_extra_penetration_m": true,
+        "reference_released_goal": true,
+        "converted_released_goal": true,
+        "finite_physics": true,
+        "no_clipped_joint_targets": true,
+        "control_period": true
+      },
+      "metrics": {
+        "position_p95_m": 0.005102381904736526,
+        "position_max_m": 0.00571404104794038,
+        "joint_p95_rad": 0.024886233646304396,
+        "joint_max_rad": 0.027090406761762997,
+        "cabinet_extra_penetration_m": 0.0
+      },
+      "files_sha256": {
+        "model.xml": "cc4ed49218ed90f53301942832c135ce77c6fa384989c1f8e93c5cd5e16dba5d",
+        "initial_state.npy": "7668a1db3e0249637ebd885a5d2163bc9c023f4f14ef03ae0b676a312a10c13a",
+        "initial-snapshot.npz": "f30929181d3ff7dc5d81e393dcd3d8a724c4e1d0b8c702b73c19d11f117b38a4",
+        "identity.json": "24507dda736e77e86638edf488cecf12f6c47cad5845b798cadca4116e5c1e79",
+        "protocol.json": "aba4d7adc5302953c80c5260954a3f7290eef606db56c70884525b785794308e",
+        "reference-audit.json": "b067a8b0d47072a7db216a5fa57c5d9242e94ef20a4b219fb9321e4c3b955b79",
+        "reference-motion.npz": "80c17f1fc3994acf07fb2d666699d23f71f3fa2bdec1fec9bf6d1a4066cf64f7",
+        "pair-audit.json": "e9e2b4df8863fab5f842729c2dea1b41bfbce40571aaa145406dbf9923f0c16e",
+        "physics.npz": "7f5db87cf0e78466d96c1567d6d16f789ebd92f1ad5f90a3546d35422bfb80cf",
+        "reference.mp4": "cc3e0714c3d8523b13915302599d0c398f483387fcd2a0aa266655840ea8ce1c",
+        "review.mp4": "72d26676fda568fc6aa64fc83bfb6c79bbc991830e571dabc3b1dcbe28f10c12",
+        "pairs.parquet": "419f1e8d7a3b0294888e7109a5cfee33cea9d6e5cebe000541e1c997d88f4e67"
+      }
+    }
+  ]
+}

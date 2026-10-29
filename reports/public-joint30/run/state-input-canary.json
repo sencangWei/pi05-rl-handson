@@ -1,0 +1,25 @@
+{
+  "discrete_state_input": true,
+  "dimensions_checked": 9,
+  "each_state_dimension_changes_model_tokens": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "images_and_actions_unchanged": true,
+  "state_shape": [
+    32
+  ],
+  "actions_shape": [
+    10,
+    32
+  ],
+  "prompt": "pick up the black bowl next to the plate and place it on the plate",
+  "token_count": 53
+}

@@ -1,18 +1,20 @@
 # 公开正常示范 + 人工恢复：关节 π0.5 实验
 
-目标：补上正常抓取、搬运、放置示范，保留已经验收的人工恢复示范，训练独立的关节动作策略。当前阶段为数据转换与训练准备；结果以 `train-status.json` 和实际评测文件为准。
+目标：补上正常抓取、搬运、放置示范，保留已经验收的人工恢复示范，训练独立的关节动作策略。37 条正常训练示范、10 条留出示范及 3 条人工恢复示范已就绪，独立的 10,000 次更新训练已启动；结果以 `train-status.json` 和实际评测文件为准。
 
 ## 数据来源与范围
 
 - [官方 LIBERO 数据](https://huggingface.co/datasets/yifengzhu-hf/LIBERO-datasets/tree/f13aa24a3da8c43c7225569f28c562979fa0e35a)：`libero_goal/put_the_bowl_on_the_plate_demo.hdf5`，固定 revision `f13aa24a3da8c43c7225569f28c562979fa0e35a`。
 - 原始文件 468,246,288 字节，SHA256 `e69528b0cf10dfc59b20698e12ec2affc03f3887309034d3eb74cac3ec929406`，50 条正常示范，4,669 个运动控制步，20 Hz。50 个初始物理状态全部不同。
 - 原始动作是末端 OSC 控制；公开文件中的关节位置不能直接当作关节指令。本实验在真实连续仿真中重新执行关节指令，重新渲染动作前图像并记录实际执行目标。
-- 转换前固定源编号 0–39 为训练集、40–49 为留出集。失败转换只排除，不更换分组。最终合格数量见 `data/public-joint30-v1/preparation.json`。
+- 转换前固定源编号 0–39 为训练集、40–49 为留出集。失败转换只排除，不更换分组。验收通过 47 条：训练 37 条 / 3,428 个运动控制步，留出 10 条 / 958 步。源编号 13、21、36 因放置/释放或目标裁剪失败而排除，详见 `conversion-summary.json`。
 - 3 条已认可的人工恢复示范原样保留，1,631 帧；新采样按正常示范 80%、人工恢复 20%，组内按轨迹平衡、轨迹内覆盖完整动作窗口。人工恢复初态用于训练，因此其评测不计为未见初态泛化。
 - 每条公开轨迹最后 20 步仅用于检查放置后稳定松爪，**不进入训练**，避免额外加入静止帧。
 - 这是碗放盘子的单任务实验，不能据此声称具有广泛家务、多物体或通用恢复能力。
 
 另查到 [500 条公开关节轨迹](https://huggingface.co/datasets/jiankimr/libero_10_joint_lerobot/tree/2260df157dbdefcbfbc0e3629f63041a13253c66)，其任务是 LIBERO-10，控制增益 KP2000，关节增量与夹爪约定也不同。它不对应当前碗盘任务，未直接混入本轮训练；详见 `source-research.md`。
+
+![公开示范动作前双摄像头画面](public-demo0-frames.jpg)
 
 ## 采集、训练、推理契约
 
@@ -41,6 +43,7 @@
   --human-manifest data/unified-joint29-v1/residual/manifest.json
 
 # 冻结、静态路径验证、实际训练分开运行
+mkdir -p reports/public-joint30/run
 .venv-train/bin/python scripts/train_public_joint.py \
   --manifest data/public-joint30-v1/manifest.json \
   --plan reports/public-joint30/run/plan.json \

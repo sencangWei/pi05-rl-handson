@@ -96,6 +96,9 @@ def prepare(replays, output, human_manifest):
             sha256="e69528b0cf10dfc59b20698e12ec2affc03f3887309034d3eb74cac3ec929406"),
         action_representation="current-state anchored future absolute joint residual + grip",
         horizon=10, control_hz=20, state_dim=9, action_dim=8,
+        public_acceptance="automated continuous-physics, task completion and image/action pairing gates",
+        public_human_video_review="pending; dataset ready means automated gates passed",
+        normalization="training state midpoint/half-range; sampling-weighted action mean/population std; floor .001",
         whole_episode_split=True, diagnostic_holds_used=False,
         holdout_used_for_stats=False, raw_human_modified=False))
     train = PublicJointDataset(manifest)
