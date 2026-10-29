@@ -78,3 +78,7 @@ MUJOCO_GL=osmesa PYOPENGL_PLATFORM=osmesa OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS
 ## 验证记录
 
 27项针对性测试通过；新代码Ruff与编译通过。四次物理执行已正常退出。视频与轨迹完整性结果见 [artifact-validation.json](v2/artifact-validation.json)，运行日志见 [run.log](run.log)。实际画面另经查看，最终碗位于盘上且夹爪离开。远端备份证明单独记录，未通过推送输出来代替恢复验收。
+
+## 远端备份验收
+
+能力载荷 `65a53da24b63593a22a9ae87dfc349db3d4bcab6` 已备份至自有公开 [sencangWei/pi05-rl-handson](https://github.com/sencangWei/pi05-rl-handson/tree/experiment/matched-recovery-20261027) 分支。独立恢复3745个跟踪文件、35个新增Git blob；逐文件SHA256和重建Git树 `009baa899def0ca407eadb45bea81378d233adfd` 完全一致，还原目录27项测试及Ruff通过。[恢复证明](../../evidence/joint-contract29-final-remote-restore.json)记录的是该能力载荷，后续凭据提交不改变算法或实验结果。原始本机录制、完整快照及优化器权重不在本轮Git备份中。

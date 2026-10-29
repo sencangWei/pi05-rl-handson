@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson",
+  "branch": "experiment/matched-recovery-20261027",
+  "revision": "65a53da24b63593a22a9ae87dfc349db3d4bcab6",
+  "method": "Remote GitHub recursive Git tree + SHA-validated base64 Git blob API contents; unchanged blobs from previously independently fetched remote clone; full clean directory restored",
+  "tracked_files": 3745,
+  "new_blobs_downloaded_independently": 35,
+  "all_tracked_contents_exact": true,
+  "git_tree": "009baa899def0ca407eadb45bea81378d233adfd",
+  "rebuilt_git_tree_exact": true,
+  "manifest_sha256": "e1cd67496ddcd7af01cfa6a514b96e034440d3a1151ffe38a8d95c9a523a08c2",
+  "scope": "Joint-action contract, four frozen physical executions, tests, report and videos; complete tracked repository contents restored and compared. Full raw local smoke recordings and checkpoint weights are outside this Git backup.",
+  "restored_checks": {
+    "pytest_passed": 27,
+    "ruff": "PASS",
+    "runtime": "Original simulation/test venv, working directory independently restored from remote"
+  }
+}
