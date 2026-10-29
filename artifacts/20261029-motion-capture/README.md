@@ -42,3 +42,7 @@ cd /home/robot/pi05-rl-handson
 新模块及其测试通过Ruff完整规则；现有入口通过Ruff的E9/F/B关键检查及Python编译。入口原有的导入排序、字典写法等风格告警未作无关清理。
 
 实际检查结果及14份小型旁档在本目录；完整原始图像、物理记录和约55.5MB的初始快照保留于检查结果所列本机目录，未宣称上传完整录制数据。Git备份范围为代码、测试、说明和小型检查证据。
+
+## 远端备份核验
+
+能力提交 `051c42cabe2eb212dd9f24ba496d338e0d5817bf` 已推至自有公开仓库 [sencangWei/pi05-rl-handson](https://github.com/sencangWei/pi05-rl-handson/tree/experiment/matched-recovery-20261027)。独立恢复3709个跟踪文件，逐文件SHA256与重建Git树一致；恢复目录17项测试再次通过。证明见 `evidence/motion-capture29-final-remote-restore.json`。完整原始录制和初始快照只保存在本机。

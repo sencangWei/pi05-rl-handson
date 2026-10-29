@@ -253,3 +253,5 @@ original-v1/v2各执行两源共1221控制，四录像2442帧全部解码；最�
 
 采集补齐完成：新增 motion_recording.py；manual_recovery.py 为末端和关节控制写独立前后运动旁档，段开始保存完整快照。冻结 manual_joint_control.py 未改。17项测试通过；真实14控制步J4实际转动1.9808°，读取前后完整快照相同，关节/时间/指令读回逐项一致。续录检查初次仅1步草稿因夹爪累计状态不可确定而拒绝；使用10步草稿后续录1步通过，历史物理/运动旁档及两个段快照SHA均匹配。新文件Ruff全规则、入口关键E9/F/B与编译通过；原入口风格告警未清理。证据在 artifacts/20261029-motion-capture/；合成检查草稿不训练，完整快照仅本机留档。
 已遇到：zsh通配符无匹配；改显式路径。tail参数在当前代理中解析异常；改Python读取尾行。
+
+2026-10-29 完整采集备份核验：能力提交 `051c42cabe2eb212dd9f24ba496d338e0d5817bf` 已推至自有 `sencangWei/pi05-rl-handson` 的 `experiment/matched-recovery-20261027`。独立远端还原3709个跟踪文件，逐文件SHA256及重建Git树 `cfb97e8d17bff8342c4595630398c22019ad87d6` 一致；在还原目录运行17项针对性测试全部通过。证明 `evidence/motion-capture29-final-remote-restore.json`。仅代码、文档、测试、小型运动证据进入Git；完整原始录制及快照仍在本机。本轮没有训练或替换模型。

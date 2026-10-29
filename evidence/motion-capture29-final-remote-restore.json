@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson",
+  "branch": "experiment/matched-recovery-20261027",
+  "revision": "051c42cabe2eb212dd9f24ba496d338e0d5817bf",
+  "method": "Remote GitHub recursive Git tree + SHA-validated base64 Git blob API contents; unchanged blobs from previously independently fetched remote clone; full clean directory restored",
+  "tracked_files": 3709,
+  "new_blobs_downloaded_independently": 27,
+  "all_tracked_contents_exact": true,
+  "git_tree": "cfb97e8d17bff8342c4595630398c22019ad87d6",
+  "rebuilt_git_tree_exact": true,
+  "manifest_sha256": "11e15b5545a7c1ffb59502f4eae386f5da09a55400d5c3427e50a780b43b5118",
+  "scope": "Motion-capture code, manual entrypoint, tests, report and small telemetry evidence; complete tracked repository contents restored and compared. Full raw local smoke recordings and checkpoint weights are outside this Git backup.",
+  "restored_code_tests": {
+    "command": "python -m pytest -q tests/test_motion_recording.py tests/test_manual_joint_control.py",
+    "passed": 17,
+    "exit_code": 0
+  }
+}
