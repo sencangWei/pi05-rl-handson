@@ -1,0 +1,139 @@
+{
+  "schema": "joint-choice-bounded-comparison-v1",
+  "recommendation": {
+    "raw_recording": "absolute commanded targets + actual q/qvel/EEF/timestamps; preserve all seven joints",
+    "execution": "existing absolute joint position PD 20Hz",
+    "next_training_candidate": "observation-anchored residual joint targets + absolute gripper",
+    "empirical_winner": null,
+    "ui_promoted": false,
+    "velocity": "not evaluated; matched desired-velocity labels and controller absent"
+  },
+  "absolute": {
+    "successes": 0,
+    "trials": 2,
+    "results": [
+      {
+        "source": "human_1793121358375746008",
+        "split": "train",
+        "controls": 2,
+        "inference_calls": 3,
+        "success": false,
+        "stop_reason": "exception",
+        "exception": "ValueError('Expected absolute joint radians7 within limits + normalized gripper1')",
+        "native_goal_controls": 0,
+        "initial_rgb_and_joint_state_exact": true
+      },
+      {
+        "source": "human_1793122696228231033",
+        "split": "holdout",
+        "controls": 0,
+        "inference_calls": 1,
+        "success": false,
+        "stop_reason": "exception",
+        "exception": "ValueError('Joint target jump 1.424250 rad exceeds 0.35')",
+        "native_goal_controls": 0,
+        "initial_rgb_and_joint_state_exact": true
+      }
+    ]
+  },
+  "residual": {
+    "successes": 0,
+    "trials": 2,
+    "results": [
+      {
+        "source": "human_1793121358375746008",
+        "split": "train",
+        "controls": 0,
+        "inference_calls": 1,
+        "success": false,
+        "stop_reason": "exception",
+        "exception": "ValueError('Expected absolute joint radians7 within limits + normalized gripper1')",
+        "native_goal_controls": 0,
+        "initial_rgb_and_joint_state_exact": true
+      },
+      {
+        "source": "human_1793122696228231033",
+        "split": "holdout",
+        "controls": 600,
+        "inference_calls": 600,
+        "success": false,
+        "stop_reason": "budget600",
+        "exception": null,
+        "native_goal_controls": 0,
+        "initial_rgb_and_joint_state_exact": true
+      }
+    ],
+    "holdout_first_target_max_jump_rad": 0.030474341120018567,
+    "holdout_first_j7_target_rad": 2.249553306302207,
+    "holdout_last100_grasp_controls": 100,
+    "holdout_open_command_controls": 0,
+    "motion_segments": [
+      {
+        "controls": [
+          1,
+          100
+        ],
+        "eef_path_m": 0.2103068657778428,
+        "median_eef_step_m": 0.0018306220170952428,
+        "steps_under_1mm": 11,
+        "grasp_controls": 99,
+        "native_goal_controls": 0
+      },
+      {
+        "controls": [
+          101,
+          300
+        ],
+        "eef_path_m": 0.25845068986961106,
+        "median_eef_step_m": 0.0012154200029701528,
+        "steps_under_1mm": 58,
+        "grasp_controls": 200,
+        "native_goal_controls": 0
+      },
+      {
+        "controls": [
+          301,
+          500
+        ],
+        "eef_path_m": 0.20338764146259117,
+        "median_eef_step_m": 0.0009232477741191095,
+        "steps_under_1mm": 112,
+        "grasp_controls": 200,
+        "native_goal_controls": 0
+      },
+      {
+        "controls": [
+          501,
+          600
+        ],
+        "eef_path_m": 0.09325557157483617,
+        "median_eef_step_m": 0.0009097292475027481,
+        "steps_under_1mm": 61,
+        "grasp_controls": 100,
+        "native_goal_controls": 0
+      }
+    ]
+  },
+  "matched": {
+    "actual_updates_each": 200,
+    "batch": 1,
+    "seed": 42,
+    "gradient_sample_order_exact": true,
+    "parent": "official pi05_libero",
+    "train_windows": 482,
+    "holdout_windows": 425,
+    "holdout_gradient_samples": 0,
+    "max_controls": 600,
+    "replan_steps": 1,
+    "joint_jump_guard_rad": 0.35,
+    "released_goal_required_controls": 20
+  },
+  "limits": [
+    "One train episode and one holdout episode only; 200-update interface pilot, not a generalization benchmark.",
+    "Residual action normalization counts all training windows; absolute baseline counts each training motion frame once. Not an exactly isolated representation ablation.",
+    "Baseline is an existing frozen run, not a fresh seed replication.",
+    "Raw command labels are physically executed reconstructed candidates, not original historical manual command targets.",
+    "Expert replay demonstrates encoding/controller integrity, not learned recovery.",
+    "No evidence that either learned policy is ready for deployment."
+  ]
+}

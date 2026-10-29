@@ -1,0 +1,73 @@
+{
+  "plan_sha256": "034d8cc96fb60b3316abdc530209f9afba6f3f0a50c3dc99cf7ea81cbff546e0",
+  "server": {
+    "plan_sha256": "034d8cc96fb60b3316abdc530209f9afba6f3f0a50c3dc99cf7ea81cbff546e0",
+    "checkpoint": "/home/robot/pi05-rl-handson/checkpoints/pi05_joint_residual_contract_lora/joint29_residual200_v1/199",
+    "norm_sha256": "93222c3075955d2152d82d97dd69f5fd43f17eca742a51534c0222209ddac9dc",
+    "controller": "ABSOLUTE_JOINT_POSITION",
+    "action_dim": 8,
+    "state_dim": 9,
+    "learned_representation": "future joint targets minus ONE current observed joint anchor; absolute gripper",
+    "checkpoint_files_sha256": {
+      "_CHECKPOINT_METADATA": "ec597d6105c8798e7ec9dff4c7c3ae3825c2b2289d37e9b8123f2097ad8a8ab0",
+      "assets/joint_contract29/norm_stats.json": "93222c3075955d2152d82d97dd69f5fd43f17eca742a51534c0222209ddac9dc",
+      "params/_METADATA": "88464a384c524c50fa1a92c1685d23a79570c62807a0ccf021f5f9307fff137c",
+      "params/_sharding": "54899ee3f4d45eee96ddada379a19a9da1324792b141fa0449608620571e6b01",
+      "params/array_metadatas/process_0": "da5f8952b77ab352fa92e3e58d742bfe0db5b9c1b956212f8279895b9df03721",
+      "params/d/a5a45aa23d4ac51d4a025cdef5486abc": "28acf709b4547ddf7b6c9de94b020c4b510c2a1d2fc4eb162344d1be2568e8f6",
+      "params/manifest.ocdbt": "77fe016b798cb864e1e453741cc964a1af53e637c138a7aa1f491a12c543fd60",
+      "params/ocdbt.process_0/d/09b9d99619f5993f5fbd8618ecfea17e": "e94b6f05ceef55173200b9a654bc6d84fae3656f3c7e168fafc6291a2847bc7a",
+      "params/ocdbt.process_0/d/75c573f9a7d6d6b6223305c3c90ab6f9": "a8896cde74b23e6cf144c4b1b2d0de14d1a34f10c3ca14f41245bad11ed7c01a",
+      "params/ocdbt.process_0/d/96def61912ba5b7b0b14aa58f9458fca": "1061c8f79fb2990289c35df3c2e3b45ba76e819954fe7dd8eae1d9d2fe526676",
+      "params/ocdbt.process_0/d/c8d90fc4529ca60e2e61c7b8811a4e5d": "e98511b9db92bdfa83dba6dbb313f6ee7354e523105feb9229631b53c0ddbdf2",
+      "params/ocdbt.process_0/d/d8475c8ab59ba42825974292fcc5fc63": "bc2e0cf07f54455ea5998d9b8d86aa3febee004da6ca95aa7e72244e660422e7",
+      "params/ocdbt.process_0/d/f4a90138e98cdb630cd22484f4cbbc4b": "b005fd07801b9db0b076a6c9776aaa9e1c1c96b1689bc5ab474daaa531d6072d",
+      "params/ocdbt.process_0/manifest.ocdbt": "794601eba595712143edd4a7d55d9c0184ae530804d3b5237b6e83b3615a718f",
+      "train_state/_METADATA": "63e1f2c02ddf178de1a69bb753e0a664dc8cc04f5a040f8478856590e3ffdd89",
+      "train_state/_sharding": "7ffa5b83767ec9353a713695184d5164e0eadec2d3aa10ecb23036139076db83",
+      "train_state/array_metadatas/process_0": "97c589bad1e6dd6f6932232c00f66b747a47ae5e2c66b23d2b97976c67797712",
+      "train_state/d/60d414e4e913821b3266dd238bed4f06": "f95a21792a81a2a8e618734c4c9735f4aee1e8b1e3d0a5e1f7aa40fb169376d3",
+      "train_state/manifest.ocdbt": "f2060485e0d89a2d88fdd104de1af81649deb0ddaeab954156707e5b0cf0aaa3",
+      "train_state/ocdbt.process_0/d/7ee8af00097905f72441a78676fa5c38": "4763501b5d6d3d440edf11829a080a8df22f537fece92154bd6d9ab4873c8714",
+      "train_state/ocdbt.process_0/d/99c40cf9c895f2f11ad719158f9c1076": "60ddbd84b2b066ea592afadad64a6dd7a18cce31d4e03f44cc606c43e4208c71",
+      "train_state/ocdbt.process_0/d/d8c5485200cc710ea41d7b02d2c083ea": "9a6e3dc776ef90ac8ac3098d6ba4af9fe7b864efe6fccb429e87e0fdb37a0046",
+      "train_state/ocdbt.process_0/d/e3ebe9afb180bd37604fe131fc4b6e5a": "4322e96cd3829e98d2a117a6ec7128cdaa27f5f3a65c63fc53133c63c1413e9b",
+      "train_state/ocdbt.process_0/manifest.ocdbt": "1d454f86e6baf707854126be12d91e17acff30e37bc9e52a5ac2bf40d63d3b7c"
+    }
+  },
+  "split": "holdout",
+  "source": "human_1793122696228231033",
+  "initial_rgb_and_joint_state_exact": true,
+  "snapshot_sha256": "704adc4c3dc058a1fadbdd45f196eb6a2e581ff315cc4d3ffe19bb53abaec15c",
+  "controller": "JOINT_POSITION",
+  "limits": [
+    [
+      -2.8973,
+      2.8973
+    ],
+    [
+      -1.7628,
+      1.7628
+    ],
+    [
+      -2.8973,
+      2.8973
+    ],
+    [
+      -3.0718,
+      -0.0698
+    ],
+    [
+      -2.8973,
+      2.8973
+    ],
+    [
+      -0.0175,
+      3.7525
+    ],
+    [
+      -2.8973,
+      2.8973
+    ]
+  ]
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "split": "train",
+    "windows": 482,
+    "max_error_rad": 1.862645149230957e-09
+  },
+  {
+    "split": "holdout",
+    "windows": 425,
+    "max_error_rad": 0.0
+  }
+]

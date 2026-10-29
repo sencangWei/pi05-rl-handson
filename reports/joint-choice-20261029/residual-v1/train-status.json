@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETE",
+  "actual_updates": 200,
+  "checkpoint_dir": "/home/robot/pi05-rl-handson/checkpoints/pi05_joint_residual_contract_lora/joint29_residual200_v1",
+  "parent": "official pi05_libero",
+  "holdout_gradient_samples": 0,
+  "ui_changed": false,
+  "plan_sha256": "034d8cc96fb60b3316abdc530209f9afba6f3f0a50c3dc99cf7ea81cbff546e0",
+  "sampling_order_exact": true,
+  "wall_seconds": 115.84872149999137
+}

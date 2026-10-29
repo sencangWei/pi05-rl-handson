@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "source": "human_1793121358375746008",
+      "controls": 511,
+      "max_physics_error": 4.1515679782833104e-11,
+      "max_target_error_rad": 1.0322298571452393e-13,
+      "released_goal_final20": 20,
+      "passed": true,
+      "policy_inference": false,
+      "expert_replay": true
+    },
+    {
+      "source": "human_1793122696228231033",
+      "controls": 454,
+      "max_physics_error": 0.0,
+      "max_target_error_rad": 0.0,
+      "released_goal_final20": 20,
+      "passed": true,
+      "policy_inference": false,
+      "expert_replay": true
+    }
+  ],
+  "passed": true
+}

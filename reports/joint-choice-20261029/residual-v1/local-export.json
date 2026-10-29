@@ -1,0 +1,20 @@
+{
+  "scope": "Failed experimental weights remain local; new code, norm, logs, metrics and videos will be remotely backed up. Base/data remote artifacts are from the prior independently verified release.",
+  "files": {
+    "exports/joint29_residual200_v1/adapter.npz": {
+      "bytes": 185446043,
+      "sha256": "9db5f4d63f0ff5d250c63d9a362fd2545b538752e5000918c844f3d03fdea849",
+      "remote_uploaded": false
+    },
+    "exports/joint29_residual200_v1/metadata.json": {
+      "bytes": 17383,
+      "sha256": "e10e795f6bb0c4cfab59ae24d39727b14807d6eac8da606234fd4fe458873667",
+      "remote_uploaded": false
+    },
+    "exports/joint29_residual200_v1/norm_stats.json": {
+      "bytes": 1239,
+      "sha256": "93222c3075955d2152d82d97dd69f5fd43f17eca742a51534c0222209ddac9dc",
+      "remote_uploaded": false
+    }
+  }
+}

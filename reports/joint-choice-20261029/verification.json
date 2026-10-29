@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "command": [
+        ".venv-ppo/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_joint_residual.py",
+        "tests/test_joint_pairs.py",
+        "tests/test_joint_action_contract.py",
+        "tests/test_motion_recording.py",
+        "tests/test_manual_joint_control.py",
+        "tests/test_simulation_snapshot.py"
+      ],
+      "returncode": 0,
+      "output": "...................................................                      [100%]\n51 passed in 1.04s\n"
+    },
+    {
+      "command": [
+        ".venv-train/bin/ruff",
+        "check",
+        "scripts/joint_residual.py",
+        "scripts/compare_joint_residual.py",
+        "scripts/verify_joint_residual_replay.py",
+        "tests/test_joint_residual.py"
+      ],
+      "returncode": 0,
+      "output": "All checks passed!\n"
+    }
+  ],
+  "frozen_inputs_sha256_all_exact": true,
+  "physics_replay": "expert-replay.json",
+  "ui_promoted": false,
+  "scope": "51 targeted tests, new-code Ruff, immutable training/evaluation inputs; not learned policy acceptance"
+}
