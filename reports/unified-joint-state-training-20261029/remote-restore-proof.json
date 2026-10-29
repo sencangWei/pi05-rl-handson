@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson",
+  "branch": "experiment/joint-residual-choice-20261029",
+  "revision": "5cc1b27c0ded36ec874b4dbe0e035a21fd8fd2b8",
+  "method": "Remote GitHub recursive Git tree + SHA-validated base64 Git blob API contents; unchanged blobs from previously independently fetched remote clone; full clean directory restored",
+  "tracked_files": 4003,
+  "new_blobs_downloaded_independently": 120,
+  "all_tracked_contents_exact": true,
+  "git_tree": "fefc3923d7f54d3219e23ac715e21efdd898b1d3",
+  "rebuilt_git_tree_exact": true,
+  "manifest_sha256": "c88f75cf651d7feee03d87066cce63c1e4cd85d3dc36b21ddaab54bb3634b8e7",
+  "scope": "Unified joint datasets, state input fix, four bounded LoRA training runs and actual policy evaluation reports/videos, code/tests/configuration. Full tracked repository restored; raw recordings, training Parquet and full checkpoints remain local and are not included.",
+  "restored_directory_pytest": {
+    "passed": 82,
+    "subtests_passed": 5,
+    "exit_code": 0
+  },
+  "restored_directory_ruff": {
+    "exit_code": 0,
+    "new_files_checked": 7
+  }
+}

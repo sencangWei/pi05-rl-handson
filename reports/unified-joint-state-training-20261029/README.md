@@ -68,4 +68,4 @@
 
 相对组在服务和客户端同时改为residual。两个服务顺序启动，不终止其他GPU工作。
 
-代码、配置及结果报告会备份至sencangWei/pi05-rl-handson并独立恢复核对。原始NPZ、Parquet及完整checkpoint仍留本机，不声称其已上传。
+代码、配置、四轮训练日志、真实策略评测轨迹和录像已备份至自有[sencangWei/pi05-rl-handson](https://github.com/sencangWei/pi05-rl-handson/tree/experiment/joint-residual-choice-20261029)，能力提交`5cc1b27c0ded36ec874b4dbe0e035a21fd8fd2b8`。从远端独立恢复4003个跟踪文件，逐文件SHA256和重建Git树`fefc3923d7f54d3219e23ac715e21efdd898b1d3`完全一致；还原目录82测试/5子测试及Ruff通过。见[远端恢复证明](remote-restore-proof.json)。原始采集NPZ、训练Parquet及完整checkpoint仍留本机，不声称其已上传；评测轨迹`states.npz`包含在备份内。

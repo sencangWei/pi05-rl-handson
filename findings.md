@@ -199,3 +199,5 @@ original-v1/v2各执行两源共1221控制，四录像2442帧全部解码；最�
 
 
 2026-10-29 统一关节状态修正版对照完成：实际状态token九维逐项验证通过；绝对/残差各1000更新，177.43/188.30秒，三条新人工示范及一条旧训练来源等概率采样，留出梯度0。八例同初态真实策略全部失败：绝对0/1/1/0步因目标跳变，残差564/324/353/6步因关节目标越限；均非1200步耗尽。五条专家最大目标跳变0.08rad，通过同一0.35rad检查。两组不晋级、不换面板、不要求重录。82测试+5子测试及Ruff通过，真实视频/轨迹完整性验证通过；旧版无状态输入实验保留。报告 reports/unified-joint-state-training-20261029/README.md。下一道技术门先验证单条已审核轨迹可学会及教师首步误差，而不是盲目扩大采集。代码/报告备份正在执行，原始Parquet/NPZ及完整checkpoint仅本机。
+
+2026-10-30 备份验收：能力提交5cc1b27c0ded36ec874b4dbe0e035a21fd8fd2b8已推自有sencangWei/pi05-rl-handson的experiment/joint-residual-choice-20261029分支，包含四轮训练代码/配置/日志及真实策略失败视频和轨迹。独立从远端还原4003跟踪文件，SHA256逐文件一致、重建Git树fefc3923d7f54d3219e23ac715e21efdd898b1d3完全一致；还原目录82测试+5子测试、Ruff通过。证明reports/unified-joint-state-training-20261029/remote-restore-proof.json。原始采集NPZ、训练Parquet与完整checkpoint未上传。实验交付完成；策略能力未通过，两组不晋级。

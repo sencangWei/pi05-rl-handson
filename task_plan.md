@@ -182,10 +182,10 @@ Task-phase preflight: all1612human and7633publictask8 anchors partitioned exhaus
 2026-10-29 统一关节采集备份已验收：能力提交 748450d5fea685215414c68f8057d41e7c252679 已推自有 sencangWei/pi05-rl-handson 的 experiment/joint-residual-choice-20261029；从远端独立恢复 3860 个跟踪文件，逐文件SHA256与重建Git树 19c8b775fbe70a6ed6051ae00223b0daa2b5bafe 完全一致。证明 reports/unified-joint-20261029/remote-restore.json。仅代码/报告/测试进入本轮备份，合成原始录制仍在本机。未训练或替换模型。
 
 ## 2026-10-29 用户批准：三条统一关节示范接入与有界对照
-1. [进行中] 原始3条1631步保持不变；专用9D状态/8D动作适配，保留旧关节专家train1/holdout1，严格整条分离和哈希检查。
-2. [待办] 相同四训练来源等概率窗口采样，同一官方pi05_libero父、fresh AdamW、batch1/seed42/lr2e-5，各1000更新绝对目标vs观测锚点残差；train-only统计，完整10步不跨集。
-3. [待办] 同三个新完整初态及旧留出初态各闭环；最大1200控制、600里程碑、每步重规划；成功需原生目标/松爪/无接触/抬离连续20步。保留失败，不改面板。
-4. [待办] 定向测试、完整记录、代码提交自有远端并独立恢复验证。原始数据仍本机，不虚称远端备份。
+1. [完成] 原始3条1631步保持不变；专用9D状态/8D动作适配，保留旧关节专家train1/holdout1，严格整条分离和哈希检查。
+2. [完成] 相同四训练来源等概率窗口采样，同一官方pi05_libero父、fresh AdamW、batch1/seed42/lr2e-5，各1000更新绝对目标vs观测锚点残差；train-only统计，完整10步不跨集。
+3. [完成：两组均0/4] 同三个新完整初态及旧留出初态各闭环；最大1200控制、600里程碑、每步重规划；成功需原生目标/松爪/无接触/抬离连续20步。保留失败，不改面板。
+4. [完成] 定向测试、完整记录、代码提交自有远端并独立恢复验证。原始数据仍本机，不虚称远端备份。
 
 
 ### 2026-10-29 统一关节比较：修正状态输入
@@ -193,3 +193,5 @@ Task-phase preflight: all1612human and7633publictask8 anchors partitioned exhaus
 
 
 2026-10-29 统一关节状态修正版对照完成：实际状态token九维逐项验证通过；绝对/残差各1000更新，177.43/188.30秒，三条新人工示范及一条旧训练来源等概率采样，留出梯度0。八例同初态真实策略全部失败：绝对0/1/1/0步因目标跳变，残差564/324/353/6步因关节目标越限；均非1200步耗尽。五条专家最大目标跳变0.08rad，通过同一0.35rad检查。两组不晋级、不换面板、不要求重录。82测试+5子测试及Ruff通过，真实视频/轨迹完整性验证通过；旧版无状态输入实验保留。报告 reports/unified-joint-state-training-20261029/README.md。下一道技术门先验证单条已审核轨迹可学会及教师首步误差，而不是盲目扩大采集。代码/报告备份正在执行，原始Parquet/NPZ及完整checkpoint仅本机。
+
+2026-10-30 备份验收：能力提交5cc1b27c0ded36ec874b4dbe0e035a21fd8fd2b8已推自有sencangWei/pi05-rl-handson的experiment/joint-residual-choice-20261029分支，包含四轮训练代码/配置/日志及真实策略失败视频和轨迹。独立从远端还原4003跟踪文件，SHA256逐文件一致、重建Git树fefc3923d7f54d3219e23ac715e21efdd898b1d3完全一致；还原目录82测试+5子测试、Ruff通过。证明reports/unified-joint-state-training-20261029/remote-restore-proof.json。原始采集NPZ、训练Parquet与完整checkpoint未上传。实验交付完成；策略能力未通过，两组不晋级。
