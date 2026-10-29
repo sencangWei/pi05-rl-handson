@@ -1,0 +1,21 @@
+{
+  "pytest": {
+    "command": ".venv-ppo/bin/python -m pytest -q tests/test_unified_joint_dataset.py tests/test_unified_joint_state.py tests/test_joint_residual.py tests/test_joint_pairs.py tests/test_unified_joint_recording.py tests/test_joint_action_contract.py tests/test_simulation_snapshot.py tests/test_record_osc_pairs.py tests/test_motion_recording.py tests/test_manual_joint_control.py",
+    "passed": 82,
+    "subtests_passed": 5,
+    "exit_code": 0
+  },
+  "ruff": {
+    "checked_files": [
+      "scripts/unified_joint_dataset.py",
+      "scripts/train_unified_joint.py",
+      "scripts/evaluate_unified_joint.py",
+      "scripts/train_unified_joint_state.py",
+      "scripts/evaluate_unified_joint_state.py",
+      "tests/test_unified_joint_dataset.py",
+      "tests/test_unified_joint_state.py"
+    ],
+    "exit_code": 0
+  },
+  "review": "Source/data/controller/evaluator reviewed by primary agent; independent reviewer launch was unavailable (configured model unsupported). Actual model task success is reported separately."
+}

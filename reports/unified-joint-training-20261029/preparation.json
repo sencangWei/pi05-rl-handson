@@ -1,0 +1,31 @@
+{
+  "status": "READY",
+  "train_frames": 2122,
+  "holdout_frames": 434,
+  "normalization": "train sampler-weighted states and full action windows; population std floor0.001",
+  "holdout_used_for_stats": false,
+  "representations": {
+    "absolute": {
+      "sampler_slots": 3988,
+      "per_source_slots": {
+        "human_1793267780353445970": 997,
+        "human_1793273071909277357": 997,
+        "human_1793280207780912425": 997,
+        "human_1793121358375746008": 997
+      },
+      "actual_full_windows": 2086,
+      "norm_sha256": "5a7352c90c1a0f559569e67fe3f5b92a726c0b67e3be4b345c81ee81d1f425df"
+    },
+    "residual": {
+      "sampler_slots": 3988,
+      "per_source_slots": {
+        "human_1793267780353445970": 997,
+        "human_1793273071909277357": 997,
+        "human_1793280207780912425": 997,
+        "human_1793121358375746008": 997
+      },
+      "actual_full_windows": 2086,
+      "norm_sha256": "1df2cdbda5008c91321fe213a17b80ba48e59fac8b0854aef18d7a6013858c2a"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "schema": "pi05-unified-joint-v1",
+  "ready": true,
+  "records": [
+    {
+      "source": "human_1793267780353445970",
+      "split": "train",
+      "kind": "human",
+      "path": "data/unified-joint29-v1/human_1793267780353445970.parquet",
+      "sha256": "a6d1c8025219b1211923fbdb059a97aefc89f440dc15d483bb9ff7107075cfda",
+      "motion_rows": 290,
+      "paired_rows": 290,
+      "raw_metadata": "corrections/human_1793267780353445970/metadata.json",
+      "raw_metadata_sha256": "ac0d7bf0ab53ef66aaf8712f29da001b1212110bd935b117e6e2573adedb08a9",
+      "snapshot": "corrections/human_1793267780353445970/motion-start-000000.npz",
+      "snapshot_sha256": "f373cc8fb428b6f23bf7fd65edaa2de99ae5de6f4a424385970646cc2c8ed01f",
+      "replay": ".local/unified-first-human-review/replay.json",
+      "replay_sha256": "24fac19399b2b631500849930f3ef900bb45a5222abf087c91038d5fe0bf3b46"
+    },
+    {
+      "source": "human_1793273071909277357",
+      "split": "train",
+      "kind": "human",
+      "path": "data/unified-joint29-v1/human_1793273071909277357.parquet",
+      "sha256": "2ffda7b192f830a0aef1e79bf6d3fcbcc65f3fca1c4a3c828153d07bd638f0ec",
+      "motion_rows": 335,
+      "paired_rows": 335,
+      "raw_metadata": "corrections/human_1793273071909277357/metadata.json",
+      "raw_metadata_sha256": "16fb77e4d64575023cb99544979e9d050f52ca20d51294424eaa6c697b169aef",
+      "snapshot": "corrections/human_1793273071909277357/motion-start-000000.npz",
+      "snapshot_sha256": "e0fcaf8a30447786ff8688b2103e644c7797e06f176678fef8dc77be4f21c271",
+      "replay": ".local/unified-second-human-review/replay.json",
+      "replay_sha256": "487a16fcbe2be3159709f4616c1207150bd45c0f4f246ae8505604136cffaee1"
+    },
+    {
+      "source": "human_1793280207780912425",
+      "split": "train",
+      "kind": "human",
+      "path": "data/unified-joint29-v1/human_1793280207780912425.parquet",
+      "sha256": "4783e6ea4e4e271817e0e2de6a5c53b9561f69bb28a5982c8b96e036fb6547f3",
+      "motion_rows": 1006,
+      "paired_rows": 1006,
+      "raw_metadata": "corrections/human_1793280207780912425/metadata.json",
+      "raw_metadata_sha256": "bd85545fbf8035ad2787bed19684e10bbe29a8df44004bb817bb8c2b457c6dc2",
+      "snapshot": "corrections/human_1793280207780912425/motion-start-000000.npz",
+      "snapshot_sha256": "930b52f8b7d68703f528f3168333a2da4a91e444f78fbefe4b1cc289dafc117c",
+      "replay": ".local/unified-third-human-review/replay.json",
+      "replay_sha256": "d14bf56f69f921d807562c29a2ebdd85931e55f4f1874d4107692cb88b31ce1b"
+    },
+    {
+      "source": "human_1793121358375746008",
+      "split": "train",
+      "path": "reports/joint-pairs-20261029/v3/human_1793121358375746008/pairs.parquet",
+      "sha256": "80bcb5d8635422c0da5e377ec33326ede93485850b69c643cb22d4de3453a0b0",
+      "motion_rows": 491,
+      "paired_rows": 511,
+      "kind": "pairs",
+      "provenance": "re-executed joint expert, not original historical commands"
+    },
+    {
+      "source": "human_1793122696228231033",
+      "split": "holdout",
+      "path": "reports/joint-pairs-20261029/v3/human_1793122696228231033/pairs.parquet",
+      "sha256": "6d0394a606eb9ad792092e224cb87b6b4ad6f6023b8fc1605040e44150473b8a",
+      "motion_rows": 434,
+      "paired_rows": 454,
+      "kind": "pairs",
+      "provenance": "re-executed joint expert, not original historical commands"
+    }
+  ],
+  "batch_manifest": ".local/unified-human-batch-20261029/manifest.json",
+  "batch_sha256": "d0ebdca060e85e795d2ea9555d0b801db1b5e4671528a9794ee03c6db05189b9",
+  "old_manifest_sha256": "ec974bd07e101e28de349e813da249b92cb175df88e93c6eecfd6e75235c6a9a",
+  "horizon": 10,
+  "state_dim": 9,
+  "action_dim": 8,
+  "control_hz": 20,
+  "whole_episode_split": true,
+  "sampling": "equal mass per train episode, uniform repeated full-window slots; seed42 shuffle",
+  "raw_modified": false,
+  "diagnostic_holds_used": false,
+  "holdout_previously_used_for_development": true
+}

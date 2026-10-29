@@ -1,0 +1,78 @@
+{
+  "schema": "pi05-unified-joint-plan-v1",
+  "representation": "residual",
+  "experiment": "human_joint29_residual1000",
+  "train": {
+    "updates": 1000,
+    "batch": 1,
+    "seed": 42,
+    "lr": 2e-05,
+    "warmup": 20,
+    "horizon": 10,
+    "state_dim": 9,
+    "action_dim": 8,
+    "sampler_slots": 3988,
+    "holdout_windows": 425,
+    "train_sources": [
+      "human_1793267780353445970",
+      "human_1793273071909277357",
+      "human_1793280207780912425",
+      "human_1793121358375746008"
+    ],
+    "holdout_sources": [
+      "human_1793122696228231033"
+    ],
+    "optimizer": "fresh AdamW clip1; LoRA only; no EMA",
+    "control_hz": 20
+  },
+  "evaluation": {
+    "sources": [
+      "human_1793267780353445970",
+      "human_1793273071909277357",
+      "human_1793280207780912425",
+      "human_1793122696228231033"
+    ],
+    "max_controls": 1200,
+    "milestone": 600,
+    "replan_steps": 1,
+    "max_target_joint_jump_rad": 0.35,
+    "required_streak": 20,
+    "success": "native goal + negative gripper command + width>=.06 + no contact + eef clear>=.10 for20",
+    "expert_fallback": false,
+    "seed": 42,
+    "holdout_previously_used_for_development": true
+  },
+  "inputs_sha256": {
+    "data/unified-joint29-v1/residual/manifest.json": "ef779348f1fa7461c3e5ac058481a921eab3a75fff684c6a48c6dd425de37cd5",
+    "data/unified-joint29-v1/residual/assets/joint_contract29/norm_stats.json": "1df2cdbda5008c91321fe213a17b80ba48e59fac8b0854aef18d7a6013858c2a",
+    "evidence/parent-manifest.json": "2cb374c23ffd39d8b4ccf3da2557936e8c4da055763b28792d656801aa6abc02",
+    "evidence/openpi-source.json": "8c885f956a4c6b97366e14d28f81cc7b19f9f29366b0a800ab69bc47bccdb9ad",
+    "scripts/unified_joint_dataset.py": "6acdf338952a925efdcb22e4edba246d0a7a2bd97f1c9aa5cd0265a216b4d327",
+    "scripts/train_unified_joint.py": "df6e5eb94909ed7eb5f3559012892e0ddb4d2edba22fc531fde932cde5a14579",
+    "scripts/evaluate_unified_joint.py": "17d386e7b561e15d8e3ac625116cdea54d234e3f67edddcd7ba73cb3e49d1c3b",
+    "scripts/joint_dataset.py": "619d77852bc359c1911ca139c7dc8e02f02439b0a21d936c2ec340623c5ca773",
+    "scripts/joint_residual.py": "dd70d9960fead61ab6925543d6359bfc118b87bfbdf02298358ff57ea14344c9",
+    "scripts/training_config.py": "f03c2d7a96de92a6d334bf3e4c92dec6e8c146d72cc61becf1ad012e5f208cac",
+    "scripts/joint_action_contract.py": "724723e7f54810c55c1c6233d137f55cfd7acf21bf62feaf12ce921c2994dfe0",
+    "scripts/motion_recording.py": "16851aca9be37ebb6942e3d7a875055b105c49884d6cff0d054f45c636d64cf4",
+    "scripts/evaluate_joint_pilot.py": "d3728fc79e5cede57bb9255abe33692870ecbaa49344c9fe7dbce7f5a16161cb",
+    "data/unified-joint29-v1/human_1793267780353445970.parquet": "a6d1c8025219b1211923fbdb059a97aefc89f440dc15d483bb9ff7107075cfda",
+    "corrections/human_1793267780353445970/metadata.json": "ac0d7bf0ab53ef66aaf8712f29da001b1212110bd935b117e6e2573adedb08a9",
+    "corrections/human_1793267780353445970/motion-start-000000.npz": "f373cc8fb428b6f23bf7fd65edaa2de99ae5de6f4a424385970646cc2c8ed01f",
+    ".local/unified-first-human-review/replay.json": "24fac19399b2b631500849930f3ef900bb45a5222abf087c91038d5fe0bf3b46",
+    "data/unified-joint29-v1/human_1793273071909277357.parquet": "2ffda7b192f830a0aef1e79bf6d3fcbcc65f3fca1c4a3c828153d07bd638f0ec",
+    "corrections/human_1793273071909277357/metadata.json": "16fb77e4d64575023cb99544979e9d050f52ca20d51294424eaa6c697b169aef",
+    "corrections/human_1793273071909277357/motion-start-000000.npz": "e0fcaf8a30447786ff8688b2103e644c7797e06f176678fef8dc77be4f21c271",
+    ".local/unified-second-human-review/replay.json": "487a16fcbe2be3159709f4616c1207150bd45c0f4f246ae8505604136cffaee1",
+    "data/unified-joint29-v1/human_1793280207780912425.parquet": "4783e6ea4e4e271817e0e2de6a5c53b9561f69bb28a5982c8b96e036fb6547f3",
+    "corrections/human_1793280207780912425/metadata.json": "bd85545fbf8035ad2787bed19684e10bbe29a8df44004bb817bb8c2b457c6dc2",
+    "corrections/human_1793280207780912425/motion-start-000000.npz": "930b52f8b7d68703f528f3168333a2da4a91e444f78fbefe4b1cc289dafc117c",
+    ".local/unified-third-human-review/replay.json": "d14bf56f69f921d807562c29a2ebdd85931e55f4f1874d4107692cb88b31ce1b",
+    "reports/joint-pairs-20261029/v3/human_1793121358375746008/pairs.parquet": "80bcb5d8635422c0da5e377ec33326ede93485850b69c643cb22d4de3453a0b0",
+    "reports/full-state-replay-20261028/v1/human_1793121358375746008/snapshot-73.npz": "b2ba0b5864f2a052b62ad66d3f3a50cd404eb593f638fa1c1fad1bd637345547",
+    "reports/full-state-replay-20261028/v1/human_1793121358375746008/identity.json": "49fbb38e78544509b24afa8a940a1048b23e726290439d7799e1bfddae1e112a",
+    "reports/joint-pairs-20261029/v3/human_1793122696228231033/pairs.parquet": "6d0394a606eb9ad792092e224cb87b6b4ad6f6023b8fc1605040e44150473b8a",
+    "reports/full-state-replay-20261028/v1/human_1793122696228231033/snapshot-223.npz": "704adc4c3dc058a1fadbdd45f196eb6a2e581ff315cc4d3ffe19bb53abaec15c",
+    "reports/full-state-replay-20261028/v1/human_1793122696228231033/identity.json": "49fbb38e78544509b24afa8a940a1048b23e726290439d7799e1bfddae1e112a"
+  }
+}

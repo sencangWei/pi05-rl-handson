@@ -1,0 +1,602 @@
+[
+  {
+    "step": 0,
+    "grad_norm": 0.1415,
+    "loss": 0.4958,
+    "param_norm": 1833.3146
+  },
+  {
+    "step": 10,
+    "grad_norm": 0.2608,
+    "loss": 0.7868,
+    "param_norm": 1833.3147
+  },
+  {
+    "step": 20,
+    "grad_norm": 0.3837,
+    "loss": 0.8003,
+    "param_norm": 1833.3147
+  },
+  {
+    "step": 30,
+    "grad_norm": 0.3303,
+    "loss": 0.953,
+    "param_norm": 1833.3147
+  },
+  {
+    "step": 40,
+    "grad_norm": 0.2673,
+    "loss": 0.6372,
+    "param_norm": 1833.3147
+  },
+  {
+    "step": 50,
+    "grad_norm": 0.5325,
+    "loss": 0.9906,
+    "param_norm": 1833.3147
+  },
+  {
+    "step": 60,
+    "grad_norm": 0.308,
+    "loss": 0.7862,
+    "param_norm": 1833.3147
+  },
+  {
+    "step": 70,
+    "grad_norm": 0.1857,
+    "loss": 0.5775,
+    "param_norm": 1833.3151
+  },
+  {
+    "step": 80,
+    "grad_norm": 0.5662,
+    "loss": 0.9882,
+    "param_norm": 1833.3157
+  },
+  {
+    "step": 90,
+    "grad_norm": 0.764,
+    "loss": 1.1117,
+    "param_norm": 1833.3157
+  },
+  {
+    "step": 100,
+    "grad_norm": 0.3869,
+    "loss": 0.6239,
+    "param_norm": 1833.3158
+  },
+  {
+    "step": 110,
+    "grad_norm": 0.3496,
+    "loss": 0.922,
+    "param_norm": 1833.3163
+  },
+  {
+    "step": 120,
+    "grad_norm": 0.6109,
+    "loss": 1.0372,
+    "param_norm": 1833.3164
+  },
+  {
+    "step": 130,
+    "grad_norm": 0.3699,
+    "loss": 0.7951,
+    "param_norm": 1833.3168
+  },
+  {
+    "step": 140,
+    "grad_norm": 0.3585,
+    "loss": 0.5635,
+    "param_norm": 1833.3174
+  },
+  {
+    "step": 150,
+    "grad_norm": 0.249,
+    "loss": 0.5717,
+    "param_norm": 1833.3176
+  },
+  {
+    "step": 160,
+    "grad_norm": 0.5324,
+    "loss": 0.8688,
+    "param_norm": 1833.3182
+  },
+  {
+    "step": 170,
+    "grad_norm": 0.3824,
+    "loss": 0.6595,
+    "param_norm": 1833.3184
+  },
+  {
+    "step": 180,
+    "grad_norm": 0.4599,
+    "loss": 0.6291,
+    "param_norm": 1833.3192
+  },
+  {
+    "step": 190,
+    "grad_norm": 0.4154,
+    "loss": 0.7456,
+    "param_norm": 1833.3199
+  },
+  {
+    "step": 200,
+    "grad_norm": 0.6657,
+    "loss": 0.8796,
+    "param_norm": 1833.3203
+  },
+  {
+    "step": 210,
+    "grad_norm": 0.659,
+    "loss": 0.9648,
+    "param_norm": 1833.3209
+  },
+  {
+    "step": 220,
+    "grad_norm": 0.5641,
+    "loss": 0.6434,
+    "param_norm": 1833.3213
+  },
+  {
+    "step": 230,
+    "grad_norm": 0.7165,
+    "loss": 0.7318,
+    "param_norm": 1833.3221
+  },
+  {
+    "step": 240,
+    "grad_norm": 0.2308,
+    "loss": 0.2057,
+    "param_norm": 1833.3231
+  },
+  {
+    "step": 250,
+    "grad_norm": 0.4818,
+    "loss": 0.3721,
+    "param_norm": 1833.3239
+  },
+  {
+    "step": 260,
+    "grad_norm": 0.3893,
+    "loss": 0.3746,
+    "param_norm": 1833.3242
+  },
+  {
+    "step": 270,
+    "grad_norm": 0.3852,
+    "loss": 0.3179,
+    "param_norm": 1833.3254
+  },
+  {
+    "step": 280,
+    "grad_norm": 0.5657,
+    "loss": 0.3145,
+    "param_norm": 1833.3262
+  },
+  {
+    "step": 290,
+    "grad_norm": 1.3214,
+    "loss": 0.7306,
+    "param_norm": 1833.327
+  },
+  {
+    "step": 300,
+    "grad_norm": 0.4983,
+    "loss": 0.4851,
+    "param_norm": 1833.3274
+  },
+  {
+    "step": 310,
+    "grad_norm": 0.3515,
+    "loss": 0.186,
+    "param_norm": 1833.3281
+  },
+  {
+    "step": 320,
+    "grad_norm": 0.6233,
+    "loss": 0.4879,
+    "param_norm": 1833.329
+  },
+  {
+    "step": 330,
+    "grad_norm": 0.6136,
+    "loss": 0.3762,
+    "param_norm": 1833.3293
+  },
+  {
+    "step": 340,
+    "grad_norm": 0.5913,
+    "loss": 0.4354,
+    "param_norm": 1833.3301
+  },
+  {
+    "step": 350,
+    "grad_norm": 1.1918,
+    "loss": 0.6914,
+    "param_norm": 1833.3311
+  },
+  {
+    "step": 360,
+    "grad_norm": 0.4779,
+    "loss": 0.2662,
+    "param_norm": 1833.3317
+  },
+  {
+    "step": 370,
+    "grad_norm": 0.576,
+    "loss": 0.3015,
+    "param_norm": 1833.332
+  },
+  {
+    "step": 380,
+    "grad_norm": 0.4536,
+    "loss": 0.1438,
+    "param_norm": 1833.3329
+  },
+  {
+    "step": 390,
+    "grad_norm": 0.5985,
+    "loss": 0.2557,
+    "param_norm": 1833.3336
+  },
+  {
+    "step": 400,
+    "grad_norm": 0.8896,
+    "loss": 0.4013,
+    "param_norm": 1833.334
+  },
+  {
+    "step": 410,
+    "grad_norm": 0.7471,
+    "loss": 0.2674,
+    "param_norm": 1833.3348
+  },
+  {
+    "step": 420,
+    "grad_norm": 0.7749,
+    "loss": 0.1762,
+    "param_norm": 1833.3352
+  },
+  {
+    "step": 430,
+    "grad_norm": 0.4937,
+    "loss": 0.1971,
+    "param_norm": 1833.3356
+  },
+  {
+    "step": 440,
+    "grad_norm": 0.6488,
+    "loss": 0.1746,
+    "param_norm": 1833.3358
+  },
+  {
+    "step": 450,
+    "grad_norm": 0.7689,
+    "loss": 0.2581,
+    "param_norm": 1833.3359
+  },
+  {
+    "step": 460,
+    "grad_norm": 0.6599,
+    "loss": 0.2538,
+    "param_norm": 1833.3363
+  },
+  {
+    "step": 470,
+    "grad_norm": 0.4934,
+    "loss": 0.1145,
+    "param_norm": 1833.3372
+  },
+  {
+    "step": 480,
+    "grad_norm": 0.8344,
+    "loss": 0.2427,
+    "param_norm": 1833.3372
+  },
+  {
+    "step": 490,
+    "grad_norm": 0.5708,
+    "loss": 0.1365,
+    "param_norm": 1833.3372
+  },
+  {
+    "step": 500,
+    "grad_norm": 0.5243,
+    "loss": 0.1279,
+    "param_norm": 1833.3373
+  },
+  {
+    "step": 510,
+    "grad_norm": 0.9241,
+    "loss": 0.1962,
+    "param_norm": 1833.3378
+  },
+  {
+    "step": 520,
+    "grad_norm": 0.5647,
+    "loss": 0.1287,
+    "param_norm": 1833.3379
+  },
+  {
+    "step": 530,
+    "grad_norm": 0.6132,
+    "loss": 0.1503,
+    "param_norm": 1833.3381
+  },
+  {
+    "step": 540,
+    "grad_norm": 0.335,
+    "loss": 0.054,
+    "param_norm": 1833.3381
+  },
+  {
+    "step": 550,
+    "grad_norm": 0.4817,
+    "loss": 0.0798,
+    "param_norm": 1833.3385
+  },
+  {
+    "step": 560,
+    "grad_norm": 0.5705,
+    "loss": 0.1098,
+    "param_norm": 1833.3385
+  },
+  {
+    "step": 570,
+    "grad_norm": 0.5987,
+    "loss": 0.1163,
+    "param_norm": 1833.3387
+  },
+  {
+    "step": 580,
+    "grad_norm": 0.5265,
+    "loss": 0.1293,
+    "param_norm": 1833.3391
+  },
+  {
+    "step": 590,
+    "grad_norm": 0.605,
+    "loss": 0.1165,
+    "param_norm": 1833.3397
+  },
+  {
+    "step": 600,
+    "grad_norm": 0.5245,
+    "loss": 0.096,
+    "param_norm": 1833.3398
+  },
+  {
+    "step": 610,
+    "grad_norm": 0.6305,
+    "loss": 0.1468,
+    "param_norm": 1833.3401
+  },
+  {
+    "step": 620,
+    "grad_norm": 0.7636,
+    "loss": 0.1304,
+    "param_norm": 1833.3401
+  },
+  {
+    "step": 630,
+    "grad_norm": 0.6131,
+    "loss": 0.12,
+    "param_norm": 1833.3407
+  },
+  {
+    "step": 640,
+    "grad_norm": 0.6847,
+    "loss": 0.1013,
+    "param_norm": 1833.3411
+  },
+  {
+    "step": 650,
+    "grad_norm": 0.6569,
+    "loss": 0.0999,
+    "param_norm": 1833.3414
+  },
+  {
+    "step": 660,
+    "grad_norm": 0.6213,
+    "loss": 0.1002,
+    "param_norm": 1833.3417
+  },
+  {
+    "step": 670,
+    "grad_norm": 0.5153,
+    "loss": 0.1121,
+    "param_norm": 1833.3418
+  },
+  {
+    "step": 680,
+    "grad_norm": 0.8123,
+    "loss": 0.1307,
+    "param_norm": 1833.342
+  },
+  {
+    "step": 690,
+    "grad_norm": 0.4907,
+    "loss": 0.0618,
+    "param_norm": 1833.342
+  },
+  {
+    "step": 700,
+    "grad_norm": 0.557,
+    "loss": 0.1074,
+    "param_norm": 1833.342
+  },
+  {
+    "step": 710,
+    "grad_norm": 0.5768,
+    "loss": 0.0738,
+    "param_norm": 1833.3427
+  },
+  {
+    "step": 720,
+    "grad_norm": 0.7186,
+    "loss": 0.1313,
+    "param_norm": 1833.343
+  },
+  {
+    "step": 730,
+    "grad_norm": 0.7428,
+    "loss": 0.0939,
+    "param_norm": 1833.3431
+  },
+  {
+    "step": 740,
+    "grad_norm": 0.542,
+    "loss": 0.0895,
+    "param_norm": 1833.3436
+  },
+  {
+    "step": 750,
+    "grad_norm": 0.5631,
+    "loss": 0.0597,
+    "param_norm": 1833.3438
+  },
+  {
+    "step": 760,
+    "grad_norm": 0.6753,
+    "loss": 0.1063,
+    "param_norm": 1833.344
+  },
+  {
+    "step": 770,
+    "grad_norm": 0.6725,
+    "loss": 0.0735,
+    "param_norm": 1833.344
+  },
+  {
+    "step": 780,
+    "grad_norm": 0.8297,
+    "loss": 0.0829,
+    "param_norm": 1833.3446
+  },
+  {
+    "step": 790,
+    "grad_norm": 0.4542,
+    "loss": 0.0786,
+    "param_norm": 1833.3446
+  },
+  {
+    "step": 800,
+    "grad_norm": 0.5076,
+    "loss": 0.0566,
+    "param_norm": 1833.345
+  },
+  {
+    "step": 810,
+    "grad_norm": 0.6703,
+    "loss": 0.0665,
+    "param_norm": 1833.345
+  },
+  {
+    "step": 820,
+    "grad_norm": 0.6016,
+    "loss": 0.0766,
+    "param_norm": 1833.345
+  },
+  {
+    "step": 830,
+    "grad_norm": 0.7329,
+    "loss": 0.0845,
+    "param_norm": 1833.3456
+  },
+  {
+    "step": 840,
+    "grad_norm": 0.4072,
+    "loss": 0.0542,
+    "param_norm": 1833.3457
+  },
+  {
+    "step": 850,
+    "grad_norm": 0.5581,
+    "loss": 0.0468,
+    "param_norm": 1833.3459
+  },
+  {
+    "step": 860,
+    "grad_norm": 0.5913,
+    "loss": 0.0552,
+    "param_norm": 1833.3463
+  },
+  {
+    "step": 870,
+    "grad_norm": 0.586,
+    "loss": 0.0563,
+    "param_norm": 1833.3463
+  },
+  {
+    "step": 880,
+    "grad_norm": 0.4668,
+    "loss": 0.0555,
+    "param_norm": 1833.3466
+  },
+  {
+    "step": 890,
+    "grad_norm": 1.2227,
+    "loss": 0.1139,
+    "param_norm": 1833.3466
+  },
+  {
+    "step": 900,
+    "grad_norm": 0.7672,
+    "loss": 0.0711,
+    "param_norm": 1833.3469
+  },
+  {
+    "step": 910,
+    "grad_norm": 0.7144,
+    "loss": 0.0836,
+    "param_norm": 1833.3473
+  },
+  {
+    "step": 920,
+    "grad_norm": 0.6429,
+    "loss": 0.0591,
+    "param_norm": 1833.3475
+  },
+  {
+    "step": 930,
+    "grad_norm": 0.5511,
+    "loss": 0.0396,
+    "param_norm": 1833.3475
+  },
+  {
+    "step": 940,
+    "grad_norm": 0.7724,
+    "loss": 0.0884,
+    "param_norm": 1833.3477
+  },
+  {
+    "step": 950,
+    "grad_norm": 0.6702,
+    "loss": 0.0445,
+    "param_norm": 1833.3479
+  },
+  {
+    "step": 960,
+    "grad_norm": 0.6986,
+    "loss": 0.0626,
+    "param_norm": 1833.3479
+  },
+  {
+    "step": 970,
+    "grad_norm": 0.7104,
+    "loss": 0.0506,
+    "param_norm": 1833.3483
+  },
+  {
+    "step": 980,
+    "grad_norm": 0.5462,
+    "loss": 0.0511,
+    "param_norm": 1833.3485
+  },
+  {
+    "step": 990,
+    "grad_norm": 0.4384,
+    "loss": 0.0491,
+    "param_norm": 1833.3486
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE",
+  "actual_updates": 1000,
+  "plan_sha256": "7b5375a5f38a8bb669349313c9d913a3d358fac8043d46ca4608dc2be2794cf5",
+  "checkpoint_dir": "/home/robot/pi05-rl-handson/checkpoints/pi05_unified_joint_absolute_lora/human_joint29_absolute1000",
+  "representation": "absolute",
+  "parent": "official pi05_libero fresh optimizer",
+  "holdout_gradient_samples": 0,
+  "ui_changed": false,
+  "sampling_order_exact": true,
+  "wall_seconds": 203.68315635199542
+}

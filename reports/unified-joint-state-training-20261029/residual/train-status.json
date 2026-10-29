@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE",
+  "actual_updates": 1000,
+  "plan_sha256": "962e9e1b84db16fd2f4984a97acc775a73917124f92acbe616c64919049f99fb",
+  "checkpoint_dir": "/home/robot/pi05-rl-handson/checkpoints/pi05_unified_joint_state_residual_lora/human_joint29_state_residual1000",
+  "representation": "residual",
+  "parent": "official pi05_libero fresh optimizer",
+  "holdout_gradient_samples": 0,
+  "ui_changed": false,
+  "sampling_order_exact": true,
+  "wall_seconds": 188.3014265219972
+}

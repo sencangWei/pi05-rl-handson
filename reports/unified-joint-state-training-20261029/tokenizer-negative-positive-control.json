@@ -1,0 +1,28 @@
+{
+  "False": {
+    "each_state_dimension_changes_tokens": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "True": {
+    "each_state_dimension_changes_tokens": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+}

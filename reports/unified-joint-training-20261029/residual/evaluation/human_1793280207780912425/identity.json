@@ -1,0 +1,73 @@
+{
+  "plan_sha256": "c06c302136e1f7276886f10784303cc25eff50f0dc0c2671eb650f88ad9cfd05",
+  "server": {
+    "plan_sha256": "c06c302136e1f7276886f10784303cc25eff50f0dc0c2671eb650f88ad9cfd05",
+    "representation": "residual",
+    "checkpoint": "/home/robot/pi05-rl-handson/checkpoints/pi05_unified_joint_residual_lora/human_joint29_residual1000/999",
+    "norm_sha256": "4b6a880272145fb2cce88f54cb5d7906c4fd6a2a570a1f84160188da64c5a1ae",
+    "action_dim": 8,
+    "state_dim": 9,
+    "controller": "ABSOLUTE_JOINT_POSITION",
+    "checkpoint_files_sha256": {
+      "_CHECKPOINT_METADATA": "ebf3b1bd7403ea42ff783d37e8f503a30492705b6f29a35a12eeae28c298b216",
+      "assets/joint_contract29/norm_stats.json": "4b6a880272145fb2cce88f54cb5d7906c4fd6a2a570a1f84160188da64c5a1ae",
+      "params/_METADATA": "88464a384c524c50fa1a92c1685d23a79570c62807a0ccf021f5f9307fff137c",
+      "params/_sharding": "54899ee3f4d45eee96ddada379a19a9da1324792b141fa0449608620571e6b01",
+      "params/array_metadatas/process_0": "da5f8952b77ab352fa92e3e58d742bfe0db5b9c1b956212f8279895b9df03721",
+      "params/d/4d938bd8b7019a8a47ace91a400fc70c": "7d3647e8b8f8f4a2736394147634d941971ff014b88c39a812ec87fe23ccf64f",
+      "params/manifest.ocdbt": "0d11a8ac5108d5f147e254a45faa0f73ce0cd330a1a972294bb6a654ad96d956",
+      "params/ocdbt.process_0/d/102d7e34a721df3dea3e94d792001aeb": "822b90ba38a336968ebf2c8b4b6009ff50017377d7d3ea70f1bff0ea2f5434af",
+      "params/ocdbt.process_0/d/64b66228d223b3371be61efbada8f906": "b4c0fe68be2c8ce5f732cfb60a4459a5fa5d41232f0f338a0faed08249a22c13",
+      "params/ocdbt.process_0/d/babe672bc3cff18d9de49a21b0ef9c24": "3667f31ed187054421428b26b76b33471be4cd057ecaee120d78c05b8cbeda3d",
+      "params/ocdbt.process_0/d/c88cef1dad307e7acf6b02a9a82c72ba": "e94b6f05ceef55173200b9a654bc6d84fae3656f3c7e168fafc6291a2847bc7a",
+      "params/ocdbt.process_0/d/ce792a298266e0d55dfed1e6f5b10895": "e98511b9db92bdfa83dba6dbb313f6ee7354e523105feb9229631b53c0ddbdf2",
+      "params/ocdbt.process_0/d/d1edec1ab969c0364f0f37c0a3bea848": "7785e58cd04e2f5f280276996385211e7ebb3d0ca82ad3889972c4e58ab82588",
+      "params/ocdbt.process_0/manifest.ocdbt": "5553d23e6bf1e0b920597698458b2b881d9e36dd3a24e7263aea35b51146521f",
+      "train_state/_METADATA": "63e1f2c02ddf178de1a69bb753e0a664dc8cc04f5a040f8478856590e3ffdd89",
+      "train_state/_sharding": "7ffa5b83767ec9353a713695184d5164e0eadec2d3aa10ecb23036139076db83",
+      "train_state/array_metadatas/process_0": "97c589bad1e6dd6f6932232c00f66b747a47ae5e2c66b23d2b97976c67797712",
+      "train_state/d/8c7629d06a664ff3deab1ccc98bffd95": "50d8e28cf41b7fef0dc89f989b78f4fd495634e60194a69d46e288cb6cecb573",
+      "train_state/manifest.ocdbt": "3d853b368dca3af7f035b2c33691d5d69060b2995dfc19621926e6e841a78cab",
+      "train_state/ocdbt.process_0/d/00f745fdb8e50d3d2722da8583797cd2": "4763501b5d6d3d440edf11829a080a8df22f537fece92154bd6d9ab4873c8714",
+      "train_state/ocdbt.process_0/d/6d46b697b4892bb860cb87199f3ee003": "4322e96cd3829e98d2a117a6ec7128cdaa27f5f3a65c63fc53133c63c1413e9b",
+      "train_state/ocdbt.process_0/d/c0521975ac8a16d6ac90732ed91953d8": "173f7b4046d06f59f5f3f37b47100793249413c943c3c7e84a854e08eb51dbb2",
+      "train_state/ocdbt.process_0/d/d78817874bcbb941b54a94bdccdc9c8c": "f4ef0dbb220b77d279e6626288c6312ba792a44e5472994ecfd4a6873756d468",
+      "train_state/ocdbt.process_0/manifest.ocdbt": "fff29f043c646be370570615b68b0b041714f180bea63cb8dc323428270b8882"
+    }
+  },
+  "split": "train",
+  "source": "human_1793280207780912425",
+  "initial_rgb_and_joint_state_exact": true,
+  "snapshot_sha256": "930b52f8b7d68703f528f3168333a2da4a91e444f78fbefe4b1cc289dafc117c",
+  "controller": "JOINT_POSITION",
+  "limits": [
+    [
+      -2.8973,
+      2.8973
+    ],
+    [
+      -1.7628,
+      1.7628
+    ],
+    [
+      -2.8973,
+      2.8973
+    ],
+    [
+      -3.0718,
+      -0.0698
+    ],
+    [
+      -2.8973,
+      2.8973
+    ],
+    [
+      -0.0175,
+      3.7525
+    ],
+    [
+      -2.8973,
+      2.8973
+    ]
+  ]
+}
