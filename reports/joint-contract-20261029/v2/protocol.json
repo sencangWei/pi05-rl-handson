@@ -1,0 +1,50 @@
+{
+  "seed": 42,
+  "source_commit": "f6f050578bdfba8e61e1f1dbccb55088d23d6e17",
+  "modes": [
+    "next_position",
+    "velocity_compensated"
+  ],
+  "sources": [
+    "human_1793121358375746008",
+    "human_1793122696228231033"
+  ],
+  "limits": {
+    "position_p95_m": 0.02,
+    "rotation_p95_rad": 0.15,
+    "cabinet_extra_penetration_m": 0.001
+  },
+  "control_hz": 20,
+  "hold_controls": 20,
+  "kp": 150.0,
+  "kd": 24.49489742783178,
+  "action": "absolute target radians7 + gripper1",
+  "next_position": "reference next physical joint angles, not original commands",
+  "velocity_compensated": "next joint angles + kd/kp * next joint velocity; clip to joint limits",
+  "training": false,
+  "policy_inference": false,
+  "next_state_injection": false,
+  "fresh_process_per_execution": true,
+  "ui_changed": false,
+  "inputs_sha256": {
+    "scripts/verify_joint_actions.py": "4ed85acd88e641daa21d5a21ee82b76c5c39e744859085bd049d6225090a55b5",
+    "scripts/joint_action_contract.py": "724723e7f54810c55c1c6233d137f55cfd7acf21bf62feaf12ce921c2994dfe0",
+    "scripts/motion_recording.py": "16851aca9be37ebb6942e3d7a875055b105c49884d6cff0d054f45c636d64cf4",
+    "scripts/verify_simulation_snapshot.py": "19366a02ac01677e31238d42d0fb80df84fd7f238ef23ce96b4718938046dcbb",
+    "scripts/simulation_snapshot.py": "ce73f413ad333d86bef5b2c14500c34d540d5bbfdf739cd4142657c7e4f24c5b",
+    "scripts/verify_osc_conversion.py": "7d286c04023eacdef32b09d585c1d2c5592c0477f6a023290fd05662c18c690f",
+    "scripts/replay_mixed_correction.py": "8b4891d33abc7eea7dd59d96ccce21f8df7799ad0f32f9895b6d98a2ebdf0b76",
+    "scripts/osc_action_conversion.py": "5f20b4d3df70538f6b2ecd2a45afdd76d50ab80ab9255f881ecf8b87c11ac630",
+    "scripts/record_osc_pairs.py": "fa90af2747e610facc2531d83985502d8893ebf76c4362f9513b0b7f153c8880",
+    "reports/full-state-replay-20261028/v1/human_1793121358375746008/snapshot-73.npz": "b2ba0b5864f2a052b62ad66d3f3a50cd404eb593f638fa1c1fad1bd637345547",
+    "reports/full-state-replay-20261028/v1/human_1793121358375746008/identity.json": "49fbb38e78544509b24afa8a940a1048b23e726290439d7799e1bfddae1e112a",
+    "reports/osc-conversion-20261029/v1/human_1793121358375746008/reference-steps.json": "e23067426359c4120a8d55af62a1e1e791932632f37164e2986d24a923140d43",
+    "reports/osc-conversion-20261029/v1/human_1793121358375746008/reference-poses.npz": "c6521813eaa79d7af3820cf0b045110f9b7b8fd2c2af6127a80d08ff88edc87d",
+    "reports/osc-conversion-20261029/v1/human_1793121358375746008/reference-states.npz": "94c6e4ea31bd294feaa27a11f21047f69f1a8fbd33c272c10ae3069e7a5eeb24",
+    "reports/full-state-replay-20261028/v1/human_1793122696228231033/snapshot-223.npz": "704adc4c3dc058a1fadbdd45f196eb6a2e581ff315cc4d3ffe19bb53abaec15c",
+    "reports/full-state-replay-20261028/v1/human_1793122696228231033/identity.json": "49fbb38e78544509b24afa8a940a1048b23e726290439d7799e1bfddae1e112a",
+    "reports/osc-conversion-20261029/v1/human_1793122696228231033/reference-steps.json": "777feaf8449c098eb731543b509850277906643ad1289b1119dabc229274bc37",
+    "reports/osc-conversion-20261029/v1/human_1793122696228231033/reference-poses.npz": "9b8b1992f3f8cc97703c9401f9b20f547a85415fcdaeaf28a234be905dac3bd3",
+    "reports/osc-conversion-20261029/v1/human_1793122696228231033/reference-states.npz": "b6643dbbb45a558d2b6cbf6876a6e031c326e83a7bd64b7afc4408ecceb4e740"
+  }
+}

@@ -165,3 +165,11 @@ original-v1/v2各执行两源共1221控制，四录像2442帧全部解码；最�
 2026-10-29 交付核验完成：载荷 b2ed8691448d2b94e1e7589c148d481662efee90 已备份自有公开 sencangWei/pi05-rl-handson 的 experiment/matched-recovery-20261027 分支；独立远端恢复3644个跟踪文件，SHA256及重建Git树 bdd46e4ec5c46162a75de517e0470cea7e347f37 一致。Release数据四文件与适配器三文件均远端独立恢复一致，官方基座重建71张量/20LoRA精确匹配。证明 evidence/osc-sft29-final-remote-restore.json、osc-sft29-data-restore.json、osc-sft29-adapter-restore.json。仅推理权重有远端备份，完整优化器checkpoint仍在本机。负面能力结果不变，未替换面板；后续同专家完整初态诊断尚未执行。
 
 2026-10-29 rich capture: manual_joint_control.py is hash-pinned by historical replay; preserve it unchanged. New motion archives and hooks belong to manual_recovery.py plus a new helper. Existing mixed trace stores target_qpos/legacy physics, but policy state8 omits joints.
+
+- 2026-10-29 继续检查：当前π0.5 LIBERO状态8维为末端+双指，动作7维为OSC；不能直接表达相同末端下的肘部姿态。已有两条混合人工轨迹的关节段不进入原OSC监督。新参考执行有完整物理状态，可用于关节控制可行性对照；旧缺失控制器缓存不能补回。
+- robosuite1.4.1 JointPositionController为质量矩阵补偿PD：M[kp(q_goal-q)-kd*qvel]+bias，默认相对增量。若只把下一物理角度当目标，会产生跟踪滞后；本实验明确用绝对角接口，对照额外kd/kp*qvel前馈，不把观测角度冒充原始控制指令。
+
+2026-10-29 关节契约运行：v1仅在身份旁档写出时误用OSC专用identity检查，第一物理控制前退出；未改冻结快照函数，改为控制器安装前验证原OSC身份、安装后另记关节身份，在新目录v2执行。动作8维/状态9维，与现用OSC动作7维/末端状态8维严格区分；只做专家未来参考跟踪诊断，不视为模型能力或可直接训练标签。
+独立审查角色再次因配置gpt-5.5不受账户支持而启动失败，直接主代理复核，不记录独立审查通过。
+
+2026-10-29 关节契约4次物理执行完成：直接角度完整门1/2，速度补偿2/2；位置P95分别20.495→2.500mm、18.047→2.829mm。四次末尾均20/20松爪达标。只是专家未来参考跟踪，不是策略学习/泛化，也不是现用OSC慢动作根因证明；现有模型未换。无需重录这两条，下一步自动按统一关节接口重采动作前RGB/关节状态/实际8维命令，公开7维OSC回放不可直接混入。

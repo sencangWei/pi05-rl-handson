@@ -1,0 +1,48 @@
+{
+  "restored_osc_identity": {
+    "versions": {
+      "mujoco": "3.8.1",
+      "robosuite": "1.4.1",
+      "numpy": "1.26.4"
+    },
+    "model_sha256": "9bcc60ec07ac33a13a65b775a57ce4a6256efbee07385c47528e6119c861e89e",
+    "controller_type": "OperationalSpaceController",
+    "control_timestep": 0.05
+  },
+  "controller": "JOINT_POSITION",
+  "controller_class": "AbsoluteController",
+  "kp": 150.0,
+  "kd": 24.49489742783178,
+  "limits": [
+    [
+      -2.8973,
+      2.8973
+    ],
+    [
+      -1.7628,
+      1.7628
+    ],
+    [
+      -2.8973,
+      2.8973
+    ],
+    [
+      -3.0718,
+      -0.0698
+    ],
+    [
+      -2.8973,
+      2.8973
+    ],
+    [
+      -0.0175,
+      3.7525
+    ],
+    [
+      -2.8973,
+      2.8973
+    ]
+  ],
+  "state": "joint_pos7 + finger_pos2, radians/meters",
+  "action": "absolute joint target7 radians + gripper1 [-1,1]"
+}

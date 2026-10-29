@@ -1,0 +1,34 @@
+{
+  "passed": false,
+  "gates": {
+    "released_goal_hold": true,
+    "grasp_observed": true,
+    "position_tracking": false,
+    "rotation_tracking": true,
+    "cabinet_contact": true
+  },
+  "position_p95_m": 0.0204954293995578,
+  "rotation_p95_rad": 0.014028911703963023,
+  "cabinet_peak_penetration_m": 3.8940194487418205e-05,
+  "reference_cabinet_peak_penetration_m": 0.0003116764626942135,
+  "source": "human_1793121358375746008",
+  "mode": "next_position",
+  "controls": 511,
+  "joint_error_p95_rad": 0.030223687781331332,
+  "clipped_controls": 8,
+  "released_goal_hold_controls": 20,
+  "first_native_goal_control": 448,
+  "original_joint_controls": 444,
+  "actual_joint_travel_rad": [
+    0.09595468756328684,
+    0.602109893299378,
+    0.012875313113324844,
+    0.7625153633103529,
+    0.014935251724392074,
+    0.5941878983060795,
+    0.006942220358544637
+  ],
+  "policy_inference": false,
+  "training_ready": false,
+  "reason": "Action-contract diagnostic, not original commands or approved training pairs"
+}
