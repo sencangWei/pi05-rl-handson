@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson",
+  "branch": "experiment/matched-recovery-20261027",
+  "revision": "c4c766a524207e0359c43a90b533eeb45e4c48d6",
+  "method": "Remote GitHub recursive Git tree + SHA-validated base64 Git blob API contents; unchanged blobs from previously independently fetched remote clone; full clean directory restored",
+  "tracked_files": 3807,
+  "new_blobs_downloaded_independently": 59,
+  "all_tracked_contents_exact": true,
+  "git_tree": "d534dd1fbe39b1d0ea202561caccd9740ee4b1e7",
+  "rebuilt_git_tree_exact": true,
+  "manifest_sha256": "5f308937d06faf63c5fb9510285797123f9903ac964e57b6a5cebe4625cc0ff0",
+  "scope": "Joint RGB/state/action collection, isolated 200-update LoRA training, two failed actual policy evaluations, tests, frozen plans and reports; full tracked repository restored. Paired image data and inference adapters are in a separately verified Release; full optimizer checkpoint remains local."
+}

@@ -47,7 +47,9 @@ MUJOCO_GL=osmesa PYOPENGL_PLATFORM=osmesa OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS
 
 38项针对性测试及5项子测试通过，新增代码Ruff通过。四个策略视频帧全部解码；专家两段共967帧之前已完整解码。无独立子代理复核，不声称独立代码审查。本轮只有仿真，没有真机运动。
 
-[Release](https://github.com/sencangWei/pi05-rl-handson/releases/tag/joint-interface-pilot-20261029) 保存原始配对数据与紧凑推理适配器；[文件清单](backup-manifest.json)记录每个文件和归档SHA256。适配器以官方pi05_libero为父权重，重建全部71参数张量并比对SHA256；完整优化器检查点仅本机。独立远端下载/恢复证明保存于本目录或 evidence/joint-pilot29-remote-restore.json；备份状态以证明文件为准。
+[Release](https://github.com/sencangWei/pi05-rl-handson/releases/tag/joint-interface-pilot-20261029) 保存原始配对数据与紧凑推理适配器；[文件清单](backup-manifest.json)记录每个文件和归档SHA256。适配器以官方pi05_libero为父权重，重建全部71参数张量并比对SHA256；完整优化器检查点仅本机。代码载荷 c4c766a524207e0359c43a90b533eeb45e4c48d6 已从自有远端独立恢复：3807个跟踪文件逐一SHA256及重建Git树一致，恢复目录38项测试及5项子测试/Ruff通过。两个Release归档均从远端独立下载，整体SHA256及21个解压文件逐一一致；下载的适配器精确重建71参数张量（20 LoRA）。配对PNG、状态、动作及时序的完整复核见 restored-pairs-validation.json。证明：[代码恢复](../../evidence/joint-pilot29-remote-restore.json)、[恢复目录测试](restored-verification.json)、[Release恢复](release-restore.json)、[权重重建](adapter-restore.log)。完整优化器检查点仍仅本机。
+
+备份传输曾遇到TLS中断、超时，以及并发旧下载/重试尾段重叠导致的分段头或长度断言。保留已下载字节，仅使用实际远端分段拼接并去除重叠；最终以整体SHA256、解压文件SHA及参数重建验收。这属于传输恢复问题，未修改模型、评测或成功门限。
 
 恢复适配器验证（先将Release推理归档解压到项目根目录）：
 

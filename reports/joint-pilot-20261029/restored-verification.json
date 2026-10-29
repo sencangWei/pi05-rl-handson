@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "remote_revision": "c4c766a524207e0359c43a90b533eeb45e4c48d6",
+  "directory": ".local/joint-pilot29-api-restore",
+  "pytest": {
+    "tests": 38,
+    "subtests": 5,
+    "command": ".venv-ppo/bin/python -m pytest -q tests/test_joint_pairs.py tests/test_joint_action_contract.py tests/test_motion_recording.py tests/test_record_osc_pairs.py tests/test_simulation_snapshot.py",
+    "exit_code": 0
+  },
+  "ruff": {
+    "command": ".venv-train/bin/ruff check scripts/record_joint_pairs.py scripts/joint_dataset.py scripts/train_joint_pilot.py scripts/evaluate_joint_pilot.py tests/test_joint_pairs.py",
+    "exit_code": 0
+  }
+}

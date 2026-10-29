@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "source": "Independent public GitHub Release ranged downloads; overlapping retry tails removed; whole archive and per-file SHA256 verified; not copied local archive",
+  "release": "https://github.com/sencangWei/pi05-rl-handson/releases/tag/joint-interface-pilot-20261029",
+  "archives": [
+    {
+      "archive": "joint29-pairs-v3.tar.gz",
+      "archive_sha256": "b7178b66e41b0ac520cde77d4e0569729ddda2c7cfdae075b49b7ca797cc4b62",
+      "verified_files": 18
+    },
+    {
+      "archive": "joint29-pilot200-inference.tar.gz",
+      "archive_sha256": "bfa1bed7a879abb64ebf830ce4611de6096a33b95d54c298decb0ad00880f373",
+      "verified_files": 3
+    }
+  ],
+  "all_extracted_files_exact": true,
+  "inference_parameter_reconstruction": "separate adapter-restore.log",
+  "optimizer_state_backed_up": false,
+  "adapter_reconstruction": {
+    "status": "PASS",
+    "mode": "verify",
+    "tensors": 71,
+    "lora_tensors": 20,
+    "tree_sha256": "8e6d290f01b57e3b4eaa9cb1d733692d79569333e12da902067f3215784800d2"
+  },
+  "adapter_download_restore_directory": ".local/joint-pilot29-weight-only-restored/exports/joint29_pilot200_v1"
+}

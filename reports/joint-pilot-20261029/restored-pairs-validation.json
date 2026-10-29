@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "method": "Previously remotely restored validator code; decode every downloaded paired PNG and compare state/actions/frame timing/physics/audit hashes; no new physical replay",
+  "results": [
+    {
+      "source": "human_1793121358375746008",
+      "passed": true,
+      "paired_rows": 511,
+      "decoded_rgb_images": 1022,
+      "pre_observation_action_alignment": true,
+      "continuous_physics": true,
+      "unchanged_saved_actions": true
+    },
+    {
+      "source": "human_1793122696228231033",
+      "passed": true,
+      "paired_rows": 454,
+      "decoded_rgb_images": 908,
+      "pre_observation_action_alignment": true,
+      "continuous_physics": true,
+      "unchanged_saved_actions": true
+    }
+  ],
+  "paired_rows": 965,
+  "decoded_rgb_images": 1930
+}
