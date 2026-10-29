@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson",
+  "branch": "experiment/joint-residual-choice-20261029",
+  "revision": "e076537354548b98aab7e7195251af85bae05e58",
+  "method": "Remote GitHub recursive Git tree + SHA-validated base64 Git blob API contents; unchanged blobs from previously independently fetched remote clone; full clean directory restored",
+  "tracked_files": 3850,
+  "new_blobs_downloaded_independently": 34,
+  "all_tracked_contents_exact": true,
+  "git_tree": "4d4b2db8711cf434c49c8d50e2bc804456b91a37",
+  "rebuilt_git_tree_exact": true,
+  "manifest_sha256": "99c7bbbeb202839421fad7ca360f4763013e8b977763866b55b8cdeb6a7e32ea",
+  "scope": "Observation-anchored joint adapter, exact physics replay, actual 200-update training and two failed policy trials; code, frozen configuration, tests, logs, trace, states and actual videos. Full tracked repository independently restored. New failed experimental checkpoint/adapter remains local; prerequisite data is in the prior independently verified Release.",
+  "restored_tests": {
+    "command": [
+      "/home/robot/pi05-rl-handson/.venv-ppo/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "tests/test_joint_residual.py",
+      "tests/test_joint_pairs.py",
+      "tests/test_joint_action_contract.py",
+      "tests/test_motion_recording.py",
+      "tests/test_manual_joint_control.py",
+      "tests/test_simulation_snapshot.py"
+    ],
+    "cwd": "/home/robot/pi05-rl-handson/.local/joint-choice29-api-restore",
+    "returncode": 0,
+    "output": "...................................................                      [100%]\n51 passed in 0.54s\n"
+  }
+}
