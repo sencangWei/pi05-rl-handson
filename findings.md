@@ -163,3 +163,5 @@ original-v1/v2各执行两源共1221控制，四录像2442帧全部解码；最�
 四个放置场景均未到原生目标；前三个没有手指接触且碗高度完全不变，不能归因于成功后未松手。新增示范从持碗开始，阶段分布偏向只是待验证假设，不是已证明因果。23项针对性测试+9子测试、Ruff通过；60视频文件12201帧全解码通过。父评测后端口TIME-WAIT导致误报，保留失败日志，修可用性探测并仅接续候选；策略算法和冻结训练源不变。结果、原始轨迹、左右对比见reports/osc-sft-20261029/README.md；远端最终恢复核验进行中。
 
 2026-10-29 交付核验完成：载荷 b2ed8691448d2b94e1e7589c148d481662efee90 已备份自有公开 sencangWei/pi05-rl-handson 的 experiment/matched-recovery-20261027 分支；独立远端恢复3644个跟踪文件，SHA256及重建Git树 bdd46e4ec5c46162a75de517e0470cea7e347f37 一致。Release数据四文件与适配器三文件均远端独立恢复一致，官方基座重建71张量/20LoRA精确匹配。证明 evidence/osc-sft29-final-remote-restore.json、osc-sft29-data-restore.json、osc-sft29-adapter-restore.json。仅推理权重有远端备份，完整优化器checkpoint仍在本机。负面能力结果不变，未替换面板；后续同专家完整初态诊断尚未执行。
+
+2026-10-29 rich capture: manual_joint_control.py is hash-pinned by historical replay; preserve it unchanged. New motion archives and hooks belong to manual_recovery.py plus a new helper. Existing mixed trace stores target_qpos/legacy physics, but policy state8 omits joints.

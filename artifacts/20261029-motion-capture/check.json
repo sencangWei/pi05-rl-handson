@@ -1,0 +1,18 @@
+{
+  "ready": true,
+  "directory": "/home/robot/pi05-rl-handson/corrections/human_1793247571963036081",
+  "elbow_degrees": 1.9808235850023246,
+  "osc_frames": 2,
+  "joint_frames": 12,
+  "continuous_physics": true,
+  "same_take": true,
+  "restored_osc_dim": 7,
+  "motion_frames": 14,
+  "motion_readback_matches_physics": true,
+  "telemetry_read_preserves_full_snapshot": true,
+  "full_initial_snapshot": true,
+  "synthetic_draft": true,
+  "training_ready": false,
+  "osc_resume_sidecars_verified": true,
+  "resumed_directory": "/home/robot/pi05-rl-handson/corrections/human_1793247590386184091"
+}

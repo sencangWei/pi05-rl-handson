@@ -1,0 +1,79 @@
+{
+  "source_directory": "/home/robot/pi05-rl-handson/corrections/human_1793247571963036081",
+  "source_metadata_sha256": "3c69aeca2a999092dd9d1a3258f19e01b0ab6e18c9ae89594dccf434ca42dd53",
+  "archived_motion_files": [
+    {
+      "path": "motion-000000.npz",
+      "sha256": "078c60b4319468f644c6bf72105c69096efdf693431793b9addab90ac670af72"
+    },
+    {
+      "path": "motion-000001.npz",
+      "sha256": "97d0c6cf9060438e119357aff4e3553958cd0363c2f5b63fe003a8e360157e16"
+    },
+    {
+      "path": "motion-000002.npz",
+      "sha256": "2abd96f70d6d03ef2f4a801cd828d012a9564d3480d5696026853764a83babaa"
+    },
+    {
+      "path": "motion-000003.npz",
+      "sha256": "839a2757cdfe6b8b2389713088367dfbf9c6fd842687e48e289f871495abbb27"
+    },
+    {
+      "path": "motion-000004.npz",
+      "sha256": "dee531771e6b428f518c1ccf7f585241078c97a0e23165e508fcfb215804278c"
+    },
+    {
+      "path": "motion-000005.npz",
+      "sha256": "7f91efa0b1b668a855c7f30f95dc071c387072cafedc64ad868e61a830250740"
+    },
+    {
+      "path": "motion-000006.npz",
+      "sha256": "9a6602391dcb35f4278871ea9a5539b48bab604ee75403cfe59866d883a5d178"
+    },
+    {
+      "path": "motion-000007.npz",
+      "sha256": "66a6caed782058c8e414b02a4e65525d6ecbeb4049cd3d0ab1ea00035511e30a"
+    },
+    {
+      "path": "motion-000008.npz",
+      "sha256": "1de06e8de2c705d5b027284634c6ea626179c43468f4cd12065413dd9940e685"
+    },
+    {
+      "path": "motion-000009.npz",
+      "sha256": "dc637f6035a465f438ebbc46d5d121a7cd24f633a603e6fc4fb5047836ca42f5"
+    },
+    {
+      "path": "motion-000010.npz",
+      "sha256": "9313ed35b2e18e2d491dbe138abf9e470fd1b592699c1b4c6b3a2c0eeacf818f"
+    },
+    {
+      "path": "motion-000011.npz",
+      "sha256": "ae93c48674e062c039256ba7d150752faef25a113c390687d17f1d5542cb8cbd"
+    },
+    {
+      "path": "motion-000012.npz",
+      "sha256": "5d82b5b7f80d0af56942526d3e24bb03a450a3266a6d8ab52a7203c449b21afc"
+    },
+    {
+      "path": "motion-000013.npz",
+      "sha256": "4c112873d5033e4b3f3dd1d14b8ca2b52592cc91faf44999d271243465decc43"
+    }
+  ],
+  "scope": "Exact 14 small motion sidecars only. Full snapshots, original image frames and physics archives remain local.",
+  "synthetic_draft": true,
+  "training_ready": false,
+  "unchanged_historical_joint_code": "93e74726d2ddc6b50fe368e14893eccced098294c2970d84134153d1c55b5b7f",
+  "units": {
+    "version": 1,
+    "joint_pos": "radian",
+    "joint_vel": "radian/second",
+    "gripper_pos": "meter",
+    "gripper_vel": "meter/second",
+    "sim_time": "second",
+    "eef_pos": "world frame, meter",
+    "eef_rotmat": "world frame, local axes in columns",
+    "OSC_POSE": "raw normalized delta xyz3/rotation3/grip1, not measured displacement",
+    "JOINT_POSITION": "target_qpos is absolute arm radians; raw_action first7 are placeholders",
+    "training": "Measured motion is diagnostic telemetry, not an automatically converted action label"
+  }
+}

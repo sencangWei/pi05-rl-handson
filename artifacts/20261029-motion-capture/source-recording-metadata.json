@@ -1,0 +1,355 @@
+{
+  "task": "put the bowl on the plate",
+  "split": "train",
+  "scenario_key": "c9a9b78020c723bc9acb68298502d9da9ff23ac4e3b889946bdc5daeb99f7291",
+  "source_scene": "/home/robot/pi05-rl-handson/evaluations/takeover-check-1793247569401686284/scene-001_init-001",
+  "scenario": {
+    "layout_id": 1,
+    "bowl_edit": {
+      "before_xyz": [
+        -0.033354284388203356,
+        0.04627444663754977,
+        0.8984070750980833
+      ],
+      "after_xyz": [
+        -0.033354284388203356,
+        0.04627444663754977,
+        0.8984070750980833
+      ],
+      "dx_m": 0.0,
+      "dy_m": 0.0
+    },
+    "task_metadata": {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "bddl_sha256": "358b7781437e412c67d6a7648c1c28796b6b1bf117a25e61316cb8dfeb940e5b",
+      "bank_manifest_sha256": "7bac5c686e9acfc522017604a0b3a8d3b966cfddb97c940b4fe05c5614f831af",
+      "category": "placement_failure"
+    }
+  },
+  "source_model_metadata": null,
+  "control_dt": 0.05,
+  "camera_orientation": "same double-axis flip as original course inference",
+  "action_contract": "MIXED OSC_POSE / JOINT_POSITION absolute joint target",
+  "manual_motion_profile": {
+    "normal_translation": 0.6,
+    "precision_translation": 0.1,
+    "translation_limit": 0.8,
+    "recording": "actual normalized actions unchanged; preset switch records no step",
+    "normal_rotation": 0.3,
+    "precision_rotation": 0.1,
+    "rotation_default": "precision",
+    "rotation_selection": "independent of translation; actual amplitude stored in each action"
+  },
+  "initial_sim_state_sha256": "c503e3ccb9ee863c90b70698e71955b9a8d777c0a94dbd661a54988774f3d47c",
+  "software_source_sha256": {
+    "correction_workbench.py": "a3a829cb9ebf2969f306dfb64d952d0bef271d4d28ac55ea9db072bcaaa861c6",
+    "correction_data.py": "da0fab27a536a2004076eadd1e172e7d3488269075bbab6217171807d62c27e1",
+    "lab_panel.py": "8d017c5b9a8a99a145e11f7e2ab549abe84cc5f00acc82b24037414bd68c8962",
+    "live_preview.py": "97b2c012ea3f343afc7acf729b3c44ffb18a45fa9d99e84cd0467c3351051c65",
+    "viewer_controls.py": "53b4be8ad984407e4bf20e95b2fba9fae0209b1ff90e58f64ca0ce9de6f7ea71",
+    "manual_joystick.py": "440c8e68063099be45d5393ad8ae619866e29dae4c5f33b3c7c694f58aafc3f9"
+  },
+  "status": "draft",
+  "frame_count": 2,
+  "files": [
+    {
+      "path": "frame-000000.npz",
+      "sha256": "abc397b2d8a97b6abeb62c6c6353e5f3568269e4bf3013ed254548b291b16d51"
+    },
+    {
+      "path": "frame-000001.npz",
+      "sha256": "21cce940ad32058f432abe45d4968f6370ca52ef28165706aee11dc2fe67b09e"
+    }
+  ],
+  "approval_type": null,
+  "human_actions_only": true,
+  "pauses_excluded": true,
+  "max_frames": 5000,
+  "task_suite": "libero_goal",
+  "task_id": 8,
+  "source": "human manual recovery",
+  "bank_entry": {
+    "id": "train-placement_failure-init01",
+    "split": "train",
+    "category": "placement_failure",
+    "source_initial_id": 1,
+    "file": "train-placement_failure-init01.npz",
+    "requested_offset_xy_m": [
+      -0.04,
+      0.04
+    ],
+    "offset_xy_m": [
+      -0.09208161165754317,
+      0.08058695571298755
+    ],
+    "source_state_sha256": "458b021de5c47d7b23306d6e7f714ef3c2c55174aa4b2281816d6c3792f408cb",
+    "state_sha256": "c503e3ccb9ee863c90b70698e71955b9a8d777c0a94dbd661a54988774f3d47c",
+    "sha256": "d7918cb4471d5297ee3464776f5baf0660c616af16432557059fa8794057c773",
+    "initial_native_success": false,
+    "initial_finger_contact": false,
+    "eef_pos": [
+      0.06651213682886256,
+      -0.03532740683993269,
+      1.1617642274451734
+    ],
+    "bowl_pos": [
+      -0.033354284388203356,
+      0.04627444663754977,
+      0.8984070750980833
+    ],
+    "plate_pos": [
+      0.05872732726933982,
+      -0.03431250907543777,
+      0.902506338529415
+    ]
+  },
+  "control_hz": 20.0,
+  "launcher_sha256": "1134588cf6ad1dc35233a9568ab93f0e931e7fef642a2dfd8cc52584133cc981",
+  "physics_files": [
+    {
+      "path": "physics-000000.npz",
+      "sha256": "1bbc62fc57932ff51a87923e355246688e2e8382d0976b26d3980ebc0943adc3"
+    },
+    {
+      "path": "physics-000001.npz",
+      "sha256": "4921905b652e9e384d266b170b4aeeb2715c833341f5cc7f5096577ebd63f6f2"
+    }
+  ],
+  "control_timeline": [
+    {
+      "controller": "OSC_POSE",
+      "path": "frame-000000.npz",
+      "physics": "physics-000000.npz",
+      "motion": "motion-000000.npz"
+    },
+    {
+      "controller": "JOINT_POSITION",
+      "path": "joint-frame-000000.npz",
+      "motion": "motion-000001.npz"
+    },
+    {
+      "controller": "JOINT_POSITION",
+      "path": "joint-frame-000001.npz",
+      "motion": "motion-000002.npz"
+    },
+    {
+      "controller": "JOINT_POSITION",
+      "path": "joint-frame-000002.npz",
+      "motion": "motion-000003.npz"
+    },
+    {
+      "controller": "JOINT_POSITION",
+      "path": "joint-frame-000003.npz",
+      "motion": "motion-000004.npz"
+    },
+    {
+      "controller": "JOINT_POSITION",
+      "path": "joint-frame-000004.npz",
+      "motion": "motion-000005.npz"
+    },
+    {
+      "controller": "JOINT_POSITION",
+      "path": "joint-frame-000005.npz",
+      "motion": "motion-000006.npz"
+    },
+    {
+      "controller": "JOINT_POSITION",
+      "path": "joint-frame-000006.npz",
+      "motion": "motion-000007.npz"
+    },
+    {
+      "controller": "JOINT_POSITION",
+      "path": "joint-frame-000007.npz",
+      "motion": "motion-000008.npz"
+    },
+    {
+      "controller": "JOINT_POSITION",
+      "path": "joint-frame-000008.npz",
+      "motion": "motion-000009.npz"
+    },
+    {
+      "controller": "JOINT_POSITION",
+      "path": "joint-frame-000009.npz",
+      "motion": "motion-000010.npz"
+    },
+    {
+      "controller": "JOINT_POSITION",
+      "path": "joint-frame-000010.npz",
+      "motion": "motion-000011.npz"
+    },
+    {
+      "controller": "JOINT_POSITION",
+      "path": "joint-frame-000011.npz",
+      "motion": "motion-000012.npz"
+    },
+    {
+      "controller": "OSC_POSE",
+      "path": "frame-000001.npz",
+      "physics": "physics-000001.npz",
+      "motion": "motion-000013.npz"
+    }
+  ],
+  "joint_frame_count": 12,
+  "rotation_guide_sha256": "635afab5991fb6f85dcee556ea2ef4254480211e8bcbb8541d5c00efa953fba2",
+  "joint_control_sha256": "93e74726d2ddc6b50fe368e14893eccced098294c2970d84134153d1c55b5b7f",
+  "osc_nullspace_initial_joints": [
+    0.0,
+    -0.161037389,
+    0.0,
+    -2.44459747,
+    0.0,
+    2.2267522,
+    0.7853981633974483
+  ],
+  "physics_scope": "full MuJoCo pre/post state per human control; controller goals reset at load",
+  "motion_segments": [
+    {
+      "path": "motion-start-000000.npz",
+      "sha256": "dc3eb86df6fa71ae8bd03780b6814371d53e94a8f2bf40949c37359c552885ec",
+      "timeline_start": 0
+    }
+  ],
+  "motion_schema": {
+    "version": 1,
+    "joint_pos": "radian",
+    "joint_vel": "radian/second",
+    "gripper_pos": "meter",
+    "gripper_vel": "meter/second",
+    "sim_time": "second",
+    "eef_pos": "world frame, meter",
+    "eef_rotmat": "world frame, local axes in columns",
+    "OSC_POSE": "raw normalized delta xyz3/rotation3/grip1, not measured displacement",
+    "JOINT_POSITION": "target_qpos is absolute arm radians; raw_action first7 are placeholders",
+    "training": "Measured motion is diagnostic telemetry, not an automatically converted action label"
+  },
+  "motion_capture_sha256": "16851aca9be37ebb6942e3d7a875055b105c49884d6cff0d054f45c636d64cf4",
+  "joint_names": [
+    "robot0_joint1",
+    "robot0_joint2",
+    "robot0_joint3",
+    "robot0_joint4",
+    "robot0_joint5",
+    "robot0_joint6",
+    "robot0_joint7"
+  ],
+  "gripper_joint_names": [
+    "gripper0_finger_joint1",
+    "gripper0_finger_joint2"
+  ],
+  "motion_files": [
+    {
+      "path": "motion-000000.npz",
+      "sha256": "078c60b4319468f644c6bf72105c69096efdf693431793b9addab90ac670af72"
+    },
+    {
+      "path": "motion-000001.npz",
+      "sha256": "97d0c6cf9060438e119357aff4e3553958cd0363c2f5b63fe003a8e360157e16"
+    },
+    {
+      "path": "motion-000002.npz",
+      "sha256": "2abd96f70d6d03ef2f4a801cd828d012a9564d3480d5696026853764a83babaa"
+    },
+    {
+      "path": "motion-000003.npz",
+      "sha256": "839a2757cdfe6b8b2389713088367dfbf9c6fd842687e48e289f871495abbb27"
+    },
+    {
+      "path": "motion-000004.npz",
+      "sha256": "dee531771e6b428f518c1ccf7f585241078c97a0e23165e508fcfb215804278c"
+    },
+    {
+      "path": "motion-000005.npz",
+      "sha256": "7f91efa0b1b668a855c7f30f95dc071c387072cafedc64ad868e61a830250740"
+    },
+    {
+      "path": "motion-000006.npz",
+      "sha256": "9a6602391dcb35f4278871ea9a5539b48bab604ee75403cfe59866d883a5d178"
+    },
+    {
+      "path": "motion-000007.npz",
+      "sha256": "66a6caed782058c8e414b02a4e65525d6ecbeb4049cd3d0ab1ea00035511e30a"
+    },
+    {
+      "path": "motion-000008.npz",
+      "sha256": "1de06e8de2c705d5b027284634c6ea626179c43468f4cd12065413dd9940e685"
+    },
+    {
+      "path": "motion-000009.npz",
+      "sha256": "dc637f6035a465f438ebbc46d5d121a7cd24f633a603e6fc4fb5047836ca42f5"
+    },
+    {
+      "path": "motion-000010.npz",
+      "sha256": "9313ed35b2e18e2d491dbe138abf9e470fd1b592699c1b4c6b3a2c0eeacf818f"
+    },
+    {
+      "path": "motion-000011.npz",
+      "sha256": "ae93c48674e062c039256ba7d150752faef25a113c390687d17f1d5542cb8cbd"
+    },
+    {
+      "path": "motion-000012.npz",
+      "sha256": "5d82b5b7f80d0af56942526d3e24bb03a450a3266a6d8ab52a7203c449b21afc"
+    },
+    {
+      "path": "motion-000013.npz",
+      "sha256": "4c112873d5033e4b3f3dd1d14b8ca2b52592cc91faf44999d271243465decc43"
+    }
+  ],
+  "osc_action_contract": "OSC_POSE normalized world delta xyz/axis-angle rotation; +1 close, -1 open",
+  "training_ready": false,
+  "training_block_reason": "需适配混合控制契约；不能直接当作7维OSC训练",
+  "joint_files": [
+    {
+      "path": "joint-frame-000000.npz",
+      "sha256": "ac9398db46b91bbe3e94ac09b2886423c3108c741334fefe7ea731cd108f6436"
+    },
+    {
+      "path": "joint-frame-000001.npz",
+      "sha256": "876f6c4d33a381737bc83dc3d1b5a8cf8b5e48472df7d98da054a5007ca5a66b"
+    },
+    {
+      "path": "joint-frame-000002.npz",
+      "sha256": "b8c1bca78883124c0d014b2b42ce6c6bfbc48fbf1a74a6e188795846be380768"
+    },
+    {
+      "path": "joint-frame-000003.npz",
+      "sha256": "a2956cff708b6a2e1be6874d35dc51ee66556b3c154c9f8a3289a13737e255f4"
+    },
+    {
+      "path": "joint-frame-000004.npz",
+      "sha256": "13d39eb22899167266f1eb5a82300dfbf1a5d48067eb547ad45ec8db3ca8ed8d"
+    },
+    {
+      "path": "joint-frame-000005.npz",
+      "sha256": "ba54c9af4aa0d395482f8ca8e8631462fd9141c7608b3eaf5d37da9ca5efe5c4"
+    },
+    {
+      "path": "joint-frame-000006.npz",
+      "sha256": "d14bce5efea8d82533e1c6af12036248031129fd0c70f8dc16d841e3bbb1ff6a"
+    },
+    {
+      "path": "joint-frame-000007.npz",
+      "sha256": "2090b9528b9124b1470de602beb2317abb5633c42ebccacadebc56b2bd36f96e"
+    },
+    {
+      "path": "joint-frame-000008.npz",
+      "sha256": "20b9ef9c06460def8b10b4f114eb88efc5c84ae1ab6204d1d6eb8798a6a0b7e4"
+    },
+    {
+      "path": "joint-frame-000009.npz",
+      "sha256": "652bb7e7c893a7a1dddfbdbb52fbb4296072b771ce95b8278700ea5dfad51a89"
+    },
+    {
+      "path": "joint-frame-000010.npz",
+      "sha256": "521f1a4a35325d7ce20d1a9a6e154888cd4b64fbe0bcdc578b45a5225e4cd5c4"
+    },
+    {
+      "path": "joint-frame-000011.npz",
+      "sha256": "23fe0c434891de41ceae9e07064acaf3459a203d2820d98cd721e63aac4cbc02"
+    }
+  ],
+  "last_joint_at_osc_frame": 1,
+  "observation_gates": null,
+  "official_success_metric": false,
+  "final_sim_state_sha256": "90c65b6a6818e1b05ea69571468d28e2b06b2020a233293da6a7726415d6f6b6"
+}

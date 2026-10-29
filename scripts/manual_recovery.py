@@ -59,6 +59,7 @@ def main():
     from correction_workbench import CorrectionWorkbench
     from manual_rotation_guide import guided_classes
     from manual_joint_control import JointSetupMixin, joint_classes
+    from motion_recording import MotionCapture, SCHEMA, save_motion
     GuidedPreview, GuidedPanel = guided_classes()
     GuidedPreview, GuidedPanel = joint_classes(GuidedPreview, GuidedPanel)
 
@@ -173,6 +174,52 @@ def main():
             profile.update(normal_rotation=.3, precision_rotation=.1, rotation_default="precision",
                            rotation_selection="independent of translation; actual amplitude stored in each action")
             write_json(self.correction.directory / "metadata.json", self.correction.metadata)
+            self._begin_motion_segment()
+
+        def _begin_motion_segment(self):
+            from simulation_snapshot import capture
+            recorder = self.correction
+            segments = recorder.metadata.setdefault("motion_segments", [])
+            path = recorder.directory / f"motion-start-{len(segments):06d}.npz"
+            capture(self.env, path)
+            segments.append(dict(path=path.name, sha256=digest(path),
+                                 timeline_start=len(recorder.metadata.get("control_timeline", []))))
+            self.motion_capture = MotionCapture(self.env)
+            recorder.metadata.update(motion_schema=SCHEMA,
+                motion_capture_sha256=digest(ROOT / "scripts/motion_recording.py"),
+                joint_names=list(self.env.env.robots[0].robot_joints),
+                gripper_joint_names=list(self.env.env.robots[0].gripper_joints))
+            recorder.metadata.setdefault("motion_files", [])
+            write_json(recorder.directory / "metadata.json", recorder.metadata)
+
+        def resume_correction(self, directory):
+            import shutil
+            source = Path(directory).expanduser().resolve()
+            metadata = json.loads((source / "metadata.json").read_text())
+            history = [item for key in ("physics_files", "motion_files", "motion_segments")
+                       for item in metadata.get(key, [])]
+            for item in history:
+                if Path(item["path"]).name != item["path"] or digest(source / item["path"]) != item["sha256"]:
+                    raise ValueError("续录物理/关节旁档校验失败；原草稿保留")
+            super().resume_correction(directory)
+            for item in history:
+                shutil.copyfile(source / item["path"], self.correction.directory / item["path"])
+            self._begin_motion_segment()
+
+        def _append_motion(self, before, controller, action, target=None):
+            recorder = self.correction
+            timeline = recorder.metadata["control_timeline"]
+            path = recorder.directory / f"motion-{len(timeline) - 1:06d}.npz"
+            save_motion(path, before, self.motion_capture.read(), controller, action, target)
+            timeline[-1]["motion"] = path.name
+            recorder.metadata["motion_files"].append(dict(path=path.name, sha256=digest(path)))
+            write_json(recorder.directory / "metadata.json", recorder.metadata)
+
+        def _record_joint_step(self, action, target):
+            before = self.motion_capture.read()
+            result = super()._record_joint_step(action, target)
+            self._append_motion(before, "JOINT_POSITION", action, target)
+            return result
 
         def _manual_steps(self, action, repeats):
             if type(repeats) is not int or not 1 <= repeats <= 20:
@@ -182,6 +229,7 @@ def main():
                     self.correction.metadata.get("joint_frame_count", 0) + repeats > MAX_FRAMES):
                 raise ValueError("本段控制步数已达上限，请保存后继续采集")
             for _ in range(repeats):
+                motion_before = self.motion_capture.read()
                 before = self.env.get_sim_state().copy()
                 nullspace = self.env.env.robots[0].controller.initial_joint.copy()
                 super()._manual_steps(action, 1)
@@ -191,7 +239,7 @@ def main():
                 self.correction.metadata["physics_files"].append({"path": path.name, "sha256": digest(path)})
                 self.correction.metadata["control_timeline"].append({"controller": "OSC_POSE",
                     "path": f"frame-{self.correction.count - 1:06d}.npz", "physics": path.name})
-                write_json(self.correction.directory / "metadata.json", self.correction.metadata)
+                self._append_motion(motion_before, "OSC_POSE", action)
 
         def toggle_run(self):
             raise ValueError("这是人工恢复采集窗口，请使用人工纠正页的摇杆和按钮")
@@ -223,6 +271,15 @@ def main():
             lab.reset(args.initial_id)
             lab.begin_correction()
             recorder = lab.correction
+            # Reading FK must not update live physics, controller goals, caches or RNG.
+            from simulation_snapshot import capture
+            lab.motion_capture.read()
+            observed = output / "after-telemetry-read.npz"
+            capture(lab.env, observed)
+            initial = recorder.directory / recorder.metadata["motion_segments"][0]["path"]
+            with np.load(initial, allow_pickle=False) as first, np.load(observed, allow_pickle=False) as second:
+                for key in first.files:
+                    np.testing.assert_array_equal(first[key], second[key])
             lab.manual_hold(1)
             q = lab.env.env.robots[0]._joint_positions.copy()
             lab.manual_joint_jog(3, 2.)
@@ -236,11 +293,30 @@ def main():
                     or lab.env.env.action_dim != 7):
                 raise AssertionError("Mixed recording/action contract differs")
             previous = np.load(recorder.directory / "initial_sim_state.npy")
+            motion_files = recorder.metadata["motion_files"]
+            if len(motion_files) != 14:
+                raise AssertionError("Expected telemetry for every control step")
+            robot = lab.env.env.robots[0]
+            nq = lab.env.sim.model.nq
             for item in recorder.metadata["control_timeline"]:
                 frame = recorder.directory / item.get("physics", item["path"])
-                with np.load(frame, allow_pickle=False) as data:
+                motion = recorder.directory / item["motion"]
+                if digest(motion) != next(x["sha256"] for x in motion_files if x["path"] == motion.name):
+                    raise AssertionError("Motion archive checksum mismatch")
+                with np.load(frame, allow_pickle=False) as data, np.load(motion, allow_pickle=False) as telemetry:
                     np.testing.assert_array_equal(data["before"], previous)
                     previous = data["after"].copy()
+                    for prefix in ("before", "after"):
+                        physical = data[prefix]
+                        np.testing.assert_array_equal(telemetry[f"{prefix}_joint_pos"],
+                            physical[1:1 + nq][robot._ref_joint_pos_indexes])
+                        np.testing.assert_array_equal(telemetry[f"{prefix}_joint_vel"],
+                            physical[1 + nq:][robot._ref_joint_vel_indexes])
+                        np.testing.assert_equal(telemetry[f"{prefix}_sim_time"], physical[0])
+                    np.testing.assert_array_equal(telemetry["raw_action"], data["action"])
+                    if item["controller"] == "JOINT_POSITION":
+                        np.testing.assert_array_equal(telemetry["target_qpos"], data["target_qpos"])
+                    assert str(telemetry["controller"]) == item["controller"]
             np.testing.assert_array_equal(previous, lab.env.get_sim_state())
             try:
                 lab.finish_correction(True)
@@ -251,7 +327,26 @@ def main():
             lab.finish_correction(False)
             report = dict(ready=True, directory=str(recorder.directory), elbow_degrees=moved,
                 osc_frames=recorder.count, joint_frames=recorder.metadata["joint_frame_count"],
-                continuous_physics=True, same_take=True, restored_osc_dim=lab.env.env.action_dim)
+                continuous_physics=True, same_take=True, restored_osc_dim=lab.env.env.action_dim,
+                motion_frames=len(motion_files), motion_readback_matches_physics=True,
+                telemetry_read_preserves_full_snapshot=True, full_initial_snapshot=True,
+                synthetic_draft=True, training_ready=False)
+            # OSC draft continuation creates a new take: its sidecars must follow
+            # the inherited image/action prefix rather than refer to missing files.
+            lab.begin_correction()
+            lab.manual_hold(10)
+            draft = lab.finish_correction(False)
+            lab.resume_correction(draft)
+            lab.manual_hold(1)
+            resumed = lab.correction
+            if len(resumed.metadata["motion_files"]) != 11 or len(resumed.metadata["motion_segments"]) != 2:
+                raise AssertionError("OSC continuation lost its motion history")
+            for key in ("physics_files", "motion_files", "motion_segments"):
+                for item in resumed.metadata[key]:
+                    if digest(resumed.directory / item["path"]) != item["sha256"]:
+                        raise AssertionError("Resumed sidecar missing or changed")
+            lab.finish_correction(False)
+            report.update(osc_resume_sidecars_verified=True, resumed_directory=str(resumed.directory))
             write_json(output / "check.json", report)
             print(json.dumps(report, ensure_ascii=False), flush=True)
         finally:
