@@ -178,3 +178,5 @@ Task-phase preflight: all1612human and7633publictask8 anchors partitioned exhaus
 
 
 2026-10-29 统一关节采集准备完成：末端输入、旋转、J1～J7、夹爪均进入持久绝对关节控制器，8维实际指令与9维实测状态分开保存，含双相机和完整运动旁档。21步独立进程物理重放误差0、RGB一致，第二段生命周期及未完成审核拦截通过；真实GUI按钮产生12控制步。62项仿真环境测试及新文件Ruff通过。旧6条示范全部保留，1630 OSC步/1612窗口、816关节步；缺失历史目标不能伪作无损转换。允许现在补录不同失败阶段；不再等单示范训练策略先成功。训练转换仍未接面板、未训练/晋级模型；黑屏截图已排除，完整人工操作手感待确认。详见 reports/unified-joint-20261029/README.md。远端备份恢复核验进行中。
+
+2026-10-29 统一关节采集备份已验收：能力提交 748450d5fea685215414c68f8057d41e7c252679 已推自有 sencangWei/pi05-rl-handson 的 experiment/joint-residual-choice-20261029；从远端独立恢复 3860 个跟踪文件，逐文件SHA256与重建Git树 19c8b775fbe70a6ed6051ae00223b0daa2b5bafe 完全一致。证明 reports/unified-joint-20261029/remote-restore.json。仅代码/报告/测试进入本轮备份，合成原始录制仍在本机。未训练或替换模型。

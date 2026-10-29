@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson",
+  "branch": "experiment/joint-residual-choice-20261029",
+  "revision": "748450d5fea685215414c68f8057d41e7c252679",
+  "method": "Remote GitHub recursive Git tree + SHA-validated base64 Git blob API contents; unchanged blobs from previously independently fetched remote clone; full clean directory restored",
+  "tracked_files": 3860,
+  "new_blobs_downloaded_independently": 16,
+  "all_tracked_contents_exact": true,
+  "git_tree": "19c8b775fbe70a6ed6051ae00223b0daa2b5bafe",
+  "rebuilt_git_tree_exact": true,
+  "manifest_sha256": "794ff71354ddc3d017e20d9d6b19e98520e2a7518dabd00eea1ea02c5e705d8d",
+  "scope": "Unified absolute joint human collection, fresh-process physics/camera replay check, existing six-demo inventory, code/tests/reports. Full tracked repository restored; raw local smoke recordings are not included. No new model training this turn."
+}
