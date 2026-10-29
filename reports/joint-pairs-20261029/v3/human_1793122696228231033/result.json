@@ -1,0 +1,24 @@
+{
+  "source": "human_1793122696228231033",
+  "passed": true,
+  "paired_rows": 454,
+  "decoded_rgb_images": 908,
+  "pre_observation_action_alignment": true,
+  "continuous_physics": true,
+  "unchanged_saved_actions": true,
+  "motion_rows": 434,
+  "diagnostic_hold_rows": 20,
+  "full_window_anchors": 425,
+  "state_dim": 9,
+  "action_dim": 8,
+  "expert_physics_and_post_rgb_bitwise": true,
+  "policy_inference": false,
+  "training": false,
+  "files_sha256": {
+    "review.mp4": "2a929d51ed1cf821431c84f5fc5b25b9211ff77380ecf1945d61abafae92571e",
+    "pairs.parquet": "6d0394a606eb9ad792092e224cb87b6b4ad6f6023b8fc1605040e44150473b8a",
+    "identity.json": "a3f41e91c2a61b4c1141ae6e09e0c5149c61528195276a4a95bb2dfc78cb85e1",
+    "audit.json": "434fa06018f06cc1732de6ecf65b312ccb165cb7ca5f5517d8921e08499a7f34",
+    "physics.npz": "3d0939fdae238e3aa598e97500a86ca42e8ae8d89b129c40d9c0136ac60306f0"
+  }
+}

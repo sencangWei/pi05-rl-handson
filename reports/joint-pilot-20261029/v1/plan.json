@@ -1,0 +1,51 @@
+{
+  "schema": "pi05-joint-pilot-plan-v1",
+  "experiment": "joint29_pilot200_v1",
+  "train": {
+    "updates": 200,
+    "batch": 1,
+    "seed": 42,
+    "lr": 5e-05,
+    "warmup": 20,
+    "optimizer": "fresh AdamW clip1, LoRA only, no EMA",
+    "windows": 482,
+    "horizon": 10,
+    "action_dim": 8,
+    "state_dim": 9,
+    "train_source": "human_1793121358375746008",
+    "holdout_source": "human_1793122696228231033"
+  },
+  "evaluation": {
+    "sources": [
+      "human_1793121358375746008",
+      "human_1793122696228231033"
+    ],
+    "max_controls": 600,
+    "milestone": 300,
+    "replan_steps": 1,
+    "success": "native goal and no finger contact for 20 consecutive controls",
+    "max_target_joint_jump_rad": 0.35,
+    "seed": 42,
+    "render_backend": "osmesa",
+    "gripper": "saturate normalized output to [-1,1]; record both raw and executed",
+    "controller": "ABSOLUTE_JOINT_POSITION",
+    "expert_fallback": false,
+    "noise": "numpy.default_rng(42 + control_index).standard_normal((10,32)), float32",
+    "claim": "Train-episode vs whole-episode holdout interface pilot; no general recovery claim"
+  },
+  "inputs_sha256": {
+    "data/joint-pilot29-v3/manifest.json": "ec974bd07e101e28de349e813da249b92cb175df88e93c6eecfd6e75235c6a9a",
+    "data/joint-pilot29-v3/assets/joint_contract29/norm_stats.json": "a3a13b9fbe2a27d7494cea12b68380c7e6a0d4db746524d4caf7d8775e9496a2",
+    "scripts/train_joint_pilot.py": "d5ea6f9757b33814407cd841e81fb3a921b8f4b31f39a2650a700152f14aa4ed",
+    "scripts/joint_dataset.py": "619d77852bc359c1911ca139c7dc8e02f02439b0a21d936c2ec340623c5ca773",
+    "scripts/training_config.py": "f03c2d7a96de92a6d334bf3e4c92dec6e8c146d72cc61becf1ad012e5f208cac",
+    "scripts/joint_action_contract.py": "724723e7f54810c55c1c6233d137f55cfd7acf21bf62feaf12ce921c2994dfe0",
+    "scripts/motion_recording.py": "16851aca9be37ebb6942e3d7a875055b105c49884d6cff0d054f45c636d64cf4",
+    "scripts/record_joint_pairs.py": "7c1a4f3f1c0ec902a75f3bb9fbbfb40a93d851cfd222977b4e0720055599525d",
+    "scripts/evaluate_joint_pilot.py": "e2290a2a7b87b24794ae7622062ef6b0c92b9fd27f500e25c8e3786d312aba96",
+    "reports/full-state-replay-20261028/v1/human_1793121358375746008/snapshot-73.npz": "b2ba0b5864f2a052b62ad66d3f3a50cd404eb593f638fa1c1fad1bd637345547",
+    "reports/full-state-replay-20261028/v1/human_1793121358375746008/identity.json": "49fbb38e78544509b24afa8a940a1048b23e726290439d7799e1bfddae1e112a",
+    "reports/full-state-replay-20261028/v1/human_1793122696228231033/snapshot-223.npz": "704adc4c3dc058a1fadbdd45f196eb6a2e581ff315cc4d3ffe19bb53abaec15c",
+    "reports/full-state-replay-20261028/v1/human_1793122696228231033/identity.json": "49fbb38e78544509b24afa8a940a1048b23e726290439d7799e1bfddae1e112a"
+  }
+}

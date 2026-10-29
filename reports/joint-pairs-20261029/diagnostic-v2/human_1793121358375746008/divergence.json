@@ -1,0 +1,64 @@
+{
+  "index": 0,
+  "checks": {
+    "goal": true,
+    "physics": true,
+    "joints": true,
+    "image_sha256": false,
+    "native_goal": true,
+    "grasp": true,
+    "finger_contact": true,
+    "contact_count": true,
+    "positions": true
+  },
+  "physical_max_abs": 0.0,
+  "actual": {
+    "index": 73,
+    "native_goal": false,
+    "grasp": false,
+    "finger_contact": true,
+    "contact_count": 23,
+    "image_sha256": "756e3b455a3706d4cc7996c633809852933e052ccc1749e42af3a6891e0e85b3",
+    "positions": [
+      0.11678289324411568,
+      0.028146038122407242,
+      1.0680221067405251,
+      0.1315436265259097,
+      0.06987464559102573,
+      1.0438409863032017
+    ]
+  },
+  "expected": {
+    "index": 73,
+    "native_goal": false,
+    "grasp": false,
+    "finger_contact": true,
+    "contact_count": 23,
+    "image_sha256": "69258a59fe8aa31201fecb57b2579d334bfa3a9e9ab3fe90a998505609029791",
+    "positions": [
+      0.11678289324411568,
+      0.028146038122407242,
+      1.0680221067405251,
+      0.1315436265259097,
+      0.06987464559102573,
+      1.0438409863032017
+    ],
+    "position_error_m": 0.00018648508692687403,
+    "rotation_error_rad": 0.0004875839095075483,
+    "joint_error_rad": 0.0007107477203000534,
+    "cabinet_penetration_m": 0.0,
+    "physics_substeps": 25,
+    "clipped_axes": 1,
+    "action": [
+      0.035201850684104724,
+      1.4498029991326922,
+      0.008889975654004277,
+      -0.0748,
+      -0.006489560004864023,
+      1.4507976604127402,
+      0.8201216536808221,
+      1.0
+    ],
+    "diagnostic_hold": false
+  }
+}

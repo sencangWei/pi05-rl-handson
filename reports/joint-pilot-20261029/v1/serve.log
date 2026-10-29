@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/robot/pi05-rl-handson/scripts/evaluate_joint_pilot.py", line 187, in <module>
+    main()
+  File "/home/robot/pi05-rl-handson/scripts/evaluate_joint_pilot.py", line 183, in main
+    return serve(a, plan) if a.serve else evaluate(a, plan)
+           ^^^^^^^^^^^^^^
+  File "/home/robot/pi05-rl-handson/scripts/evaluate_joint_pilot.py", line 48, in serve
+    raise ValueError("Checkpoint normalization differs from frozen train-only statistics")
+ValueError: Checkpoint normalization differs from frozen train-only statistics

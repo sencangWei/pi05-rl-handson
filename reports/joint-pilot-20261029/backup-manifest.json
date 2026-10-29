@@ -1,0 +1,41 @@
+{
+  "release_tag": "joint-interface-pilot-20261029",
+  "archives": [
+    {
+      "file": "joint29-pairs-v3.tar.gz",
+      "bytes": 121753076,
+      "sha256": "b7178b66e41b0ac520cde77d4e0569729ddda2c7cfdae075b49b7ca797cc4b62",
+      "files_sha256": {
+        "reports/joint-pairs-20261029/v3/expert-contact-sheet.jpg": "c3b6d43ece4269960d05aed31a7718b9fd31cc5b6b0b9eb845303a83019334b7",
+        "reports/joint-pairs-20261029/v3/protocol.json": "b9e44e83d31bf79f3aec3cf8fde1117393d9849b93d748c4ea39605854ac0b83",
+        "reports/joint-pairs-20261029/v3/manifest.json": "ac70da950786ede9f9b5c58842d31858d9f89ab8653ca797202dbcfa9e5b69a5",
+        "reports/joint-pairs-20261029/v3/human_1793121358375746008/review.mp4": "a738429dfc5b60c7d0e9d5cfa5696e2da6743b7dbd34178bfc8b4ab3e5980689",
+        "reports/joint-pairs-20261029/v3/human_1793121358375746008/pairs.parquet": "80bcb5d8635422c0da5e377ec33326ede93485850b69c643cb22d4de3453a0b0",
+        "reports/joint-pairs-20261029/v3/human_1793121358375746008/identity.json": "a3f41e91c2a61b4c1141ae6e09e0c5149c61528195276a4a95bb2dfc78cb85e1",
+        "reports/joint-pairs-20261029/v3/human_1793121358375746008/audit.json": "8dbc18590f49a625a3f15d439e9418dbbce794d3f756586a718fc5cf1c205d37",
+        "reports/joint-pairs-20261029/v3/human_1793121358375746008/physics.npz": "5fa30e15f3ba56018a93032b9e443a362e2a60f6aabb7edd90286ea2c3b217f6",
+        "reports/joint-pairs-20261029/v3/human_1793121358375746008/result.json": "57f1a6f399f81d4ecc9114b0a8587b1ff1517d969a89c5c192117cffe6d70b85",
+        "reports/joint-pairs-20261029/v3/human_1793122696228231033/review.mp4": "2a929d51ed1cf821431c84f5fc5b25b9211ff77380ecf1945d61abafae92571e",
+        "reports/joint-pairs-20261029/v3/human_1793122696228231033/pairs.parquet": "6d0394a606eb9ad792092e224cb87b6b4ad6f6023b8fc1605040e44150473b8a",
+        "reports/joint-pairs-20261029/v3/human_1793122696228231033/identity.json": "a3f41e91c2a61b4c1141ae6e09e0c5149c61528195276a4a95bb2dfc78cb85e1",
+        "reports/joint-pairs-20261029/v3/human_1793122696228231033/audit.json": "434fa06018f06cc1732de6ecf65b312ccb165cb7ca5f5517d8921e08499a7f34",
+        "reports/joint-pairs-20261029/v3/human_1793122696228231033/physics.npz": "3d0939fdae238e3aa598e97500a86ca42e8ae8d89b129c40d9c0136ac60306f0",
+        "reports/joint-pairs-20261029/v3/human_1793122696228231033/result.json": "54ab85d051901dfaff337c7fe46f91ed434da6650fab9a73fe67ea80920ee4b1",
+        "data/joint-pilot29-v3/statistics-provenance.json": "e9f8c412dc43c0664577753f3956d5e9d1ed42e4a882590a6e7255bec900961e",
+        "data/joint-pilot29-v3/manifest.json": "ec974bd07e101e28de349e813da249b92cb175df88e93c6eecfd6e75235c6a9a",
+        "data/joint-pilot29-v3/assets/joint_contract29/norm_stats.json": "a3a13b9fbe2a27d7494cea12b68380c7e6a0d4db746524d4caf7d8775e9496a2"
+      }
+    },
+    {
+      "file": "joint29-pilot200-inference.tar.gz",
+      "bytes": 185507958,
+      "sha256": "bfa1bed7a879abb64ebf830ce4611de6096a33b95d54c298decb0ad00880f373",
+      "files_sha256": {
+        "exports/joint29_pilot200_v1/metadata.json": "07859d5d1a0fbe6ac3833d60ea1c7f46b57d035060045cde912dfc9b0bbccedf",
+        "exports/joint29_pilot200_v1/adapter.npz": "fbfa2f5e7c8866aa4b9dc0ae8cd537de8da3983535653edad66a757443e57254",
+        "exports/joint29_pilot200_v1/norm_stats.json": "156b0f71e2115988cac9ece57e15b576f1e7af9e7ab778f90a2dd74fcd990c12"
+      }
+    }
+  ],
+  "full_optimizer_checkpoint_included": false
+}

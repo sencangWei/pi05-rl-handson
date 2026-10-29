@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE",
+  "actual_updates": 200,
+  "plan_sha256": "574a42caa29c74919e298dd939dddc539807d0bc8534673b16bd40645eef2ec9",
+  "checkpoint_dir": "/home/robot/pi05-rl-handson/checkpoints/pi05_joint_contract_lora/joint29_pilot200_v1",
+  "parent": "official pi05_libero, fresh optimizer",
+  "holdout_gradient_samples": 0,
+  "normalization": "train-only population zscore, std floor0.001",
+  "new_execution_human_review": false,
+  "ui_changed": false,
+  "sampling_order_exact": true,
+  "train_wall_seconds": 83.25962192800944
+}

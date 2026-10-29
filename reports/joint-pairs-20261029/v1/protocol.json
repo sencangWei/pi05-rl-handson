@@ -1,0 +1,32 @@
+{
+  "schema": "pi05-absolute-joint-pairs-v1",
+  "training": false,
+  "seed": 42,
+  "state": "joint positions7 radians + finger positions2 meters",
+  "action": "absolute joint target7 radians + gripper1 [-1,1]",
+  "images": "fresh actual pre-action RGB; both axes reversed; uint8 256x256",
+  "control_hz": 20,
+  "horizon": 10,
+  "next_state_injection": false,
+  "original_images_reused": false,
+  "inputs_sha256": {
+    "scripts/record_joint_pairs.py": "70709dbf5ad97bc59ca8b8880cec95addd8d3533125932e1fbf2ed1c4e6b418d",
+    "scripts/record_osc_pairs.py": "fa90af2747e610facc2531d83985502d8893ebf76c4362f9513b0b7f153c8880",
+    "scripts/joint_action_contract.py": "724723e7f54810c55c1c6233d137f55cfd7acf21bf62feaf12ce921c2994dfe0",
+    "scripts/motion_recording.py": "16851aca9be37ebb6942e3d7a875055b105c49884d6cff0d054f45c636d64cf4",
+    "scripts/simulation_snapshot.py": "ce73f413ad333d86bef5b2c14500c34d540d5bbfdf739cd4142657c7e4f24c5b",
+    "scripts/verify_simulation_snapshot.py": "19366a02ac01677e31238d42d0fb80df84fd7f238ef23ce96b4718938046dcbb",
+    "scripts/verify_osc_conversion.py": "7d286c04023eacdef32b09d585c1d2c5592c0477f6a023290fd05662c18c690f",
+    "scripts/replay_mixed_correction.py": "8b4891d33abc7eea7dd59d96ccce21f8df7799ad0f32f9895b6d98a2ebdf0b76",
+    "reports/full-state-replay-20261028/v1/human_1793121358375746008/snapshot-73.npz": "b2ba0b5864f2a052b62ad66d3f3a50cd404eb593f638fa1c1fad1bd637345547",
+    "reports/joint-contract-20261029/v2/human_1793121358375746008/velocity_compensated/trajectory.npz": "dfd6f3163b68c5e861778ff67367c9a161c51fb095d92cb112d5a92bb1c11841",
+    "reports/joint-contract-20261029/v2/human_1793121358375746008/velocity_compensated/steps.json": "54fe15da8c6506b11c8e4c6c9751bd9cb024b3225971b986479074df159e5404",
+    "reports/joint-contract-20261029/v2/human_1793121358375746008/velocity_compensated/identity.json": "a3f41e91c2a61b4c1141ae6e09e0c5149c61528195276a4a95bb2dfc78cb85e1",
+    "reports/joint-contract-20261029/v2/human_1793121358375746008/velocity_compensated/result.json": "553549a9b48bbfe8ad7a2fb15a6f4ae159d4bed495aaf6898c679b723172f1ee",
+    "reports/full-state-replay-20261028/v1/human_1793122696228231033/snapshot-223.npz": "704adc4c3dc058a1fadbdd45f196eb6a2e581ff315cc4d3ffe19bb53abaec15c",
+    "reports/joint-contract-20261029/v2/human_1793122696228231033/velocity_compensated/trajectory.npz": "1d5012adbf15c6dde56091ff6dd970576025d6e63a8d3026f7254cf7717737af",
+    "reports/joint-contract-20261029/v2/human_1793122696228231033/velocity_compensated/steps.json": "eb081e21e8f7f374ca56b7684afabab1bf3383d70440d8e31de9c96b7e31a06f",
+    "reports/joint-contract-20261029/v2/human_1793122696228231033/velocity_compensated/identity.json": "a3f41e91c2a61b4c1141ae6e09e0c5149c61528195276a4a95bb2dfc78cb85e1",
+    "reports/joint-contract-20261029/v2/human_1793122696228231033/velocity_compensated/result.json": "c557d250710afb7e32e6d590b9f83c72f1184aee301466c6069de7fc44e7236f"
+  }
+}

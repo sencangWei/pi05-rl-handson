@@ -1,0 +1,10 @@
+{
+  "source": "human_1793121358375746008",
+  "frames": 491,
+  "std": "population, floor 0.001 per dimension",
+  "normalization": "z-score",
+  "action_weighting": "one vote per real motion frame, no repeated horizon weighting",
+  "holdout_used": false,
+  "diagnostic_hold_used": false,
+  "norm_sha256": "a3a13b9fbe2a27d7494cea12b68380c7e6a0d4db746524d4caf7d8775e9496a2"
+}

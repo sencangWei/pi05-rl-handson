@@ -1,0 +1,39 @@
+{
+  "successes": 0,
+  "trials": 2,
+  "budget_exhausted": false,
+  "ui_promoted": false,
+  "results": [
+    {
+      "source": "human_1793121358375746008",
+      "split": "train",
+      "controls": 2,
+      "inference_calls": 3,
+      "success": false,
+      "stop_reason": "exception",
+      "exception": "ValueError('Expected absolute joint radians7 within limits + normalized gripper1')",
+      "initial_rgb_and_joint_state_exact": true
+    },
+    {
+      "source": "human_1793122696228231033",
+      "split": "holdout",
+      "controls": 0,
+      "inference_calls": 1,
+      "success": false,
+      "stop_reason": "exception",
+      "exception": "ValueError('Joint target jump 1.424250 rad exceeds 0.35')",
+      "initial_rgb_and_joint_state_exact": true
+    }
+  ],
+  "diagnosis": {
+    "observed": "Train execution violated J4 upper bound at third prediction; holdout first J7 target differs from actual by 1.42425rad.",
+    "joint7_train_range_rad": [
+      0.8196202667538948,
+      0.8267822288741169
+    ],
+    "joint7_holdout_initial_rad": 2.248491556911503,
+    "interpretation": "One training episode does not cover holdout posture. Absolute target head predicts near the narrow training posture. 200-update LoRA interface pilot not learned robustly; no generalization claim.",
+    "not_proven": "Does not isolate training duration from coverage/representation and does not explain all legacy OSC failures.",
+    "next_experiment": "Use joint target residuals around each observed joint state, derive future windows relative to the same anchor, replay with exact target reconstruction and fresh actual observations first. Preserve whole-episode holdout. Then compare a matched bounded training run, not simply relax limits."
+  }
+}

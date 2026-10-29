@@ -1,0 +1,76 @@
+{
+  "train_source": "human_1793121358375746008",
+  "holdout_source": "human_1793122696228231033",
+  "joints": [
+    {
+      "joint": 1,
+      "train_min": -0.0581994843047544,
+      "train_max": 0.035207075787946275,
+      "train_std": 0.0397263658584134,
+      "holdout_initial": -0.024246010376347476,
+      "holdout_min": -0.024246010376347476,
+      "holdout_max": -0.01701451395757199,
+      "holdout_fraction_outside_training_range": 0.0
+    },
+    {
+      "joint": 2,
+      "train_min": 1.0762195711105371,
+      "train_max": 1.4964878013642169,
+      "train_std": 0.08453640411166446,
+      "holdout_initial": 1.176156020211817,
+      "holdout_min": 0.7607042684368582,
+      "holdout_max": 1.176156020211817,
+      "holdout_fraction_outside_training_range": 0.9861751152073732
+    },
+    {
+      "joint": 3,
+      "train_min": 0.008757566162446136,
+      "train_max": 0.01888203722764882,
+      "train_std": 0.004447879322683175,
+      "holdout_initial": -0.03442770327340695,
+      "holdout_min": -0.0425162822401077,
+      "holdout_max": -0.03442770327340695,
+      "holdout_fraction_outside_training_range": 1.0
+    },
+    {
+      "joint": 4,
+      "train_min": -0.6615430436678699,
+      "train_max": -0.06982232191307348,
+      "train_std": 0.189373385488628,
+      "holdout_initial": -0.19729585630884613,
+      "holdout_min": -1.133026927419777,
+      "holdout_max": -0.19729585630884613,
+      "holdout_fraction_outside_training_range": 0.7695852534562212
+    },
+    {
+      "joint": 5,
+      "train_min": -0.0066691354449815365,
+      "train_max": 0.006347242479635508,
+      "train_std": 0.005251038314420377,
+      "holdout_initial": -0.02086812133465796,
+      "holdout_min": -0.023950233384155382,
+      "holdout_max": -0.01810344059362434,
+      "holdout_fraction_outside_training_range": 1.0
+    },
+    {
+      "joint": 6,
+      "train_min": 1.2395567649873387,
+      "train_max": 1.5254300813815618,
+      "train_std": 0.05111331318806101,
+      "holdout_initial": 1.4309498342110292,
+      "holdout_min": 1.4242439202256958,
+      "holdout_max": 1.8426535974441385,
+      "holdout_fraction_outside_training_range": 0.4470046082949309
+    },
+    {
+      "joint": 7,
+      "train_min": 0.8196202667538948,
+      "train_max": 0.8267822288741169,
+      "train_std": 0.001519844056101657,
+      "holdout_initial": 2.248491556911503,
+      "holdout_min": 2.2362741001260447,
+      "holdout_max": 2.248491556911503,
+      "holdout_fraction_outside_training_range": 1.0
+    }
+  ]
+}

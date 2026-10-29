@@ -1,0 +1,32 @@
+{
+  "schema": "pi05-joint-pilot-v1",
+  "ready": true,
+  "records": [
+    {
+      "source": "human_1793121358375746008",
+      "split": "train",
+      "path": "reports/joint-pairs-20261029/v3/human_1793121358375746008/pairs.parquet",
+      "sha256": "80bcb5d8635422c0da5e377ec33326ede93485850b69c643cb22d4de3453a0b0",
+      "motion_rows": 491,
+      "paired_rows": 511
+    },
+    {
+      "source": "human_1793122696228231033",
+      "split": "holdout",
+      "path": "reports/joint-pairs-20261029/v3/human_1793122696228231033/pairs.parquet",
+      "sha256": "6d0394a606eb9ad792092e224cb87b6b4ad6f6023b8fc1605040e44150473b8a",
+      "motion_rows": 434,
+      "paired_rows": 454
+    }
+  ],
+  "source_manifest_sha256": "ac70da950786ede9f9b5c58842d31858d9f89ab8653ca797202dbcfa9e5b69a5",
+  "whole_episode_split": true,
+  "horizon": 10,
+  "state_dim": 9,
+  "action_dim": 8,
+  "diagnostic_holds_used": false,
+  "terminal_window_padding": false,
+  "old_osc_data_modified": false,
+  "new_execution_human_review": false,
+  "scope": "Interface pilot from previously human-approved sources, not recovery acceptance"
+}
