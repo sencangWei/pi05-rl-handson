@@ -1,0 +1,51 @@
+{
+  "schema": "pi05-public-joint-source-v1",
+  "status": "COMPLETE",
+  "repo": "yifengzhu-hf/LIBERO-datasets",
+  "revision": "f13aa24a3da8c43c7225569f28c562979fa0e35a",
+  "source_path": "libero_goal/put_the_bowl_on_the_plate_demo.hdf5",
+  "url": "https://huggingface.co/datasets/yifengzhu-hf/LIBERO-datasets/resolve/f13aa24a3da8c43c7225569f28c562979fa0e35a/libero_goal/put_the_bowl_on_the_plate_demo.hdf5",
+  "local_path": "/dev/shm/pi05-public-joint30/put_the_bowl_on_the_plate_demo.hdf5",
+  "size": 468246288,
+  "sha256": "e69528b0cf10dfc59b20698e12ec2affc03f3887309034d3eb74cac3ec929406",
+  "official_lfs_sha256_exact_match": true,
+  "upstream_metadata": {
+    "type": "file",
+    "oid": "11397e235bacbc37fa53d13356077af6d337a486",
+    "size": 468246288,
+    "lfs": {
+      "oid": "e69528b0cf10dfc59b20698e12ec2affc03f3887309034d3eb74cac3ec929406",
+      "size": 468246288,
+      "pointerSize": 134
+    },
+    "xetHash": "3a0b1534cbe19a14a5769b1cc56f3b878070fa82c1f60152c8d9105d4a4e2f31",
+    "path": "libero_goal/put_the_bowl_on_the_plate_demo.hdf5",
+    "lastCommit": {
+      "id": "97773100c1474cd0d686ebd173cc0e4fd5442466",
+      "title": "Uploading libero_goal libero_object and libero_spatial",
+      "date": "2025-03-15T03:53:37.000Z"
+    },
+    "securityFileStatus": {
+      "status": "safe",
+      "protectAiScan": {
+        "status": "unscanned"
+      },
+      "avScan": {
+        "status": "safe",
+        "message": "No security issues detected",
+        "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+      },
+      "pickleImportScan": {
+        "status": "unscanned",
+        "pickleImports": [],
+        "version": "0.0.0"
+      },
+      "virusTotalScan": {
+        "status": "unscanned",
+        "message": "File not scanned in VirusTotal",
+        "reportLink": "https://www.virustotal.com/gui/file/e69528b0cf10dfc59b20698e12ec2affc03f3887309034d3eb74cac3ec929406?utm_source=huggingface"
+      }
+    }
+  },
+  "wall_seconds": 331.77
+}
