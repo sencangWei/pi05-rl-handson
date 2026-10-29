@@ -1,0 +1,68 @@
+{
+  "ppo": {
+    "accelerator": {
+      "exit_code": 0,
+      "status": "ok",
+      "stderr": "",
+      "stdout": "NVIDIA GeForce RTX 5090 D, GPU-71a86a09-01c8-24fd-306c-6fa42c11719b, 595.84, 32607"
+    },
+    "environment": {},
+    "packages": {
+      "flax": "0.10.2",
+      "jax": "0.5.3",
+      "jaxlib": "0.5.3",
+      "numpy": "1.26.4",
+      "orbax-checkpoint": "0.11.13"
+    },
+    "python": {
+      "executable": "/home/robot/pi05-rl-handson/.venv-ppo/bin/python",
+      "implementation": "CPython",
+      "version": "3.11.15"
+    },
+    "repository": {
+      "branch": "experiment/matched-recovery-20261027",
+      "commit": "e4c1c1bc61e4277609560876f37ea1022b82aae4",
+      "dirty": true,
+      "status": "ok"
+    },
+    "root": "/home/robot/pi05-rl-handson",
+    "system": {
+      "architecture": "x86_64",
+      "os": "Linux",
+      "release": "6.8.0-138-generic"
+    }
+  },
+  "train": {
+    "accelerator": {
+      "exit_code": 0,
+      "status": "ok",
+      "stderr": "",
+      "stdout": "NVIDIA GeForce RTX 5090 D, GPU-71a86a09-01c8-24fd-306c-6fa42c11719b, 595.84, 32607"
+    },
+    "environment": {},
+    "packages": {
+      "flax": "0.10.2",
+      "jax": "0.5.3",
+      "jaxlib": "0.5.3",
+      "numpy": "1.26.4",
+      "orbax-checkpoint": "0.11.13"
+    },
+    "python": {
+      "executable": "/home/robot/pi05-rl-handson/.venv-train/bin/python",
+      "implementation": "CPython",
+      "version": "3.11.15"
+    },
+    "repository": {
+      "branch": "experiment/matched-recovery-20261027",
+      "commit": "e4c1c1bc61e4277609560876f37ea1022b82aae4",
+      "dirty": true,
+      "status": "ok"
+    },
+    "root": "/home/robot/pi05-rl-handson",
+    "system": {
+      "architecture": "x86_64",
+      "os": "Linux",
+      "release": "6.8.0-138-generic"
+    }
+  }
+}

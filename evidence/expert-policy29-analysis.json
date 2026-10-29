@@ -1,0 +1,353 @@
+{
+  "status": "COMPLETE",
+  "split": "expert_train_diagnostic",
+  "heldout": false,
+  "protocol_sha256": "ad7da699fb7e5ebab5dbbd69bec271062fd47b6904b31dba689b84a715e0fa49",
+  "trials": [
+    {
+      "label": "parent",
+      "source": "human_1793121358375746008",
+      "steps": 600,
+      "success": false,
+      "success_step": null,
+      "success_by_300": false,
+      "native_first_step": 172,
+      "simulation_seconds": 30.0,
+      "wall_seconds": 24.652626444003545,
+      "native_controls": 54,
+      "contact_controls": 228,
+      "grasp_controls": 38,
+      "longest_low_motion_controls": 0,
+      "final_bowl_plate_xy_m": 0.05802316008489252,
+      "first_inference_seconds": 9.725372749991948,
+      "warm_inference_median_seconds": 0.06395587700535543,
+      "initial_measure": {
+        "index": 0,
+        "native_goal": false,
+        "grasp": false,
+        "finger_contact": true,
+        "contact_count": 23,
+        "image_sha256": "e09d3f879d7c73aed3e45dc0a0a8a869227373b37c3095ed3ae67d6daa8b8a91",
+        "positions": [
+          0.11688039058507002,
+          0.028147150701621916,
+          1.060891760984323,
+          0.13191662606645624,
+          0.07001776866285049,
+          1.0369671812824006
+        ]
+      },
+      "blocks": [
+        {
+          "start": 1,
+          "end": 100,
+          "eef_motion_mean_mm": 4.089136977388442,
+          "contact_controls": 44,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.05311200819765138
+        },
+        {
+          "start": 101,
+          "end": 200,
+          "eef_motion_mean_mm": 2.206364738640274,
+          "contact_controls": 71,
+          "native_controls": 29,
+          "final_bowl_plate_xy_m": 0.029736148035784324
+        },
+        {
+          "start": 201,
+          "end": 300,
+          "eef_motion_mean_mm": 2.317508043356166,
+          "contact_controls": 90,
+          "native_controls": 25,
+          "final_bowl_plate_xy_m": 0.04471570402359384
+        },
+        {
+          "start": 301,
+          "end": 400,
+          "eef_motion_mean_mm": 2.969277584097979,
+          "contact_controls": 21,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.05269992617332304
+        },
+        {
+          "start": 401,
+          "end": 500,
+          "eef_motion_mean_mm": 3.0028424181640445,
+          "contact_controls": 2,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.05900634203945523
+        },
+        {
+          "start": 501,
+          "end": 600,
+          "eef_motion_mean_mm": 2.671705842178881,
+          "contact_controls": 0,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.05802316008489252
+        }
+      ]
+    },
+    {
+      "label": "parent",
+      "source": "human_1793122696228231033",
+      "steps": 600,
+      "success": false,
+      "success_step": null,
+      "success_by_300": false,
+      "native_first_step": null,
+      "simulation_seconds": 30.0,
+      "wall_seconds": 14.434250471997075,
+      "native_controls": 0,
+      "contact_controls": 77,
+      "grasp_controls": 61,
+      "longest_low_motion_controls": 0,
+      "final_bowl_plate_xy_m": 0.03179618550297054,
+      "first_inference_seconds": 0.06944738599122502,
+      "warm_inference_median_seconds": 0.06409230499411933,
+      "initial_measure": {
+        "index": 0,
+        "native_goal": false,
+        "grasp": true,
+        "finger_contact": true,
+        "contact_count": 24,
+        "image_sha256": "408beede70ba274d9d2dee7ab0eb43c06779f5b3f2aa83ec9dffa09a38cf451c",
+        "positions": [
+          0.12262726705794275,
+          -0.03369856440729806,
+          1.2487676390231812,
+          0.1703500801122435,
+          -0.029256898675212164,
+          1.2152319394422049
+        ]
+      },
+      "blocks": [
+        {
+          "start": 1,
+          "end": 100,
+          "eef_motion_mean_mm": 6.491981094105597,
+          "contact_controls": 62,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.04607568637530762
+        },
+        {
+          "start": 101,
+          "end": 200,
+          "eef_motion_mean_mm": 6.120469331797745,
+          "contact_controls": 5,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.035525765834685946
+        },
+        {
+          "start": 201,
+          "end": 300,
+          "eef_motion_mean_mm": 4.282027232062992,
+          "contact_controls": 4,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.03556818432307966
+        },
+        {
+          "start": 301,
+          "end": 400,
+          "eef_motion_mean_mm": 4.225682522198031,
+          "contact_controls": 6,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.03179298250783788
+        },
+        {
+          "start": 401,
+          "end": 500,
+          "eef_motion_mean_mm": 2.8963294068706604,
+          "contact_controls": 0,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.03179675869341827
+        },
+        {
+          "start": 501,
+          "end": 600,
+          "eef_motion_mean_mm": 2.07314502182156,
+          "contact_controls": 0,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.03179618550297054
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "source": "human_1793121358375746008",
+      "steps": 118,
+      "success": true,
+      "success_step": 118,
+      "success_by_300": true,
+      "native_first_step": 59,
+      "simulation_seconds": 5.9,
+      "wall_seconds": 14.410577189002652,
+      "native_controls": 47,
+      "contact_controls": 110,
+      "grasp_controls": 99,
+      "longest_low_motion_controls": 0,
+      "final_bowl_plate_xy_m": 0.018559245374468323,
+      "first_inference_seconds": 9.919245308003156,
+      "warm_inference_median_seconds": 0.0651076229987666,
+      "initial_measure": {
+        "index": 0,
+        "native_goal": false,
+        "grasp": false,
+        "finger_contact": true,
+        "contact_count": 23,
+        "image_sha256": "e09d3f879d7c73aed3e45dc0a0a8a869227373b37c3095ed3ae67d6daa8b8a91",
+        "positions": [
+          0.11688039058507002,
+          0.028147150701621916,
+          1.060891760984323,
+          0.13191662606645624,
+          0.07001776866285049,
+          1.0369671812824006
+        ]
+      },
+      "blocks": [
+        {
+          "start": 1,
+          "end": 100,
+          "eef_motion_mean_mm": 1.715325872364126,
+          "contact_controls": 98,
+          "native_controls": 30,
+          "final_bowl_plate_xy_m": 0.0185688392040066
+        },
+        {
+          "start": 101,
+          "end": 118,
+          "eef_motion_mean_mm": 1.6581725086905275,
+          "contact_controls": 12,
+          "native_controls": 17,
+          "final_bowl_plate_xy_m": 0.018559245374468323
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "source": "human_1793122696228231033",
+      "steps": 562,
+      "success": true,
+      "success_step": 562,
+      "success_by_300": false,
+      "native_first_step": 558,
+      "simulation_seconds": 28.1,
+      "wall_seconds": 14.061019435990602,
+      "native_controls": 5,
+      "contact_controls": 555,
+      "grasp_controls": 550,
+      "longest_low_motion_controls": 4,
+      "final_bowl_plate_xy_m": 0.029021585071906806,
+      "first_inference_seconds": 0.06636163100483827,
+      "warm_inference_median_seconds": 0.06474224250996485,
+      "initial_measure": {
+        "index": 0,
+        "native_goal": false,
+        "grasp": true,
+        "finger_contact": true,
+        "contact_count": 24,
+        "image_sha256": "408beede70ba274d9d2dee7ab0eb43c06779f5b3f2aa83ec9dffa09a38cf451c",
+        "positions": [
+          0.12262726705794275,
+          -0.03369856440729806,
+          1.2487676390231812,
+          0.1703500801122435,
+          -0.029256898675212164,
+          1.2152319394422049
+        ]
+      },
+      "blocks": [
+        {
+          "start": 1,
+          "end": 100,
+          "eef_motion_mean_mm": 2.5087174757193846,
+          "contact_controls": 99,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.12827890896647098
+        },
+        {
+          "start": 101,
+          "end": 200,
+          "eef_motion_mean_mm": 1.0151799805680755,
+          "contact_controls": 100,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.11322967154868183
+        },
+        {
+          "start": 201,
+          "end": 300,
+          "eef_motion_mean_mm": 1.8702838066012017,
+          "contact_controls": 100,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.0681923871142362
+        },
+        {
+          "start": 301,
+          "end": 400,
+          "eef_motion_mean_mm": 1.5346663193341257,
+          "contact_controls": 100,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.027700890161034337
+        },
+        {
+          "start": 401,
+          "end": 500,
+          "eef_motion_mean_mm": 0.7290735501628273,
+          "contact_controls": 100,
+          "native_controls": 0,
+          "final_bowl_plate_xy_m": 0.03423500063720106
+        },
+        {
+          "start": 501,
+          "end": 562,
+          "eef_motion_mean_mm": 0.9475817453989503,
+          "contact_controls": 56,
+          "native_controls": 5,
+          "final_bowl_plate_xy_m": 0.029021585071906806
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    "artifacts/20261029-expert-policy/comparison-human_1793121358375746008.mp4",
+    "artifacts/20261029-expert-policy/comparison-human_1793122696228231033.mp4"
+  ],
+  "videos_decoded": [
+    {
+      "path": "artifacts/20261029-expert-policy/candidate/human_1793121358375746008/policy.mp4",
+      "frames": 119,
+      "sha256": "2dc1cd0b803ccdd4f05ab6e53231dbaab65c2f8c280a6b440a8fd92b592fc3d4"
+    },
+    {
+      "path": "artifacts/20261029-expert-policy/candidate/human_1793122696228231033/policy.mp4",
+      "frames": 563,
+      "sha256": "cff335e649ed24e2083987c7f0f9a3bd5c9062a1149c8a44d84b62d984cfe5d0"
+    },
+    {
+      "path": "artifacts/20261029-expert-policy/comparison-human_1793121358375746008.mp4",
+      "frames": 601,
+      "sha256": "b869ab07f8e25cd9f40b9f869b4a1fe952095b03bc0ab74fe8eb5788e3f5f6b6"
+    },
+    {
+      "path": "artifacts/20261029-expert-policy/comparison-human_1793122696228231033.mp4",
+      "frames": 601,
+      "sha256": "3759b4dfbe0c1deb212e13e78c6ac0d0b749209f39f388b103b5813d97e8f6f1"
+    },
+    {
+      "path": "artifacts/20261029-expert-policy/parent/human_1793121358375746008/policy.mp4",
+      "frames": 601,
+      "sha256": "789ad0a25f3b0116c1045ed4328fbb2698655fcb0f13a72e834043ecdcc1fdae"
+    },
+    {
+      "path": "artifacts/20261029-expert-policy/parent/human_1793122696228231033/policy.mp4",
+      "frames": 601,
+      "sha256": "5c757e4316cce8423f86ed5411cdd62d8e0c2e1f0a03a1a4e276baf2bf893c75"
+    }
+  ],
+  "trace_physics_success_audit": true,
+  "model_promotion": false,
+  "training": false,
+  "runner_sha256": "c98b2f00a44443df668368764607af571ad50256d452559d89deeca541791cd7",
+  "systemd": "Result=success\nExecMainStatus=0\nActiveState=inactive\n"
+}

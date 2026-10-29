@@ -1,0 +1,34 @@
+COMMAND ['.venv-ppo/bin/python', '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_*snapshot*.py', '-v']
+test_changed_observation_rejected (test_expert_snapshot_eval.SnapshotGuardTests.test_changed_observation_rejected) ... ok
+test_changed_physics_rejected (test_expert_snapshot_eval.SnapshotGuardTests.test_changed_physics_rejected) ... ok
+test_either_camera_mutation_rejected (test_expert_snapshot_eval.SnapshotGuardTests.test_either_camera_mutation_rejected) ... ok
+test_exact_initial_state_and_both_images_accepted (test_expert_snapshot_eval.SnapshotGuardTests.test_exact_initial_state_and_both_images_accepted) ... ok
+test_frozen_input_and_weight_mutations_rejected (test_expert_snapshot_eval.SnapshotGuardTests.test_frozen_input_and_weight_mutations_rejected) ... ok
+test_wrong_camera_orientation_rejected (test_expert_snapshot_eval.SnapshotGuardTests.test_wrong_camera_orientation_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.007s
+
+OK
+
+EXIT 0
+COMMAND ['.venv-ppo/bin/python', '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_record_osc_pairs.py', '-v']
+test_before_is_copied_and_two_axis_image_orientation_matches_inference (test_record_osc_pairs.RecordingTests.test_before_is_copied_and_two_axis_image_orientation_matches_inference) ... ok
+test_invalid_actions_are_rejected_without_clipping (test_record_osc_pairs.RecordingTests.test_invalid_actions_are_rejected_without_clipping) ... ok
+test_invalid_camera_and_quaternion_are_rejected (test_record_osc_pairs.RecordingTests.test_invalid_camera_and_quaternion_are_rejected) ... ok
+test_on_disk_validator_rejects_post_state_mispair_and_corruption (test_record_osc_pairs.RecordingTests.test_on_disk_validator_rejects_post_state_mispair_and_corruption) ... ok
+test_state_matches_inference_convention_and_signed_rotation (test_record_osc_pairs.RecordingTests.test_state_matches_inference_convention_and_signed_rotation) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.114s
+
+OK
+
+EXIT 0
+COMMAND ['.venv-train/bin/ruff', 'check', 'scripts/evaluate_expert_snapshots.py', 'reports/expert-policy-20261029', 'tests/test_expert_snapshot_eval.py']
+All checks passed!
+
+EXIT 0
+COMMAND ['.venv-ppo/bin/python', '-m', 'py_compile', 'scripts/evaluate_expert_snapshots.py', 'reports/expert-policy-20261029/run.py', 'reports/expert-policy-20261029/analyze.py', 'tests/test_expert_snapshot_eval.py']
+
+EXIT 0

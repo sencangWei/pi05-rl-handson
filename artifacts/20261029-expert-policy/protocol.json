@@ -1,0 +1,91 @@
+{
+  "status": "FROZEN_BEFORE_POLICY_ROLLOUT",
+  "split": "expert_train_diagnostic",
+  "heldout": false,
+  "seed": 42,
+  "checkpoints": {
+    "parent": "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999",
+    "candidate": "checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999"
+  },
+  "sources": {
+    "human_1793121358375746008": {
+      "snapshot": "reports/full-state-replay-20261028/v1/human_1793121358375746008/snapshot-73.npz",
+      "start": 73,
+      "expert_controls": 491,
+      "expert_release_success_step": 463
+    },
+    "human_1793122696228231033": {
+      "snapshot": "reports/full-state-replay-20261028/v1/human_1793122696228231033/snapshot-223.npz",
+      "start": 223,
+      "expert_controls": 434,
+      "expert_release_success_step": 395
+    }
+  },
+  "control_hz": 20,
+  "action_horizon": 10,
+  "replan_controls": 5,
+  "flow_steps": 10,
+  "max_controls": 600,
+  "primary_milestone_controls": 300,
+  "success": "native goal AND no finger contact for 5 consecutive controls",
+  "observations": "Exact pair-dataset initial refresh; then ordinary env.step observations",
+  "actions": "Learned 7D OSC only; no scripted recovery, no reference state injection",
+  "noise": "numpy.default_rng(42+call).standard_normal((10,32)); reset per trial",
+  "model_promotion": false,
+  "training": false,
+  "weight_files": {
+    "parent": {
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999/params/_METADATA": "88464a384c524c50fa1a92c1685d23a79570c62807a0ccf021f5f9307fff137c",
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999/params/_sharding": "54899ee3f4d45eee96ddada379a19a9da1324792b141fa0449608620571e6b01",
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999/params/array_metadatas/process_0": "da5f8952b77ab352fa92e3e58d742bfe0db5b9c1b956212f8279895b9df03721",
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999/params/d/e99e57e2878e56ab5f02847ec386e73d": "515654d10237999b2c3c6bea1c1d41f48350f69e514cb7c2c039779a3fb624a9",
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999/params/manifest.ocdbt": "55d9bf8ef0fc7ab5a67aa6a449fe35ef615c1ff79c01eb5829a250db4a9f2979",
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999/params/ocdbt.process_0/d/23e55020a5614908020c5880f744a7a4": "e94b6f05ceef55173200b9a654bc6d84fae3656f3c7e168fafc6291a2847bc7a",
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999/params/ocdbt.process_0/d/31f6986f3a651b625f4c28c5133382ca": "f55fd89dadc9541d14192fd372b98539f7fb5ee34c7394d588ee132ef48bbf73",
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999/params/ocdbt.process_0/d/5014daf415aca9f55984ec2803cf42ef": "3da67fa5b4cfe32f5a4ef75e077b0ba11a018c54414aac0a0548a60110d98260",
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999/params/ocdbt.process_0/d/74358c6b38dd7083ad9c2a1ad5a61906": "f814f6562c5cacf5ffed9d4e9f46556e04dfff7df3e719779b0372f7fb3b3685",
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999/params/ocdbt.process_0/d/c2f1a4f7df5efa162c5555f940946b8e": "ecb33097b929abb52bc1c729d882d947d4c085427ef648bf71e47c4125b0bed3",
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999/params/ocdbt.process_0/d/f25fd307076f23281b9d14bfd63a0f19": "11f3efa9f1c3a7bf9246ec1119434b1b3aa77e8a14fbcba3744cd2c84210470b",
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999/params/ocdbt.process_0/manifest.ocdbt": "8ccac4a15e1beaccd32a4958c60b1f83d7cbb76ab16e2e6716d32687962c15ad",
+      "checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999/assets/physical-intelligence/libero/norm_stats.json": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84"
+    },
+    "candidate": {
+      "checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999/params/_METADATA": "88464a384c524c50fa1a92c1685d23a79570c62807a0ccf021f5f9307fff137c",
+      "checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999/params/_sharding": "54899ee3f4d45eee96ddada379a19a9da1324792b141fa0449608620571e6b01",
+      "checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999/params/array_metadatas/process_0": "da5f8952b77ab352fa92e3e58d742bfe0db5b9c1b956212f8279895b9df03721",
+      "checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999/params/d/8c5f47d387edce906e020fa6c1de10a4": "06e97f659b2e659e8a4bacfbf80340a6032069c26f5ace2161ab103e89954586",
+      "checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999/params/manifest.ocdbt": "ac52fc6af4167b3643a1364df6476f802bb25ba7a262a5fa518d42b1ebcb0b7b",
+      "checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999/params/ocdbt.process_0/d/0aeea57955e1088bcba24b0a8460f3a2": "bde1c14ad0244dd1c94e2c8e3f6a1416d12e9d823a0002eb6522142c211a5c74",
+      "checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999/params/ocdbt.process_0/d/5e12f2df55c5a26a49362e7d78b6724f": "6592da22450cd4e2024d90d35cb153c94353c90fc590b124c02fa2ec4b391888",
+      "checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999/params/ocdbt.process_0/d/6785d6d27b1ae01c62e0df8b8243035e": "ecb33097b929abb52bc1c729d882d947d4c085427ef648bf71e47c4125b0bed3",
+      "checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999/params/ocdbt.process_0/d/86a13de6ac0d1425cb287f9eeb3fdf76": "cca9157c22764da29624bcccb7ed99c4d2517f4c6fdc5551088c4658ec7aad6a",
+      "checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999/params/ocdbt.process_0/d/e68d2fc6166419287df4249630930348": "31e6c3c471d3a784b719f4b4fee0ac310b57cbf298c7ae1177302441590caf0f",
+      "checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999/params/ocdbt.process_0/d/ec79610a3b7f49e5ef5d07f6c8c4e555": "01e5bc9abb058782f586333e8203710f3c946f5bfaddd6a8db700a07a64f3d1a",
+      "checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999/params/ocdbt.process_0/manifest.ocdbt": "51bc4aa81c9061f4e62d2d227d21be371a060426725ffbc49e04d0ed9045e68e",
+      "checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999/assets/physical-intelligence/libero/norm_stats.json": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84"
+    }
+  },
+  "code_revision": "e4c1c1bc61e4277609560876f37ea1022b82aae4",
+  "inputs_sha256": {
+    "scripts/evaluate_expert_snapshots.py": "b7402cc7ed537617937f4978949e77e5e6e8facfba22aa243a114f5b2577c281",
+    "evidence/osc-sft29-execution-plan.json": "ecebd4101aa362387dac4e4d8a61fdd9b58fbca731df6f197b1e286d59f4b339",
+    "reports/osc-pairs-20261029/v1/human-review.json": "988e2887a4c98032806d23b73093140968018a591bf2ac641175e2436fb77a01",
+    "scripts/simulation_snapshot.py": "ce73f413ad333d86bef5b2c14500c34d540d5bbfdf739cd4142657c7e4f24c5b",
+    "scripts/record_osc_pairs.py": "fa90af2747e610facc2531d83985502d8893ebf76c4362f9513b0b7f153c8880",
+    "scripts/verify_osc_conversion.py": "7d286c04023eacdef32b09d585c1d2c5592c0477f6a023290fd05662c18c690f",
+    "scripts/verify_simulation_snapshot.py": "19366a02ac01677e31238d42d0fb80df84fd7f238ef23ce96b4718938046dcbb",
+    "scripts/replay_mixed_correction.py": "8b4891d33abc7eea7dd59d96ccce21f8df7799ad0f32f9895b6d98a2ebdf0b76",
+    "scripts/evaluate_recovery.py": "f60f94ec171ea246f9088ee6f883b18ca5801c20d584718b0eba7d4ca4daa0f5",
+    "scripts/baseline.py": "2f65198a1e3c2f59a54910a1355b21d3c771ede93d780f3378fc8b1b5d157c5f",
+    "scripts/serve_sft.py": "36fbf6ab18d00315448899e527a672cedfe6d4ca5f34d22f6bba7bd751446b86",
+    "scripts/training_config.py": "f03c2d7a96de92a6d334bf3e4c92dec6e8c146d72cc61becf1ad012e5f208cac",
+    "reports/full-state-replay-20261028/v1/human_1793121358375746008/snapshot-73.npz": "b2ba0b5864f2a052b62ad66d3f3a50cd404eb593f638fa1c1fad1bd637345547",
+    "reports/osc-pairs-20261029/v1/human_1793121358375746008/physics.npz": "e16ee3302f42d8ac5bc508ca84f39622245b6acb45ec02ac2eab07215027fa49",
+    "reports/osc-pairs-20261029/v1/human_1793121358375746008/pair-audit.json": "66eba02a019d77f1e16aca6bcb0625c85b09dfcd300d0e72ee26106c133f78a4",
+    "reports/osc-conversion-20261029/v1/human_1793121358375746008/tracking-identity.json": "2f0e9927cf8db57d65cd9299461bbf530a7ccc915d13642606cc19e7c56eeb55",
+    "reports/full-state-replay-20261028/v1/human_1793122696228231033/snapshot-223.npz": "704adc4c3dc058a1fadbdd45f196eb6a2e581ff315cc4d3ffe19bb53abaec15c",
+    "reports/osc-pairs-20261029/v1/human_1793122696228231033/physics.npz": "223626e9d2dec74385eb87d77aaca631de2c55928d5ec3e5319a43fab7074404",
+    "reports/osc-pairs-20261029/v1/human_1793122696228231033/pair-audit.json": "a56ae85bb5c37d68b4cbe78939a5ebce82c6b6bd87a63b07342e089d8e61063d",
+    "reports/osc-conversion-20261029/v1/human_1793122696228231033/tracking-identity.json": "2f0e9927cf8db57d65cd9299461bbf530a7ccc915d13642606cc19e7c56eeb55"
+  }
+}

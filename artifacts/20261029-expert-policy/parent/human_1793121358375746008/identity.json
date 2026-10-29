@@ -1,0 +1,56 @@
+{
+  "protocol_sha256": "ad7da699fb7e5ebab5dbbd69bec271062fd47b6904b31dba689b84a715e0fa49",
+  "checkpoint": {
+    "backend": "local-pi05-libero-lora",
+    "checkpoint": "/home/robot/pi05-rl-handson/checkpoints/pi05_multitask40_lora/multitask40_lora_v1/9999",
+    "image_size": 224,
+    "action_horizon": 10,
+    "model_config": "Pi0Config(action_dim=32, action_horizon=10, max_token_len=200, dtype='bfloat16', paligemma_variant='gemma_2b_lora', action_expert_variant='gemma_300m_lora', pi05=True, discrete_state_input=False, pytorch_compile_mode='max-autotune')",
+    "discrete_state_input": false,
+    "seed_protocol": "numpy.default_rng(seed).standard_normal((10,32))",
+    "norm_stats_sha256": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84"
+  },
+  "initial_checks": {
+    "physics_exact": true,
+    "observation_state_exact": true,
+    "both_rgb_exact": true,
+    "state_sha256": "ce6f8c751155449fca31592b0d1e97cdace296e1ea782793adb1265e7f1da618",
+    "image_sha256": "7d13b18eff4b4e0b42984d15c82f54ba8ee8b1576833e6f31b0bf226eaeaf35f",
+    "wrist_image_sha256": "30ad48f2dd5bcee676780e8f2bde3f3dd1ff48a1f392f097c923dd611ddb6771"
+  },
+  "initial_measure": {
+    "index": 0,
+    "native_goal": false,
+    "grasp": false,
+    "finger_contact": true,
+    "contact_count": 23,
+    "image_sha256": "e09d3f879d7c73aed3e45dc0a0a8a869227373b37c3095ed3ae67d6daa8b8a91",
+    "positions": [
+      0.11688039058507002,
+      0.028147150701621916,
+      1.060891760984323,
+      0.13191662606645624,
+      0.07001776866285049,
+      1.0369671812824006
+    ]
+  },
+  "simulator": {
+    "versions": {
+      "mujoco": "3.8.1",
+      "robosuite": "1.4.1",
+      "numpy": "1.26.4"
+    },
+    "model_sha256": "9bcc60ec07ac33a13a65b775a57ce4a6256efbee07385c47528e6119c861e89e",
+    "controller_type": "OperationalSpaceController",
+    "control_timestep": 0.05
+  },
+  "nullspace_anchor": [
+    0.0,
+    -0.161037389,
+    0.0,
+    -2.44459747,
+    0.0,
+    2.2267522,
+    0.7853981633974483
+  ]
+}

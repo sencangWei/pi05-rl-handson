@@ -1,0 +1,56 @@
+{
+  "protocol_sha256": "ad7da699fb7e5ebab5dbbd69bec271062fd47b6904b31dba689b84a715e0fa49",
+  "checkpoint": {
+    "backend": "local-pi05-libero-lora",
+    "checkpoint": "/home/robot/pi05-rl-handson/checkpoints/pi05_recovery_replay_lora/osc_expert_replay2000_v1/1999",
+    "image_size": 224,
+    "action_horizon": 10,
+    "model_config": "Pi0Config(action_dim=32, action_horizon=10, max_token_len=200, dtype='bfloat16', paligemma_variant='gemma_2b_lora', action_expert_variant='gemma_300m_lora', pi05=True, discrete_state_input=False, pytorch_compile_mode='max-autotune')",
+    "discrete_state_input": false,
+    "seed_protocol": "numpy.default_rng(seed).standard_normal((10,32))",
+    "norm_stats_sha256": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84"
+  },
+  "initial_checks": {
+    "physics_exact": true,
+    "observation_state_exact": true,
+    "both_rgb_exact": true,
+    "state_sha256": "d5a0845b45b7913d75bd4ec99c223c3063a4d2ec6cf4f1123f648b528a47cbd3",
+    "image_sha256": "0b697286153d3aa6369d9c938ed9ddfe473f70df44fdc9064aa744a70edae43a",
+    "wrist_image_sha256": "a75457ac1a02bc7ae872a2558afe458eab4a35174934e1a50344ff33be2ad44e"
+  },
+  "initial_measure": {
+    "index": 0,
+    "native_goal": false,
+    "grasp": true,
+    "finger_contact": true,
+    "contact_count": 24,
+    "image_sha256": "408beede70ba274d9d2dee7ab0eb43c06779f5b3f2aa83ec9dffa09a38cf451c",
+    "positions": [
+      0.12262726705794275,
+      -0.03369856440729806,
+      1.2487676390231812,
+      0.1703500801122435,
+      -0.029256898675212164,
+      1.2152319394422049
+    ]
+  },
+  "simulator": {
+    "versions": {
+      "mujoco": "3.8.1",
+      "robosuite": "1.4.1",
+      "numpy": "1.26.4"
+    },
+    "model_sha256": "9bcc60ec07ac33a13a65b775a57ce4a6256efbee07385c47528e6119c861e89e",
+    "controller_type": "OperationalSpaceController",
+    "control_timestep": 0.05
+  },
+  "nullspace_anchor": [
+    0.0,
+    -0.161037389,
+    0.0,
+    -2.44459747,
+    0.0,
+    2.2267522,
+    0.7853981633974483
+  ]
+}
