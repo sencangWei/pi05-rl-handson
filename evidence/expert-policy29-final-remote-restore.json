@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "remote": "https://github.com/sencangWei/pi05-rl-handson",
+  "branch": "experiment/matched-recovery-20261027",
+  "revision": "ed04356f98d12ba74a0124d28b87063bccd8cccd",
+  "method": "Remote GitHub recursive Git tree + SHA-validated base64 Git blob API contents; unchanged blobs from previously independently fetched remote clone; full clean directory restored",
+  "tracked_files": 3688,
+  "new_blobs_downloaded_independently": 48,
+  "all_tracked_contents_exact": true,
+  "git_tree": "014cae4fccc987e762c76e70682ce302d3b1ea46",
+  "rebuilt_git_tree_exact": true,
+  "manifest_sha256": "1e70ba1701972671ca0b1ff7b5b3236f3f2db0ee3ea1ffd82fb8b27e9c1b68d2",
+  "scope": "Four matched expert-initial policy diagnostics: simulation traces, six real videos, frozen inputs, code, tests and report restored independently; unchanged checkpoint parameters have earlier separate Release restore proofs."
+}

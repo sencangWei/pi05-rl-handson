@@ -58,4 +58,4 @@
 - 新增6项守卫测试（含两路相机子测试）通过，覆盖物理/观测/相机/输入/权重变化拒绝。4条轨迹共1880控制步及其状态时间线、动作与噪声编号、成功计数重新核对通过；6个视频全解码，共3086帧。限定范围Ruff和Python编译检查通过。测试日志见`logs/expert-policy29-checks.log`。
 - 独立systemd任务正常退出：`Result=success`、`ExecMainStatus=0`。测试专用父/新推理服务均已关闭，没有停止其他GPU任务或触碰真机。
 
-备份恢复验证完成后在此追加提交与证明。检查点参数本轮只读，已有Release备份不作重复上传。
+2026-10-29 远端备份验收完成：载荷 `ed04356f98d12ba74a0124d28b87063bccd8cccd` 已推至自有公开仓库 `sencangWei/pi05-rl-handson` 的 `experiment/matched-recovery-20261027` 分支。独立恢复全部 3688 个跟踪文件，逐文件 SHA256 和重建 Git 树 `014cae4fccc987e762c76e70682ce302d3b1ea46` 精确一致；48 个缓存外 Git blob 从远端下载并校验。证明见 [远端恢复记录](../../evidence/expert-policy29-final-remote-restore.json)。代码、冻结配置、四条真实轨迹、六段录像和报告均已备份；本轮未改检查点，权重沿用上一轮 Release 备份。
