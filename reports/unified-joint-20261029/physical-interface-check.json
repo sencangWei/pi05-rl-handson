@@ -1,0 +1,23 @@
+{
+  "ready": true,
+  "directory": "/home/robot/pi05-rl-handson/corrections/human_1793267312102633236",
+  "controls": 21,
+  "elbow_actual_degrees": -1.9736416737269364,
+  "action_dim": 8,
+  "state_dim": 9,
+  "all_inputs_one_controller": true,
+  "second_take": true,
+  "draft": true,
+  "training_ready": false,
+  "replay": {
+    "controls": 21,
+    "physical_states_match": true,
+    "both_cameras_equal": true,
+    "all_joint_velocity_eef_and_timestamp_telemetry_matches": true,
+    "native_goal_and_finger_contact_flags_match": true,
+    "maximum_physics_abs_error": 0.0,
+    "atol": 1e-10,
+    "fresh_process": true,
+    "saved_next_state_injection": false
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "simulation_environment": ".venv-ppo",
+  "pytest": "62 passed in 0.82s",
+  "ruff_new_files": "All checks passed",
+  "py_compile": true,
+  "git_diff_check": true,
+  "visual_screenshot_verified": false,
+  "physical_replay_report": "physical-interface-check.json",
+  "gui_widget_report": "gui-check.json"
+}

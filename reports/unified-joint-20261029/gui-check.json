@@ -1,0 +1,9 @@
+{
+  "ready": true,
+  "joint_button_actual_controls": 12,
+  "chinese_hint": true,
+  "legacy_osc_converter_disabled": true,
+  "draft_resume_disabled": true,
+  "visual_screenshot_verified": false,
+  "screenshot_limitation": "Desktop capture returned a black image; excluded from evidence. Actual Tk widget invocation and resulting 12 physical controls were verified."
+}

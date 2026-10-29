@@ -1,0 +1,123 @@
+{
+  "source_manifest": "evidence/manual-recovery28-manifest.json",
+  "source_manifest_sha256": "86e3fc204735dba54261f32dd864297bd00aab8f044ff2d866f46546d7db9cfb",
+  "raw_demonstrations": 6,
+  "osc_controls": 1630,
+  "joint_controls_retained": 816,
+  "valid_osc_window_anchors": 1612,
+  "records": [
+    {
+      "source": "human_1793114449817419797",
+      "metadata_sha256": "7acf015db56609ff0534abe935cf22f3e16a5f9e06e0b5961552218d1274fe32",
+      "status": "approved",
+      "split": "train",
+      "task_suite": "libero_goal",
+      "task_id": 8,
+      "category": "placement_failure",
+      "initial_id": 1,
+      "osc_controls": 465,
+      "joint_controls": 0,
+      "osc_segments": [
+        465
+      ],
+      "motion_telemetry_files": 0,
+      "full_snapshots": 0,
+      "reuse": "Retain original OSC baseline dataset; reviewed physically re-executed joint teachers only as new distinct data. No substitution of measured qpos for commanded target."
+    },
+    {
+      "source": "human_1793121358375746008",
+      "metadata_sha256": "7725bae9b1577c5fbee1c20c7f8f8166e4b1e0c448cf506547af269aaf7d5707",
+      "status": "approved",
+      "split": "train",
+      "task_suite": "libero_goal",
+      "task_id": 8,
+      "category": "placement_failure",
+      "initial_id": 4,
+      "osc_controls": 120,
+      "joint_controls": 444,
+      "osc_segments": [
+        85,
+        35
+      ],
+      "motion_telemetry_files": 0,
+      "full_snapshots": 0,
+      "reuse": "Retain original OSC baseline dataset; reviewed physically re-executed joint teachers only as new distinct data. No substitution of measured qpos for commanded target."
+    },
+    {
+      "source": "human_1793122696228231033",
+      "metadata_sha256": "d16eeb38f9dd8ebccbf8703f7faf2e81d6336556eb88ebfd9278c4521b29e2a0",
+      "status": "approved",
+      "split": "train",
+      "task_suite": "libero_goal",
+      "task_id": 8,
+      "category": "placement_failure",
+      "initial_id": 5,
+      "osc_controls": 285,
+      "joint_controls": 372,
+      "osc_segments": [
+        235,
+        50
+      ],
+      "motion_telemetry_files": 0,
+      "full_snapshots": 0,
+      "reuse": "Retain original OSC baseline dataset; reviewed physically re-executed joint teachers only as new distinct data. No substitution of measured qpos for commanded target."
+    },
+    {
+      "source": "human_1793122982775036691",
+      "metadata_sha256": "0c99397cb9096f097683f7e86ec6519f806ceb23a7f9cacb2618d7e473792ea2",
+      "status": "approved",
+      "split": "train",
+      "task_suite": "libero_goal",
+      "task_id": 8,
+      "category": "empty_grasp",
+      "initial_id": 1,
+      "osc_controls": 270,
+      "joint_controls": 0,
+      "osc_segments": [
+        270
+      ],
+      "motion_telemetry_files": 0,
+      "full_snapshots": 0,
+      "reuse": "Retain original OSC baseline dataset; reviewed physically re-executed joint teachers only as new distinct data. No substitution of measured qpos for commanded target."
+    },
+    {
+      "source": "human_1793123928152741170",
+      "metadata_sha256": "e405e8b6b3842ecfaf05364af2aa7204d98c45e948d187a2da5f56c019cbff15",
+      "status": "approved",
+      "split": "train",
+      "task_suite": "libero_goal",
+      "task_id": 8,
+      "category": "object_offset",
+      "initial_id": 1,
+      "osc_controls": 245,
+      "joint_controls": 0,
+      "osc_segments": [
+        245
+      ],
+      "motion_telemetry_files": 0,
+      "full_snapshots": 0,
+      "reuse": "Retain original OSC baseline dataset; reviewed physically re-executed joint teachers only as new distinct data. No substitution of measured qpos for commanded target."
+    },
+    {
+      "source": "human_1793124070194277437",
+      "metadata_sha256": "848f62f9f981dfc34b7ce9f098254a834bd76d960a0f589ee375140231d5059c",
+      "status": "approved",
+      "split": "train",
+      "task_suite": "libero_goal",
+      "task_id": 8,
+      "category": "object_offset",
+      "initial_id": 2,
+      "osc_controls": 245,
+      "joint_controls": 0,
+      "osc_segments": [
+        245
+      ],
+      "motion_telemetry_files": 0,
+      "full_snapshots": 0,
+      "reuse": "Retain original OSC baseline dataset; reviewed physically re-executed joint teachers only as new distinct data. No substitution of measured qpos for commanded target."
+    }
+  ],
+  "no_originals_deleted": true,
+  "all_original_metadata_hashes_match": true,
+  "new_joint_training_ready": false
+}

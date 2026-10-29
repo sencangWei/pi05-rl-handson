@@ -36,8 +36,10 @@ def main():
     parser.add_argument("--check", action="store_true", help="Restore and verify without opening windows")
     parser.add_argument("--check-joints", action="store_true", help="Headless physical joint/OSC switching smoke test")
     parser.add_argument("--check-takeover", action="store_true", help="Verify OSC/joint/OSC recording without windows")
+    parser.add_argument("--unified-joints", action="store_true", help="Record all manual inputs as absolute joint targets")
+    parser.add_argument("--check-unified", action="store_true", help="Record and fresh-process replay the unified interface")
     args = parser.parse_args()
-    os.environ["MUJOCO_GL"] = "osmesa" if args.check or args.check_joints or args.check_takeover else "glx"
+    os.environ["MUJOCO_GL"] = "osmesa" if args.check or args.check_joints or args.check_takeover or args.check_unified else "glx"
     os.environ["PYOPENGL_PLATFORM"] = os.environ["MUJOCO_GL"]
     os.environ.setdefault("__NV_PRIME_RENDER_OFFLOAD", "1")
     os.environ.setdefault("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
@@ -249,7 +251,14 @@ def main():
         def prepare_corrections(self, *args, **kwargs):
             raise ValueError("先录制并审核恢复片段，再准备本项目的匹配场景训练数据")
 
-    if args.check_takeover:
+    if args.unified_joints or args.check_unified:
+        from unified_joint_recording import UnifiedJointMixin, unified_panel
+        class UnifiedWorkbench(UnifiedJointMixin, ManualWorkbench):
+            pass
+        ManualWorkbench = UnifiedWorkbench
+        GuidedPanel = unified_panel(GuidedPanel)
+
+    if args.check_takeover or args.check_unified:
         from contextlib import nullcontext
         class HeadlessPreview:
             def __init__(self, env):
@@ -268,6 +277,10 @@ def main():
         output = ROOT / "evaluations" / f"takeover-check-{time.time_ns()}"
         lab = ManualWorkbench(output, bank_task, root=ROOT, viewer_factory=HeadlessPreview)
         try:
+            if args.check_unified:
+                from verify_unified_recording import check_interface
+                check_interface(lab, args.initial_id, output)
+                return
             lab.reset(args.initial_id)
             lab.begin_correction()
             recorder = lab.correction
@@ -358,7 +371,7 @@ def main():
     lab = ManualWorkbench(output, bank_task, root=ROOT, viewer_factory=GuidedPreview)
     root = tk.Tk()
     panel = GuidedPanel(root, lab)
-    root.title("人工恢复采集 · 碗放盘子 · 训练失败场景")
+    root.title("统一关节采集 · 摇杆与调肘均记录" if args.unified_joints else "人工恢复采集 · 碗放盘子 · 训练失败场景")
     for tab in panel.notebook.tabs():
         if panel.notebook.tab(tab, "text") == "模型与训练":
             panel.notebook.hide(tab)
